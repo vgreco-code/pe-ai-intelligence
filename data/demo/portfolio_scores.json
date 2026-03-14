@@ -1,6 +1,5 @@
 [
   {
-    "id": "co_31562cfb",
     "name": "Cairn Applications",
     "vertical": "Waste Hauling SaaS",
     "employee_count": 45,
@@ -19,7 +18,6 @@
     }
   },
   {
-    "id": "co_7e074dc8",
     "name": "SMRTR",
     "vertical": "F&B Supply Chain",
     "employee_count": 120,
@@ -38,7 +36,6 @@
     }
   },
   {
-    "id": "co_74358d36",
     "name": "ViaPeople",
     "vertical": "Talent Management",
     "employee_count": 65,
@@ -57,7 +54,6 @@
     }
   },
   {
-    "id": "co_140ca16f",
     "name": "Track Star",
     "vertical": "Fleet & Asset Management",
     "employee_count": 200,
@@ -76,7 +72,6 @@
     }
   },
   {
-    "id": "co_ce8eb46c",
     "name": "FMSI",
     "vertical": "Banking Operations",
     "employee_count": 85,
@@ -95,7 +90,6 @@
     }
   },
   {
-    "id": "co_a2190fc1",
     "name": "Champ",
     "vertical": "Public Health EHR",
     "employee_count": 150,
@@ -114,7 +108,6 @@
     }
   },
   {
-    "id": "co_733bb8ed",
     "name": "TrackIt Transit",
     "vertical": "Transit Operations",
     "employee_count": 30,
@@ -133,7 +126,6 @@
     }
   },
   {
-    "id": "co_7e6b2ca3",
     "name": "NexTalk",
     "vertical": "ADA Communications",
     "employee_count": 40,
@@ -152,7 +144,6 @@
     }
   },
   {
-    "id": "co_3cb46750",
     "name": "Thought Foundry",
     "vertical": "Entertainment PaaS",
     "employee_count": 55,
@@ -171,7 +162,6 @@
     }
   },
   {
-    "id": "co_a07147de",
     "name": "Spokane",
     "vertical": "Produce ERP",
     "employee_count": 70,
@@ -190,7 +180,6 @@
     }
   },
   {
-    "id": "co_adb4c039",
     "name": "Primate",
     "vertical": "Energy Control Room",
     "employee_count": 90,
@@ -209,7 +198,6 @@
     }
   },
   {
-    "id": "co_de572ed4",
     "name": "ThingTech",
     "vertical": "IoT Asset Tracking",
     "employee_count": 110,
@@ -228,7 +216,6 @@
     }
   },
   {
-    "id": "co_5e7201b3",
     "name": "Dash",
     "vertical": "AP & Doc Automation",
     "employee_count": 60,
@@ -247,7 +234,6 @@
     }
   },
   {
-    "id": "co_fe39dcc9",
     "name": "AutoTime",
     "vertical": "A&D Payroll",
     "employee_count": 75,
