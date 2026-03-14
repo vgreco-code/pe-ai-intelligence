@@ -1,0 +1,78 @@
+{
+  "Wave 1 (Q1-Q2)": [
+    {
+      "name": "Cairn Applications",
+      "score": 3.72,
+      "tier": "AI-Buildable"
+    },
+    {
+      "name": "SMRTR",
+      "score": 3.47,
+      "tier": "AI-Buildable"
+    },
+    {
+      "name": "ViaPeople",
+      "score": 3.4,
+      "tier": "AI-Buildable"
+    },
+    {
+      "name": "Track Star",
+      "score": 3.36,
+      "tier": "AI-Buildable"
+    },
+    {
+      "name": "FMSI",
+      "score": 3.22,
+      "tier": "AI-Buildable"
+    }
+  ],
+  "Wave 2 (Q3-Q4)": [
+    {
+      "name": "Champ",
+      "score": 3.15,
+      "tier": "AI-Emerging"
+    },
+    {
+      "name": "TrackIt Transit",
+      "score": 3.13,
+      "tier": "AI-Emerging"
+    },
+    {
+      "name": "NexTalk",
+      "score": 3.01,
+      "tier": "AI-Emerging"
+    },
+    {
+      "name": "Thought Foundry",
+      "score": 2.92,
+      "tier": "AI-Emerging"
+    },
+    {
+      "name": "Spokane",
+      "score": 2.9,
+      "tier": "AI-Emerging"
+    },
+    {
+      "name": "Primate",
+      "score": 2.86,
+      "tier": "AI-Emerging"
+    },
+    {
+      "name": "ThingTech",
+      "score": 2.8,
+      "tier": "AI-Emerging"
+    }
+  ],
+  "Wave 3 (Year 2)": [
+    {
+      "name": "Dash",
+      "score": 2.66,
+      "tier": "AI-Emerging"
+    },
+    {
+      "name": "AutoTime",
+      "score": 2.57,
+      "tier": "AI-Emerging"
+    }
+  ]
+}

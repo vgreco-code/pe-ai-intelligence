@@ -38,10 +38,10 @@ env/
 .env.local
 .env.*.local
 
-# Database
-*.db
+# Database (but keep the seed DB for demo)
 *.sqlite
 *.sqlite3
+# !data/solen.db is tracked for demo purposes
 
 # ML Models
 data/models/*.pkl
