@@ -1,0 +1,2968 @@
+[
+  {
+    "name": "Cairn Applications",
+    "vertical": "Waste Hauling SaaS",
+    "composite_score": 2.86,
+    "tier": "AI-Emerging",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.0,
+      "workflow_digitization": 3.1,
+      "infrastructure": 2.0,
+      "competitive_position": 3.2,
+      "revenue_upside": 3.2,
+      "margin_upside": 3.1,
+      "org_readiness": 2.5,
+      "risk_compliance": 2.6
+    },
+    "research_evidence": {
+      "data_quality": {
+        "score": 3.0,
+        "confidence": 0.6,
+        "positive_signals_found": [
+          "api",
+          "integration",
+          "analytics",
+          "dashboard",
+          "reporting"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "platform is a Google Maps integration that overlays your work orders, containers, and driver locations",
+          "| Real-time dispatch board | Map view showing all trucks, routes, progress, exceptions |",
+          "Go to your Customerly Dashboard \u2192 Project Settings \u2192 Feedback \u2192 Net Promoter Score"
+        ],
+        "sources": [
+          "https://www.curbwaste.com/waste-hauler-technology-software-faq",
+          "https://www.businesswire.com/news/home/20260127219850/en/Solen-Software-Group-Acquires-Cairn-Applications-Inc.",
+          "https://finance.yahoo.com/news/solen-software-group-acquires-cairn-131500350.html",
+          "https://www.customerly.io/blog/how-to-get-more-reviews-on-g2"
+        ],
+        "query_used": "\"Cairn Applications\" waste hauling software data analytics reporting API integration"
+      },
+      "workflow_digitization": {
+        "score": 3.1,
+        "confidence": 0.62,
+        "positive_signals_found": [
+          "automation",
+          "workflow",
+          "digital",
+          "streamline",
+          "automate"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Cairn\u2019s flagship platform, Box Tracker, is designed to manage the operational backbone of independent dumpster companies, including order management, logistics, billing, merchant services, asset and employee tracking, na",
+          "Box Tracker now features a double entry book keeping system that automates your billing process",
+          "This same year we began integrating automated billing and merchant services into the platforms adding considerably to Cairn's bottom line"
+        ],
+        "sources": [
+          "https://www.curbwaste.com/waste-hauler-technology-software-faq",
+          "https://www.businesswire.com/news/home/20260127219850/en/Solen-Software-Group-Acquires-Cairn-Applications-Inc.",
+          "https://www.solensoftwaregroup.com/companies",
+          "https://www.customerly.io/blog/how-to-get-more-reviews-on-g2"
+        ],
+        "query_used": "\"Cairn Applications\" waste hauling software workflow automation digital processes"
+      },
+      "infrastructure": {
+        "score": 2.0,
+        "confidence": 0.41,
+        "positive_signals_found": [
+          "cloud",
+          "saas",
+          "mobile"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "--Solen Software Group announced the acquisition of Cairn Applications Inc, a provider of cloud software purpose-built for the waste hauling industry",
+          "The AMCS Platform is a cloud-based enterprise solution created with the particular goal of reducing complex sector-specific hardships in the global waste and recycling industries",
+          "Founded in 2008 by James Moser, Cairn Applications develops SaaS products used by waste operators across the United States and Canada"
+        ],
+        "sources": [
+          "https://www.curbwaste.com/waste-hauler-technology-software-faq",
+          "https://www.businesswire.com/news/home/20260127219850/en/Solen-Software-Group-Acquires-Cairn-Applications-Inc.",
+          "https://finance.yahoo.com/news/solen-software-group-acquires-cairn-131500350.html",
+          "https://www.customerly.io/blog/how-to-get-more-reviews-on-g2"
+        ],
+        "query_used": "\"Cairn Applications\" waste hauling software cloud SaaS platform technology stack"
+      },
+      "competitive_position": {
+        "score": 3.2,
+        "confidence": 0.64,
+        "positive_signals_found": [
+          "market leader",
+          "trusted by",
+          "customers",
+          "clients",
+          "users"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "> \"We\u2019re excited to work with Solen\u2019s team of experts to build a better future for our customers and our employees",
+          "Designed to run on a desktop, laptop, or tablet computer, this application facilitates the tracking of customers and work orders",
+          "The Box Tracker project was also upgraded and we began onboarding waste hauling clients all over the US and Canada"
+        ],
+        "sources": [
+          "https://www.curbwaste.com/waste-hauler-technology-software-faq",
+          "https://www.scrappzero.com/resources/post/best-waste-management-software-2025",
+          "https://www.businesswire.com/news/home/20260127219850/en/Solen-Software-Group-Acquires-Cairn-Applications-Inc.",
+          "https://www.customerly.io/blog/how-to-get-more-reviews-on-g2"
+        ],
+        "query_used": "\"Cairn Applications\" waste hauling software market customers reviews competitors G2 Capterra"
+      },
+      "revenue_upside": {
+        "score": 3.2,
+        "confidence": 0.64,
+        "positive_signals_found": [
+          "ai",
+          "machine learning",
+          "predictive",
+          "intelligent",
+          "automated"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Cairn\u2019s flagship platform, Box Tracker, is designed to manage the operational backbone of independent dumpster companies, including order management, logistics, billing, merchant services, asset and employee tracking, na",
+          "##### Waste removal companies that want to increase their container turnover and therefore their profits",
+          "In 2014 Cairn signed a 46 year contract to deliver a white label version of the Box Tracker project exclusively for the Bin There Dump That franchisees"
+        ],
+        "sources": [
+          "https://www.curbwaste.com/waste-hauler-technology-software-faq",
+          "https://www.businesswire.com/news/home/20260127219850/en/Solen-Software-Group-Acquires-Cairn-Applications-Inc.",
+          "https://www.linkedin.com/pulse/in-depth-waste-hauling-software-market-analysis-2026-2033-hm0xe",
+          "https://www.customerly.io/blog/how-to-get-more-reviews-on-g2"
+        ],
+        "query_used": "\"Cairn Applications\" waste hauling software AI machine learning features product roadmap"
+      },
+      "margin_upside": {
+        "score": 3.1,
+        "confidence": 0.62,
+        "positive_signals_found": [
+          "efficiency",
+          "roi",
+          "automate",
+          "optimize",
+          "savings"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Cairn\u2019s flagship platform, Box Tracker, is designed to manage the operational backbone of independent dumpster companies, including order management, logistics, billing, merchant services, asset and employee tracking, na",
+          "Box Tracker now features a double entry book keeping system that automates your billing process",
+          "This same year we began integrating automated billing and merchant services into the platforms adding considerably to Cairn's bottom line"
+        ],
+        "sources": [
+          "https://www.curbwaste.com/waste-hauler-technology-software-faq",
+          "https://www.businesswire.com/news/home/20260127219850/en/Solen-Software-Group-Acquires-Cairn-Applications-Inc.",
+          "https://finance.yahoo.com/news/solen-software-group-acquires-cairn-131500350.html",
+          "https://evreka.co/blog/waste-management-software-roi-2025-buyers-guide/"
+        ],
+        "query_used": "\"Cairn Applications\" waste hauling software efficiency automation cost savings ROI"
+      },
+      "org_readiness": {
+        "score": 2.5,
+        "confidence": 0.5,
+        "positive_signals_found": [
+          "technology",
+          "developer",
+          "api",
+          "platform",
+          "tech"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Cairn\u2019s flagship platform, Box Tracker, is designed to manage the operational backbone of independent dumpster companies, including order management, logistics, billing, merchant services, asset and employee tracking, na",
+          "platform is a Google Maps integration that overlays your work orders, containers, and driver locations",
+          "This same year we began integrating automated billing and merchant services into the platforms adding considerably to Cairn's bottom line"
+        ],
+        "sources": [
+          "https://www.curbwaste.com/waste-hauler-technology-software-faq",
+          "https://www.businesswire.com/news/home/20260127219850/en/Solen-Software-Group-Acquires-Cairn-Applications-Inc.",
+          "https://www.solensoftwaregroup.com/companies",
+          "https://finance.yahoo.com/news/solen-software-group-acquires-cairn-131500350.html"
+        ],
+        "query_used": "\"Cairn Applications\" waste hauling software engineering team hiring technology"
+      },
+      "risk_compliance": {
+        "score": 2.6,
+        "confidence": 0.52,
+        "positive_signals_found": [
+          "compliant",
+          "security",
+          "audit",
+          "regulatory",
+          "secure"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Our platform handles everything from payment collection to tax management, ensuring a smooth and compliant payout process",
+          "Compensation planning software that supports global teams with robust, secure tools for salary, bonus, and equity administration",
+          "A CRMS management review is carried out annually with the Board which includes the outcome of the internal audit of CRMS application also performed annually"
+        ],
+        "sources": [
+          "https://www.curbwaste.com/waste-hauler-technology-software-faq",
+          "https://www.cairns.qld.gov.au/__data/assets/pdf_file/0012/699762/19-CAIRNS-REGIONAL-COUNCIL-OPERATIONAL-PLAN-AND-ANNUAL.pdf",
+          "https://www.businesswire.com/news/home/20260127219850/en/Solen-Software-Group-Acquires-Cairn-Applications-Inc.",
+          "https://www.solensoftwaregroup.com/companies"
+        ],
+        "query_used": "\"Cairn Applications\" waste hauling software security compliance certifications regulations"
+      }
+    },
+    "data_source": "tavily_real_v2"
+  },
+  {
+    "name": "SMRTR",
+    "vertical": "F&B Supply Chain Compliance",
+    "composite_score": 3.03,
+    "tier": "AI-Emerging",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.2,
+      "workflow_digitization": 2.9,
+      "infrastructure": 1.9,
+      "competitive_position": 3.2,
+      "revenue_upside": 3.2,
+      "margin_upside": 3.3,
+      "org_readiness": 3.3,
+      "risk_compliance": 3.0
+    },
+    "research_evidence": {
+      "data_quality": {
+        "score": 3.2,
+        "confidence": 0.64,
+        "positive_signals_found": [
+          "api",
+          "integration",
+          "analytics",
+          "dashboard",
+          "reporting"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "] SMRTR\u2019s software solutions are designed with integration in mind, which allows businesses to maintain a high level of compatibility with their current systems",
+          "Real-time tracking and visibility are essential features of modern electronic Proof of Delivery (ePOD) software, particularly in the context of compliance and automation software",
+          "Fast keyword search and real-time visibility across all compliance metrics\u2014from anywhere"
+        ],
+        "sources": [
+          "https://smrtrsolutions.com/2024/01/03/what-are-the-features-of-this-software/",
+          "https://smrtrsolutions.com/2024/02/25/what-management-system-do-we-have-in-place-to-ensure-compliance/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/",
+          "https://smrtrsolutions.com/2024/03/03/what-is-the-role-of-technology-in-supply-chain-transparency-initiatives/"
+        ],
+        "query_used": "SMRTR supply chain compliance automation software data analytics reporting API integration"
+      },
+      "workflow_digitization": {
+        "score": 2.9,
+        "confidence": 0.58,
+        "positive_signals_found": [
+          "automation",
+          "workflow",
+          "digital",
+          "streamline",
+          "end-to-end"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "SMRTR\u2019s compliance and automation software is designed with robust security features to safeguard the data and operations of businesses",
+          "Automation software, such as that provided by SMRTR, often includes features that streamline and optimize various business processes",
+          "In conclusion, the incorporation of these key features into SMRTR\u2019s modern ePOD software represents a significant leap forward in the realms of compliance and automation software"
+        ],
+        "sources": [
+          "https://smrtrsolutions.com/2024/06/11/what-role-does-epod-play-in-supply-chain-management/",
+          "https://smrtrsolutions.com/about-us/",
+          "https://smrtrsolutions.com/2024/01/03/what-are-the-features-of-this-software/",
+          "https://smrtrsolutions.com/2024/02/25/what-management-system-do-we-have-in-place-to-ensure-compliance/"
+        ],
+        "query_used": "SMRTR supply chain compliance automation software workflow automation digital processes"
+      },
+      "infrastructure": {
+        "score": 1.9,
+        "confidence": 0.37,
+        "positive_signals_found": [
+          "cloud",
+          "saas"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "This flexible, cloud-based platform is tailored to meet your evolving needs, empowering you to automate vendor requirements, boost traceability, and maintain robust compliance effortlessly",
+          "SMRTR's supply chain compliance automation software is a cloud-based SaaS platform featuring robust security, real-time compliance monitoring, and integration capabilities"
+        ],
+        "sources": [
+          "https://smrtrsolutions.com/regulatory-compliance/",
+          "https://smrtrsolutions.com/2024/01/03/what-are-the-features-of-this-software/",
+          "https://smrtrsolutions.com/2024/04/04/how-do-supply-chain-security-protocols-help-with-regulatory-compliance/",
+          "https://smrtrsolutions.com/2024/02/25/what-management-system-do-we-have-in-place-to-ensure-compliance/"
+        ],
+        "query_used": "SMRTR supply chain compliance automation software cloud SaaS platform technology stack"
+      },
+      "competitive_position": {
+        "score": 3.2,
+        "confidence": 0.64,
+        "positive_signals_found": [
+          "customers",
+          "users",
+          "g2",
+          "capterra",
+          "growing"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "These security measures likely include encryption of data both at rest and in transit, strong user authentication protocols, and role-based access control (RBAC) systems to ensure that only authorized users can access ce",
+          "Automation reduces the risk of human error and bias, leading to a more objective process for applying disciplinary actions",
+          "# Focused on G2 and Capterra for 6 months"
+        ],
+        "sources": [
+          "https://www.scrut.io/post/best-compliance-automation-software",
+          "https://smrtrsolutions.com/2024/01/03/what-are-the-features-of-this-software/",
+          "https://smrtrsolutions.com/2024/02/25/what-management-system-do-we-have-in-place-to-ensure-compliance/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "SMRTR supply chain compliance automation software market customers reviews competitors G2 Capterra"
+      },
+      "revenue_upside": {
+        "score": 3.2,
+        "confidence": 0.64,
+        "positive_signals_found": [
+          "ai",
+          "machine learning",
+          "predictive",
+          "intelligent",
+          "automated"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "These security measures likely include encryption of data both at rest and in transit, strong user authentication protocols, and role-based access control (RBAC) systems to ensure that only authorized users can access ce",
+          "When applied to supplier compliance, this automation not only improves efficiency but also enhances visibility across the entire supply chain",
+          "By leveraging the latest in technology, SMRTR is poised to help businesses navigate the complexities of supply chain management with greater ease and efficiency"
+        ],
+        "sources": [
+          "https://smrtrsolutions.com/2024/01/03/what-are-the-features-of-this-software/",
+          "https://smrtrsolutions.com/2024/02/25/what-management-system-do-we-have-in-place-to-ensure-compliance/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/",
+          "https://smrtrsolutions.com/2024/03/03/what-is-the-role-of-technology-in-supply-chain-transparency-initiatives/"
+        ],
+        "query_used": "SMRTR supply chain compliance automation software AI machine learning features product roadmap"
+      },
+      "margin_upside": {
+        "score": 3.3,
+        "confidence": 0.66,
+        "positive_signals_found": [
+          "efficiency",
+          "roi",
+          "automate",
+          "optimize",
+          "self-service"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "A well-designed UI not only makes the software intuitive and easy to use but also reduces training time and improves user adoption rates",
+          "Automation software, such as that provided by SMRTR, often includes features that streamline and optimize various business processes",
+          "By leveraging the latest in technology, SMRTR is poised to help businesses navigate the complexities of supply chain management with greater ease and efficiency"
+        ],
+        "sources": [
+          "https://smrtrsolutions.com/2024/05/08/are-the-systems-scalable-to-meet-the-needs-of-growing-businesses/",
+          "https://smrtrsolutions.com/2024/01/03/what-are-the-features-of-this-software/",
+          "https://smrtrsolutions.com/2024/02/25/what-management-system-do-we-have-in-place-to-ensure-compliance/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "SMRTR supply chain compliance automation software efficiency automation cost savings ROI"
+      },
+      "org_readiness": {
+        "score": 3.3,
+        "confidence": 0.66,
+        "positive_signals_found": [
+          "engineering",
+          "technology",
+          "developer",
+          "api",
+          "platform"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "We\u2019ll explore how SMRTR\u20ac\u2122s solutions are crafted to offer a seamless experience that caters to users of varying technical expertise",
+          "In conclusion, the incorporation of these key features into SMRTR\u2019s modern ePOD software represents a significant leap forward in the realms of compliance and automation software",
+          "Entered reviewers in monthly $100 gift card drawing (within platform rules)"
+        ],
+        "sources": [
+          "https://smrtrsolutions.com/html-sitemap/",
+          "https://smrtrsolutions.com/about-us/",
+          "https://smrtrsolutions.com/2024/01/03/what-are-the-features-of-this-software/",
+          "https://smrtrsolutions.com/2024/02/25/what-management-system-do-we-have-in-place-to-ensure-compliance/"
+        ],
+        "query_used": "SMRTR supply chain compliance automation software engineering team hiring technology"
+      },
+      "risk_compliance": {
+        "score": 3.0,
+        "confidence": 0.6,
+        "positive_signals_found": [
+          "compliant",
+          "security",
+          "encryption",
+          "audit",
+          "regulatory"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "SMRTR\u2019s compliance and automation software is designed with robust security features to safeguard the data and operations of businesses",
+          "When applied to supplier compliance, this automation not only improves efficiency but also enhances visibility across the entire supply chain",
+          "In conclusion, the incorporation of these key features into SMRTR\u2019s modern ePOD software represents a significant leap forward in the realms of compliance and automation software"
+        ],
+        "sources": [
+          "https://smrtrsolutions.com/2024/04/03/how-does-supply-chain-security-tie-into-overall-corporate-security/",
+          "https://smrtrsolutions.com/2024/04/06/what-standards-does-a-supplier-certification-program-follow/",
+          "https://smrtrsolutions.com/2024/01/03/what-are-the-features-of-this-software/",
+          "https://smrtrsolutions.com/2024/04/04/how-do-supply-chain-security-protocols-help-with-regulatory-compliance/"
+        ],
+        "query_used": "SMRTR supply chain compliance automation software security compliance certifications regulations"
+      }
+    },
+    "data_source": "tavily_real_v2"
+  },
+  {
+    "name": "ViaPeople",
+    "vertical": "HR Performance Management",
+    "composite_score": 2.72,
+    "tier": "AI-Emerging",
+    "wave": 3,
+    "pillar_scores": {
+      "data_quality": 2.8,
+      "workflow_digitization": 2.5,
+      "infrastructure": 2.7,
+      "competitive_position": 3.2,
+      "revenue_upside": 2.4,
+      "margin_upside": 3.3,
+      "org_readiness": 2.5,
+      "risk_compliance": 2.8
+    },
+    "research_evidence": {
+      "data_quality": {
+        "score": 2.8,
+        "confidence": 0.56,
+        "positive_signals_found": [
+          "api",
+          "integration",
+          "analytics",
+          "reporting",
+          "real-time"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Performance Management Product Features: \u2022 \u0007 Easy to Use \u2013 The viaPeople team of Industrial-Organizational Psychologists has designed the PM module with robust features and powerful reporting while still maintaining its ",
+          "| Pre-built integrations with major HCM systems | Seamlessly connects with platforms like Workday, SAP SuccessFactors, ADP to aggregate employee data from across systems; accelerates implementation |",
+          "| Pre-built integrations with major HCM systems | Seamlessly connects with platforms like Workday, SAP SuccessFactors, ADP to aggregate employee data from across systems; accelerates implementation |"
+        ],
+        "sources": [
+          "https://cdn2.hubspot.net/hub/91252/file-15924936-pdf/performance_management_feature_summary.pdf",
+          "https://www.flowlu.com/blog/productivity/best-freelance-websites/",
+          "https://www.viapeople.com/performance-management",
+          "https://www.viapeople.com/blog/a-strategic-approach-to-linking-performance-management-to-compensation-decisions"
+        ],
+        "query_used": "ViaPeople performance management HR software data analytics reporting API integration"
+      },
+      "workflow_digitization": {
+        "score": 2.5,
+        "confidence": 0.5,
+        "positive_signals_found": [
+          "automation",
+          "workflow",
+          "streamline",
+          "no-code",
+          "automate"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "com PERFORMANCE MANAGEMENT Performance Management Product Features (continued): \u2022 \u0007 Flexible Workflow & Customized Forms \u2013 Our technology can facilitate a variety of workflows and automate your current evaluation forms",
+          "viaPeople is an employee management software solution designed to help companies optimize and automate HR processes",
+          "viaPeople is an employee management software solution designed to help companies optimize and automate HR processes"
+        ],
+        "sources": [
+          "https://cdn2.hubspot.net/hub/91252/file-15924936-pdf/performance_management_feature_summary.pdf",
+          "https://www.flowlu.com/blog/productivity/best-freelance-websites/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/",
+          "https://www3.technologyevaluation.com/solutions/56793/viapeople?srsltid=AfmBOoqAqbFNIg6lLveAQz0TNqKCjDKULKvNUJU7NCw5ZPwao0yEkQr-"
+        ],
+        "query_used": "ViaPeople performance management HR software workflow automation digital processes"
+      },
+      "infrastructure": {
+        "score": 2.7,
+        "confidence": 0.55,
+        "positive_signals_found": [
+          "cloud",
+          "saas",
+          "hosted",
+          "web-based",
+          "mobile"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "\u2022 \u0007 Fully-Hosted/Web-Based \u2013 All of the viaPeople software modules are hosted and delivered via the Internet allowing for easy access",
+          "] | Mobile access | Managers and employees can access self-service HR features, approve requests, manage tasks etc",
+          "] | Mobile access | Managers and employees can access self-service HR features, approve requests, manage tasks etc"
+        ],
+        "sources": [
+          "https://cdn2.hubspot.net/hub/91252/file-15924936-pdf/performance_management_feature_summary.pdf",
+          "https://www.flowlu.com/blog/productivity/best-freelance-websites/",
+          "https://www.viapeople.com/performance-management",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "ViaPeople performance management HR software cloud SaaS platform technology stack"
+      },
+      "competitive_position": {
+        "score": 3.2,
+        "confidence": 0.64,
+        "positive_signals_found": [
+          "customers",
+          "clients",
+          "users",
+          "g2",
+          "capterra"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Our solution can grow with you and take on whatever form best meets your needs",
+          "| Intuitive and user-friendly interface | Easy for both HR professionals and employees to use without extensive training, leading to quick user adoption and productivity gains |",
+          "| Intuitive and user-friendly interface | Easy for both HR professionals and employees to use without extensive training, leading to quick user adoption and productivity gains |"
+        ],
+        "sources": [
+          "https://cdn2.hubspot.net/hub/91252/file-15924936-pdf/performance_management_feature_summary.pdf",
+          "https://www.flowlu.com/blog/productivity/best-freelance-websites/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/",
+          "https://www.softwareworld.co/competitors/viapeople-alternatives/"
+        ],
+        "query_used": "ViaPeople performance management HR software market customers reviews competitors G2 Capterra"
+      },
+      "revenue_upside": {
+        "score": 2.4,
+        "confidence": 0.47,
+        "positive_signals_found": [
+          "ai",
+          "predictive",
+          "automated",
+          "recommendation"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Performance Management Product Features: \u2022 \u0007 Easy to Use \u2013 The viaPeople team of Industrial-Organizational Psychologists has designed the PM module with robust features and powerful reporting while still maintaining its ",
+          "| Intuitive and user-friendly interface | Easy for both HR professionals and employees to use without extensive training, leading to quick user adoption and productivity gains |",
+          "| Intuitive and user-friendly interface | Easy for both HR professionals and employees to use without extensive training, leading to quick user adoption and productivity gains |"
+        ],
+        "sources": [
+          "https://cdn2.hubspot.net/hub/91252/file-15924936-pdf/performance_management_feature_summary.pdf",
+          "https://www.flowlu.com/blog/productivity/best-freelance-websites/",
+          "https://www.viapeople.com/performance-management",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "ViaPeople performance management HR software AI machine learning features product roadmap"
+      },
+      "margin_upside": {
+        "score": 3.3,
+        "confidence": 0.66,
+        "positive_signals_found": [
+          "save time",
+          "efficiency",
+          "roi",
+          "automate",
+          "eliminate"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "com PERFORMANCE MANAGEMENT Performance Management Product Features (continued): \u2022 \u0007 Flexible Workflow & Customized Forms \u2013 Our technology can facilitate a variety of workflows and automate your current evaluation forms",
+          "viaPeople is an employee management software solution designed to help companies optimize and automate HR processes",
+          "viaPeople is an employee management software solution designed to help companies optimize and automate HR processes"
+        ],
+        "sources": [
+          "https://cdn2.hubspot.net/hub/91252/file-15924936-pdf/performance_management_feature_summary.pdf",
+          "https://www.flowlu.com/blog/productivity/best-freelance-websites/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/",
+          "https://www3.technologyevaluation.com/solutions/56793/viapeople?srsltid=AfmBOorHqYK9QBIQIS0vKZT3ivLblKZDQceUbU4CtsLYlpjdLjr8Pd8s"
+        ],
+        "query_used": "ViaPeople performance management HR software efficiency automation cost savings ROI"
+      },
+      "org_readiness": {
+        "score": 2.5,
+        "confidence": 0.5,
+        "positive_signals_found": [
+          "technology",
+          "api",
+          "platform",
+          "agile",
+          "tech"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "com PERFORMANCE MANAGEMENT Performance Management Product Features (continued): \u2022 \u0007 Flexible Workflow & Customized Forms \u2013 Our technology can facilitate a variety of workflows and automate your current evaluation forms",
+          "By centralizing these HR processes in one integrated platform, viaPeople helps companies save time, ensure compliance, and improve employee experience",
+          "By centralizing these HR processes in one integrated platform, viaPeople helps companies save time, ensure compliance, and improve employee experience"
+        ],
+        "sources": [
+          "https://cdn2.hubspot.net/hub/91252/file-15924936-pdf/performance_management_feature_summary.pdf",
+          "https://www.flowlu.com/blog/productivity/best-freelance-websites/",
+          "https://www.selecthub.com/p/talent-management-system/viapeople/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "ViaPeople performance management HR software engineering team hiring technology"
+      },
+      "risk_compliance": {
+        "score": 2.8,
+        "confidence": 0.56,
+        "positive_signals_found": [
+          "soc 2",
+          "security",
+          "encryption",
+          "audit",
+          "regulatory"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "By centralizing these HR processes in one integrated platform, viaPeople helps companies save time, ensure compliance, and improve employee experience",
+          "By centralizing these HR processes in one integrated platform, viaPeople helps companies save time, ensure compliance, and improve employee experience",
+          "By centralizing these HR processes in one integrated platform, viaPeople helps companies save time, ensure compliance, and improve employee experience"
+        ],
+        "sources": [
+          "https://cdn2.hubspot.net/hub/91252/file-15924936-pdf/performance_management_feature_summary.pdf",
+          "https://www.flowlu.com/blog/productivity/best-freelance-websites/",
+          "https://www.viapeople.com/performance-management",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "ViaPeople performance management HR software security compliance certifications regulations"
+      }
+    },
+    "data_source": "tavily_real_v2"
+  },
+  {
+    "name": "Track Star",
+    "vertical": "Fleet Telematics SaaS",
+    "composite_score": 2.98,
+    "tier": "AI-Emerging",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.4,
+      "workflow_digitization": 2.1,
+      "infrastructure": 2.2,
+      "competitive_position": 3.4,
+      "revenue_upside": 3.4,
+      "margin_upside": 3.3,
+      "org_readiness": 2.7,
+      "risk_compliance": 2.6
+    },
+    "research_evidence": {
+      "data_quality": {
+        "score": 3.4,
+        "confidence": 0.68,
+        "positive_signals_found": [
+          "api",
+          "integration",
+          "analytics",
+          "dashboard",
+          "reporting"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Explore utility telematics \u2192  [Likes: 4, Comments: 0]; Track Star | GPS, Telematics & Enterprise Asset Management (2mo): Managing vehicles, assets, crews, compliance, and reporting shouldn\u2019t require five platforms",
+          "Manage assets, vehicles, and equipment through a single, unified dashboard that delivers real-time data, instant alerts, and seamless integrations with enterprise asset management and telematics systems",
+          "Track every vehicle and piece of equipment in real-time with precise GPS coordinates, speed monitoring, and instant status updates"
+        ],
+        "sources": [
+          "https://www.linkedin.com/company/trackstar-gps-telematics",
+          "https://www.verizonconnect.com/solutions/gps-fleet-tracking-software/",
+          "https://www.trustpilot.com/review/trakstar.com",
+          "https://www.trustpilot.com/review/www.g2.com?page=9"
+        ],
+        "query_used": "Track Star fleet telematics GPS tracking software data analytics reporting API integration"
+      },
+      "workflow_digitization": {
+        "score": 2.1,
+        "confidence": 0.5,
+        "positive_signals_found": [
+          "automation",
+          "workflow",
+          "digital",
+          "streamline",
+          "automate"
+        ],
+        "negative_signals_found": [
+          "manual entry"
+        ],
+        "evidence_snippets": [
+          "WHY TRACK STAR \u2192 All-in-One Platform \u2014 One system for GPS, telematics, EAM, video, compliance & analytics \u2192 Mixed Fleet Management \u2014 Track any asset: different vehicle manufacturers, equipment types, fuel sources, and no",
+          "From route optimization to compliance reporting, every workflow runs faster, smarter, and more securely",
+          "## Streamlined fleet tracking gets more done with fewer resources"
+        ],
+        "sources": [
+          "https://www.linkedin.com/company/trackstar-gps-telematics",
+          "https://www.verizonconnect.com/solutions/gps-fleet-tracking-software/",
+          "https://www.trustpilot.com/review/trakstar.com",
+          "https://www.trustpilot.com/review/www.g2.com?page=9"
+        ],
+        "query_used": "Track Star fleet telematics GPS tracking software workflow automation digital processes"
+      },
+      "infrastructure": {
+        "score": 2.2,
+        "confidence": 0.44,
+        "positive_signals_found": [
+          "cloud",
+          "saas",
+          "web-based",
+          "mobile"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "With 25+ years of experience and roots dating back to the earliest days of GPS innovation, we deliver mission-critical insights for field operations, mobile assets, and infrastructure across thousands of vehicles and equ",
+          "Monitor and manage your mobile workforce with ease",
+          "With 25+ years of experience and roots dating back to the earliest days of GPS innovation, we deliver mission-critical insights for field operations, mobile assets, and infrastructure across thousands of vehicles and equ"
+        ],
+        "sources": [
+          "https://www.linkedin.com/company/trackstar-gps-telematics",
+          "https://www.verizonconnect.com/solutions/gps-fleet-tracking-software/",
+          "https://www.trustpilot.com/review/trakstar.com",
+          "https://www.trustpilot.com/review/www.g2.com?page=9"
+        ],
+        "query_used": "Track Star fleet telematics GPS tracking software cloud SaaS platform technology stack"
+      },
+      "competitive_position": {
+        "score": 3.4,
+        "confidence": 0.68,
+        "positive_signals_found": [
+          "trusted by",
+          "customers",
+          "clients",
+          "users",
+          "g2"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Learn more \u2192  [Likes: 3, Comments: 1]; Track Star | GPS, Telematics & Enterprise Asset Management (2mo 2mo): Partnering with Solen Software Group means we can do more for you, our customers",
+          "Our all-in-one platform combines GPS tracking, telematics, and enterprise asset management to give you complete visibility and control over your entire fleet, making it one of the most complete fleet management tracking ",
+          "Get a near real-time, 360-degree view of your fleet\u2019s daily operations, so you can help reduce costs, increase productivity, stay on top of vehicle maintenance, and make the most of every business day"
+        ],
+        "sources": [
+          "https://www.linkedin.com/company/trackstar-gps-telematics",
+          "https://www.verizonconnect.com/solutions/gps-fleet-tracking-software/",
+          "https://www.trustpilot.com/review/trakstar.com",
+          "https://www.trustpilot.com/review/www.g2.com?page=9"
+        ],
+        "query_used": "Track Star fleet telematics GPS tracking software market customers reviews competitors G2 Capterra"
+      },
+      "revenue_upside": {
+        "score": 3.4,
+        "confidence": 0.69,
+        "positive_signals_found": [
+          "ai",
+          "machine learning",
+          "predictive",
+          "intelligent",
+          "automated"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Track Star\u2019s Fleet Management Software unifies: \u2611\ufe0f Real-time GPS tracking \u2611\ufe0f Telematics & diagnostics \u2611\ufe0f Maintenance & lifecycle management \u2611\ufe0f Safety insights & video telematics \u2611\ufe0f Reporting, compliance, and analytics On",
+          "From route optimization to compliance reporting, every workflow runs faster, smarter, and more securely",
+          "Improve driver safety with edge AI that provides real-time coaching and on-demand video evidence to reduce claims"
+        ],
+        "sources": [
+          "https://www.linkedin.com/company/trackstar-gps-telematics",
+          "https://www.verizonconnect.com/solutions/gps-fleet-tracking-software/",
+          "https://www.trustpilot.com/review/trakstar.com",
+          "https://gomotive.com/blog/ai-telematics-guide/"
+        ],
+        "query_used": "Track Star fleet telematics GPS tracking software AI machine learning features product roadmap"
+      },
+      "margin_upside": {
+        "score": 3.3,
+        "confidence": 0.66,
+        "positive_signals_found": [
+          "reduce costs",
+          "efficiency",
+          "roi",
+          "automate",
+          "eliminate"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "With their support, we're investing more in product development, rolling out new fleet tracking features faster, [",
+          "Built to eliminate data silos and simplify operations, Track Star connects with virtually any IoT device or in-vehicle modem to provide consistent, accurate, and actionable insights",
+          "Improve driver safety with edge AI that provides real-time coaching and on-demand video evidence to reduce claims"
+        ],
+        "sources": [
+          "https://www.linkedin.com/company/trackstar-gps-telematics",
+          "https://www.verizonconnect.com/solutions/gps-fleet-tracking-software/",
+          "https://www.trustpilot.com/review/trakstar.com",
+          "https://www.trustpilot.com/review/www.g2.com?page=9"
+        ],
+        "query_used": "Track Star fleet telematics GPS tracking software efficiency automation cost savings ROI"
+      },
+      "org_readiness": {
+        "score": 2.7,
+        "confidence": 0.54,
+        "positive_signals_found": [
+          "engineering",
+          "technology",
+          "api",
+          "platform",
+          "innovation"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Explore utility telematics \u2192  [Likes: 4, Comments: 0]; Track Star | GPS, Telematics & Enterprise Asset Management (2mo): Managing vehicles, assets, crews, compliance, and reporting shouldn\u2019t require five platforms",
+          "Track Star\u2019s GPS fleet tracking platform brings every moving piece of your operation into one clear view",
+          "One platform for fleet management software"
+        ],
+        "sources": [
+          "https://www.linkedin.com/company/trackstar-gps-telematics",
+          "https://www.verizonconnect.com/solutions/gps-fleet-tracking-software/",
+          "https://www.trustpilot.com/review/trakstar.com",
+          "https://www.trustpilot.com/review/www.g2.com?page=9"
+        ],
+        "query_used": "Track Star fleet telematics GPS tracking software engineering team hiring technology"
+      },
+      "risk_compliance": {
+        "score": 2.6,
+        "confidence": 0.52,
+        "positive_signals_found": [
+          "compliant",
+          "security",
+          "audit",
+          "privacy",
+          "secure"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Explore utility telematics \u2192  [Likes: 4, Comments: 0]; Track Star | GPS, Telematics & Enterprise Asset Management (2mo): Managing vehicles, assets, crews, compliance, and reporting shouldn\u2019t require five platforms",
+          "From route optimization to compliance reporting, every workflow runs faster, smarter, and more securely",
+          "Receive instant notifications when assets enter or exit designated zones, ensuring compliance and preventing unauthorized use"
+        ],
+        "sources": [
+          "https://www.linkedin.com/company/trackstar-gps-telematics",
+          "https://www.verizonconnect.com/solutions/gps-fleet-tracking-software/",
+          "https://www.trustpilot.com/review/trakstar.com",
+          "https://www.trustpilot.com/review/www.g2.com?page=9"
+        ],
+        "query_used": "Track Star fleet telematics GPS tracking software security compliance certifications regulations"
+      }
+    },
+    "data_source": "tavily_real_v2"
+  },
+  {
+    "name": "FMSI",
+    "vertical": "Credit Union Staffing Analytics",
+    "composite_score": 2.43,
+    "tier": "AI-Limited",
+    "wave": 3,
+    "pillar_scores": {
+      "data_quality": 3.6,
+      "workflow_digitization": 2.3,
+      "infrastructure": 2.2,
+      "competitive_position": 2.4,
+      "revenue_upside": 1.7,
+      "margin_upside": 3.3,
+      "org_readiness": 2.7,
+      "risk_compliance": 1.7
+    },
+    "research_evidence": {
+      "data_quality": {
+        "score": 3.6,
+        "confidence": 0.71,
+        "positive_signals_found": [
+          "api",
+          "integration",
+          "analytics",
+          "dashboard",
+          "reporting"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "FMSI OneCX consists of four key products; FMSI Appointments, FMSI Lobby, FMSI Analytics, and FMSI Staff Scheduler",
+          "FMSI OneCX consists of four key products; FMSI Appointments, FMSI Lobby, FMSI Analytics, and FMSI Staff Scheduler",
+          "The platform\u2019s appointment scheduling, lobby management, staff scheduling, and analytics tools work together to give branch teams and their leaders a clearer, more accurate picture of how branches are actually performing"
+        ],
+        "sources": [
+          "https://leadiq.com/c/financial-management-software-inc-fmsi/5a1d85c92400002400603074",
+          "https://www.lansingstatejournal.com/press-release/story/990911/fmsi-relaunches-bringing-renewed-focus-to-branch-performance-for-banks-and-credit-unions/",
+          "https://www.courier-journal.com/press-release/story/143520/fmsi-relaunches-bringing-renewed-focus-to-branch-performance-for-banks-and-credit-unions/",
+          "https://getlatka.com/companies/smartr365.com/competitors"
+        ],
+        "query_used": "FMSI credit union staffing analytics software data analytics reporting API integration"
+      },
+      "workflow_digitization": {
+        "score": 2.3,
+        "confidence": 0.54,
+        "positive_signals_found": [
+          "automation",
+          "workflow",
+          "digital",
+          "streamline",
+          "automate"
+        ],
+        "negative_signals_found": [
+          "fax"
+        ],
+        "evidence_snippets": [
+          "Offering appointment scheduling and lobby management solutions designed specifically for retail banks and credit unions",
+          "The platform\u2019s appointment scheduling, lobby management, staff scheduling, and analytics tools work together to give branch teams and their leaders a clearer, more accurate picture of how branches are actually performing",
+          "The platform\u2019s appointment scheduling, lobby management, staff scheduling, and analytics tools work together to give branch teams and their leaders a clearer, more accurate picture of how branches are actually performing"
+        ],
+        "sources": [
+          "https://leadiq.com/c/financial-management-software-inc-fmsi/5a1d85c92400002400603074",
+          "https://www.lansingstatejournal.com/press-release/story/990911/fmsi-relaunches-bringing-renewed-focus-to-branch-performance-for-banks-and-credit-unions/",
+          "https://www.courier-journal.com/press-release/story/143520/fmsi-relaunches-bringing-renewed-focus-to-branch-performance-for-banks-and-credit-unions/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "FMSI credit union staffing analytics software workflow automation digital processes"
+      },
+      "infrastructure": {
+        "score": 2.2,
+        "confidence": 0.44,
+        "positive_signals_found": [
+          "cloud",
+          "azure",
+          "saas",
+          "scalable"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Strong Industry Presence FMSI operates within the financial services industry, providing SaaS solutions that enhance team collaboration, productivity, and customer experience for financial institutions",
+          "(FMSI) uses 8 technology products and services including Cloudflare, WooCommerce, Microsoft 365, and more",
+          "FMSI's cloud SaaS platform uses Microsoft Azure, New Relic, and Cloudflare for infrastructure"
+        ],
+        "sources": [
+          "https://leadiq.com/c/financial-management-software-inc-fmsi/5a1d85c92400002400603074",
+          "https://www.lansingstatejournal.com/press-release/story/990911/fmsi-relaunches-bringing-renewed-focus-to-branch-performance-for-banks-and-credit-unions/",
+          "https://www.courier-journal.com/press-release/story/143520/fmsi-relaunches-bringing-renewed-focus-to-branch-performance-for-banks-and-credit-unions/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "FMSI credit union staffing analytics software cloud SaaS platform technology stack"
+      },
+      "competitive_position": {
+        "score": 2.4,
+        "confidence": 0.56,
+        "positive_signals_found": [
+          "customers",
+          "clients",
+          "users",
+          "g2",
+          "capterra"
+        ],
+        "negative_signals_found": [
+          "acquired"
+        ],
+        "evidence_snippets": [
+          "In our latest FMSI blog, \u201cWhy Most Branch Analytics Dashboards Fail Executive Teams,\u201d we break down where dashboards fall short and what bank and credit union leaders actually need to make confident decisions: clarity, c",
+          "The company serves community banks and credit unions across the United States and will share additional updates on product developments, new clients, and partnerships in the months ahead",
+          "The company serves community banks and credit unions across the United States and will share additional updates on product developments, new clients, and partnerships in the months ahead"
+        ],
+        "sources": [
+          "https://leadiq.com/c/financial-management-software-inc-fmsi/5a1d85c92400002400603074",
+          "https://www.lansingstatejournal.com/press-release/story/990911/fmsi-relaunches-bringing-renewed-focus-to-branch-performance-for-banks-and-credit-unions/",
+          "https://www.courier-journal.com/press-release/story/143520/fmsi-relaunches-bringing-renewed-focus-to-branch-performance-for-banks-and-credit-unions/",
+          "https://www.finopotamus.com/post/fmsi-relaunches-bringing-renewed-focus-to-branch-performance-for-banks-and-credit-unions"
+        ],
+        "query_used": "FMSI credit union staffing analytics software market customers reviews competitors G2 Capterra"
+      },
+      "revenue_upside": {
+        "score": 1.7,
+        "confidence": 0.43,
+        "positive_signals_found": [
+          "ai",
+          "smart",
+          "forecast"
+        ],
+        "negative_signals_found": [
+          "legacy"
+        ],
+        "evidence_snippets": [
+          "Offering appointment scheduling and lobby management solutions designed specifically for retail banks and credit unions",
+          "This focus presents opportunities to target banks, credit unions, and retail financial services seeking modern workforce management tools",
+          "One reminder email if they didn't review within 2 weeks"
+        ],
+        "sources": [
+          "https://leadiq.com/c/financial-management-software-inc-fmsi/5a1d85c92400002400603074",
+          "https://www.lansingstatejournal.com/press-release/story/990911/fmsi-relaunches-bringing-renewed-focus-to-branch-performance-for-banks-and-credit-unions/",
+          "https://www.courier-journal.com/press-release/story/143520/fmsi-relaunches-bringing-renewed-focus-to-branch-performance-for-banks-and-credit-unions/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "FMSI credit union staffing analytics software AI machine learning features product roadmap"
+      },
+      "margin_upside": {
+        "score": 3.3,
+        "confidence": 0.66,
+        "positive_signals_found": [
+          "reduce costs",
+          "efficiency",
+          "roi",
+          "automate",
+          "optimize"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "(FMSI) (2w Edited): We\u2019re pleased to announce a new partnership between FMSI and Posh Together, we\u2019re bringing conversational AI and workforce analytics to credit unions and community banks, helping teams automate routin",
+          "] Technology Edge Using cloud-based and enterprise-grade solutions like Microsoft Azure, New Relic, and Cloudflare indicates a modern, scalable infrastructure that appeals to prospects prioritizing security, real-time an",
+          "FMSI's staffing analytics software provides data-driven insights to optimize workforce management for banks and credit unions"
+        ],
+        "sources": [
+          "https://leadiq.com/c/financial-management-software-inc-fmsi/5a1d85c92400002400603074",
+          "https://www.lansingstatejournal.com/press-release/story/990911/fmsi-relaunches-bringing-renewed-focus-to-branch-performance-for-banks-and-credit-unions/",
+          "https://www.courier-journal.com/press-release/story/143520/fmsi-relaunches-bringing-renewed-focus-to-branch-performance-for-banks-and-credit-unions/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "FMSI credit union staffing analytics software efficiency automation cost savings ROI"
+      },
+      "org_readiness": {
+        "score": 2.7,
+        "confidence": 0.54,
+        "positive_signals_found": [
+          "engineering",
+          "technology",
+          "api",
+          "platform",
+          "modern"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "FMSI provides easy-to-use, yet sophisticated, software-as-a-service solutions, under the FMSI OneCX platform",
+          "FMSI provides easy-to-use, yet sophisticated, software-as-a-service solutions, under the FMSI OneCX platform",
+          "FMSI\u2019s platform addresses a challenge that affects branches of all sizes: staff often have the skills to deepen consumer relationships, but lack the context and preparation time to do so consistently"
+        ],
+        "sources": [
+          "https://leadiq.com/c/financial-management-software-inc-fmsi/5a1d85c92400002400603074",
+          "https://www.lansingstatejournal.com/press-release/story/990911/fmsi-relaunches-bringing-renewed-focus-to-branch-performance-for-banks-and-credit-unions/",
+          "https://www.courier-journal.com/press-release/story/143520/fmsi-relaunches-bringing-renewed-focus-to-branch-performance-for-banks-and-credit-unions/",
+          "https://www.finopotamus.com/post/fmsi-relaunches-bringing-renewed-focus-to-branch-performance-for-banks-and-credit-unions"
+        ],
+        "query_used": "FMSI credit union staffing analytics software engineering team hiring technology"
+      },
+      "risk_compliance": {
+        "score": 1.7,
+        "confidence": 0.34,
+        "positive_signals_found": [
+          "security"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "] Technology Edge Using cloud-based and enterprise-grade solutions like Microsoft Azure, New Relic, and Cloudflare indicates a modern, scalable infrastructure that appeals to prospects prioritizing security, real-time an",
+          "Train staff to implement the credit union's information security program",
+          "It complies with FFIEC regulations for information security, including staff training and regular testing"
+        ],
+        "sources": [
+          "https://leadiq.com/c/financial-management-software-inc-fmsi/5a1d85c92400002400603074",
+          "https://www.lansingstatejournal.com/press-release/story/990911/fmsi-relaunches-bringing-renewed-focus-to-branch-performance-for-banks-and-credit-unions/",
+          "https://www.courier-journal.com/press-release/story/143520/fmsi-relaunches-bringing-renewed-focus-to-branch-performance-for-banks-and-credit-unions/",
+          "https://bsaaml.ffiec.gov/docs/manual/regulations/12CFR748.htm"
+        ],
+        "query_used": "FMSI credit union staffing analytics software security compliance certifications regulations"
+      }
+    },
+    "data_source": "tavily_real_v2"
+  },
+  {
+    "name": "Champ",
+    "vertical": "Aviation MRO Software",
+    "composite_score": 2.94,
+    "tier": "AI-Emerging",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.2,
+      "workflow_digitization": 3.3,
+      "infrastructure": 2.0,
+      "competitive_position": 3.0,
+      "revenue_upside": 3.0,
+      "margin_upside": 3.3,
+      "org_readiness": 3.1,
+      "risk_compliance": 2.4
+    },
+    "research_evidence": {
+      "data_quality": {
+        "score": 3.2,
+        "confidence": 0.64,
+        "positive_signals_found": [
+          "api",
+          "integration",
+          "analytics",
+          "reporting",
+          "real-time"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Advanced MRO software incorporates predictive maintenance capabilities, using data analytics to forecast potential issues and prevent unexpected breakdowns",
+          "Application Programming Interfaces (or APIs) are an incredibly powerful tool for anyone in the air cargo industry",
+          "## Transform your day-to-day operations with real-time insights and control"
+        ],
+        "sources": [
+          "https://www.trustpilot.com/review/www.g2.com",
+          "https://www.champ.aero/",
+          "https://www.ramco.com/blog/aviation/mro-aviation-software-to-face-supply-chain-challenges",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "Champ Cargosystems aviation MRO software data analytics reporting API integration"
+      },
+      "workflow_digitization": {
+        "score": 3.3,
+        "confidence": 0.66,
+        "positive_signals_found": [
+          "automation",
+          "workflow",
+          "digital",
+          "streamline",
+          "eliminate manual"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Aviation MRO software streamlines maintenance processes by automating tasks such as work order creation, scheduling, and tracking",
+          "APIs open digital doorways, allowing you to unlock the full potential of your business",
+          "Modernize your workflows using our advanced tools for accurate resource planning, minimized disruptions, and greater operational efficiency"
+        ],
+        "sources": [
+          "https://www.trustpilot.com/review/www.g2.com",
+          "https://www.champ.aero/",
+          "https://www.ramco.com/blog/aviation/mro-aviation-software-to-face-supply-chain-challenges",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "Champ Cargosystems aviation MRO software workflow automation digital processes"
+      },
+      "infrastructure": {
+        "score": 2.0,
+        "confidence": 0.41,
+        "positive_signals_found": [
+          "cloud",
+          "saas",
+          "mobile"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Eliminate delays with data sent directly from mobile devices into Cargospot Handling",
+          "Eliminate delays with data sent directly from mobile devices into Cargospot Handling",
+          "Champ Cargosystems' MRO software platform uses cloud-based SaaS technology for air cargo operations, with integrations and real-time data analytics"
+        ],
+        "sources": [
+          "https://www.trustpilot.com/review/www.g2.com",
+          "https://www.champ.aero/",
+          "https://www.ramco.com/blog/aviation/mro-aviation-software-to-face-supply-chain-challenges",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "Champ Cargosystems aviation MRO software cloud SaaS platform technology stack"
+      },
+      "competitive_position": {
+        "score": 3.0,
+        "confidence": 0.6,
+        "positive_signals_found": [
+          "market leader",
+          "customers",
+          "users",
+          "g2",
+          "capterra"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "The air cargo industry is a community full of diverse systems and portals\u2014make the most of them",
+          "CHAMP Cargosystems is the industry's leading end-to-end software provider for all stakeholders: Airlines, GHAs, GSAs, Freight Forwarders, Software Houses, and Shippers",
+          "# Focused on G2 and Capterra for 6 months"
+        ],
+        "sources": [
+          "https://www.trustpilot.com/review/www.g2.com",
+          "https://www.champ.aero/",
+          "https://www.ramco.com/blog/aviation/mro-aviation-software-to-face-supply-chain-challenges",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "Champ Cargosystems aviation MRO software market customers reviews competitors G2 Capterra"
+      },
+      "revenue_upside": {
+        "score": 3.0,
+        "confidence": 0.6,
+        "positive_signals_found": [
+          "ai",
+          "machine learning",
+          "predictive",
+          "intelligent",
+          "automated"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Aviation MRO software facilitates comprehensive maintenance planning, covering both scheduled and unscheduled maintenance activities",
+          "Application Programming Interfaces (or APIs) are an incredibly powerful tool for anyone in the air cargo industry",
+          "# Optimize your air cargo operations with CHAMP"
+        ],
+        "sources": [
+          "https://www.trustpilot.com/review/www.g2.com",
+          "https://www.champ.aero/",
+          "https://www.ramco.com/blog/aviation/mro-aviation-software-to-face-supply-chain-challenges",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "Champ Cargosystems aviation MRO software AI machine learning features product roadmap"
+      },
+      "margin_upside": {
+        "score": 3.3,
+        "confidence": 0.66,
+        "positive_signals_found": [
+          "reduce costs",
+          "efficiency",
+          "roi",
+          "automate",
+          "eliminate"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "With the aviation industry facing constant pressure to improve efficiency and reduce costs, adopting robust MRO software provides a strategic advantage",
+          "# Optimize your air cargo operations with CHAMP",
+          "Companies get up-to-the-minute inventory tracking, predictive maintenance scheduling, and automated procurement processes"
+        ],
+        "sources": [
+          "https://www.trustpilot.com/review/www.g2.com",
+          "https://www.champ.aero/",
+          "https://www.ramco.com/blog/aviation/mro-aviation-software-to-face-supply-chain-challenges",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "Champ Cargosystems aviation MRO software efficiency automation cost savings ROI"
+      },
+      "org_readiness": {
+        "score": 3.1,
+        "confidence": 0.62,
+        "positive_signals_found": [
+          "engineering",
+          "technology",
+          "api",
+          "platform",
+          "modern"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Application Programming Interfaces (or APIs) are an incredibly powerful tool for anyone in the air cargo industry",
+          "Modernize your workflows using our advanced tools for accurate resource planning, minimized disruptions, and greater operational efficiency",
+          "Modern MRO software is packed with robust features"
+        ],
+        "sources": [
+          "https://www.linkedin.com/company/champ-cargosystems",
+          "https://www.trustpilot.com/review/www.g2.com",
+          "https://www.champ.aero/",
+          "https://www.ramco.com/blog/aviation/mro-aviation-software-to-face-supply-chain-challenges"
+        ],
+        "query_used": "Champ Cargosystems aviation MRO software engineering team hiring technology"
+      },
+      "risk_compliance": {
+        "score": 2.4,
+        "confidence": 0.49,
+        "positive_signals_found": [
+          "security",
+          "audit",
+          "regulatory",
+          "privacy",
+          "compliance"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Aviation MRO software plays a critical role in maintaining airworthiness, safety, and compliance",
+          "Support dangerous goods and special cargo compliance using mobile industry checklists",
+          "Reddit Rules    Privacy Policy    User Agreement    Accessibility   Reddit, Inc"
+        ],
+        "sources": [
+          "https://www.trustpilot.com/review/www.g2.com",
+          "https://www.champ.aero/products/champ-insights/champ-academy",
+          "https://www.champ.aero/",
+          "https://www.ramco.com/blog/aviation/mro-aviation-software-to-face-supply-chain-challenges"
+        ],
+        "query_used": "Champ Cargosystems aviation MRO software security compliance certifications regulations"
+      }
+    },
+    "data_source": "tavily_real_v2"
+  },
+  {
+    "name": "TrackIt Transit",
+    "vertical": "Public Transit Software",
+    "composite_score": 2.55,
+    "tier": "AI-Emerging",
+    "wave": 3,
+    "pillar_scores": {
+      "data_quality": 2.6,
+      "workflow_digitization": 2.1,
+      "infrastructure": 2.2,
+      "competitive_position": 2.6,
+      "revenue_upside": 2.8,
+      "margin_upside": 2.9,
+      "org_readiness": 2.5,
+      "risk_compliance": 2.6
+    },
+    "research_evidence": {
+      "data_quality": {
+        "score": 2.6,
+        "confidence": 0.52,
+        "positive_signals_found": [
+          "api",
+          "integration",
+          "analytics",
+          "dashboard",
+          "reporting"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Dashboards feature can be enhanced further for user ease",
+          "Get instant alerts when attendance issues arise and see clear reporting on which employees need attention",
+          "Trackit\u2019s safety offerings include accident management, mandatory employee safety reporting, training management, form compliance, safety notifications, and drug and alcohol reporting making recording keeping for PTASP C"
+        ],
+        "sources": [
+          "https://trackittransit.com/modules/",
+          "https://system.trakitgps.com/manual/TrackIt%20User%20Manual%208.23%20compressed.pdf",
+          "https://www.swydo.com/blog/best-time-tracking-apps/",
+          "https://softwarefinder.com/fleet-management-software/trackit-manager"
+        ],
+        "query_used": "TrackIt Transit public transit software scheduling data analytics reporting API integration"
+      },
+      "workflow_digitization": {
+        "score": 2.1,
+        "confidence": 0.58,
+        "positive_signals_found": [
+          "automation",
+          "workflow",
+          "digital",
+          "paperless",
+          "automate"
+        ],
+        "negative_signals_found": [
+          "paper-based",
+          "manual entry"
+        ],
+        "evidence_snippets": [
+          "Trackit Manager is an all-in-one SaaS platform built specifically for the transit industry to facilitate communication and workflow between departments",
+          "Handle your scheduling directly in Trackit with the Scheduling Module",
+          "Trackit provides a cost effective means to go paperless by providing a way to easily store data in the cloud"
+        ],
+        "sources": [
+          "https://trackittransit.com/modules/",
+          "https://system.trakitgps.com/manual/TrackIt%20User%20Manual%208.23%20compressed.pdf",
+          "https://www.swydo.com/blog/best-time-tracking-apps/",
+          "https://pulse2.com/solen-acquires-transit-software-provider-trackit/"
+        ],
+        "query_used": "TrackIt Transit public transit software scheduling workflow automation digital processes"
+      },
+      "infrastructure": {
+        "score": 2.2,
+        "confidence": 0.44,
+        "positive_signals_found": [
+          "cloud",
+          "aws",
+          "saas",
+          "hosted"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Trackit Manager is an all-in-one SaaS platform built specifically for the transit industry to facilitate communication and workflow between departments",
+          "Trackit is transit-specific SaaS software that enables your agency to work together",
+          "Trackit provides a cost effective means to go paperless by providing a way to easily store data in the cloud"
+        ],
+        "sources": [
+          "https://trackittransit.com/modules/",
+          "https://system.trakitgps.com/manual/TrackIt%20User%20Manual%208.23%20compressed.pdf",
+          "https://www.swydo.com/blog/best-time-tracking-apps/",
+          "https://pulse2.com/solen-acquires-transit-software-provider-trackit/"
+        ],
+        "query_used": "TrackIt Transit public transit software scheduling cloud SaaS platform technology stack"
+      },
+      "competitive_position": {
+        "score": 2.6,
+        "confidence": 0.52,
+        "positive_signals_found": [
+          "customers",
+          "users",
+          "g2",
+          "capterra",
+          "most"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Users may face software bugs occasionally",
+          "REPORTS payroll 54 SCHEDULE TrackIt\u2019s SCHEDULE feature allows users to build their company schedule based on the parameters established in the PAYROLL SETUP",
+          "Spend less: Access all of Trackit\u2019s features for a low subscription fee without limits on users, data, forms, locations, or software licenses"
+        ],
+        "sources": [
+          "https://trackittransit.com/modules/",
+          "https://system.trakitgps.com/manual/TrackIt%20User%20Manual%208.23%20compressed.pdf",
+          "https://www.swydo.com/blog/best-time-tracking-apps/",
+          "https://softwarefinder.com/fleet-management-software/trackit-manager"
+        ],
+        "query_used": "TrackIt Transit public transit software scheduling market customers reviews competitors G2 Capterra"
+      },
+      "revenue_upside": {
+        "score": 2.8,
+        "confidence": 0.64,
+        "positive_signals_found": [
+          "ai",
+          "machine learning",
+          "predictive",
+          "intelligent",
+          "automated"
+        ],
+        "negative_signals_found": [
+          "no ai features"
+        ],
+        "evidence_snippets": [
+          "Beyond record management, the software ensures precision in meeting state and federal regulations, specifically helping agencies maintain PTASP (Public Transportation Agency Safety Plan) compliance",
+          "With automated notifications and workflow, you\u2019ll be able to stay on top of driver\u2019s license renewals, medical cards, required training and any other SOP requirements \u2013 all in one convenient place",
+          "All modules are included in a license, as is training and support"
+        ],
+        "sources": [
+          "https://trackittransit.com/modules/",
+          "https://system.trakitgps.com/manual/TrackIt%20User%20Manual%208.23%20compressed.pdf",
+          "https://www.swydo.com/blog/best-time-tracking-apps/",
+          "https://www.rabbittransit.org/wp-content/uploads/2026/03/AI-and-Machine-Learning-Are-Shaping-the-Future-of-Public-Transit-_-Urban-Institute.pdf"
+        ],
+        "query_used": "TrackIt Transit public transit software scheduling AI machine learning features product roadmap"
+      },
+      "margin_upside": {
+        "score": 2.9,
+        "confidence": 0.58,
+        "positive_signals_found": [
+          "save time",
+          "efficiency",
+          "automate",
+          "eliminate",
+          "optimize"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "While its application version might slow down during peak hours, the platform's ability to eliminate paper silos is a critical advantage",
+          "Trackit can handle inputs like seniority, route efficiency, dead heading, and other transit specific scheduling needs to ensure you have the right schedule for your drivers",
+          "Ensure precision and eliminate costly guesswork by keeping compliance factors always up to date"
+        ],
+        "sources": [
+          "https://trackittransit.com/modules/",
+          "https://system.trakitgps.com/manual/TrackIt%20User%20Manual%208.23%20compressed.pdf",
+          "https://www.swydo.com/blog/best-time-tracking-apps/",
+          "https://www.ecolane.com/transit-software-implementation-plan"
+        ],
+        "query_used": "TrackIt Transit public transit software scheduling efficiency automation cost savings ROI"
+      },
+      "org_readiness": {
+        "score": 2.5,
+        "confidence": 0.5,
+        "positive_signals_found": [
+          "engineering",
+          "technology",
+          "api",
+          "platform",
+          "tech"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "While its application version might slow down during peak hours, the platform's ability to eliminate paper silos is a critical advantage",
+          "It offers a paperless system and rapid implementation",
+          "Entered reviewers in monthly $100 gift card drawing (within platform rules)"
+        ],
+        "sources": [
+          "https://trackittransit.com/modules/",
+          "https://system.trakitgps.com/manual/TrackIt%20User%20Manual%208.23%20compressed.pdf",
+          "https://www.swydo.com/blog/best-time-tracking-apps/",
+          "https://softwarefinder.com/fleet-management-software/trackit-manager"
+        ],
+        "query_used": "TrackIt Transit public transit software scheduling engineering team hiring technology"
+      },
+      "risk_compliance": {
+        "score": 2.6,
+        "confidence": 0.52,
+        "positive_signals_found": [
+          "compliant",
+          "audit",
+          "regulatory",
+          "privacy",
+          "secure"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Trackit Manager is a comprehensive transit management software designed to unify operations and compliance for public transportation agencies",
+          "Keep your transit agency compliant with ease",
+          "Ensure precision and eliminate costly guesswork by keeping compliance factors always up to date"
+        ],
+        "sources": [
+          "https://trackittransit.com/modules/",
+          "https://system.trakitgps.com/manual/TrackIt%20User%20Manual%208.23%20compressed.pdf",
+          "https://www.swydo.com/blog/best-time-tracking-apps/",
+          "https://pulse2.com/solen-acquires-transit-software-provider-trackit/"
+        ],
+        "query_used": "TrackIt Transit public transit software scheduling security compliance certifications regulations"
+      }
+    },
+    "data_source": "tavily_real_v2"
+  },
+  {
+    "name": "NexTalk",
+    "vertical": "Accessibility Communications",
+    "composite_score": 2.41,
+    "tier": "AI-Limited",
+    "wave": 3,
+    "pillar_scores": {
+      "data_quality": 2.2,
+      "workflow_digitization": 2.3,
+      "infrastructure": 2.2,
+      "competitive_position": 3.2,
+      "revenue_upside": 1.9,
+      "margin_upside": 2.7,
+      "org_readiness": 2.5,
+      "risk_compliance": 2.6
+    },
+    "research_evidence": {
+      "data_quality": {
+        "score": 2.2,
+        "confidence": 0.45,
+        "positive_signals_found": [
+          "api",
+          "integration",
+          "reporting",
+          "real-time"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Ontario in Black with a capital O followed by a black and white trinitity logo",
+          "Additionally, NexTalk's commitment to security and customer support ensures a seamless and secure integration process",
+          "NexTalk provides accessibility relay communications software with API integration for compliance and inclusivity"
+        ],
+        "sources": [
+          "https://www.nextalk.com/solutions/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/",
+          "https://blog.nextalk.com/stay-compliant-build-trust-accessible-communication-standards-for-utilities-in-2025",
+          "https://blog.nextalk.com/the-benefits-of-secure-ada-compliant-communication-tools-for-call-centers"
+        ],
+        "query_used": "NexTalk accessibility relay communications software data analytics reporting API integration"
+      },
+      "workflow_digitization": {
+        "score": 2.3,
+        "confidence": 0.46,
+        "positive_signals_found": [
+          "workflow",
+          "digital",
+          "automate",
+          "routing"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "The Access Suite includes TTY call management systems, which provide call routing, answering, and messaging for TTY calls",
+          "Digital Accessibility Services \u2022 Murray, UT \u2022 480 followers \u2022 11-50 employees",
+          "Their software automates digital processes for better communication with deaf and hard-of-hearing individuals"
+        ],
+        "sources": [
+          "https://www.nextalk.com/solutions/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/",
+          "https://blog.nextalk.com/the-benefits-of-secure-ada-compliant-communication-tools-for-call-centers",
+          "https://www.linkedin.com/company/nextalk"
+        ],
+        "query_used": "NexTalk accessibility relay communications software workflow automation digital processes"
+      },
+      "infrastructure": {
+        "score": 2.2,
+        "confidence": 0.44,
+        "positive_signals_found": [
+          "cloud",
+          "aws",
+          "saas",
+          "scalable"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Providing accessible communication in call centers is beneficial for customers and is necessary for businesses to comply with ADA regulations and data privacy laws",
+          "As a reliable SaaS partner, NexTalk offers comprehensive support and maintenance services, including regular updates, troubleshooting, and technical assistance",
+          "NexTalk is a cloud SaaS platform for accessible communication, using technologies like Bootstrap and Google Analytics for its tech stack"
+        ],
+        "sources": [
+          "https://www.nextalk.com/solutions/",
+          "https://blog.nextalk.com/how-a-reliable-saas-partner-can-make-providing-direct-dial-tty-easy?hsCtaTracking=7e3eea75-ff3c-4a76-ab10-459d4b2080aa%7Cab74b74a-fb2b-415a-9714-fbbf17282ab4",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/",
+          "https://rocketreach.co/nextalk-technology-stack_b5ce2090f42e0964"
+        ],
+        "query_used": "NexTalk accessibility relay communications software cloud SaaS platform technology stack"
+      },
+      "competitive_position": {
+        "score": 3.2,
+        "confidence": 0.64,
+        "positive_signals_found": [
+          "customers",
+          "clients",
+          "users",
+          "g2",
+          "capterra"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Providing accessible communication in call centers is beneficial for customers and is necessary for businesses to comply with ADA regulations and data privacy laws",
+          "Once the NexTalk client software program is installed on a networked computer, this computer becomes accessible to the TTY devices used by the deaf and other NexTalk users for both incoming and outgoing calls and message",
+          "NexTalk\u2019s Access Remote Interpreting is the most comprehensive and complete in-person communication platform for the deaf, hard of hearing, and non-English speakers"
+        ],
+        "sources": [
+          "https://www.nextalk.com/solutions/",
+          "https://rocketreach.co/nextalk-competitors_b41e8b5dff775c1d",
+          "https://growjo.com/company/NexTalk",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "NexTalk accessibility relay communications software market customers reviews competitors G2 Capterra"
+      },
+      "revenue_upside": {
+        "score": 1.9,
+        "confidence": 0.39,
+        "positive_signals_found": [
+          "ai",
+          "machine learning"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "It is not possible to \"hack\" into a network via NexTalk because the underlying support for such access is simply not contained in the NexTalk product",
+          "Our software demonstrates your firm\u2019s commitment to inclusivity and accessibility, allowing you to instantly communicate with all of your customers while remaining compliant with federal ADA requirements",
+          "Our Access Government package bundles NexTalk's most important tools into one, complete system that allows you to communicate with deaf, hearing-impaired, and non-English speakers quickly and conveniently"
+        ],
+        "sources": [
+          "https://www.nextalk.com/solutions/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/",
+          "https://blog.nextalk.com/the-benefits-of-secure-ada-compliant-communication-tools-for-call-centers",
+          "https://blog.nextalk.com/"
+        ],
+        "query_used": "NexTalk accessibility relay communications software AI machine learning features product roadmap"
+      },
+      "margin_upside": {
+        "score": 2.7,
+        "confidence": 0.54,
+        "positive_signals_found": [
+          "efficiency",
+          "roi",
+          "eliminate",
+          "optimize",
+          "faster"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "This eliminates the middleman traditionally needed to reach your deaf and hard-of-hearing customers keeping all conversations private and secure",
+          "Optimized G2 and Capterra profiles (description, screenshots, pricing)",
+          "Incentivized  Verified User  Analyst  Chose Capterra  Capterra is well known, more traditional, and more focused on the software segment (different from trust pilot), and the descriptions are well summarized and optimize"
+        ],
+        "sources": [
+          "https://www.nextalk.com/solutions/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/",
+          "https://blog.nextalk.com/the-benefits-of-secure-ada-compliant-communication-tools-for-call-centers",
+          "https://www.nextalk.com/wp-content/uploads/2021/11/Security_NexTalk8_b-1.pdf"
+        ],
+        "query_used": "NexTalk accessibility relay communications software efficiency automation cost savings ROI"
+      },
+      "org_readiness": {
+        "score": 2.5,
+        "confidence": 0.5,
+        "positive_signals_found": [
+          "engineering",
+          "technology",
+          "api",
+          "platform",
+          "tech"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "The challenges call centers face in providing accessible communication can be overcome with the right technology solutions",
+          "NexTalk\u2019s Access Remote Interpreting is the most comprehensive and complete in-person communication platform for the deaf, hard of hearing, and non-English speakers",
+          "A platform that demonstrates your inclusivity as a company"
+        ],
+        "sources": [
+          "https://www.nextalk.com/solutions/",
+          "https://www.nextalk.com/careers/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/",
+          "https://blog.nextalk.com/the-benefits-of-secure-ada-compliant-communication-tools-for-call-centers"
+        ],
+        "query_used": "NexTalk accessibility relay communications software engineering team hiring technology"
+      },
+      "risk_compliance": {
+        "score": 2.6,
+        "confidence": 0.52,
+        "positive_signals_found": [
+          "compliant",
+          "security",
+          "regulatory",
+          "privacy",
+          "secure"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "NexTalk\u2019s Access Suite is a software suite designed to make communication effortless, convenient, and secure for individuals who are deaf, hard of hearing, or non-English speakers",
+          "Page 1 of 8 NexTalk, Inc WHITE PAPER \"NexTalk SECURITY ISSUES\" A",
+          "Our software demonstrates your firm\u2019s commitment to inclusivity and accessibility, allowing you to instantly communicate with all of your customers while remaining compliant with federal ADA requirements"
+        ],
+        "sources": [
+          "https://www.nextalk.com/solutions/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/",
+          "https://blog.nextalk.com/the-benefits-of-secure-ada-compliant-communication-tools-for-call-centers",
+          "https://www.nextalk.com/wp-content/uploads/2021/11/Security_NexTalk8_b-1.pdf"
+        ],
+        "query_used": "NexTalk accessibility relay communications software security compliance certifications regulations"
+      }
+    },
+    "data_source": "tavily_real_v2"
+  },
+  {
+    "name": "Thought Foundry",
+    "vertical": "Government Decision Support",
+    "composite_score": 2.84,
+    "tier": "AI-Emerging",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.6,
+      "workflow_digitization": 2.9,
+      "infrastructure": 2.7,
+      "competitive_position": 3.0,
+      "revenue_upside": 2.2,
+      "margin_upside": 3.1,
+      "org_readiness": 2.9,
+      "risk_compliance": 4.1
+    },
+    "research_evidence": {
+      "data_quality": {
+        "score": 3.6,
+        "confidence": 0.71,
+        "positive_signals_found": [
+          "api",
+          "integration",
+          "analytics",
+          "dashboard",
+          "reporting"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Palantir\u2019s software has created opportunities for a new level of intelligence for police, military operations and immigration officials, generating concerns about data privacy and government surveillance",
+          "However, it provides the fuel to power seemingly innumerable AI solutions which enable data-driven decision-making",
+          "Thought Foundry's government analytics software supports data-driven decision-making and AI integration, enhancing collaboration between humans and AI"
+        ],
+        "sources": [
+          "https://www.palantir.com/platforms/foundry/data-integration/",
+          "https://www.copy.ai/go-to-market-tools/foundry-review",
+          "https://www.palantir.com/",
+          "https://en.wikipedia.org/wiki/Palantir"
+        ],
+        "query_used": "Thought Foundry government analytics decision support software data analytics reporting API integration"
+      },
+      "workflow_digitization": {
+        "score": 2.9,
+        "confidence": 0.58,
+        "positive_signals_found": [
+          "automation",
+          "workflow",
+          "digital",
+          "streamline",
+          "end-to-end"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "The transformative partnership potential of human-AI collaboration will allow experts in many fields including education, healthcare and planning to realise the significant power and value of AI automation, while retaini",
+          "Automate operations, from the factory floor to the front lines /0",
+          "After integrating data from a client\u2019s existing data lakes and warehouses, an operational layer known as Palantir Ontology creates a digital twin of the organization that connects digital assets to real-world assets like"
+        ],
+        "sources": [
+          "https://www.lokad.com/review-of-palantir-com/",
+          "https://icma.org/articles/pm-magazine/beyond-digitization-why-workflow-automation-now-essential-local-government-modernization",
+          "https://www.copy.ai/go-to-market-tools/foundry-review",
+          "https://appian.com/blog/acp/public-sector/government-workflow-automation"
+        ],
+        "query_used": "Thought Foundry government analytics decision support software workflow automation digital processes"
+      },
+      "infrastructure": {
+        "score": 2.7,
+        "confidence": 0.55,
+        "positive_signals_found": [
+          "cloud",
+          "aws",
+          "azure",
+          "saas",
+          "microservices"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "We\u2019ve offered Foundry and Gotham as a SaaS model via public cloud providers since 2014, and today the vast majority of installations are hosted in AWS or Azure",
+          "uk Digital Marketplace \u2013 Palantir Foundry \u2018Palantir Licensing Terms and Conditions\u2019  Cloud Solution is described in Palantir\u2019s licencing terms and conditions as follow: \u201c1",
+          "Palantir Foundry is a cloud-based SaaS platform primarily used for government analytics, running on AWS and Azure"
+        ],
+        "sources": [
+          "https://privacyinternational.org/sites/default/files/2020-11/All%20roads%20lead%20to%20Palantir%20with%20Palantir%20response%20v3.pdf",
+          "https://www.copy.ai/go-to-market-tools/foundry-review",
+          "https://www.palantir.com/",
+          "https://blog.palantir.com/a-sky-full-of-clouds-218b9db3f735"
+        ],
+        "query_used": "Thought Foundry government analytics decision support software cloud SaaS platform technology stack"
+      },
+      "competitive_position": {
+        "score": 3.0,
+        "confidence": 0.6,
+        "positive_signals_found": [
+          "customers",
+          "clients",
+          "users",
+          "g2",
+          "capterra"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Mind Foundry developed a framework powered by its intelligent decision architecture which allows technical and non technical users alike to work with the system in understanding how AI was used and impacted results",
+          "Palantir Foundry is used by commercial clients in industries such as healthcare, manufacturing and financial services",
+          "Thanks to the exponential growth of digitalisation, the ever-increasing demands of an \u201calways on\u201d culture, and the determination of the Government to pursue \u201cdigital by default\u201d strategies, citizens are accessing service"
+        ],
+        "sources": [
+          "https://www.copy.ai/go-to-market-tools/foundry-review",
+          "https://www.palantir.com/",
+          "https://en.wikipedia.org/wiki/Palantir",
+          "https://builtin.com/articles/what-is-palantir"
+        ],
+        "query_used": "Thought Foundry government analytics decision support software market customers reviews competitors G2 Capterra"
+      },
+      "revenue_upside": {
+        "score": 2.2,
+        "confidence": 0.51,
+        "positive_signals_found": [
+          "ai",
+          "machine learning",
+          "intelligent",
+          "forecast",
+          "artificial intelligence"
+        ],
+        "negative_signals_found": [
+          "legacy"
+        ],
+        "evidence_snippets": [
+          "Mind Foundry developed a framework powered by its intelligent decision architecture which allows technical and non technical users alike to work with the system in understanding how AI was used and impacted results",
+          "This is an interactive preview for AIP product",
+          "government, raising concerns about the potential to create a large government database"
+        ],
+        "sources": [
+          "https://www.copy.ai/go-to-market-tools/foundry-review",
+          "https://www.palantir.com/",
+          "https://d3.harvard.edu/platform-digit/submission/palantir-a-software-that-safes-and-takes-lives/",
+          "https://en.wikipedia.org/wiki/Palantir"
+        ],
+        "query_used": "Thought Foundry government analytics decision support software AI machine learning features product roadmap"
+      },
+      "margin_upside": {
+        "score": 3.1,
+        "confidence": 0.62,
+        "positive_signals_found": [
+          "efficiency",
+          "roi",
+          "automate",
+          "eliminate",
+          "optimize"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Automate operations, from the factory floor to the front lines /0",
+          "This allows the software to run simulations, automate processes and build custom applications",
+          "Integrated AI solutions can sit in front of and alongside existing data platforms and work to eliminate silos, actually enhancing performance and reliability"
+        ],
+        "sources": [
+          "https://www.lokad.com/review-of-palantir-com/",
+          "https://windowsforum.com/threads/microsoft-foundry-tei-roi-productivity-reuse-governance.404222/",
+          "https://www.copy.ai/go-to-market-tools/foundry-review",
+          "https://www.palantir.com/"
+        ],
+        "query_used": "Thought Foundry government analytics decision support software efficiency automation cost savings ROI"
+      },
+      "org_readiness": {
+        "score": 2.9,
+        "confidence": 0.58,
+        "positive_signals_found": [
+          "engineering",
+          "technology",
+          "developer",
+          "api",
+          "platform"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Mind Foundry developed a framework powered by its intelligent decision architecture which allows technical and non technical users alike to work with the system in understanding how AI was used and impacted results",
+          "2Build and manage Ontology-powered software, with a complete developer platform /0",
+          "Related ReadingWhat Trump\u2019s Tariffs Mean for Apple, Nvidia and Big Tech Hardware Manufacturing in Asia"
+        ],
+        "sources": [
+          "https://palantir.com/docs/foundry/foundry-adoption/program-overview/",
+          "https://www.copy.ai/go-to-market-tools/foundry-review",
+          "https://www.palantir.com/",
+          "https://en.wikipedia.org/wiki/Palantir"
+        ],
+        "query_used": "Thought Foundry government analytics decision support software engineering team hiring technology"
+      },
+      "risk_compliance": {
+        "score": 4.1,
+        "confidence": 0.82,
+        "positive_signals_found": [
+          "soc 2",
+          "iso 27001",
+          "hipaa",
+          "gdpr",
+          "compliant"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Palantir\u2019s software has created opportunities for a new level of intelligence for police, military operations and immigration officials, generating concerns about data privacy and government surveillance",
+          "Reddit Rules    Privacy Policy    User Agreement    Accessibility   Reddit, Inc",
+          "SOC 2 Type II: Certified for security, availability, processing integrity, confidentiality, and privacy"
+        ],
+        "sources": [
+          "https://www.truefoundry.com/docs/platform/security-and-compliance",
+          "https://www.copy.ai/go-to-market-tools/foundry-review",
+          "https://www.palantir.com/",
+          "https://en.wikipedia.org/wiki/Palantir"
+        ],
+        "query_used": "Thought Foundry government analytics decision support software security compliance certifications regulations"
+      }
+    },
+    "data_source": "tavily_real_v2"
+  },
+  {
+    "name": "Spokane",
+    "vertical": "Government ERP / Services",
+    "composite_score": 3.07,
+    "tier": "AI-Emerging",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.6,
+      "workflow_digitization": 3.5,
+      "infrastructure": 1.8,
+      "competitive_position": 3.2,
+      "revenue_upside": 3.2,
+      "margin_upside": 3.3,
+      "org_readiness": 3.1,
+      "risk_compliance": 3.2
+    },
+    "research_evidence": {
+      "data_quality": {
+        "score": 3.6,
+        "confidence": 0.71,
+        "positive_signals_found": [
+          "api",
+          "integration",
+          "analytics",
+          "dashboard",
+          "reporting"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "PackPoint is feature rich with real-time detailed packer and product information, including a payroll interface",
+          "5 Software Requirements Overview: \u2022 GIS: Esri ArcGIS \u2022 Operations: Trapeze OPS \u2022 Computer-Aided Dispatch/Automatic Vehicle Location (CAD/AVL): Vontas OnRoute \u2022 Data Warehouse and Analytics: Azure Data Warehouse, Power BI",
+          "The rapid development in software features and functionality, coupled with the new IT directive to minimize support requirements for city software applications, led to formation of a chartered project team to assess the "
+        ],
+        "sources": [
+          "https://www.spokanetransit.com/wp-content/uploads/2025/11/2025-11109-EAM-RFP.pdf",
+          "https://sssonline.com/",
+          "https://static.spokanecity.org/documents/bcc/committees/public-infrastructure-environment-sustainability/agendas/2026/02/pies-agenda-2026-02-09.pdf?ref=rangemedia.co",
+          "https://static.spokanecity.org/documents/bcc/committees/finance-technology-committee/meeting-documents/2017/02/06/fintech-meeting-materials-2017-02-06.pdf"
+        ],
+        "query_used": "Spokane government ERP services software platform data analytics reporting API integration"
+      },
+      "workflow_digitization": {
+        "score": 3.5,
+        "confidence": 0.7,
+        "positive_signals_found": [
+          "automation",
+          "workflow",
+          "digital",
+          "streamline",
+          "end-to-end"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Our ERP system streamlines every step of the packing and shipping process, giving growers, packers, and shippers greater efficiency and control",
+          "5 Software Requirements Overview: \u2022 GIS: Esri ArcGIS \u2022 Operations: Trapeze OPS \u2022 Computer-Aided Dispatch/Automatic Vehicle Location (CAD/AVL): Vontas OnRoute \u2022 Data Warehouse and Analytics: Azure Data Warehouse, Power BI",
+          "Permit workflows, online payments, and public portal"
+        ],
+        "sources": [
+          "https://www.linkedin.com/posts/guidehouse-communities-energy-and-infrastructure_spokane-county-case-study-carouselpdf-activity-7376635385923399680-A9no",
+          "https://www.spokanetransit.com/wp-content/uploads/2025/11/2025-11109-EAM-RFP.pdf",
+          "https://sssonline.com/",
+          "https://static.spokanecity.org/documents/bcc/committees/public-infrastructure-environment-sustainability/agendas/2026/02/pies-agenda-2026-02-09.pdf?ref=rangemedia.co"
+        ],
+        "query_used": "Spokane government ERP services software platform workflow automation digital processes"
+      },
+      "infrastructure": {
+        "score": 1.8,
+        "confidence": 0.51,
+        "positive_signals_found": [
+          "cloud",
+          "azure",
+          "google cloud",
+          "saas",
+          "hosted"
+        ],
+        "negative_signals_found": [
+          "on-premise",
+          "on-prem"
+        ],
+        "evidence_snippets": [
+          "5 Software Requirements Overview: \u2022 GIS: Esri ArcGIS \u2022 Operations: Trapeze OPS \u2022 Computer-Aided Dispatch/Automatic Vehicle Location (CAD/AVL): Vontas OnRoute \u2022 Data Warehouse and Analytics: Azure Data Warehouse, Power BI",
+          "3 GHz, 30M Cache) 2 (eCourt, 64 GB RAM eCourtPublic) 8x 146GB 15K RPM Hot Pluggable HD Software: Windows 2012 R2 Server Standard Edition 2 MS SQL Server 2014 Standard Edition 2 MSSQL 2 Scanning Hardware Kodak 2800; Fujit",
+          "WASHINGTON GOVERNMENT CUSTOMERS Cities \u2013 Kent, Shoreline Special Purpose Districts \u2013 Benton-Franklin Health District, Spokane Regional Health District Commvault MULTI-FUNCTION SOFTWARE COST Request quote FREE TRIAL Avail"
+        ],
+        "sources": [
+          "https://www.spokanetransit.com/wp-content/uploads/2025/11/2025-11109-EAM-RFP.pdf",
+          "https://sssonline.com/",
+          "https://static.spokanecity.org/documents/bcc/committees/public-infrastructure-environment-sustainability/agendas/2026/02/pies-agenda-2026-02-09.pdf?ref=rangemedia.co",
+          "https://www.spokanecounty.gov/DocumentCenter/View/56786/Spokane-County-SLFRF-Recovery-Plan-Performance-Report-Annual-24-Final?bidId="
+        ],
+        "query_used": "Spokane government ERP services software platform cloud SaaS platform technology stack"
+      },
+      "competitive_position": {
+        "score": 3.2,
+        "confidence": 0.64,
+        "positive_signals_found": [
+          "customers",
+          "clients",
+          "users",
+          "g2",
+          "capterra"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Spokane Software develops platform-independent clients that take full advantage of the latest desktop technology and applications that utilize IBM\u00ae iSeries Systems\u2122 technology for reliability, performance, and ease of us",
+          "1 Users The number of planned EAM users are as follows: \u2022 Maintenance Analysts, Administrative Assistants and Technical Project Specialists \u2013 10 users \u2022 IT \u2013 10 users \u2022 Finance \u2013 10 users \u2022 [",
+          "# Focused on G2 and Capterra for 6 months"
+        ],
+        "sources": [
+          "https://www.spokanetransit.com/wp-content/uploads/2025/11/2025-11109-EAM-RFP.pdf",
+          "https://sssonline.com/",
+          "https://static.spokanecity.org/documents/bcc/committees/public-infrastructure-environment-sustainability/agendas/2026/02/pies-agenda-2026-02-09.pdf?ref=rangemedia.co",
+          "https://static.spokanecity.org/documents/bcc/committees/finance-technology-committee/meeting-documents/2017/02/06/fintech-meeting-materials-2017-02-06.pdf"
+        ],
+        "query_used": "Spokane government ERP services software platform market customers reviews competitors G2 Capterra"
+      },
+      "revenue_upside": {
+        "score": 3.2,
+        "confidence": 0.64,
+        "positive_signals_found": [
+          "ai",
+          "machine learning",
+          "automated",
+          "smart",
+          "recommendation"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "PackPoint is feature rich with real-time detailed packer and product information, including a payroll interface",
+          "5 Software Requirements Overview: \u2022 GIS: Esri ArcGIS \u2022 Operations: Trapeze OPS \u2022 Computer-Aided Dispatch/Automatic Vehicle Location (CAD/AVL): Vontas OnRoute \u2022 Data Warehouse and Analytics: Azure Data Warehouse, Power BI",
+          "The rapid development in software features and functionality, coupled with the new IT directive to minimize support requirements for city software applications, led to formation of a chartered project team to assess the "
+        ],
+        "sources": [
+          "https://www.spokanetransit.com/wp-content/uploads/2025/11/2025-11109-EAM-RFP.pdf",
+          "https://sssonline.com/",
+          "https://static.spokanecity.org/documents/bcc/committees/public-infrastructure-environment-sustainability/agendas/2026/02/pies-agenda-2026-02-09.pdf?ref=rangemedia.co",
+          "https://static.spokanecity.org/documents/bcc/committees/finance-technology-committee/meeting-documents/2017/02/06/fintech-meeting-materials-2017-02-06.pdf"
+        ],
+        "query_used": "Spokane government ERP services software platform AI machine learning features product roadmap"
+      },
+      "margin_upside": {
+        "score": 3.3,
+        "confidence": 0.66,
+        "positive_signals_found": [
+          "efficiency",
+          "roi",
+          "payback",
+          "automate",
+          "eliminate"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Our ERP system streamlines every step of the packing and shipping process, giving growers, packers, and shippers greater efficiency and control",
+          "Develop software solution recommendations required to eliminate any functional gaps",
+          "Whether you\u2019re launching one product or modernizing your entire tech stack, OpenGov\u2019s Public Service Platform gives you the foundation to build smarter, faster, and stronger government"
+        ],
+        "sources": [
+          "https://www.spokanetransit.com/wp-content/uploads/2025/11/2025-11109-EAM-RFP.pdf",
+          "https://sssonline.com/",
+          "https://static.spokanecity.org/documents/bcc/committees/public-infrastructure-environment-sustainability/agendas/2026/02/pies-agenda-2026-02-09.pdf?ref=rangemedia.co",
+          "https://www.progent.com/Spokane-Dynamics-GP-Great-Plains-Services.htm"
+        ],
+        "query_used": "Spokane government ERP services software platform efficiency automation cost savings ROI"
+      },
+      "org_readiness": {
+        "score": 3.1,
+        "confidence": 0.62,
+        "positive_signals_found": [
+          "technology",
+          "api",
+          "platform",
+          "ecosystem",
+          "modern"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Spokane Software develops platform-independent clients that take full advantage of the latest desktop technology and applications that utilize IBM\u00ae iSeries Systems\u2122 technology for reliability, performance, and ease of us",
+          "1 Users The number of planned EAM users are as follows: \u2022 Maintenance Analysts, Administrative Assistants and Technical Project Specialists \u2013 10 users \u2022 IT \u2013 10 users \u2022 Finance \u2013 10 users \u2022 [",
+          "DRAFT \u2013 FOR DISCUSSION PURPOSES ONLY 12/21/2016 11:48 AM Following the post-mortem on the site visits by the project team and the receipt of cost figures, the project team unanimously selected Journal Technologies, Inc"
+        ],
+        "sources": [
+          "https://www.spokanetransit.com/wp-content/uploads/2025/11/2025-11109-EAM-RFP.pdf",
+          "https://sssonline.com/",
+          "https://static.spokanecity.org/documents/bcc/committees/public-infrastructure-environment-sustainability/agendas/2026/02/pies-agenda-2026-02-09.pdf?ref=rangemedia.co",
+          "https://static.spokanecity.org/documents/bcc/committees/finance-technology-committee/meeting-documents/2017/02/06/fintech-meeting-materials-2017-02-06.pdf"
+        ],
+        "query_used": "Spokane government ERP services software platform engineering team hiring technology"
+      },
+      "risk_compliance": {
+        "score": 3.2,
+        "confidence": 0.64,
+        "positive_signals_found": [
+          "hipaa",
+          "security",
+          "audit",
+          "regulatory",
+          "privacy"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "## Comprehensive Traceability and Compliance with PackPoint [",
+          "Open APIs, GIS, extensible payments, and secure data sharing make it easy to connect your ecosystem",
+          "Reddit Rules    Privacy Policy    User Agreement    Accessibility   Reddit, Inc"
+        ],
+        "sources": [
+          "https://www.spokanetransit.com/wp-content/uploads/2025/11/2025-11109-EAM-RFP.pdf",
+          "https://sssonline.com/",
+          "https://static.spokanecity.org/documents/bcc/committees/public-infrastructure-environment-sustainability/agendas/2026/02/pies-agenda-2026-02-09.pdf?ref=rangemedia.co",
+          "https://static.spokanecity.org/documents/opendata/policies/2026/admin-5300-26-10.pdf"
+        ],
+        "query_used": "Spokane government ERP services software platform security compliance certifications regulations"
+      }
+    },
+    "data_source": "tavily_real_v2"
+  },
+  {
+    "name": "Primate",
+    "vertical": "Restaurant POS / Tech",
+    "composite_score": 3.08,
+    "tier": "AI-Emerging",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.0,
+      "workflow_digitization": 2.9,
+      "infrastructure": 2.7,
+      "competitive_position": 3.2,
+      "revenue_upside": 3.0,
+      "margin_upside": 2.9,
+      "org_readiness": 3.5,
+      "risk_compliance": 3.0
+    },
+    "research_evidence": {
+      "data_quality": {
+        "score": 3.0,
+        "confidence": 0.6,
+        "positive_signals_found": [
+          "api",
+          "integration",
+          "analytics",
+          "dashboard",
+          "reporting"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Fully customizable operator dashboards that surface the metrics, trends, and alerts that matter most; live and in context",
+          "Real-time table status updates: available, occupied, reserved, or cleaning",
+          "Our integration also supports mobile devices for kiosk ordering and admin operations - streamlining both front-of-house and back-office workflows"
+        ],
+        "sources": [
+          "https://blastra.io/blog/g2-acquires-capterra-gartner-digital-markets",
+          "https://www.primate-tech.com/",
+          "https://www.squirrelsystems.com/",
+          "https://salesplay.com/restaurant-pos-systems-a-comprehensive-overview/"
+        ],
+        "query_used": "Primate restaurant POS software technology data analytics reporting API integration"
+      },
+      "workflow_digitization": {
+        "score": 2.9,
+        "confidence": 0.58,
+        "positive_signals_found": [
+          "automation",
+          "workflow",
+          "digital",
+          "streamline",
+          "end-to-end"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Identify issues early, make data-backed decisions, and improve uptime without adding complexity to your workflow",
+          "With robust tools, the system streamlines operations, enhances customer satisfaction, improves staff coordination, and boosts overall restaurant productivity",
+          "The result was a robust ecosystem where mobile orders, kitchen workflows, loyalty data, and electronic payment systems (Apple Pay, Mada, credit cards) are synchronized seamlessly"
+        ],
+        "sources": [
+          "https://blastra.io/blog/g2-acquires-capterra-gartner-digital-markets",
+          "https://www.primate-tech.com/",
+          "https://www.ibm.com/case-studies/primanti-brothers",
+          "https://www.squirrelsystems.com/"
+        ],
+        "query_used": "Primate restaurant POS software technology workflow automation digital processes"
+      },
+      "infrastructure": {
+        "score": 2.7,
+        "confidence": 0.55,
+        "positive_signals_found": [
+          "cloud",
+          "saas",
+          "cloud-native",
+          "scalable",
+          "uptime"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Identify issues early, make data-backed decisions, and improve uptime without adding complexity to your workflow",
+          "The result was a robust ecosystem where mobile orders, kitchen workflows, loyalty data, and electronic payment systems (Apple Pay, Mada, credit cards) are synchronized seamlessly",
+          "It includes a user-friendly interface and supports cloud-based updates"
+        ],
+        "sources": [
+          "https://blastra.io/blog/g2-acquires-capterra-gartner-digital-markets",
+          "https://www.primate-tech.com/",
+          "https://salesplay.com/restaurant-pos-systems-a-comprehensive-overview/",
+          "https://www.dbvis.com/"
+        ],
+        "query_used": "Primate restaurant POS software technology cloud SaaS platform technology stack"
+      },
+      "competitive_position": {
+        "score": 3.2,
+        "confidence": 0.64,
+        "positive_signals_found": [
+          "customers",
+          "users",
+          "g2",
+          "capterra",
+          "award"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Fully customizable operator dashboards that surface the metrics, trends, and alerts that matter most; live and in context",
+          "Allows customers to customize and submit orders directly from their devices",
+          "It's a great fit for franchises and fast-growing restaurant groups that need real-time synchronization across multiple locations"
+        ],
+        "sources": [
+          "https://blastra.io/blog/g2-acquires-capterra-gartner-digital-markets",
+          "https://www.primate-tech.com/",
+          "https://salesplay.com/restaurant-pos-systems-a-comprehensive-overview/",
+          "https://www.cbinsights.com/company/capterra/alternatives-competitors"
+        ],
+        "query_used": "Primate restaurant POS software technology market customers reviews competitors G2 Capterra"
+      },
+      "revenue_upside": {
+        "score": 3.0,
+        "confidence": 0.6,
+        "positive_signals_found": [
+          "ai",
+          "machine learning",
+          "predictive",
+          "intelligent",
+          "automated"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Detailed one-line diagrams that reveal precise interconnections, supporting quick fault isolation and efficient troubleshooting",
+          "Real-time table status updates: available, occupied, reserved, or cleaning",
+          "Using end-to-end encryption, we ensured that both customer data and transaction flows remain protected, even at scale"
+        ],
+        "sources": [
+          "https://blastra.io/blog/g2-acquires-capterra-gartner-digital-markets",
+          "https://www.primate-tech.com/",
+          "https://www.restaurantonline.co.uk/Article/2026/01/26/how-ai-is-changing-restaurant-technology-and-pos-systems/",
+          "https://salesplay.com/restaurant-pos-systems-a-comprehensive-overview/"
+        ],
+        "query_used": "Primate restaurant POS software technology AI machine learning features product roadmap"
+      },
+      "margin_upside": {
+        "score": 2.9,
+        "confidence": 0.58,
+        "positive_signals_found": [
+          "efficiency",
+          "roi",
+          "automate",
+          "optimize",
+          "scalable"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "A unified picture that merges all views into a consistent, real-time operating model for faster, coordinated decision-making",
+          "Automated seating suggestions based on party size and server workload",
+          "Cloud setups also integrate seamlessly with electronic payment systems, making payments smoother and faster"
+        ],
+        "sources": [
+          "https://blastra.io/blog/g2-acquires-capterra-gartner-digital-markets",
+          "https://www.primate-tech.com/",
+          "https://salesplay.com/restaurant-pos-systems-a-comprehensive-overview/",
+          "https://www.dbvis.com/"
+        ],
+        "query_used": "Primate restaurant POS software technology efficiency automation cost savings ROI"
+      },
+      "org_readiness": {
+        "score": 3.5,
+        "confidence": 0.7,
+        "positive_signals_found": [
+          "engineering",
+          "technology",
+          "developer",
+          "api",
+          "platform"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "] By decreasing face-to-face interaction, expediting the ordering process, and lowering the need for extra employees, this technology improves efficiency and safety",
+          "The result was a robust ecosystem where mobile orders, kitchen workflows, loyalty data, and electronic payment systems (Apple Pay, Mada, credit cards) are synchronized seamlessly",
+          "A restaurant point of sale (POS) system is a crucial piece of technology that streamlines various aspects of restaurant operations, from order taking and payment processing to inventory and employee management"
+        ],
+        "sources": [
+          "https://blastra.io/blog/g2-acquires-capterra-gartner-digital-markets",
+          "https://www.primate-tech.com/",
+          "https://jobs.redlobster.com/search/jobdetails/sr-software-engineer---restaurant-systems/d655b7a4-21b3-4a48-8051-03d8159f7e48",
+          "https://salesplay.com/restaurant-pos-systems-a-comprehensive-overview/"
+        ],
+        "query_used": "Primate restaurant POS software technology engineering team hiring technology"
+      },
+      "risk_compliance": {
+        "score": 3.0,
+        "confidence": 0.6,
+        "positive_signals_found": [
+          "soc 2",
+          "compliant",
+          "security",
+          "encryption",
+          "data protection"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Lock icon with a plus sign symbolizing physical and cyber security monitoring",
+          "Using end-to-end encryption, we ensured that both customer data and transaction flows remain protected, even at scale",
+          "Better Security: Offers secure payment processing with features like encryption and PCI compliance, protecting sensitive customer and business data"
+        ],
+        "sources": [
+          "https://blastra.io/blog/g2-acquires-capterra-gartner-digital-markets",
+          "https://www.primate-tech.com/",
+          "https://www.tryotter.com/blog/restaurant-tips/why-soc-ii-compliance-is-important",
+          "https://salesplay.com/restaurant-pos-systems-a-comprehensive-overview/"
+        ],
+        "query_used": "Primate restaurant POS software technology security compliance certifications regulations"
+      }
+    },
+    "data_source": "tavily_real_v2"
+  },
+  {
+    "name": "ThingTech",
+    "vertical": "IoT Asset Tracking",
+    "composite_score": 2.59,
+    "tier": "AI-Emerging",
+    "wave": 3,
+    "pillar_scores": {
+      "data_quality": 3.4,
+      "workflow_digitization": 3.3,
+      "infrastructure": 1.4,
+      "competitive_position": 2.2,
+      "revenue_upside": 2.4,
+      "margin_upside": 3.7,
+      "org_readiness": 2.9,
+      "risk_compliance": 2.4
+    },
+    "research_evidence": {
+      "data_quality": {
+        "score": 3.4,
+        "confidence": 0.68,
+        "positive_signals_found": [
+          "api",
+          "integration",
+          "analytics",
+          "dashboard",
+          "reporting"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "In case of unauthorized movements or theft, immediate notifications are sent to the logistics team, enabling a rapid response and asset recovery",
+          "Founded in 2014 by Quinn and co-founder Brian Corcoran, ThingTech has developed an IoT platform that helps companies with a mobile workforce, like construction and utility firms, track, manage, and maintain their assets ",
+          "IoT asset tracking software can give you real-time information on your assets"
+        ],
+        "sources": [
+          "https://iotmanufacturingtech.com/production-asset-management/asset-tracking-and-utilization-systems/",
+          "https://www.trustpilot.com/review/www.g2.com?page=9",
+          "https://thenextweb.com/news/is-g2-becoming-too-powerful-for-the-software-market",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "ThingTech IoT asset tracking platform software data analytics reporting API integration"
+      },
+      "workflow_digitization": {
+        "score": 3.3,
+        "confidence": 0.66,
+        "positive_signals_found": [
+          "automation",
+          "workflow",
+          "digital",
+          "streamline",
+          "end-to-end"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "The level of monitoring that IoT asset tracking software provides can help you paint a more accurate picture of your infrastructure and pinpoint where assets are at all times, which can help you determine where change ne",
+          "This saves time and effort while improving operational workflows",
+          "Software Advice and GetApp, both part of Gartner Digital Markets, contribute additional large review inventories, though Gartner does not break out exact figures per site"
+        ],
+        "sources": [
+          "http://www.prweb.com/releases/2018/06/prweb15540781.htm",
+          "https://www.trustpilot.com/review/www.g2.com?page=9",
+          "https://thenextweb.com/news/is-g2-becoming-too-powerful-for-the-software-market",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "ThingTech IoT asset tracking platform software workflow automation digital processes"
+      },
+      "infrastructure": {
+        "score": 1.4,
+        "confidence": 0.44,
+        "positive_signals_found": [
+          "cloud",
+          "saas",
+          "scalable",
+          "mobile"
+        ],
+        "negative_signals_found": [
+          "on-premise",
+          "on-prem"
+        ],
+        "evidence_snippets": [
+          "Founded in 2014 by Quinn and co-founder Brian Corcoran, ThingTech has developed an IoT platform that helps companies with a mobile workforce, like construction and utility firms, track, manage, and maintain their assets ",
+          "ThingTech provides an intelligent, scalable, end-to-end IoT platform and product suite that brings together all hardware, software, and data necessary to monitor and manage your assets in real-time, maximize asset produc",
+          "Founded in 2014 by Quinn and co-founder Brian Corcoran, ThingTech has developed an IoT platform that helps companies with a mobile workforce, like construction and utility firms, track, manage, and maintain their assets "
+        ],
+        "sources": [
+          "http://www.prweb.com/releases/2018/06/prweb15540781.htm",
+          "https://www.trustpilot.com/review/www.g2.com?page=9",
+          "https://thenextweb.com/news/is-g2-becoming-too-powerful-for-the-software-market",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "ThingTech IoT asset tracking platform software cloud SaaS platform technology stack"
+      },
+      "competitive_position": {
+        "score": 2.2,
+        "confidence": 0.52,
+        "positive_signals_found": [
+          "customers",
+          "users",
+          "g2",
+          "capterra",
+          "best"
+        ],
+        "negative_signals_found": [
+          "acquired"
+        ],
+        "evidence_snippets": [
+          "Customers provide Thingtech with access to a high view of their equipment, transportation, and heavy machinery such as cranes, generators and more with location and diagnostic data to prevent theft and safety issues",
+          "# Focused on G2 and Capterra for 6 months",
+          "## G2 is a valuable service for IT professionals researching software"
+        ],
+        "sources": [
+          "https://www.trustpilot.com/review/www.g2.com?page=9",
+          "https://thenextweb.com/news/is-g2-becoming-too-powerful-for-the-software-market",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/",
+          "https://www.g2.com/products/thingtech/competitors/alternatives"
+        ],
+        "query_used": "ThingTech IoT asset tracking platform software market customers reviews competitors G2 Capterra"
+      },
+      "revenue_upside": {
+        "score": 2.4,
+        "confidence": 0.47,
+        "positive_signals_found": [
+          "ai",
+          "machine learning",
+          "predictive",
+          "smart"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Temperature and humidity sensors are integrated to monitor environmental conditions within containers, ensuring the safe transportation of sensitive goods, such as pharmaceuticals or perishable items",
+          "Founded in 2014 by Quinn and co-founder Brian Corcoran, ThingTech has developed an IoT platform that helps companies with a mobile workforce, like construction and utility firms, track, manage, and maintain their assets ",
+          "The level of monitoring that IoT asset tracking software provides can help you paint a more accurate picture of your infrastructure and pinpoint where assets are at all times, which can help you determine where change ne"
+        ],
+        "sources": [
+          "https://www.logisticstechoutlook.com/thingtech",
+          "https://www.trustpilot.com/review/www.g2.com?page=9",
+          "https://thenextweb.com/news/is-g2-becoming-too-powerful-for-the-software-market",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "ThingTech IoT asset tracking platform software AI machine learning features product roadmap"
+      },
+      "margin_upside": {
+        "score": 3.7,
+        "confidence": 0.74,
+        "positive_signals_found": [
+          "reduce costs",
+          "efficiency",
+          "roi",
+          "payback",
+          "automate"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "into the location and status of each asset, significantly improving operational efficiency by minimizing delays and optimizing asset allocation",
+          "The level of monitoring that IoT asset tracking software provides can help you paint a more accurate picture of your infrastructure and pinpoint where assets are at all times, which can help you determine where change ne",
+          "Improved visibility: Real-time tracking provides businesses with a clear view of asset locations and conditions, helping to optimize inventory and asset management"
+        ],
+        "sources": [
+          "https://smartxhub.com/roi-of-iot-asset-tracking/",
+          "http://www.prweb.com/releases/2018/06/prweb15540781.htm",
+          "https://www.trustpilot.com/review/www.g2.com?page=9",
+          "https://thenextweb.com/news/is-g2-becoming-too-powerful-for-the-software-market"
+        ],
+        "query_used": "ThingTech IoT asset tracking platform software efficiency automation cost savings ROI"
+      },
+      "org_readiness": {
+        "score": 2.9,
+        "confidence": 0.58,
+        "positive_signals_found": [
+          "engineering",
+          "technology",
+          "developer",
+          "api",
+          "platform"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "In case of unauthorized movements or theft, immediate notifications are sent to the logistics team, enabling a rapid response and asset recovery",
+          "Founded in 2014 by Quinn and co-founder Brian Corcoran, ThingTech has developed an IoT platform that helps companies with a mobile workforce, like construction and utility firms, track, manage, and maintain their assets ",
+          "IoT asset tracking is the practice of taking stock of the IoT technology at play in an organization\u2019s tech infrastructure"
+        ],
+        "sources": [
+          "https://engage.vc/portfolio/",
+          "https://www.credibll.com/jobs/iot-jobs",
+          "https://www.trustpilot.com/review/www.g2.com?page=9",
+          "https://thenextweb.com/news/is-g2-becoming-too-powerful-for-the-software-market"
+        ],
+        "query_used": "ThingTech IoT asset tracking platform software engineering team hiring technology"
+      },
+      "risk_compliance": {
+        "score": 2.4,
+        "confidence": 0.49,
+        "positive_signals_found": [
+          "security",
+          "regulatory",
+          "privacy",
+          "secure",
+          "compliance"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Geo-fencing alerts and GPS tracking contribute to enhanced security",
+          "Using IoT asset tracking software allows you to keep an eye on your IoT devices, making sure they\u2019re secure and don\u2019t put your organization\u2019s networks and systems at risk",
+          "Securely tracking the location and health of valuable assets and inventory is critical to business operations"
+        ],
+        "sources": [
+          "https://www.ptc.com/en/success-paths/thingworx-product-monitoring/plan/define-compliance-security-requirements",
+          "https://www.trustpilot.com/review/www.g2.com?page=9",
+          "https://thenextweb.com/news/is-g2-becoming-too-powerful-for-the-software-market",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "ThingTech IoT asset tracking platform software security compliance certifications regulations"
+      }
+    },
+    "data_source": "tavily_real_v2"
+  },
+  {
+    "name": "Dash",
+    "vertical": "Field Service Management",
+    "composite_score": 2.83,
+    "tier": "AI-Emerging",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.8,
+      "workflow_digitization": 3.3,
+      "infrastructure": 2.0,
+      "competitive_position": 3.0,
+      "revenue_upside": 2.6,
+      "margin_upside": 2.7,
+      "org_readiness": 2.7,
+      "risk_compliance": 3.8
+    },
+    "research_evidence": {
+      "data_quality": {
+        "score": 3.8,
+        "confidence": 0.75,
+        "positive_signals_found": [
+          "api",
+          "integration",
+          "analytics",
+          "dashboard",
+          "reporting"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "One of the key features of DASH is its real-time job updates",
+          "Formerly known as DASH by Next Gear Solutions, this job management command center, streamlines operations from field to the office, offering real-time project tracking, automated workflows, and seamless communication",
+          "Using artificial intelligence and CoreLogic\u2019s proprietary property intelligence database, CoreLogic Property Data provides a single source of truth with the most current and accurate data than any public record alone"
+        ],
+        "sources": [
+          "https://www.dashplatform.com/",
+          "https://help.dash.app/en/articles/5161671-using-the-dash-api",
+          "https://research.com/software/reviews/dash",
+          "https://www.nextgearsolutions.com/whats-new-in-dash/"
+        ],
+        "query_used": "Dash field service management software platform data analytics reporting API integration"
+      },
+      "workflow_digitization": {
+        "score": 3.3,
+        "confidence": 0.66,
+        "positive_signals_found": [
+          "automation",
+          "workflow",
+          "digital",
+          "streamline",
+          "end-to-end"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "This feature provides automated communication to key participants from the field to the office, ensuring transparency and control throughout the job process",
+          "Formerly known as DASH by Next Gear Solutions, this job management command center, streamlines operations from field to the office, offering real-time project tracking, automated workflows, and seamless communication",
+          "Real-time job updates, with automated communication to key participants from field to office, provide transparency and control"
+        ],
+        "sources": [
+          "https://www.dashplatform.com/",
+          "https://www.nextgearsolutions.com/whats-new-in-dash/",
+          "https://sitemate.com/software/dashpivot/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "Dash field service management software platform workflow automation digital processes"
+      },
+      "infrastructure": {
+        "score": 2.0,
+        "confidence": 0.41,
+        "positive_signals_found": [
+          "cloud",
+          "saas",
+          "mobile"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Secure cloud storage protects sensitive data, helps you with industry regulation compliance, and ensures all stakeholders have up-to-date information for more efficient project management",
+          "DASH is the restoration industry\u2019s most powerful web and mobile platform that goes far beyond job management, empowering businesses to improve efficiency and scalability",
+          "Real-time updates in desktop and mobile apps keep key participants in the office and the field informed"
+        ],
+        "sources": [
+          "https://www.dashplatform.com/",
+          "https://www.nextgearsolutions.com/whats-new-in-dash/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/",
+          "https://www.cotality.com/products/dash"
+        ],
+        "query_used": "Dash field service management software platform cloud SaaS platform technology stack"
+      },
+      "competitive_position": {
+        "score": 3.0,
+        "confidence": 0.6,
+        "positive_signals_found": [
+          "trusted by",
+          "customers",
+          "clients",
+          "users",
+          "g2"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "The software\u2019s offline functionality allows users to work in areas where reception is not reliable",
+          "Streamline scheduling, send task reminders, and notify users when approvals are needed, ensuring smooth transitions and consistent processes across projects",
+          "The SOC 2 Type II certification goes a step further, confirming not only the most advanced security protocols are in place, but that they are operationally effective, with features and functionality such as password mana"
+        ],
+        "sources": [
+          "https://www.dashplatform.com/",
+          "https://www.nextgearsolutions.com/whats-new-in-dash/",
+          "https://fieldcamp.ai/blog/best-field-service-management-software/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "Dash field service management software platform market customers reviews competitors G2 Capterra"
+      },
+      "revenue_upside": {
+        "score": 2.6,
+        "confidence": 0.51,
+        "positive_signals_found": [
+          "ai",
+          "machine learning",
+          "automated",
+          "smart",
+          "artificial intelligence"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "This feature provides automated communication to key participants from the field to the office, ensuring transparency and control throughout the job process",
+          "Formerly known as DASH by Next Gear Solutions, this job management command center, streamlines operations from field to the office, offering real-time project tracking, automated workflows, and seamless communication",
+          "DASH is a restoration management software that has earned the American Institute of Certified Public Accountant\u2019s (AICPA) SOC 2 Type II certification, demonstrating CoreLogic\u2019s commitment to maintaining strong security c"
+        ],
+        "sources": [
+          "https://www.dashplatform.com/",
+          "https://www.cs.cornell.edu/projects/Quicksilver/public_pdfs/Dash.pdf",
+          "https://www.nextgearsolutions.com/whats-new-in-dash/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "Dash field service management software platform AI machine learning features product roadmap"
+      },
+      "margin_upside": {
+        "score": 2.7,
+        "confidence": 0.54,
+        "positive_signals_found": [
+          "efficiency",
+          "roi",
+          "automate",
+          "optimize",
+          "faster"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "This feature provides automated communication to key participants from the field to the office, ensuring transparency and control throughout the job process",
+          "Formerly known as DASH by Next Gear Solutions, this job management command center, streamlines operations from field to the office, offering real-time project tracking, automated workflows, and seamless communication",
+          "DASH is the restoration industry\u2019s most powerful web and mobile platform that goes far beyond job management, empowering businesses to improve efficiency and scalability"
+        ],
+        "sources": [
+          "https://www.dashplatform.com/",
+          "https://www.nextgearsolutions.com/whats-new-in-dash/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/",
+          "https://www.cotality.com/products/dash"
+        ],
+        "query_used": "Dash field service management software platform efficiency automation cost savings ROI"
+      },
+      "org_readiness": {
+        "score": 2.7,
+        "confidence": 0.54,
+        "positive_signals_found": [
+          "engineering",
+          "developer",
+          "api",
+          "platform",
+          "tech"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "The software also includes a customized workflow builder, allowing businesses to configure the platform to meet their unique requirements",
+          "DASH\u2122 is powerful job management platform designed for restoration contractors",
+          "DASH is the restoration industry\u2019s most powerful web and mobile platform that goes far beyond job management, empowering businesses to improve efficiency and scalability"
+        ],
+        "sources": [
+          "https://www.dashplatform.com/",
+          "https://www.nextgearsolutions.com/whats-new-in-dash/",
+          "https://www.teamdash.com/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/"
+        ],
+        "query_used": "Dash field service management software platform engineering team hiring technology"
+      },
+      "risk_compliance": {
+        "score": 3.8,
+        "confidence": 0.75,
+        "positive_signals_found": [
+          "soc 2",
+          "hipaa",
+          "gdpr",
+          "certified",
+          "security"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Compliance management is another crucial feature, which includes an automated task list to ensure critical steps in the restoration process are not missed",
+          "With advanced features like automated tasks, compliance management, and document storage, DASH improves operational efficiency, enhances collaboration, and ensures consistent, high-quality results",
+          "DASH is a restoration management software that has earned the American Institute of Certified Public Accountant\u2019s (AICPA) SOC 2 Type II certification, demonstrating CoreLogic\u2019s commitment to maintaining strong security c"
+        ],
+        "sources": [
+          "https://www.dashplatform.com/",
+          "https://www.nextgearsolutions.com/whats-new-in-dash/",
+          "https://www.reddit.com/r/SaaS/comments/1pisyig/focused_on_g2_and_capterra_for_6_months_47/",
+          "https://www.cotality.com/products/dash"
+        ],
+        "query_used": "Dash field service management software platform security compliance certifications regulations"
+      }
+    },
+    "data_source": "tavily_real_v2"
+  },
+  {
+    "name": "AutoTime",
+    "vertical": "Workforce Time & Attendance",
+    "composite_score": 2.67,
+    "tier": "AI-Emerging",
+    "wave": 3,
+    "pillar_scores": {
+      "data_quality": 2.6,
+      "workflow_digitization": 2.9,
+      "infrastructure": 1.9,
+      "competitive_position": 2.6,
+      "revenue_upside": 3.0,
+      "margin_upside": 3.1,
+      "org_readiness": 2.7,
+      "risk_compliance": 2.4
+    },
+    "research_evidence": {
+      "data_quality": {
+        "score": 2.6,
+        "confidence": 0.52,
+        "positive_signals_found": [
+          "api",
+          "integration",
+          "analytics",
+          "reporting",
+          "real-time"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "] ## Feature 2: All-in-One HR Integration",
+          "Greater payroll accuracy: Calculations are based on real-time, accurate source data, so you can be confident the results are precise",
+          "\u2022 Time reporting is as simple as filling out a spreadsheet"
+        ],
+        "sources": [
+          "https://www.ukg.com/products/features/time-and-attendance",
+          "https://ukg.cloudapper.ai/time-capture/what-is-ukg-autotime-functions-usage-alternatives-integration/",
+          "https://workforcesoftware.com/workforce-suite/time-and-attendance/",
+          "https://www.ukg.com/sites/default/files/legacy/kronos/resources/pdf/en/UKG%20AutoTime_Tracking%20Professional%20Labor_FINALv2.pdf"
+        ],
+        "query_used": "AutoTime workforce time attendance software data analytics reporting API integration"
+      },
+      "workflow_digitization": {
+        "score": 2.9,
+        "confidence": 0.58,
+        "positive_signals_found": [
+          "automation",
+          "workflow",
+          "digital",
+          "streamline",
+          "automate"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Imagine a tool that not only keeps you compliant but also streamlines processes and boosts productivity",
+          "No matter the size of your workforce, our solution adapts to fit your needs, promising efficient workflows that support your people and drive productivity",
+          "Faster end-of-period processing: High-stress pre-processing days (and nights) will be a thing of the past, as WorkForce automates all labor data, pay rates, and payroll calculations"
+        ],
+        "sources": [
+          "https://www.ukg.com/products/features/time-and-attendance",
+          "https://workforcesoftware.com/workforce-suite/time-and-attendance/",
+          "https://www.ukg.com/sites/default/files/legacy/kronos/resources/pdf/en/UKG%20AutoTime_Tracking%20Professional%20Labor_FINALv2.pdf",
+          "https://workforce.com/software/time-and-attendance"
+        ],
+        "query_used": "AutoTime workforce time attendance software workflow automation digital processes"
+      },
+      "infrastructure": {
+        "score": 1.9,
+        "confidence": 0.55,
+        "positive_signals_found": [
+          "cloud",
+          "aws",
+          "saas",
+          "web-based",
+          "mobile"
+        ],
+        "negative_signals_found": [
+          "on-premise",
+          "on-prem"
+        ],
+        "evidence_snippets": [
+          "## Feature 1: Cloud-Based, Access Your System Anytime, Anywhere",
+          "Capture time accurately across all roles and locations using multiple punch methods, including biometric time clocks, mobile apps, and web-based systems",
+          "That way you'll have a full paper trail to prevent labor law and compliance lawsuits"
+        ],
+        "sources": [
+          "https://www.ukg.com/products/features/time-and-attendance",
+          "https://workforcesoftware.com/workforce-suite/time-and-attendance/",
+          "https://www.ukg.com/sites/default/files/legacy/kronos/resources/pdf/en/UKG%20AutoTime_Tracking%20Professional%20Labor_FINALv2.pdf",
+          "https://workforce.com/software/time-and-attendance"
+        ],
+        "query_used": "AutoTime workforce time attendance software cloud SaaS platform technology stack"
+      },
+      "competitive_position": {
+        "score": 2.6,
+        "confidence": 0.52,
+        "positive_signals_found": [
+          "customers",
+          "users",
+          "g2",
+          "capterra",
+          "most"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Your organization can use this data to spot emerging labor trends, including employee groups or shifts that are most productive",
+          "Together, we\u2019re committed to inspiring workforces and businesses around the world, helping to pave the way forward for our people, customers, and industry",
+          "Users across multiple platforms (Capterra, G2) consistently rate it very highly, showing real responsiveness when issues arise"
+        ],
+        "sources": [
+          "https://www.ukg.com/products/features/time-and-attendance",
+          "https://www.ukg.com/sites/default/files/legacy/kronos/resources/pdf/en/UKG%20AutoTime_Tracking%20Professional%20Labor_FINALv2.pdf",
+          "https://workforce.com/software/time-and-attendance",
+          "https://myhours.com/best-time-tracking-apps"
+        ],
+        "query_used": "AutoTime workforce time attendance software market customers reviews competitors G2 Capterra"
+      },
+      "revenue_upside": {
+        "score": 3.0,
+        "confidence": 0.6,
+        "positive_signals_found": [
+          "ai",
+          "machine learning",
+          "predictive",
+          "intelligent",
+          "automated"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "] Consistent, automated time capture for hands-off tracking",
+          "Easier, more efficient retroactive calculations: With a clear audit trail, streamlined workflows, and automatic updates, retroactive calculations can be activated more quickly than ever thought possible",
+          "\u2022 A full audit trail is maintained for all time reporting and timecard edits"
+        ],
+        "sources": [
+          "https://www.ukg.com/products/features/time-and-attendance",
+          "https://workforcesoftware.com/wp-content/uploads/WorkForce-Product-Roadmap-August-2024.pdf",
+          "https://www.ukg.com/sites/default/files/legacy/kronos/resources/pdf/en/UKG%20AutoTime_Tracking%20Professional%20Labor_FINALv2.pdf",
+          "https://workforce.com/software/time-and-attendance"
+        ],
+        "query_used": "AutoTime workforce time attendance software AI machine learning features product roadmap"
+      },
+      "margin_upside": {
+        "score": 3.1,
+        "confidence": 0.62,
+        "positive_signals_found": [
+          "efficiency",
+          "roi",
+          "automate",
+          "eliminate",
+          "self-service"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "] Consistent, automated time capture for hands-off tracking",
+          "Faster end-of-period processing: High-stress pre-processing days (and nights) will be a thing of the past, as WorkForce automates all labor data, pay rates, and payroll calculations",
+          "UKG AutoTime provides comprehensive charge filtration capabilities to help eliminate cross-charging"
+        ],
+        "sources": [
+          "https://www.ukg.com/products/features/time-and-attendance",
+          "https://www.ukg.com/sites/default/files/legacy/kronos/resources/pdf/en/UKG%20AutoTime_Tracking%20Professional%20Labor_FINALv2.pdf",
+          "https://workforce.com/software/time-and-attendance",
+          "https://myhours.com/best-time-tracking-apps"
+        ],
+        "query_used": "AutoTime workforce time attendance software efficiency automation cost savings ROI"
+      },
+      "org_readiness": {
+        "score": 2.7,
+        "confidence": 0.54,
+        "positive_signals_found": [
+          "engineering",
+          "technology",
+          "api",
+          "platform",
+          "innovation"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "An all-in-one time and attendance system brings everything together, eliminating the need for separate platforms",
+          "COM Building on 70 years of experience from two leaders in HR solutions, UKG combines the strength and innovation of Ultimate Software and Kronos",
+          "Users across multiple platforms (Capterra, G2) consistently rate it very highly, showing real responsiveness when issues arise"
+        ],
+        "sources": [
+          "https://www.ukg.com/products/features/time-and-attendance",
+          "https://www.ukg.com/sites/default/files/legacy/kronos/resources/pdf/en/UKG%20AutoTime_Tracking%20Professional%20Labor_FINALv2.pdf",
+          "https://workforce.com/software/time-and-attendance",
+          "https://myhours.com/best-time-tracking-apps"
+        ],
+        "query_used": "AutoTime workforce time attendance software engineering team hiring technology"
+      },
+      "risk_compliance": {
+        "score": 2.4,
+        "confidence": 0.49,
+        "positive_signals_found": [
+          "compliant",
+          "security",
+          "audit",
+          "secure",
+          "compliance"
+        ],
+        "negative_signals_found": [],
+        "evidence_snippets": [
+          "Imagine a tool that not only keeps you compliant but also streamlines processes and boosts productivity",
+          "Easier, more efficient retroactive calculations: With a clear audit trail, streamlined workflows, and automatic updates, retroactive calculations can be activated more quickly than ever thought possible",
+          "\u2022 A full audit trail is maintained for all time reporting and timecard edits"
+        ],
+        "sources": [
+          "https://www.ukg.com/products/features/time-and-attendance",
+          "https://www.ukg.com/sites/default/files/legacy/kronos/resources/pdf/en/Compliance%20with%20UKG%20AutoTime_Final.pdf",
+          "https://workforcesoftware.com/workforce-suite/time-and-attendance/",
+          "https://www.ukg.com/sites/default/files/legacy/kronos/resources/pdf/en/UKG%20AutoTime_Tracking%20Professional%20Labor_FINALv2.pdf"
+        ],
+        "query_used": "AutoTime workforce time attendance software security compliance certifications regulations"
+      }
+    },
+    "data_source": "tavily_real_v2"
+  }
+]

@@ -2,253 +2,253 @@
   {
     "name": "Cairn Applications",
     "vertical": "Waste Hauling SaaS",
-    "employee_count": 45,
-    "composite_score": 3.72,
-    "tier": "AI-Buildable",
-    "wave": 1,
-    "pillar_scores": {
-      "data_quality": 3.8,
-      "workflow_digitization": 3.8,
-      "infrastructure": 2.5,
-      "competitive_position": 4.3,
-      "revenue_upside": 4.0,
-      "margin_upside": 3.8,
-      "org_readiness": 2.5,
-      "risk_compliance": 4.8
-    }
-  },
-  {
-    "name": "SMRTR",
-    "vertical": "F&B Supply Chain",
-    "employee_count": 120,
-    "composite_score": 3.47,
-    "tier": "AI-Buildable",
-    "wave": 1,
-    "pillar_scores": {
-      "data_quality": 3.5,
-      "workflow_digitization": 4.0,
-      "infrastructure": 3.5,
-      "competitive_position": 3.3,
-      "revenue_upside": 3.0,
-      "margin_upside": 3.5,
-      "org_readiness": 2.8,
-      "risk_compliance": 4.0
-    }
-  },
-  {
-    "name": "ViaPeople",
-    "vertical": "Talent Management",
-    "employee_count": 65,
-    "composite_score": 3.4,
-    "tier": "AI-Buildable",
-    "wave": 1,
-    "pillar_scores": {
-      "data_quality": 3.5,
-      "workflow_digitization": 3.5,
-      "infrastructure": 3.0,
-      "competitive_position": 3.3,
-      "revenue_upside": 3.8,
-      "margin_upside": 3.3,
-      "org_readiness": 3.0,
-      "risk_compliance": 3.8
-    }
-  },
-  {
-    "name": "Track Star",
-    "vertical": "Fleet & Asset Management",
-    "employee_count": 200,
-    "composite_score": 3.36,
-    "tier": "AI-Buildable",
-    "wave": 1,
-    "pillar_scores": {
-      "data_quality": 3.8,
-      "workflow_digitization": 3.8,
-      "infrastructure": 2.8,
-      "competitive_position": 2.8,
-      "revenue_upside": 3.5,
-      "margin_upside": 3.3,
-      "org_readiness": 2.8,
-      "risk_compliance": 4.0
-    }
-  },
-  {
-    "name": "FMSI",
-    "vertical": "Banking Operations",
-    "employee_count": 85,
-    "composite_score": 3.22,
-    "tier": "AI-Buildable",
-    "wave": 1,
-    "pillar_scores": {
-      "data_quality": 3.3,
-      "workflow_digitization": 3.5,
-      "infrastructure": 2.5,
-      "competitive_position": 3.3,
-      "revenue_upside": 3.5,
-      "margin_upside": 3.3,
-      "org_readiness": 2.8,
-      "risk_compliance": 3.3
-    }
-  },
-  {
-    "name": "Champ",
-    "vertical": "Public Health EHR",
-    "employee_count": 150,
-    "composite_score": 3.15,
-    "tier": "AI-Emerging",
-    "wave": 2,
-    "pillar_scores": {
-      "data_quality": 3.0,
-      "workflow_digitization": 3.5,
-      "infrastructure": 2.8,
-      "competitive_position": 3.8,
-      "revenue_upside": 3.0,
-      "margin_upside": 3.0,
-      "org_readiness": 2.8,
-      "risk_compliance": 2.8
-    }
-  },
-  {
-    "name": "TrackIt Transit",
-    "vertical": "Transit Operations",
-    "employee_count": 30,
-    "composite_score": 3.13,
-    "tier": "AI-Emerging",
-    "wave": 2,
-    "pillar_scores": {
-      "data_quality": 3.0,
-      "workflow_digitization": 3.0,
-      "infrastructure": 2.5,
-      "competitive_position": 3.8,
-      "revenue_upside": 3.0,
-      "margin_upside": 3.3,
-      "org_readiness": 2.5,
-      "risk_compliance": 3.8
-    }
-  },
-  {
-    "name": "NexTalk",
-    "vertical": "ADA Communications",
-    "employee_count": 40,
-    "composite_score": 3.01,
-    "tier": "AI-Emerging",
-    "wave": 2,
-    "pillar_scores": {
-      "data_quality": 2.8,
-      "workflow_digitization": 2.8,
-      "infrastructure": 3.3,
-      "competitive_position": 3.5,
-      "revenue_upside": 2.8,
-      "margin_upside": 2.8,
-      "org_readiness": 2.8,
-      "risk_compliance": 3.3
-    }
-  },
-  {
-    "name": "Thought Foundry",
-    "vertical": "Entertainment PaaS",
-    "employee_count": 55,
-    "composite_score": 2.92,
-    "tier": "AI-Emerging",
-    "wave": 2,
-    "pillar_scores": {
-      "data_quality": 3.0,
-      "workflow_digitization": 2.8,
-      "infrastructure": 2.5,
-      "competitive_position": 3.0,
-      "revenue_upside": 3.0,
-      "margin_upside": 2.8,
-      "org_readiness": 2.5,
-      "risk_compliance": 4.0
-    }
-  },
-  {
-    "name": "Spokane",
-    "vertical": "Produce ERP",
-    "employee_count": 70,
-    "composite_score": 2.9,
-    "tier": "AI-Emerging",
-    "wave": 2,
-    "pillar_scores": {
-      "data_quality": 2.8,
-      "workflow_digitization": 3.3,
-      "infrastructure": 1.3,
-      "competitive_position": 3.8,
-      "revenue_upside": 3.0,
-      "margin_upside": 2.8,
-      "org_readiness": 1.8,
-      "risk_compliance": 4.0
-    }
-  },
-  {
-    "name": "Primate",
-    "vertical": "Energy Control Room",
-    "employee_count": 90,
+    "employee_count": null,
     "composite_score": 2.86,
     "tier": "AI-Emerging",
     "wave": 2,
     "pillar_scores": {
       "data_quality": 3.0,
-      "workflow_digitization": 3.0,
-      "infrastructure": 2.5,
-      "competitive_position": 3.5,
-      "revenue_upside": 2.5,
-      "margin_upside": 2.8,
-      "org_readiness": 2.3,
+      "workflow_digitization": 3.1,
+      "infrastructure": 2.0,
+      "competitive_position": 3.2,
+      "revenue_upside": 3.2,
+      "margin_upside": 3.1,
+      "org_readiness": 2.5,
+      "risk_compliance": 2.6
+    }
+  },
+  {
+    "name": "SMRTR",
+    "vertical": "F&B Supply Chain Compliance",
+    "employee_count": null,
+    "composite_score": 3.03,
+    "tier": "AI-Emerging",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.2,
+      "workflow_digitization": 2.9,
+      "infrastructure": 1.9,
+      "competitive_position": 3.2,
+      "revenue_upside": 3.2,
+      "margin_upside": 3.3,
+      "org_readiness": 3.3,
+      "risk_compliance": 3.0
+    }
+  },
+  {
+    "name": "ViaPeople",
+    "vertical": "HR Performance Management",
+    "employee_count": null,
+    "composite_score": 2.72,
+    "tier": "AI-Emerging",
+    "wave": 3,
+    "pillar_scores": {
+      "data_quality": 2.8,
+      "workflow_digitization": 2.5,
+      "infrastructure": 2.7,
+      "competitive_position": 3.2,
+      "revenue_upside": 2.4,
+      "margin_upside": 3.3,
+      "org_readiness": 2.5,
       "risk_compliance": 2.8
+    }
+  },
+  {
+    "name": "Track Star",
+    "vertical": "Fleet Telematics SaaS",
+    "employee_count": null,
+    "composite_score": 2.98,
+    "tier": "AI-Emerging",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.4,
+      "workflow_digitization": 2.1,
+      "infrastructure": 2.2,
+      "competitive_position": 3.4,
+      "revenue_upside": 3.4,
+      "margin_upside": 3.3,
+      "org_readiness": 2.7,
+      "risk_compliance": 2.6
+    }
+  },
+  {
+    "name": "FMSI",
+    "vertical": "Credit Union Staffing Analytics",
+    "employee_count": null,
+    "composite_score": 2.43,
+    "tier": "AI-Limited",
+    "wave": 3,
+    "pillar_scores": {
+      "data_quality": 3.6,
+      "workflow_digitization": 2.3,
+      "infrastructure": 2.2,
+      "competitive_position": 2.4,
+      "revenue_upside": 1.7,
+      "margin_upside": 3.3,
+      "org_readiness": 2.7,
+      "risk_compliance": 1.7
+    }
+  },
+  {
+    "name": "Champ",
+    "vertical": "Aviation MRO Software",
+    "employee_count": null,
+    "composite_score": 2.94,
+    "tier": "AI-Emerging",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.2,
+      "workflow_digitization": 3.3,
+      "infrastructure": 2.0,
+      "competitive_position": 3.0,
+      "revenue_upside": 3.0,
+      "margin_upside": 3.3,
+      "org_readiness": 3.1,
+      "risk_compliance": 2.4
+    }
+  },
+  {
+    "name": "TrackIt Transit",
+    "vertical": "Public Transit Software",
+    "employee_count": null,
+    "composite_score": 2.55,
+    "tier": "AI-Emerging",
+    "wave": 3,
+    "pillar_scores": {
+      "data_quality": 2.6,
+      "workflow_digitization": 2.1,
+      "infrastructure": 2.2,
+      "competitive_position": 2.6,
+      "revenue_upside": 2.8,
+      "margin_upside": 2.9,
+      "org_readiness": 2.5,
+      "risk_compliance": 2.6
+    }
+  },
+  {
+    "name": "NexTalk",
+    "vertical": "Accessibility Communications",
+    "employee_count": null,
+    "composite_score": 2.41,
+    "tier": "AI-Limited",
+    "wave": 3,
+    "pillar_scores": {
+      "data_quality": 2.2,
+      "workflow_digitization": 2.3,
+      "infrastructure": 2.2,
+      "competitive_position": 3.2,
+      "revenue_upside": 1.9,
+      "margin_upside": 2.7,
+      "org_readiness": 2.5,
+      "risk_compliance": 2.6
+    }
+  },
+  {
+    "name": "Thought Foundry",
+    "vertical": "Government Decision Support",
+    "employee_count": null,
+    "composite_score": 2.84,
+    "tier": "AI-Emerging",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.6,
+      "workflow_digitization": 2.9,
+      "infrastructure": 2.7,
+      "competitive_position": 3.0,
+      "revenue_upside": 2.2,
+      "margin_upside": 3.1,
+      "org_readiness": 2.9,
+      "risk_compliance": 4.1
+    }
+  },
+  {
+    "name": "Spokane",
+    "vertical": "Government ERP / Services",
+    "employee_count": null,
+    "composite_score": 3.07,
+    "tier": "AI-Emerging",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.6,
+      "workflow_digitization": 3.5,
+      "infrastructure": 1.8,
+      "competitive_position": 3.2,
+      "revenue_upside": 3.2,
+      "margin_upside": 3.3,
+      "org_readiness": 3.1,
+      "risk_compliance": 3.2
+    }
+  },
+  {
+    "name": "Primate",
+    "vertical": "Restaurant POS / Tech",
+    "employee_count": null,
+    "composite_score": 3.08,
+    "tier": "AI-Emerging",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.0,
+      "workflow_digitization": 2.9,
+      "infrastructure": 2.7,
+      "competitive_position": 3.2,
+      "revenue_upside": 3.0,
+      "margin_upside": 2.9,
+      "org_readiness": 3.5,
+      "risk_compliance": 3.0
     }
   },
   {
     "name": "ThingTech",
     "vertical": "IoT Asset Tracking",
-    "employee_count": 110,
-    "composite_score": 2.8,
+    "employee_count": null,
+    "composite_score": 2.59,
     "tier": "AI-Emerging",
-    "wave": 2,
+    "wave": 3,
     "pillar_scores": {
-      "data_quality": 3.0,
-      "workflow_digitization": 2.5,
-      "infrastructure": 2.5,
-      "competitive_position": 2.5,
-      "revenue_upside": 3.0,
-      "margin_upside": 2.8,
-      "org_readiness": 2.5,
-      "risk_compliance": 4.0
+      "data_quality": 3.4,
+      "workflow_digitization": 3.3,
+      "infrastructure": 1.4,
+      "competitive_position": 2.2,
+      "revenue_upside": 2.4,
+      "margin_upside": 3.7,
+      "org_readiness": 2.9,
+      "risk_compliance": 2.4
     }
   },
   {
     "name": "Dash",
-    "vertical": "AP & Doc Automation",
-    "employee_count": 60,
-    "composite_score": 2.66,
+    "vertical": "Field Service Management",
+    "employee_count": null,
+    "composite_score": 2.83,
     "tier": "AI-Emerging",
-    "wave": 3,
+    "wave": 2,
     "pillar_scores": {
-      "data_quality": 2.3,
+      "data_quality": 3.8,
       "workflow_digitization": 3.3,
-      "infrastructure": 2.5,
-      "competitive_position": 2.3,
-      "revenue_upside": 2.0,
-      "margin_upside": 2.8,
-      "org_readiness": 2.5,
-      "risk_compliance": 4.0
+      "infrastructure": 2.0,
+      "competitive_position": 3.0,
+      "revenue_upside": 2.6,
+      "margin_upside": 2.7,
+      "org_readiness": 2.7,
+      "risk_compliance": 3.8
     }
   },
   {
     "name": "AutoTime",
-    "vertical": "A&D Payroll",
-    "employee_count": 75,
-    "composite_score": 2.57,
+    "vertical": "Workforce Time & Attendance",
+    "employee_count": null,
+    "composite_score": 2.67,
     "tier": "AI-Emerging",
     "wave": 3,
     "pillar_scores": {
-      "data_quality": 2.3,
-      "workflow_digitization": 2.5,
-      "infrastructure": 2.5,
-      "competitive_position": 3.0,
-      "revenue_upside": 2.0,
-      "margin_upside": 3.0,
-      "org_readiness": 2.3,
-      "risk_compliance": 3.0
+      "data_quality": 2.6,
+      "workflow_digitization": 2.9,
+      "infrastructure": 1.9,
+      "competitive_position": 2.6,
+      "revenue_upside": 3.0,
+      "margin_upside": 3.1,
+      "org_readiness": 2.7,
+      "risk_compliance": 2.4
     }
   }
 ]
