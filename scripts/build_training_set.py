@@ -1145,6 +1145,340 @@ ADDITIONAL_COMPANIES = [
     ("Upstart Auto", "Automotive/Financing", 2019, 200, 120000000, False, True, True, 4, 4, 3, 2),
     ("AutoFi", "Automotive/Financing", 2016, 180, 100000000, False, True, True, 4, 3, 3, 2),
     ("CarGurus", "Automotive/Marketplace", 2006, 1500, 0, True, True, True, 4, 4, 1, 4),
+
+    # =============================================
+    # EXPANDED DATASET — TIER BALANCING & NEW VERTICALS
+    # =============================================
+
+    # ===== AI-LIMITED CANDIDATES (legacy, on-prem, no AI, low tech) =====
+    # These companies have: old founded years, NOT cloud native, no AI features,
+    # low API ecosystems, moderate data but poor infrastructure
+
+    # Legacy ERP / On-Prem Vertical Software
+    ("Sage Intacct (Legacy)", "Accounting/ERP", 1981, 2000, 0, False, False, False, 2, 3, 3, 3),
+    ("Epicor Kinetic (Legacy)", "Manufacturing/ERP", 1972, 1200, 0, False, False, False, 2, 3, 2, 3),
+    ("MYOB", "Accounting", 1991, 1500, 0, False, False, False, 2, 2, 3, 2),
+    ("Exact Software", "Accounting/ERP", 1984, 2000, 0, False, False, False, 2, 3, 3, 2),
+    ("Deltek", "Professional Services", 1983, 3500, 0, False, False, False, 2, 3, 2, 3),
+    ("Manhattan Associates", "Supply Chain/WMS", 1990, 3000, 0, True, False, False, 2, 3, 2, 3),
+    ("Hyland", "Content Management", 1991, 4000, 0, False, False, False, 2, 3, 2, 3),
+    ("OpenText", "Content Management", 1991, 14000, 0, True, False, False, 2, 3, 3, 3),
+    ("Kofax", "Document Processing", 1985, 2000, 0, False, False, False, 2, 3, 2, 2),
+    ("AVEVA (Legacy)", "Industrial Software", 1967, 5000, 0, True, False, False, 2, 3, 3, 3),
+
+    # Small/Niche On-Prem Vertical Software
+    ("ParishSOFT", "Church Management", 1984, 40, 0, False, False, False, 1, 2, 1, 2),
+    ("Shelby Systems", "Church/Nonprofit", 1976, 80, 0, False, False, False, 1, 2, 1, 2),
+    ("SirsidyNix", "Library Management", 1979, 250, 0, False, False, False, 2, 2, 1, 2),
+    ("OPAC Systems", "Library Management", 1986, 60, 0, False, False, False, 1, 2, 1, 1),
+    ("Millennium Software", "Funeral Home", 1987, 30, 0, False, False, False, 1, 1, 1, 2),
+    ("FrontRunner Pro", "Funeral Home", 1990, 50, 0, False, False, False, 1, 2, 1, 2),
+    ("TelVista", "Call Center (Legacy)", 1995, 80, 0, False, False, False, 1, 2, 2, 1),
+    ("Aldrich", "Tax/Accounting", 1984, 150, 0, False, False, False, 1, 2, 3, 2),
+    ("Jonas Leisure", "Recreation/Leisure", 1990, 100, 0, False, False, False, 1, 2, 1, 2),
+    ("Visual Lease (Legacy)", "Lease Management", 1993, 120, 0, False, False, False, 1, 2, 2, 2),
+
+    # Small Legacy Industrial/Trade Software
+    ("PestPac (Legacy)", "Pest Control", 1990, 60, 0, False, False, False, 1, 2, 1, 2),
+    ("Real Green Systems", "Lawn Care/Landscaping", 1984, 80, 0, False, False, False, 1, 2, 1, 2),
+    ("Westrom Software", "Waste Management", 1988, 40, 0, False, False, False, 1, 2, 2, 1),
+    ("TRUX", "Waste/Hauling", 1992, 50, 0, False, False, False, 1, 2, 2, 1),
+    ("DirtManager", "Earthwork/Mining", 2000, 20, 0, False, False, False, 1, 1, 1, 1),
+    ("Helm CONNECT", "Maritime", 1996, 60, 0, False, False, False, 1, 2, 3, 2),
+    ("Bass Software", "Marina Management", 1995, 25, 0, False, False, False, 1, 1, 1, 1),
+    ("LaundryCard", "Laundry Management", 1998, 30, 0, False, False, False, 1, 1, 1, 1),
+    ("AMS Salon Software", "Salon/Spa", 1992, 35, 0, False, False, False, 1, 1, 1, 1),
+    ("ChurchTrac", "Church Management", 2000, 15, 5000000, False, False, False, 1, 1, 1, 1),
+
+    # Legacy Government/Municipal
+    ("SunGard PS (Legacy)", "Government/Finance", 1983, 2500, 0, False, False, False, 2, 3, 4, 3),
+    ("New World Systems", "Government/ERP", 1981, 800, 0, False, False, False, 2, 3, 4, 2),
+    ("Superion", "Government/Public Safety", 1986, 600, 0, False, False, False, 2, 2, 4, 2),
+    ("TriTech (Legacy)", "Government/CAD", 1979, 400, 0, False, False, False, 1, 2, 4, 2),
+    ("Spillman (Legacy)", "Government/Police RMS", 1986, 200, 0, False, False, False, 1, 2, 4, 1),
+
+    # Legacy Healthcare (pre-cloud)
+    ("MEDITECH (Legacy)", "Healthcare/EHR", 1969, 3800, 0, False, False, False, 2, 4, 5, 3),
+    ("Cerner (Legacy On-Prem)", "Healthcare/EHR", 1979, 4000, 0, False, False, False, 2, 4, 5, 3),
+    ("NextGen (Legacy)", "Healthcare/EHR", 1974, 2000, 0, False, False, False, 2, 3, 5, 2),
+    ("eClinicalWorks (Legacy)", "Healthcare/EHR", 1999, 1500, 0, False, False, False, 2, 3, 5, 2),
+    ("CompuGroup", "Healthcare/EHR", 1987, 4000, 0, True, False, False, 2, 3, 5, 3),
+
+    # Legacy Financial Services
+    ("FIS (Legacy)", "FinTech/Core Banking", 1968, 50000, 0, True, False, False, 2, 3, 5, 4),
+    ("Jack Henry (Legacy)", "FinTech/Core Banking", 1976, 7000, 0, True, False, False, 2, 3, 4, 3),
+    ("Fiserv (Legacy)", "FinTech/Core Banking", 1984, 40000, 0, True, False, False, 2, 3, 5, 4),
+    ("CSI (Computer Services)", "FinTech/Community Banking", 1965, 2500, 0, True, False, False, 1, 2, 4, 2),
+    ("Corelation", "FinTech/Credit Union", 1997, 200, 0, False, False, False, 2, 2, 4, 2),
+
+    # ===== MORE AI-EMERGING CANDIDATES (mid-range, some modernization) =====
+    # These companies: somewhat modern but limited AI, partial cloud, moderate APIs
+
+    # Niche SaaS — Partially Modernized
+    ("Housecall Pro", "Home Services", 2013, 350, 150000000, False, True, True, 3, 2, 1, 3),
+    ("Jobber", "Home Services", 2011, 600, 100000000, False, True, True, 3, 2, 1, 3),
+    ("ServiceM8", "Field Service", 2008, 100, 20000000, False, False, True, 2, 2, 1, 2),
+    ("Aspire Software", "Landscaping", 2013, 200, 80000000, False, True, True, 3, 2, 1, 2),
+    ("LMN (Landscape)", "Landscaping", 2009, 120, 40000000, False, True, True, 3, 2, 1, 2),
+    ("GorillaDesk", "Pest Control", 2014, 40, 10000000, False, False, True, 2, 2, 1, 1),
+    ("PestRoutes", "Pest Control", 2013, 120, 50000000, False, True, True, 3, 2, 1, 2),
+    ("Thryv", "SMB/Home Services", 2012, 2500, 0, True, True, True, 3, 2, 1, 3),
+    ("Connecteam", "Deskless Workers", 2014, 400, 120000000, False, True, True, 3, 2, 1, 3),
+    ("Deputy", "Workforce Management", 2008, 300, 80000000, False, True, True, 3, 2, 1, 3),
+
+    # Dental / Veterinary / Optometry
+    ("Dentrix", "Dental", 1989, 500, 0, False, False, False, 2, 3, 4, 3),
+    ("Eaglesoft", "Dental", 1995, 300, 0, False, False, False, 2, 3, 4, 2),
+    ("Open Dental", "Dental", 2003, 150, 0, False, False, True, 2, 3, 4, 2),
+    ("Curve Dental", "Dental", 2005, 80, 20000000, False, True, True, 3, 3, 4, 2),
+    ("IDEXX Neo", "Veterinary", 2005, 200, 0, False, False, False, 2, 3, 2, 3),
+    ("Shepherd Vet", "Veterinary", 2020, 50, 15000000, False, True, True, 3, 2, 2, 1),
+    ("eVetPractice", "Veterinary", 2010, 40, 8000000, False, True, True, 2, 2, 2, 1),
+    ("Weave", "Dental/Optometry", 2011, 1000, 0, True, True, True, 3, 3, 3, 3),
+    ("RevolutionEHR", "Optometry", 2003, 100, 0, False, False, True, 2, 2, 3, 2),
+    ("Crystal PM", "Optometry", 1996, 30, 0, False, False, False, 1, 2, 3, 1),
+
+    # Mid-Market SaaS (Emerging — Cloud but limited AI)
+    ("Planful", "Finance/FP&A", 2000, 600, 180000000, False, False, True, 3, 3, 3, 3),
+    ("Adaptive Insights", "Finance/FP&A", 2003, 800, 200000000, False, True, True, 3, 3, 3, 3),
+    ("Prophix", "Finance/FP&A", 1987, 400, 100000000, False, False, False, 2, 3, 3, 2),
+    ("Host Analytics", "Finance/FP&A", 2006, 300, 150000000, False, True, True, 3, 3, 3, 2),
+    ("BOARD International", "Finance/BI", 1994, 600, 200000000, False, False, False, 2, 3, 2, 3),
+    ("Cin7", "Inventory Management", 2012, 400, 150000000, False, True, True, 3, 3, 2, 3),
+    ("TradeGecko", "Inventory/Commerce", 2012, 200, 50000000, False, True, True, 3, 3, 1, 2),
+    ("Fishbowl Inventory", "Inventory Management", 2001, 150, 30000000, False, False, False, 2, 2, 1, 2),
+    ("SkuVault", "Warehouse Management", 2010, 200, 70000000, False, True, True, 3, 3, 1, 2),
+    ("ShipStation", "Shipping/Logistics", 2011, 400, 150000000, False, True, True, 3, 3, 1, 3),
+
+    # Nonprofits / Associations
+    ("Bloomerang", "Nonprofit/CRM", 2012, 250, 80000000, False, True, True, 3, 2, 1, 3),
+    ("Little Green Light", "Nonprofit/CRM", 2009, 20, 5000000, False, False, True, 2, 2, 1, 1),
+    ("DonorPerfect", "Nonprofit/Fundraising", 2000, 200, 50000000, False, False, True, 2, 2, 1, 2),
+    ("Network for Good", "Nonprofit/Fundraising", 2001, 300, 100000000, False, True, True, 3, 2, 1, 2),
+    ("Wild Apricot", "Association Management", 2006, 100, 30000000, False, True, True, 2, 2, 1, 2),
+    ("MemberClicks", "Association Management", 2002, 80, 25000000, False, True, True, 2, 2, 1, 2),
+    ("Fonteva", "Association Management", 2011, 60, 20000000, False, True, True, 3, 2, 1, 2),
+    ("iMIS", "Association Management", 1997, 150, 0, False, False, False, 2, 2, 2, 2),
+
+    # Car Wash / Parking / Laundry / Self-Storage
+    ("DRB Systems", "Car Wash", 1984, 300, 100000000, False, False, False, 2, 2, 1, 3),
+    ("Washify", "Car Wash", 2015, 60, 15000000, False, True, True, 3, 2, 1, 2),
+    ("EverWash", "Car Wash", 2016, 80, 25000000, False, True, True, 3, 2, 1, 2),
+    ("ParkMobile", "Parking", 2008, 250, 80000000, False, True, True, 3, 3, 2, 3),
+    ("SpotHero", "Parking", 2011, 200, 70000000, False, True, True, 3, 3, 1, 3),
+    ("SiteLink", "Self-Storage", 1996, 100, 0, False, False, False, 2, 2, 1, 2),
+    ("StorEDGE", "Self-Storage", 2010, 80, 30000000, False, True, True, 3, 2, 1, 2),
+    ("Storeganise", "Self-Storage", 2015, 30, 8000000, False, True, True, 3, 2, 1, 1),
+    ("Cents (Laundry)", "Laundry", 2018, 40, 12000000, False, True, True, 3, 2, 1, 1),
+    ("CleanCloud", "Laundry/Dry Cleaning", 2014, 50, 10000000, False, True, True, 3, 2, 1, 1),
+
+    # Mining / Maritime / Heavy Industry
+    ("Wenco Mining", "Mining", 1983, 200, 0, False, False, False, 2, 3, 3, 2),
+    ("Hexagon Mining", "Mining", 1992, 800, 0, False, False, False, 2, 3, 3, 3),
+    ("Maptek", "Mining", 1981, 300, 0, False, False, False, 2, 3, 2, 2),
+    ("Deswik", "Mining/Planning", 2004, 200, 50000000, False, False, False, 2, 3, 2, 2),
+    ("MineRP", "Mining/ERP", 2005, 150, 30000000, False, False, False, 2, 2, 2, 2),
+    ("Veson Nautical", "Maritime/Shipping", 2003, 200, 80000000, False, False, True, 3, 3, 3, 3),
+    ("StormGeo", "Maritime/Weather", 2001, 300, 100000000, False, False, False, 2, 3, 3, 2),
+    ("BASS Maritime", "Maritime", 1990, 40, 0, False, False, False, 1, 2, 3, 1),
+    ("Kongsberg Digital", "Maritime/Oil & Gas", 1982, 500, 0, False, False, False, 2, 3, 4, 3),
+    ("DNV GL Software", "Maritime/Energy", 1864, 1000, 0, False, False, False, 2, 4, 5, 3),
+
+    # Food & Beverage / Restaurant Tech (smaller)
+    ("MarginEdge", "Restaurant/Accounting", 2015, 150, 50000000, False, True, True, 3, 3, 1, 2),
+    ("Restaurant365", "Restaurant/Accounting", 2011, 600, 200000000, False, True, True, 3, 3, 1, 3),
+    ("Crunchtime", "Restaurant/Operations", 2000, 350, 100000000, False, True, True, 3, 3, 1, 3),
+    ("ParTech", "Restaurant/POS", 1978, 1500, 0, True, False, False, 2, 3, 1, 3),
+    ("NCR Aloha (Legacy)", "Restaurant/POS", 1884, 5000, 0, True, False, False, 2, 3, 1, 4),
+    ("Compeat", "Restaurant/Accounting", 1997, 100, 30000000, False, False, False, 2, 2, 1, 2),
+    ("CrunchTime", "F&B/Back Office", 2000, 250, 80000000, False, True, True, 3, 3, 1, 2),
+    ("BlueCart", "F&B/Procurement", 2014, 80, 25000000, False, True, True, 3, 2, 1, 2),
+    ("Orderly", "Restaurant/AP", 2018, 50, 12000000, False, True, True, 3, 2, 1, 1),
+    ("Lineup.ai", "Restaurant/Scheduling", 2019, 30, 8000000, False, True, True, 3, 2, 1, 1),
+
+    # Staffing / Recruitment (niche)
+    ("Bullhorn", "Staffing/Recruitment", 1999, 1200, 200000000, False, True, True, 3, 3, 2, 4),
+    ("Avionté", "Staffing", 2006, 300, 80000000, False, True, True, 3, 3, 2, 2),
+    ("TempWorks", "Staffing", 1998, 80, 20000000, False, False, False, 2, 2, 2, 2),
+    ("Crelate", "Staffing/CRM", 2012, 60, 15000000, False, True, True, 3, 2, 2, 1),
+    ("Sense", "Staffing/AI", 2016, 200, 90000000, False, True, True, 3, 3, 2, 2),
+    ("Hireology", "Hiring/Automotive", 2010, 250, 80000000, False, True, True, 3, 3, 1, 2),
+    ("Lever (Legacy)", "Recruitment ATS", 2012, 400, 120000000, False, True, True, 3, 3, 1, 3),
+    ("JazzHR", "Recruitment ATS", 2009, 200, 60000000, False, True, True, 3, 2, 1, 2),
+
+    # Facilities / Maintenance
+    ("eMaint", "Maintenance/CMMS", 1986, 200, 50000000, False, False, False, 2, 2, 2, 2),
+    ("Fiix", "Maintenance/CMMS", 2008, 150, 40000000, False, True, True, 3, 3, 2, 2),
+    ("UpKeep", "Maintenance/CMMS", 2014, 250, 100000000, False, True, True, 3, 3, 2, 2),
+    ("Hippo CMMS", "Maintenance/CMMS", 2006, 80, 20000000, False, True, True, 3, 2, 2, 1),
+    ("FMX", "Facilities Management", 2012, 100, 30000000, False, True, True, 3, 2, 2, 2),
+    ("AkitaBox", "Facilities Management", 2014, 60, 15000000, False, True, True, 3, 2, 2, 1),
+    ("Corrigo", "Facilities Management", 2001, 200, 60000000, False, True, True, 3, 3, 2, 2),
+    ("Angus Systems", "Facilities Management", 1985, 100, 0, False, False, False, 2, 2, 2, 2),
+
+    # Event Management
+    ("Cvent", "Event Management", 1999, 4800, 0, True, True, True, 3, 3, 1, 4),
+    ("Bizzabo", "Event Management", 2012, 350, 200000000, False, True, True, 3, 3, 1, 3),
+    ("Splash", "Event Marketing", 2011, 200, 80000000, False, True, True, 3, 2, 1, 2),
+    ("Social Tables", "Event Planning", 2012, 150, 60000000, False, True, True, 3, 2, 1, 2),
+    ("Aventri", "Event Management", 2008, 250, 100000000, False, True, True, 3, 3, 1, 2),
+    ("Swoogo", "Event Platform", 2016, 80, 25000000, False, True, True, 3, 2, 1, 2),
+
+    # Compliance / Risk (heavy regulatory = emerging due to risk_compliance drag)
+    ("LogicGate", "GRC/Compliance", 2016, 250, 150000000, False, True, True, 3, 3, 4, 3),
+    ("Resolver", "GRC/Compliance", 2000, 350, 100000000, False, True, True, 3, 3, 4, 3),
+    ("SAI Global", "GRC/Compliance", 1994, 800, 200000000, False, False, False, 2, 3, 4, 3),
+    ("NAVEX Global", "GRC/Compliance", 2012, 1200, 300000000, False, True, True, 3, 3, 4, 3),
+    ("MetricStream", "GRC/Compliance", 2000, 1200, 200000000, False, False, False, 2, 3, 4, 3),
+    ("Galvanize (Diligent)", "GRC/Compliance", 2007, 400, 150000000, False, True, True, 3, 3, 4, 2),
+
+    # ===== MORE AI-READY CANDIDATES (top-tier, AI-native, massive data) =====
+    # These need: cloud native, has AI, high API ecosystem (4-5), high data richness (5),
+    # large employee count or huge funding, market_position 4-5, low regulatory burden
+
+    # AI-Native / Data-Heavy Companies
+    ("Databricks", "Data/AI Platform", 2013, 7000, 4000000000, False, True, True, 5, 5, 2, 5),
+    ("Snowflake", "Data/Cloud", 2012, 7000, 0, True, True, True, 5, 5, 2, 5),
+    ("Palantir Technologies", "Data/Analytics", 2003, 3800, 0, True, True, True, 5, 5, 3, 5),
+    ("C3.ai", "Enterprise AI", 2009, 1000, 0, True, True, True, 5, 5, 2, 4),
+    ("UiPath", "Automation/AI", 2005, 4200, 0, True, True, True, 5, 5, 2, 5),
+    ("Datadog", "Observability/AI", 2010, 5200, 0, True, True, True, 5, 5, 1, 5),
+    ("Cloudflare", "Network/Security", 2009, 3800, 0, True, True, True, 5, 5, 2, 5),
+    ("Twilio", "Communications/API", 2008, 5500, 0, True, True, True, 5, 5, 2, 5),
+    ("Elastic", "Search/Analytics", 2012, 3400, 0, True, True, True, 5, 5, 1, 5),
+    ("MongoDB", "Database/Developer", 2007, 5100, 0, True, True, True, 5, 5, 1, 5),
+
+    # AI-Forward Vertical Leaders
+    ("Tempus (Genomics)", "Healthcare/Precision Med", 2015, 2500, 1000000000, False, True, True, 5, 5, 4, 5),
+    ("Flatiron Health (Oncology)", "Healthcare/Oncology Data", 2012, 1500, 350000000, False, True, True, 5, 5, 4, 4),
+    ("Veracyte", "Healthcare/Diagnostics AI", 2008, 800, 0, True, True, True, 4, 5, 4, 4),
+    ("Recursion", "Pharma/AI Drug Discovery", 2013, 600, 0, True, True, True, 5, 5, 4, 4),
+    ("Schrodinger", "Pharma/Computational", 1990, 600, 0, True, True, True, 5, 5, 4, 4),
+    ("Nuvei", "Payments/AI", 2003, 1800, 0, True, True, True, 5, 5, 3, 5),
+    ("Brex", "FinTech/Corporate Cards", 2017, 1500, 1200000000, False, True, True, 5, 5, 3, 5),
+    ("Rippling", "HR/IT Platform", 2016, 3000, 1200000000, False, True, True, 5, 5, 2, 5),
+    ("Deel", "HR/Global Payroll", 2018, 3500, 650000000, False, True, True, 5, 4, 3, 5),
+    ("Figma", "Design/Collaboration", 2012, 1500, 0, False, True, True, 5, 4, 1, 5),
+
+    # Top-Tier Vertical SaaS (AI-Ready)
+    ("HubSpot", "Marketing/CRM", 2006, 7600, 0, True, True, True, 5, 5, 1, 5),
+    ("Shopify Plus", "E-Commerce/Enterprise", 2006, 11000, 0, True, True, True, 5, 5, 1, 5),
+    ("Square (Block)", "Payments/Commerce", 2009, 12000, 0, True, True, True, 5, 5, 2, 5),
+    ("Wiz", "Cloud Security", 2020, 1500, 1000000000, False, True, True, 5, 5, 2, 5),
+    ("Notion", "Productivity/AI", 2013, 800, 350000000, False, True, True, 5, 4, 1, 5),
+    ("Canva", "Design/AI", 2012, 4000, 600000000, False, True, True, 5, 4, 1, 5),
+    ("Airtable", "Low-Code/AI", 2012, 1000, 750000000, False, True, True, 5, 5, 1, 5),
+    ("Amplitude", "Product Analytics", 2012, 700, 0, True, True, True, 5, 5, 1, 4),
+    ("Contentful", "CMS/API-First", 2013, 800, 330000000, False, True, True, 5, 4, 1, 4),
+    ("LaunchDarkly", "Feature Management", 2014, 500, 320000000, False, True, True, 5, 4, 1, 4),
+
+    # More AI-Ready (Vertical AI leaders)
+    ("Samsara (IoT)", "Fleet/IoT", 2015, 2500, 0, True, True, True, 5, 5, 1, 5),
+    ("CrowdStrike", "Cybersecurity/AI", 2011, 8000, 0, True, True, True, 5, 5, 2, 5),
+    ("SentinelOne", "Cybersecurity/AI", 2013, 2500, 0, True, True, True, 5, 5, 2, 5),
+    ("Zscaler", "Cloud Security", 2007, 7000, 0, True, True, True, 5, 5, 2, 5),
+    ("Okta", "Identity/Security", 2009, 6000, 0, True, True, True, 5, 5, 2, 5),
+
+    # ===== ADDITIONAL EMERGING / NICHE VERTICALS =====
+
+    # Cannabis Tech
+    ("Dutchie", "Cannabis Tech", 2017, 400, 350000000, False, True, True, 3, 3, 4, 3),
+    ("Flowhub", "Cannabis/POS", 2014, 200, 50000000, False, True, True, 3, 3, 4, 2),
+    ("Treez", "Cannabis/Retail", 2016, 150, 40000000, False, True, True, 3, 3, 4, 2),
+    ("BioTrackTHC", "Cannabis/Tracking", 2010, 80, 20000000, False, False, False, 2, 2, 4, 2),
+    ("Meadow", "Cannabis/Delivery", 2014, 60, 15000000, False, True, True, 3, 2, 4, 1),
+
+    # Sports / Entertainment
+    ("SeatGeek", "Ticketing", 2009, 500, 250000000, False, True, True, 4, 4, 1, 4),
+    ("Teamworks", "Sports/Operations", 2005, 200, 80000000, False, True, True, 3, 3, 1, 3),
+    ("ShotTracker", "Sports/Analytics", 2013, 80, 30000000, False, True, True, 3, 4, 1, 2),
+    ("Hudl", "Sports/Video Analytics", 2006, 2000, 200000000, False, True, True, 4, 4, 1, 4),
+    ("Catapult Sports", "Sports/Wearables", 2006, 400, 150000000, False, True, True, 3, 4, 1, 3),
+    ("Second Spectrum", "Sports/AI", 2014, 200, 60000000, False, True, True, 4, 5, 1, 3),
+
+    # Childcare / Senior Care
+    ("Procare Solutions", "Childcare", 1992, 300, 50000000, False, False, True, 2, 2, 3, 3),
+    ("brightwheel", "Childcare", 2015, 350, 100000000, False, True, True, 3, 3, 3, 3),
+    ("HiMama", "Childcare", 2012, 150, 40000000, False, True, True, 3, 2, 3, 2),
+    ("PointClickCare", "Senior Care/EHR", 2000, 2000, 300000000, False, True, True, 3, 4, 4, 4),
+    ("MatrixCare", "Senior Care/EHR", 2000, 800, 200000000, False, True, False, 3, 3, 4, 3),
+    ("Netsmart", "Behavioral Health", 1998, 2000, 400000000, False, True, False, 3, 3, 4, 3),
+
+    # Camping / Outdoor / Recreation
+    ("Campspot", "Campground/RV", 2015, 100, 30000000, False, True, True, 3, 2, 1, 2),
+    ("ResNexus", "Campground/Lodging", 2004, 60, 10000000, False, True, True, 2, 2, 1, 1),
+    ("CampBrain", "Camping/Registration", 2000, 40, 5000000, False, False, True, 2, 2, 1, 1),
+    ("ActiveNet", "Parks & Recreation", 2003, 200, 60000000, False, True, True, 3, 2, 1, 2),
+    ("PerfectMind", "Recreation Mgmt", 2005, 150, 40000000, False, True, True, 3, 2, 1, 2),
+
+    # Trades & Home Services
+    ("ServiceFusion", "HVAC/Plumbing", 2014, 80, 25000000, False, True, True, 3, 2, 1, 2),
+    ("FieldEdge", "HVAC/Field Service", 1980, 200, 60000000, False, False, True, 2, 2, 1, 2),
+    ("Sera (HVAC)", "HVAC", 2018, 50, 15000000, False, True, True, 3, 2, 1, 1),
+    ("BuildOps", "Commercial Contracting", 2018, 200, 80000000, False, True, True, 3, 3, 1, 2),
+    ("Payzer", "HVAC/Payments", 2011, 60, 12000000, False, True, True, 3, 2, 2, 1),
+    ("CompanyCam", "Contracting/Photos", 2015, 200, 50000000, False, True, True, 3, 2, 1, 2),
+
+    # Accounting / Tax (niche)
+    ("Canopy Tax", "Tax/Accounting", 2014, 200, 50000000, False, True, True, 3, 3, 3, 2),
+    ("TaxJar", "Tax Compliance", 2013, 250, 60000000, False, True, True, 3, 3, 3, 3),
+    ("Avalara", "Tax Compliance", 2004, 4000, 0, True, True, True, 4, 4, 3, 4),
+    ("Vertex", "Tax Compliance", 1978, 3000, 0, True, False, False, 3, 4, 4, 4),
+    ("Drake Software", "Tax Preparation", 1977, 400, 0, False, False, False, 2, 2, 4, 2),
+    ("CCH Wolters Kluwer", "Tax/Accounting", 1913, 5000, 0, True, False, False, 2, 3, 4, 4),
+
+    # Transportation / Fleet (smaller)
+    ("Azuga", "Fleet Telematics", 2012, 200, 80000000, False, True, True, 3, 3, 2, 2),
+    ("GPS Trackit", "Fleet Tracking", 2002, 150, 40000000, False, True, True, 3, 3, 1, 2),
+    ("Teletrac Navman", "Fleet Management", 1988, 1000, 0, False, False, False, 2, 3, 2, 3),
+    ("Lytx", "Fleet Video/AI", 1998, 800, 250000000, False, True, True, 4, 4, 2, 3),
+    ("Platform Science", "Fleet/Trucking", 2015, 250, 120000000, False, True, True, 4, 4, 2, 3),
+
+    # Retail / Commerce (niche)
+    ("Vend (Lightspeed)", "Retail/POS", 2010, 300, 100000000, False, True, True, 3, 3, 1, 3),
+    ("Revel Systems", "Retail/POS", 2010, 350, 150000000, False, True, True, 3, 3, 1, 3),
+    ("NCR Silver", "Retail/POS", 1884, 2000, 0, True, False, False, 2, 3, 2, 4),
+    ("Heartland Payment", "Retail/Payments", 2001, 1500, 0, False, False, False, 2, 3, 3, 3),
+    ("RetailNext", "Retail/Analytics", 2007, 200, 80000000, False, True, True, 4, 4, 1, 3),
+    ("Tulip Retail", "Retail/Clienteling", 2013, 150, 50000000, False, True, True, 3, 3, 1, 2),
+
+    # Media / Publishing
+    ("Cision", "Media/PR", 1992, 3500, 0, False, True, False, 3, 4, 1, 4),
+    ("Meltwater", "Media Intelligence", 2001, 1800, 0, False, True, True, 3, 4, 1, 4),
+    ("Naviga (Publishing)", "Publishing/CMS", 1999, 400, 100000000, False, False, False, 2, 3, 1, 2),
+    ("Piano (Publishing)", "Publishing/Paywall", 2010, 350, 150000000, False, True, True, 3, 3, 1, 3),
+    ("Issuu", "Publishing/Digital", 2006, 200, 50000000, False, True, True, 3, 3, 1, 2),
+
+    # Aviation / Aerospace
+    ("Ramco Aviation", "Aviation/MRO", 1997, 400, 50000000, False, False, False, 2, 3, 5, 2),
+    ("IBS Software", "Aviation/Cargo", 1997, 3000, 100000000, False, False, False, 2, 3, 5, 3),
+    ("SITA", "Aviation/IT", 1949, 4000, 0, False, False, False, 2, 3, 5, 3),
+    ("Flightaware", "Aviation/Tracking", 2005, 200, 50000000, False, True, True, 4, 4, 3, 3),
+    ("Cirium", "Aviation/Analytics", 2019, 600, 200000000, False, True, True, 4, 5, 3, 3),
+
+    # More AI-Limited (very legacy, very small)
+    ("WinTeam", "Janitorial/Cleaning", 1988, 60, 0, False, False, False, 1, 1, 1, 2),
+    ("ServiceCEO", "Home Services (Legacy)", 1995, 30, 0, False, False, False, 1, 1, 1, 1),
+    ("Spectra (Legacy)", "Venue Management", 1988, 150, 0, False, False, False, 1, 2, 1, 2),
+    ("MicroMain", "Maintenance (Legacy)", 1990, 40, 0, False, False, False, 1, 2, 2, 1),
+    ("RealSTAR", "Real Estate (Legacy)", 1992, 20, 0, False, False, False, 1, 1, 2, 1),
+    ("TRAKnet", "Healthcare (Legacy)", 1994, 25, 0, False, False, False, 1, 2, 5, 1),
+    ("PrimePoint", "Payroll (Legacy)", 1986, 80, 0, False, False, False, 1, 2, 3, 1),
+    ("AIMsi", "Music Store Mgmt", 1985, 15, 0, False, False, False, 1, 1, 1, 1),
+    ("Envisio", "Government Planning", 2009, 30, 5000000, False, False, True, 2, 2, 3, 1),
+    ("MuniCode", "Government/Codification", 1951, 200, 0, False, False, False, 1, 2, 4, 2),
+    ("Accufund", "Nonprofit Accounting", 1988, 40, 0, False, False, False, 1, 2, 2, 1),
+    ("Cougar Mountain", "Accounting (Legacy)", 1982, 50, 0, False, False, False, 1, 2, 3, 1),
+    ("DataPath", "Benefits Admin (Legacy)", 1984, 100, 0, False, False, False, 1, 2, 3, 2),
+    ("Tyler Munis (Legacy)", "Government/ERP", 1998, 500, 0, False, False, False, 2, 3, 4, 2),
+    ("ACOM Solutions", "AP Automation (Legacy)", 1983, 60, 0, False, False, False, 1, 2, 2, 1),
+
+    # Telecom / ISP Billing (legacy)
+    ("Amdocs (Legacy)", "Telecom/Billing", 1982, 28000, 0, True, False, False, 2, 3, 3, 4),
+    ("CSG Systems", "Telecom/Billing", 1994, 5000, 0, True, False, False, 2, 3, 3, 3),
+    ("Netcracker", "Telecom/BSS", 1993, 3000, 0, False, False, False, 2, 3, 3, 3),
+    ("MATRIXX Software", "Telecom/Billing", 2010, 200, 80000000, False, True, True, 3, 3, 3, 2),
+    ("Totogi", "Telecom/Cloud", 2020, 60, 20000000, False, True, True, 4, 3, 3, 1),
 ]
 
 def build_additional_company_dicts(company_list):

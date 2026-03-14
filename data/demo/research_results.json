@@ -1,69 +1,78 @@
 [
   {
-    "id": "rr_8233d51a",
-    "company_id": "co_48793b70",
-    "job_id": "job_09b0621e",
+    "id": "rr_3eafb5f2",
+    "company_id": "co_4c7cc0f5",
+    "job_id": "job_066e2720",
     "pillar_data": {
       "data_quality": {
         "score": 3.8,
-        "confidence": 0.89,
+        "confidence": 0.83,
         "evidence": [
-          "Proprietary dataset with 200+ records across customer base",
+          "Proprietary dataset with 50+ records across customer base",
           "Structured data pipeline with automated quality checks",
           "Cross-customer benchmarking data creates competitive moat",
-          "Historical data spanning 15+ years enables trend analysis"
+          "Historical data spanning 10+ years enables trend analysis"
         ],
         "sources": [
-          "Company website: cairnapp.com",
           "Press release: Cairn Applications acquisition announcement",
-          "Job postings analysis (LinkedIn, Indeed)",
-          "G2 product reviews"
+          "GitHub: github.com/cairn-applications",
+          "Company website: cairnapp.com",
+          "LinkedIn: linkedin.com/company/cairn-applications",
+          "SEC EDGAR full-text search",
+          "Crunchbase: crunchbase.com/organization/cairn-applications"
         ]
       },
       "workflow_digitization": {
         "score": 3.8,
-        "confidence": 0.85,
+        "confidence": 0.9,
         "evidence": [
           "End-to-end digital workflows across core product",
-          "API-driven integrations with 100+ third-party systems"
+          "API-driven integrations with 200+ third-party systems"
         ],
         "sources": [
           "LinkedIn: linkedin.com/company/cairn-applications",
           "Press release: Cairn Applications acquisition announcement",
+          "Glassdoor company profile",
           "G2 product reviews",
-          "Crunchbase: crunchbase.com/organization/cairn-applications",
+          "Job postings analysis (LinkedIn, Indeed)",
           "GitHub: github.com/cairn-applications",
           "Industry analyst report (Waste Hauling SaaS market)"
         ]
       },
       "infrastructure": {
         "score": 2.5,
-        "confidence": 0.8,
+        "confidence": 0.82,
         "evidence": [
           "Hybrid cloud deployment; migration underway",
-          "Monolithic architecture with some service extraction"
+          "Monolithic architecture with some service extraction",
+          "Basic deployment automation; manual testing prevalent"
         ],
         "sources": [
-          "Press release: Cairn Applications acquisition announcement",
+          "SEC EDGAR full-text search",
           "LinkedIn: linkedin.com/company/cairn-applications",
-          "G2 product reviews",
-          "GitHub: github.com/cairn-applications",
           "Industry analyst report (Waste Hauling SaaS market)",
+          "GitHub: github.com/cairn-applications",
+          "Company website: cairnapp.com",
+          "Crunchbase: crunchbase.com/organization/cairn-applications",
           "Glassdoor company profile"
         ]
       },
       "competitive_position": {
         "score": 4.3,
-        "confidence": 0.94,
+        "confidence": 0.87,
         "evidence": [
           "Market leader or strong #2 in vertical niche",
-          "Deep domain expertise creates high switching costs"
+          "Deep domain expertise creates high switching costs",
+          "Regulatory compliance requirements create barriers to entry",
+          "Established customer base with 500+ active accounts"
         ],
         "sources": [
+          "Industry analyst report (Waste Hauling SaaS market)",
+          "Press release: Cairn Applications acquisition announcement",
+          "SEC EDGAR full-text search",
+          "LinkedIn: linkedin.com/company/cairn-applications",
           "Job postings analysis (LinkedIn, Indeed)",
-          "G2 product reviews",
-          "GitHub: github.com/cairn-applications",
-          "SEC EDGAR full-text search"
+          "Glassdoor company profile"
         ]
       },
       "revenue_upside": {
@@ -71,169 +80,36 @@
         "confidence": 0.91,
         "evidence": [
           "AI features enable premium pricing tier (+20-30% ARPU uplift)",
-          "Predictive analytics create new revenue stream",
-          "Cross-customer data enables marketplace/benchmark products"
+          "Predictive analytics create new revenue stream"
         ],
         "sources": [
-          "GitHub: github.com/cairn-applications",
-          "Job postings analysis (LinkedIn, Indeed)",
           "G2 product reviews",
-          "LinkedIn: linkedin.com/company/cairn-applications",
-          "Press release: Cairn Applications acquisition announcement"
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Glassdoor company profile",
+          "GitHub: github.com/cairn-applications"
         ]
       },
       "margin_upside": {
         "score": 3.8,
-        "confidence": 0.88,
+        "confidence": 0.93,
         "evidence": [
           "AI automation can reduce support costs by 40-50%",
           "Automated QA and testing reduces engineering overhead",
-          "Agentic document processing eliminates manual data entry"
+          "Agentic document processing eliminates manual data entry",
+          "AI-optimized operations reduce COGS significantly"
         ],
         "sources": [
+          "Glassdoor company profile",
+          "LinkedIn: linkedin.com/company/cairn-applications",
           "Job postings analysis (LinkedIn, Indeed)",
-          "Industry analyst report (Waste Hauling SaaS market)",
-          "G2 product reviews",
           "GitHub: github.com/cairn-applications",
-          "Press release: Cairn Applications acquisition announcement"
+          "G2 product reviews",
+          "Industry analyst report (Waste Hauling SaaS market)",
+          "Crunchbase: crunchbase.com/organization/cairn-applications"
         ]
       },
       "org_readiness": {
         "score": 2.5,
-        "confidence": 0.78,
-        "evidence": [
-          "Technical leadership open to AI but limited hands-on experience",
-          "Engineering team capable but needs upskilling"
-        ],
-        "sources": [
-          "Press release: Cairn Applications acquisition announcement",
-          "Crunchbase: crunchbase.com/organization/cairn-applications",
-          "LinkedIn: linkedin.com/company/cairn-applications",
-          "GitHub: github.com/cairn-applications",
-          "Job postings analysis (LinkedIn, Indeed)",
-          "Industry analyst report (Waste Hauling SaaS market)"
-        ]
-      },
-      "risk_compliance": {
-        "score": 4.8,
-        "confidence": 0.93,
-        "evidence": [
-          "Low regulatory exposure for AI use cases",
-          "Existing compliance framework adaptable to AI governance",
-          "Data privacy practices already robust"
-        ],
-        "sources": [
-          "Company website: cairnapp.com",
-          "G2 product reviews",
-          "Press release: Cairn Applications acquisition announcement",
-          "Crunchbase: crunchbase.com/organization/cairn-applications",
-          "GitHub: github.com/cairn-applications",
-          "Job postings analysis (LinkedIn, Indeed)"
-        ]
-      }
-    },
-    "raw_summary": "Cairn Applications (Waste Hauling SaaS) scores 3.72 overall, placing it in the AI-Buildable tier. Strongest pillars: Risk & Compliance (4.8), Competitive Position (4.3). Key opportunities include AI-driven automation of core waste hauling saas workflows and predictive analytics leveraging 45-person team's domain expertise.",
-    "created_at": "2026-03-14T22:31:25.654562"
-  },
-  {
-    "id": "rr_7b3b0024",
-    "company_id": "co_4a50e34e",
-    "job_id": "job_09b0621e",
-    "pillar_data": {
-      "data_quality": {
-        "score": 3.5,
-        "confidence": 0.83,
-        "evidence": [
-          "Proprietary dataset with 200+ records across customer base",
-          "Structured data pipeline with automated quality checks",
-          "Cross-customer benchmarking data creates competitive moat"
-        ],
-        "sources": [
-          "Crunchbase: crunchbase.com/organization/smrtr",
-          "GitHub: github.com/smrtr",
-          "G2 product reviews",
-          "Glassdoor company profile"
-        ]
-      },
-      "workflow_digitization": {
-        "score": 4.0,
-        "confidence": 0.91,
-        "evidence": [
-          "End-to-end digital workflows across core product",
-          "API-driven integrations with 500+ third-party systems",
-          "Automated workflow triggers and routing rules",
-          "Mobile-first workflow execution for field operations"
-        ],
-        "sources": [
-          "SEC EDGAR full-text search",
-          "Press release: SMRTR acquisition announcement",
-          "Industry analyst report (F&B Supply Chain market)",
-          "LinkedIn: linkedin.com/company/smrtr"
-        ]
-      },
-      "infrastructure": {
-        "score": 3.5,
-        "confidence": 0.89,
-        "evidence": [
-          "Cloud-native architecture on AWS/Azure/GCP",
-          "Microservices or modular monolith with clear API boundaries",
-          "CI/CD pipeline with automated testing and deployment"
-        ],
-        "sources": [
-          "Industry analyst report (F&B Supply Chain market)",
-          "Press release: SMRTR acquisition announcement",
-          "Company website: smrtr.io",
-          "Glassdoor company profile",
-          "SEC EDGAR full-text search"
-        ]
-      },
-      "competitive_position": {
-        "score": 3.3,
-        "confidence": 0.89,
-        "evidence": [
-          "Competitive in niche but facing pressure from broader platforms",
-          "Moderate market share with loyal but concentrated customer base",
-          "Differentiation based on vertical specialization"
-        ],
-        "sources": [
-          "Industry analyst report (F&B Supply Chain market)",
-          "G2 product reviews",
-          "Glassdoor company profile",
-          "SEC EDGAR full-text search",
-          "GitHub: github.com/smrtr"
-        ]
-      },
-      "revenue_upside": {
-        "score": 3.0,
-        "confidence": 0.82,
-        "evidence": [
-          "AI enhancements improve retention and reduce churn",
-          "Operational efficiency gains translate to margin, not new revenue"
-        ],
-        "sources": [
-          "Glassdoor company profile",
-          "LinkedIn: linkedin.com/company/smrtr",
-          "Press release: SMRTR acquisition announcement",
-          "Job postings analysis (LinkedIn, Indeed)",
-          "Industry analyst report (F&B Supply Chain market)"
-        ]
-      },
-      "margin_upside": {
-        "score": 3.5,
-        "confidence": 0.87,
-        "evidence": [
-          "AI automation can reduce support costs by 40-50%",
-          "Automated QA and testing reduces engineering overhead"
-        ],
-        "sources": [
-          "G2 product reviews",
-          "SEC EDGAR full-text search",
-          "Company website: smrtr.io",
-          "GitHub: github.com/smrtr"
-        ]
-      },
-      "org_readiness": {
-        "score": 2.8,
         "confidence": 0.84,
         "evidence": [
           "Technical leadership open to AI but limited hands-on experience",
@@ -241,65 +117,207 @@
           "Some experimentation culture; risk-averse leadership"
         ],
         "sources": [
-          "Crunchbase: crunchbase.com/organization/smrtr",
+          "Glassdoor company profile",
           "Job postings analysis (LinkedIn, Indeed)",
-          "LinkedIn: linkedin.com/company/smrtr",
-          "Industry analyst report (F&B Supply Chain market)",
           "SEC EDGAR full-text search",
-          "GitHub: github.com/smrtr"
+          "G2 product reviews"
+        ]
+      },
+      "risk_compliance": {
+        "score": 4.8,
+        "confidence": 0.96,
+        "evidence": [
+          "Low regulatory exposure for AI use cases",
+          "Existing compliance framework adaptable to AI governance",
+          "Data privacy practices already robust",
+          "IP protection strong; minimal risk of AI-related leakage"
+        ],
+        "sources": [
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Press release: Cairn Applications acquisition announcement",
+          "LinkedIn: linkedin.com/company/cairn-applications",
+          "Crunchbase: crunchbase.com/organization/cairn-applications",
+          "SEC EDGAR full-text search",
+          "Industry analyst report (Waste Hauling SaaS market)"
+        ]
+      }
+    },
+    "raw_summary": "Cairn Applications (Waste Hauling SaaS) scores 3.72 overall, placing it in the AI-Buildable tier. Strongest pillars: Risk & Compliance (4.8), Competitive Position (4.3). Key opportunities include AI-driven automation of core waste hauling saas workflows and predictive analytics leveraging 45-person team's domain expertise.",
+    "created_at": "2026-03-14T22:38:37.754044"
+  },
+  {
+    "id": "rr_d05e6097",
+    "company_id": "co_7999a3a0",
+    "job_id": "job_066e2720",
+    "pillar_data": {
+      "data_quality": {
+        "score": 3.5,
+        "confidence": 0.9,
+        "evidence": [
+          "Proprietary dataset with 200+ records across customer base",
+          "Structured data pipeline with automated quality checks",
+          "Cross-customer benchmarking data creates competitive moat",
+          "Historical data spanning 10+ years enables trend analysis"
+        ],
+        "sources": [
+          "LinkedIn: linkedin.com/company/smrtr",
+          "Crunchbase: crunchbase.com/organization/smrtr",
+          "GitHub: github.com/smrtr",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "SEC EDGAR full-text search"
+        ]
+      },
+      "workflow_digitization": {
+        "score": 4.0,
+        "confidence": 0.9,
+        "evidence": [
+          "End-to-end digital workflows across core product",
+          "API-driven integrations with 200+ third-party systems",
+          "Automated workflow triggers and routing rules",
+          "Mobile-first workflow execution for field operations"
+        ],
+        "sources": [
+          "Company website: smrtr.io",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Industry analyst report (F&B Supply Chain market)",
+          "LinkedIn: linkedin.com/company/smrtr",
+          "Glassdoor company profile"
+        ]
+      },
+      "infrastructure": {
+        "score": 3.5,
+        "confidence": 0.85,
+        "evidence": [
+          "Cloud-native architecture on AWS/Azure/GCP",
+          "Microservices or modular monolith with clear API boundaries"
+        ],
+        "sources": [
+          "GitHub: github.com/smrtr",
+          "SEC EDGAR full-text search",
+          "Crunchbase: crunchbase.com/organization/smrtr",
+          "LinkedIn: linkedin.com/company/smrtr"
+        ]
+      },
+      "competitive_position": {
+        "score": 3.3,
+        "confidence": 0.88,
+        "evidence": [
+          "Competitive in niche but facing pressure from broader platforms",
+          "Moderate market share with loyal but concentrated customer base"
+        ],
+        "sources": [
+          "G2 product reviews",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Industry analyst report (F&B Supply Chain market)",
+          "GitHub: github.com/smrtr",
+          "Company website: smrtr.io",
+          "Crunchbase: crunchbase.com/organization/smrtr"
+        ]
+      },
+      "revenue_upside": {
+        "score": 3.0,
+        "confidence": 0.83,
+        "evidence": [
+          "AI enhancements improve retention and reduce churn",
+          "Operational efficiency gains translate to margin, not new revenue",
+          "Potential for AI-powered add-on modules"
+        ],
+        "sources": [
+          "Press release: SMRTR acquisition announcement",
+          "SEC EDGAR full-text search",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Company website: smrtr.io"
+        ]
+      },
+      "margin_upside": {
+        "score": 3.5,
+        "confidence": 0.86,
+        "evidence": [
+          "AI automation can reduce support costs by 40-50%",
+          "Automated QA and testing reduces engineering overhead",
+          "Agentic document processing eliminates manual data entry",
+          "AI-optimized operations reduce COGS significantly"
+        ],
+        "sources": [
+          "Glassdoor company profile",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "GitHub: github.com/smrtr",
+          "LinkedIn: linkedin.com/company/smrtr",
+          "Crunchbase: crunchbase.com/organization/smrtr",
+          "Company website: smrtr.io",
+          "Industry analyst report (F&B Supply Chain market)"
+        ]
+      },
+      "org_readiness": {
+        "score": 2.8,
+        "confidence": 0.77,
+        "evidence": [
+          "Technical leadership open to AI but limited hands-on experience",
+          "Engineering team capable but needs upskilling"
+        ],
+        "sources": [
+          "Glassdoor company profile",
+          "SEC EDGAR full-text search",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Press release: SMRTR acquisition announcement",
+          "Crunchbase: crunchbase.com/organization/smrtr",
+          "Industry analyst report (F&B Supply Chain market)",
+          "Company website: smrtr.io"
         ]
       },
       "risk_compliance": {
         "score": 4.0,
-        "confidence": 0.85,
+        "confidence": 0.87,
         "evidence": [
           "Low regulatory exposure for AI use cases",
           "Existing compliance framework adaptable to AI governance"
         ],
         "sources": [
-          "Industry analyst report (F&B Supply Chain market)",
-          "Crunchbase: crunchbase.com/organization/smrtr",
-          "GitHub: github.com/smrtr",
-          "G2 product reviews"
+          "Press release: SMRTR acquisition announcement",
+          "Company website: smrtr.io",
+          "Glassdoor company profile",
+          "LinkedIn: linkedin.com/company/smrtr",
+          "G2 product reviews",
+          "SEC EDGAR full-text search"
         ]
       }
     },
     "raw_summary": "SMRTR (F&B Supply Chain) scores 3.47 overall, placing it in the AI-Buildable tier. Strongest pillars: Workflow Digitization (4.0), Risk & Compliance (4.0). Key opportunities include AI-driven automation of core f&b supply chain workflows and predictive analytics leveraging 120-person team's domain expertise.",
-    "created_at": "2026-03-14T22:31:25.654627"
+    "created_at": "2026-03-14T22:38:37.754107"
   },
   {
-    "id": "rr_4cc56fd6",
-    "company_id": "co_88a682f5",
-    "job_id": "job_09b0621e",
+    "id": "rr_4f59bb07",
+    "company_id": "co_0ee5d048",
+    "job_id": "job_066e2720",
     "pillar_data": {
       "data_quality": {
         "score": 3.5,
-        "confidence": 0.86,
+        "confidence": 0.82,
         "evidence": [
-          "Proprietary dataset with 100+ records across customer base",
+          "Proprietary dataset with 200+ records across customer base",
           "Structured data pipeline with automated quality checks"
         ],
         "sources": [
-          "Job postings analysis (LinkedIn, Indeed)",
-          "Company website: viapeople.com",
-          "Crunchbase: crunchbase.com/organization/viapeople",
-          "Press release: ViaPeople acquisition announcement",
           "GitHub: github.com/viapeople",
+          "Industry analyst report (Talent Management market)",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Crunchbase: crunchbase.com/organization/viapeople",
           "SEC EDGAR full-text search",
+          "Press release: ViaPeople acquisition announcement",
           "LinkedIn: linkedin.com/company/viapeople"
         ]
       },
       "workflow_digitization": {
         "score": 3.5,
-        "confidence": 0.89,
+        "confidence": 0.81,
         "evidence": [
           "End-to-end digital workflows across core product",
-          "API-driven integrations with 500+ third-party systems",
-          "Automated workflow triggers and routing rules"
+          "API-driven integrations with 350+ third-party systems"
         ],
         "sources": [
+          "Industry analyst report (Talent Management market)",
+          "GitHub: github.com/viapeople",
           "SEC EDGAR full-text search",
-          "Job postings analysis (LinkedIn, Indeed)",
           "Glassdoor company profile",
           "Crunchbase: crunchbase.com/organization/viapeople"
         ]
@@ -309,182 +327,50 @@
         "confidence": 0.81,
         "evidence": [
           "Hybrid cloud deployment; migration underway",
-          "Monolithic architecture with some service extraction"
+          "Monolithic architecture with some service extraction",
+          "Basic deployment automation; manual testing prevalent"
         ],
         "sources": [
-          "GitHub: github.com/viapeople",
-          "Glassdoor company profile",
-          "Crunchbase: crunchbase.com/organization/viapeople",
+          "Industry analyst report (Talent Management market)",
           "Company website: viapeople.com",
+          "Glassdoor company profile",
           "Job postings analysis (LinkedIn, Indeed)",
+          "GitHub: github.com/viapeople",
+          "SEC EDGAR full-text search",
           "LinkedIn: linkedin.com/company/viapeople"
         ]
       },
       "competitive_position": {
         "score": 3.3,
-        "confidence": 0.83,
+        "confidence": 0.86,
         "evidence": [
           "Competitive in niche but facing pressure from broader platforms",
-          "Moderate market share with loyal but concentrated customer base"
+          "Moderate market share with loyal but concentrated customer base",
+          "Differentiation based on vertical specialization"
         ],
         "sources": [
-          "G2 product reviews",
-          "Glassdoor company profile",
           "Crunchbase: crunchbase.com/organization/viapeople",
           "SEC EDGAR full-text search",
-          "GitHub: github.com/viapeople"
-        ]
-      },
-      "revenue_upside": {
-        "score": 3.8,
-        "confidence": 0.91,
-        "evidence": [
-          "AI features enable premium pricing tier (+20-30% ARPU uplift)",
-          "Predictive analytics create new revenue stream",
-          "Cross-customer data enables marketplace/benchmark products"
-        ],
-        "sources": [
-          "Press release: ViaPeople acquisition announcement",
-          "Company website: viapeople.com",
-          "GitHub: github.com/viapeople",
-          "SEC EDGAR full-text search"
-        ]
-      },
-      "margin_upside": {
-        "score": 3.3,
-        "confidence": 0.88,
-        "evidence": [
-          "Moderate automation opportunities in support and operations",
-          "AI can augment but not fully replace manual processes"
-        ],
-        "sources": [
-          "Crunchbase: crunchbase.com/organization/viapeople",
-          "Job postings analysis (LinkedIn, Indeed)",
-          "GitHub: github.com/viapeople",
-          "Glassdoor company profile",
-          "Company website: viapeople.com"
-        ]
-      },
-      "org_readiness": {
-        "score": 3.0,
-        "confidence": 0.83,
-        "evidence": [
-          "Technical leadership open to AI but limited hands-on experience",
-          "Engineering team capable but needs upskilling",
-          "Some experimentation culture; risk-averse leadership"
-        ],
-        "sources": [
-          "Company website: viapeople.com",
-          "Industry analyst report (Talent Management market)",
-          "G2 product reviews",
           "LinkedIn: linkedin.com/company/viapeople",
-          "GitHub: github.com/viapeople"
-        ]
-      },
-      "risk_compliance": {
-        "score": 3.8,
-        "confidence": 0.84,
-        "evidence": [
-          "Low regulatory exposure for AI use cases",
-          "Existing compliance framework adaptable to AI governance"
-        ],
-        "sources": [
-          "Crunchbase: crunchbase.com/organization/viapeople",
-          "Press release: ViaPeople acquisition announcement",
+          "Industry analyst report (Talent Management market)",
           "Company website: viapeople.com",
-          "LinkedIn: linkedin.com/company/viapeople"
-        ]
-      }
-    },
-    "raw_summary": "ViaPeople (Talent Management) scores 3.4 overall, placing it in the AI-Buildable tier. Strongest pillars: Revenue Upside (3.8), Risk & Compliance (3.8). Key opportunities include AI-driven automation of core talent management workflows and predictive analytics leveraging 65-person team's domain expertise.",
-    "created_at": "2026-03-14T22:31:25.654695"
-  },
-  {
-    "id": "rr_ee628000",
-    "company_id": "co_8dc56dc9",
-    "job_id": "job_09b0621e",
-    "pillar_data": {
-      "data_quality": {
-        "score": 3.8,
-        "confidence": 0.9,
-        "evidence": [
-          "Proprietary dataset with 100+ records across customer base",
-          "Structured data pipeline with automated quality checks",
-          "Cross-customer benchmarking data creates competitive moat"
-        ],
-        "sources": [
-          "Industry analyst report (Fleet & Asset Management market)",
-          "GitHub: github.com/track-star",
-          "Press release: Track Star acquisition announcement",
-          "G2 product reviews",
-          "SEC EDGAR full-text search",
-          "Crunchbase: crunchbase.com/organization/track-star"
-        ]
-      },
-      "workflow_digitization": {
-        "score": 3.8,
-        "confidence": 0.92,
-        "evidence": [
-          "End-to-end digital workflows across core product",
-          "API-driven integrations with 50+ third-party systems"
-        ],
-        "sources": [
-          "G2 product reviews",
-          "SEC EDGAR full-text search",
-          "Crunchbase: crunchbase.com/organization/track-star",
-          "GitHub: github.com/track-star",
-          "Company website: trackstar.com",
-          "LinkedIn: linkedin.com/company/track-star",
           "Glassdoor company profile"
         ]
       },
-      "infrastructure": {
-        "score": 2.8,
-        "confidence": 0.82,
-        "evidence": [
-          "Hybrid cloud deployment; migration underway",
-          "Monolithic architecture with some service extraction"
-        ],
-        "sources": [
-          "Crunchbase: crunchbase.com/organization/track-star",
-          "G2 product reviews",
-          "Job postings analysis (LinkedIn, Indeed)",
-          "GitHub: github.com/track-star",
-          "LinkedIn: linkedin.com/company/track-star",
-          "Industry analyst report (Fleet & Asset Management market)",
-          "SEC EDGAR full-text search"
-        ]
-      },
-      "competitive_position": {
-        "score": 2.8,
-        "confidence": 0.8,
-        "evidence": [
-          "Competitive in niche but facing pressure from broader platforms",
-          "Moderate market share with loyal but concentrated customer base"
-        ],
-        "sources": [
-          "Press release: Track Star acquisition announcement",
-          "SEC EDGAR full-text search",
-          "Glassdoor company profile",
-          "Industry analyst report (Fleet & Asset Management market)",
-          "Crunchbase: crunchbase.com/organization/track-star",
-          "G2 product reviews"
-        ]
-      },
       "revenue_upside": {
-        "score": 3.5,
-        "confidence": 0.83,
+        "score": 3.8,
+        "confidence": 0.87,
         "evidence": [
           "AI features enable premium pricing tier (+20-30% ARPU uplift)",
-          "Predictive analytics create new revenue stream",
-          "Cross-customer data enables marketplace/benchmark products",
-          "AI-powered upsell/cross-sell recommendations"
+          "Predictive analytics create new revenue stream"
         ],
         "sources": [
-          "Crunchbase: crunchbase.com/organization/track-star",
+          "LinkedIn: linkedin.com/company/viapeople",
+          "Company website: viapeople.com",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Industry analyst report (Talent Management market)",
           "SEC EDGAR full-text search",
-          "GitHub: github.com/track-star",
-          "G2 product reviews"
+          "Glassdoor company profile"
         ]
       },
       "margin_upside": {
@@ -495,722 +381,569 @@
           "AI can augment but not fully replace manual processes"
         ],
         "sources": [
-          "LinkedIn: linkedin.com/company/track-star",
+          "Industry analyst report (Talent Management market)",
+          "Company website: viapeople.com",
           "G2 product reviews",
-          "Crunchbase: crunchbase.com/organization/track-star",
-          "Job postings analysis (LinkedIn, Indeed)"
+          "GitHub: github.com/viapeople",
+          "Press release: ViaPeople acquisition announcement"
         ]
       },
       "org_readiness": {
-        "score": 2.8,
-        "confidence": 0.79,
+        "score": 3.0,
+        "confidence": 0.84,
         "evidence": [
           "Technical leadership open to AI but limited hands-on experience",
-          "Engineering team capable but needs upskilling",
-          "Some experimentation culture; risk-averse leadership"
-        ],
-        "sources": [
-          "Job postings analysis (LinkedIn, Indeed)",
-          "Crunchbase: crunchbase.com/organization/track-star",
-          "Press release: Track Star acquisition announcement",
-          "LinkedIn: linkedin.com/company/track-star",
-          "GitHub: github.com/track-star",
-          "Company website: trackstar.com",
-          "SEC EDGAR full-text search"
-        ]
-      },
-      "risk_compliance": {
-        "score": 4.0,
-        "confidence": 0.87,
-        "evidence": [
-          "Low regulatory exposure for AI use cases",
-          "Existing compliance framework adaptable to AI governance",
-          "Data privacy practices already robust"
+          "Engineering team capable but needs upskilling"
         ],
         "sources": [
           "SEC EDGAR full-text search",
-          "GitHub: github.com/track-star",
-          "Industry analyst report (Fleet & Asset Management market)",
+          "Press release: ViaPeople acquisition announcement",
           "Glassdoor company profile",
-          "LinkedIn: linkedin.com/company/track-star",
+          "Industry analyst report (Talent Management market)",
+          "GitHub: github.com/viapeople",
+          "LinkedIn: linkedin.com/company/viapeople"
+        ]
+      },
+      "risk_compliance": {
+        "score": 3.8,
+        "confidence": 0.91,
+        "evidence": [
+          "Low regulatory exposure for AI use cases",
+          "Existing compliance framework adaptable to AI governance"
+        ],
+        "sources": [
+          "Crunchbase: crunchbase.com/organization/viapeople",
           "Job postings analysis (LinkedIn, Indeed)",
-          "Company website: trackstar.com"
+          "LinkedIn: linkedin.com/company/viapeople",
+          "Industry analyst report (Talent Management market)"
         ]
       }
     },
-    "raw_summary": "Track Star (Fleet & Asset Management) scores 3.36 overall, placing it in the AI-Buildable tier. Strongest pillars: Risk & Compliance (4.0), Data Quality & Availability (3.8). Key opportunities include AI-driven automation of core fleet & asset management workflows and predictive analytics leveraging 200-person team's domain expertise.",
-    "created_at": "2026-03-14T22:31:25.654753"
+    "raw_summary": "ViaPeople (Talent Management) scores 3.4 overall, placing it in the AI-Buildable tier. Strongest pillars: Revenue Upside (3.8), Risk & Compliance (3.8). Key opportunities include AI-driven automation of core talent management workflows and predictive analytics leveraging 65-person team's domain expertise.",
+    "created_at": "2026-03-14T22:38:37.754156"
   },
   {
-    "id": "rr_6b33e7f1",
-    "company_id": "co_8608d47f",
-    "job_id": "job_09b0621e",
+    "id": "rr_9924655a",
+    "company_id": "co_1a8b5b74",
+    "job_id": "job_066e2720",
     "pillar_data": {
       "data_quality": {
-        "score": 3.3,
-        "confidence": 0.86,
+        "score": 3.8,
+        "confidence": 0.91,
         "evidence": [
-          "Customer data available but siloed across modules",
-          "Data quality varies by customer deployment",
-          "Some structured data, manual entry still common"
+          "Proprietary dataset with 1000+ records across customer base",
+          "Structured data pipeline with automated quality checks"
         ],
         "sources": [
-          "Job postings analysis (LinkedIn, Indeed)",
-          "Crunchbase: crunchbase.com/organization/fmsi",
-          "Glassdoor company profile",
-          "Industry analyst report (Banking Operations market)",
-          "GitHub: github.com/fmsi",
-          "SEC EDGAR full-text search"
+          "Press release: Track Star acquisition announcement",
+          "Industry analyst report (Fleet & Asset Management market)",
+          "SEC EDGAR full-text search",
+          "Company website: trackstar.com"
         ]
       },
       "workflow_digitization": {
-        "score": 3.5,
-        "confidence": 0.9,
+        "score": 3.8,
+        "confidence": 0.85,
         "evidence": [
           "End-to-end digital workflows across core product",
-          "API-driven integrations with 200+ third-party systems",
-          "Automated workflow triggers and routing rules"
+          "API-driven integrations with 200+ third-party systems"
         ],
         "sources": [
-          "GitHub: github.com/fmsi",
-          "Job postings analysis (LinkedIn, Indeed)",
-          "Industry analyst report (Banking Operations market)",
-          "G2 product reviews",
-          "SEC EDGAR full-text search"
+          "Glassdoor company profile",
+          "Company website: trackstar.com",
+          "SEC EDGAR full-text search",
+          "GitHub: github.com/track-star"
         ]
       },
       "infrastructure": {
-        "score": 2.5,
+        "score": 2.8,
         "confidence": 0.82,
         "evidence": [
           "Hybrid cloud deployment; migration underway",
           "Monolithic architecture with some service extraction"
         ],
         "sources": [
-          "GitHub: github.com/fmsi",
-          "Glassdoor company profile",
-          "Crunchbase: crunchbase.com/organization/fmsi",
           "Job postings analysis (LinkedIn, Indeed)",
-          "Company website: fmsi.com",
-          "LinkedIn: linkedin.com/company/fmsi"
+          "Glassdoor company profile",
+          "Press release: Track Star acquisition announcement",
+          "Industry analyst report (Fleet & Asset Management market)"
         ]
       },
       "competitive_position": {
-        "score": 3.3,
-        "confidence": 0.9,
+        "score": 2.8,
+        "confidence": 0.78,
         "evidence": [
           "Competitive in niche but facing pressure from broader platforms",
           "Moderate market share with loyal but concentrated customer base",
           "Differentiation based on vertical specialization"
         ],
         "sources": [
-          "Press release: FMSI acquisition announcement",
-          "G2 product reviews",
-          "Company website: fmsi.com",
-          "Glassdoor company profile"
+          "Company website: trackstar.com",
+          "SEC EDGAR full-text search",
+          "Crunchbase: crunchbase.com/organization/track-star",
+          "GitHub: github.com/track-star",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Press release: Track Star acquisition announcement",
+          "Industry analyst report (Fleet & Asset Management market)"
         ]
       },
       "revenue_upside": {
         "score": 3.5,
-        "confidence": 0.86,
+        "confidence": 0.88,
         "evidence": [
           "AI features enable premium pricing tier (+20-30% ARPU uplift)",
-          "Predictive analytics create new revenue stream"
+          "Predictive analytics create new revenue stream",
+          "Cross-customer data enables marketplace/benchmark products",
+          "AI-powered upsell/cross-sell recommendations"
         ],
         "sources": [
-          "Crunchbase: crunchbase.com/organization/fmsi",
-          "Job postings analysis (LinkedIn, Indeed)",
-          "Press release: FMSI acquisition announcement",
-          "Company website: fmsi.com",
-          "GitHub: github.com/fmsi",
+          "Crunchbase: crunchbase.com/organization/track-star",
+          "Company website: trackstar.com",
           "G2 product reviews",
-          "SEC EDGAR full-text search"
+          "Job postings analysis (LinkedIn, Indeed)",
+          "GitHub: github.com/track-star"
         ]
       },
       "margin_upside": {
         "score": 3.3,
-        "confidence": 0.82,
+        "confidence": 0.87,
         "evidence": [
           "Moderate automation opportunities in support and operations",
           "AI can augment but not fully replace manual processes"
         ],
         "sources": [
-          "LinkedIn: linkedin.com/company/fmsi",
           "G2 product reviews",
-          "Crunchbase: crunchbase.com/organization/fmsi",
-          "Company website: fmsi.com",
-          "Glassdoor company profile"
+          "Glassdoor company profile",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Industry analyst report (Fleet & Asset Management market)",
+          "SEC EDGAR full-text search"
         ]
       },
       "org_readiness": {
         "score": 2.8,
-        "confidence": 0.84,
+        "confidence": 0.8,
         "evidence": [
           "Technical leadership open to AI but limited hands-on experience",
           "Engineering team capable but needs upskilling",
           "Some experimentation culture; risk-averse leadership"
         ],
         "sources": [
+          "Industry analyst report (Fleet & Asset Management market)",
+          "Press release: Track Star acquisition announcement",
+          "G2 product reviews",
+          "Glassdoor company profile"
+        ]
+      },
+      "risk_compliance": {
+        "score": 4.0,
+        "confidence": 0.89,
+        "evidence": [
+          "Low regulatory exposure for AI use cases",
+          "Existing compliance framework adaptable to AI governance",
+          "Data privacy practices already robust"
+        ],
+        "sources": [
+          "Glassdoor company profile",
+          "Crunchbase: crunchbase.com/organization/track-star",
+          "LinkedIn: linkedin.com/company/track-star",
+          "GitHub: github.com/track-star",
+          "G2 product reviews"
+        ]
+      }
+    },
+    "raw_summary": "Track Star (Fleet & Asset Management) scores 3.36 overall, placing it in the AI-Buildable tier. Strongest pillars: Risk & Compliance (4.0), Data Quality & Availability (3.8). Key opportunities include AI-driven automation of core fleet & asset management workflows and predictive analytics leveraging 200-person team's domain expertise.",
+    "created_at": "2026-03-14T22:38:37.754204"
+  },
+  {
+    "id": "rr_086728a7",
+    "company_id": "co_365a72cf",
+    "job_id": "job_066e2720",
+    "pillar_data": {
+      "data_quality": {
+        "score": 3.3,
+        "confidence": 0.89,
+        "evidence": [
+          "Customer data available but siloed across modules",
+          "Data quality varies by customer deployment",
+          "Some structured data, manual entry still common"
+        ],
+        "sources": [
+          "LinkedIn: linkedin.com/company/fmsi",
+          "Glassdoor company profile",
+          "Press release: FMSI acquisition announcement",
           "Company website: fmsi.com",
+          "G2 product reviews",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "SEC EDGAR full-text search"
+        ]
+      },
+      "workflow_digitization": {
+        "score": 3.5,
+        "confidence": 0.85,
+        "evidence": [
+          "End-to-end digital workflows across core product",
+          "API-driven integrations with 100+ third-party systems"
+        ],
+        "sources": [
+          "LinkedIn: linkedin.com/company/fmsi",
+          "Glassdoor company profile",
+          "Press release: FMSI acquisition announcement",
+          "Company website: fmsi.com",
+          "Industry analyst report (Banking Operations market)",
+          "Job postings analysis (LinkedIn, Indeed)"
+        ]
+      },
+      "infrastructure": {
+        "score": 2.5,
+        "confidence": 0.75,
+        "evidence": [
+          "Hybrid cloud deployment; migration underway",
+          "Monolithic architecture with some service extraction"
+        ],
+        "sources": [
+          "SEC EDGAR full-text search",
+          "Company website: fmsi.com",
+          "GitHub: github.com/fmsi",
+          "Crunchbase: crunchbase.com/organization/fmsi",
+          "Glassdoor company profile",
+          "G2 product reviews"
+        ]
+      },
+      "competitive_position": {
+        "score": 3.3,
+        "confidence": 0.88,
+        "evidence": [
+          "Competitive in niche but facing pressure from broader platforms",
+          "Moderate market share with loyal but concentrated customer base"
+        ],
+        "sources": [
+          "Glassdoor company profile",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "G2 product reviews",
+          "Industry analyst report (Banking Operations market)",
+          "Company website: fmsi.com"
+        ]
+      },
+      "revenue_upside": {
+        "score": 3.5,
+        "confidence": 0.88,
+        "evidence": [
+          "AI features enable premium pricing tier (+20-30% ARPU uplift)",
+          "Predictive analytics create new revenue stream",
+          "Cross-customer data enables marketplace/benchmark products"
+        ],
+        "sources": [
           "Press release: FMSI acquisition announcement",
           "Glassdoor company profile",
-          "LinkedIn: linkedin.com/company/fmsi",
-          "Crunchbase: crunchbase.com/organization/fmsi",
           "SEC EDGAR full-text search",
+          "Crunchbase: crunchbase.com/organization/fmsi",
+          "Company website: fmsi.com"
+        ]
+      },
+      "margin_upside": {
+        "score": 3.3,
+        "confidence": 0.81,
+        "evidence": [
+          "Moderate automation opportunities in support and operations",
+          "AI can augment but not fully replace manual processes"
+        ],
+        "sources": [
+          "SEC EDGAR full-text search",
+          "G2 product reviews",
+          "LinkedIn: linkedin.com/company/fmsi",
+          "GitHub: github.com/fmsi",
+          "Crunchbase: crunchbase.com/organization/fmsi",
+          "Company website: fmsi.com"
+        ]
+      },
+      "org_readiness": {
+        "score": 2.8,
+        "confidence": 0.83,
+        "evidence": [
+          "Technical leadership open to AI but limited hands-on experience",
+          "Engineering team capable but needs upskilling",
+          "Some experimentation culture; risk-averse leadership"
+        ],
+        "sources": [
+          "LinkedIn: linkedin.com/company/fmsi",
+          "Industry analyst report (Banking Operations market)",
+          "Glassdoor company profile",
+          "Crunchbase: crunchbase.com/organization/fmsi",
+          "Press release: FMSI acquisition announcement",
+          "Company website: fmsi.com",
           "Job postings analysis (LinkedIn, Indeed)"
         ]
       },
       "risk_compliance": {
         "score": 3.3,
-        "confidence": 0.81,
+        "confidence": 0.87,
         "evidence": [
           "Moderate regulatory considerations (SOC2, data privacy)",
           "Compliance framework needs AI-specific additions",
           "Some data sensitivity concerns manageable with guardrails"
         ],
         "sources": [
+          "GitHub: github.com/fmsi",
+          "Press release: FMSI acquisition announcement",
           "Glassdoor company profile",
-          "Job postings analysis (LinkedIn, Indeed)",
-          "Company website: fmsi.com",
-          "Crunchbase: crunchbase.com/organization/fmsi",
-          "LinkedIn: linkedin.com/company/fmsi",
-          "Press release: FMSI acquisition announcement"
+          "Job postings analysis (LinkedIn, Indeed)"
         ]
       }
     },
     "raw_summary": "FMSI (Banking Operations) scores 3.22 overall, placing it in the AI-Buildable tier. Strongest pillars: Workflow Digitization (3.5), Revenue Upside (3.5). Key opportunities include AI-driven automation of core banking operations workflows and predictive analytics leveraging 85-person team's domain expertise.",
-    "created_at": "2026-03-14T22:31:25.654814"
+    "created_at": "2026-03-14T22:38:37.754248"
   },
   {
-    "id": "rr_3e3b2a58",
-    "company_id": "co_d42705b9",
-    "job_id": "job_09b0621e",
+    "id": "rr_cf667768",
+    "company_id": "co_82c2a4bf",
+    "job_id": "job_066e2720",
     "pillar_data": {
       "data_quality": {
         "score": 3.0,
-        "confidence": 0.88,
-        "evidence": [
-          "Customer data available but siloed across modules",
-          "Data quality varies by customer deployment",
-          "Some structured data, manual entry still common"
-        ],
-        "sources": [
-          "Press release: Champ acquisition announcement",
-          "G2 product reviews",
-          "SEC EDGAR full-text search",
-          "Company website: champsoftware.com",
-          "Industry analyst report (Public Health EHR market)",
-          "Job postings analysis (LinkedIn, Indeed)"
-        ]
-      },
-      "workflow_digitization": {
-        "score": 3.5,
-        "confidence": 0.87,
-        "evidence": [
-          "End-to-end digital workflows across core product",
-          "API-driven integrations with 100+ third-party systems",
-          "Automated workflow triggers and routing rules",
-          "Mobile-first workflow execution for field operations"
-        ],
-        "sources": [
-          "Glassdoor company profile",
-          "SEC EDGAR full-text search",
-          "GitHub: github.com/champ",
-          "Press release: Champ acquisition announcement"
-        ]
-      },
-      "infrastructure": {
-        "score": 2.8,
-        "confidence": 0.8,
-        "evidence": [
-          "Hybrid cloud deployment; migration underway",
-          "Monolithic architecture with some service extraction"
-        ],
-        "sources": [
-          "Company website: champsoftware.com",
-          "G2 product reviews",
-          "SEC EDGAR full-text search",
-          "Press release: Champ acquisition announcement"
-        ]
-      },
-      "competitive_position": {
-        "score": 3.8,
-        "confidence": 0.87,
-        "evidence": [
-          "Market leader or strong #2 in vertical niche",
-          "Deep domain expertise creates high switching costs",
-          "Regulatory compliance requirements create barriers to entry"
-        ],
-        "sources": [
-          "Job postings analysis (LinkedIn, Indeed)",
-          "Press release: Champ acquisition announcement",
-          "G2 product reviews",
-          "GitHub: github.com/champ",
-          "Crunchbase: crunchbase.com/organization/champ"
-        ]
-      },
-      "revenue_upside": {
-        "score": 3.0,
-        "confidence": 0.79,
-        "evidence": [
-          "AI enhancements improve retention and reduce churn",
-          "Operational efficiency gains translate to margin, not new revenue",
-          "Potential for AI-powered add-on modules"
-        ],
-        "sources": [
-          "G2 product reviews",
-          "GitHub: github.com/champ",
-          "Crunchbase: crunchbase.com/organization/champ",
-          "Job postings analysis (LinkedIn, Indeed)"
-        ]
-      },
-      "margin_upside": {
-        "score": 3.0,
-        "confidence": 0.78,
-        "evidence": [
-          "Moderate automation opportunities in support and operations",
-          "AI can augment but not fully replace manual processes",
-          "Efficiency gains offset by implementation costs"
-        ],
-        "sources": [
-          "G2 product reviews",
-          "SEC EDGAR full-text search",
-          "GitHub: github.com/champ",
-          "LinkedIn: linkedin.com/company/champ",
-          "Job postings analysis (LinkedIn, Indeed)",
-          "Industry analyst report (Public Health EHR market)",
-          "Crunchbase: crunchbase.com/organization/champ"
-        ]
-      },
-      "org_readiness": {
-        "score": 2.8,
-        "confidence": 0.78,
-        "evidence": [
-          "Technical leadership open to AI but limited hands-on experience",
-          "Engineering team capable but needs upskilling",
-          "Some experimentation culture; risk-averse leadership"
-        ],
-        "sources": [
-          "Crunchbase: crunchbase.com/organization/champ",
-          "Company website: champsoftware.com",
-          "GitHub: github.com/champ",
-          "Press release: Champ acquisition announcement",
-          "LinkedIn: linkedin.com/company/champ",
-          "SEC EDGAR full-text search"
-        ]
-      },
-      "risk_compliance": {
-        "score": 2.8,
-        "confidence": 0.85,
-        "evidence": [
-          "Moderate regulatory considerations (SOC2, data privacy)",
-          "Compliance framework needs AI-specific additions"
-        ],
-        "sources": [
-          "GitHub: github.com/champ",
-          "Company website: champsoftware.com",
-          "Press release: Champ acquisition announcement",
-          "SEC EDGAR full-text search",
-          "Industry analyst report (Public Health EHR market)"
-        ]
-      }
-    },
-    "raw_summary": "Champ (Public Health EHR) scores 3.15 overall, placing it in the AI-Emerging tier. Strongest pillars: Competitive Position (3.8), Workflow Digitization (3.5). Key opportunities include AI-driven automation of core public health ehr workflows and predictive analytics leveraging 150-person team's domain expertise.",
-    "created_at": "2026-03-14T22:31:25.654871"
-  },
-  {
-    "id": "rr_a425a35c",
-    "company_id": "co_b0f30406",
-    "job_id": "job_09b0621e",
-    "pillar_data": {
-      "data_quality": {
-        "score": 3.0,
-        "confidence": 0.86,
+        "confidence": 0.83,
         "evidence": [
           "Customer data available but siloed across modules",
           "Data quality varies by customer deployment"
         ],
         "sources": [
-          "Crunchbase: crunchbase.com/organization/trackit-transit",
+          "Press release: Champ acquisition announcement",
+          "SEC EDGAR full-text search",
           "Job postings analysis (LinkedIn, Indeed)",
-          "Industry analyst report (Transit Operations market)",
-          "Company website: trackittransit.com",
-          "G2 product reviews"
+          "Glassdoor company profile",
+          "Industry analyst report (Public Health EHR market)",
+          "GitHub: github.com/champ"
         ]
       },
       "workflow_digitization": {
-        "score": 3.0,
-        "confidence": 0.85,
+        "score": 3.5,
+        "confidence": 0.89,
         "evidence": [
-          "Core workflows digitized but some manual steps remain",
-          "Integration points exist but not fully automated"
+          "End-to-end digital workflows across core product",
+          "API-driven integrations with 100+ third-party systems",
+          "Automated workflow triggers and routing rules"
         ],
         "sources": [
-          "SEC EDGAR full-text search",
-          "G2 product reviews",
-          "Crunchbase: crunchbase.com/organization/trackit-transit",
+          "Press release: Champ acquisition announcement",
+          "Industry analyst report (Public Health EHR market)",
           "Job postings analysis (LinkedIn, Indeed)",
-          "Company website: trackittransit.com",
-          "Industry analyst report (Transit Operations market)",
-          "Press release: TrackIt Transit acquisition announcement"
+          "G2 product reviews"
         ]
       },
       "infrastructure": {
-        "score": 2.5,
-        "confidence": 0.76,
+        "score": 2.8,
+        "confidence": 0.81,
         "evidence": [
           "Hybrid cloud deployment; migration underway",
           "Monolithic architecture with some service extraction",
           "Basic deployment automation; manual testing prevalent"
         ],
         "sources": [
-          "SEC EDGAR full-text search",
+          "Company website: champsoftware.com",
+          "GitHub: github.com/champ",
+          "Industry analyst report (Public Health EHR market)",
           "Glassdoor company profile",
-          "Industry analyst report (Transit Operations market)",
-          "Company website: trackittransit.com"
+          "Job postings analysis (LinkedIn, Indeed)"
         ]
       },
       "competitive_position": {
         "score": 3.8,
-        "confidence": 0.83,
-        "evidence": [
-          "Market leader or strong #2 in vertical niche",
-          "Deep domain expertise creates high switching costs",
-          "Regulatory compliance requirements create barriers to entry"
-        ],
-        "sources": [
-          "G2 product reviews",
-          "Press release: TrackIt Transit acquisition announcement",
-          "LinkedIn: linkedin.com/company/trackit-transit",
-          "Crunchbase: crunchbase.com/organization/trackit-transit",
-          "Job postings analysis (LinkedIn, Indeed)",
-          "Company website: trackittransit.com",
-          "GitHub: github.com/trackit-transit"
-        ]
-      },
-      "revenue_upside": {
-        "score": 3.0,
-        "confidence": 0.85,
-        "evidence": [
-          "AI enhancements improve retention and reduce churn",
-          "Operational efficiency gains translate to margin, not new revenue"
-        ],
-        "sources": [
-          "Press release: TrackIt Transit acquisition announcement",
-          "GitHub: github.com/trackit-transit",
-          "Job postings analysis (LinkedIn, Indeed)",
-          "Company website: trackittransit.com"
-        ]
-      },
-      "margin_upside": {
-        "score": 3.3,
-        "confidence": 0.88,
-        "evidence": [
-          "Moderate automation opportunities in support and operations",
-          "AI can augment but not fully replace manual processes",
-          "Efficiency gains offset by implementation costs"
-        ],
-        "sources": [
-          "Industry analyst report (Transit Operations market)",
-          "Job postings analysis (LinkedIn, Indeed)",
-          "Company website: trackittransit.com",
-          "LinkedIn: linkedin.com/company/trackit-transit"
-        ]
-      },
-      "org_readiness": {
-        "score": 2.5,
-        "confidence": 0.82,
-        "evidence": [
-          "Technical leadership open to AI but limited hands-on experience",
-          "Engineering team capable but needs upskilling"
-        ],
-        "sources": [
-          "G2 product reviews",
-          "Crunchbase: crunchbase.com/organization/trackit-transit",
-          "Glassdoor company profile",
-          "Press release: TrackIt Transit acquisition announcement"
-        ]
-      },
-      "risk_compliance": {
-        "score": 3.8,
-        "confidence": 0.92,
-        "evidence": [
-          "Low regulatory exposure for AI use cases",
-          "Existing compliance framework adaptable to AI governance",
-          "Data privacy practices already robust",
-          "IP protection strong; minimal risk of AI-related leakage"
-        ],
-        "sources": [
-          "SEC EDGAR full-text search",
-          "G2 product reviews",
-          "Company website: trackittransit.com",
-          "GitHub: github.com/trackit-transit",
-          "Glassdoor company profile",
-          "Press release: TrackIt Transit acquisition announcement"
-        ]
-      }
-    },
-    "raw_summary": "TrackIt Transit (Transit Operations) scores 3.13 overall, placing it in the AI-Emerging tier. Strongest pillars: Competitive Position (3.8), Risk & Compliance (3.8). Key opportunities include AI-driven automation of core transit operations workflows and predictive analytics leveraging 30-person team's domain expertise.",
-    "created_at": "2026-03-14T22:31:25.654938"
-  },
-  {
-    "id": "rr_0ad9d28d",
-    "company_id": "co_a2c2b839",
-    "job_id": "job_09b0621e",
-    "pillar_data": {
-      "data_quality": {
-        "score": 2.8,
-        "confidence": 0.8,
-        "evidence": [
-          "Customer data available but siloed across modules",
-          "Data quality varies by customer deployment",
-          "Some structured data, manual entry still common"
-        ],
-        "sources": [
-          "Glassdoor company profile",
-          "Company website: nextalk.com",
-          "Job postings analysis (LinkedIn, Indeed)",
-          "Crunchbase: crunchbase.com/organization/nextalk",
-          "SEC EDGAR full-text search"
-        ]
-      },
-      "workflow_digitization": {
-        "score": 2.8,
-        "confidence": 0.79,
-        "evidence": [
-          "Core workflows digitized but some manual steps remain",
-          "Integration points exist but not fully automated",
-          "Paper-based processes being migrated to digital"
-        ],
-        "sources": [
-          "LinkedIn: linkedin.com/company/nextalk",
-          "Crunchbase: crunchbase.com/organization/nextalk",
-          "Industry analyst report (ADA Communications market)",
-          "SEC EDGAR full-text search",
-          "Press release: NexTalk acquisition announcement",
-          "Glassdoor company profile",
-          "Company website: nextalk.com"
-        ]
-      },
-      "infrastructure": {
-        "score": 3.3,
-        "confidence": 0.8,
-        "evidence": [
-          "Hybrid cloud deployment; migration underway",
-          "Monolithic architecture with some service extraction"
-        ],
-        "sources": [
-          "Industry analyst report (ADA Communications market)",
-          "LinkedIn: linkedin.com/company/nextalk",
-          "SEC EDGAR full-text search",
-          "Crunchbase: crunchbase.com/organization/nextalk",
-          "Glassdoor company profile",
-          "GitHub: github.com/nextalk"
-        ]
-      },
-      "competitive_position": {
-        "score": 3.5,
-        "confidence": 0.84,
+        "confidence": 0.9,
         "evidence": [
           "Market leader or strong #2 in vertical niche",
           "Deep domain expertise creates high switching costs"
         ],
         "sources": [
+          "Industry analyst report (Public Health EHR market)",
           "Job postings analysis (LinkedIn, Indeed)",
-          "Industry analyst report (ADA Communications market)",
-          "Glassdoor company profile",
-          "Company website: nextalk.com",
-          "Crunchbase: crunchbase.com/organization/nextalk",
-          "G2 product reviews"
+          "G2 product reviews",
+          "SEC EDGAR full-text search",
+          "LinkedIn: linkedin.com/company/champ"
         ]
       },
       "revenue_upside": {
-        "score": 2.8,
+        "score": 3.0,
         "confidence": 0.81,
         "evidence": [
           "AI enhancements improve retention and reduce churn",
           "Operational efficiency gains translate to margin, not new revenue"
         ],
         "sources": [
-          "GitHub: github.com/nextalk",
+          "Crunchbase: crunchbase.com/organization/champ",
+          "SEC EDGAR full-text search",
           "G2 product reviews",
           "Job postings analysis (LinkedIn, Indeed)",
-          "Company website: nextalk.com",
-          "Industry analyst report (ADA Communications market)",
-          "LinkedIn: linkedin.com/company/nextalk",
-          "SEC EDGAR full-text search"
+          "GitHub: github.com/champ",
+          "Industry analyst report (Public Health EHR market)",
+          "Glassdoor company profile"
         ]
       },
       "margin_upside": {
-        "score": 2.8,
-        "confidence": 0.83,
+        "score": 3.0,
+        "confidence": 0.81,
         "evidence": [
           "Moderate automation opportunities in support and operations",
           "AI can augment but not fully replace manual processes",
           "Efficiency gains offset by implementation costs"
         ],
         "sources": [
-          "Company website: nextalk.com",
-          "GitHub: github.com/nextalk",
-          "LinkedIn: linkedin.com/company/nextalk",
-          "G2 product reviews"
+          "Company website: champsoftware.com",
+          "Industry analyst report (Public Health EHR market)",
+          "GitHub: github.com/champ",
+          "LinkedIn: linkedin.com/company/champ"
         ]
       },
       "org_readiness": {
         "score": 2.8,
-        "confidence": 0.8,
+        "confidence": 0.84,
         "evidence": [
           "Technical leadership open to AI but limited hands-on experience",
-          "Engineering team capable but needs upskilling"
+          "Engineering team capable but needs upskilling",
+          "Some experimentation culture; risk-averse leadership"
         ],
         "sources": [
-          "G2 product reviews",
-          "LinkedIn: linkedin.com/company/nextalk",
-          "Press release: NexTalk acquisition announcement",
-          "Glassdoor company profile",
-          "Company website: nextalk.com"
+          "Industry analyst report (Public Health EHR market)",
+          "Press release: Champ acquisition announcement",
+          "SEC EDGAR full-text search",
+          "Crunchbase: crunchbase.com/organization/champ",
+          "LinkedIn: linkedin.com/company/champ",
+          "Company website: champsoftware.com",
+          "Job postings analysis (LinkedIn, Indeed)"
         ]
       },
       "risk_compliance": {
-        "score": 3.3,
-        "confidence": 0.85,
+        "score": 2.8,
+        "confidence": 0.87,
         "evidence": [
           "Moderate regulatory considerations (SOC2, data privacy)",
-          "Compliance framework needs AI-specific additions"
+          "Compliance framework needs AI-specific additions",
+          "Some data sensitivity concerns manageable with guardrails"
         ],
         "sources": [
           "Job postings analysis (LinkedIn, Indeed)",
-          "Crunchbase: crunchbase.com/organization/nextalk",
-          "SEC EDGAR full-text search",
           "Glassdoor company profile",
-          "Company website: nextalk.com",
-          "GitHub: github.com/nextalk"
+          "SEC EDGAR full-text search",
+          "Crunchbase: crunchbase.com/organization/champ",
+          "Press release: Champ acquisition announcement",
+          "G2 product reviews"
         ]
       }
     },
-    "raw_summary": "NexTalk (ADA Communications) scores 3.01 overall, placing it in the AI-Emerging tier. Strongest pillars: Competitive Position (3.5), Infrastructure Readiness (3.3). Key opportunities include AI-driven automation of core ada communications workflows and predictive analytics leveraging 40-person team's domain expertise.",
-    "created_at": "2026-03-14T22:31:25.654992"
+    "raw_summary": "Champ (Public Health EHR) scores 3.15 overall, placing it in the AI-Emerging tier. Strongest pillars: Competitive Position (3.8), Workflow Digitization (3.5). Key opportunities include AI-driven automation of core public health ehr workflows and predictive analytics leveraging 150-person team's domain expertise.",
+    "created_at": "2026-03-14T22:38:37.754324"
   },
   {
-    "id": "rr_765b3432",
-    "company_id": "co_ba8b4cab",
-    "job_id": "job_09b0621e",
+    "id": "rr_38ddae0b",
+    "company_id": "co_dc5258ba",
+    "job_id": "job_066e2720",
     "pillar_data": {
       "data_quality": {
         "score": 3.0,
-        "confidence": 0.78,
+        "confidence": 0.87,
         "evidence": [
           "Customer data available but siloed across modules",
           "Data quality varies by customer deployment"
         ],
         "sources": [
-          "GitHub: github.com/thought-foundry",
-          "LinkedIn: linkedin.com/company/thought-foundry",
-          "Glassdoor company profile",
-          "Crunchbase: crunchbase.com/organization/thought-foundry",
-          "Company website: thoughtfoundry.com",
-          "SEC EDGAR full-text search",
-          "Job postings analysis (LinkedIn, Indeed)"
+          "Crunchbase: crunchbase.com/organization/trackit-transit",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Company website: trackittransit.com",
+          "G2 product reviews"
         ]
       },
       "workflow_digitization": {
-        "score": 2.8,
-        "confidence": 0.78,
+        "score": 3.0,
+        "confidence": 0.8,
         "evidence": [
           "Core workflows digitized but some manual steps remain",
           "Integration points exist but not fully automated"
         ],
         "sources": [
-          "G2 product reviews",
           "Job postings analysis (LinkedIn, Indeed)",
-          "Company website: thoughtfoundry.com",
-          "GitHub: github.com/thought-foundry",
-          "Glassdoor company profile",
-          "SEC EDGAR full-text search",
-          "Industry analyst report (Entertainment PaaS market)"
+          "Company website: trackittransit.com",
+          "GitHub: github.com/trackit-transit",
+          "SEC EDGAR full-text search"
         ]
       },
       "infrastructure": {
         "score": 2.5,
-        "confidence": 0.82,
+        "confidence": 0.84,
         "evidence": [
           "Hybrid cloud deployment; migration underway",
-          "Monolithic architecture with some service extraction"
+          "Monolithic architecture with some service extraction",
+          "Basic deployment automation; manual testing prevalent"
         ],
         "sources": [
-          "Glassdoor company profile",
-          "Press release: Thought Foundry acquisition announcement",
-          "LinkedIn: linkedin.com/company/thought-foundry",
-          "Crunchbase: crunchbase.com/organization/thought-foundry",
-          "GitHub: github.com/thought-foundry",
-          "G2 product reviews"
+          "Company website: trackittransit.com",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "SEC EDGAR full-text search",
+          "Press release: TrackIt Transit acquisition announcement",
+          "LinkedIn: linkedin.com/company/trackit-transit"
         ]
       },
       "competitive_position": {
-        "score": 3.0,
-        "confidence": 0.85,
+        "score": 3.8,
+        "confidence": 0.89,
         "evidence": [
-          "Competitive in niche but facing pressure from broader platforms",
-          "Moderate market share with loyal but concentrated customer base",
-          "Differentiation based on vertical specialization"
+          "Market leader or strong #2 in vertical niche",
+          "Deep domain expertise creates high switching costs"
         ],
         "sources": [
-          "Crunchbase: crunchbase.com/organization/thought-foundry",
-          "Job postings analysis (LinkedIn, Indeed)",
-          "SEC EDGAR full-text search",
-          "Industry analyst report (Entertainment PaaS market)",
-          "Press release: Thought Foundry acquisition announcement",
-          "GitHub: github.com/thought-foundry"
+          "GitHub: github.com/trackit-transit",
+          "Industry analyst report (Transit Operations market)",
+          "Press release: TrackIt Transit acquisition announcement",
+          "SEC EDGAR full-text search"
         ]
       },
       "revenue_upside": {
         "score": 3.0,
-        "confidence": 0.84,
+        "confidence": 0.81,
         "evidence": [
           "AI enhancements improve retention and reduce churn",
           "Operational efficiency gains translate to margin, not new revenue",
           "Potential for AI-powered add-on modules"
         ],
         "sources": [
-          "Press release: Thought Foundry acquisition announcement",
-          "Company website: thoughtfoundry.com",
-          "Crunchbase: crunchbase.com/organization/thought-foundry",
-          "LinkedIn: linkedin.com/company/thought-foundry",
-          "Glassdoor company profile"
+          "Glassdoor company profile",
+          "SEC EDGAR full-text search",
+          "G2 product reviews",
+          "Company website: trackittransit.com",
+          "Job postings analysis (LinkedIn, Indeed)"
         ]
       },
       "margin_upside": {
-        "score": 2.8,
-        "confidence": 0.82,
+        "score": 3.3,
+        "confidence": 0.87,
         "evidence": [
           "Moderate automation opportunities in support and operations",
           "AI can augment but not fully replace manual processes",
           "Efficiency gains offset by implementation costs"
         ],
         "sources": [
-          "Company website: thoughtfoundry.com",
-          "GitHub: github.com/thought-foundry",
-          "LinkedIn: linkedin.com/company/thought-foundry",
-          "SEC EDGAR full-text search"
+          "SEC EDGAR full-text search",
+          "GitHub: github.com/trackit-transit",
+          "Glassdoor company profile",
+          "Crunchbase: crunchbase.com/organization/trackit-transit"
         ]
       },
       "org_readiness": {
         "score": 2.5,
-        "confidence": 0.77,
+        "confidence": 0.83,
         "evidence": [
           "Technical leadership open to AI but limited hands-on experience",
           "Engineering team capable but needs upskilling"
         ],
         "sources": [
-          "Job postings analysis (LinkedIn, Indeed)",
           "G2 product reviews",
-          "Crunchbase: crunchbase.com/organization/thought-foundry",
+          "Company website: trackittransit.com",
+          "Press release: TrackIt Transit acquisition announcement",
+          "Job postings analysis (LinkedIn, Indeed)",
           "Glassdoor company profile",
-          "SEC EDGAR full-text search"
+          "LinkedIn: linkedin.com/company/trackit-transit",
+          "GitHub: github.com/trackit-transit"
         ]
       },
       "risk_compliance": {
-        "score": 4.0,
+        "score": 3.8,
         "confidence": 0.87,
         "evidence": [
           "Low regulatory exposure for AI use cases",
@@ -1218,134 +951,686 @@
           "Data privacy practices already robust"
         ],
         "sources": [
-          "Industry analyst report (Entertainment PaaS market)",
-          "Press release: Thought Foundry acquisition announcement",
-          "Crunchbase: crunchbase.com/organization/thought-foundry",
-          "Company website: thoughtfoundry.com",
-          "LinkedIn: linkedin.com/company/thought-foundry"
+          "GitHub: github.com/trackit-transit",
+          "LinkedIn: linkedin.com/company/trackit-transit",
+          "G2 product reviews",
+          "Glassdoor company profile",
+          "Job postings analysis (LinkedIn, Indeed)"
         ]
       }
     },
-    "raw_summary": "Thought Foundry (Entertainment PaaS) scores 2.92 overall, placing it in the AI-Emerging tier. Strongest pillars: Risk & Compliance (4.0), Data Quality & Availability (3.0). Key opportunities include AI-driven automation of core entertainment paas workflows and predictive analytics leveraging 55-person team's domain expertise.",
-    "created_at": "2026-03-14T22:31:25.655049"
+    "raw_summary": "TrackIt Transit (Transit Operations) scores 3.13 overall, placing it in the AI-Emerging tier. Strongest pillars: Competitive Position (3.8), Risk & Compliance (3.8). Key opportunities include AI-driven automation of core transit operations workflows and predictive analytics leveraging 30-person team's domain expertise.",
+    "created_at": "2026-03-14T22:38:37.754387"
   },
   {
-    "id": "rr_36f48529",
-    "company_id": "co_b500829b",
-    "job_id": "job_09b0621e",
+    "id": "rr_c0f59180",
+    "company_id": "co_8a4d3450",
+    "job_id": "job_066e2720",
     "pillar_data": {
       "data_quality": {
         "score": 2.8,
-        "confidence": 0.86,
+        "confidence": 0.79,
+        "evidence": [
+          "Customer data available but siloed across modules",
+          "Data quality varies by customer deployment",
+          "Some structured data, manual entry still common"
+        ],
+        "sources": [
+          "Crunchbase: crunchbase.com/organization/nextalk",
+          "SEC EDGAR full-text search",
+          "GitHub: github.com/nextalk",
+          "Press release: NexTalk acquisition announcement"
+        ]
+      },
+      "workflow_digitization": {
+        "score": 2.8,
+        "confidence": 0.81,
+        "evidence": [
+          "Core workflows digitized but some manual steps remain",
+          "Integration points exist but not fully automated"
+        ],
+        "sources": [
+          "Industry analyst report (ADA Communications market)",
+          "Crunchbase: crunchbase.com/organization/nextalk",
+          "G2 product reviews",
+          "LinkedIn: linkedin.com/company/nextalk",
+          "Company website: nextalk.com",
+          "Glassdoor company profile"
+        ]
+      },
+      "infrastructure": {
+        "score": 3.3,
+        "confidence": 0.88,
+        "evidence": [
+          "Hybrid cloud deployment; migration underway",
+          "Monolithic architecture with some service extraction"
+        ],
+        "sources": [
+          "Industry analyst report (ADA Communications market)",
+          "Crunchbase: crunchbase.com/organization/nextalk",
+          "Glassdoor company profile",
+          "LinkedIn: linkedin.com/company/nextalk",
+          "G2 product reviews",
+          "Job postings analysis (LinkedIn, Indeed)"
+        ]
+      },
+      "competitive_position": {
+        "score": 3.5,
+        "confidence": 0.84,
+        "evidence": [
+          "Market leader or strong #2 in vertical niche",
+          "Deep domain expertise creates high switching costs",
+          "Regulatory compliance requirements create barriers to entry"
+        ],
+        "sources": [
+          "G2 product reviews",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "GitHub: github.com/nextalk",
+          "Company website: nextalk.com"
+        ]
+      },
+      "revenue_upside": {
+        "score": 2.8,
+        "confidence": 0.8,
+        "evidence": [
+          "AI enhancements improve retention and reduce churn",
+          "Operational efficiency gains translate to margin, not new revenue"
+        ],
+        "sources": [
+          "Company website: nextalk.com",
+          "Industry analyst report (ADA Communications market)",
+          "Crunchbase: crunchbase.com/organization/nextalk",
+          "LinkedIn: linkedin.com/company/nextalk",
+          "Glassdoor company profile",
+          "G2 product reviews"
+        ]
+      },
+      "margin_upside": {
+        "score": 2.8,
+        "confidence": 0.84,
+        "evidence": [
+          "Moderate automation opportunities in support and operations",
+          "AI can augment but not fully replace manual processes",
+          "Efficiency gains offset by implementation costs"
+        ],
+        "sources": [
+          "Glassdoor company profile",
+          "G2 product reviews",
+          "GitHub: github.com/nextalk",
+          "Company website: nextalk.com"
+        ]
+      },
+      "org_readiness": {
+        "score": 2.8,
+        "confidence": 0.83,
+        "evidence": [
+          "Technical leadership open to AI but limited hands-on experience",
+          "Engineering team capable but needs upskilling",
+          "Some experimentation culture; risk-averse leadership"
+        ],
+        "sources": [
+          "SEC EDGAR full-text search",
+          "Industry analyst report (ADA Communications market)",
+          "Press release: NexTalk acquisition announcement",
+          "Crunchbase: crunchbase.com/organization/nextalk",
+          "LinkedIn: linkedin.com/company/nextalk"
+        ]
+      },
+      "risk_compliance": {
+        "score": 3.3,
+        "confidence": 0.84,
+        "evidence": [
+          "Moderate regulatory considerations (SOC2, data privacy)",
+          "Compliance framework needs AI-specific additions"
+        ],
+        "sources": [
+          "Crunchbase: crunchbase.com/organization/nextalk",
+          "G2 product reviews",
+          "GitHub: github.com/nextalk",
+          "Company website: nextalk.com",
+          "Job postings analysis (LinkedIn, Indeed)"
+        ]
+      }
+    },
+    "raw_summary": "NexTalk (ADA Communications) scores 3.01 overall, placing it in the AI-Emerging tier. Strongest pillars: Competitive Position (3.5), Infrastructure Readiness (3.3). Key opportunities include AI-driven automation of core ada communications workflows and predictive analytics leveraging 40-person team's domain expertise.",
+    "created_at": "2026-03-14T22:38:37.754443"
+  },
+  {
+    "id": "rr_16ec0324",
+    "company_id": "co_e4fa1eb0",
+    "job_id": "job_066e2720",
+    "pillar_data": {
+      "data_quality": {
+        "score": 3.0,
+        "confidence": 0.81,
         "evidence": [
           "Customer data available but siloed across modules",
           "Data quality varies by customer deployment"
         ],
         "sources": [
-          "GitHub: github.com/spokane",
-          "Industry analyst report (Produce ERP market)",
-          "Company website: spokane.com",
-          "Job postings analysis (LinkedIn, Indeed)",
-          "Crunchbase: crunchbase.com/organization/spokane",
+          "GitHub: github.com/thought-foundry",
+          "Company website: thoughtfoundry.com",
+          "SEC EDGAR full-text search",
           "G2 product reviews",
-          "SEC EDGAR full-text search"
+          "Industry analyst report (Entertainment PaaS market)"
         ]
       },
       "workflow_digitization": {
-        "score": 3.3,
-        "confidence": 0.84,
+        "score": 2.8,
+        "confidence": 0.79,
         "evidence": [
           "Core workflows digitized but some manual steps remain",
           "Integration points exist but not fully automated",
           "Paper-based processes being migrated to digital"
         ],
         "sources": [
-          "Crunchbase: crunchbase.com/organization/spokane",
-          "Company website: spokane.com",
-          "LinkedIn: linkedin.com/company/spokane",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Industry analyst report (Entertainment PaaS market)",
+          "Glassdoor company profile",
+          "GitHub: github.com/thought-foundry",
+          "Company website: thoughtfoundry.com",
+          "LinkedIn: linkedin.com/company/thought-foundry",
+          "Press release: Thought Foundry acquisition announcement"
+        ]
+      },
+      "infrastructure": {
+        "score": 2.5,
+        "confidence": 0.8,
+        "evidence": [
+          "Hybrid cloud deployment; migration underway",
+          "Monolithic architecture with some service extraction",
+          "Basic deployment automation; manual testing prevalent"
+        ],
+        "sources": [
+          "Glassdoor company profile",
+          "GitHub: github.com/thought-foundry",
+          "G2 product reviews",
+          "Industry analyst report (Entertainment PaaS market)",
+          "SEC EDGAR full-text search",
+          "Crunchbase: crunchbase.com/organization/thought-foundry"
+        ]
+      },
+      "competitive_position": {
+        "score": 3.0,
+        "confidence": 0.81,
+        "evidence": [
+          "Competitive in niche but facing pressure from broader platforms",
+          "Moderate market share with loyal but concentrated customer base",
+          "Differentiation based on vertical specialization"
+        ],
+        "sources": [
+          "Glassdoor company profile",
+          "GitHub: github.com/thought-foundry",
+          "LinkedIn: linkedin.com/company/thought-foundry",
+          "SEC EDGAR full-text search"
+        ]
+      },
+      "revenue_upside": {
+        "score": 3.0,
+        "confidence": 0.8,
+        "evidence": [
+          "AI enhancements improve retention and reduce churn",
+          "Operational efficiency gains translate to margin, not new revenue"
+        ],
+        "sources": [
+          "G2 product reviews",
+          "LinkedIn: linkedin.com/company/thought-foundry",
+          "Company website: thoughtfoundry.com",
+          "Glassdoor company profile",
+          "Crunchbase: crunchbase.com/organization/thought-foundry",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Industry analyst report (Entertainment PaaS market)"
+        ]
+      },
+      "margin_upside": {
+        "score": 2.8,
+        "confidence": 0.77,
+        "evidence": [
+          "Moderate automation opportunities in support and operations",
+          "AI can augment but not fully replace manual processes",
+          "Efficiency gains offset by implementation costs"
+        ],
+        "sources": [
+          "Crunchbase: crunchbase.com/organization/thought-foundry",
+          "SEC EDGAR full-text search",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Company website: thoughtfoundry.com",
+          "G2 product reviews"
+        ]
+      },
+      "org_readiness": {
+        "score": 2.5,
+        "confidence": 0.8,
+        "evidence": [
+          "Technical leadership open to AI but limited hands-on experience",
+          "Engineering team capable but needs upskilling",
+          "Some experimentation culture; risk-averse leadership"
+        ],
+        "sources": [
+          "LinkedIn: linkedin.com/company/thought-foundry",
+          "Glassdoor company profile",
+          "Crunchbase: crunchbase.com/organization/thought-foundry",
+          "Company website: thoughtfoundry.com",
+          "SEC EDGAR full-text search",
+          "GitHub: github.com/thought-foundry",
+          "Industry analyst report (Entertainment PaaS market)"
+        ]
+      },
+      "risk_compliance": {
+        "score": 4.0,
+        "confidence": 0.89,
+        "evidence": [
+          "Low regulatory exposure for AI use cases",
+          "Existing compliance framework adaptable to AI governance"
+        ],
+        "sources": [
+          "Industry analyst report (Entertainment PaaS market)",
+          "G2 product reviews",
+          "Glassdoor company profile",
+          "LinkedIn: linkedin.com/company/thought-foundry",
+          "Crunchbase: crunchbase.com/organization/thought-foundry",
           "Job postings analysis (LinkedIn, Indeed)"
+        ]
+      }
+    },
+    "raw_summary": "Thought Foundry (Entertainment PaaS) scores 2.92 overall, placing it in the AI-Emerging tier. Strongest pillars: Risk & Compliance (4.0), Data Quality & Availability (3.0). Key opportunities include AI-driven automation of core entertainment paas workflows and predictive analytics leveraging 55-person team's domain expertise.",
+    "created_at": "2026-03-14T22:38:37.754501"
+  },
+  {
+    "id": "rr_6ec25921",
+    "company_id": "co_d7441cd8",
+    "job_id": "job_066e2720",
+    "pillar_data": {
+      "data_quality": {
+        "score": 2.8,
+        "confidence": 0.81,
+        "evidence": [
+          "Customer data available but siloed across modules",
+          "Data quality varies by customer deployment",
+          "Some structured data, manual entry still common"
+        ],
+        "sources": [
+          "Glassdoor company profile",
+          "LinkedIn: linkedin.com/company/spokane",
+          "GitHub: github.com/spokane",
+          "Industry analyst report (Produce ERP market)",
+          "Press release: Spokane acquisition announcement",
+          "Crunchbase: crunchbase.com/organization/spokane"
+        ]
+      },
+      "workflow_digitization": {
+        "score": 3.3,
+        "confidence": 0.83,
+        "evidence": [
+          "Core workflows digitized but some manual steps remain",
+          "Integration points exist but not fully automated"
+        ],
+        "sources": [
+          "LinkedIn: linkedin.com/company/spokane",
+          "G2 product reviews",
+          "SEC EDGAR full-text search",
+          "Company website: spokane.com",
+          "Press release: Spokane acquisition announcement"
         ]
       },
       "infrastructure": {
         "score": 1.3,
-        "confidence": 0.77,
+        "confidence": 0.74,
         "evidence": [
           "On-premise or legacy hosting infrastructure",
           "Tightly coupled monolithic architecture",
           "Manual deployment processes; limited automation"
         ],
         "sources": [
-          "Glassdoor company profile",
-          "SEC EDGAR full-text search",
           "Job postings analysis (LinkedIn, Indeed)",
-          "LinkedIn: linkedin.com/company/spokane"
+          "GitHub: github.com/spokane",
+          "Industry analyst report (Produce ERP market)",
+          "G2 product reviews",
+          "Press release: Spokane acquisition announcement",
+          "SEC EDGAR full-text search"
         ]
       },
       "competitive_position": {
         "score": 3.8,
-        "confidence": 0.88,
+        "confidence": 0.84,
         "evidence": [
           "Market leader or strong #2 in vertical niche",
           "Deep domain expertise creates high switching costs",
           "Regulatory compliance requirements create barriers to entry",
-          "Established customer base with 500+ active accounts"
+          "Established customer base with 1000+ active accounts"
         ],
         "sources": [
-          "Press release: Spokane acquisition announcement",
-          "SEC EDGAR full-text search",
-          "LinkedIn: linkedin.com/company/spokane",
           "Job postings analysis (LinkedIn, Indeed)",
+          "LinkedIn: linkedin.com/company/spokane",
+          "Crunchbase: crunchbase.com/organization/spokane",
+          "GitHub: github.com/spokane",
+          "Glassdoor company profile",
           "G2 product reviews"
         ]
       },
       "revenue_upside": {
         "score": 3.0,
-        "confidence": 0.81,
+        "confidence": 0.87,
         "evidence": [
           "AI enhancements improve retention and reduce churn",
           "Operational efficiency gains translate to margin, not new revenue",
           "Potential for AI-powered add-on modules"
         ],
         "sources": [
-          "Glassdoor company profile",
-          "Press release: Spokane acquisition announcement",
-          "GitHub: github.com/spokane",
           "SEC EDGAR full-text search",
-          "Company website: spokane.com",
-          "Industry analyst report (Produce ERP market)"
+          "Industry analyst report (Produce ERP market)",
+          "GitHub: github.com/spokane",
+          "Press release: Spokane acquisition announcement"
         ]
       },
       "margin_upside": {
         "score": 2.8,
+        "confidence": 0.83,
+        "evidence": [
+          "Moderate automation opportunities in support and operations",
+          "AI can augment but not fully replace manual processes"
+        ],
+        "sources": [
+          "SEC EDGAR full-text search",
+          "G2 product reviews",
+          "LinkedIn: linkedin.com/company/spokane",
+          "Crunchbase: crunchbase.com/organization/spokane",
+          "Company website: spokane.com",
+          "Industry analyst report (Produce ERP market)"
+        ]
+      },
+      "org_readiness": {
+        "score": 1.8,
+        "confidence": 0.73,
+        "evidence": [
+          "Leadership has limited AI understanding",
+          "Engineering team focused on maintenance, not innovation",
+          "Organizational resistance to change"
+        ],
+        "sources": [
+          "Job postings analysis (LinkedIn, Indeed)",
+          "LinkedIn: linkedin.com/company/spokane",
+          "Company website: spokane.com",
+          "Glassdoor company profile",
+          "Industry analyst report (Produce ERP market)",
+          "SEC EDGAR full-text search",
+          "G2 product reviews"
+        ]
+      },
+      "risk_compliance": {
+        "score": 4.0,
         "confidence": 0.86,
+        "evidence": [
+          "Low regulatory exposure for AI use cases",
+          "Existing compliance framework adaptable to AI governance",
+          "Data privacy practices already robust",
+          "IP protection strong; minimal risk of AI-related leakage"
+        ],
+        "sources": [
+          "SEC EDGAR full-text search",
+          "Glassdoor company profile",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Industry analyst report (Produce ERP market)",
+          "GitHub: github.com/spokane",
+          "Company website: spokane.com",
+          "Press release: Spokane acquisition announcement"
+        ]
+      }
+    },
+    "raw_summary": "Spokane (Produce ERP) scores 2.9 overall, placing it in the AI-Emerging tier. Strongest pillars: Risk & Compliance (4.0), Competitive Position (3.8). Key opportunities include AI-driven automation of core produce erp workflows and predictive analytics leveraging 70-person team's domain expertise.",
+    "created_at": "2026-03-14T22:38:37.754632"
+  },
+  {
+    "id": "rr_a5f25062",
+    "company_id": "co_8115717b",
+    "job_id": "job_066e2720",
+    "pillar_data": {
+      "data_quality": {
+        "score": 3.0,
+        "confidence": 0.82,
+        "evidence": [
+          "Customer data available but siloed across modules",
+          "Data quality varies by customer deployment"
+        ],
+        "sources": [
+          "Industry analyst report (Energy Control Room market)",
+          "LinkedIn: linkedin.com/company/primate",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Press release: Primate acquisition announcement"
+        ]
+      },
+      "workflow_digitization": {
+        "score": 3.0,
+        "confidence": 0.78,
+        "evidence": [
+          "Core workflows digitized but some manual steps remain",
+          "Integration points exist but not fully automated"
+        ],
+        "sources": [
+          "GitHub: github.com/primate",
+          "Press release: Primate acquisition announcement",
+          "Industry analyst report (Energy Control Room market)",
+          "Crunchbase: crunchbase.com/organization/primate",
+          "Glassdoor company profile",
+          "G2 product reviews",
+          "LinkedIn: linkedin.com/company/primate"
+        ]
+      },
+      "infrastructure": {
+        "score": 2.5,
+        "confidence": 0.82,
+        "evidence": [
+          "Hybrid cloud deployment; migration underway",
+          "Monolithic architecture with some service extraction",
+          "Basic deployment automation; manual testing prevalent"
+        ],
+        "sources": [
+          "G2 product reviews",
+          "Glassdoor company profile",
+          "SEC EDGAR full-text search",
+          "GitHub: github.com/primate",
+          "Crunchbase: crunchbase.com/organization/primate",
+          "Press release: Primate acquisition announcement"
+        ]
+      },
+      "competitive_position": {
+        "score": 3.5,
+        "confidence": 0.81,
+        "evidence": [
+          "Market leader or strong #2 in vertical niche",
+          "Deep domain expertise creates high switching costs",
+          "Regulatory compliance requirements create barriers to entry"
+        ],
+        "sources": [
+          "Industry analyst report (Energy Control Room market)",
+          "Crunchbase: crunchbase.com/organization/primate",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Press release: Primate acquisition announcement",
+          "G2 product reviews",
+          "GitHub: github.com/primate"
+        ]
+      },
+      "revenue_upside": {
+        "score": 2.5,
+        "confidence": 0.81,
+        "evidence": [
+          "AI enhancements improve retention and reduce churn",
+          "Operational efficiency gains translate to margin, not new revenue"
+        ],
+        "sources": [
+          "LinkedIn: linkedin.com/company/primate",
+          "Company website: primate.com",
+          "G2 product reviews",
+          "GitHub: github.com/primate",
+          "Industry analyst report (Energy Control Room market)"
+        ]
+      },
+      "margin_upside": {
+        "score": 2.8,
+        "confidence": 0.81,
+        "evidence": [
+          "Moderate automation opportunities in support and operations",
+          "AI can augment but not fully replace manual processes"
+        ],
+        "sources": [
+          "Press release: Primate acquisition announcement",
+          "G2 product reviews",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Industry analyst report (Energy Control Room market)",
+          "LinkedIn: linkedin.com/company/primate",
+          "Crunchbase: crunchbase.com/organization/primate",
+          "Company website: primate.com"
+        ]
+      },
+      "org_readiness": {
+        "score": 2.3,
+        "confidence": 0.8,
+        "evidence": [
+          "Leadership has limited AI understanding",
+          "Engineering team focused on maintenance, not innovation",
+          "Organizational resistance to change"
+        ],
+        "sources": [
+          "SEC EDGAR full-text search",
+          "Industry analyst report (Energy Control Room market)",
+          "Press release: Primate acquisition announcement",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "G2 product reviews",
+          "Crunchbase: crunchbase.com/organization/primate",
+          "Glassdoor company profile"
+        ]
+      },
+      "risk_compliance": {
+        "score": 2.8,
+        "confidence": 0.85,
+        "evidence": [
+          "Moderate regulatory considerations (SOC2, data privacy)",
+          "Compliance framework needs AI-specific additions",
+          "Some data sensitivity concerns manageable with guardrails"
+        ],
+        "sources": [
+          "Press release: Primate acquisition announcement",
+          "Glassdoor company profile",
+          "SEC EDGAR full-text search",
+          "Industry analyst report (Energy Control Room market)",
+          "Crunchbase: crunchbase.com/organization/primate",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "GitHub: github.com/primate"
+        ]
+      }
+    },
+    "raw_summary": "Primate (Energy Control Room) scores 2.86 overall, placing it in the AI-Emerging tier. Strongest pillars: Competitive Position (3.5), Data Quality & Availability (3.0). Key opportunities include AI-driven automation of core energy control room workflows and predictive analytics leveraging 90-person team's domain expertise.",
+    "created_at": "2026-03-14T22:38:37.754688"
+  },
+  {
+    "id": "rr_29a56e5b",
+    "company_id": "co_9c108742",
+    "job_id": "job_066e2720",
+    "pillar_data": {
+      "data_quality": {
+        "score": 3.0,
+        "confidence": 0.85,
+        "evidence": [
+          "Customer data available but siloed across modules",
+          "Data quality varies by customer deployment"
+        ],
+        "sources": [
+          "Glassdoor company profile",
+          "Press release: ThingTech acquisition announcement",
+          "Industry analyst report (IoT Asset Tracking market)",
+          "Job postings analysis (LinkedIn, Indeed)"
+        ]
+      },
+      "workflow_digitization": {
+        "score": 2.5,
+        "confidence": 0.77,
+        "evidence": [
+          "Core workflows digitized but some manual steps remain",
+          "Integration points exist but not fully automated"
+        ],
+        "sources": [
+          "Crunchbase: crunchbase.com/organization/thingtech",
+          "LinkedIn: linkedin.com/company/thingtech",
+          "GitHub: github.com/thingtech",
+          "Company website: thingtech.com"
+        ]
+      },
+      "infrastructure": {
+        "score": 2.5,
+        "confidence": 0.8,
+        "evidence": [
+          "Hybrid cloud deployment; migration underway",
+          "Monolithic architecture with some service extraction"
+        ],
+        "sources": [
+          "Crunchbase: crunchbase.com/organization/thingtech",
+          "Industry analyst report (IoT Asset Tracking market)",
+          "GitHub: github.com/thingtech",
+          "SEC EDGAR full-text search",
+          "Press release: ThingTech acquisition announcement",
+          "Company website: thingtech.com"
+        ]
+      },
+      "competitive_position": {
+        "score": 2.5,
+        "confidence": 0.83,
+        "evidence": [
+          "Competitive in niche but facing pressure from broader platforms",
+          "Moderate market share with loyal but concentrated customer base"
+        ],
+        "sources": [
+          "G2 product reviews",
+          "Crunchbase: crunchbase.com/organization/thingtech",
+          "Company website: thingtech.com",
+          "Industry analyst report (IoT Asset Tracking market)",
+          "Job postings analysis (LinkedIn, Indeed)"
+        ]
+      },
+      "revenue_upside": {
+        "score": 3.0,
+        "confidence": 0.8,
+        "evidence": [
+          "AI enhancements improve retention and reduce churn",
+          "Operational efficiency gains translate to margin, not new revenue",
+          "Potential for AI-powered add-on modules"
+        ],
+        "sources": [
+          "GitHub: github.com/thingtech",
+          "Industry analyst report (IoT Asset Tracking market)",
+          "LinkedIn: linkedin.com/company/thingtech",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Glassdoor company profile"
+        ]
+      },
+      "margin_upside": {
+        "score": 2.8,
+        "confidence": 0.85,
         "evidence": [
           "Moderate automation opportunities in support and operations",
           "AI can augment but not fully replace manual processes",
           "Efficiency gains offset by implementation costs"
         ],
         "sources": [
-          "GitHub: github.com/spokane",
-          "LinkedIn: linkedin.com/company/spokane",
-          "G2 product reviews",
           "Job postings analysis (LinkedIn, Indeed)",
-          "Press release: Spokane acquisition announcement",
-          "SEC EDGAR full-text search"
+          "Glassdoor company profile",
+          "Company website: thingtech.com",
+          "Industry analyst report (IoT Asset Tracking market)",
+          "GitHub: github.com/thingtech",
+          "LinkedIn: linkedin.com/company/thingtech"
         ]
       },
       "org_readiness": {
-        "score": 1.8,
-        "confidence": 0.8,
+        "score": 2.5,
+        "confidence": 0.76,
         "evidence": [
-          "Leadership has limited AI understanding",
-          "Engineering team focused on maintenance, not innovation"
+          "Technical leadership open to AI but limited hands-on experience",
+          "Engineering team capable but needs upskilling"
         ],
         "sources": [
-          "G2 product reviews",
-          "Company website: spokane.com",
-          "Industry analyst report (Produce ERP market)",
-          "Press release: Spokane acquisition announcement",
+          "LinkedIn: linkedin.com/company/thingtech",
+          "Glassdoor company profile",
           "Job postings analysis (LinkedIn, Indeed)",
-          "Crunchbase: crunchbase.com/organization/spokane",
+          "Industry analyst report (IoT Asset Tracking market)",
           "SEC EDGAR full-text search"
         ]
       },
@@ -1359,345 +1644,69 @@
           "IP protection strong; minimal risk of AI-related leakage"
         ],
         "sources": [
+          "Industry analyst report (IoT Asset Tracking market)",
+          "Press release: ThingTech acquisition announcement",
+          "GitHub: github.com/thingtech",
+          "Company website: thingtech.com",
           "Job postings analysis (LinkedIn, Indeed)",
-          "Industry analyst report (Produce ERP market)",
-          "Glassdoor company profile",
-          "LinkedIn: linkedin.com/company/spokane",
-          "G2 product reviews"
+          "LinkedIn: linkedin.com/company/thingtech",
+          "SEC EDGAR full-text search"
         ]
       }
     },
-    "raw_summary": "Spokane (Produce ERP) scores 2.9 overall, placing it in the AI-Emerging tier. Strongest pillars: Risk & Compliance (4.0), Competitive Position (3.8). Key opportunities include AI-driven automation of core produce erp workflows and predictive analytics leveraging 70-person team's domain expertise.",
-    "created_at": "2026-03-14T22:31:25.655104"
+    "raw_summary": "ThingTech (IoT Asset Tracking) scores 2.8 overall, placing it in the AI-Emerging tier. Strongest pillars: Risk & Compliance (4.0), Data Quality & Availability (3.0). Key opportunities include AI-driven automation of core iot asset tracking workflows and predictive analytics leveraging 110-person team's domain expertise.",
+    "created_at": "2026-03-14T22:38:37.754733"
   },
   {
-    "id": "rr_3f3eb85c",
-    "company_id": "co_cedbecb5",
-    "job_id": "job_09b0621e",
+    "id": "rr_da25be70",
+    "company_id": "co_8b58833b",
+    "job_id": "job_066e2720",
     "pillar_data": {
       "data_quality": {
-        "score": 3.0,
-        "confidence": 0.81,
+        "score": 2.3,
+        "confidence": 0.83,
         "evidence": [
-          "Customer data available but siloed across modules",
-          "Data quality varies by customer deployment"
+          "Limited data infrastructure; primarily transactional records",
+          "Data governance practices not formalized"
         ],
         "sources": [
-          "GitHub: github.com/primate",
-          "Glassdoor company profile",
-          "Industry analyst report (Energy Control Room market)",
-          "SEC EDGAR full-text search",
+          "Company website: dash.com",
+          "Press release: Dash acquisition announcement",
+          "Job postings analysis (LinkedIn, Indeed)",
           "G2 product reviews",
-          "LinkedIn: linkedin.com/company/primate",
-          "Press release: Primate acquisition announcement"
+          "Crunchbase: crunchbase.com/organization/dash",
+          "GitHub: github.com/dash"
         ]
       },
       "workflow_digitization": {
-        "score": 3.0,
-        "confidence": 0.82,
+        "score": 3.3,
+        "confidence": 0.89,
         "evidence": [
           "Core workflows digitized but some manual steps remain",
           "Integration points exist but not fully automated",
           "Paper-based processes being migrated to digital"
         ],
         "sources": [
-          "Company website: primate.com",
-          "Industry analyst report (Energy Control Room market)",
-          "Glassdoor company profile",
+          "Company website: dash.com",
+          "LinkedIn: linkedin.com/company/dash",
           "SEC EDGAR full-text search",
-          "G2 product reviews"
+          "Glassdoor company profile",
+          "Job postings analysis (LinkedIn, Indeed)"
         ]
       },
       "infrastructure": {
         "score": 2.5,
-        "confidence": 0.85,
+        "confidence": 0.84,
         "evidence": [
           "Hybrid cloud deployment; migration underway",
           "Monolithic architecture with some service extraction"
         ],
         "sources": [
-          "SEC EDGAR full-text search",
-          "Industry analyst report (Energy Control Room market)",
-          "Press release: Primate acquisition announcement",
-          "Crunchbase: crunchbase.com/organization/primate"
-        ]
-      },
-      "competitive_position": {
-        "score": 3.5,
-        "confidence": 0.83,
-        "evidence": [
-          "Market leader or strong #2 in vertical niche",
-          "Deep domain expertise creates high switching costs",
-          "Regulatory compliance requirements create barriers to entry"
-        ],
-        "sources": [
-          "Crunchbase: crunchbase.com/organization/primate",
-          "G2 product reviews",
-          "Press release: Primate acquisition announcement",
-          "Industry analyst report (Energy Control Room market)",
-          "Job postings analysis (LinkedIn, Indeed)"
-        ]
-      },
-      "revenue_upside": {
-        "score": 2.5,
-        "confidence": 0.76,
-        "evidence": [
-          "AI enhancements improve retention and reduce churn",
-          "Operational efficiency gains translate to margin, not new revenue"
-        ],
-        "sources": [
-          "Press release: Primate acquisition announcement",
-          "SEC EDGAR full-text search",
-          "Glassdoor company profile",
-          "Crunchbase: crunchbase.com/organization/primate"
-        ]
-      },
-      "margin_upside": {
-        "score": 2.8,
-        "confidence": 0.77,
-        "evidence": [
-          "Moderate automation opportunities in support and operations",
-          "AI can augment but not fully replace manual processes"
-        ],
-        "sources": [
-          "LinkedIn: linkedin.com/company/primate",
-          "Industry analyst report (Energy Control Room market)",
-          "Crunchbase: crunchbase.com/organization/primate",
-          "SEC EDGAR full-text search",
-          "Job postings analysis (LinkedIn, Indeed)",
-          "G2 product reviews"
-        ]
-      },
-      "org_readiness": {
-        "score": 2.3,
-        "confidence": 0.79,
-        "evidence": [
-          "Leadership has limited AI understanding",
-          "Engineering team focused on maintenance, not innovation",
-          "Organizational resistance to change"
-        ],
-        "sources": [
-          "LinkedIn: linkedin.com/company/primate",
-          "Company website: primate.com",
-          "G2 product reviews",
-          "Crunchbase: crunchbase.com/organization/primate",
-          "Glassdoor company profile"
-        ]
-      },
-      "risk_compliance": {
-        "score": 2.8,
-        "confidence": 0.8,
-        "evidence": [
-          "Moderate regulatory considerations (SOC2, data privacy)",
-          "Compliance framework needs AI-specific additions",
-          "Some data sensitivity concerns manageable with guardrails"
-        ],
-        "sources": [
-          "Crunchbase: crunchbase.com/organization/primate",
-          "LinkedIn: linkedin.com/company/primate",
-          "Press release: Primate acquisition announcement",
-          "Glassdoor company profile",
-          "SEC EDGAR full-text search",
-          "GitHub: github.com/primate",
-          "G2 product reviews"
-        ]
-      }
-    },
-    "raw_summary": "Primate (Energy Control Room) scores 2.86 overall, placing it in the AI-Emerging tier. Strongest pillars: Competitive Position (3.5), Data Quality & Availability (3.0). Key opportunities include AI-driven automation of core energy control room workflows and predictive analytics leveraging 90-person team's domain expertise.",
-    "created_at": "2026-03-14T22:31:25.655162"
-  },
-  {
-    "id": "rr_b391e1fe",
-    "company_id": "co_37181538",
-    "job_id": "job_09b0621e",
-    "pillar_data": {
-      "data_quality": {
-        "score": 3.0,
-        "confidence": 0.83,
-        "evidence": [
-          "Customer data available but siloed across modules",
-          "Data quality varies by customer deployment"
-        ],
-        "sources": [
-          "LinkedIn: linkedin.com/company/thingtech",
-          "SEC EDGAR full-text search",
-          "Press release: ThingTech acquisition announcement",
-          "G2 product reviews",
-          "GitHub: github.com/thingtech"
-        ]
-      },
-      "workflow_digitization": {
-        "score": 2.5,
-        "confidence": 0.81,
-        "evidence": [
-          "Core workflows digitized but some manual steps remain",
-          "Integration points exist but not fully automated"
-        ],
-        "sources": [
-          "Job postings analysis (LinkedIn, Indeed)",
-          "Company website: thingtech.com",
-          "SEC EDGAR full-text search",
-          "LinkedIn: linkedin.com/company/thingtech",
-          "GitHub: github.com/thingtech",
-          "Glassdoor company profile"
-        ]
-      },
-      "infrastructure": {
-        "score": 2.5,
-        "confidence": 0.81,
-        "evidence": [
-          "Hybrid cloud deployment; migration underway",
-          "Monolithic architecture with some service extraction",
-          "Basic deployment automation; manual testing prevalent"
-        ],
-        "sources": [
-          "GitHub: github.com/thingtech",
-          "Industry analyst report (IoT Asset Tracking market)",
-          "Crunchbase: crunchbase.com/organization/thingtech",
-          "Press release: ThingTech acquisition announcement",
-          "G2 product reviews"
-        ]
-      },
-      "competitive_position": {
-        "score": 2.5,
-        "confidence": 0.82,
-        "evidence": [
-          "Competitive in niche but facing pressure from broader platforms",
-          "Moderate market share with loyal but concentrated customer base",
-          "Differentiation based on vertical specialization"
-        ],
-        "sources": [
-          "Glassdoor company profile",
-          "Crunchbase: crunchbase.com/organization/thingtech",
-          "Industry analyst report (IoT Asset Tracking market)",
-          "G2 product reviews"
-        ]
-      },
-      "revenue_upside": {
-        "score": 3.0,
-        "confidence": 0.85,
-        "evidence": [
-          "AI enhancements improve retention and reduce churn",
-          "Operational efficiency gains translate to margin, not new revenue"
-        ],
-        "sources": [
-          "Press release: ThingTech acquisition announcement",
-          "Company website: thingtech.com",
-          "SEC EDGAR full-text search",
-          "Industry analyst report (IoT Asset Tracking market)",
-          "G2 product reviews",
-          "LinkedIn: linkedin.com/company/thingtech"
-        ]
-      },
-      "margin_upside": {
-        "score": 2.8,
-        "confidence": 0.81,
-        "evidence": [
-          "Moderate automation opportunities in support and operations",
-          "AI can augment but not fully replace manual processes",
-          "Efficiency gains offset by implementation costs"
-        ],
-        "sources": [
-          "Press release: ThingTech acquisition announcement",
-          "SEC EDGAR full-text search",
-          "Crunchbase: crunchbase.com/organization/thingtech",
-          "LinkedIn: linkedin.com/company/thingtech",
-          "GitHub: github.com/thingtech"
-        ]
-      },
-      "org_readiness": {
-        "score": 2.5,
-        "confidence": 0.8,
-        "evidence": [
-          "Technical leadership open to AI but limited hands-on experience",
-          "Engineering team capable but needs upskilling",
-          "Some experimentation culture; risk-averse leadership"
-        ],
-        "sources": [
-          "Crunchbase: crunchbase.com/organization/thingtech",
-          "Industry analyst report (IoT Asset Tracking market)",
-          "GitHub: github.com/thingtech",
-          "Glassdoor company profile",
-          "LinkedIn: linkedin.com/company/thingtech",
-          "G2 product reviews",
-          "Press release: ThingTech acquisition announcement"
-        ]
-      },
-      "risk_compliance": {
-        "score": 4.0,
-        "confidence": 0.94,
-        "evidence": [
-          "Low regulatory exposure for AI use cases",
-          "Existing compliance framework adaptable to AI governance",
-          "Data privacy practices already robust"
-        ],
-        "sources": [
-          "LinkedIn: linkedin.com/company/thingtech",
-          "Glassdoor company profile",
-          "G2 product reviews",
-          "Press release: ThingTech acquisition announcement",
-          "Job postings analysis (LinkedIn, Indeed)",
-          "Company website: thingtech.com",
-          "Industry analyst report (IoT Asset Tracking market)"
-        ]
-      }
-    },
-    "raw_summary": "ThingTech (IoT Asset Tracking) scores 2.8 overall, placing it in the AI-Emerging tier. Strongest pillars: Risk & Compliance (4.0), Data Quality & Availability (3.0). Key opportunities include AI-driven automation of core iot asset tracking workflows and predictive analytics leveraging 110-person team's domain expertise.",
-    "created_at": "2026-03-14T22:31:25.655223"
-  },
-  {
-    "id": "rr_a185decb",
-    "company_id": "co_0921a6dd",
-    "job_id": "job_09b0621e",
-    "pillar_data": {
-      "data_quality": {
-        "score": 2.3,
-        "confidence": 0.81,
-        "evidence": [
-          "Limited data infrastructure; primarily transactional records",
-          "Data governance practices not formalized",
-          "Legacy database with limited API access"
-        ],
-        "sources": [
           "GitHub: github.com/dash",
-          "Company website: dash.com",
           "Industry analyst report (AP & Doc Automation market)",
-          "Job postings analysis (LinkedIn, Indeed)",
           "Crunchbase: crunchbase.com/organization/dash",
-          "G2 product reviews",
-          "SEC EDGAR full-text search"
-        ]
-      },
-      "workflow_digitization": {
-        "score": 3.3,
-        "confidence": 0.86,
-        "evidence": [
-          "Core workflows digitized but some manual steps remain",
-          "Integration points exist but not fully automated"
-        ],
-        "sources": [
-          "Company website: dash.com",
-          "G2 product reviews",
-          "Glassdoor company profile",
-          "Press release: Dash acquisition announcement"
-        ]
-      },
-      "infrastructure": {
-        "score": 2.5,
-        "confidence": 0.82,
-        "evidence": [
-          "Hybrid cloud deployment; migration underway",
-          "Monolithic architecture with some service extraction",
-          "Basic deployment automation; manual testing prevalent"
-        ],
-        "sources": [
-          "Industry analyst report (AP & Doc Automation market)",
-          "Press release: Dash acquisition announcement",
-          "Company website: dash.com",
-          "Glassdoor company profile",
-          "SEC EDGAR full-text search",
-          "Job postings analysis (LinkedIn, Indeed)",
-          "GitHub: github.com/dash"
+          "LinkedIn: linkedin.com/company/dash",
+          "Job postings analysis (LinkedIn, Indeed)"
         ]
       },
       "competitive_position": {
@@ -1709,57 +1718,60 @@
           "Small market share in fragmented market"
         ],
         "sources": [
+          "GitHub: github.com/dash",
           "Glassdoor company profile",
-          "SEC EDGAR full-text search",
-          "Industry analyst report (AP & Doc Automation market)",
+          "Crunchbase: crunchbase.com/organization/dash",
+          "G2 product reviews",
+          "Company website: dash.com",
           "Press release: Dash acquisition announcement"
         ]
       },
       "revenue_upside": {
         "score": 2.0,
-        "confidence": 0.8,
+        "confidence": 0.77,
         "evidence": [
           "Limited revenue upside from AI; primarily cost reduction play",
-          "Market not yet demanding AI features"
+          "Market not yet demanding AI features",
+          "Regulatory constraints limit AI product innovation"
         ],
         "sources": [
-          "Press release: Dash acquisition announcement",
-          "G2 product reviews",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Company website: dash.com",
+          "Industry analyst report (AP & Doc Automation market)",
+          "LinkedIn: linkedin.com/company/dash",
           "Glassdoor company profile",
           "Crunchbase: crunchbase.com/organization/dash",
-          "SEC EDGAR full-text search"
+          "G2 product reviews"
         ]
       },
       "margin_upside": {
         "score": 2.8,
-        "confidence": 0.81,
+        "confidence": 0.78,
         "evidence": [
           "Moderate automation opportunities in support and operations",
-          "AI can augment but not fully replace manual processes",
-          "Efficiency gains offset by implementation costs"
+          "AI can augment but not fully replace manual processes"
         ],
         "sources": [
           "Press release: Dash acquisition announcement",
-          "LinkedIn: linkedin.com/company/dash",
           "Glassdoor company profile",
-          "GitHub: github.com/dash",
-          "Job postings analysis (LinkedIn, Indeed)",
           "Crunchbase: crunchbase.com/organization/dash",
+          "LinkedIn: linkedin.com/company/dash",
           "SEC EDGAR full-text search"
         ]
       },
       "org_readiness": {
         "score": 2.5,
-        "confidence": 0.79,
+        "confidence": 0.82,
         "evidence": [
           "Technical leadership open to AI but limited hands-on experience",
-          "Engineering team capable but needs upskilling"
+          "Engineering team capable but needs upskilling",
+          "Some experimentation culture; risk-averse leadership"
         ],
         "sources": [
           "Industry analyst report (AP & Doc Automation market)",
-          "Crunchbase: crunchbase.com/organization/dash",
+          "Job postings analysis (LinkedIn, Indeed)",
           "G2 product reviews",
-          "SEC EDGAR full-text search"
+          "Company website: dash.com"
         ]
       },
       "risk_compliance": {
@@ -1772,151 +1784,159 @@
           "IP protection strong; minimal risk of AI-related leakage"
         ],
         "sources": [
+          "Glassdoor company profile",
           "Job postings analysis (LinkedIn, Indeed)",
-          "G2 product reviews",
-          "Press release: Dash acquisition announcement",
+          "GitHub: github.com/dash",
           "SEC EDGAR full-text search",
           "LinkedIn: linkedin.com/company/dash",
-          "Industry analyst report (AP & Doc Automation market)",
-          "GitHub: github.com/dash"
+          "G2 product reviews",
+          "Crunchbase: crunchbase.com/organization/dash"
         ]
       }
     },
     "raw_summary": "Dash (AP & Doc Automation) scores 2.66 overall, placing it in the AI-Emerging tier. Strongest pillars: Risk & Compliance (4.0), Workflow Digitization (3.3). Key opportunities include AI-driven automation of core ap & doc automation workflows and predictive analytics leveraging 60-person team's domain expertise.",
-    "created_at": "2026-03-14T22:31:25.655270"
+    "created_at": "2026-03-14T22:38:37.754781"
   },
   {
-    "id": "rr_13fceec3",
-    "company_id": "co_aa4d250d",
-    "job_id": "job_09b0621e",
+    "id": "rr_42af26ca",
+    "company_id": "co_ee588f7f",
+    "job_id": "job_066e2720",
     "pillar_data": {
       "data_quality": {
         "score": 2.3,
-        "confidence": 0.74,
+        "confidence": 0.79,
         "evidence": [
           "Limited data infrastructure; primarily transactional records",
-          "Data governance practices not formalized",
-          "Legacy database with limited API access"
+          "Data governance practices not formalized"
         ],
         "sources": [
-          "SEC EDGAR full-text search",
-          "Company website: autotime.com",
           "Glassdoor company profile",
-          "GitHub: github.com/autotime"
+          "Press release: AutoTime acquisition announcement",
+          "GitHub: github.com/autotime",
+          "LinkedIn: linkedin.com/company/autotime",
+          "Crunchbase: crunchbase.com/organization/autotime"
         ]
       },
       "workflow_digitization": {
         "score": 2.5,
-        "confidence": 0.77,
+        "confidence": 0.79,
         "evidence": [
           "Core workflows digitized but some manual steps remain",
-          "Integration points exist but not fully automated"
+          "Integration points exist but not fully automated",
+          "Paper-based processes being migrated to digital"
         ],
         "sources": [
+          "Company website: autotime.com",
           "Job postings analysis (LinkedIn, Indeed)",
-          "GitHub: github.com/autotime",
-          "G2 product reviews",
           "Industry analyst report (A&D Payroll market)",
-          "SEC EDGAR full-text search"
+          "GitHub: github.com/autotime",
+          "Crunchbase: crunchbase.com/organization/autotime",
+          "Glassdoor company profile"
         ]
       },
       "infrastructure": {
         "score": 2.5,
-        "confidence": 0.77,
+        "confidence": 0.75,
         "evidence": [
           "Hybrid cloud deployment; migration underway",
-          "Monolithic architecture with some service extraction"
+          "Monolithic architecture with some service extraction",
+          "Basic deployment automation; manual testing prevalent"
         ],
         "sources": [
-          "Job postings analysis (LinkedIn, Indeed)",
-          "G2 product reviews",
+          "Company website: autotime.com",
+          "GitHub: github.com/autotime",
           "Press release: AutoTime acquisition announcement",
-          "LinkedIn: linkedin.com/company/autotime",
-          "Company website: autotime.com"
+          "SEC EDGAR full-text search",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Glassdoor company profile"
         ]
       },
       "competitive_position": {
         "score": 3.0,
-        "confidence": 0.78,
+        "confidence": 0.79,
         "evidence": [
           "Competitive in niche but facing pressure from broader platforms",
-          "Moderate market share with loyal but concentrated customer base",
-          "Differentiation based on vertical specialization"
+          "Moderate market share with loyal but concentrated customer base"
         ],
         "sources": [
-          "Industry analyst report (A&D Payroll market)",
-          "GitHub: github.com/autotime",
-          "Press release: AutoTime acquisition announcement",
+          "Crunchbase: crunchbase.com/organization/autotime",
+          "Company website: autotime.com",
           "Glassdoor company profile",
-          "G2 product reviews",
           "Job postings analysis (LinkedIn, Indeed)",
-          "Company website: autotime.com"
+          "GitHub: github.com/autotime",
+          "SEC EDGAR full-text search",
+          "Press release: AutoTime acquisition announcement"
         ]
       },
       "revenue_upside": {
         "score": 2.0,
-        "confidence": 0.76,
+        "confidence": 0.73,
         "evidence": [
           "Limited revenue upside from AI; primarily cost reduction play",
           "Market not yet demanding AI features"
         ],
         "sources": [
-          "Industry analyst report (A&D Payroll market)",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Press release: AutoTime acquisition announcement",
+          "GitHub: github.com/autotime",
+          "Crunchbase: crunchbase.com/organization/autotime",
           "LinkedIn: linkedin.com/company/autotime",
-          "SEC EDGAR full-text search",
-          "Press release: AutoTime acquisition announcement"
+          "Industry analyst report (A&D Payroll market)",
+          "SEC EDGAR full-text search"
         ]
       },
       "margin_upside": {
         "score": 3.0,
-        "confidence": 0.88,
+        "confidence": 0.81,
         "evidence": [
           "Moderate automation opportunities in support and operations",
-          "AI can augment but not fully replace manual processes"
+          "AI can augment but not fully replace manual processes",
+          "Efficiency gains offset by implementation costs"
         ],
         "sources": [
-          "Company website: autotime.com",
+          "LinkedIn: linkedin.com/company/autotime",
           "GitHub: github.com/autotime",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Company website: autotime.com",
           "Glassdoor company profile",
-          "G2 product reviews",
-          "Crunchbase: crunchbase.com/organization/autotime"
+          "Industry analyst report (A&D Payroll market)"
         ]
       },
       "org_readiness": {
         "score": 2.3,
-        "confidence": 0.75,
+        "confidence": 0.77,
         "evidence": [
           "Leadership has limited AI understanding",
-          "Engineering team focused on maintenance, not innovation",
-          "Organizational resistance to change"
+          "Engineering team focused on maintenance, not innovation"
         ],
         "sources": [
           "LinkedIn: linkedin.com/company/autotime",
-          "Company website: autotime.com",
+          "Job postings analysis (LinkedIn, Indeed)",
           "G2 product reviews",
-          "SEC EDGAR full-text search",
-          "Job postings analysis (LinkedIn, Indeed)"
+          "GitHub: github.com/autotime",
+          "Crunchbase: crunchbase.com/organization/autotime"
         ]
       },
       "risk_compliance": {
         "score": 3.0,
-        "confidence": 0.82,
+        "confidence": 0.85,
         "evidence": [
           "Moderate regulatory considerations (SOC2, data privacy)",
-          "Compliance framework needs AI-specific additions"
+          "Compliance framework needs AI-specific additions",
+          "Some data sensitivity concerns manageable with guardrails"
         ],
         "sources": [
-          "SEC EDGAR full-text search",
-          "Press release: AutoTime acquisition announcement",
-          "Crunchbase: crunchbase.com/organization/autotime",
+          "Job postings analysis (LinkedIn, Indeed)",
+          "Company website: autotime.com",
+          "G2 product reviews",
+          "GitHub: github.com/autotime",
           "Industry analyst report (A&D Payroll market)",
           "Glassdoor company profile",
-          "Company website: autotime.com",
-          "GitHub: github.com/autotime"
+          "SEC EDGAR full-text search"
         ]
       }
     },
     "raw_summary": "AutoTime (A&D Payroll) scores 2.57 overall, placing it in the AI-Emerging tier. Strongest pillars: Competitive Position (3.0), Margin Upside (3.0). Key opportunities include AI-driven automation of core a&d payroll workflows and predictive analytics leveraging 75-person team's domain expertise.",
-    "created_at": "2026-03-14T22:31:25.655320"
+    "created_at": "2026-03-14T22:38:37.754831"
   }
 ]

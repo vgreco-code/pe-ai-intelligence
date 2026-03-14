@@ -1,8 +1,8 @@
 {
   "model_version": "3.0",
-  "training_set_size": 264,
-  "cv_accuracy": NaN,
-  "cv_std": NaN,
+  "training_set_size": 515,
+  "cv_accuracy": 0.9379,
+  "cv_std": 0.0099,
   "cv_folds": 5,
   "backtest_accuracy": 0.875,
   "backtest_avg_deviation": 0.0587,
@@ -89,24 +89,24 @@
     }
   ],
   "feature_importance": {
-    "data_quality": 0.1605,
-    "workflow_digitization": 0.1854,
-    "infrastructure": 0.1435,
-    "competitive_position": 0.198,
-    "revenue_upside": 0.0513,
-    "margin_upside": 0.0495,
-    "org_readiness": 0.1599,
-    "risk_compliance": 0.0519
+    "data_quality": 0.1065,
+    "workflow_digitization": 0.079,
+    "infrastructure": 0.1322,
+    "competitive_position": 0.1735,
+    "revenue_upside": 0.2286,
+    "margin_upside": 0.0644,
+    "org_readiness": 0.1938,
+    "risk_compliance": 0.022
   },
   "derived_weights": {
-    "data_quality": 2.01,
-    "workflow_digitization": 2.32,
-    "infrastructure": 1.79,
-    "competitive_position": 2.48,
-    "revenue_upside": 0.64,
-    "margin_upside": 0.62,
-    "org_readiness": 2.0,
-    "risk_compliance": 0.65
+    "data_quality": 1.33,
+    "workflow_digitization": 0.99,
+    "infrastructure": 1.65,
+    "competitive_position": 2.17,
+    "revenue_upside": 2.86,
+    "margin_upside": 0.81,
+    "org_readiness": 2.42,
+    "risk_compliance": 0.27
   },
   "original_weights": {
     "data_quality": 2.0,
@@ -119,10 +119,10 @@
     "risk_compliance": 1.0
   },
   "tier_distribution_training": {
-    "AI-Buildable": "222",
-    "AI-Emerging": "32",
-    "AI-Limited": "1",
-    "AI-Ready": "9"
+    "AI-Buildable": "277",
+    "AI-Emerging": "146",
+    "AI-Limited": "56",
+    "AI-Ready": "36"
   },
-  "trained_at": "2026-03-14T22:31:25.653539"
+  "trained_at": "2026-03-14T22:38:37.753161"
 }
