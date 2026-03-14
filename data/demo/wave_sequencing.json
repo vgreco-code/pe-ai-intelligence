@@ -1,77 +1,76 @@
 {
   "Wave 1 (Q1-Q2)": [],
-  "Wave 2 (Q3-Q4)": [
-    {
-      "name": "ThingTech",
-      "score": 3.01,
-      "tier": "AI-Emerging"
-    },
-    {
-      "name": "TrackIt Transit",
-      "score": 2.93,
-      "tier": "AI-Emerging"
-    },
-    {
-      "name": "AutoTime",
-      "score": 2.92,
-      "tier": "AI-Emerging"
-    },
-    {
-      "name": "Spokane",
-      "score": 2.84,
-      "tier": "AI-Emerging"
-    },
-    {
-      "name": "FMSI",
-      "score": 2.82,
-      "tier": "AI-Emerging"
-    },
-    {
-      "name": "Champ",
-      "score": 2.8,
-      "tier": "AI-Emerging"
-    }
-  ],
+  "Wave 2 (Q3-Q4)": [],
   "Wave 3 (Year 2)": [
     {
-      "name": "ViaPeople",
-      "score": 2.78,
-      "tier": "AI-Emerging"
-    },
-    {
-      "name": "Thought Foundry",
-      "score": 2.77,
-      "tier": "AI-Emerging"
+      "name": "ThingTech",
+      "score": 2.4,
+      "tier": "AI-Limited"
     },
     {
       "name": "Track Star",
-      "score": 2.7,
-      "tier": "AI-Emerging"
+      "score": 2.38,
+      "tier": "AI-Limited"
     },
     {
-      "name": "Dash",
-      "score": 2.69,
-      "tier": "AI-Emerging"
-    },
-    {
-      "name": "SMRTR",
-      "score": 2.68,
-      "tier": "AI-Emerging"
-    },
-    {
-      "name": "Primate",
-      "score": 2.66,
-      "tier": "AI-Emerging"
+      "name": "Champ",
+      "score": 2.37,
+      "tier": "AI-Limited"
     },
     {
       "name": "Cairn Applications",
-      "score": 2.6,
-      "tier": "AI-Emerging"
+      "score": 2.36,
+      "tier": "AI-Limited"
+    },
+    {
+      "name": "Spokane",
+      "score": 2.35,
+      "tier": "AI-Limited"
+    },
+    {
+      "name": "FMSI",
+      "score": 2.32,
+      "tier": "AI-Limited"
+    },
+    {
+      "name": "Thought Foundry",
+      "score": 2.31,
+      "tier": "AI-Limited"
+    },
+    {
+      "name": "Primate",
+      "score": 2.27,
+      "tier": "AI-Limited"
+    },
+    {
+      "name": "ViaPeople",
+      "score": 2.26,
+      "tier": "AI-Limited"
+    },
+    {
+      "name": "SMRTR",
+      "score": 2.24,
+      "tier": "AI-Limited"
+    },
+    {
+      "name": "TrackIt Transit",
+      "score": 2.24,
+      "tier": "AI-Limited"
+    },
+    {
+      "name": "AutoTime",
+      "score": 2.21,
+      "tier": "AI-Limited"
+    },
+    {
+      "name": "Dash",
+      "score": 2.2,
+      "tier": "AI-Limited"
     },
     {
       "name": "NexTalk",
-      "score": 2.56,
-      "tier": "AI-Emerging"
+      "score": 1.98,
+      "tier": "AI-Limited"
     }
   ]
 }

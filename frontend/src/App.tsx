@@ -13,32 +13,46 @@ export interface PortfolioCompany {
   name: string
   vertical: string
   employee_count: number
+  description: string
+  website: string
+  founded_year: number
   composite_score: number
   tier: string
   wave: number
   pillar_scores: Record<string, number>
+  category_scores?: Record<string, number>
+}
+
+export interface BacktestResult {
+  name: string
+  vertical: string
+  actual_tier: string
+  actual_score: number
+  predicted_score: number
+  predicted_tier: string
+  deviation: number
+  correct: boolean
+  adjacent_correct?: boolean
 }
 
 export interface ModelMetrics {
   model_version: string
+  framework?: string
   training_set_size: number
+  num_dimensions?: number
   cv_accuracy: number
   cv_std: number
   cv_folds: number
   backtest_accuracy: number
+  backtest_adjacent_accuracy?: number
   backtest_avg_deviation: number
-  backtest_results: {
-    name: string
-    vertical: string
-    actual_tier: string
-    actual_score: number
-    predicted_score: number
-    predicted_tier: string
-    deviation: number
-    correct: boolean
-  }[]
+  backtest_count?: number
+  backtest_results: BacktestResult[]
   feature_importance: Record<string, number>
   derived_weights: Record<string, number>
+  original_weights?: Record<string, number>
+  categories?: Record<string, string[]>
+  dimension_labels?: Record<string, string>
 }
 
 export interface TrainingCompany {
@@ -60,15 +74,85 @@ export interface TrainingCompany {
 }
 
 export interface WaveData {
-  [key: string]: { name: string; score: number; tier: string }[]
+  [key: string]: { name: string; score: number; tier: string; top_category?: string }[]
 }
 
 export interface TrainingStats {
   total_companies: number
+  num_dimensions?: number
   verticals: number
   avg_score: number
-  tier_distribution: Record<string, string>
+  tier_distribution: Record<string, number>
+  dimension_stats?: Record<string, { label: string; category: string; mean: number; std: number; min: number; max: number }>
   top_companies: TrainingCompany[]
+}
+
+export const DIMENSION_LABELS: Record<string, string> = {
+  data_quality: 'Data Quality',
+  data_integration: 'Data Integration',
+  analytics_maturity: 'Analytics Maturity',
+  cloud_architecture: 'Cloud Architecture',
+  tech_stack_modernity: 'Tech Stack',
+  ai_engineering: 'AI Engineering',
+  ai_product_features: 'AI Products',
+  revenue_ai_upside: 'Revenue Upside',
+  margin_ai_upside: 'Margin Upside',
+  product_differentiation: 'Differentiation',
+  ai_talent_density: 'AI Talent',
+  leadership_ai_vision: 'Leadership Vision',
+  org_change_readiness: 'Org Readiness',
+  partner_ecosystem: 'Partners',
+  ai_governance: 'AI Governance',
+  regulatory_readiness: 'Regulatory',
+}
+
+export const DIMENSION_SHORT: Record<string, string> = {
+  data_quality: 'DQ', data_integration: 'DI', analytics_maturity: 'AM',
+  cloud_architecture: 'CA', tech_stack_modernity: 'TS', ai_engineering: 'AE',
+  ai_product_features: 'AP', revenue_ai_upside: 'RU', margin_ai_upside: 'MU',
+  product_differentiation: 'PD', ai_talent_density: 'AT', leadership_ai_vision: 'LV',
+  org_change_readiness: 'OR', partner_ecosystem: 'PE', ai_governance: 'AG',
+  regulatory_readiness: 'RR',
+}
+
+export const CATEGORIES: Record<string, string[]> = {
+  'Data & Analytics': ['data_quality', 'data_integration', 'analytics_maturity'],
+  'Technology & Infra': ['cloud_architecture', 'tech_stack_modernity', 'ai_engineering'],
+  'AI Product & Value': ['ai_product_features', 'revenue_ai_upside', 'margin_ai_upside', 'product_differentiation'],
+  'Organization & Talent': ['ai_talent_density', 'leadership_ai_vision', 'org_change_readiness', 'partner_ecosystem'],
+  'Governance & Risk': ['ai_governance', 'regulatory_readiness'],
+}
+
+export const CATEGORY_COLORS: Record<string, string> = {
+  'Data & Analytics': '#06b6d4',
+  'Technology & Infra': '#8b5cf6',
+  'AI Product & Value': '#02C39A',
+  'Organization & Talent': '#F5A623',
+  'Governance & Risk': '#ec4899',
+}
+
+export const TIER_COLORS: Record<string, string> = {
+  'AI-Ready': '#02C39A',
+  'AI-Buildable': '#F5A623',
+  'AI-Emerging': '#F24E1E',
+  'AI-Limited': '#ef4444',
+}
+
+export const getTierBg = (tier: string): string => {
+  switch (tier) {
+    case 'AI-Ready': return 'bg-emerald-500/20 text-emerald-400'
+    case 'AI-Buildable': return 'bg-amber-500/20 text-amber-400'
+    case 'AI-Emerging': return 'bg-orange-500/20 text-orange-400'
+    case 'AI-Limited': return 'bg-red-500/20 text-red-400'
+    default: return 'bg-gray-500/20 text-gray-400'
+  }
+}
+
+export const getScoreColor = (score: number): string => {
+  if (score >= 4.0) return '#02C39A'
+  if (score >= 3.2) return '#F5A623'
+  if (score >= 2.5) return '#F24E1E'
+  return '#ef4444'
 }
 
 type Page = 'dashboard' | 'portfolio' | 'model' | 'training'
@@ -126,14 +210,12 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-mesh flex">
-      {/* Sidebar */}
       <aside
         className={`fixed top-0 left-0 h-screen z-50 flex flex-col border-r transition-all duration-300 ${
           collapsed ? 'w-[68px]' : 'w-[240px]'
         }`}
         style={{ background: 'var(--navy)', borderColor: 'var(--border)' }}
       >
-        {/* Logo */}
         <div className="flex items-center gap-3 px-4 h-16 border-b" style={{ borderColor: 'var(--border)' }}>
           <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'var(--teal)' }}>
             <TrendingUp className="w-4 h-4 text-white" />
@@ -141,12 +223,10 @@ export default function App() {
           {!collapsed && (
             <div className="overflow-hidden">
               <h1 className="text-sm font-bold text-white whitespace-nowrap">Solen AI Intelligence</h1>
-              <p className="text-[10px] font-medium" style={{ color: 'var(--teal)' }}>Portfolio Analytics</p>
+              <p className="text-[10px] font-medium" style={{ color: 'var(--teal)' }}>Portfolio Analytics v4.0</p>
             </div>
           )}
         </div>
-
-        {/* Nav Items */}
         <nav className="flex-1 py-4 px-2 space-y-1">
           {NAV_ITEMS.map(item => {
             const Icon = item.icon
@@ -156,9 +236,7 @@ export default function App() {
                 key={item.id}
                 onClick={() => setPage(item.id)}
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all ${
-                  active
-                    ? 'nav-active text-white'
-                    : 'text-[var(--text-secondary)] hover:text-white hover:bg-white/5'
+                  active ? 'nav-active text-white' : 'text-[var(--text-secondary)] hover:text-white hover:bg-white/5'
                 }`}
                 title={collapsed ? item.label : undefined}
               >
@@ -168,8 +246,6 @@ export default function App() {
             )
           })}
         </nav>
-
-        {/* Collapse Toggle */}
         <button
           onClick={() => setCollapsed(!collapsed)}
           className="mx-2 mb-4 p-2 rounded-lg text-[var(--text-muted)] hover:text-white hover:bg-white/5 transition-all flex items-center justify-center"
@@ -178,19 +254,9 @@ export default function App() {
         </button>
       </aside>
 
-      {/* Main Content */}
-      <main
-        className={`flex-1 transition-all duration-300 ${collapsed ? 'ml-[68px]' : 'ml-[240px]'}`}
-      >
+      <main className={`flex-1 transition-all duration-300 ${collapsed ? 'ml-[68px]' : 'ml-[240px]'}`}>
         <div className="p-6 lg:p-8 max-w-[1600px] mx-auto">
-          {page === 'dashboard' && (
-            <Dashboard
-              portfolio={portfolio}
-              metrics={metrics}
-              trainingStats={trainingStats}
-              waveData={waveData}
-            />
-          )}
+          {page === 'dashboard' && <Dashboard portfolio={portfolio} metrics={metrics} trainingStats={trainingStats} waveData={waveData} />}
           {page === 'portfolio' && <Portfolio portfolio={portfolio} />}
           {page === 'model' && metrics && <ModelIntelligence metrics={metrics} trainingStats={trainingStats} />}
           {page === 'training' && <TrainingExplorer companies={trainingSet} />}
