@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  mcp-server:
+    build:
+      context: ./mcp_server
+      dockerfile: Dockerfile
+    container_name: solen-mcp-server
+    ports:
+      - "8001:8001"
+    env_file:
+      - .env
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./data:/app/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - solen-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: solen-backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      mcp-server:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      - PYTHONUNBUFFERED=1
+      - MCP_SERVER_URL=http://mcp-server:8001
+    volumes:
+      - ./data:/app/data
+      - ./agents:/app/agents
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    networks:
+      - solen-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: solen-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    networks:
+      - solen-network
+
+networks:
+  solen-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
+    driver: local

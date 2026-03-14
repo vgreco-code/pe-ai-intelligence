@@ -1,0 +1,78 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  backend-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          cd backend
+          pip install -r requirements.txt
+          pip install pylint
+
+      - name: Lint
+        run: |
+          cd backend
+          pylint agents/ services/ routers/ --disable=C0111,C0103 || true
+
+  frontend-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          cd frontend
+          npm ci
+
+      - name: Build
+        run: |
+          cd frontend
+          npm run build
+
+  docker-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build backend
+        uses: docker/build-push-action@v4
+        with:
+          context: ./backend
+          push: false
+          tags: solen-backend:latest
+
+      - name: Build frontend
+        uses: docker/build-push-action@v4
+        with:
+          context: ./frontend
+          push: false
+          tags: solen-frontend:latest
+
+      - name: Build mcp-server
+        uses: docker/build-push-action@v4
+        with:
+          context: ./mcp_server
+          push: false
+          tags: solen-mcp:latest

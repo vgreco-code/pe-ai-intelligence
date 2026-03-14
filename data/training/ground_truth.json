@@ -1,0 +1,130 @@
+[
+  {
+    "name": "Vantaca",
+    "vertical": "HOA Mgmt",
+    "actual_tier": "AI-Buildable",
+    "actual_score": 3.8,
+    "pillar_scores": {
+      "data_quality": 4.0,
+      "workflow_digitization": 4.0,
+      "infrastructure": 3.5,
+      "competitive_position": 3.5,
+      "revenue_upside": 3.8,
+      "margin_upside": 3.5,
+      "org_readiness": 3.0,
+      "risk_compliance": 4.0
+    }
+  },
+  {
+    "name": "Toast",
+    "vertical": "Restaurant Tech",
+    "actual_tier": "AI-Ready",
+    "actual_score": 4.2,
+    "pillar_scores": {
+      "data_quality": 4.5,
+      "workflow_digitization": 4.5,
+      "infrastructure": 4.0,
+      "competitive_position": 4.0,
+      "revenue_upside": 4.5,
+      "margin_upside": 4.0,
+      "org_readiness": 4.0,
+      "risk_compliance": 4.0
+    }
+  },
+  {
+    "name": "Clio",
+    "vertical": "Legal Tech",
+    "actual_tier": "AI-Ready",
+    "actual_score": 4.0,
+    "pillar_scores": {
+      "data_quality": 4.0,
+      "workflow_digitization": 4.0,
+      "infrastructure": 3.8,
+      "competitive_position": 3.8,
+      "revenue_upside": 4.0,
+      "margin_upside": 3.8,
+      "org_readiness": 3.5,
+      "risk_compliance": 4.5
+    }
+  },
+  {
+    "name": "Procore",
+    "vertical": "Construction Tech",
+    "actual_tier": "AI-Buildable",
+    "actual_score": 3.7,
+    "pillar_scores": {
+      "data_quality": 3.8,
+      "workflow_digitization": 3.8,
+      "infrastructure": 3.5,
+      "competitive_position": 3.5,
+      "revenue_upside": 3.8,
+      "margin_upside": 3.5,
+      "org_readiness": 3.5,
+      "risk_compliance": 3.5
+    }
+  },
+  {
+    "name": "ServiceTitan",
+    "vertical": "Field Service",
+    "actual_tier": "AI-Buildable",
+    "actual_score": 3.9,
+    "pillar_scores": {
+      "data_quality": 4.0,
+      "workflow_digitization": 4.2,
+      "infrastructure": 3.5,
+      "competitive_position": 3.8,
+      "revenue_upside": 4.0,
+      "margin_upside": 3.8,
+      "org_readiness": 3.5,
+      "risk_compliance": 3.5
+    }
+  },
+  {
+    "name": "Incident IQ",
+    "vertical": "Ed Tech",
+    "actual_tier": "AI-Emerging",
+    "actual_score": 3.1,
+    "pillar_scores": {
+      "data_quality": 3.0,
+      "workflow_digitization": 3.5,
+      "infrastructure": 2.5,
+      "competitive_position": 3.0,
+      "revenue_upside": 3.0,
+      "margin_upside": 2.8,
+      "org_readiness": 2.8,
+      "risk_compliance": 3.5
+    }
+  },
+  {
+    "name": "Veeva",
+    "vertical": "Life Sciences",
+    "actual_tier": "AI-Ready",
+    "actual_score": 4.3,
+    "pillar_scores": {
+      "data_quality": 4.5,
+      "workflow_digitization": 4.5,
+      "infrastructure": 4.0,
+      "competitive_position": 4.5,
+      "revenue_upside": 4.0,
+      "margin_upside": 4.0,
+      "org_readiness": 4.0,
+      "risk_compliance": 4.5
+    }
+  },
+  {
+    "name": "Stampli",
+    "vertical": "AP Automation",
+    "actual_tier": "AI-Buildable",
+    "actual_score": 3.5,
+    "pillar_scores": {
+      "data_quality": 3.5,
+      "workflow_digitization": 3.8,
+      "infrastructure": 3.0,
+      "competitive_position": 3.3,
+      "revenue_upside": 3.5,
+      "margin_upside": 3.5,
+      "org_readiness": 3.0,
+      "risk_compliance": 4.0
+    }
+  }
+]

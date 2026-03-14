@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0D1B3E;
+  --teal: #02C39A;
+  --orange: #F24E1E;
+  --blue: #1ABCFE;
+  --green: #0ACF83;
+  --purple: #A259FF;
+  --gold: #F5A623;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900;
+}
+
+a {
+  @apply text-teal hover:text-teal/80 transition-colors;
+}
+
+.btn-primary {
+  @apply bg-teal text-white px-4 py-2 rounded-lg hover:bg-teal/90 transition-colors font-medium;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors font-medium;
+}
+
+.btn-danger {
+  @apply bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors font-medium;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md border border-gray-200;
+}
+
+.tier-badge {
+  @apply inline-block px-3 py-1 rounded-full text-sm font-semibold;
+}
+
+.tier-badge-ready {
+  @apply bg-teal/10 text-teal border border-teal;
+}
+
+.tier-badge-buildable {
+  @apply bg-gold/10 text-gold border border-gold;
+}
+
+.tier-badge-emerging {
+  @apply bg-orange/10 text-orange border border-orange;
+}
+
+.tier-badge-limited {
+  @apply bg-red-100 text-red-700 border border-red-300;
+}
+
+.loading {
+  @apply animate-pulse;
+}
+
+.error-text {
+  @apply text-red-600 text-sm font-medium;
+}
+
+.success-text {
+  @apply text-green text-sm font-medium;
+}
