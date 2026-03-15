@@ -1,5 +1,6 @@
 """Configuration for Solen AI Intelligence Backend"""
 from pydantic_settings import BaseSettings
+from pydantic import field_validator
 from functools import lru_cache
 
 
@@ -24,6 +25,13 @@ class Settings(BaseSettings):
         "https://pe-ai-intelligence.vercel.app",
         "https://pe-ai-intelligence-vgreco-codes-projects.vercel.app",
     ]
+
+    @field_validator("cors_origins", mode="before")
+    @classmethod
+    def parse_cors_origins(cls, v):
+        if isinstance(v, str):
+            return [origin.strip() for origin in v.split(",") if origin.strip()]
+        return v
 
     class Config:
         env_file = ".env"
