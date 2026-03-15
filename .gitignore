@@ -68,3 +68,4 @@ htmlcov/
 # Misc
 .cache/
 .mypy_cache/
+push_to_github.sh
