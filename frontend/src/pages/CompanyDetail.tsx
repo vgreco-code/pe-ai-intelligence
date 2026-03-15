@@ -4,7 +4,7 @@ import {
 } from 'lucide-react'
 import {
   RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer,
-  BarChart, Bar, XAxis, YAxis, Tooltip, Cell,
+  BarChart, Bar, XAxis, YAxis, Tooltip, Cell, LabelList,
 } from 'recharts'
 import {
   PortfolioCompany, TIER_COLORS, DIMENSION_LABELS,
@@ -243,6 +243,12 @@ export default function CompanyDetail({ company, benchmark, onBack }: Props) {
                   {dimensionBarData.map((entry, i) => (
                     <Cell key={i} fill={entry.fill} fillOpacity={0.85} />
                   ))}
+                  <LabelList
+                    dataKey="score"
+                    position="right"
+                    formatter={(v: number) => v.toFixed(1)}
+                    style={{ fill: 'rgba(148,163,184,0.9)', fontSize: 10, fontWeight: 600 }}
+                  />
                 </Bar>
               </BarChart>
             </ResponsiveContainer>

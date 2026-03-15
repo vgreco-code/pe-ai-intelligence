@@ -197,7 +197,7 @@ export default function Portfolio({ portfolio, onCompanyClick }: Props) {
                 </div>
 
                 {/* Radar Chart */}
-                <div className="mb-4 bg-slate-800/30 rounded-lg p-2">
+                <div className="mb-4 bg-slate-800/30 rounded-lg p-2 relative">
                   <ResponsiveContainer width="100%" height={180}>
                     <RadarChart data={radarData(company)}>
                       <PolarGrid stroke="#334155" />
@@ -206,6 +206,15 @@ export default function Portfolio({ portfolio, onCompanyClick }: Props) {
                       <Radar name="Score" dataKey="value" stroke="#02C39A" fill="#02C39A" fillOpacity={0.2} />
                     </RadarChart>
                   </ResponsiveContainer>
+                  {/* Centered composite score overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="text-center">
+                      <div className="text-2xl font-bold" style={{ color: TIER_COLORS[company.tier], textShadow: '0 0 12px rgba(0,0,0,0.8)' }}>
+                        {company.composite_score.toFixed(1)}
+                      </div>
+                      <div className="text-[9px] font-medium text-slate-400" style={{ textShadow: '0 0 8px rgba(0,0,0,0.8)' }}>/ 5.0</div>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Category Bars */}
