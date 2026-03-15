@@ -13,6 +13,7 @@ type SortType = 'score' | 'name' | 'wave'
 
 interface Props {
   portfolio: PortfolioCompany[]
+  onCompanyClick?: (name: string) => void
 }
 
 const getRecommendation = (tier: string): string => {
@@ -25,10 +26,18 @@ const getRecommendation = (tier: string): string => {
   }
 }
 
-export default function Portfolio({ portfolio }: Props) {
+export default function Portfolio({ portfolio, onCompanyClick }: Props) {
   const [activeFilter, setActiveFilter] = useState<TierFilter>('All')
   const [sortBy, setSortBy] = useState<SortType>('score')
   const [expandedCard, setExpandedCard] = useState<string | null>(null)
+
+  const handleCardClick = (companyName: string) => {
+    if (onCompanyClick) {
+      onCompanyClick(companyName)
+    } else {
+      setExpandedCard(expandedCard === companyName ? null : companyName)
+    }
+  }
 
   const filteredAndSorted = useMemo(() => {
     let filtered = activeFilter === 'All' ? portfolio : portfolio.filter(c => c.tier === activeFilter)
@@ -163,7 +172,7 @@ export default function Portfolio({ portfolio }: Props) {
               </div>
             ) : (
               <button
-                onClick={() => setExpandedCard(company.name)}
+                onClick={() => handleCardClick(company.name)}
                 className="glass-card rounded-2xl p-6 border border-slate-700/50 w-full text-left hover:border-teal-500/50 transition-all cursor-pointer group h-full"
               >
                 <div className="mb-3">
@@ -218,7 +227,9 @@ export default function Portfolio({ portfolio }: Props) {
                 </div>
 
                 <div className="mt-4 text-center">
-                  <p className="text-xs text-[var(--text-muted)] group-hover:text-teal-400 transition-colors">Click to expand</p>
+                  <p className="text-xs text-[var(--text-muted)] group-hover:text-teal-400 transition-colors">
+                    {onCompanyClick ? 'Click for deep-dive' : 'Click to expand'}
+                  </p>
                 </div>
               </button>
             )}

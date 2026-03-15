@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react'
 import {
   LayoutDashboard, Building2, Brain, Database, ChevronLeft, ChevronRight,
-  Zap, TrendingUp
+  Zap, TrendingUp, BarChart3
 } from 'lucide-react'
 import Dashboard from './pages/Dashboard'
 import Portfolio from './pages/Portfolio'
 import ModelIntelligence from './pages/ModelIntelligence'
 import TrainingExplorer from './pages/TrainingExplorer'
+import CompetitiveBenchmarks from './pages/CompetitiveBenchmarks'
+import CompanyDetail from './pages/CompanyDetail'
+import type { BenchmarkCompany } from './pages/CompetitiveBenchmarks'
 
 // Types
 export interface PortfolioCompany {
@@ -158,11 +161,12 @@ export const getScoreColor = (score: number): string => {
   return '#ef4444'
 }
 
-type Page = 'dashboard' | 'portfolio' | 'model' | 'training'
+type Page = 'dashboard' | 'portfolio' | 'benchmarks' | 'model' | 'training' | 'company-detail'
 
 const NAV_ITEMS: { id: Page; label: string; icon: typeof LayoutDashboard }[] = [
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { id: 'portfolio', label: 'Portfolio', icon: Building2 },
+  { id: 'benchmarks', label: 'Benchmarks', icon: BarChart3 },
   { id: 'model', label: 'Model Intelligence', icon: Brain },
   { id: 'training', label: 'Training Explorer', icon: Database },
 ]
@@ -175,6 +179,8 @@ export default function App() {
   const [trainingStats, setTrainingStats] = useState<TrainingStats | null>(null)
   const [waveData, setWaveData] = useState<WaveData>({})
   const [trainingSet, setTrainingSet] = useState<TrainingCompany[]>([])
+  const [benchmarkData, setBenchmarkData] = useState<BenchmarkCompany[]>([])
+  const [selectedCompany, setSelectedCompany] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -184,18 +190,28 @@ export default function App() {
       fetch('/training_stats.json').then(r => r.json()),
       fetch('/wave_sequencing.json').then(r => r.json()),
       fetch('/large_training_set.json').then(r => r.json()),
-    ]).then(([p, m, ts, w, t]) => {
+      fetch('/competitive_benchmarks.json').then(r => r.json()).catch(() => ({ portfolio_benchmarks: [] })),
+    ]).then(([p, m, ts, w, t, cb]) => {
       setPortfolio(p)
       setMetrics(m)
       setTrainingStats(ts)
       setWaveData(w)
       setTrainingSet(t)
+      setBenchmarkData(cb.portfolio_benchmarks || [])
       setLoading(false)
     }).catch(err => {
       console.error('Failed to load data:', err)
       setLoading(false)
     })
   }, [])
+
+  const navigateToCompany = (companyName: string) => {
+    setSelectedCompany(companyName)
+    setPage('company-detail')
+  }
+
+  const selectedPortfolioCompany = portfolio.find(c => c.name === selectedCompany)
+  const selectedBenchmark = benchmarkData.find(b => b.name === selectedCompany)
 
   if (loading) {
     return (
@@ -226,18 +242,21 @@ export default function App() {
           {!collapsed && (
             <div className="overflow-hidden">
               <h1 className="text-sm font-bold text-white whitespace-nowrap">Solen AI Intelligence</h1>
-              <p className="text-[10px] font-medium" style={{ color: 'var(--teal)' }}>Portfolio Analytics v4.0</p>
+              <p className="text-[10px] font-medium" style={{ color: 'var(--teal)' }}>Portfolio Analytics v4.1</p>
             </div>
           )}
         </div>
         <nav className="flex-1 py-4 px-2 space-y-1">
           {NAV_ITEMS.map(item => {
             const Icon = item.icon
-            const active = page === item.id
+            const active = page === item.id || (page === 'company-detail' && item.id === 'portfolio')
             return (
               <button
                 key={item.id}
-                onClick={() => setPage(item.id)}
+                onClick={() => {
+                  if (item.id === 'portfolio') setSelectedCompany(null)
+                  setPage(item.id)
+                }}
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all ${
                   active ? 'nav-active text-white' : 'text-[var(--text-secondary)] hover:text-white hover:bg-white/5'
                 }`}
@@ -259,8 +278,31 @@ export default function App() {
 
       <main className={`flex-1 transition-all duration-300 ${collapsed ? 'ml-[68px]' : 'ml-[240px]'}`}>
         <div className="p-6 lg:p-8 max-w-[1600px] mx-auto">
-          {page === 'dashboard' && <Dashboard portfolio={portfolio} metrics={metrics} trainingStats={trainingStats} waveData={waveData} />}
-          {page === 'portfolio' && <Portfolio portfolio={portfolio} />}
+          {page === 'dashboard' && (
+            <Dashboard
+              portfolio={portfolio}
+              metrics={metrics}
+              trainingStats={trainingStats}
+              waveData={waveData}
+              onCompanyClick={navigateToCompany}
+            />
+          )}
+          {page === 'portfolio' && (
+            <Portfolio
+              portfolio={portfolio}
+              onCompanyClick={navigateToCompany}
+            />
+          )}
+          {page === 'benchmarks' && (
+            <CompetitiveBenchmarks benchmarks={benchmarkData} />
+          )}
+          {page === 'company-detail' && selectedPortfolioCompany && (
+            <CompanyDetail
+              company={selectedPortfolioCompany}
+              benchmark={selectedBenchmark}
+              onBack={() => setPage('portfolio')}
+            />
+          )}
           {page === 'model' && metrics && <ModelIntelligence metrics={metrics} trainingStats={trainingStats} />}
           {page === 'training' && <TrainingExplorer companies={trainingSet} />}
         </div>
