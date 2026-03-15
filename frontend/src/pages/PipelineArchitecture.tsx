@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Workflow, Globe, Cpu, BarChart3, Brain, Layers, Database, Zap, CheckCircle2 } from 'lucide-react'
+import { Workflow, Globe, Cpu, BarChart3, Brain, Layers, Database, Zap, CheckCircle2, Server, Cloud, FlaskConical, Github } from 'lucide-react'
 import { ModelMetrics, TrainingStats } from '../App'
 
 interface Props {
@@ -27,7 +27,7 @@ const PIPELINE_STAGES: PipelineStage[] = [
     subtitle: 'Tavily Search API',
     icon: Globe,
     color: '#1ABCFE',
-    description: 'Multi-agent web scraping system that autonomously researches each company across 6 data layers: website content, company overview, customer reviews, job postings, SEC filings, and AI/ML technology signals.',
+    description: 'Multi-query web research system that autonomously researches each company across 6 data layers: website content, company overview, customer reviews, job postings, SEC filings, and AI/ML technology signals.',
     details: [
       'Tavily API with domain-specific search queries per dimension',
       'Checkpoint/resume pattern for fault tolerance (saves every 25 companies)',
@@ -123,6 +123,59 @@ const PIPELINE_STAGES: PipelineStage[] = [
     inputs: ['Portfolio scores', 'Training set scores', 'Vertical mappings'],
     outputs: ['Percentile ranks', 'Peer comparisons', 'Vertical statistics'],
   },
+  {
+    id: 'sandbox',
+    title: 'Sandbox Pipeline',
+    subtitle: 'Real-Time Scoring',
+    icon: FlaskConical,
+    color: '#A259FF',
+    description: 'End-to-end scoring pipeline exposed as a REST API. Users submit a company name; the system researches it via Tavily, extracts structured features, scores all 17 dimensions using heuristic models with XGBoost-derived weights, and classifies the tier — all in real time.',
+    details: [
+      '3 targeted Tavily queries per company (overview, AI signals, tech stack)',
+      'Regex + keyword heuristic feature extraction (employees, funding, AI, cloud)',
+      '17-dimension scoring using model-derived weights (same as production)',
+      'Results saved to Postgres with is_portfolio=false (sandbox isolation)',
+    ],
+    techStack: ['FastAPI', 'Tavily API', 'httpx', 'SQLAlchemy'],
+    inputs: ['Company name (single string)'],
+    outputs: ['Composite score', '17 dimension scores', 'Tier + Wave', 'Research context'],
+  },
+]
+
+// Architecture layer cards
+const ARCH_LAYERS = [
+  {
+    title: 'Frontend',
+    subtitle: 'React + TypeScript',
+    icon: Globe,
+    color: '#1ABCFE',
+    tech: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'Recharts'],
+    details: '8 interactive pages — Dashboard, Portfolio, Compare, Benchmarks, Sandbox, Pipeline, Model Intelligence, Training Explorer. Deployed on Vercel with static JSON fallback.',
+  },
+  {
+    title: 'API Layer',
+    subtitle: 'FastAPI + Pydantic',
+    icon: Server,
+    color: '#02C39A',
+    tech: ['FastAPI', 'Pydantic', 'SQLAlchemy ORM', 'Uvicorn'],
+    details: '10 REST endpoints serving portfolio scores, benchmarks, model metrics, training data, and the Sandbox scoring pipeline. Auto-generated OpenAPI docs at /docs.',
+  },
+  {
+    title: 'Database',
+    subtitle: 'Neon Postgres',
+    icon: Database,
+    color: '#F5A623',
+    tech: ['Neon Postgres', 'SQLAlchemy', 'Alembic'],
+    details: '6 models: Company, DimensionScore, CompanyScore, Benchmark, ModelMetrics, TrainingSignal. 529 companies, 8,993 dimension scores. Idempotent migration from JSON.',
+  },
+  {
+    title: 'Research',
+    subtitle: 'Tavily Web Search',
+    icon: Cloud,
+    color: '#F24E1E',
+    tech: ['Tavily API', 'httpx', 'Regex extraction'],
+    details: 'Powers the Sandbox scoring pipeline. 3 targeted queries per company, extracts employees, funding, AI signals, cloud-native, market position, regulatory burden.',
+  },
 ]
 
 export default function PipelineArchitecture({ metrics, trainingStats }: Props) {
@@ -140,14 +193,106 @@ export default function PipelineArchitecture({ metrics, trainingStats }: Props) 
           <h1 className="text-4xl font-bold text-[var(--text-primary)]">Pipeline Architecture</h1>
         </div>
         <p className="text-[var(--text-secondary)] text-lg">
-          Multi-agent AI system: from raw web data to investment-grade intelligence
+          Full-stack platform: from raw web data to investment-grade intelligence
         </p>
+      </div>
+
+      {/* System Architecture Overview */}
+      <div className="glass-card rounded-2xl border border-slate-700/50 p-8">
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-xl font-bold text-[var(--text-primary)]">System Architecture</h2>
+          <a
+            href="https://github.com/vgreco-code/pe-ai-intelligence"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-xs text-[var(--text-muted)] hover:text-white transition-colors"
+          >
+            <Github className="w-3.5 h-3.5" />
+            <span>View Source</span>
+          </a>
+        </div>
+
+        <div className="grid grid-cols-4 gap-4 mb-6">
+          {ARCH_LAYERS.map(layer => {
+            const Icon = layer.icon
+            return (
+              <div
+                key={layer.title}
+                className="rounded-xl p-5 border transition-all hover:scale-[1.02]"
+                style={{
+                  backgroundColor: `${layer.color}08`,
+                  borderColor: `${layer.color}20`,
+                }}
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div
+                    className="w-9 h-9 rounded-lg flex items-center justify-center"
+                    style={{ backgroundColor: `${layer.color}18` }}
+                  >
+                    <Icon className="w-4.5 h-4.5" style={{ color: layer.color }} />
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-[var(--text-primary)]">{layer.title}</div>
+                    <div className="text-[10px] font-medium" style={{ color: layer.color }}>{layer.subtitle}</div>
+                  </div>
+                </div>
+                <p className="text-[11px] text-[var(--text-secondary)] leading-relaxed mb-3">
+                  {layer.details}
+                </p>
+                <div className="flex flex-wrap gap-1">
+                  {layer.tech.map(t => (
+                    <span
+                      key={t}
+                      className="text-[9px] font-medium px-1.5 py-0.5 rounded"
+                      style={{ backgroundColor: `${layer.color}10`, color: `${layer.color}cc` }}
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Data flow arrows */}
+        <div className="flex items-center justify-center gap-3 py-2">
+          <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/40 border border-slate-700/30">
+            <div className="w-2 h-2 rounded-full bg-[#1ABCFE]" />
+            <span className="text-[10px] text-[var(--text-muted)]">React SPA</span>
+          </div>
+          <div className="flex items-center">
+            <div className="w-10 h-px bg-slate-600" />
+            <span className="text-[9px] text-[var(--text-muted)] px-1">REST</span>
+            <div className="w-10 h-px bg-slate-600" />
+          </div>
+          <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/40 border border-slate-700/30">
+            <div className="w-2 h-2 rounded-full bg-[#02C39A]" />
+            <span className="text-[10px] text-[var(--text-muted)]">FastAPI</span>
+          </div>
+          <div className="flex items-center">
+            <div className="w-10 h-px bg-slate-600" />
+            <span className="text-[9px] text-[var(--text-muted)] px-1">SQL</span>
+            <div className="w-10 h-px bg-slate-600" />
+          </div>
+          <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/40 border border-slate-700/30">
+            <div className="w-2 h-2 rounded-full bg-[#F5A623]" />
+            <span className="text-[10px] text-[var(--text-muted)]">Neon Postgres</span>
+          </div>
+          <div className="flex items-center">
+            <div className="w-6 h-px bg-slate-600" />
+          </div>
+          <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/40 border border-slate-700/30">
+            <div className="w-2 h-2 rounded-full bg-[#F24E1E]" />
+            <span className="text-[10px] text-[var(--text-muted)]">Tavily API</span>
+          </div>
+        </div>
       </div>
 
       {/* Pipeline Flow Diagram */}
       <div className="glass-card rounded-2xl border border-slate-700/50 p-8">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-xl font-bold text-[var(--text-primary)]">Data Pipeline</h2>
+          <h2 className="text-xl font-bold text-[var(--text-primary)]">Scoring Pipeline</h2>
           <div className="flex items-center gap-2 text-xs text-[var(--text-muted)]">
             <Database className="w-4 h-4" />
             <span>{trainingStats?.total_companies || 515} companies processed</span>
@@ -163,7 +308,7 @@ export default function PipelineArchitecture({ metrics, trainingStats }: Props) 
               <div key={stage.id} className="flex items-center flex-shrink-0">
                 <button
                   onClick={() => setActiveStage(stage.id)}
-                  className={`relative flex flex-col items-center gap-2 p-4 rounded-xl border transition-all min-w-[130px] ${
+                  className={`relative flex flex-col items-center gap-2 p-4 rounded-xl border transition-all min-w-[120px] ${
                     isActive
                       ? 'border-opacity-50 scale-105 shadow-lg'
                       : 'border-slate-700/30 hover:border-opacity-30'
@@ -189,7 +334,7 @@ export default function PipelineArchitecture({ metrics, trainingStats }: Props) 
                 </button>
                 {i < PIPELINE_STAGES.length - 1 && (
                   <div className="flex items-center px-1 flex-shrink-0">
-                    <div className="w-8 h-0.5 bg-slate-700" />
+                    <div className="w-6 h-0.5 bg-slate-700" />
                     <div className="w-0 h-0 border-t-4 border-b-4 border-l-6 border-t-transparent border-b-transparent border-l-slate-700" />
                   </div>
                 )}
@@ -269,6 +414,37 @@ export default function PipelineArchitecture({ metrics, trainingStats }: Props) 
         </div>
       </div>
 
+      {/* API Endpoints */}
+      <div className="glass-card rounded-2xl border border-slate-700/50 p-8">
+        <h2 className="text-xl font-bold text-[var(--text-primary)] mb-6">API Endpoints</h2>
+        <div className="grid grid-cols-2 gap-x-8 gap-y-2">
+          {[
+            { method: 'GET', path: '/api/portfolio_scores', desc: 'Portfolio with 17-dimension scores', group: 'portfolio' },
+            { method: 'GET', path: '/api/competitive_benchmarks', desc: 'Peer benchmarking data', group: 'portfolio' },
+            { method: 'GET', path: '/api/wave_sequencing', desc: 'Investment wave groupings', group: 'portfolio' },
+            { method: 'GET', path: '/api/tier_distribution', desc: 'Tier counts across portfolio', group: 'portfolio' },
+            { method: 'GET', path: '/api/model_metrics', desc: 'XGBoost accuracy & weights', group: 'training' },
+            { method: 'GET', path: '/api/training_stats', desc: 'Dimension stats & top companies', group: 'training' },
+            { method: 'GET', path: '/api/large_training_set', desc: 'Full 515-company dataset', group: 'training' },
+            { method: 'POST', path: '/api/sandbox/score', desc: 'Score any company (web research)', group: 'sandbox' },
+            { method: 'GET', path: '/api/sandbox/companies', desc: 'List sandbox results', group: 'sandbox' },
+            { method: 'CRUD', path: '/api/companies', desc: 'Company management', group: 'companies' },
+          ].map(ep => (
+            <div key={ep.path} className="flex items-center gap-3 py-1.5 border-b border-slate-700/20">
+              <span className={`text-[10px] font-bold px-2 py-0.5 rounded font-mono ${
+                ep.method === 'POST' ? 'bg-purple-500/15 text-purple-400' :
+                ep.method === 'CRUD' ? 'bg-amber-500/15 text-amber-400' :
+                'bg-teal-500/15 text-teal-400'
+              }`}>
+                {ep.method}
+              </span>
+              <span className="text-xs font-mono text-[var(--text-primary)]">{ep.path}</span>
+              <span className="text-[10px] text-[var(--text-muted)] ml-auto">{ep.desc}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Model Performance Summary */}
       <div className="grid grid-cols-3 gap-6">
         <div className="glass-card rounded-xl border border-teal-500/20 p-6">
@@ -287,8 +463,8 @@ export default function PipelineArchitecture({ metrics, trainingStats }: Props) 
               <span className="text-sm font-bold text-[var(--text-primary)]">17</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-sm text-[var(--text-muted)]">Data Sources</span>
-              <span className="text-sm font-bold text-[var(--text-primary)]">6 per company</span>
+              <span className="text-sm text-[var(--text-muted)]">Dimension Scores</span>
+              <span className="text-sm font-bold text-[var(--text-primary)]">8,993</span>
             </div>
             <div className="flex justify-between">
               <span className="text-sm text-[var(--text-muted)]">Ground Truth</span>
@@ -324,27 +500,27 @@ export default function PipelineArchitecture({ metrics, trainingStats }: Props) 
         </div>
 
         <div className="glass-card rounded-xl border border-teal-500/20 p-6">
-          <h3 className="text-lg font-bold text-[var(--text-primary)] mb-4">Framework</h3>
+          <h3 className="text-lg font-bold text-[var(--text-primary)] mb-4">Platform</h3>
           <div className="space-y-3">
             <div className="flex justify-between">
-              <span className="text-sm text-[var(--text-muted)]">Version</span>
-              <span className="text-sm font-bold text-teal-400">v1.0</span>
+              <span className="text-sm text-[var(--text-muted)]">Tests Passing</span>
+              <span className="text-sm font-bold text-emerald-400">92</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-sm text-[var(--text-muted)]">Categories</span>
-              <span className="text-sm font-bold text-[var(--text-primary)]">6 supercategories</span>
+              <span className="text-sm text-[var(--text-muted)]">API Endpoints</span>
+              <span className="text-sm font-bold text-[var(--text-primary)]">10</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-sm text-[var(--text-muted)]">Tiers</span>
-              <span className="text-sm font-bold text-[var(--text-primary)]">4 (Ready → Limited)</span>
+              <span className="text-sm text-[var(--text-muted)]">Frontend Pages</span>
+              <span className="text-sm font-bold text-[var(--text-primary)]">8</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-sm text-[var(--text-muted)]">Waves</span>
-              <span className="text-sm font-bold text-[var(--text-primary)]">3 deployment waves</span>
+              <span className="text-sm text-[var(--text-muted)]">DB Models</span>
+              <span className="text-sm font-bold text-[var(--text-primary)]">6</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-sm text-[var(--text-muted)]">Scoring</span>
-              <span className="text-sm font-bold text-[var(--text-primary)]">Blended research + heuristic</span>
+              <span className="text-sm text-[var(--text-muted)]">Deployment</span>
+              <span className="text-sm font-bold text-[var(--text-primary)]">Vercel + Neon</span>
             </div>
           </div>
         </div>
@@ -366,8 +542,8 @@ export default function PipelineArchitecture({ metrics, trainingStats }: Props) 
               color: '#02C39A',
             },
             {
-              title: 'Fault-Tolerant',
-              desc: 'Checkpoint/resume pattern handles API timeouts and rate limits gracefully. Full pipeline recovers from any failure point.',
+              title: 'Full-Stack',
+              desc: 'React frontend → FastAPI → Neon Postgres. Same scoring weights in production pipeline and real-time Sandbox. 92 tests across 4 test suites.',
               color: '#F5A623',
             },
             {

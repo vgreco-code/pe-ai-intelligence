@@ -1,36 +1,119 @@
-"""Company model"""
-from sqlalchemy import Column, String, Integer, DateTime, Text, func
-from sqlalchemy.ext.declarative import declarative_base
+"""SQLAlchemy models for the AI Intelligence platform"""
+from sqlalchemy import Column, String, Integer, Float, Boolean, DateTime, Text, JSON
+from sqlalchemy.orm import declarative_base
 from datetime import datetime
+import uuid
 
 Base = declarative_base()
 
 
 class Company(Base):
-    """Company entity"""
-
+    """Company — both portfolio and training set companies"""
     __tablename__ = "companies"
 
-    id = Column(String, primary_key=True, index=True)
+    id = Column(String, primary_key=True, default=lambda: f"co_{uuid.uuid4().hex[:8]}")
     name = Column(String, unique=True, index=True, nullable=False)
     vertical = Column(String, nullable=True)
     website = Column(String, nullable=True)
-    github_org = Column(String, nullable=True)
     description = Column(Text, nullable=True)
     founded_year = Column(Integer, nullable=True)
     employee_count = Column(Integer, nullable=True)
-    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+    funding_total_usd = Column(Float, nullable=True)
+    is_public = Column(Boolean, default=False)
+    has_ai_features = Column(Boolean, default=False)
+    cloud_native = Column(Boolean, default=False)
+    api_ecosystem_strength = Column(Float, nullable=True)
+    data_richness = Column(Float, nullable=True)
+    regulatory_burden = Column(Float, nullable=True)
+    market_position = Column(Float, nullable=True)
+    is_portfolio = Column(Boolean, default=False, index=True)  # True for Solen portfolio companies
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
-    def __init__(self, **kwargs):
-        """Initialize with auto-generated ID if not provided"""
-        if "id" not in kwargs:
-            kwargs["id"] = self._generate_id(kwargs.get("name", ""))
-        super().__init__(**kwargs)
 
-    @staticmethod
-    def _generate_id(name: str) -> str:
-        """Generate ID from company name"""
-        import uuid
+class DimensionScore(Base):
+    """Individual dimension scores for a company"""
+    __tablename__ = "dimension_scores"
 
-        return f"co_{uuid.uuid4().hex[:8]}"
+    id = Column(String, primary_key=True, default=lambda: f"ds_{uuid.uuid4().hex[:8]}")
+    company_id = Column(String, index=True, nullable=False)
+    dimension = Column(String, nullable=False)  # e.g., 'data_quality', 'ai_engineering'
+    score = Column(Float, nullable=False)  # 0.0 to 5.0
+    model_version = Column(String, default="1.0")
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+
+class CompanyScore(Base):
+    """Composite score and tier classification for a company"""
+    __tablename__ = "company_scores"
+
+    id = Column(String, primary_key=True, default=lambda: f"cs_{uuid.uuid4().hex[:8]}")
+    company_id = Column(String, index=True, nullable=False)
+    composite_score = Column(Float, nullable=False)
+    tier = Column(String, nullable=False)  # AI-Ready, AI-Buildable, AI-Emerging, AI-Limited
+    wave = Column(Integer, nullable=True)
+    pillar_scores = Column(JSON, nullable=True)  # {dimension: score}
+    category_scores = Column(JSON, nullable=True)  # {category: avg_score}
+    model_version = Column(String, default="1.0")
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+
+class Benchmark(Base):
+    """Competitive benchmark data for a company"""
+    __tablename__ = "benchmarks"
+
+    id = Column(String, primary_key=True, default=lambda: f"bm_{uuid.uuid4().hex[:8]}")
+    company_id = Column(String, index=True, nullable=False)
+    score = Column(Float, nullable=False)
+    tier = Column(String, nullable=False)
+    wave = Column(Integer, nullable=True)
+    peer_verticals = Column(JSON, nullable=True)  # list of strings
+    peer_count = Column(Integer, nullable=True)
+    vertical_rank = Column(Integer, nullable=True)
+    vertical_percentile = Column(Float, nullable=True)
+    vertical_avg = Column(Float, nullable=True)
+    vertical_max = Column(Float, nullable=True)
+    vertical_min = Column(Float, nullable=True)
+    nearest_peers = Column(JSON, nullable=True)  # list of {name, score, tier, vertical}
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+
+class ModelMetrics(Base):
+    """Model performance metrics and configuration"""
+    __tablename__ = "model_metrics"
+
+    id = Column(String, primary_key=True, default=lambda: f"mm_{uuid.uuid4().hex[:8]}")
+    model_version = Column(String, nullable=False)
+    framework = Column(String, default="XGBoost")
+    training_set_size = Column(Integer, nullable=True)
+    num_dimensions = Column(Integer, default=17)
+    cv_accuracy = Column(Float, nullable=True)
+    cv_std = Column(Float, nullable=True)
+    cv_folds = Column(Integer, default=5)
+    backtest_accuracy = Column(Float, nullable=True)
+    backtest_adjacent_accuracy = Column(Float, nullable=True)
+    backtest_avg_deviation = Column(Float, nullable=True)
+    backtest_count = Column(Integer, nullable=True)
+    feature_importance = Column(JSON, nullable=True)  # {dimension: weight}
+    derived_weights = Column(JSON, nullable=True)
+    original_weights = Column(JSON, nullable=True)
+    categories = Column(JSON, nullable=True)
+    dimension_labels = Column(JSON, nullable=True)
+    tier_distribution_training = Column(JSON, nullable=True)
+    backtest_results = Column(JSON, nullable=True)  # list of backtest entries
+    trained_at = Column(DateTime, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+
+class TrainingSignal(Base):
+    """Signal/metadata for training set companies"""
+    __tablename__ = "training_signals"
+
+    id = Column(String, primary_key=True, default=lambda: f"ts_{uuid.uuid4().hex[:8]}")
+    company_id = Column(String, index=True, nullable=False)
+    text_chars = Column(Integer, nullable=True)
+    signal_count = Column(Integer, nullable=True)
+    ai_hiring_signals = Column(Integer, nullable=True)
+    recent_ai_signals = Column(Integer, nullable=True)
+    stagnation_signals = Column(Integer, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow)

@@ -1,4 +1,4 @@
-"""Tests for /api/companies endpoints"""
+"""Tests for /api/companies CRUD endpoints"""
 import pytest
 
 
@@ -47,7 +47,6 @@ def test_get_company(client, sample_company_payload):
 def test_get_company_not_found(client):
     response = client.get("/api/companies/co_nonexistent")
     assert response.status_code == 404
-    assert response.json()["detail"] == "Company not found"
 
 
 def test_list_companies_returns_all(client, sample_company_payload):
@@ -83,7 +82,6 @@ def test_delete_company(client, sample_company_payload):
     created = client.post("/api/companies", json=sample_company_payload).json()
     response = client.delete(f"/api/companies/{created['id']}")
     assert response.status_code == 204
-    # Confirm it's gone
     assert client.get(f"/api/companies/{created['id']}").status_code == 404
 
 

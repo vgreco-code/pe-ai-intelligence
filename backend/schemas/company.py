@@ -10,7 +10,6 @@ class CompanyCreate(BaseModel):
     name: str
     vertical: Optional[str] = None
     website: Optional[str] = None
-    github_org: Optional[str] = None
     description: Optional[str] = None
     founded_year: Optional[int] = None
     employee_count: Optional[int] = None
@@ -23,10 +22,10 @@ class CompanyResponse(BaseModel):
     name: str
     vertical: Optional[str] = None
     website: Optional[str] = None
-    github_org: Optional[str] = None
     description: Optional[str] = None
     founded_year: Optional[int] = None
     employee_count: Optional[int] = None
+    is_portfolio: bool = False
     created_at: datetime
     updated_at: datetime
 

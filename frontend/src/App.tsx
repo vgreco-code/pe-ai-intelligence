@@ -11,6 +11,7 @@ import CompetitiveBenchmarks from './pages/CompetitiveBenchmarks'
 import CompanyDetail from './pages/CompanyDetail'
 import CompareCompanies from './pages/CompareCompanies'
 import PipelineArchitecture from './pages/PipelineArchitecture'
+import Sandbox from './pages/Sandbox'
 import type { BenchmarkCompany } from './pages/CompetitiveBenchmarks'
 
 // Types
@@ -163,13 +164,14 @@ export const getScoreColor = (score: number): string => {
   return '#ef4444'
 }
 
-type Page = 'dashboard' | 'portfolio' | 'compare' | 'benchmarks' | 'pipeline' | 'model' | 'training' | 'company-detail'
+type Page = 'dashboard' | 'portfolio' | 'compare' | 'benchmarks' | 'pipeline' | 'model' | 'training' | 'sandbox' | 'company-detail'
 
 const NAV_ITEMS: { id: Page; label: string; icon: typeof LayoutDashboard }[] = [
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { id: 'portfolio', label: 'Portfolio', icon: Building2 },
   { id: 'compare', label: 'Compare', icon: GitCompareArrows },
   { id: 'benchmarks', label: 'Benchmarks', icon: BarChart3 },
+  { id: 'sandbox', label: 'Sandbox', icon: Zap },
   { id: 'pipeline', label: 'Pipeline', icon: Workflow },
   { id: 'model', label: 'Model Intelligence', icon: Brain },
   { id: 'training', label: 'Training Explorer', icon: Database },
@@ -188,14 +190,31 @@ export default function App() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    Promise.all([
-      fetch('/portfolio_scores.json').then(r => r.json()),
-      fetch('/model_metrics.json').then(r => r.json()),
-      fetch('/training_stats.json').then(r => r.json()),
-      fetch('/wave_sequencing.json').then(r => r.json()),
-      fetch('/large_training_set.json').then(r => r.json()),
-      fetch('/competitive_benchmarks.json').then(r => r.json()).catch(() => ({ portfolio_benchmarks: [] })),
-    ]).then(([p, m, ts, w, t, cb]) => {
+    // Use API backend if configured, otherwise fall back to static JSON
+    const API = import.meta.env.VITE_API_URL || ''
+    const isApi = !!API
+
+    const urls = isApi
+      ? [
+          `${API}/api/portfolio_scores`,
+          `${API}/api/model_metrics`,
+          `${API}/api/training_stats`,
+          `${API}/api/wave_sequencing`,
+          `${API}/api/large_training_set`,
+          `${API}/api/competitive_benchmarks`,
+        ]
+      : [
+          '/portfolio_scores.json',
+          '/model_metrics.json',
+          '/training_stats.json',
+          '/wave_sequencing.json',
+          '/large_training_set.json',
+          '/competitive_benchmarks.json',
+        ]
+
+    Promise.all(
+      urls.map((url, i) => fetch(url).then(r => r.json()).catch(i === 5 ? () => ({ portfolio_benchmarks: [] }) : undefined))
+    ).then(([p, m, ts, w, t, cb]) => {
       setPortfolio(p)
       setMetrics(m)
       setTrainingStats(ts)
@@ -323,6 +342,7 @@ export default function App() {
           {page === 'benchmarks' && (
             <CompetitiveBenchmarks benchmarks={benchmarkData} />
           )}
+          {page === 'sandbox' && <Sandbox />}
           {page === 'pipeline' && (
             <PipelineArchitecture metrics={metrics} trainingStats={trainingStats} />
           )}

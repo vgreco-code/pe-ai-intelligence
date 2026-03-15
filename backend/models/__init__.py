@@ -1,7 +1,4 @@
 """Database models for Solen AI Intelligence"""
-from .company import Company, Base
-from .research import ResearchResult
-from .score import Score
-from .job import AgentJob
+from models.company import Base, Company, DimensionScore, CompanyScore, Benchmark, ModelMetrics, TrainingSignal
 
-__all__ = ["Company", "ResearchResult", "Score", "AgentJob", "Base"]
+__all__ = ["Base", "Company", "DimensionScore", "CompanyScore", "Benchmark", "ModelMetrics", "TrainingSignal"]
