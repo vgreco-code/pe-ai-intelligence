@@ -25,7 +25,7 @@ from xgboost import XGBClassifier
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # ---------------------------------------------------------------------------
-# 16-DIMENSION FRAMEWORK
+# 17-DIMENSION FRAMEWORK (16 maturity + 1 velocity)
 # ---------------------------------------------------------------------------
 DIMENSIONS = {
     # DATA & ANALYTICS FOUNDATION
@@ -49,6 +49,8 @@ DIMENSIONS = {
     # GOVERNANCE & RISK
     "ai_governance":         {"weight": 0.6, "label": "AI Governance",                 "category": "Governance & Risk"},
     "regulatory_readiness":  {"weight": 0.6, "label": "Regulatory Readiness",          "category": "Governance & Risk"},
+    # VELOCITY & MOMENTUM
+    "ai_momentum":           {"weight": 1.3, "label": "AI Momentum",                   "category": "Velocity & Momentum"},
 }
 
 DIMENSION_NAMES = list(DIMENSIONS.keys())
@@ -61,6 +63,7 @@ CATEGORIES = {
     "AI Product & Value": ["ai_product_features", "revenue_ai_upside", "margin_ai_upside", "product_differentiation"],
     "Organization & Talent": ["ai_talent_density", "leadership_ai_vision", "org_change_readiness", "partner_ecosystem"],
     "Governance & Risk": ["ai_governance", "regulatory_readiness"],
+    "Velocity & Momentum": ["ai_momentum"],
 }
 
 
@@ -103,6 +106,7 @@ def map_8_to_16(ps8, company_info=None):
         "partner_ecosystem":     round(ps8["competitive_position"] * 0.5 + ps8["workflow_digitization"] * 0.3 + ps8["infrastructure"] * 0.2, 1),
         "ai_governance":         round(ps8["risk_compliance"] * 0.6 + ps8["org_readiness"] * 0.4, 1),
         "regulatory_readiness":  ps8["risk_compliance"],
+        "ai_momentum":           round(ps8.get("workflow_digitization", 2.5) * 0.4 + ps8.get("data_quality", 2.5) * 0.3 + (0.5 if founded > 2015 else 0.0) + (0.3 if emp > 50 else 0.0), 1),
     }
 
 
@@ -110,7 +114,7 @@ def map_8_to_16(ps8, company_info=None):
 # LOAD TRAINING DATA
 # ---------------------------------------------------------------------------
 print("=" * 70)
-print("MODEL RETRAINING v4.0 — 16-Dimension Framework")
+print("MODEL RETRAINING v4.1 — 17-Dimension Framework (16 maturity + velocity)")
 print("=" * 70)
 
 with open(os.path.join(BASE_DIR, "data", "training", "training_set_v2_real.json")) as f:
@@ -382,10 +386,10 @@ os.makedirs(demo_dir, exist_ok=True)
 
 # 1. Model metrics
 model_metrics = {
-    "model_version": "4.0",
-    "framework": "16-dimension",
+    "model_version": "4.1",
+    "framework": "17-dimension (16 maturity + velocity)",
     "training_set_size": len(training_data),
-    "num_dimensions": 16,
+    "num_dimensions": 17,
     "cv_accuracy": round(float(cv_scores.mean()), 4),
     "cv_std": round(float(cv_scores.std()), 4),
     "cv_folds": 5,
@@ -588,10 +592,10 @@ print(f"  ✓ frontend/public/large_training_set.json")
 # SUMMARY
 # ---------------------------------------------------------------------------
 print("\n" + "=" * 70)
-print("RETRAINING COMPLETE — v4.0 (16-Dimension Framework)")
+print("RETRAINING COMPLETE — v4.1 (17-Dimension Framework + Velocity)")
 print("=" * 70)
-print(f"  Model version:      4.0")
-print(f"  Dimensions:         16 (in 5 categories)")
+print(f"  Model version:      4.1")
+print(f"  Dimensions:         17 (in 6 categories, incl. AI Momentum)")
 print(f"  Training set:       {len(training_data)} companies")
 print(f"  5-Fold CV accuracy: {cv_scores.mean()*100:.1f}%")
 print(f"  Backtest accuracy:  {bt_accuracy*100:.1f}% exact / {adj_accuracy*100:.1f}% adjacent")

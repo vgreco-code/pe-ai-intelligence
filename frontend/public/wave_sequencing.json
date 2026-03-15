@@ -2,71 +2,71 @@
   "Wave 1 (Q1-Q2)": [
     {
       "name": "Cairn Applications",
-      "score": 3.38,
+      "score": 3.33,
       "tier": "AI-Buildable",
       "top_category": "Governance & Risk"
     },
     {
       "name": "SMRTR",
-      "score": 3.26,
-      "tier": "AI-Buildable",
-      "top_category": "Governance & Risk"
-    },
-    {
-      "name": "Track Star",
-      "score": 3.21,
+      "score": 3.28,
       "tier": "AI-Buildable",
       "top_category": "Governance & Risk"
     }
   ],
   "Wave 2 (Q3-Q4)": [
     {
-      "name": "ViaPeople",
+      "name": "Track Star",
       "score": 3.19,
       "tier": "AI-Emerging",
       "top_category": "Governance & Risk"
     },
     {
+      "name": "ViaPeople",
+      "score": 3.16,
+      "tier": "AI-Emerging",
+      "top_category": "Governance & Risk"
+    },
+    {
       "name": "FMSI",
-      "score": 2.96,
+      "score": 2.94,
       "tier": "AI-Emerging",
       "top_category": "AI Product & Value"
     },
     {
       "name": "Champ",
-      "score": 2.9,
+      "score": 2.88,
       "tier": "AI-Emerging",
       "top_category": "AI Product & Value"
-    },
+    }
+  ],
+  "Wave 3 (Year 2)": [
     {
       "name": "TrackIt Transit",
-      "score": 2.83,
+      "score": 2.78,
       "tier": "AI-Emerging",
       "top_category": "Governance & Risk"
     },
     {
       "name": "NexTalk",
-      "score": 2.83,
+      "score": 2.77,
       "tier": "AI-Emerging",
       "top_category": "Governance & Risk"
-    }
-  ],
-  "Wave 3 (Year 2)": [
+    },
     {
       "name": "Thought Foundry",
-      "score": 2.73,
+      "score": 2.7,
       "tier": "AI-Emerging",
       "top_category": "Governance & Risk"
     },
     {
       "name": "ThingTech",
-      "score": 2.69,
+      "score": 2.65,
       "tier": "AI-Emerging",
       "top_category": "Governance & Risk"
     },
     {
       "name": "Primate",
-      "score": 2.63,
+      "score": 2.61,
       "tier": "AI-Emerging",
       "top_category": "Data & Analytics"
     },
@@ -84,7 +84,7 @@
     },
     {
       "name": "AutoTime",
-      "score": 2.35,
+      "score": 2.32,
       "tier": "AI-Limited",
       "top_category": "Governance & Risk"
     }

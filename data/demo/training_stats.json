@@ -138,6 +138,14 @@
       "std": 0.86,
       "min": 1.5,
       "max": 5.0
+    },
+    "ai_momentum": {
+      "label": "AI Momentum",
+      "category": "Velocity & Momentum",
+      "mean": 2.74,
+      "std": 0.6,
+      "min": 1.0,
+      "max": 4.6
     }
   },
   "top_companies": [
@@ -170,12 +178,16 @@
         "org_change_readiness": 4.1,
         "partner_ecosystem": 5.0,
         "ai_governance": 3.6,
-        "regulatory_readiness": 4.6
+        "regulatory_readiness": 4.6,
+        "ai_momentum": 3.4
       },
       "composite_score": 4.16,
       "tier": "AI-Ready",
       "text_chars": 7249,
-      "signal_count": 32
+      "signal_count": 32,
+      "ai_hiring_signals": 2,
+      "recent_ai_signals": 4,
+      "stagnation_signals": 0
     },
     {
       "name": "Shopify",
@@ -206,12 +218,16 @@
         "org_change_readiness": 3.2,
         "partner_ecosystem": 5.0,
         "ai_governance": 2.5,
-        "regulatory_readiness": 3.6
+        "regulatory_readiness": 3.6,
+        "ai_momentum": 3.2
       },
       "composite_score": 4.14,
       "tier": "AI-Ready",
       "text_chars": 15579,
-      "signal_count": 29
+      "signal_count": 29,
+      "ai_hiring_signals": 3,
+      "recent_ai_signals": 2,
+      "stagnation_signals": 0
     },
     {
       "name": "Palantir Technologies",
@@ -242,12 +258,16 @@
         "org_change_readiness": 3.2,
         "partner_ecosystem": 5.0,
         "ai_governance": 2.5,
-        "regulatory_readiness": 4.6
+        "regulatory_readiness": 4.6,
+        "ai_momentum": 3.1
       },
       "composite_score": 4.11,
       "tier": "AI-Ready",
       "text_chars": 9255,
-      "signal_count": 28
+      "signal_count": 28,
+      "ai_hiring_signals": 1,
+      "recent_ai_signals": 3,
+      "stagnation_signals": 0
     },
     {
       "name": "Samsara (IoT)",
@@ -278,12 +298,16 @@
         "org_change_readiness": 3.3,
         "partner_ecosystem": 5.0,
         "ai_governance": 2.5,
-        "regulatory_readiness": 3.6
+        "regulatory_readiness": 3.6,
+        "ai_momentum": 3.3
       },
       "composite_score": 4.08,
       "tier": "AI-Ready",
       "text_chars": 11163,
-      "signal_count": 29
+      "signal_count": 29,
+      "ai_hiring_signals": 2,
+      "recent_ai_signals": 3,
+      "stagnation_signals": 0
     },
     {
       "name": "Axon",
@@ -314,12 +338,16 @@
         "org_change_readiness": 3.7,
         "partner_ecosystem": 5.0,
         "ai_governance": 4.9,
-        "regulatory_readiness": 5.0
+        "regulatory_readiness": 5.0,
+        "ai_momentum": 2.6
       },
       "composite_score": 4.06,
       "tier": "AI-Ready",
       "text_chars": 7370,
-      "signal_count": 27
+      "signal_count": 27,
+      "ai_hiring_signals": 2,
+      "recent_ai_signals": 1,
+      "stagnation_signals": 0
     },
     {
       "name": "Medidata",
@@ -350,12 +378,16 @@
         "org_change_readiness": 3.7,
         "partner_ecosystem": 4.5,
         "ai_governance": 2.1,
-        "regulatory_readiness": 3.6
+        "regulatory_readiness": 3.6,
+        "ai_momentum": 2.1
       },
       "composite_score": 4.05,
       "tier": "AI-Ready",
       "text_chars": 8429,
-      "signal_count": 30
+      "signal_count": 30,
+      "ai_hiring_signals": 2,
+      "recent_ai_signals": 0,
+      "stagnation_signals": 0
     },
     {
       "name": "Avalara",
@@ -386,12 +418,16 @@
         "org_change_readiness": 3.7,
         "partner_ecosystem": 4.3,
         "ai_governance": 3.6,
-        "regulatory_readiness": 4.6
+        "regulatory_readiness": 4.6,
+        "ai_momentum": 3.1
       },
       "composite_score": 4.05,
       "tier": "AI-Ready",
       "text_chars": 12259,
-      "signal_count": 30
+      "signal_count": 30,
+      "ai_hiring_signals": 1,
+      "recent_ai_signals": 3,
+      "stagnation_signals": 0
     },
     {
       "name": "Datadog",
@@ -422,12 +458,16 @@
         "org_change_readiness": 3.0,
         "partner_ecosystem": 4.3,
         "ai_governance": 3.6,
-        "regulatory_readiness": 3.6
+        "regulatory_readiness": 3.6,
+        "ai_momentum": 3.4
       },
       "composite_score": 4.04,
       "tier": "AI-Ready",
       "text_chars": 10509,
-      "signal_count": 29
+      "signal_count": 29,
+      "ai_hiring_signals": 2,
+      "recent_ai_signals": 4,
+      "stagnation_signals": 0
     },
     {
       "name": "Guidewire",
@@ -458,12 +498,16 @@
         "org_change_readiness": 3.2,
         "partner_ecosystem": 4.3,
         "ai_governance": 3.2,
-        "regulatory_readiness": 5.0
+        "regulatory_readiness": 5.0,
+        "ai_momentum": 3.0
       },
       "composite_score": 4.02,
       "tier": "AI-Ready",
       "text_chars": 7567,
-      "signal_count": 25
+      "signal_count": 25,
+      "ai_hiring_signals": 2,
+      "recent_ai_signals": 2,
+      "stagnation_signals": 0
     },
     {
       "name": "Coupa",
@@ -494,12 +538,16 @@
         "org_change_readiness": 3.2,
         "partner_ecosystem": 4.3,
         "ai_governance": 2.5,
-        "regulatory_readiness": 4.1
+        "regulatory_readiness": 4.1,
+        "ai_momentum": 2.6
       },
       "composite_score": 3.97,
       "tier": "AI-Buildable",
       "text_chars": 10656,
-      "signal_count": 30
+      "signal_count": 30,
+      "ai_hiring_signals": 1,
+      "recent_ai_signals": 1,
+      "stagnation_signals": 0
     }
   ]
 }

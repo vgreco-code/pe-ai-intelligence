@@ -104,6 +104,7 @@ export const DIMENSION_LABELS: Record<string, string> = {
   partner_ecosystem: 'Partners',
   ai_governance: 'AI Governance',
   regulatory_readiness: 'Regulatory',
+  ai_momentum: 'AI Momentum',
 }
 
 export const DIMENSION_SHORT: Record<string, string> = {
@@ -112,7 +113,7 @@ export const DIMENSION_SHORT: Record<string, string> = {
   ai_product_features: 'AP', revenue_ai_upside: 'RU', margin_ai_upside: 'MU',
   product_differentiation: 'PD', ai_talent_density: 'AT', leadership_ai_vision: 'LV',
   org_change_readiness: 'OR', partner_ecosystem: 'PE', ai_governance: 'AG',
-  regulatory_readiness: 'RR',
+  regulatory_readiness: 'RR', ai_momentum: 'MO',
 }
 
 export const CATEGORIES: Record<string, string[]> = {
@@ -121,6 +122,7 @@ export const CATEGORIES: Record<string, string[]> = {
   'AI Product & Value': ['ai_product_features', 'revenue_ai_upside', 'margin_ai_upside', 'product_differentiation'],
   'Organization & Talent': ['ai_talent_density', 'leadership_ai_vision', 'org_change_readiness', 'partner_ecosystem'],
   'Governance & Risk': ['ai_governance', 'regulatory_readiness'],
+  'Velocity & Momentum': ['ai_momentum'],
 }
 
 export const CATEGORY_COLORS: Record<string, string> = {
@@ -129,6 +131,7 @@ export const CATEGORY_COLORS: Record<string, string> = {
   'AI Product & Value': '#02C39A',
   'Organization & Talent': '#F5A623',
   'Governance & Risk': '#ec4899',
+  'Velocity & Momentum': '#1ABCFE',
 }
 
 export const TIER_COLORS: Record<string, string> = {
