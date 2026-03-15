@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import {
   LayoutDashboard, Building2, Brain, Database, ChevronLeft, ChevronRight,
-  Zap, TrendingUp, BarChart3, GitCompareArrows, Workflow
+  Zap, TrendingUp, BarChart3, GitCompareArrows, Workflow, Github
 } from 'lucide-react'
 import Dashboard from './pages/Dashboard'
 import Portfolio from './pages/Portfolio'
@@ -272,6 +272,16 @@ export default function App() {
             )
           })}
         </nav>
+        <a
+          href="https://github.com/vgreco-code/pe-ai-intelligence"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mx-2 mb-2 p-2 rounded-lg text-[var(--text-muted)] hover:text-white hover:bg-white/5 transition-all flex items-center gap-3"
+          title="View source on GitHub"
+        >
+          <Github className="w-5 h-5 flex-shrink-0" />
+          {!collapsed && <span className="text-xs font-medium">View on GitHub</span>}
+        </a>
         <button
           onClick={() => setCollapsed(!collapsed)}
           className="mx-2 mb-4 p-2 rounded-lg text-[var(--text-muted)] hover:text-white hover:bg-white/5 transition-all flex items-center justify-center"
