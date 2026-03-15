@@ -272,6 +272,16 @@ export default function App() {
             )
           })}
         </nav>
+        {!collapsed && (
+          <div className="mx-3 mb-3 px-2 py-2 rounded-lg bg-white/[0.03] border border-white/[0.06]">
+            <div className="text-[9px] font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-1.5">Tech Stack</div>
+            <div className="flex flex-wrap gap-1">
+              {['React', 'TypeScript', 'Vite', 'XGBoost', 'Python'].map(t => (
+                <span key={t} className="text-[9px] font-medium px-1.5 py-0.5 rounded bg-white/[0.06] text-[var(--text-muted)]">{t}</span>
+              ))}
+            </div>
+          </div>
+        )}
         <a
           href="https://github.com/vgreco-code/pe-ai-intelligence"
           target="_blank"
