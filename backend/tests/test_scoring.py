@@ -1,195 +1,301 @@
-"""Tests for scoring service"""
+"""Tests for portfolio, training, and benchmark API endpoints.
+Replaces old scoring_service tests — now testing the Postgres-backed API layer."""
 import pytest
-from services.scoring_service import (
-    calculate_composite_score,
-    get_tier,
-    get_wave,
-    build_pillar_breakdown,
-    PILLARS,
-    TOTAL_WEIGHT,
-)
 
 
-# --- calculate_composite_score ---
+# ─── Portfolio Scores ────────────────────────────────────────────
 
-def test_calculate_composite_score_typical():
-    pillar_scores = {
-        "data_quality": 4.0,
-        "workflow_digitization": 4.0,
-        "infrastructure": 3.5,
-        "competitive_position": 3.5,
-        "revenue_upside": 3.8,
-        "margin_upside": 3.5,
-        "org_readiness": 3.0,
-        "risk_compliance": 4.0,
-    }
-    score = calculate_composite_score(pillar_scores)
-    assert 3.5 < score < 4.0
-    assert score <= 5.0
+class TestPortfolioScores:
+    def test_returns_only_portfolio_companies(self, seeded_client):
+        resp = seeded_client.get("/api/portfolio_scores")
+        assert resp.status_code == 200
+        data = resp.json()
+        names = [c["name"] for c in data]
+        assert "Cairn Applications" in names
+        assert "SMRTR" in names
+        assert "AutoTime" in names
+        # Training-only company should NOT appear
+        assert "Salesforce" not in names
 
+    def test_portfolio_count(self, seeded_client):
+        data = seeded_client.get("/api/portfolio_scores").json()
+        assert len(data) == 3
 
-def test_calculate_composite_score_all_max():
-    pillar_scores = {p: 5.0 for p in PILLARS}
-    score = calculate_composite_score(pillar_scores)
-    assert score == 5.0
+    def test_portfolio_company_shape(self, seeded_client):
+        data = seeded_client.get("/api/portfolio_scores").json()
+        company = next(c for c in data if c["name"] == "Cairn Applications")
+        required_keys = {"name", "vertical", "employee_count", "description",
+                         "website", "founded_year", "composite_score", "tier",
+                         "wave", "pillar_scores", "category_scores"}
+        assert required_keys.issubset(set(company.keys()))
 
+    def test_portfolio_scores_values(self, seeded_client):
+        data = seeded_client.get("/api/portfolio_scores").json()
+        cairn = next(c for c in data if c["name"] == "Cairn Applications")
+        assert cairn["composite_score"] == 3.30
+        assert cairn["tier"] == "AI-Buildable"
+        assert cairn["wave"] == 1
+        assert cairn["vertical"] == "Waste Hauling SaaS"
 
-def test_calculate_composite_score_all_zero():
-    pillar_scores = {p: 0.0 for p in PILLARS}
-    score = calculate_composite_score(pillar_scores)
-    assert score == 0.0
+    def test_portfolio_pillar_scores_present(self, seeded_client):
+        data = seeded_client.get("/api/portfolio_scores").json()
+        cairn = next(c for c in data if c["name"] == "Cairn Applications")
+        ps = cairn["pillar_scores"]
+        assert isinstance(ps, dict)
+        assert len(ps) == 17
+        assert ps["data_quality"] == 3.6
+        assert ps["ai_momentum"] == 3.3
 
+    def test_portfolio_category_scores_present(self, seeded_client):
+        data = seeded_client.get("/api/portfolio_scores").json()
+        cairn = next(c for c in data if c["name"] == "Cairn Applications")
+        cs = cairn["category_scores"]
+        assert "Data & Analytics" in cs
+        assert cs["Data & Analytics"] == 3.5
 
-def test_calculate_composite_score_clamped_above_max():
-    # Scores above 5 should be clamped to 5.0
-    pillar_scores = {p: 10.0 for p in PILLARS}
-    score = calculate_composite_score(pillar_scores)
-    assert score == 5.0
-
-
-def test_calculate_composite_score_partial_pillars():
-    # Only data_quality (weight 2.0) scored, rest missing
-    score = calculate_composite_score({"data_quality": 4.0})
-    assert score == round((4.0 * 2.0) / TOTAL_WEIGHT, 2)
-
-
-def test_calculate_composite_score_unknown_pillars_ignored():
-    pillar_scores = {p: 3.0 for p in PILLARS}
-    pillar_scores["nonexistent_pillar"] = 5.0
-    score_with_unknown = calculate_composite_score(pillar_scores)
-    score_without = calculate_composite_score({p: 3.0 for p in PILLARS})
-    assert score_with_unknown == score_without
-
-
-def test_calculate_composite_score_returns_float():
-    score = calculate_composite_score({"data_quality": 3.5})
-    assert isinstance(score, float)
-
-
-def test_calculate_composite_score_rounded_to_2dp():
-    score = calculate_composite_score({"data_quality": 3.333})
-    assert score == round(score, 2)
+    def test_empty_portfolio(self, client):
+        """No companies in DB → empty list"""
+        data = client.get("/api/portfolio_scores").json()
+        assert data == []
 
 
-# --- get_tier ---
+# ─── Competitive Benchmarks ──────────────────────────────────────
 
-def test_get_tier_ai_ready():
-    assert get_tier(4.0) == "AI-Ready"
-    assert get_tier(5.0) == "AI-Ready"
-    assert get_tier(4.5) == "AI-Ready"
+class TestCompetitiveBenchmarks:
+    def test_returns_portfolio_benchmarks_key(self, seeded_client):
+        resp = seeded_client.get("/api/competitive_benchmarks")
+        assert resp.status_code == 200
+        data = resp.json()
+        assert "portfolio_benchmarks" in data
 
+    def test_benchmark_count(self, seeded_client):
+        data = seeded_client.get("/api/competitive_benchmarks").json()
+        assert len(data["portfolio_benchmarks"]) == 1  # Only Cairn has a benchmark
 
-def test_get_tier_ai_buildable():
-    assert get_tier(3.2) == "AI-Buildable"
-    assert get_tier(3.5) == "AI-Buildable"
-    assert get_tier(3.99) == "AI-Buildable"
+    def test_benchmark_shape(self, seeded_client):
+        data = seeded_client.get("/api/competitive_benchmarks").json()
+        bm = data["portfolio_benchmarks"][0]
+        required = {"name", "score", "tier", "wave", "peer_verticals", "peer_count",
+                     "vertical_rank", "vertical_percentile", "vertical_avg",
+                     "vertical_max", "vertical_min", "nearest_peers"}
+        assert required.issubset(set(bm.keys()))
 
+    def test_benchmark_values(self, seeded_client):
+        data = seeded_client.get("/api/competitive_benchmarks").json()
+        bm = data["portfolio_benchmarks"][0]
+        assert bm["name"] == "Cairn Applications"
+        assert bm["vertical_percentile"] == 76.0
+        assert bm["peer_count"] == 25
+        assert bm["vertical_rank"] == 6
 
-def test_get_tier_ai_emerging():
-    assert get_tier(2.5) == "AI-Emerging"
-    assert get_tier(2.8) == "AI-Emerging"
-    assert get_tier(3.19) == "AI-Emerging"
+    def test_benchmark_nearest_peers(self, seeded_client):
+        data = seeded_client.get("/api/competitive_benchmarks").json()
+        bm = data["portfolio_benchmarks"][0]
+        assert len(bm["nearest_peers"]) == 1
+        assert bm["nearest_peers"][0]["name"] == "PeerCo"
 
-
-def test_get_tier_ai_limited():
-    assert get_tier(0.0) == "AI-Limited"
-    assert get_tier(2.0) == "AI-Limited"
-    assert get_tier(2.49) == "AI-Limited"
-
-
-def test_get_tier_boundary_exact_4():
-    assert get_tier(4.0) == "AI-Ready"
-
-
-def test_get_tier_boundary_exact_3_2():
-    assert get_tier(3.2) == "AI-Buildable"
-
-
-def test_get_tier_boundary_exact_2_5():
-    assert get_tier(2.5) == "AI-Emerging"
-
-
-# --- get_wave ---
-
-def test_get_wave_ai_ready():
-    assert get_wave("AI-Ready") == 1
+    def test_empty_benchmarks(self, client):
+        data = client.get("/api/competitive_benchmarks").json()
+        assert data["portfolio_benchmarks"] == []
 
 
-def test_get_wave_ai_buildable():
-    assert get_wave("AI-Buildable") == 2
+# ─── Wave Sequencing ─────────────────────────────────────────────
+
+class TestWaveSequencing:
+    def test_wave_keys(self, seeded_client):
+        data = seeded_client.get("/api/wave_sequencing").json()
+        assert "Wave 1 (Q1-Q2)" in data
+        assert "Wave 2 (Q3-Q4)" in data
+        assert "Wave 3 (Year 2)" in data
+
+    def test_wave_assignment(self, seeded_client):
+        data = seeded_client.get("/api/wave_sequencing").json()
+        w1_names = [c["name"] for c in data["Wave 1 (Q1-Q2)"]]
+        w3_names = [c["name"] for c in data["Wave 3 (Year 2)"]]
+        assert "Cairn Applications" in w1_names
+        assert "SMRTR" in w1_names
+        assert "AutoTime" in w3_names
+
+    def test_wave_entry_shape(self, seeded_client):
+        data = seeded_client.get("/api/wave_sequencing").json()
+        entry = data["Wave 1 (Q1-Q2)"][0]
+        assert "name" in entry
+        assert "score" in entry
+        assert "tier" in entry
+        assert "top_category" in entry
 
 
-def test_get_wave_ai_emerging():
-    assert get_wave("AI-Emerging") == 3
+# ─── Tier Distribution ───────────────────────────────────────────
+
+class TestTierDistribution:
+    def test_tier_counts(self, seeded_client):
+        data = seeded_client.get("/api/tier_distribution").json()
+        assert data.get("AI-Buildable", 0) == 2
+        assert data.get("AI-Limited", 0) == 1
+
+    def test_empty_distribution(self, client):
+        data = client.get("/api/tier_distribution").json()
+        assert data == {}
 
 
-def test_get_wave_ai_limited():
-    assert get_wave("AI-Limited") == 3
+# ─── Model Metrics ───────────────────────────────────────────────
+
+class TestModelMetrics:
+    def test_returns_model_data(self, seeded_client):
+        resp = seeded_client.get("/api/model_metrics")
+        assert resp.status_code == 200
+        data = resp.json()
+        assert data["model_version"] == "4.1"
+        assert data["framework"] == "XGBoost"
+        assert data["num_dimensions"] == 17
+
+    def test_model_accuracy_values(self, seeded_client):
+        data = seeded_client.get("/api/model_metrics").json()
+        assert data["cv_accuracy"] == 0.8932
+        assert data["cv_folds"] == 5
+        assert data["backtest_count"] == 58
+
+    def test_feature_importance_present(self, seeded_client):
+        data = seeded_client.get("/api/model_metrics").json()
+        fi = data["feature_importance"]
+        assert isinstance(fi, dict)
+        assert "data_quality" in fi
+        assert "ai_engineering" in fi
+
+    def test_backtest_results_present(self, seeded_client):
+        data = seeded_client.get("/api/model_metrics").json()
+        bt = data["backtest_results"]
+        assert isinstance(bt, list)
+        assert len(bt) == 1
+        assert bt[0]["name"] == "TestCo"
+        assert bt[0]["correct"] is True
+
+    def test_categories_and_labels(self, seeded_client):
+        data = seeded_client.get("/api/model_metrics").json()
+        assert "Data & Analytics" in data["categories"]
+        assert data["dimension_labels"]["data_quality"] == "Data Quality"
+
+    def test_empty_metrics(self, client):
+        data = client.get("/api/model_metrics").json()
+        assert data == {}
 
 
-def test_get_wave_unknown_tier_defaults_to_3():
-    assert get_wave("Unknown") == 3
+# ─── Training Stats ──────────────────────────────────────────────
+
+class TestTrainingStats:
+    def test_total_companies(self, seeded_client):
+        data = seeded_client.get("/api/training_stats").json()
+        assert data["total_companies"] == 4  # 3 portfolio + 1 training
+
+    def test_dimension_count(self, seeded_client):
+        data = seeded_client.get("/api/training_stats").json()
+        # Only Cairn has individual dimension_scores rows
+        assert data["num_dimensions"] == 17
+
+    def test_tier_distribution(self, seeded_client):
+        data = seeded_client.get("/api/training_stats").json()
+        td = data["tier_distribution"]
+        assert isinstance(td, dict)
+        assert td.get("AI-Buildable", 0) == 2
+        assert td.get("AI-Limited", 0) == 1
+        assert td.get("AI-Ready", 0) == 1
+
+    def test_avg_score(self, seeded_client):
+        data = seeded_client.get("/api/training_stats").json()
+        # (3.30 + 3.15 + 2.10 + 4.50) / 4 = 3.2625
+        assert 3.0 < data["avg_score"] < 3.5
+
+    def test_top_companies(self, seeded_client):
+        data = seeded_client.get("/api/training_stats").json()
+        top = data["top_companies"]
+        assert len(top) <= 10
+        # Should be sorted desc by score
+        assert top[0]["name"] == "Salesforce"
+        assert top[0]["composite_score"] == 4.50
+
+    def test_dimension_stats_shape(self, seeded_client):
+        data = seeded_client.get("/api/training_stats").json()
+        ds = data["dimension_stats"]
+        assert isinstance(ds, dict)
+        if "data_quality" in ds:
+            stat = ds["data_quality"]
+            assert "mean" in stat
+            assert "std" in stat
+            assert "min" in stat
+            assert "max" in stat
+            assert "label" in stat
 
 
-# --- build_pillar_breakdown ---
+# ─── Training Set ────────────────────────────────────────────────
 
-def test_build_pillar_breakdown_structure():
-    breakdown = build_pillar_breakdown({"data_quality": 4.0})
-    assert "data_quality" in breakdown
-    assert set(breakdown["data_quality"].keys()) == {"score", "weight", "weighted"}
+class TestTrainingSet:
+    def test_returns_all_companies(self, seeded_client):
+        data = seeded_client.get("/api/large_training_set").json()
+        assert len(data) == 4  # All companies, portfolio + training
 
+    def test_training_entry_has_pillars(self, seeded_client):
+        data = seeded_client.get("/api/large_training_set").json()
+        cairn = next(c for c in data if c["name"] == "Cairn Applications")
+        assert "pillars" in cairn
+        assert isinstance(cairn["pillars"], dict)
 
-def test_build_pillar_breakdown_values():
-    breakdown = build_pillar_breakdown({"data_quality": 4.0})
-    assert breakdown["data_quality"]["score"] == 4.0
-    assert breakdown["data_quality"]["weight"] == 2.0
-    assert breakdown["data_quality"]["weighted"] == 8.0
+    def test_training_entry_has_signals(self, seeded_client):
+        data = seeded_client.get("/api/large_training_set").json()
+        sf = next(c for c in data if c["name"] == "Salesforce")
+        assert sf["text_chars"] == 15000
+        assert sf["ai_hiring_signals"] == 8
 
-
-def test_build_pillar_breakdown_multiple_pillars():
-    breakdown = build_pillar_breakdown({
-        "data_quality": 4.0,
-        "workflow_digitization": 3.5,
-        "org_readiness": 2.0,
-    })
-    assert len(breakdown) == 3
-    assert breakdown["org_readiness"]["weight"] == 1.0
-    assert breakdown["org_readiness"]["weighted"] == 2.0
-
-
-def test_build_pillar_breakdown_unknown_pillar_excluded():
-    breakdown = build_pillar_breakdown({"fake_pillar": 5.0, "data_quality": 3.0})
-    assert "fake_pillar" not in breakdown
-    assert "data_quality" in breakdown
+    def test_training_entry_has_metadata(self, seeded_client):
+        data = seeded_client.get("/api/large_training_set").json()
+        sf = next(c for c in data if c["name"] == "Salesforce")
+        assert sf["is_public"] is True
+        assert sf["has_ai_features"] is True
+        assert sf["cloud_native"] is True
+        assert sf["api_ecosystem_strength"] == 4.5
 
 
-def test_build_pillar_breakdown_rounding():
-    breakdown = build_pillar_breakdown({"data_quality": 3.333})
-    assert breakdown["data_quality"]["score"] == round(3.333, 2)
-    assert breakdown["data_quality"]["weighted"] == round(3.333 * 2.0, 2)
+# ─── Database Model Tests ────────────────────────────────────────
 
+class TestModels:
+    def test_company_id_auto_generated(self, db):
+        from models.company import Company
+        c = Company(name="TestCo Auto ID")
+        db.add(c)
+        db.commit()
+        db.refresh(c)
+        assert c.id.startswith("co_")
+        assert len(c.id) == 11  # "co_" + 8 hex chars
 
-def test_build_pillar_breakdown_empty_input():
-    breakdown = build_pillar_breakdown({})
-    assert breakdown == {}
+    def test_company_portfolio_flag(self, db):
+        from models.company import Company
+        c = Company(name="Portfolio Co", is_portfolio=True)
+        db.add(c)
+        db.commit()
+        result = db.query(Company).filter(Company.is_portfolio == True).all()
+        assert len(result) == 1
+        assert result[0].name == "Portfolio Co"
 
+    def test_dimension_score_creation(self, db):
+        from models.company import Company, DimensionScore
+        c = Company(name="DimTest Co")
+        db.add(c)
+        db.flush()
+        ds = DimensionScore(company_id=c.id, dimension="data_quality", score=3.5)
+        db.add(ds)
+        db.commit()
+        result = db.query(DimensionScore).filter(DimensionScore.company_id == c.id).all()
+        assert len(result) == 1
+        assert result[0].score == 3.5
 
-# --- PILLARS constant ---
-
-def test_pillars_total_weight():
-    total = sum(p["weight"] for p in PILLARS.values())
-    assert total == TOTAL_WEIGHT
-
-
-def test_pillars_has_all_eight():
-    assert len(PILLARS) == 8
-    expected = {
-        "data_quality", "workflow_digitization", "infrastructure",
-        "competitive_position", "revenue_upside", "margin_upside",
-        "org_readiness", "risk_compliance",
-    }
-    assert set(PILLARS.keys()) == expected
-
-
-if __name__ == "__main__":
-    pytest.main([__file__, "-v"])
+    def test_company_score_json_fields(self, db):
+        from models.company import Company, CompanyScore
+        c = Company(name="JSONTest Co")
+        db.add(c)
+        db.flush()
+        ps = {"data_quality": 3.0, "ai_engineering": 4.0}
+        cs = CompanyScore(company_id=c.id, composite_score=3.5, tier="AI-Buildable", pillar_scores=ps)
+        db.add(cs)
+        db.commit()
+        result = db.query(CompanyScore).filter(CompanyScore.company_id == c.id).first()
+        assert result.pillar_scores["data_quality"] == 3.0
+        assert result.pillar_scores["ai_engineering"] == 4.0

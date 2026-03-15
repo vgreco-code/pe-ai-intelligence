@@ -1,4 +1,5 @@
 """Training data and model metrics endpoints"""
+import math
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from sqlalchemy import func
@@ -118,18 +119,28 @@ async def get_training_stats(db: Session = Depends(get_db)):
     for (dim,) in dims:
         stats = db.query(
             func.avg(DimensionScore.score),
-            func.stddev(DimensionScore.score),
             func.min(DimensionScore.score),
             func.max(DimensionScore.score),
         ).filter(DimensionScore.dimension == dim).first()
 
+        # Compute stddev in Python (compatible with both SQLite and Postgres)
+        scores = [
+            r[0] for r in db.query(DimensionScore.score)
+            .filter(DimensionScore.dimension == dim).all()
+        ]
+        mean_val = float(stats[0] or 0)
+        if len(scores) > 1:
+            std_val = math.sqrt(sum((s - mean_val) ** 2 for s in scores) / (len(scores) - 1))
+        else:
+            std_val = 0.0
+
         dimension_stats[dim] = {
             "label": dim_labels.get(dim, dim.replace("_", " ").title()),
             "category": dim_to_cat.get(dim, "Other"),
-            "mean": round(float(stats[0] or 0), 2),
-            "std": round(float(stats[1] or 0), 2),
-            "min": round(float(stats[2] or 0), 2),
-            "max": round(float(stats[3] or 0), 2),
+            "mean": round(mean_val, 2),
+            "std": round(std_val, 2),
+            "min": round(float(stats[1] or 0), 2),
+            "max": round(float(stats[2] or 0), 2),
         }
 
     # Top companies

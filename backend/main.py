@@ -5,7 +5,7 @@ from fastapi.responses import JSONResponse
 import logging
 from config import get_settings
 from database import init_db
-from routers import portfolio, training, companies
+from routers import portfolio, training, companies, sandbox
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -46,6 +46,7 @@ app.add_middleware(
 app.include_router(portfolio.router)
 app.include_router(training.router)
 app.include_router(companies.router)
+app.include_router(sandbox.router)
 
 
 # Health check endpoint
@@ -72,6 +73,8 @@ async def root():
             "/api/training_stats",
             "/api/large_training_set",
             "/api/companies",
+            "/api/sandbox/score",
+            "/api/sandbox/companies",
         ],
     }
 

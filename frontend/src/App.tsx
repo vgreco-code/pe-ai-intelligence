@@ -11,6 +11,7 @@ import CompetitiveBenchmarks from './pages/CompetitiveBenchmarks'
 import CompanyDetail from './pages/CompanyDetail'
 import CompareCompanies from './pages/CompareCompanies'
 import PipelineArchitecture from './pages/PipelineArchitecture'
+import Sandbox from './pages/Sandbox'
 import type { BenchmarkCompany } from './pages/CompetitiveBenchmarks'
 
 // Types
@@ -163,13 +164,14 @@ export const getScoreColor = (score: number): string => {
   return '#ef4444'
 }
 
-type Page = 'dashboard' | 'portfolio' | 'compare' | 'benchmarks' | 'pipeline' | 'model' | 'training' | 'company-detail'
+type Page = 'dashboard' | 'portfolio' | 'compare' | 'benchmarks' | 'pipeline' | 'model' | 'training' | 'sandbox' | 'company-detail'
 
 const NAV_ITEMS: { id: Page; label: string; icon: typeof LayoutDashboard }[] = [
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { id: 'portfolio', label: 'Portfolio', icon: Building2 },
   { id: 'compare', label: 'Compare', icon: GitCompareArrows },
   { id: 'benchmarks', label: 'Benchmarks', icon: BarChart3 },
+  { id: 'sandbox', label: 'Sandbox', icon: Zap },
   { id: 'pipeline', label: 'Pipeline', icon: Workflow },
   { id: 'model', label: 'Model Intelligence', icon: Brain },
   { id: 'training', label: 'Training Explorer', icon: Database },
@@ -340,6 +342,7 @@ export default function App() {
           {page === 'benchmarks' && (
             <CompetitiveBenchmarks benchmarks={benchmarkData} />
           )}
+          {page === 'sandbox' && <Sandbox />}
           {page === 'pipeline' && (
             <PipelineArchitecture metrics={metrics} trainingStats={trainingStats} />
           )}
