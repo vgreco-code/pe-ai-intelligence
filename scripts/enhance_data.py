@@ -334,23 +334,23 @@ def build_competitive_benchmarks():
                 "momentum": co["pillars"].get("ai_momentum", 0),
             }
 
-    # Also compute portfolio company benchmarks against their CLOSEST verticals
-    # Since portfolio companies aren't in the training set, we map them to similar verticals
-    portfolio_vertical_map = {
-        "Cairn Applications": "Waste Hauling SaaS",
-        "SMRTR": "Supply Chain/Logistics",
-        "ViaPeople": "HR/Workforce Management",
-        "Track Star": "Fleet/IoT",
-        "FMSI": "FinTech/Core Banking",
-        "Champ": "Healthcare IT",
-        "TrackIt Transit": "Fleet/IoT",
-        "NexTalk": "Communications/Telecom",
-        "Thought Foundry": "Entertainment/Media",
-        "Spokane": "Agriculture/Food Tech",
-        "Primate": "Energy/Utilities",
-        "ThingTech": "Fleet/IoT",
-        "Dash": "AP Automation",
-        "AutoTime": "HR/Workforce Management",
+    # Explicit mapping of portfolio companies to their BEST peer verticals in training data
+    # Each maps to a list of verticals to pool for a larger comparison set
+    portfolio_peer_verticals = {
+        "Cairn Applications": ["Construction", "Home Services", "Field Service"],                      # Waste hauling = field ops + construction adjacency
+        "SMRTR":              ["Logistics/Freight", "Manufacturing/ERP", "GRC/Compliance"],             # Supply chain compliance
+        "ViaPeople":          ["HR/Workforce", "HR/Payroll", "Field Service"],                          # HR performance management
+        "Track Star":         ["Fleet Management", "Logistics/Freight", "Fleet/IoT"],                   # Fleet telematics
+        "FMSI":               ["FinTech/Core Banking", "FinTech/Digital Banking", "Financial Services/Banking"],  # Credit union analytics
+        "Champ":              ["Healthcare/EHR", "Healthcare/Documentation", "Healthcare/Data"],        # Public health EHR
+        "TrackIt Transit":    ["Fleet Management", "Logistics/Freight", "Government/Public Safety"],    # Public transit
+        "NexTalk":            ["Telecom/Billing", "Healthcare/Automation", "EdTech/LMS"],               # Accessibility comms
+        "Thought Foundry":    ["Event Management", "EdTech/LMS", "Association Management"],             # Entertainment platform
+        "Spokane":            ["AgTech", "Manufacturing/ERP", "Logistics/Freight"],                     # Produce ERP
+        "Primate":            ["Energy/Analytics", "Maintenance/CMMS", "Mining"],                       # Energy control room
+        "ThingTech":          ["Fleet Management", "Maintenance/CMMS", "Facilities Management"],        # IoT asset tracking
+        "Dash":               ["Finance/FP&A", "Tax/Accounting", "Tax Compliance"],                     # AP & doc automation
+        "AutoTime":           ["HR/Workforce", "HR/Payroll", "Construction"],                           # A&D payroll
     }
 
     # Load portfolio scores
@@ -360,27 +360,34 @@ def build_competitive_benchmarks():
 
     portfolio_benchmarks = []
     for co in portfolio:
-        mapped_vertical = portfolio_vertical_map.get(co["name"], "")
+        peer_verts = portfolio_peer_verticals.get(co["name"], [])
 
-        # Find best-matching vertical in training data
-        best_match = None
-        best_count = 0
-        for vert, companies in by_vertical.items():
-            # Simple keyword matching
-            keywords = set(mapped_vertical.lower().replace("/", " ").split())
-            vert_keywords = set(vert.lower().replace("/", " ").split())
-            overlap = len(keywords & vert_keywords)
-            if overlap > best_count:
-                best_count = overlap
-                best_match = vert
+        # Pool companies from all mapped verticals
+        pooled_peers = []
+        matched_verticals = []
+        for pv in peer_verts:
+            for vert, companies in by_vertical.items():
+                if pv.lower() in vert.lower() or vert.lower() in pv.lower():
+                    pooled_peers.extend(companies)
+                    matched_verticals.append(vert)
 
-        if not best_match:
-            # Fallback: use the vertical with the closest average score
+        # Deduplicate by name
+        seen = set()
+        unique_peers = []
+        for p in pooled_peers:
+            if p["name"] not in seen:
+                seen.add(p["name"])
+                unique_peers.append(p)
+        pooled_peers = unique_peers
+
+        # Fallback if no matches
+        if not pooled_peers:
             best_match = min(by_vertical.keys(),
                            key=lambda v: abs(sum(c["composite_score"] for c in by_vertical[v]) / len(by_vertical[v]) - co["composite_score"]))
+            pooled_peers = by_vertical[best_match]
+            matched_verticals = [best_match]
 
-        peers = by_vertical[best_match]
-        peer_scores = sorted([c["composite_score"] for c in peers])
+        peer_scores = sorted([c["composite_score"] for c in pooled_peers])
         n = len(peer_scores)
 
         # Where does this portfolio company rank?
@@ -388,15 +395,21 @@ def build_competitive_benchmarks():
         percentile = round(rank / (n + 1) * 100, 1)
 
         # Find nearest peers
-        peers_sorted = sorted(peers, key=lambda c: abs(c["composite_score"] - co["composite_score"]))
-        nearest = [{"name": p["name"], "score": p["composite_score"], "tier": p["tier"]} for p in peers_sorted[:5]]
+        peers_sorted = sorted(pooled_peers, key=lambda c: abs(c["composite_score"] - co["composite_score"]))
+        nearest = [{"name": p["name"], "score": p["composite_score"], "tier": p["tier"],
+                     "vertical": p.get("vertical", "")} for p in peers_sorted[:5]]
+
+        peer_label = " + ".join(matched_verticals[:3])
+        if len(matched_verticals) > 3:
+            peer_label += f" +{len(matched_verticals)-3} more"
 
         portfolio_benchmarks.append({
             "name": co["name"],
             "score": co["composite_score"],
             "tier": co["tier"],
             "wave": co["wave"],
-            "peer_vertical": best_match,
+            "peer_verticals": matched_verticals,
+            "peer_vertical": peer_label,
             "peer_count": n,
             "vertical_rank": rank,
             "vertical_percentile": percentile,
@@ -407,7 +420,7 @@ def build_competitive_benchmarks():
         })
 
         rank_bar = "█" * int(percentile / 10) + "░" * (10 - int(percentile / 10))
-        print(f"  {co['name']:25s} {co['composite_score']:.2f}  P{percentile:5.1f} {rank_bar} rank {rank:2d}/{n:2d}  vs {best_match}")
+        print(f"  {co['name']:25s} {co['composite_score']:.2f}  P{percentile:5.1f} {rank_bar} rank {rank:2d}/{n:2d}  vs {peer_label}")
 
     # Save
     bench_path = os.path.join(BASE_DIR, "data", "demo", "competitive_benchmarks.json")

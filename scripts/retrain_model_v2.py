@@ -83,6 +83,138 @@ def get_tier(score):
 # ---------------------------------------------------------------------------
 # MAP 8-PILLAR PORTFOLIO SCORES → 16 DIMENSIONS
 # ---------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
+# CALIBRATE RAW RESEARCH SCORES (same logic as rescore_training_set.py)
+# ---------------------------------------------------------------------------
+# Raw keyword-signal scores from Tavily scraping are compressed (1.5-3.0).
+# This stretches them using verified company attributes, matching training data calibration.
+
+ATTR_BOOSTS = {
+    "data_quality": {
+        "is_public": 0.4, "employee_gt_2000": 0.5, "employee_gt_500": 0.3,
+        "data_richness_high": 0.5, "market_leader": 0.3,
+    },
+    "data_integration": {
+        "api_strong": 0.6, "cloud_native": 0.3, "employee_gt_2000": 0.3,
+        "market_leader": 0.2,
+    },
+    "analytics_maturity": {
+        "is_public": 0.3, "has_ai_features": 0.3, "employee_gt_2000": 0.4,
+        "data_richness_high": 0.5,
+    },
+    "cloud_architecture": {
+        "cloud_native": 0.8, "employee_gt_500": 0.2, "not_cloud": -0.5,
+    },
+    "tech_stack_modernity": {
+        "cloud_native": 0.5, "founded_recent": 0.4, "founded_old": -0.3,
+    },
+    "ai_engineering": {
+        "has_ai_features": 0.7, "employee_gt_2000": 0.3, "is_public": 0.2,
+    },
+    "ai_product_features": {
+        "has_ai_features": 0.9, "market_leader": 0.3, "employee_gt_500": 0.2,
+    },
+    "revenue_ai_upside": {
+        "has_ai_features": 0.6, "data_richness_high": 0.4, "market_leader": 0.3,
+    },
+    "margin_ai_upside": {
+        "cloud_native": 0.3, "employee_gt_2000": 0.3, "has_ai_features": 0.3,
+    },
+    "product_differentiation": {
+        "market_leader": 0.6, "is_public": 0.3, "data_richness_high": 0.3,
+    },
+    "ai_talent_density": {
+        "has_ai_features": 0.7, "employee_gt_2000": 0.4, "is_public": 0.3,
+    },
+    "leadership_ai_vision": {
+        "has_ai_features": 0.5, "is_public": 0.3, "employee_gt_500": 0.2,
+        "market_leader": 0.3,
+    },
+    "org_change_readiness": {
+        "cloud_native": 0.3, "founded_recent": 0.3, "employee_gt_500": 0.2,
+    },
+    "partner_ecosystem": {
+        "api_strong": 0.5, "is_public": 0.3, "market_leader": 0.4,
+        "employee_gt_2000": 0.3,
+    },
+    "ai_governance": {
+        "is_public": 0.5, "regulatory_high": 0.5, "employee_gt_2000": 0.3,
+    },
+    "regulatory_readiness": {
+        "is_public": 0.5, "regulatory_high": 0.6, "employee_gt_2000": 0.3,
+    },
+}
+
+
+def get_attribute_flags(co):
+    """Extract boolean attribute flags from company data for calibration."""
+    flags = set()
+    if co.get("is_public"):
+        flags.add("is_public")
+    if co.get("has_ai_features"):
+        flags.add("has_ai_features")
+    if co.get("cloud_native"):
+        flags.add("cloud_native")
+    else:
+        flags.add("not_cloud")
+
+    emp = co.get("employee_count", 0)
+    if emp > 2000:
+        flags.add("employee_gt_2000")
+    if emp > 500:
+        flags.add("employee_gt_500")
+
+    founded = co.get("founded_year", 2005)
+    if founded >= 2015:
+        flags.add("founded_recent")
+    elif founded < 2000:
+        flags.add("founded_old")
+
+    if co.get("data_richness", 3) >= 4:
+        flags.add("data_richness_high")
+    if co.get("api_ecosystem_strength", 3) >= 4:
+        flags.add("api_strong")
+    if co.get("market_position", 3) >= 4:
+        flags.add("market_leader")
+    if co.get("regulatory_burden", 2) >= 4:
+        flags.add("regulatory_high")
+
+    return flags
+
+
+def calibrate_research_scores(pillar_scores, company_info):
+    """
+    Apply attribute-based calibration to raw research scores.
+
+    Raw keyword-signal scores are compressed (1.5-3.0 range).
+    This stretches them using verified company attributes,
+    matching the calibration applied to the training set via rescore_training_set.py.
+    """
+    flags = get_attribute_flags(company_info)
+    calibrated = {}
+
+    for dim in DIMENSION_NAMES:
+        if dim == "ai_momentum":
+            # Momentum is scored separately via velocity scraping
+            calibrated[dim] = pillar_scores.get(dim, 2.0)
+            continue
+
+        base = pillar_scores.get(dim, 2.0)
+
+        # Apply attribute-specific boosts (same as rescore_training_set.py)
+        dim_boosts = ATTR_BOOSTS.get(dim, {})
+        total_boost = sum(boost for attr, boost in dim_boosts.items() if attr in flags)
+
+        # Stretch the signal-based score
+        delta = base - 1.5  # How far above minimum
+        stretch = 1.0 + total_boost * 0.8
+        new_score = 1.5 + delta * stretch + total_boost * 0.4
+
+        calibrated[dim] = round(max(1.0, min(5.0, new_score)), 1)
+
+    return calibrated
+
+
 def map_8_to_16(ps8, company_info=None):
     """Convert legacy 8-pillar scores to 16-dimension scores."""
     co = company_info or {}
@@ -306,6 +438,15 @@ print(f"\n[5/7] Re-scoring 14 Solen portfolio companies with 17-dimension model.
 sys.path.insert(0, os.path.join(BASE_DIR, "scripts"))
 from generate_demo_data import SOLEN_COMPANIES, generate_research_result, generate_evidence, generate_sources
 
+# Load REAL research data (scraped via Tavily) for portfolio companies
+portfolio_research_path = os.path.join(BASE_DIR, "data", "research", "portfolio_research_v2.json")
+portfolio_research = {}
+if os.path.exists(portfolio_research_path):
+    with open(portfolio_research_path) as f:
+        research_data = json.load(f)
+    portfolio_research = {r["name"]: r for r in research_data}
+    print(f"  Loaded REAL research scores for {len(portfolio_research)} portfolio companies")
+
 # Load portfolio velocity data if available
 portfolio_velocity_path = os.path.join(BASE_DIR, "data", "research", "portfolio_velocity.json")
 portfolio_velocity = {}
@@ -316,13 +457,47 @@ if os.path.exists(portfolio_velocity_path):
 
 scored_portfolio = []
 for co in SOLEN_COMPANIES:
+    # BLEND real research scores with heuristic baseline
+    # Research provides evidence-based relative dimension strengths (which dims are strong/weak)
+    # Heuristic provides domain-expert absolute calibration (correct overall level)
     ps8 = co.get("pillar_scores", {})
-    ps16 = map_8_to_16(ps8, co)
+    heuristic_ps16 = map_8_to_16(ps8, co)
+
+    research = portfolio_research.get(co["name"])
+    if research and "pillar_scores" in research:
+        raw_research = dict(research["pillar_scores"])
+        calibrated_research = calibrate_research_scores(raw_research, co)
+
+        # Blend strategy: use research to inform relative dimension shape,
+        # but anchor to heuristic mean (domain-expert absolute level).
+        # Step 1: Compute means
+        h_dims = [d for d in DIMENSION_NAMES if d != "ai_momentum"]
+        h_mean = sum(heuristic_ps16[d] for d in h_dims) / len(h_dims)
+        r_mean = sum(calibrated_research.get(d, 2.0) for d in h_dims) / len(h_dims)
+
+        # Step 2: Normalize research scores to heuristic mean level, then blend
+        ps16 = {}
+        for dim in DIMENSION_NAMES:
+            if dim == "ai_momentum":
+                ps16[dim] = heuristic_ps16.get(dim, 2.0)
+                continue
+            r_score = calibrated_research.get(dim, 2.0)
+            h_score = heuristic_ps16.get(dim, 2.0)
+            # Shift research score to match heuristic mean, preserving relative shape
+            r_normalized = r_score + (h_mean - r_mean)
+            # Blend: 35% normalized research + 65% heuristic
+            ps16[dim] = round(max(1.0, min(5.0, r_normalized * 0.35 + h_score * 0.65)), 1)
+        score_source = "blended"
+    else:
+        ps16 = heuristic_ps16
+        score_source = "heuristic"
 
     # Inject real momentum score from velocity scraping
     vel = portfolio_velocity.get(co["name"], {})
     if vel.get("ai_momentum"):
         ps16["ai_momentum"] = vel["ai_momentum"]
+    elif "ai_momentum" not in ps16:
+        ps16["ai_momentum"] = map_8_to_16(co.get("pillar_scores", {}), co).get("ai_momentum", 2.0)
 
     features = np.array([[ps16[d] for d in DIMENSION_NAMES]])
 
@@ -372,13 +547,14 @@ for co in SOLEN_COMPANIES:
         "pillar_scores": ps16,
         "pillar_breakdown": breakdown,
         "category_scores": category_scores,
-        "legacy_8_pillar": ps8,
+        "score_source": score_source,
         "ai_hiring_signals": vel.get("ai_hiring_signals", 0),
         "recent_ai_signals": vel.get("recent_ai_signals", 0),
     })
 
     tier_match = "✓" if tier == model_tier else f"(model: {model_tier})"
-    print(f"  {co['name']:25s}  Score: {composite_original:.2f}  Tier: {tier:15s}  Wave: {wave}  {tier_match}")
+    src_tag = "📊" if score_source == "blended" else "🔄"
+    print(f"  {src_tag} {co['name']:25s} Score: {composite_original:.2f}  Tier: {tier:15s}  Wave: {wave}  {tier_match}")
 
 # Sort by score
 scored_portfolio.sort(key=lambda x: x["composite_score"], reverse=True)
