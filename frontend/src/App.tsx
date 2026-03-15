@@ -245,8 +245,8 @@ export default function App() {
           </div>
           {!collapsed && (
             <div className="overflow-hidden">
-              <h1 className="text-sm font-bold text-white whitespace-nowrap">Solen AI Intelligence</h1>
-              <p className="text-[10px] font-medium" style={{ color: 'var(--teal)' }}>Portfolio Analytics v4.1</p>
+              <h1 className="text-sm font-bold text-white whitespace-nowrap">PE AI Intelligence</h1>
+              <p className="text-[10px] font-medium" style={{ color: 'var(--teal)' }}>Model v1.0</p>
             </div>
           )}
         </div>

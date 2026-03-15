@@ -30,7 +30,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, currentPage, onNavigat
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-teal rounded-lg"></div>
-              <h1 className="text-xl font-bold">Solen AI</h1>
+              <h1 className="text-xl font-bold">PE AI Intelligence</h1>
             </div>
 
             {/* Desktop Menu */}
@@ -88,7 +88,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, currentPage, onNavigat
       {/* Footer */}
       <footer className="bg-navy text-white mt-12 py-6">
         <div className="max-w-7xl mx-auto px-4 text-center text-sm">
-          <p>© 2024 Solen Software. AI Investment Intelligence Platform.</p>
+          <p>© 2024 PE AI Intelligence. AI Investment Intelligence Platform.</p>
         </div>
       </footer>
     </div>

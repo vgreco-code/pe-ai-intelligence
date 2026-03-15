@@ -328,7 +328,7 @@ export default function PipelineArchitecture({ metrics, trainingStats }: Props) 
           <div className="space-y-3">
             <div className="flex justify-between">
               <span className="text-sm text-[var(--text-muted)]">Version</span>
-              <span className="text-sm font-bold text-teal-400">v4.1</span>
+              <span className="text-sm font-bold text-teal-400">v1.0</span>
             </div>
             <div className="flex justify-between">
               <span className="text-sm text-[var(--text-muted)]">Categories</span>

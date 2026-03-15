@@ -91,7 +91,7 @@ export default function Dashboard({ portfolio, metrics, trainingStats, waveData,
                 AI Investment Intelligence
               </h1>
               <p className="text-xl text-[var(--text-secondary)] mb-6 leading-relaxed">
-                Solen Software Group — Automated AI readiness scoring across {portfolioCount} portfolio companies
+                PE AI Intelligence — Automated AI readiness scoring across {portfolioCount} portfolio companies
                 using a {metrics?.num_dimensions || 17}-dimension framework trained on {trainingSetCount} enterprise software companies.
               </p>
               <div className="flex items-center gap-6 text-sm">
@@ -112,7 +112,7 @@ export default function Dashboard({ portfolio, metrics, trainingStats, waveData,
             <div className="flex-shrink-0 hidden lg:block">
               <div className="glass-card px-5 py-3 rounded-xl text-sm border border-teal-500/20">
                 <div className="text-[var(--text-muted)] text-xs mb-1">Model</div>
-                <div className="text-teal-400 font-bold">v4.1</div>
+                <div className="text-teal-400 font-bold">v1.0</div>
                 <div className="text-[var(--text-muted)] text-xs mt-2 mb-1">Accuracy</div>
                 <div className="text-[var(--text-primary)] font-bold">{modelAccuracy}% CV</div>
                 <div className="text-[var(--text-muted)] text-xs mt-2 mb-1">Adjacent</div>
