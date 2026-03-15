@@ -188,14 +188,31 @@ export default function App() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    Promise.all([
-      fetch('/portfolio_scores.json').then(r => r.json()),
-      fetch('/model_metrics.json').then(r => r.json()),
-      fetch('/training_stats.json').then(r => r.json()),
-      fetch('/wave_sequencing.json').then(r => r.json()),
-      fetch('/large_training_set.json').then(r => r.json()),
-      fetch('/competitive_benchmarks.json').then(r => r.json()).catch(() => ({ portfolio_benchmarks: [] })),
-    ]).then(([p, m, ts, w, t, cb]) => {
+    // Use API backend if configured, otherwise fall back to static JSON
+    const API = import.meta.env.VITE_API_URL || ''
+    const isApi = !!API
+
+    const urls = isApi
+      ? [
+          `${API}/api/portfolio_scores`,
+          `${API}/api/model_metrics`,
+          `${API}/api/training_stats`,
+          `${API}/api/wave_sequencing`,
+          `${API}/api/large_training_set`,
+          `${API}/api/competitive_benchmarks`,
+        ]
+      : [
+          '/portfolio_scores.json',
+          '/model_metrics.json',
+          '/training_stats.json',
+          '/wave_sequencing.json',
+          '/large_training_set.json',
+          '/competitive_benchmarks.json',
+        ]
+
+    Promise.all(
+      urls.map((url, i) => fetch(url).then(r => r.json()).catch(i === 5 ? () => ({ portfolio_benchmarks: [] }) : undefined))
+    ).then(([p, m, ts, w, t, cb]) => {
       setPortfolio(p)
       setMetrics(m)
       setTrainingStats(ts)

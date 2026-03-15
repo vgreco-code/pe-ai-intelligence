@@ -5,7 +5,7 @@ from fastapi.responses import JSONResponse
 import logging
 from config import get_settings
 from database import init_db
-from routers import companies, research, scoring, jobs, models
+from routers import portfolio, training, companies
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -43,18 +43,16 @@ app.add_middleware(
 )
 
 # Include routers
+app.include_router(portfolio.router)
+app.include_router(training.router)
 app.include_router(companies.router)
-app.include_router(research.router)
-app.include_router(scoring.router)
-app.include_router(jobs.router)
-app.include_router(models.router)
 
 
 # Health check endpoint
 @app.get("/health")
 async def health():
     """Health check endpoint"""
-    return {"status": "healthy", "service": "solen-backend"}
+    return {"status": "healthy", "service": "solen-ai-intelligence-backend"}
 
 
 # Root endpoint
@@ -65,6 +63,16 @@ async def root():
         "name": settings.app_name,
         "version": settings.app_version,
         "docs": "/docs",
+        "endpoints": [
+            "/api/portfolio_scores",
+            "/api/competitive_benchmarks",
+            "/api/wave_sequencing",
+            "/api/tier_distribution",
+            "/api/model_metrics",
+            "/api/training_stats",
+            "/api/large_training_set",
+            "/api/companies",
+        ],
     }
 
 
