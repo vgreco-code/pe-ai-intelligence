@@ -21,7 +21,7 @@ export const ScoreRadar: React.FC<ScoreRadarProps> = ({ scores }) => {
         <PolarAngleAxis dataKey="name" tick={{ fontSize: 12 }} />
         <PolarRadiusAxis angle={90} domain={[0, 5]} />
         <Radar name="Score" dataKey="score" stroke="#02C39A" fill="#02C39A" fillOpacity={0.6} />
-        <Tooltip formatter={(value) => value.toFixed(2)} />
+        <Tooltip formatter={(value) => Number(value).toFixed(2)} />
         <Legend />
       </RadarChart>
     </ResponsiveContainer>

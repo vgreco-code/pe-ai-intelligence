@@ -9,7 +9,6 @@ interface JobStatusProps {
 export const JobStatus: React.FC<JobStatusProps> = ({ jobId, onComplete }) => {
   const [job, setJob] = useState<Job | null>(null);
   const [messages, setMessages] = useState<string[]>([]);
-  const [ws, setWs] = useState<WebSocket | null>(null);
 
   useEffect(() => {
     const connection = jobsApi.subscribe(jobId);
@@ -47,8 +46,6 @@ export const JobStatus: React.FC<JobStatusProps> = ({ jobId, onComplete }) => {
     connection.onerror = (error) => {
       console.error('WebSocket error:', error);
     };
-
-    setWs(connection);
 
     return () => {
       connection.close();

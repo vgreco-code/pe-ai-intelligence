@@ -1,11 +1,11 @@
 import { useState, useMemo } from 'react'
-import { Building2, Users, Filter, ArrowUpDown, Globe, Calendar } from 'lucide-react'
+import { Building2, Users, Filter, ArrowUpDown, Calendar } from 'lucide-react'
 import {
   RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer,
 } from 'recharts'
 import {
   PortfolioCompany, TIER_COLORS, DIMENSION_LABELS, DIMENSION_SHORT,
-  CATEGORIES, CATEGORY_COLORS, getTierBg, getScoreColor,
+  CATEGORIES, CATEGORY_COLORS, getScoreColor,
 } from '../App'
 
 type TierFilter = 'AI-Ready' | 'AI-Buildable' | 'AI-Emerging' | 'AI-Limited' | 'All'

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { modelsApi, ModelPerformance } from '../api/client';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import TierBadge from '../components/TierBadge';
 
 export const Models: React.FC = () => {

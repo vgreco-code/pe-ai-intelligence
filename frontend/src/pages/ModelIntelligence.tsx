@@ -2,7 +2,7 @@ import { Brain, Target, Database, Activity, CheckCircle2, XCircle, Cpu, AlertCir
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Cell } from 'recharts'
 import {
   ModelMetrics, TrainingStats, DIMENSION_LABELS,
-  CATEGORIES, CATEGORY_COLORS, TIER_COLORS, getTierBg,
+  CATEGORIES, CATEGORY_COLORS, getTierBg,
 } from '../App'
 
 interface Props {

@@ -113,7 +113,7 @@ print("=" * 70)
 print("MODEL RETRAINING v4.0 — 16-Dimension Framework")
 print("=" * 70)
 
-with open(os.path.join(BASE_DIR, "data", "training", "training_set_v2.json")) as f:
+with open(os.path.join(BASE_DIR, "data", "training", "training_set_v2_real.json")) as f:
     training_data = json.load(f)
 
 print(f"\n[1/7] Loaded {len(training_data)} training companies (16 dimensions)")
@@ -579,7 +579,7 @@ for fname in ["model_metrics.json", "portfolio_scores.json", "wave_sequencing.js
 
 # Copy v2 training set for training explorer
 shutil.copy2(
-    os.path.join(BASE_DIR, "data", "training", "training_set_v2.json"),
+    os.path.join(BASE_DIR, "data", "training", "training_set_v2_real.json"),
     os.path.join(frontend_public, "large_training_set.json"),
 )
 print(f"  ✓ frontend/public/large_training_set.json")
