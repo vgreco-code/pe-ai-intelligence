@@ -138,7 +138,7 @@ export default function Dashboard({ portfolio, metrics, trainingStats, waveData,
             <h3 className="text-[var(--text-secondary)] text-sm font-medium">Avg AI Score</h3>
             <TrendingUp className="w-5 h-5 text-teal-400" />
           </div>
-          <div className="text-4xl font-bold text-[var(--text-primary)]">{avgAIScore}</div>
+          <div className="text-4xl font-bold text-[var(--text-primary)]">{avgAIScore}<span className="text-lg font-medium text-[var(--text-muted)] ml-1">/ 5</span></div>
           <div className="mt-3 h-2 bg-slate-700 rounded-full overflow-hidden">
             <div className="h-full bg-gradient-to-r from-teal-500 to-emerald-400 animate-bar" style={{ width: `${parseFloat(avgAIScore) * 20}%` }} />
           </div>
@@ -189,8 +189,9 @@ export default function Dashboard({ portfolio, metrics, trainingStats, waveData,
                     />
                   </div>
                 </div>
-                <div className="w-16 text-right">
+                <div className="w-20 text-right">
                   <span className="text-sm font-bold text-[var(--text-primary)]">{company.composite_score.toFixed(2)}</span>
+                  <span className="text-[10px] text-[var(--text-muted)] ml-0.5">/ 5</span>
                 </div>
                 <div className={`px-3 py-1 rounded-full text-xs font-medium ${getTierBg(company.tier)}`}>
                   {company.tier}
