@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import {
   LayoutDashboard, Building2, Brain, Database, ChevronLeft, ChevronRight,
-  Zap, TrendingUp, BarChart3
+  Zap, TrendingUp, BarChart3, GitCompareArrows, Workflow
 } from 'lucide-react'
 import Dashboard from './pages/Dashboard'
 import Portfolio from './pages/Portfolio'
@@ -9,6 +9,8 @@ import ModelIntelligence from './pages/ModelIntelligence'
 import TrainingExplorer from './pages/TrainingExplorer'
 import CompetitiveBenchmarks from './pages/CompetitiveBenchmarks'
 import CompanyDetail from './pages/CompanyDetail'
+import CompareCompanies from './pages/CompareCompanies'
+import PipelineArchitecture from './pages/PipelineArchitecture'
 import type { BenchmarkCompany } from './pages/CompetitiveBenchmarks'
 
 // Types
@@ -161,12 +163,14 @@ export const getScoreColor = (score: number): string => {
   return '#ef4444'
 }
 
-type Page = 'dashboard' | 'portfolio' | 'benchmarks' | 'model' | 'training' | 'company-detail'
+type Page = 'dashboard' | 'portfolio' | 'compare' | 'benchmarks' | 'pipeline' | 'model' | 'training' | 'company-detail'
 
 const NAV_ITEMS: { id: Page; label: string; icon: typeof LayoutDashboard }[] = [
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { id: 'portfolio', label: 'Portfolio', icon: Building2 },
+  { id: 'compare', label: 'Compare', icon: GitCompareArrows },
   { id: 'benchmarks', label: 'Benchmarks', icon: BarChart3 },
+  { id: 'pipeline', label: 'Pipeline', icon: Workflow },
   { id: 'model', label: 'Model Intelligence', icon: Brain },
   { id: 'training', label: 'Training Explorer', icon: Database },
 ]
@@ -293,8 +297,14 @@ export default function App() {
               onCompanyClick={navigateToCompany}
             />
           )}
+          {page === 'compare' && (
+            <CompareCompanies portfolio={portfolio} />
+          )}
           {page === 'benchmarks' && (
             <CompetitiveBenchmarks benchmarks={benchmarkData} />
+          )}
+          {page === 'pipeline' && (
+            <PipelineArchitecture metrics={metrics} trainingStats={trainingStats} />
           )}
           {page === 'company-detail' && selectedPortfolioCompany && (
             <CompanyDetail
