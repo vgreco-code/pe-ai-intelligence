@@ -6,7 +6,7 @@
     "description": "Box Tracker platform for waste haulers. 350+ customers, 65K dumpsters, ~$150M annual commerce. Acquired Dec 2025.",
     "website": "cairnapp.com",
     "founded_year": 2008,
-    "composite_score": 3.33,
+    "composite_score": 3.27,
     "tier": "AI-Buildable",
     "wave": 1,
     "pillar_scores": {
@@ -26,7 +26,7 @@
       "partner_ecosystem": 3.8,
       "ai_governance": 3.9,
       "regulatory_readiness": 4.8,
-      "ai_momentum": 2.7
+      "ai_momentum": 1.9
     },
     "category_scores": {
       "Data & Analytics": 3.63,
@@ -34,7 +34,7 @@
       "AI Product & Value": 3.95,
       "Organization & Talent": 2.88,
       "Governance & Risk": 4.35,
-      "Velocity & Momentum": 2.7
+      "Velocity & Momentum": 1.9
     }
   },
   {
@@ -44,7 +44,7 @@
     "description": "Merged Dash + S4i. AP automation, backhaul tracking, supplier compliance, proof of delivery for food & beverage distributors.",
     "website": "smrtr.io",
     "founded_year": 2018,
-    "composite_score": 3.28,
+    "composite_score": 3.24,
     "tier": "AI-Buildable",
     "wave": 1,
     "pillar_scores": {
@@ -64,7 +64,7 @@
       "partner_ecosystem": 3.5,
       "ai_governance": 3.5,
       "regulatory_readiness": 4.0,
-      "ai_momentum": 3.5
+      "ai_momentum": 2.9
     },
     "category_scores": {
       "Data & Analytics": 3.53,
@@ -72,45 +72,7 @@
       "AI Product & Value": 3.38,
       "Organization & Talent": 3.02,
       "Governance & Risk": 3.75,
-      "Velocity & Momentum": 3.5
-    }
-  },
-  {
-    "name": "Track Star",
-    "vertical": "Fleet & Asset Management",
-    "employee_count": 200,
-    "description": "25-year GPS tracking, video telematics, EAM, predictive maintenance platform. Public safety, utilities, government.",
-    "website": "trackstar.com",
-    "founded_year": 1999,
-    "composite_score": 3.19,
-    "tier": "AI-Emerging",
-    "wave": 2,
-    "pillar_scores": {
-      "data_quality": 3.8,
-      "data_integration": 3.4,
-      "analytics_maturity": 3.7,
-      "cloud_architecture": 2.2,
-      "tech_stack_modernity": 3.1,
-      "ai_engineering": 2.8,
-      "ai_product_features": 3.7,
-      "revenue_ai_upside": 3.5,
-      "margin_ai_upside": 3.3,
-      "product_differentiation": 3.1,
-      "ai_talent_density": 2.5,
-      "leadership_ai_vision": 2.8,
-      "org_change_readiness": 2.8,
-      "partner_ecosystem": 3.1,
-      "ai_governance": 3.5,
-      "regulatory_readiness": 4.0,
-      "ai_momentum": 3.0
-    },
-    "category_scores": {
-      "Data & Analytics": 3.63,
-      "Technology & Infrastructure": 2.7,
-      "AI Product & Value": 3.4,
-      "Organization & Talent": 2.8,
-      "Governance & Risk": 3.75,
-      "Velocity & Momentum": 3.0
+      "Velocity & Momentum": 2.9
     }
   },
   {
@@ -120,7 +82,7 @@
     "description": "20+ years in performance management, 360 feedback, succession planning. Serves PE firms and financial services (Jefferies, Warburg, Evercore).",
     "website": "viapeople.com",
     "founded_year": 2002,
-    "composite_score": 3.16,
+    "composite_score": 3.19,
     "tier": "AI-Emerging",
     "wave": 2,
     "pillar_scores": {
@@ -140,7 +102,7 @@
       "partner_ecosystem": 3.3,
       "ai_governance": 3.5,
       "regulatory_readiness": 3.8,
-      "ai_momentum": 2.8
+      "ai_momentum": 3.2
     },
     "category_scores": {
       "Data & Analytics": 3.47,
@@ -148,45 +110,45 @@
       "AI Product & Value": 3.52,
       "Organization & Talent": 2.95,
       "Governance & Risk": 3.65,
-      "Velocity & Momentum": 2.8
+      "Velocity & Momentum": 3.2
     }
   },
   {
-    "name": "FMSI",
-    "vertical": "Banking Operations",
-    "employee_count": 85,
-    "description": "Staffing and scheduling optimization for bank branches. Workforce analytics for financial institutions.",
-    "website": "fmsi.com",
-    "founded_year": 1990,
-    "composite_score": 2.94,
+    "name": "Track Star",
+    "vertical": "Fleet & Asset Management",
+    "employee_count": 200,
+    "description": "25-year GPS tracking, video telematics, EAM, predictive maintenance platform. Public safety, utilities, government.",
+    "website": "trackstar.com",
+    "founded_year": 1999,
+    "composite_score": 3.16,
     "tier": "AI-Emerging",
     "wave": 2,
     "pillar_scores": {
-      "data_quality": 3.3,
-      "data_integration": 3.0,
-      "analytics_maturity": 3.4,
-      "cloud_architecture": 2.0,
-      "tech_stack_modernity": 2.8,
-      "ai_engineering": 2.0,
-      "ai_product_features": 3.4,
+      "data_quality": 3.8,
+      "data_integration": 3.4,
+      "analytics_maturity": 3.7,
+      "cloud_architecture": 2.2,
+      "tech_stack_modernity": 3.1,
+      "ai_engineering": 2.8,
+      "ai_product_features": 3.7,
       "revenue_ai_upside": 3.5,
       "margin_ai_upside": 3.3,
-      "product_differentiation": 3.3,
-      "ai_talent_density": 2.1,
-      "leadership_ai_vision": 3.0,
+      "product_differentiation": 3.1,
+      "ai_talent_density": 2.5,
+      "leadership_ai_vision": 2.8,
       "org_change_readiness": 2.8,
-      "partner_ecosystem": 3.2,
-      "ai_governance": 3.1,
-      "regulatory_readiness": 3.3,
-      "ai_momentum": 2.7
+      "partner_ecosystem": 3.1,
+      "ai_governance": 3.5,
+      "regulatory_readiness": 4.0,
+      "ai_momentum": 2.6
     },
     "category_scores": {
-      "Data & Analytics": 3.23,
-      "Technology & Infrastructure": 2.27,
-      "AI Product & Value": 3.38,
-      "Organization & Talent": 2.77,
-      "Governance & Risk": 3.2,
-      "Velocity & Momentum": 2.7
+      "Data & Analytics": 3.63,
+      "Technology & Infrastructure": 2.7,
+      "AI Product & Value": 3.4,
+      "Organization & Talent": 2.8,
+      "Governance & Risk": 3.75,
+      "Velocity & Momentum": 2.6
     }
   },
   {
@@ -196,7 +158,7 @@
     "description": "Electronic health records for public health departments. Clinical workflows, immunization tracking, disease surveillance.",
     "website": "champsoftware.com",
     "founded_year": 1985,
-    "composite_score": 2.88,
+    "composite_score": 2.94,
     "tier": "AI-Emerging",
     "wave": 2,
     "pillar_scores": {
@@ -216,7 +178,7 @@
       "partner_ecosystem": 3.5,
       "ai_governance": 2.8,
       "regulatory_readiness": 2.8,
-      "ai_momentum": 2.6
+      "ai_momentum": 3.5
     },
     "category_scores": {
       "Data & Analytics": 3.0,
@@ -224,7 +186,45 @@
       "AI Product & Value": 3.2,
       "Organization & Talent": 3.0,
       "Governance & Risk": 2.8,
-      "Velocity & Momentum": 2.6
+      "Velocity & Momentum": 3.5
+    }
+  },
+  {
+    "name": "FMSI",
+    "vertical": "Banking Operations",
+    "employee_count": 85,
+    "description": "Staffing and scheduling optimization for bank branches. Workforce analytics for financial institutions.",
+    "website": "fmsi.com",
+    "founded_year": 1990,
+    "composite_score": 2.85,
+    "tier": "AI-Emerging",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.3,
+      "data_integration": 3.0,
+      "analytics_maturity": 3.4,
+      "cloud_architecture": 2.0,
+      "tech_stack_modernity": 2.8,
+      "ai_engineering": 2.0,
+      "ai_product_features": 3.4,
+      "revenue_ai_upside": 3.5,
+      "margin_ai_upside": 3.3,
+      "product_differentiation": 3.3,
+      "ai_talent_density": 2.1,
+      "leadership_ai_vision": 3.0,
+      "org_change_readiness": 2.8,
+      "partner_ecosystem": 3.2,
+      "ai_governance": 3.1,
+      "regulatory_readiness": 3.3,
+      "ai_momentum": 1.4
+    },
+    "category_scores": {
+      "Data & Analytics": 3.23,
+      "Technology & Infrastructure": 2.27,
+      "AI Product & Value": 3.38,
+      "Organization & Talent": 2.77,
+      "Governance & Risk": 3.2,
+      "Velocity & Momentum": 1.4
     }
   },
   {
@@ -234,9 +234,9 @@
     "description": "Paperless transit operations platform. 100+ transit locations. Agency communication and workflow digitization. Acquired Feb 2026.",
     "website": "trackittransit.com",
     "founded_year": 2010,
-    "composite_score": 2.78,
+    "composite_score": 2.82,
     "tier": "AI-Emerging",
-    "wave": 3,
+    "wave": 2,
     "pillar_scores": {
       "data_quality": 3.0,
       "data_integration": 2.8,
@@ -254,7 +254,7 @@
       "partner_ecosystem": 3.3,
       "ai_governance": 3.3,
       "regulatory_readiness": 3.8,
-      "ai_momentum": 2.1
+      "ai_momentum": 2.7
     },
     "category_scores": {
       "Data & Analytics": 2.93,
@@ -262,7 +262,7 @@
       "AI Product & Value": 3.23,
       "Organization & Talent": 2.7,
       "Governance & Risk": 3.55,
-      "Velocity & Momentum": 2.1
+      "Velocity & Momentum": 2.7
     }
   },
   {
@@ -272,7 +272,7 @@
     "description": "ADA-compliant communication solutions. Video relay interpreting, captioning, accessibility services.",
     "website": "nextalk.com",
     "founded_year": 2005,
-    "composite_score": 2.77,
+    "composite_score": 2.78,
     "tier": "AI-Emerging",
     "wave": 3,
     "pillar_scores": {
@@ -292,7 +292,7 @@
       "partner_ecosystem": 3.2,
       "ai_governance": 3.1,
       "regulatory_readiness": 3.3,
-      "ai_momentum": 2.0
+      "ai_momentum": 2.1
     },
     "category_scores": {
       "Data & Analytics": 2.87,
@@ -300,45 +300,7 @@
       "AI Product & Value": 2.92,
       "Organization & Talent": 2.88,
       "Governance & Risk": 3.2,
-      "Velocity & Momentum": 2.0
-    }
-  },
-  {
-    "name": "Thought Foundry",
-    "vertical": "Entertainment PaaS",
-    "employee_count": 55,
-    "description": "Platform-as-a-Service for entertainment industry. Digital content management and distribution workflows.",
-    "website": "thoughtfoundry.com",
-    "founded_year": 2015,
-    "composite_score": 2.7,
-    "tier": "AI-Emerging",
-    "wave": 3,
-    "pillar_scores": {
-      "data_quality": 3.0,
-      "data_integration": 2.8,
-      "analytics_maturity": 2.9,
-      "cloud_architecture": 2.3,
-      "tech_stack_modernity": 2.6,
-      "ai_engineering": 1.9,
-      "ai_product_features": 2.9,
-      "revenue_ai_upside": 3.0,
-      "margin_ai_upside": 2.8,
-      "product_differentiation": 3.0,
-      "ai_talent_density": 2.0,
-      "leadership_ai_vision": 2.7,
-      "org_change_readiness": 2.5,
-      "partner_ecosystem": 2.8,
-      "ai_governance": 3.4,
-      "regulatory_readiness": 4.0,
-      "ai_momentum": 2.3
-    },
-    "category_scores": {
-      "Data & Analytics": 2.9,
-      "Technology & Infrastructure": 2.27,
-      "AI Product & Value": 2.92,
-      "Organization & Talent": 2.5,
-      "Governance & Risk": 3.7,
-      "Velocity & Momentum": 2.3
+      "Velocity & Momentum": 2.1
     }
   },
   {
@@ -348,7 +310,7 @@
     "description": "IoT-powered asset tracking and management platform. Connected devices, location intelligence, workflow automation.",
     "website": "thingtech.com",
     "founded_year": 2012,
-    "composite_score": 2.65,
+    "composite_score": 2.74,
     "tier": "AI-Emerging",
     "wave": 3,
     "pillar_scores": {
@@ -368,7 +330,7 @@
       "partner_ecosystem": 2.5,
       "ai_governance": 3.4,
       "regulatory_readiness": 4.0,
-      "ai_momentum": 2.2
+      "ai_momentum": 3.5
     },
     "category_scores": {
       "Data & Analytics": 2.9,
@@ -376,7 +338,45 @@
       "AI Product & Value": 2.8,
       "Organization & Talent": 2.45,
       "Governance & Risk": 3.7,
-      "Velocity & Momentum": 2.2
+      "Velocity & Momentum": 3.5
+    }
+  },
+  {
+    "name": "Thought Foundry",
+    "vertical": "Entertainment PaaS",
+    "employee_count": 55,
+    "description": "Platform-as-a-Service for entertainment industry. Digital content management and distribution workflows.",
+    "website": "thoughtfoundry.com",
+    "founded_year": 2015,
+    "composite_score": 2.69,
+    "tier": "AI-Emerging",
+    "wave": 3,
+    "pillar_scores": {
+      "data_quality": 3.0,
+      "data_integration": 2.8,
+      "analytics_maturity": 2.9,
+      "cloud_architecture": 2.3,
+      "tech_stack_modernity": 2.6,
+      "ai_engineering": 1.9,
+      "ai_product_features": 2.9,
+      "revenue_ai_upside": 3.0,
+      "margin_ai_upside": 2.8,
+      "product_differentiation": 3.0,
+      "ai_talent_density": 2.0,
+      "leadership_ai_vision": 2.7,
+      "org_change_readiness": 2.5,
+      "partner_ecosystem": 2.8,
+      "ai_governance": 3.4,
+      "regulatory_readiness": 4.0,
+      "ai_momentum": 2.1
+    },
+    "category_scores": {
+      "Data & Analytics": 2.9,
+      "Technology & Infrastructure": 2.27,
+      "AI Product & Value": 2.92,
+      "Organization & Talent": 2.5,
+      "Governance & Risk": 3.7,
+      "Velocity & Momentum": 2.1
     }
   },
   {
@@ -386,7 +386,7 @@
     "description": "Control room software for energy utilities. SCADA integration, real-time monitoring, alarm management.",
     "website": "primate.com",
     "founded_year": 2000,
-    "composite_score": 2.61,
+    "composite_score": 2.59,
     "tier": "AI-Emerging",
     "wave": 3,
     "pillar_scores": {
@@ -406,7 +406,7 @@
       "partner_ecosystem": 3.1,
       "ai_governance": 2.6,
       "regulatory_readiness": 2.8,
-      "ai_momentum": 2.4
+      "ai_momentum": 2.1
     },
     "category_scores": {
       "Data & Analytics": 2.9,
@@ -414,7 +414,7 @@
       "AI Product & Value": 2.88,
       "Organization & Talent": 2.52,
       "Governance & Risk": 2.7,
-      "Velocity & Momentum": 2.4
+      "Velocity & Momentum": 2.1
     }
   },
   {
@@ -424,7 +424,7 @@
     "description": "ERP system for fresh produce distribution. Order management, inventory, traceability for produce supply chain.",
     "website": "spokane.com",
     "founded_year": 1995,
-    "composite_score": 2.5,
+    "composite_score": 2.54,
     "tier": "AI-Emerging",
     "wave": 3,
     "pillar_scores": {
@@ -444,7 +444,7 @@
       "partner_ecosystem": 3.1,
       "ai_governance": 3.1,
       "regulatory_readiness": 4.0,
-      "ai_momentum": 2.5
+      "ai_momentum": 3.1
     },
     "category_scores": {
       "Data & Analytics": 2.67,
@@ -452,7 +452,7 @@
       "AI Product & Value": 3.1,
       "Organization & Talent": 2.2,
       "Governance & Risk": 3.55,
-      "Velocity & Momentum": 2.5
+      "Velocity & Momentum": 3.1
     }
   },
   {
@@ -462,7 +462,7 @@
     "description": "Legacy AP and document automation platform. Now merged into SMRTR. Invoice processing and payment workflows.",
     "website": "dash.com",
     "founded_year": 2010,
-    "composite_score": 2.4,
+    "composite_score": 2.44,
     "tier": "AI-Limited",
     "wave": 3,
     "pillar_scores": {
@@ -482,7 +482,7 @@
       "partner_ecosystem": 2.6,
       "ai_governance": 3.4,
       "regulatory_readiness": 4.0,
-      "ai_momentum": 2.3
+      "ai_momentum": 3.0
     },
     "category_scores": {
       "Data & Analytics": 2.4,
@@ -490,7 +490,7 @@
       "AI Product & Value": 2.42,
       "Organization & Talent": 2.38,
       "Governance & Risk": 3.7,
-      "Velocity & Momentum": 2.3
+      "Velocity & Momentum": 3.0
     }
   },
   {
@@ -500,7 +500,7 @@
     "description": "Payroll and time tracking for aerospace & defense contractors. DCAA compliance, government billing, labor distribution.",
     "website": "autotime.com",
     "founded_year": 1998,
-    "composite_score": 2.32,
+    "composite_score": 2.4,
     "tier": "AI-Limited",
     "wave": 3,
     "pillar_scores": {
@@ -520,7 +520,7 @@
       "partner_ecosystem": 2.8,
       "ai_governance": 2.7,
       "regulatory_readiness": 3.0,
-      "ai_momentum": 2.0
+      "ai_momentum": 3.1
     },
     "category_scores": {
       "Data & Analytics": 2.33,
@@ -528,7 +528,7 @@
       "AI Product & Value": 2.52,
       "Organization & Talent": 2.4,
       "Governance & Risk": 2.85,
-      "Velocity & Momentum": 2.0
+      "Velocity & Momentum": 3.1
     }
   }
 ]

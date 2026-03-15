@@ -1,0 +1,86 @@
+{
+  "Cairn Applications": {
+    "ai_momentum": 1.9,
+    "ai_hiring_signals": 1,
+    "recent_ai_signals": 1,
+    "stagnation_signals": 0
+  },
+  "SMRTR": {
+    "ai_momentum": 2.9,
+    "ai_hiring_signals": 5,
+    "recent_ai_signals": 2,
+    "stagnation_signals": 0
+  },
+  "ViaPeople": {
+    "ai_momentum": 3.2,
+    "ai_hiring_signals": 1,
+    "recent_ai_signals": 8,
+    "stagnation_signals": 0
+  },
+  "Track Star": {
+    "ai_momentum": 2.6,
+    "ai_hiring_signals": 2,
+    "recent_ai_signals": 5,
+    "stagnation_signals": 1
+  },
+  "FMSI": {
+    "ai_momentum": 1.4,
+    "ai_hiring_signals": 1,
+    "recent_ai_signals": 0,
+    "stagnation_signals": 0
+  },
+  "Champ": {
+    "ai_momentum": 3.5,
+    "ai_hiring_signals": 4,
+    "recent_ai_signals": 6,
+    "stagnation_signals": 0
+  },
+  "TrackIt Transit": {
+    "ai_momentum": 2.7,
+    "ai_hiring_signals": 4,
+    "recent_ai_signals": 2,
+    "stagnation_signals": 0
+  },
+  "NexTalk": {
+    "ai_momentum": 2.1,
+    "ai_hiring_signals": 2,
+    "recent_ai_signals": 1,
+    "stagnation_signals": 0
+  },
+  "Thought Foundry": {
+    "ai_momentum": 2.1,
+    "ai_hiring_signals": 3,
+    "recent_ai_signals": 2,
+    "stagnation_signals": 1
+  },
+  "Spokane": {
+    "ai_momentum": 3.1,
+    "ai_hiring_signals": 3,
+    "recent_ai_signals": 5,
+    "stagnation_signals": 0
+  },
+  "Primate": {
+    "ai_momentum": 2.1,
+    "ai_hiring_signals": 2,
+    "recent_ai_signals": 1,
+    "stagnation_signals": 0
+  },
+  "ThingTech": {
+    "ai_momentum": 3.5,
+    "ai_hiring_signals": 5,
+    "recent_ai_signals": 5,
+    "stagnation_signals": 0
+  },
+  "Dash": {
+    "ai_momentum": 3.0,
+    "ai_hiring_signals": 9,
+    "recent_ai_signals": 3,
+    "stagnation_signals": 1
+  },
+  "AutoTime": {
+    "ai_momentum": 3.1,
+    "ai_hiring_signals": 4,
+    "recent_ai_signals": 4,
+    "stagnation_signals": 0
+  }
+}

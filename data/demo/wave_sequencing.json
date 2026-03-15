@@ -2,91 +2,91 @@
   "Wave 1 (Q1-Q2)": [
     {
       "name": "Cairn Applications",
-      "score": 3.33,
+      "score": 3.27,
       "tier": "AI-Buildable",
       "top_category": "Governance & Risk"
     },
     {
       "name": "SMRTR",
-      "score": 3.28,
+      "score": 3.24,
       "tier": "AI-Buildable",
       "top_category": "Governance & Risk"
     }
   ],
   "Wave 2 (Q3-Q4)": [
     {
-      "name": "Track Star",
+      "name": "ViaPeople",
       "score": 3.19,
       "tier": "AI-Emerging",
       "top_category": "Governance & Risk"
     },
     {
-      "name": "ViaPeople",
+      "name": "Track Star",
       "score": 3.16,
       "tier": "AI-Emerging",
       "top_category": "Governance & Risk"
     },
     {
-      "name": "FMSI",
+      "name": "Champ",
       "score": 2.94,
+      "tier": "AI-Emerging",
+      "top_category": "Velocity & Momentum"
+    },
+    {
+      "name": "FMSI",
+      "score": 2.85,
       "tier": "AI-Emerging",
       "top_category": "AI Product & Value"
     },
     {
-      "name": "Champ",
-      "score": 2.88,
+      "name": "TrackIt Transit",
+      "score": 2.82,
       "tier": "AI-Emerging",
-      "top_category": "AI Product & Value"
+      "top_category": "Governance & Risk"
     }
   ],
   "Wave 3 (Year 2)": [
     {
-      "name": "TrackIt Transit",
+      "name": "NexTalk",
       "score": 2.78,
       "tier": "AI-Emerging",
       "top_category": "Governance & Risk"
     },
     {
-      "name": "NexTalk",
-      "score": 2.77,
+      "name": "ThingTech",
+      "score": 2.74,
       "tier": "AI-Emerging",
       "top_category": "Governance & Risk"
     },
     {
       "name": "Thought Foundry",
-      "score": 2.7,
-      "tier": "AI-Emerging",
-      "top_category": "Governance & Risk"
-    },
-    {
-      "name": "ThingTech",
-      "score": 2.65,
+      "score": 2.69,
       "tier": "AI-Emerging",
       "top_category": "Governance & Risk"
     },
     {
       "name": "Primate",
-      "score": 2.61,
+      "score": 2.59,
       "tier": "AI-Emerging",
       "top_category": "Data & Analytics"
     },
     {
       "name": "Spokane",
-      "score": 2.5,
+      "score": 2.54,
       "tier": "AI-Emerging",
       "top_category": "Governance & Risk"
     },
     {
       "name": "Dash",
-      "score": 2.4,
+      "score": 2.44,
       "tier": "AI-Limited",
       "top_category": "Governance & Risk"
     },
     {
       "name": "AutoTime",
-      "score": 2.32,
+      "score": 2.4,
       "tier": "AI-Limited",
-      "top_category": "Governance & Risk"
+      "top_category": "Velocity & Momentum"
     }
   ]
 }

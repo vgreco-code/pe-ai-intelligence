@@ -301,15 +301,28 @@ if actual_tiers_bt:
 # ---------------------------------------------------------------------------
 # RE-SCORE SOLEN PORTFOLIO with 16 dimensions
 # ---------------------------------------------------------------------------
-print(f"\n[5/7] Re-scoring 14 Solen portfolio companies with 16-dimension model...")
+print(f"\n[5/7] Re-scoring 14 Solen portfolio companies with 17-dimension model...")
 
 sys.path.insert(0, os.path.join(BASE_DIR, "scripts"))
 from generate_demo_data import SOLEN_COMPANIES, generate_research_result, generate_evidence, generate_sources
+
+# Load portfolio velocity data if available
+portfolio_velocity_path = os.path.join(BASE_DIR, "data", "research", "portfolio_velocity.json")
+portfolio_velocity = {}
+if os.path.exists(portfolio_velocity_path):
+    with open(portfolio_velocity_path) as f:
+        portfolio_velocity = json.load(f)
+    print(f"  Loaded velocity data for {len(portfolio_velocity)} portfolio companies")
 
 scored_portfolio = []
 for co in SOLEN_COMPANIES:
     ps8 = co.get("pillar_scores", {})
     ps16 = map_8_to_16(ps8, co)
+
+    # Inject real momentum score from velocity scraping
+    vel = portfolio_velocity.get(co["name"], {})
+    if vel.get("ai_momentum"):
+        ps16["ai_momentum"] = vel["ai_momentum"]
 
     features = np.array([[ps16[d] for d in DIMENSION_NAMES]])
 
@@ -360,6 +373,8 @@ for co in SOLEN_COMPANIES:
         "pillar_breakdown": breakdown,
         "category_scores": category_scores,
         "legacy_8_pillar": ps8,
+        "ai_hiring_signals": vel.get("ai_hiring_signals", 0),
+        "recent_ai_signals": vel.get("recent_ai_signals", 0),
     })
 
     tier_match = "✓" if tier == model_tier else f"(model: {model_tier})"
