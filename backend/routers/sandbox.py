@@ -123,9 +123,9 @@ def compute_confidence_score(features: dict, research_meta: dict) -> dict:
     """
     breakdown = {}
 
-    # 1. Search coverage: 48 results is perfect (8 queries × 6 results each)
+    # 1. Search coverage: 84 results is perfect (14 queries × 6 results each)
     search_results = research_meta.get("search_results", 0)
-    search_pct = min(search_results / 40, 1.0)  # 40+ results = full marks
+    search_pct = min(search_results / 70, 1.0)  # 70+ results = full marks
     breakdown["search_coverage"] = round(search_pct * 25, 1)
 
     # 2. Scrape depth: 5 URLs is perfect
@@ -133,9 +133,9 @@ def compute_confidence_score(features: dict, research_meta: dict) -> dict:
     scrape_pct = min(urls_scraped / 4, 1.0)  # 4+ URLs = full marks
     breakdown["scrape_depth"] = round(scrape_pct * 20, 1)
 
-    # 3. Corpus volume: 80K+ chars of research text is excellent
+    # 3. Corpus volume: 120K+ chars of research text is excellent (14 queries + scrapes)
     total_chars = research_meta.get("total_text_chars", 0)
-    corpus_pct = min(total_chars / 80000, 1.0)
+    corpus_pct = min(total_chars / 120000, 1.0)
     breakdown["corpus_volume"] = round(corpus_pct * 15, 1)
 
     # 4. Structured extraction: 5 points each for key facts found
@@ -218,6 +218,7 @@ async def research_company(company_name: str, tavily_key: str) -> dict:
 
 # Dimension-specific queries — each targets signals for specific scoring categories
 DEEP_QUERIES = [
+    # ── Core scoring queries (8) ────────────────────────────────────────────
     # Company fundamentals (employee count, funding, founded year, public status)
     "{company} company overview number of employees headcount revenue funding raised valuation founded",
     # AI product features & engineering (drives ai_product_features, ai_engineering, ai_momentum)
@@ -234,6 +235,19 @@ DEEP_QUERIES = [
     "{company} market leader competitors market share industry position customers case studies growth",
     # Partner ecosystem (drives partner_ecosystem)
     "{company} partnerships integrations marketplace ecosystem third-party plugins extensions",
+    # ── Enrichment queries (6) — deeper signal extraction ───────────────────
+    # Named AI initiatives & product launches
+    '"{company}" AI product features launch announcement OR "AI-powered" OR "machine learning" OR "intelligent"',
+    # Customer case studies & testimonials
+    '"{company}" customer case study testimonial OR "uses {company}" OR "powered by {company}" OR "customer success"',
+    # Recent news, funding, acquisitions, partnerships
+    '"{company}" news 2024 2025 OR announcement OR partnership OR acquisition OR funding round OR product launch',
+    # Job postings — AI/ML hiring signals
+    '"{company}" hiring jobs "machine learning" OR "AI engineer" OR "data scientist" OR "ML engineer" OR "AI product"',
+    # Executive team & AI leadership
+    '"{company}" CEO CTO leadership team OR "chief technology" OR "chief AI" OR "VP engineering" OR "head of AI"',
+    # Technology stack from job postings and tech blogs
+    '"{company}" engineering blog OR tech stack OR "we use" OR "built with" OR Python OR React OR Kubernetes OR AWS',
 ]
 
 
@@ -637,7 +651,7 @@ def _build_display_summary(all_results: list[dict], company_name: str) -> str:
             break
 
     if not parts:
-        return f"Research data collected for {company_name}. Scoring based on web signals across 8 search queries."
+        return f"Research data collected for {company_name}. Scoring based on web signals across 14 search queries."
 
     summary = "\n\n".join(parts)
     return summary[:2500]
@@ -649,7 +663,7 @@ async def research_company_deep(
     context_hint: str = "",
     identity_markers: dict = None,
 ) -> dict:
-    """Deep single-company research: 8 dimension-specific queries + URL follow-up scraping.
+    """Deep single-company research: 14 targeted queries + URL follow-up scraping.
 
     Returns the same feature dict as research_company() but with significantly
     richer underlying text, leading to better feature extraction and scoring.

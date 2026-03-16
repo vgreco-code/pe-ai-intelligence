@@ -2,82 +2,109 @@
   "portfolio_benchmarks": [
     {
       "name": "Champ",
-      "score": 3.69,
+      "score": 3.88,
       "tier": "AI-Ready",
       "wave": 1,
       "peer_verticals": [
-        "Healthcare/EHR",
-        "Healthcare/Documentation",
-        "Healthcare/Data"
+        "Healthcare/Life Sciences"
       ],
-      "peer_count": 15,
-      "vertical_rank": 12,
-      "vertical_percentile": 75.0,
-      "vertical_avg": 2.61,
-      "vertical_max": 3.67,
-      "vertical_min": 1.92,
+      "peer_vertical": "Healthcare/Life Sciences",
+      "peer_count": 2,
+      "vertical_rank": 1,
+      "vertical_percentile": 100.0,
+      "vertical_avg": 3.66,
+      "vertical_max": 3.88,
+      "vertical_min": 3.43,
       "nearest_peers": [
         {
-          "name": "MEDITECH (Legacy)",
-          "score": 2.03,
-          "tier": "AI-Emerging",
-          "vertical": "Healthcare/EHR"
-        },
-        {
-          "name": "Suki AI",
-          "score": 3.03,
+          "name": "Veeva Systems",
+          "score": 3.43,
           "tier": "AI-Buildable",
-          "vertical": "Healthcare/Documentation"
-        },
-        {
-          "name": "Ambience Healthcare",
-          "score": 3.01,
-          "tier": "AI-Buildable",
-          "vertical": "Healthcare/Documentation"
-        },
-        {
-          "name": "Cerner (Legacy On-Prem)",
-          "score": 2.03,
-          "tier": "AI-Emerging",
-          "vertical": "Healthcare/EHR"
-        },
-        {
-          "name": "Abridge",
-          "score": 3.03,
-          "tier": "AI-Buildable",
-          "vertical": "Healthcare/Documentation"
+          "vertical": "Healthcare/Life Sciences"
         }
       ]
     },
     {
       "name": "FMSI",
-      "score": 2.93,
+      "score": 3.15,
       "tier": "AI-Buildable",
       "wave": 2,
       "peer_verticals": [
-        "FinTech/Core Banking",
-        "FinTech/Digital Banking",
-        "Financial Services/Banking",
         "Financial Services"
       ],
-      "peer_count": 12,
-      "vertical_rank": 2,
-      "vertical_percentile": 15.4,
-      "vertical_avg": 3.09,
-      "vertical_max": 3.56,
-      "vertical_min": 2.5,
+      "peer_vertical": "Financial Services",
+      "peer_count": 10,
+      "vertical_rank": 7,
+      "vertical_percentile": 33.3,
+      "vertical_avg": 3.13,
+      "vertical_max": 3.77,
+      "vertical_min": 2.21,
       "nearest_peers": [
         {
-          "name": "Backbase",
-          "score": 3.19,
+          "name": "Modern Treasury",
+          "score": 3.28,
           "tier": "AI-Buildable",
-          "vertical": "FinTech/Digital Banking"
+          "vertical": "Financial Services"
         },
         {
-          "name": "Fiserv (Legacy)",
-          "score": 2.15,
+          "name": "AutoTime",
+          "score": 3.42,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "Track Star",
+          "score": 3.43,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "SMRTR",
+          "score": 3.45,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "Spokane",
+          "score": 3.77,
+          "tier": "AI-Ready",
+          "vertical": "Financial Services"
+        }
+      ]
+    },
+    {
+      "name": "NexTalk",
+      "score": 2.37,
+      "tier": "AI-Emerging",
+      "wave": 3,
+      "peer_verticals": [
+        "Financial Services"
+      ],
+      "peer_vertical": "Financial Services",
+      "peer_count": 10,
+      "vertical_rank": 9,
+      "vertical_percentile": 11.1,
+      "vertical_avg": 3.13,
+      "vertical_max": 3.77,
+      "vertical_min": 2.21,
+      "nearest_peers": [
+        {
+          "name": "Dash",
+          "score": 2.45,
           "tier": "AI-Emerging",
-          "vertical": "FinTech/Core Banking"
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "TrackIt Transit",
+          "score": 2.21,
+          "tier": "AI-Emerging",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "FMSI",
+          "score": 3.15,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
         },
         {
           "name": "Modern Treasury",
@@ -86,628 +113,442 @@
           "vertical": "Financial Services"
         },
         {
-          "name": "FIS (Legacy)",
-          "score": 2.16,
-          "tier": "AI-Emerging",
-          "vertical": "FinTech/Core Banking"
-        },
-        {
-          "name": "Mambu",
-          "score": 3.15,
+          "name": "AutoTime",
+          "score": 3.42,
           "tier": "AI-Buildable",
-          "vertical": "FinTech/Core Banking"
-        }
-      ]
-    },
-    {
-      "name": "NexTalk",
-      "score": 1.84,
-      "tier": "AI-Limited",
-      "wave": 3,
-      "peer_verticals": [
-        "Telecom/Billing",
-        "Healthcare/Automation",
-        "EdTech/LMS"
-      ],
-      "peer_count": 7,
-      "vertical_rank": 4,
-      "vertical_percentile": 50.0,
-      "vertical_avg": 3.03,
-      "vertical_max": 3.88,
-      "vertical_min": 2.54,
-      "nearest_peers": [
-        {
-          "name": "CSG Systems",
-          "score": 1.91,
-          "tier": "AI-Limited",
-          "vertical": "Telecom/Billing"
-        },
-        {
-          "name": "Amdocs (Legacy)",
-          "score": 2.11,
-          "tier": "AI-Emerging",
-          "vertical": "Telecom/Billing"
-        },
-        {
-          "name": "MATRIXX Software",
-          "score": 2.65,
-          "tier": "AI-Emerging",
-          "vertical": "Telecom/Billing"
-        },
-        {
-          "name": "Schoology",
-          "score": 2.78,
-          "tier": "AI-Emerging",
-          "vertical": "EdTech/LMS"
-        },
-        {
-          "name": "Olive AI",
-          "score": 3.41,
-          "tier": "AI-Buildable",
-          "vertical": "Healthcare/Automation"
-        }
-      ]
-    },
-    {
-      "name": "Primate",
-      "score": 2.7,
-      "tier": "AI-Emerging",
-      "wave": 2,
-      "peer_verticals": [
-        "Energy/Analytics",
-        "Maintenance/CMMS",
-        "Mining",
-        "Mining/Planning",
-        "Mining/ERP",
-        "Earthwork/Mining"
-      ],
-      "peer_count": 13,
-      "vertical_rank": 9,
-      "vertical_percentile": 64.3,
-      "vertical_avg": 2.37,
-      "vertical_max": 3.3,
-      "vertical_min": 1.82,
-      "nearest_peers": [
-        {
-          "name": "Hippo CMMS",
-          "score": 2.2,
-          "tier": "AI-Emerging",
-          "vertical": "Maintenance/CMMS"
-        },
-        {
-          "name": "Fiix",
-          "score": 2.55,
-          "tier": "AI-Emerging",
-          "vertical": "Maintenance/CMMS"
-        },
-        {
-          "name": "Opower",
-          "score": 3.16,
-          "tier": "AI-Buildable",
-          "vertical": "Energy/Analytics"
-        },
-        {
-          "name": "UpKeep",
-          "score": 2.67,
-          "tier": "AI-Emerging",
-          "vertical": "Maintenance/CMMS"
-        },
-        {
-          "name": "Origami Energy",
-          "score": 2.81,
-          "tier": "AI-Buildable",
-          "vertical": "Energy/Analytics"
+          "vertical": "Financial Services"
         }
       ]
     },
     {
       "name": "SMRTR",
-      "score": 2.7,
-      "tier": "AI-Emerging",
-      "wave": 2,
+      "score": 3.45,
+      "tier": "AI-Buildable",
+      "wave": 1,
       "peer_verticals": [
-        "Logistics/Freight",
-        "Logistics",
-        "Manufacturing",
-        "Manufacturing/ERP",
-        "GRC/Compliance",
-        "Compliance"
+        "Financial Services"
       ],
-      "peer_count": 15,
-      "vertical_rank": 14,
-      "vertical_percentile": 87.5,
-      "vertical_avg": 2.88,
-      "vertical_max": 3.52,
-      "vertical_min": 2.05,
+      "peer_vertical": "Financial Services",
+      "peer_count": 10,
+      "vertical_rank": 3,
+      "vertical_percentile": 77.8,
+      "vertical_avg": 3.13,
+      "vertical_max": 3.77,
+      "vertical_min": 2.21,
       "nearest_peers": [
         {
-          "name": "FourKites",
-          "score": 3.27,
+          "name": "Track Star",
+          "score": 3.43,
           "tier": "AI-Buildable",
-          "vertical": "Logistics/Freight"
+          "vertical": "Financial Services"
         },
         {
-          "name": "Epicor",
-          "score": 2.84,
+          "name": "AutoTime",
+          "score": 3.42,
           "tier": "AI-Buildable",
-          "vertical": "Manufacturing"
+          "vertical": "Financial Services"
         },
         {
-          "name": "Plex",
-          "score": 3.29,
+          "name": "Modern Treasury",
+          "score": 3.28,
           "tier": "AI-Buildable",
-          "vertical": "Manufacturing/ERP"
+          "vertical": "Financial Services"
         },
         {
-          "name": "Flexport",
-          "score": 3.37,
+          "name": "FMSI",
+          "score": 3.15,
           "tier": "AI-Buildable",
-          "vertical": "Logistics"
+          "vertical": "Financial Services"
         },
         {
-          "name": "ShipBob",
-          "score": 3.38,
-          "tier": "AI-Buildable",
-          "vertical": "Logistics"
-        }
-      ]
-    },
-    {
-      "name": "ThingTech",
-      "score": 2.22,
-      "tier": "AI-Emerging",
-      "wave": 3,
-      "peer_verticals": [
-        "Fleet Management",
-        "Maintenance/CMMS",
-        "Facilities Management"
-      ],
-      "peer_count": 11,
-      "vertical_rank": 8,
-      "vertical_percentile": 66.7,
-      "vertical_avg": 2.63,
-      "vertical_max": 3.55,
-      "vertical_min": 1.81,
-      "nearest_peers": [
-        {
-          "name": "Corrigo",
-          "score": 2.62,
-          "tier": "AI-Emerging",
-          "vertical": "Facilities Management"
-        },
-        {
-          "name": "Fiix",
-          "score": 2.55,
-          "tier": "AI-Emerging",
-          "vertical": "Maintenance/CMMS"
-        },
-        {
-          "name": "UpKeep",
-          "score": 2.67,
-          "tier": "AI-Emerging",
-          "vertical": "Maintenance/CMMS"
-        },
-        {
-          "name": "AkitaBox",
-          "score": 2.16,
-          "tier": "AI-Emerging",
-          "vertical": "Facilities Management"
-        },
-        {
-          "name": "FMX",
-          "score": 2.4,
-          "tier": "AI-Emerging",
-          "vertical": "Facilities Management"
+          "name": "Spokane",
+          "score": 3.77,
+          "tier": "AI-Ready",
+          "vertical": "Financial Services"
         }
       ]
     },
     {
       "name": "Thought Foundry",
-      "score": 3.69,
+      "score": 3.77,
       "tier": "AI-Ready",
       "wave": 1,
       "peer_verticals": [
-        "Event Management",
-        "EdTech/LMS",
-        "Association Management"
+        "Financial Services"
       ],
-      "peer_count": 9,
-      "vertical_rank": 6,
-      "vertical_percentile": 60.0,
-      "vertical_avg": 2.8,
-      "vertical_max": 3.88,
-      "vertical_min": 2.0,
+      "peer_vertical": "Financial Services",
+      "peer_count": 10,
+      "vertical_rank": 1,
+      "vertical_percentile": 100.0,
+      "vertical_avg": 3.13,
+      "vertical_max": 3.77,
+      "vertical_min": 2.21,
       "nearest_peers": [
         {
-          "name": "Aventri",
-          "score": 2.65,
-          "tier": "AI-Emerging",
-          "vertical": "Event Management"
+          "name": "Spokane",
+          "score": 3.77,
+          "tier": "AI-Ready",
+          "vertical": "Financial Services"
         },
         {
-          "name": "Fonteva",
-          "score": 2.31,
-          "tier": "AI-Emerging",
-          "vertical": "Association Management"
-        },
-        {
-          "name": "MemberClicks",
-          "score": 2.27,
-          "tier": "AI-Emerging",
-          "vertical": "Association Management"
-        },
-        {
-          "name": "Schoology",
-          "score": 2.78,
-          "tier": "AI-Emerging",
-          "vertical": "EdTech/LMS"
-        },
-        {
-          "name": "Bizzabo",
-          "score": 2.87,
+          "name": "SMRTR",
+          "score": 3.45,
           "tier": "AI-Buildable",
-          "vertical": "Event Management"
-        }
-      ]
-    },
-    {
-      "name": "Track Star",
-      "score": 2.84,
-      "tier": "AI-Buildable",
-      "wave": 2,
-      "peer_verticals": [
-        "Fleet Management",
-        "Logistics/Freight",
-        "Logistics",
-        "Fleet/IoT"
-      ],
-      "peer_count": 8,
-      "vertical_rank": 4,
-      "vertical_percentile": 44.4,
-      "vertical_avg": 3.29,
-      "vertical_max": 4.08,
-      "vertical_min": 2.22,
-      "nearest_peers": [
-        {
-          "name": "Flexport",
-          "score": 3.37,
-          "tier": "AI-Buildable",
-          "vertical": "Logistics"
+          "vertical": "Financial Services"
         },
         {
-          "name": "ShipBob",
-          "score": 3.38,
+          "name": "Track Star",
+          "score": 3.43,
           "tier": "AI-Buildable",
-          "vertical": "Logistics"
+          "vertical": "Financial Services"
         },
         {
-          "name": "FourKites",
-          "score": 3.27,
+          "name": "AutoTime",
+          "score": 3.42,
           "tier": "AI-Buildable",
-          "vertical": "Logistics/Freight"
+          "vertical": "Financial Services"
         },
         {
-          "name": "Motive",
-          "score": 3.3,
-          "tier": "AI-Buildable",
-          "vertical": "Fleet Management"
-        },
-        {
-          "name": "Convoy",
+          "name": "Modern Treasury",
           "score": 3.28,
           "tier": "AI-Buildable",
-          "vertical": "Logistics/Freight"
-        }
-      ]
-    },
-    {
-      "name": "TrackIt Transit",
-      "score": 2.9,
-      "tier": "AI-Buildable",
-      "wave": 2,
-      "peer_verticals": [
-        "Fleet Management",
-        "Logistics/Freight",
-        "Logistics",
-        "Government/Public Safety",
-        "Government",
-        "Safety"
-      ],
-      "peer_count": 12,
-      "vertical_rank": 5,
-      "vertical_percentile": 38.5,
-      "vertical_avg": 3.04,
-      "vertical_max": 4.06,
-      "vertical_min": 1.99,
-      "nearest_peers": [
-        {
-          "name": "CCSI",
-          "score": 1.81,
-          "tier": "AI-Limited",
-          "vertical": "Government"
-        },
-        {
-          "name": "ShipBob",
-          "score": 3.38,
-          "tier": "AI-Buildable",
-          "vertical": "Logistics"
-        },
-        {
-          "name": "Flexport",
-          "score": 3.37,
-          "tier": "AI-Buildable",
-          "vertical": "Logistics"
-        },
-        {
-          "name": "React Mobile",
-          "score": 2.48,
-          "tier": "AI-Emerging",
-          "vertical": "Safety"
-        },
-        {
-          "name": "FourKites",
-          "score": 3.27,
-          "tier": "AI-Buildable",
-          "vertical": "Logistics/Freight"
-        }
-      ]
-    },
-    {
-      "name": "ViaPeople",
-      "score": 2.64,
-      "tier": "AI-Emerging",
-      "wave": 2,
-      "peer_verticals": [
-        "HR/Payroll",
-        "Field Service",
-        "HVAC/Field Service"
-      ],
-      "peer_count": 4,
-      "vertical_rank": 3,
-      "vertical_percentile": 60.0,
-      "vertical_avg": 2.85,
-      "vertical_max": 3.84,
-      "vertical_min": 2.02,
-      "nearest_peers": [
-        {
-          "name": "Gusto",
-          "score": 3.35,
-          "tier": "AI-Buildable",
-          "vertical": "HR/Payroll"
-        },
-        {
-          "name": "ServiceTitan",
-          "score": 3.49,
-          "tier": "AI-Buildable",
-          "vertical": "Field Service"
-        },
-        {
-          "name": "ServiceM8",
-          "score": 1.68,
-          "tier": "AI-Limited",
-          "vertical": "Field Service"
-        },
-        {
-          "name": "FieldEdge",
-          "score": 1.8,
-          "tier": "AI-Limited",
-          "vertical": "HVAC/Field Service"
-        }
-      ]
-    },
-    {
-      "name": "AutoTime",
-      "score": 2.57,
-      "tier": "AI-Emerging",
-      "wave": 2,
-      "peer_verticals": [
-        "HR/Payroll",
-        "Construction",
-        "Construction/Agriculture",
-        "Construction/Sales"
-      ],
-      "peer_count": 18,
-      "vertical_rank": 4,
-      "vertical_percentile": 21.1,
-      "vertical_avg": 2.71,
-      "vertical_max": 3.89,
-      "vertical_min": 2.32,
-      "nearest_peers": [
-        {
-          "name": "CoConstruct",
-          "score": 2.93,
-          "tier": "AI-Buildable",
-          "vertical": "Construction"
-        },
-        {
-          "name": "Fieldwire",
-          "score": 2.82,
-          "tier": "AI-Buildable",
-          "vertical": "Construction"
-        },
-        {
-          "name": "Contractor Foreman",
-          "score": 2.57,
-          "tier": "AI-Emerging",
-          "vertical": "Construction"
-        },
-        {
-          "name": "Assignar",
-          "score": 2.76,
-          "tier": "AI-Emerging",
-          "vertical": "Construction"
-        },
-        {
-          "name": "ConstructConnect",
-          "score": 2.82,
-          "tier": "AI-Buildable",
-          "vertical": "Construction"
-        }
-      ]
-    },
-    {
-      "name": "Cairn Applications",
-      "score": 3.03,
-      "tier": "AI-Buildable",
-      "wave": 2,
-      "peer_verticals": [
-        "Construction",
-        "Construction/Agriculture",
-        "Construction/Sales",
-        "SMB/Home Services",
-        "Home Services",
-        "Home Services (Legacy)",
-        "Field Service",
-        "HVAC/Field Service"
-      ],
-      "peer_count": 25,
-      "vertical_rank": 24,
-      "vertical_percentile": 92.3,
-      "vertical_avg": 2.66,
-      "vertical_max": 3.89,
-      "vertical_min": 2.02,
-      "nearest_peers": [
-        {
-          "name": "DroneDeploy",
-          "score": 3.04,
-          "tier": "AI-Buildable",
-          "vertical": "Construction/Agriculture"
-        },
-        {
-          "name": "Thryv",
-          "score": 2.55,
-          "tier": "AI-Emerging",
-          "vertical": "SMB/Home Services"
-        },
-        {
-          "name": "Bluebeam",
-          "score": 3.11,
-          "tier": "AI-Buildable",
-          "vertical": "Construction"
-        },
-        {
-          "name": "Topline Pro",
-          "score": 2.51,
-          "tier": "AI-Emerging",
-          "vertical": "Home Services"
-        },
-        {
-          "name": "ServiceTitan",
-          "score": 3.49,
-          "tier": "AI-Buildable",
-          "vertical": "Field Service"
+          "vertical": "Financial Services"
         }
       ]
     },
     {
       "name": "Dash",
-      "score": 2.24,
+      "score": 2.45,
       "tier": "AI-Emerging",
       "wave": 3,
       "peer_verticals": [
-        "Finance/FP&A",
-        "Tax/Accounting",
-        "Accounting",
-        "Tax Compliance",
-        "Compliance"
+        "Financial Services"
       ],
-      "peer_count": 13,
-      "vertical_rank": 4,
-      "vertical_percentile": 28.6,
-      "vertical_avg": 2.78,
-      "vertical_max": 4.05,
-      "vertical_min": 1.86,
+      "peer_vertical": "Financial Services",
+      "peer_count": 10,
+      "vertical_rank": 8,
+      "vertical_percentile": 22.2,
+      "vertical_avg": 3.13,
+      "vertical_max": 3.77,
+      "vertical_min": 2.21,
       "nearest_peers": [
         {
-          "name": "Canopy Tax",
-          "score": 2.62,
+          "name": "NexTalk",
+          "score": 2.37,
           "tier": "AI-Emerging",
-          "vertical": "Tax/Accounting"
+          "vertical": "Financial Services"
         },
         {
-          "name": "Planful",
-          "score": 2.32,
+          "name": "TrackIt Transit",
+          "score": 2.21,
           "tier": "AI-Emerging",
-          "vertical": "Finance/FP&A"
+          "vertical": "Financial Services"
         },
         {
-          "name": "Prophix",
-          "score": 1.92,
-          "tier": "AI-Limited",
-          "vertical": "Finance/FP&A"
-        },
-        {
-          "name": "CyberSmart",
-          "score": 2.57,
-          "tier": "AI-Emerging",
-          "vertical": "Compliance"
-        },
-        {
-          "name": "TaxJar",
-          "score": 2.81,
+          "name": "FMSI",
+          "score": 3.15,
           "tier": "AI-Buildable",
-          "vertical": "Tax Compliance"
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "Modern Treasury",
+          "score": 3.28,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "AutoTime",
+          "score": 3.42,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
         }
       ]
     },
     {
       "name": "Spokane",
-      "score": 2.6,
+      "score": 3.77,
+      "tier": "AI-Ready",
+      "wave": 1,
+      "peer_verticals": [
+        "Financial Services"
+      ],
+      "peer_vertical": "Financial Services",
+      "peer_count": 10,
+      "vertical_rank": 1,
+      "vertical_percentile": 100.0,
+      "vertical_avg": 3.13,
+      "vertical_max": 3.77,
+      "vertical_min": 2.21,
+      "nearest_peers": [
+        {
+          "name": "Thought Foundry",
+          "score": 3.77,
+          "tier": "AI-Ready",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "SMRTR",
+          "score": 3.45,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "Track Star",
+          "score": 3.43,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "AutoTime",
+          "score": 3.42,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "Modern Treasury",
+          "score": 3.28,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
+        }
+      ]
+    },
+    {
+      "name": "Track Star",
+      "score": 3.43,
+      "tier": "AI-Buildable",
+      "wave": 1,
+      "peer_verticals": [
+        "Financial Services"
+      ],
+      "peer_vertical": "Financial Services",
+      "peer_count": 10,
+      "vertical_rank": 4,
+      "vertical_percentile": 66.7,
+      "vertical_avg": 3.13,
+      "vertical_max": 3.77,
+      "vertical_min": 2.21,
+      "nearest_peers": [
+        {
+          "name": "AutoTime",
+          "score": 3.42,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "SMRTR",
+          "score": 3.45,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "Modern Treasury",
+          "score": 3.28,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "FMSI",
+          "score": 3.15,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "Spokane",
+          "score": 3.77,
+          "tier": "AI-Ready",
+          "vertical": "Financial Services"
+        }
+      ]
+    },
+    {
+      "name": "TrackIt Transit",
+      "score": 2.21,
+      "tier": "AI-Emerging",
+      "wave": 3,
+      "peer_verticals": [
+        "Financial Services"
+      ],
+      "peer_vertical": "Financial Services",
+      "peer_count": 10,
+      "vertical_rank": 10,
+      "vertical_percentile": 0.0,
+      "vertical_avg": 3.13,
+      "vertical_max": 3.77,
+      "vertical_min": 2.21,
+      "nearest_peers": [
+        {
+          "name": "NexTalk",
+          "score": 2.37,
+          "tier": "AI-Emerging",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "Dash",
+          "score": 2.45,
+          "tier": "AI-Emerging",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "FMSI",
+          "score": 3.15,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "Modern Treasury",
+          "score": 3.28,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "AutoTime",
+          "score": 3.42,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
+        }
+      ]
+    },
+    {
+      "name": "ViaPeople",
+      "score": 3.29,
+      "tier": "AI-Buildable",
+      "wave": 1,
+      "peer_verticals": [
+        "Enterprise Software"
+      ],
+      "peer_vertical": "Enterprise Software",
+      "peer_count": 2,
+      "vertical_rank": 2,
+      "vertical_percentile": 0.0,
+      "vertical_avg": 3.34,
+      "vertical_max": 3.39,
+      "vertical_min": 3.29,
+      "nearest_peers": [
+        {
+          "name": "Cairn Applications",
+          "score": 3.39,
+          "tier": "AI-Buildable",
+          "vertical": "Enterprise Software"
+        }
+      ]
+    },
+    {
+      "name": "AutoTime",
+      "score": 3.42,
+      "tier": "AI-Buildable",
+      "wave": 1,
+      "peer_verticals": [
+        "Financial Services"
+      ],
+      "peer_vertical": "Financial Services",
+      "peer_count": 10,
+      "vertical_rank": 5,
+      "vertical_percentile": 55.6,
+      "vertical_avg": 3.13,
+      "vertical_max": 3.77,
+      "vertical_min": 2.21,
+      "nearest_peers": [
+        {
+          "name": "Track Star",
+          "score": 3.43,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "SMRTR",
+          "score": 3.45,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "Modern Treasury",
+          "score": 3.28,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "FMSI",
+          "score": 3.15,
+          "tier": "AI-Buildable",
+          "vertical": "Financial Services"
+        },
+        {
+          "name": "Spokane",
+          "score": 3.77,
+          "tier": "AI-Ready",
+          "vertical": "Financial Services"
+        }
+      ]
+    },
+    {
+      "name": "Cairn Applications",
+      "score": 3.39,
+      "tier": "AI-Buildable",
+      "wave": 1,
+      "peer_verticals": [
+        "Enterprise Software"
+      ],
+      "peer_vertical": "Enterprise Software",
+      "peer_count": 2,
+      "vertical_rank": 1,
+      "vertical_percentile": 100.0,
+      "vertical_avg": 3.34,
+      "vertical_max": 3.39,
+      "vertical_min": 3.29,
+      "nearest_peers": [
+        {
+          "name": "ViaPeople",
+          "score": 3.29,
+          "tier": "AI-Buildable",
+          "vertical": "Enterprise Software"
+        }
+      ]
+    },
+    {
+      "name": "Primate",
+      "score": 2.93,
+      "tier": "AI-Buildable",
+      "wave": 2,
+      "peer_verticals": [
+        "E-commerce/Retail"
+      ],
+      "peer_vertical": "E-commerce/Retail",
+      "peer_count": 2,
+      "vertical_rank": 1,
+      "vertical_percentile": 100.0,
+      "vertical_avg": 2.86,
+      "vertical_max": 2.93,
+      "vertical_min": 2.79,
+      "nearest_peers": [
+        {
+          "name": "ThingTech",
+          "score": 2.79,
+          "tier": "AI-Emerging",
+          "vertical": "E-commerce/Retail"
+        }
+      ]
+    },
+    {
+      "name": "ThingTech",
+      "score": 2.79,
       "tier": "AI-Emerging",
       "wave": 2,
       "peer_verticals": [
-        "AgTech/Sensors",
-        "AgTech",
-        "AgTech/Indoor Farming",
-        "AgTech/Soil",
-        "AgTech/Trading",
-        "AgTech/Marketplace",
-        "AgTech/Input Management",
-        "AgTech/Imagery",
-        "AgTech/SaaS",
-        "AgTech/Livestock",
-        "AgTech/Farming",
-        "Manufacturing",
-        "Manufacturing/ERP",
-        "Logistics/Freight",
-        "Logistics"
+        "E-commerce/Retail"
       ],
-      "peer_count": 25,
-      "vertical_rank": 5,
-      "vertical_percentile": 19.2,
-      "vertical_avg": 2.89,
-      "vertical_max": 3.52,
-      "vertical_min": 2.05,
+      "peer_vertical": "E-commerce/Retail",
+      "peer_count": 2,
+      "vertical_rank": 2,
+      "vertical_percentile": 0.0,
+      "vertical_avg": 2.86,
+      "vertical_max": 2.93,
+      "vertical_min": 2.79,
       "nearest_peers": [
         {
-          "name": "AgriWebb",
+          "name": "Primate",
           "score": 2.93,
           "tier": "AI-Buildable",
-          "vertical": "AgTech/Livestock"
-        },
-        {
-          "name": "Conservis",
-          "score": 2.62,
-          "tier": "AI-Emerging",
-          "vertical": "AgTech/Farming"
-        },
-        {
-          "name": "Granular",
-          "score": 3.08,
-          "tier": "AI-Buildable",
-          "vertical": "AgTech"
-        },
-        {
-          "name": "FarmLogs",
-          "score": 2.59,
-          "tier": "AI-Emerging",
-          "vertical": "AgTech/SaaS"
-        },
-        {
-          "name": "FluroSat",
-          "score": 2.76,
-          "tier": "AI-Emerging",
-          "vertical": "AgTech/Imagery"
+          "vertical": "E-commerce/Retail"
         }
       ]
     }
