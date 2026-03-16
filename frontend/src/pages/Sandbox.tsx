@@ -89,9 +89,9 @@ function useAnimatedScore(target: number, duration = 1200) {
 // ── Deep research pipeline steps ────────────────────────────────────────────
 
 const PIPELINE_STEPS = [
-  { label: 'Launching deep research across 8 dimensions...', icon: '🔍', duration: 2000 },
+  { label: 'Launching deep research across 20 dimensions...', icon: '🔍', duration: 2000 },
   { label: 'Validating entity matches against identity markers...', icon: '🛡️', duration: 1500 },
-  { label: 'Analyzing AI capabilities & engineering signals...', icon: '🤖', duration: 2500 },
+  { label: 'Enriching AI capabilities, hiring & tech stack signals...', icon: '🤖', duration: 2500 },
   { label: 'Scraping company pages for richer data...', icon: '🌐', duration: 2500 },
   { label: 'Extracting features from research corpus...', icon: '⚡', duration: 2000 },
   { label: 'Running 17-dimension scoring model...', icon: '📊', duration: 2000 },

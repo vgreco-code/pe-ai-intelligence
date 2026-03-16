@@ -1,253 +1,419 @@
 import { useState } from 'react'
-import { Search, FileText, ChevronDown, ChevronUp, Shield, Signal, Database, Brain, Users } from 'lucide-react'
+import {
+  Search, ChevronDown, ChevronUp, Brain, Users, ExternalLink,
+  Cpu, Briefcase, Newspaper, Code2, UserCheck,
+  GitBranch, Star, Building2,
+} from 'lucide-react'
 import type { PortfolioCompany } from '../App'
 import { CATEGORIES, DIMENSION_LABELS, getScoreColor } from '../App'
 
 // ── Research Evidence Panel ─────────────────────────────────────────────────
-// Surfaces the evidence signals behind each company's AI maturity scores.
-// Extracts key signals from description text + dimension score patterns.
+// Displays enrichment data from the Tavily deep research pipeline.
+// Shows: AI initiatives, tech stack, key evidence, hiring signals,
+//        executives, customers, news events, and score insights.
 
-interface EvidenceSignal {
-  text: string
-  type: 'ai' | 'data' | 'infra' | 'org' | 'product'
-  strength: 'strong' | 'moderate' | 'weak'
-  source: string
+interface GitHubData {
+  found: boolean
+  org_login?: string
+  org_url?: string
+  total_public_repos?: number
+  total_stars?: number
+  total_forks?: number
+  recently_active_repos?: number
+  primary_languages?: { language: string; repo_count: number }[]
+  top_repos?: { name: string; description: string; language: string; stars: number; forks: number; updated: string }[]
 }
 
-// Pattern-based signal extraction from description text
-function extractSignals(company: PortfolioCompany): EvidenceSignal[] {
-  const desc = (company.description || '').toLowerCase()
-  const signals: EvidenceSignal[] = []
-
-  // AI capability signals
-  const aiPatterns: [RegExp, string][] = [
-    [/ai[- ]powered/i, 'AI-powered product capabilities detected'],
-    [/machine learning|ml model/i, 'Machine learning capabilities referenced'],
-    [/natural language|nlp/i, 'Natural language processing capabilities'],
-    [/deep learning|neural net/i, 'Deep learning / neural network usage'],
-    [/computer vision/i, 'Computer vision capabilities'],
-    [/generative ai|gen[- ]?ai|llm|large language/i, 'Generative AI / LLM integration'],
-    [/predictive analytics|predictive model/i, 'Predictive analytics capabilities'],
-    [/ai infrastructure|ai platform/i, 'AI infrastructure / platform'],
-    [/automation|automat/i, 'Automation capabilities'],
-    [/intelligent|smart\s/i, 'Intelligent/smart product features'],
-  ]
-  for (const [re, text] of aiPatterns) {
-    if (re.test(desc)) {
-      signals.push({ text, type: 'ai', strength: 'strong', source: 'Company description' })
-    }
-  }
-
-  // Cloud / infrastructure signals
-  const cloudPatterns: [RegExp, string][] = [
-    [/aws|amazon web services/i, 'AWS cloud infrastructure'],
-    [/azure|microsoft cloud/i, 'Azure cloud platform'],
-    [/gcp|google cloud/i, 'Google Cloud Platform'],
-    [/kubernetes|k8s/i, 'Kubernetes container orchestration'],
-    [/microservices/i, 'Microservices architecture'],
-    [/cloud[- ]native/i, 'Cloud-native architecture'],
-    [/api[- ]first|rest api|graphql/i, 'API-first architecture'],
-    [/saas|software as a service/i, 'SaaS delivery model'],
-  ]
-  for (const [re, text] of cloudPatterns) {
-    if (re.test(desc)) {
-      signals.push({ text, type: 'infra', strength: 'moderate', source: 'Technology signals' })
-    }
-  }
-
-  // Data signals
-  const dataPatterns: [RegExp, string][] = [
-    [/data analytics|data science/i, 'Data analytics capabilities'],
-    [/big data|data lake|data warehouse/i, 'Large-scale data infrastructure'],
-    [/real[- ]time data|streaming/i, 'Real-time data processing'],
-    [/data integration|etl|data pipeline/i, 'Data integration infrastructure'],
-    [/data governance|data quality/i, 'Data governance practices'],
-  ]
-  for (const [re, text] of dataPatterns) {
-    if (re.test(desc)) {
-      signals.push({ text, type: 'data', strength: 'moderate', source: 'Data capabilities' })
-    }
-  }
-
-  // Org / talent signals
-  const orgPatterns: [RegExp, string][] = [
-    [/ai team|ml engineer|data scientist/i, 'Dedicated AI/ML talent'],
-    [/chief.*ai|caio|cto/i, 'AI-focused leadership'],
-    [/innovation|r&d|research/i, 'Innovation / R&D investment'],
-    [/partnership|partner ecosystem/i, 'Technology partnerships'],
-  ]
-  for (const [re, text] of orgPatterns) {
-    if (re.test(desc)) {
-      signals.push({ text, type: 'org', strength: 'moderate', source: 'Organization signals' })
-    }
-  }
-
-  // Add score-derived evidence (dimension patterns that tell a story)
-  const ps = company.pillar_scores
-
-  if ((ps.ai_product_features || 0) >= 3.5) {
-    signals.push({ text: `Strong AI product feature score (${(ps.ai_product_features || 0).toFixed(1)}) — multiple AI-driven capabilities detected in product`, type: 'product', strength: 'strong', source: 'Scoring pipeline' })
-  }
-  if ((ps.ai_momentum || 0) >= 3.0) {
-    signals.push({ text: `Active AI momentum (${(ps.ai_momentum || 0).toFixed(1)}) — recent AI hiring, partnerships, or product launches detected`, type: 'ai', strength: 'strong', source: 'Velocity analysis' })
-  }
-  if ((ps.cloud_architecture || 0) >= 3.0) {
-    signals.push({ text: `Modern cloud infrastructure (${(ps.cloud_architecture || 0).toFixed(1)}) — cloud-native architecture with scalable compute`, type: 'infra', strength: 'moderate', source: 'Infrastructure analysis' })
-  }
-  if ((ps.data_quality || 0) >= 3.0 && (ps.data_integration || 0) >= 3.0) {
-    signals.push({ text: `Strong data foundations (DQ: ${(ps.data_quality || 0).toFixed(1)}, DI: ${(ps.data_integration || 0).toFixed(1)}) — data infrastructure supports ML workloads`, type: 'data', strength: 'strong', source: 'Data analysis' })
-  }
-  if ((ps.ai_engineering || 0) < 2.0) {
-    signals.push({ text: `Limited AI engineering capability (${(ps.ai_engineering || 0).toFixed(1)}) — no evidence of ML ops or model deployment infrastructure`, type: 'ai', strength: 'weak', source: 'Gap analysis' })
-  }
-  if ((ps.ai_talent_density || 0) < 2.0) {
-    signals.push({ text: `Low AI talent density (${(ps.ai_talent_density || 0).toFixed(1)}) — limited AI/ML hiring signals detected`, type: 'org', strength: 'weak', source: 'Talent analysis' })
-  }
-  if ((ps.org_change_readiness || 0) < 2.0) {
-    signals.push({ text: `Low organizational readiness (${(ps.org_change_readiness || 0).toFixed(1)}) — may need change management support for AI adoption`, type: 'org', strength: 'weak', source: 'Organization analysis' })
-  }
-
-  return signals
-}
-
-// Determine which dimensions are the biggest gaps vs. strengths
-function getScoreInsights(company: PortfolioCompany) {
-  const entries = Object.entries(company.pillar_scores)
-    .map(([dim, score]) => ({ dim, score, label: DIMENSION_LABELS[dim] || dim }))
-
-  const sorted = [...entries].sort((a, b) => b.score - a.score)
-  const strengths = sorted.slice(0, 3)
-  const gaps = [...entries].sort((a, b) => a.score - b.score).slice(0, 3)
-
-  // Find which category is strongest and weakest
-  const catScores = Object.entries(CATEGORIES).map(([cat, dims]) => ({
-    cat,
-    avg: dims.reduce((s, d) => s + (company.pillar_scores[d] || 0), 0) / dims.length,
-  })).sort((a, b) => b.avg - a.avg)
-
-  return { strengths, gaps, strongestCat: catScores[0], weakestCat: catScores[catScores.length - 1] }
-}
-
-const TYPE_ICONS: Record<string, typeof Brain> = {
-  ai: Brain,
-  data: Database,
-  infra: Signal,
-  org: Users,
-  product: Shield,
-}
-
-const TYPE_COLORS: Record<string, string> = {
-  ai: '#02C39A',
-  data: '#06b6d4',
-  infra: '#8b5cf6',
-  org: '#F5A623',
-  product: '#ec4899',
-}
-
-const STRENGTH_STYLES: Record<string, { bg: string; text: string; label: string }> = {
-  strong: { bg: 'bg-emerald-500/10', text: 'text-emerald-400', label: 'Strong Signal' },
-  moderate: { bg: 'bg-amber-500/10', text: 'text-amber-400', label: 'Moderate Signal' },
-  weak: { bg: 'bg-red-500/10', text: 'text-red-400', label: 'Gap Signal' },
+interface CareersData {
+  found: boolean
+  careers_url?: string
+  total_openings?: number
+  ai_ml_openings?: number
+  departments?: Record<string, number>
+  sample_roles?: string[]
+  ai_roles?: string[]
 }
 
 interface Props {
   company: PortfolioCompany
+  evidence?: {
+    ai_initiatives?: { text: string; type: string }[]
+    tech_stack?: string[]
+    named_customers?: string[]
+    recent_news?: string[]
+    executives?: { name: string; role: string }[]
+    hiring_signals?: string[]
+    key_evidence?: { text: string; source: string; url: string }[]
+    enrichment_stats?: Record<string, number>
+    github?: GitHubData
+    careers?: CareersData
+  }
 }
 
-export default function ResearchEvidence({ company }: Props) {
-  const [expanded, setExpanded] = useState(false)
-  const signals = extractSignals(company)
+function getScoreInsights(company: PortfolioCompany) {
+  const entries = Object.entries(company.pillar_scores)
+    .map(([dim, score]) => ({ dim, score, label: DIMENSION_LABELS[dim] || dim }))
+  const strengths = [...entries].sort((a, b) => b.score - a.score).slice(0, 3)
+  const gaps = [...entries].sort((a, b) => a.score - b.score).slice(0, 3)
+  const catScores = Object.entries(CATEGORIES).map(([cat, dims]) => ({
+    cat,
+    avg: dims.reduce((s, d) => s + (company.pillar_scores[d] || 0), 0) / dims.length,
+  })).sort((a, b) => b.avg - a.avg)
+  return { strengths, gaps, strongestCat: catScores[0] }
+}
+
+// Tech stack category colors
+const TECH_COLORS: Record<string, string> = {
+  AWS: '#FF9900', Azure: '#0078D4', GCP: '#4285F4', Kubernetes: '#326CE5',
+  Docker: '#2496ED', Python: '#3776AB', TypeScript: '#3178C6', React: '#61DAFB',
+  'Node.js': '#339933', Java: '#ED8B00', '.NET': '#512BD4', Go: '#00ADD8',
+  PostgreSQL: '#4169E1', MongoDB: '#47A248', Redis: '#DC382D', Elasticsearch: '#005571',
+  Snowflake: '#29B5E8', Databricks: '#FF3621', TensorFlow: '#FF6F00', PyTorch: '#EE4C2C',
+  OpenAI: '#412991', Anthropic: '#D4A574', 'Hugging Face': '#FFD21E',
+  Terraform: '#7B42BC', Salesforce: '#00A1E0', Stripe: '#635BFF',
+}
+
+const INITIATIVE_TYPE_LABELS: Record<string, string> = {
+  product_launch: 'Product Launch',
+  ai_feature: 'AI Feature',
+  genai_feature: 'GenAI',
+  ml_capability: 'ML Capability',
+}
+
+export default function ResearchEvidence({ company, evidence }: Props) {
+  const [showAllEvidence, setShowAllEvidence] = useState(false)
   const { strengths, gaps, strongestCat } = getScoreInsights(company)
-
-  const strongSignals = signals.filter(s => s.strength === 'strong')
-  const moderateSignals = signals.filter(s => s.strength === 'moderate')
-  const gapSignals = signals.filter(s => s.strength === 'weak')
-
-  const displaySignals = expanded ? signals : signals.slice(0, 6)
   const confidenceScore = (company as any).confidence_score
+
+  const ev = evidence || {}
+  const aiInits = ev.ai_initiatives || []
+  const techStack = ev.tech_stack || []
+  const customers = ev.named_customers || []
+  const news = ev.recent_news || []
+  const executives = ev.executives || []
+  const hiring = ev.hiring_signals || []
+  const keyEvidence = ev.key_evidence || []
+  const stats = ev.enrichment_stats
+  const github = ev.github
+  const careers = ev.careers
+
+  const hasEnrichment = aiInits.length > 0 || techStack.length > 0 || keyEvidence.length > 0
 
   return (
     <div className="glass-card rounded-xl border border-violet-500/20 p-6">
+      {/* Header */}
       <div className="flex items-center justify-between mb-2">
         <h2 className="text-lg font-bold text-[var(--text-primary)] flex items-center gap-2">
           <Search className="w-5 h-5 text-violet-400" />
           Research Evidence
         </h2>
-        {confidenceScore != null && (
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-[var(--text-muted)]">Research Confidence</span>
+        <div className="flex items-center gap-3">
+          {stats && (
+            <span className="text-[10px] text-[var(--text-muted)]">
+              {stats.total_results} sources analyzed
+            </span>
+          )}
+          {confidenceScore != null && (
             <div className="flex items-center gap-1.5 bg-violet-500/10 px-3 py-1 rounded-full border border-violet-500/20">
               <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: confidenceScore >= 80 ? '#02C39A' : confidenceScore >= 60 ? '#F5A623' : '#F24E1E' }} />
-              <span className="text-sm font-bold text-violet-400">{confidenceScore.toFixed(0)}%</span>
+              <span className="text-sm font-bold text-violet-400">{confidenceScore.toFixed(0)}% confidence</span>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
       <p className="text-xs text-[var(--text-muted)] mb-5">
-        Key evidence signals detected through deep web research on {company.name}
+        Evidence gathered from {hasEnrichment ? '14 targeted web research queries' : 'deep web research'}
+        {github?.found ? ', GitHub API' : ''}{careers?.found ? ', careers page' : ''} on {company.name}
       </p>
 
-      {/* Evidence summary bar */}
+      {/* Summary stats row */}
       <div className="flex gap-3 mb-5">
-        <div className="flex-1 bg-emerald-500/5 rounded-lg p-3 border border-emerald-500/10 text-center">
-          <div className="text-xl font-bold text-emerald-400">{strongSignals.length}</div>
-          <div className="text-[10px] text-[var(--text-muted)] font-medium">Strong Signals</div>
-        </div>
-        <div className="flex-1 bg-amber-500/5 rounded-lg p-3 border border-amber-500/10 text-center">
-          <div className="text-xl font-bold text-amber-400">{moderateSignals.length}</div>
-          <div className="text-[10px] text-[var(--text-muted)] font-medium">Moderate Signals</div>
-        </div>
-        <div className="flex-1 bg-red-500/5 rounded-lg p-3 border border-red-500/10 text-center">
-          <div className="text-xl font-bold text-red-400">{gapSignals.length}</div>
-          <div className="text-[10px] text-[var(--text-muted)] font-medium">Gap Signals</div>
+        <div className="flex-1 bg-cyan-500/5 rounded-lg p-3 border border-cyan-500/10 text-center">
+          <div className="text-xl font-bold text-cyan-400">{aiInits.length}</div>
+          <div className="text-[10px] text-[var(--text-muted)] font-medium">AI Initiatives</div>
         </div>
         <div className="flex-1 bg-violet-500/5 rounded-lg p-3 border border-violet-500/10 text-center">
-          <div className="text-xl font-bold text-violet-400">{strongestCat.cat.split(' ')[0]}</div>
+          <div className="text-xl font-bold text-violet-400">{techStack.length}</div>
+          <div className="text-[10px] text-[var(--text-muted)] font-medium">Tech Signals</div>
+        </div>
+        <div className="flex-1 bg-amber-500/5 rounded-lg p-3 border border-amber-500/10 text-center">
+          <div className="text-xl font-bold text-amber-400">{hiring.length}</div>
+          <div className="text-[10px] text-[var(--text-muted)] font-medium">Hiring Roles</div>
+        </div>
+        <div className="flex-1 bg-emerald-500/5 rounded-lg p-3 border border-emerald-500/10 text-center">
+          <div className="text-xl font-bold text-emerald-400">{strongestCat.cat.split(' ')[0]}</div>
           <div className="text-[10px] text-[var(--text-muted)] font-medium">Strongest Area</div>
         </div>
       </div>
 
-      {/* Signal list */}
-      <div className="space-y-2">
-        {displaySignals.map((signal, i) => {
-          const Icon = TYPE_ICONS[signal.type] || FileText
-          const style = STRENGTH_STYLES[signal.strength]
-          return (
-            <div
-              key={i}
-              className="flex items-start gap-3 p-3 bg-slate-800/30 rounded-lg border border-slate-700/30 hover:border-slate-600/40 transition-all"
-            >
-              <div
-                className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
-                style={{ backgroundColor: `${TYPE_COLORS[signal.type]}15` }}
-              >
-                <Icon className="w-3.5 h-3.5" style={{ color: TYPE_COLORS[signal.type] }} />
+      {hasEnrichment ? (
+        <div className="space-y-5">
+          {/* Tech Stack */}
+          {techStack.length > 0 && (
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <Code2 className="w-4 h-4 text-violet-400" />
+                <span className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">Detected Tech Stack</span>
               </div>
-              <div className="flex-1 min-w-0">
-                <div className="text-sm text-[var(--text-primary)] leading-snug">{signal.text}</div>
-                <div className="flex items-center gap-2 mt-1">
-                  <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded ${style.bg} ${style.text}`}>
-                    {style.label}
+              <div className="flex flex-wrap gap-1.5">
+                {techStack.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="px-2.5 py-1 rounded-full text-[11px] font-semibold border"
+                    style={{
+                      color: TECH_COLORS[tech] || '#94a3b8',
+                      backgroundColor: `${TECH_COLORS[tech] || '#94a3b8'}12`,
+                      borderColor: `${TECH_COLORS[tech] || '#94a3b8'}25`,
+                    }}
+                  >
+                    {tech}
                   </span>
-                  <span className="text-[10px] text-[var(--text-muted)]">{signal.source}</span>
-                </div>
+                ))}
               </div>
             </div>
-          )
-        })}
-      </div>
+          )}
 
-      {signals.length > 6 && (
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="mt-3 flex items-center gap-1 text-xs text-violet-400 hover:text-violet-300 transition-colors mx-auto"
-        >
-          {expanded ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
-          {expanded ? 'Show less' : `Show ${signals.length - 6} more signals`}
-        </button>
+          {/* AI Initiatives */}
+          {aiInits.length > 0 && (
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <Brain className="w-4 h-4 text-cyan-400" />
+                <span className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">AI Initiatives Detected</span>
+              </div>
+              <div className="space-y-1.5">
+                {aiInits.slice(0, 5).map((init, i) => (
+                  <div key={i} className="flex items-start gap-2 p-2 bg-slate-800/30 rounded-lg border border-slate-700/20">
+                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-400 flex-shrink-0 mt-0.5">
+                      {INITIATIVE_TYPE_LABELS[init.type] || init.type}
+                    </span>
+                    <span className="text-xs text-[var(--text-secondary)] leading-snug">{init.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Hiring Signals */}
+          {hiring.length > 0 && (
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <UserCheck className="w-4 h-4 text-amber-400" />
+                <span className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">Active Hiring Roles</span>
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {hiring.map((role, i) => (
+                  <span key={i} className="px-2.5 py-1 rounded-full text-[11px] font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                    {role}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Two-column: Executives + Customers/News */}
+          <div className="grid grid-cols-2 gap-4">
+            {/* Executives */}
+            {executives.length > 0 && (
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <Briefcase className="w-4 h-4 text-purple-400" />
+                  <span className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">Leadership</span>
+                </div>
+                <div className="space-y-1">
+                  {executives.map((exec, i) => (
+                    <div key={i} className="flex items-center gap-2 text-xs">
+                      <Users className="w-3 h-3 text-purple-400 flex-shrink-0" />
+                      <span className="text-[var(--text-primary)] font-medium">{exec.name}</span>
+                      <span className="text-[var(--text-muted)]">— {exec.role}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Customers + News combined */}
+            <div>
+              {customers.length > 0 && (
+                <div className="mb-3">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Cpu className="w-4 h-4 text-emerald-400" />
+                    <span className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">Named Customers</span>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {customers.map((cust, i) => (
+                      <span key={i} className="px-2 py-0.5 rounded text-[11px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                        {cust}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {news.length > 0 && (
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Newspaper className="w-4 h-4 text-blue-400" />
+                    <span className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">Recent News</span>
+                  </div>
+                  <div className="space-y-1">
+                    {news.slice(0, 3).map((item, i) => (
+                      <div key={i} className="text-xs text-[var(--text-secondary)] leading-snug p-1.5 bg-slate-800/20 rounded">
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* GitHub + Careers Row */}
+          {(github?.found || careers?.found) && (
+            <div className="grid grid-cols-2 gap-4">
+              {/* GitHub Presence */}
+              {github?.found && (
+                <div className="bg-slate-800/30 rounded-lg p-4 border border-slate-700/30">
+                  <div className="flex items-center gap-2 mb-3">
+                    <GitBranch className="w-4 h-4 text-green-400" />
+                    <span className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">GitHub Presence</span>
+                    <a href={github.org_url} target="_blank" rel="noopener noreferrer" className="ml-auto text-[10px] text-green-400 hover:text-green-300 flex items-center gap-1">
+                      @{github.org_login} <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 mb-3">
+                    <div className="text-center">
+                      <div className="text-lg font-bold text-green-400">{github.total_public_repos}</div>
+                      <div className="text-[9px] text-[var(--text-muted)]">Public Repos</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-lg font-bold text-yellow-400 flex items-center justify-center gap-1">
+                        <Star className="w-3 h-3" />{github.total_stars}
+                      </div>
+                      <div className="text-[9px] text-[var(--text-muted)]">Total Stars</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-lg font-bold text-blue-400">{github.recently_active_repos || 0}</div>
+                      <div className="text-[9px] text-[var(--text-muted)]">Recent Active</div>
+                    </div>
+                  </div>
+                  {github.primary_languages && github.primary_languages.length > 0 && (
+                    <div className="flex flex-wrap gap-1 mb-2">
+                      {github.primary_languages.slice(0, 5).map((lang, i) => (
+                        <span key={i} className="px-2 py-0.5 rounded text-[10px] font-medium bg-green-500/10 text-green-400 border border-green-500/20">
+                          {lang.language} ({lang.repo_count})
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  {github.top_repos && github.top_repos.length > 0 && (
+                    <div className="space-y-1 mt-2">
+                      {github.top_repos.slice(0, 3).map((repo, i) => (
+                        <div key={i} className="text-[11px] text-[var(--text-muted)] flex items-center gap-1.5">
+                          <Code2 className="w-3 h-3 flex-shrink-0 text-green-400/60" />
+                          <span className="text-green-400/80 font-medium">{repo.name}</span>
+                          {repo.stars > 0 && <span className="text-yellow-400/60 text-[9px]">({repo.stars}★)</span>}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Careers / Open Positions */}
+              {careers?.found && (
+                <div className="bg-slate-800/30 rounded-lg p-4 border border-slate-700/30">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Building2 className="w-4 h-4 text-rose-400" />
+                    <span className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">Open Positions</span>
+                    <a href={careers.careers_url} target="_blank" rel="noopener noreferrer" className="ml-auto text-[10px] text-rose-400 hover:text-rose-300 flex items-center gap-1">
+                      Careers page <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2 mb-3">
+                    <div className="text-center">
+                      <div className="text-lg font-bold text-rose-400">{careers.total_openings}</div>
+                      <div className="text-[9px] text-[var(--text-muted)]">Total Openings</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-lg font-bold text-cyan-400">{careers.ai_ml_openings || 0}</div>
+                      <div className="text-[9px] text-[var(--text-muted)]">AI/ML Roles</div>
+                    </div>
+                  </div>
+                  {careers.departments && Object.keys(careers.departments).length > 0 && (
+                    <div className="mb-2">
+                      <div className="text-[10px] text-[var(--text-muted)] mb-1">By Department:</div>
+                      <div className="flex flex-wrap gap-1">
+                        {Object.entries(careers.departments).map(([dept, count], i) => (
+                          <span key={i} className="px-2 py-0.5 rounded text-[10px] font-medium bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                            {dept} ({count})
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {careers.sample_roles && careers.sample_roles.length > 0 && (
+                    <div className="space-y-0.5 mt-2">
+                      {careers.sample_roles.slice(0, 5).map((role, i) => (
+                        <div key={i} className="text-[11px] text-[var(--text-muted)] flex items-center gap-1.5">
+                          <Users className="w-3 h-3 flex-shrink-0 text-rose-400/60" />
+                          <span>{role}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* GitHub-only: fill second column with summary if no careers */}
+              {github?.found && !careers?.found && (
+                <div className="bg-slate-800/30 rounded-lg p-4 border border-slate-700/30 flex flex-col items-center justify-center text-center">
+                  <Building2 className="w-5 h-5 text-[var(--text-muted)] mb-2 opacity-40" />
+                  <div className="text-[11px] text-[var(--text-muted)]">No public careers page found</div>
+                  <div className="text-[10px] text-[var(--text-muted)] mt-1 opacity-60">Hiring signals from web research shown above</div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Key Evidence Snippets */}
+          {keyEvidence.length > 0 && (
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <Search className="w-4 h-4 text-violet-400" />
+                <span className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">Key Evidence Snippets</span>
+              </div>
+              <div className="space-y-2">
+                {(showAllEvidence ? keyEvidence : keyEvidence.slice(0, 3)).map((ev, i) => (
+                  <div key={i} className="p-3 bg-slate-800/30 rounded-lg border border-slate-700/20 hover:border-violet-500/20 transition-all">
+                    <p className="text-xs text-[var(--text-secondary)] leading-relaxed">&ldquo;{ev.text}&rdquo;</p>
+                    {ev.source && (
+                      <div className="flex items-center gap-1 mt-1.5">
+                        <ExternalLink className="w-3 h-3 text-[var(--text-muted)]" />
+                        <span className="text-[10px] text-[var(--text-muted)]">{ev.source}</span>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+              {keyEvidence.length > 3 && (
+                <button
+                  onClick={() => setShowAllEvidence(!showAllEvidence)}
+                  className="mt-2 flex items-center gap-1 text-xs text-violet-400 hover:text-violet-300 transition-colors mx-auto"
+                >
+                  {showAllEvidence ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+                  {showAllEvidence ? 'Show less' : `Show ${keyEvidence.length - 3} more`}
+                </button>
+              )}
+            </div>
+          )}
+        </div>
+      ) : (
+        /* Fallback: score-based insights when no enrichment data */
+        <div className="text-xs text-[var(--text-muted)] italic">
+          Enrichment data not available. Showing score-derived insights only.
+        </div>
       )}
 
-      {/* Score insight summary */}
+      {/* Score insight summary — always shown */}
       <div className="mt-5 grid grid-cols-2 gap-3">
         <div className="bg-slate-800/30 rounded-lg p-3 border border-slate-700/30">
           <div className="text-[10px] font-semibold uppercase tracking-wider text-emerald-400 mb-2">Top Dimensions</div>
