@@ -109,24 +109,17 @@
     "talent": {
       "found": false,
       "total_profiles_found": 0,
-      "linkedin_profiles_discovered": 4,
+      "linkedin_profiles_discovered": 0,
+      "relevant_results": 4,
+      "total_results": 20,
       "leadership": [],
       "ai_ml_talent": [],
       "senior_engineers": [],
       "engineering_team": [],
       "management": [],
-      "team_skills": [
-        "aws",
-        "azure",
-        "hadoop",
-        "machine learning",
-        "python",
-        "react",
-        "sql",
-        "tensorflow"
-      ],
-      "estimated_total_employees": 500,
-      "estimated_eng_team": 175,
+      "team_skills": [],
+      "estimated_total_employees": 50,
+      "estimated_eng_team": 17,
       "talent_summary": {
         "has_cto": false,
         "has_vp_eng": false,
@@ -244,7 +237,7 @@
       "hiring_roles_detected": 7,
       "evidence_snippets": 8
     },
-    "narrative_summary": "Spokane shows strong AI activity with public product launches incorporating AI/ML capabilities, active hiring for AI-focused roles (AI/ML Engineer, Data Scientist), and a modern ML-capable tech stack. Technical footprint: web-detected stack includes AWS, Python, Java, Redis. Key signals: ~524 employees (~183 engineering est.); identified tech leadership (CTO, VP Eng); AI-relevant team skills: deep learning, machine learning, tensorflow; broad technical hiring across 7 role categories; 1 recent news event.",
+    "narrative_summary": "Spokane shows strong AI activity with public product launches incorporating AI/ML capabilities, active hiring for AI-focused roles (AI/ML Engineer, Data Scientist), and a modern ML-capable tech stack. Technical footprint: web-detected stack includes AWS, Python, Java, Redis. Key signals: ~524 employees (~183 engineering est.); identified tech leadership (VP Eng); AI-relevant team skills: deep learning, machine learning, tensorflow; broad technical hiring across 7 role categories; 1 recent news event.",
     "github": {
       "found": true,
       "org_login": "spokane",
@@ -257,16 +250,14 @@
     "tech_stack_github_confirmed": [],
     "talent": {
       "found": true,
-      "total_profiles_found": 5,
-      "linkedin_profiles_discovered": 7,
+      "total_profiles_found": 3,
+      "linkedin_profiles_discovered": 6,
+      "relevant_results": 16,
+      "total_results": 20,
       "leadership": [
         {
           "name": "Ken Farr III",
           "role": "VP of Eng"
-        },
-        {
-          "name": "Michael Jerrow",
-          "role": "Chief Technology Officer"
         }
       ],
       "ai_ml_talent": [],
@@ -277,12 +268,7 @@
           "role": "Software Engineer"
         }
       ],
-      "management": [
-        {
-          "name": "View Post",
-          "role": "head"
-        }
-      ],
+      "management": [],
       "team_skills": [
         "agile",
         "aws",
@@ -300,13 +286,13 @@
       "estimated_total_employees": 524,
       "estimated_eng_team": 183,
       "talent_summary": {
-        "has_cto": true,
+        "has_cto": false,
         "has_vp_eng": true,
         "has_ai_leadership": false,
         "ai_ml_headcount": 0,
         "eng_headcount_discovered": 1,
-        "leadership_headcount": 3,
-        "total_discovered": 5
+        "leadership_headcount": 1,
+        "total_discovered": 3
       }
     }
   },
@@ -395,7 +381,7 @@
       "hiring_roles_detected": 7,
       "evidence_snippets": 5
     },
-    "narrative_summary": "Thought Foundry shows strong AI activity with public product launches incorporating AI/ML capabilities, active hiring for AI-focused roles (AI/ML Engineer, Data Scientist), and a modern ML-capable tech stack. Technical footprint: web-detected stack includes AWS, Azure, Kubernetes, Docker. Key signals: ~999 employees (~349 engineering est.); identified tech leadership (CTO, VP Eng); AI-relevant team skills: deep learning, machine learning; broad technical hiring across 7 role categories.",
+    "narrative_summary": "Thought Foundry shows strong AI activity with public product launches incorporating AI/ML capabilities, active hiring for AI-focused roles (AI/ML Engineer, Data Scientist), and a modern ML-capable tech stack. Technical footprint: web-detected stack includes AWS, Azure, Kubernetes, Docker. Key signals: broad technical hiring across 7 role categories.",
     "github": {
       "found": true,
       "org_login": "Thought-Foundry",
@@ -407,55 +393,27 @@
     },
     "tech_stack_github_confirmed": [],
     "talent": {
-      "found": true,
-      "total_profiles_found": 4,
-      "linkedin_profiles_discovered": 7,
-      "leadership": [
-        {
-          "name": "Mike Knott",
-          "role": "CTO & VP Engineering"
-        },
-        {
-          "name": "Laith Yousif",
-          "role": "CTO / VP Engineering - LinkedIn"
-        },
-        {
-          "name": "Palantir Foundry",
-          "role": "Director"
-        }
-      ],
+      "found": false,
+      "total_profiles_found": 0,
+      "linkedin_profiles_discovered": 0,
+      "relevant_results": 2,
+      "total_results": 20,
+      "leadership": [],
       "ai_ml_talent": [],
       "senior_engineers": [],
-      "engineering_team": [
-        {
-          "name": "Moser Consulting",
-          "role": "Data Engineer"
-        }
-      ],
+      "engineering_team": [],
       "management": [],
-      "team_skills": [
-        "aws",
-        "azure",
-        "ci/cd",
-        "deep learning",
-        "java",
-        "jenkins",
-        "machine learning",
-        "python",
-        "spark",
-        "sql",
-        "terraform"
-      ],
-      "estimated_total_employees": 999,
-      "estimated_eng_team": 349,
+      "team_skills": [],
+      "estimated_total_employees": 200,
+      "estimated_eng_team": 70,
       "talent_summary": {
-        "has_cto": true,
-        "has_vp_eng": true,
+        "has_cto": false,
+        "has_vp_eng": false,
         "has_ai_leadership": false,
         "ai_ml_headcount": 0,
-        "eng_headcount_discovered": 1,
-        "leadership_headcount": 3,
-        "total_discovered": 4
+        "eng_headcount_discovered": 0,
+        "leadership_headcount": 0,
+        "total_discovered": 0
       }
     }
   },
@@ -539,7 +497,7 @@
       "hiring_roles_detected": 3,
       "evidence_snippets": 8
     },
-    "narrative_summary": "Champ shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: 11 public repos (no recent activity) primarily in HCL, Shell, Go. Key signals: ~500 employees (~175 engineering est.); AI-relevant team skills: machine learning, tensorflow; 2 open positions.",
+    "narrative_summary": "Champ shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: 11 public repos (no recent activity) primarily in HCL, Shell, Go. Key signals: 2 open positions.",
     "github": {
       "found": true,
       "org_login": "champtitles",
@@ -580,55 +538,27 @@
     },
     "tech_stack_github_confirmed": [],
     "talent": {
-      "found": true,
-      "total_profiles_found": 4,
-      "linkedin_profiles_discovered": 6,
+      "found": false,
+      "total_profiles_found": 0,
+      "linkedin_profiles_discovered": 1,
+      "relevant_results": 5,
+      "total_results": 20,
       "leadership": [],
       "ai_ml_talent": [],
       "senior_engineers": [],
-      "engineering_team": [
-        {
-          "name": "GE HealthCare",
-          "role": "Senior Software Engineer"
-        },
-        {
-          "name": "Applied Industrial",
-          "role": "Senior Software Developer"
-        },
-        {
-          "name": "AmTrust Financial",
-          "role": "Senior Software Engineer"
-        },
-        {
-          "name": "LayerZero Power",
-          "role": "Senior Software Engineer"
-        }
-      ],
+      "engineering_team": [],
       "management": [],
       "team_skills": [
-        "agile",
-        "aws",
-        "azure",
-        "databricks",
-        "gcp",
-        "java",
-        "machine learning",
-        "python",
-        "react",
-        "sql",
-        "tensorflow",
-        "typescript"
+        "react"
       ],
-      "estimated_total_employees": 500,
-      "estimated_eng_team": 175,
       "talent_summary": {
         "has_cto": false,
         "has_vp_eng": false,
         "has_ai_leadership": false,
         "ai_ml_headcount": 0,
-        "eng_headcount_discovered": 4,
+        "eng_headcount_discovered": 0,
         "leadership_headcount": 0,
-        "total_discovered": 4
+        "total_discovered": 0
       }
     }
   },
@@ -814,23 +744,15 @@
     "talent": {
       "found": false,
       "total_profiles_found": 0,
-      "linkedin_profiles_discovered": 6,
+      "linkedin_profiles_discovered": 0,
+      "relevant_results": 3,
+      "total_results": 20,
       "leadership": [],
       "ai_ml_talent": [],
       "senior_engineers": [],
       "engineering_team": [],
       "management": [],
-      "team_skills": [
-        "aws",
-        "deep learning",
-        "machine learning",
-        "python",
-        "pytorch",
-        "react",
-        "tensorflow"
-      ],
-      "estimated_total_employees": 50,
-      "estimated_eng_team": 17,
+      "team_skills": [],
       "talent_summary": {
         "has_cto": false,
         "has_vp_eng": false,
@@ -891,7 +813,7 @@
       "hiring_roles_detected": 6,
       "evidence_snippets": 3
     },
-    "narrative_summary": "Track Star appears to be building AI capability \u2014 hiring signals for AI/ML Engineer, Data Scientist detected, but no public AI product launches or features identified yet. Technical footprint: 3 public repos (3 recently active) primarily in C++, Python, Kotlin; GitHub-confirmed stack: Python. Key signals: ~50 employees (~17 engineering est.); identified tech leadership (CTO, VP Eng); AI-relevant team skills: deep learning, machine learning, pytorch; broad technical hiring across 6 role categories.",
+    "narrative_summary": "Track Star appears to be building AI capability \u2014 hiring signals for AI/ML Engineer, Data Scientist detected, but no public AI product launches or features identified yet. Technical footprint: 3 public repos (3 recently active) primarily in C++, Python, Kotlin; GitHub-confirmed stack: Python. Key signals: broad technical hiring across 6 role categories.",
     "github": {
       "found": true,
       "org_login": "OG-star-tech",
@@ -941,57 +863,27 @@
       "Python"
     ],
     "talent": {
-      "found": true,
-      "total_profiles_found": 4,
-      "linkedin_profiles_discovered": 9,
-      "leadership": [
-        {
-          "name": "Christopher Beach",
-          "role": "CTO"
-        },
-        {
-          "name": "Technology Executive",
-          "role": "VP of Engineering"
-        },
-        {
-          "name": "Corporate Development",
-          "role": "Director"
-        }
-      ],
+      "found": false,
+      "total_profiles_found": 0,
+      "linkedin_profiles_discovered": 1,
+      "relevant_results": 7,
+      "total_results": 20,
+      "leadership": [],
       "ai_ml_talent": [],
-      "senior_engineers": [
-        {
-          "name": "Oleg Paliivets",
-          "role": "VP, Head of Data Architecture and Engineering ..."
-        }
-      ],
+      "senior_engineers": [],
       "engineering_team": [],
       "management": [],
-      "team_skills": [
-        "aws",
-        "ci/cd",
-        "databricks",
-        "deep learning",
-        "kubernetes",
-        "machine learning",
-        "python",
-        "pytorch",
-        "react",
-        "scrum",
-        "snowflake",
-        "sql",
-        "tensorflow"
-      ],
+      "team_skills": [],
       "estimated_total_employees": 50,
       "estimated_eng_team": 17,
       "talent_summary": {
-        "has_cto": true,
-        "has_vp_eng": true,
+        "has_cto": false,
+        "has_vp_eng": false,
         "has_ai_leadership": false,
         "ai_ml_headcount": 0,
-        "eng_headcount_discovered": 1,
-        "leadership_headcount": 3,
-        "total_discovered": 4
+        "eng_headcount_discovered": 0,
+        "leadership_headcount": 0,
+        "total_discovered": 0
       }
     }
   },
@@ -1145,26 +1037,19 @@
     "talent": {
       "found": false,
       "total_profiles_found": 0,
-      "linkedin_profiles_discovered": 3,
+      "linkedin_profiles_discovered": 0,
+      "relevant_results": 2,
+      "total_results": 20,
       "leadership": [],
       "ai_ml_talent": [],
       "senior_engineers": [],
       "engineering_team": [],
       "management": [],
       "team_skills": [
-        "azure",
-        "databricks",
-        "hadoop",
-        "java",
-        "machine learning",
         "mongodb",
         "postgresql",
-        "python",
-        "pytorch",
         "react",
-        "spark",
-        "sql",
-        "tensorflow"
+        "sql"
       ],
       "estimated_total_employees": 200,
       "estimated_eng_team": 70,
@@ -1266,7 +1151,7 @@
       "hiring_roles_detected": 1,
       "evidence_snippets": 8
     },
-    "narrative_summary": "FMSI references AI capabilities in public materials, but limited evidence of dedicated AI infrastructure, hiring, or ML tooling suggests these may be aspirational or vendor-integrated features. Technical footprint: web-detected stack includes Kubernetes, Segment. Key signals: ~200 employees (~70 engineering est.); identified tech leadership (CTO); AI-relevant team skills: machine learning; hiring signals for DevOps/SRE.",
+    "narrative_summary": "FMSI references AI capabilities in public materials, but limited evidence of dedicated AI infrastructure, hiring, or ML tooling suggests these may be aspirational or vendor-integrated features. Technical footprint: web-detected stack includes Kubernetes, Segment. Key signals: hiring signals for DevOps/SRE.",
     "github": {
       "found": true,
       "org_login": "fmsi-dev",
@@ -1278,22 +1163,14 @@
     },
     "tech_stack_github_confirmed": [],
     "talent": {
-      "found": true,
-      "total_profiles_found": 2,
+      "found": false,
+      "total_profiles_found": 0,
       "linkedin_profiles_discovered": 2,
-      "leadership": [
-        {
-          "name": "James Reggio",
-          "role": "CTO"
-        }
-      ],
+      "relevant_results": 15,
+      "total_results": 20,
+      "leadership": [],
       "ai_ml_talent": [],
-      "senior_engineers": [
-        {
-          "name": "Cloud Architect",
-          "role": "Solutions Architect"
-        }
-      ],
+      "senior_engineers": [],
       "engineering_team": [],
       "management": [],
       "team_skills": [
@@ -1301,23 +1178,20 @@
         "aws",
         "azure",
         "databricks",
-        "java",
-        "javascript",
         "machine learning",
-        "python",
         "spark",
         "sql"
       ],
-      "estimated_total_employees": 200,
-      "estimated_eng_team": 70,
+      "estimated_total_employees": 50,
+      "estimated_eng_team": 17,
       "talent_summary": {
-        "has_cto": true,
+        "has_cto": false,
         "has_vp_eng": false,
         "has_ai_leadership": false,
         "ai_ml_headcount": 0,
-        "eng_headcount_discovered": 1,
-        "leadership_headcount": 1,
-        "total_discovered": 2
+        "eng_headcount_discovered": 0,
+        "leadership_headcount": 0,
+        "total_discovered": 0
       }
     }
   },
@@ -1401,7 +1275,7 @@
       "hiring_roles_detected": 3,
       "evidence_snippets": 7
     },
-    "narrative_summary": "Cairn Applications appears to be building AI capability \u2014 hiring signals for AI/ML Engineer, NLP Engineer detected, but no public AI product launches or features identified yet. Technical footprint: web-detected stack includes AWS, Kubernetes, Python, React. Key signals: ~3,000 employees (~1,050 engineering est.); 1 AI/ML specialists discovered on LinkedIn; AI-relevant team skills: deep learning, machine learning; hiring signals for AI/ML Engineer, Data Engineer, NLP Engineer; 1 recent news event.",
+    "narrative_summary": "Cairn Applications appears to be building AI capability \u2014 hiring signals for AI/ML Engineer, NLP Engineer detected, but no public AI product launches or features identified yet. Technical footprint: web-detected stack includes AWS, Kubernetes, Python, React. Key signals: hiring signals for AI/ML Engineer, Data Engineer, NLP Engineer; identified tech leadership: Scott Cairns (Chief Technology Officer); 1 recent news event.",
     "github": {
       "found": true,
       "org_login": "cairnapps",
@@ -1413,54 +1287,25 @@
     },
     "tech_stack_github_confirmed": [],
     "talent": {
-      "found": true,
-      "total_profiles_found": 4,
-      "linkedin_profiles_discovered": 7,
+      "found": false,
+      "total_profiles_found": 0,
+      "linkedin_profiles_discovered": 0,
+      "relevant_results": 1,
+      "total_results": 20,
       "leadership": [],
-      "ai_ml_talent": [
-        {
-          "name": "Charles Jacob Tan",
-          "role": "Data Scientist, Cairns Oneil Strategic Media"
-        }
-      ],
+      "ai_ml_talent": [],
       "senior_engineers": [],
-      "engineering_team": [
-        {
-          "name": "Sean Cairns",
-          "role": "Senior Software Engineer"
-        },
-        {
-          "name": "Andreas Roeseler",
-          "role": "Senior Software Engineer"
-        }
-      ],
-      "management": [
-        {
-          "name": "Scott Cairns",
-          "role": "Head of Technology Strategy & Innovation - LinkedIn"
-        }
-      ],
-      "team_skills": [
-        "agile",
-        "aws",
-        "deep learning",
-        "gcp",
-        "java",
-        "machine learning",
-        "python",
-        "react",
-        "spark"
-      ],
-      "estimated_total_employees": 3000,
-      "estimated_eng_team": 1050,
+      "engineering_team": [],
+      "management": [],
+      "team_skills": [],
       "talent_summary": {
         "has_cto": false,
         "has_vp_eng": false,
         "has_ai_leadership": false,
-        "ai_ml_headcount": 1,
-        "eng_headcount_discovered": 2,
-        "leadership_headcount": 1,
-        "total_discovered": 4
+        "ai_ml_headcount": 0,
+        "eng_headcount_discovered": 0,
+        "leadership_headcount": 0,
+        "total_discovered": 0
       }
     }
   },
@@ -1581,21 +1426,15 @@
     "talent": {
       "found": false,
       "total_profiles_found": 0,
-      "linkedin_profiles_discovered": 3,
+      "linkedin_profiles_discovered": 0,
+      "relevant_results": 8,
+      "total_results": 20,
       "leadership": [],
       "ai_ml_talent": [],
       "senior_engineers": [],
       "engineering_team": [],
       "management": [],
-      "team_skills": [
-        "aws",
-        "databricks",
-        "deep learning",
-        "java",
-        "react",
-        "scrum",
-        "spark"
-      ],
+      "team_skills": [],
       "estimated_total_employees": 50,
       "estimated_eng_team": 17,
       "talent_summary": {
@@ -1780,25 +1619,17 @@
     "talent": {
       "found": false,
       "total_profiles_found": 0,
-      "linkedin_profiles_discovered": 2,
+      "linkedin_profiles_discovered": 0,
+      "relevant_results": 3,
+      "total_results": 20,
       "leadership": [],
       "ai_ml_talent": [],
       "senior_engineers": [],
       "engineering_team": [],
       "management": [],
-      "team_skills": [
-        "aws",
-        "deep learning",
-        "java",
-        "javascript",
-        "machine learning",
-        "python",
-        "pytorch",
-        "react",
-        "tensorflow"
-      ],
-      "estimated_total_employees": 500,
-      "estimated_eng_team": 175,
+      "team_skills": [],
+      "estimated_total_employees": 17,
+      "estimated_eng_team": 5,
       "talent_summary": {
         "has_cto": false,
         "has_vp_eng": false,
@@ -1977,28 +1808,15 @@
     "talent": {
       "found": false,
       "total_profiles_found": 0,
-      "linkedin_profiles_discovered": 7,
+      "linkedin_profiles_discovered": 0,
+      "relevant_results": 1,
+      "total_results": 20,
       "leadership": [],
       "ai_ml_talent": [],
       "senior_engineers": [],
       "engineering_team": [],
       "management": [],
-      "team_skills": [
-        "agile",
-        "aws",
-        "azure",
-        "databricks",
-        "deep learning",
-        "java",
-        "kubernetes",
-        "machine learning",
-        "mongodb",
-        "python",
-        "scrum",
-        "spark",
-        "sql",
-        "tensorflow"
-      ],
+      "team_skills": [],
       "estimated_total_employees": 200,
       "estimated_eng_team": 70,
       "talent_summary": {
@@ -2095,7 +1913,7 @@
       "hiring_roles_detected": 2,
       "evidence_snippets": 8
     },
-    "narrative_summary": "NexTalk shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: web-detected stack includes AWS. Key signals: ~50 employees (~17 engineering est.); identified tech leadership (CTO); AI-relevant team skills: deep learning, machine learning; 3 open positions.",
+    "narrative_summary": "NexTalk shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: web-detected stack includes AWS. Key signals: 3 open positions.",
     "github": {
       "found": true,
       "org_login": "NexTalk",
@@ -2119,25 +1937,20 @@
     },
     "tech_stack_github_confirmed": [],
     "talent": {
-      "found": true,
-      "total_profiles_found": 1,
-      "linkedin_profiles_discovered": 1,
-      "leadership": [
-        {
-          "name": "Corporate Development",
-          "role": "Director"
-        }
-      ],
+      "found": false,
+      "total_profiles_found": 0,
+      "linkedin_profiles_discovered": 0,
+      "relevant_results": 15,
+      "total_results": 20,
+      "leadership": [],
       "ai_ml_talent": [],
       "senior_engineers": [],
       "engineering_team": [],
       "management": [],
       "team_skills": [
         "aws",
-        "deep learning",
         "java",
         "javascript",
-        "machine learning",
         "mongodb",
         "node.js",
         "react"
@@ -2145,13 +1958,13 @@
       "estimated_total_employees": 50,
       "estimated_eng_team": 17,
       "talent_summary": {
-        "has_cto": true,
+        "has_cto": false,
         "has_vp_eng": false,
         "has_ai_leadership": false,
         "ai_ml_headcount": 0,
         "eng_headcount_discovered": 0,
-        "leadership_headcount": 1,
-        "total_discovered": 1
+        "leadership_headcount": 0,
+        "total_discovered": 0
       }
     }
   },
@@ -2281,7 +2094,7 @@
       "hiring_roles_detected": 6,
       "evidence_snippets": 8
     },
-    "narrative_summary": "Dash shows moderate AI engagement with 6 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: 30 public repos (30 recently active) primarily in Rust, Python, JavaScript; GitHub-confirmed stack: Python, React. Key signals: ~200 employees (~70 engineering est.); identified tech leadership (CTO); 2 AI/ML specialists discovered on LinkedIn; AI-relevant team skills: machine learning; broad technical hiring across 6 role categories; 3 recent news events.",
+    "narrative_summary": "Dash shows moderate AI engagement with 6 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: 30 public repos (30 recently active) primarily in Rust, Python, JavaScript; GitHub-confirmed stack: Python, React. Key signals: ~200 employees (~70 engineering est.); identified tech leadership (CTO); broad technical hiring across 6 role categories; 3 recent news events.",
     "github": {
       "found": true,
       "org_login": "dashpay",
@@ -2385,34 +2198,18 @@
     ],
     "talent": {
       "found": true,
-      "total_profiles_found": 6,
-      "linkedin_profiles_discovered": 6,
+      "total_profiles_found": 2,
+      "linkedin_profiles_discovered": 5,
+      "relevant_results": 15,
+      "total_results": 20,
       "leadership": [
         {
           "name": "Jim Lim",
           "role": "CTO"
-        },
-        {
-          "name": "Data Science",
-          "role": "Director"
         }
       ],
-      "ai_ml_talent": [
-        {
-          "name": "Sudeep Das",
-          "role": "Head of New Verticals AI @DoorDash - LinkedIn"
-        },
-        {
-          "name": "Ludo Robotics",
-          "role": "AI Engineer"
-        }
-      ],
-      "senior_engineers": [
-        {
-          "name": "Software Engineer",
-          "role": "Lead"
-        }
-      ],
+      "ai_ml_talent": [],
+      "senior_engineers": [],
       "engineering_team": [
         {
           "name": "Wei Song",
@@ -2421,7 +2218,6 @@
       ],
       "management": [],
       "team_skills": [
-        "machine learning",
         "react",
         "sql"
       ],
@@ -2431,10 +2227,10 @@
         "has_cto": true,
         "has_vp_eng": false,
         "has_ai_leadership": false,
-        "ai_ml_headcount": 2,
-        "eng_headcount_discovered": 2,
-        "leadership_headcount": 2,
-        "total_discovered": 6
+        "ai_ml_headcount": 0,
+        "eng_headcount_discovered": 1,
+        "leadership_headcount": 1,
+        "total_discovered": 2
       }
     }
   }
