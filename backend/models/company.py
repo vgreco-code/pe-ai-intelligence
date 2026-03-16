@@ -54,6 +54,8 @@ class CompanyScore(Base):
     wave = Column(Integer, nullable=True)
     pillar_scores = Column(JSON, nullable=True)  # {dimension: score}
     category_scores = Column(JSON, nullable=True)  # {category: avg_score}
+    confidence_score = Column(Float, nullable=True)  # 0-100 research confidence
+    confidence_breakdown = Column(JSON, nullable=True)  # {component: score}
     model_version = Column(String, default="1.0")
     created_at = Column(DateTime, default=datetime.utcnow)
 

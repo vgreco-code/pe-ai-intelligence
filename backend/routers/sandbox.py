@@ -91,6 +91,77 @@ def compute_category_scores(pillar_scores: dict[str, float]) -> dict[str, float]
     return result
 
 
+# ── Confidence score ─────────────────────────────────────────────────────────
+
+def compute_confidence_score(features: dict, research_meta: dict) -> dict:
+    """Compute a 0-100 research confidence score with a detailed breakdown.
+
+    Measures how much evidence the pipeline gathered — NOT whether the
+    company is good, but whether we trust the scoring.
+
+    Five components:
+      1. Search Coverage (0-25):  How many search results came back
+      2. Scrape Depth (0-20):     How many URLs were successfully scraped
+      3. Corpus Volume (0-15):    Total text size of the research corpus
+      4. Structured Extraction (0-25): Whether key facts were extracted
+                                       (employees, funding, year, website, own domain)
+      5. Signal Richness (0-15):  Non-default intensity scores (AI, cloud, API, data)
+    """
+    breakdown = {}
+
+    # 1. Search coverage: 48 results is perfect (8 queries × 6 results each)
+    search_results = research_meta.get("search_results", 0)
+    search_pct = min(search_results / 40, 1.0)  # 40+ results = full marks
+    breakdown["search_coverage"] = round(search_pct * 25, 1)
+
+    # 2. Scrape depth: 5 URLs is perfect
+    urls_scraped = research_meta.get("urls_scraped", 0)
+    scrape_pct = min(urls_scraped / 4, 1.0)  # 4+ URLs = full marks
+    breakdown["scrape_depth"] = round(scrape_pct * 20, 1)
+
+    # 3. Corpus volume: 80K+ chars of research text is excellent
+    total_chars = research_meta.get("total_text_chars", 0)
+    corpus_pct = min(total_chars / 80000, 1.0)
+    breakdown["corpus_volume"] = round(corpus_pct * 15, 1)
+
+    # 4. Structured extraction: 5 points each for key facts found
+    struct_score = 0
+    if features.get("employee_count"):
+        struct_score += 5
+    if features.get("funding_total_usd"):
+        struct_score += 5
+    if features.get("founded_year"):
+        struct_score += 5
+    if features.get("website"):
+        struct_score += 5
+    if research_meta.get("own_domain_found"):
+        struct_score += 5  # Strong relevance signal — we found the actual company
+    breakdown["structured_extraction"] = min(struct_score, 25)
+
+    # 5. Signal richness: non-default AI/cloud/API/data signals
+    signal_score = 0
+    ai_int = features.get("ai_intensity", 1.0)
+    cloud_int = features.get("cloud_intensity", 1.0)
+    api_str = features.get("api_ecosystem_strength", 1.5)
+    data_rich = features.get("data_richness", 1.5)
+    # Each signal that exceeds its default contributes
+    if ai_int > 1.0:
+        signal_score += min((ai_int - 1.0) / 3.0, 1.0) * 4
+    if cloud_int > 1.0:
+        signal_score += min((cloud_int - 1.0) / 3.0, 1.0) * 4
+    if api_str > 1.5:
+        signal_score += min((api_str - 1.5) / 2.5, 1.0) * 3.5
+    if data_rich > 1.5:
+        signal_score += min((data_rich - 1.5) / 2.5, 1.0) * 3.5
+    breakdown["signal_richness"] = round(min(signal_score, 15), 1)
+
+    total = sum(breakdown.values())
+    return {
+        "total": round(min(total, 100), 0),
+        "breakdown": breakdown,
+    }
+
+
 # ── Web research → feature extraction ─────────────────────────────────────────
 
 async def research_company(company_name: str, tavily_key: str) -> dict:
@@ -407,12 +478,20 @@ async def research_company_deep(company_name: str, tavily_key: str, context_hint
     # Build a clean research summary for display
     features["research_summary"] = _build_display_summary(all_results, company_name)
 
+    # Check if company's own domain was found among scraped URLs
+    company_slug = company_name.lower().replace(" ", "").replace("-", "")
+    own_domain_scraped = any(
+        company_slug in url.lower().replace(".", "").replace("-", "")
+        for url in best_urls
+    ) if best_urls else False
+
     # Track data quality signals
     features["_research_meta"] = {
         "queries_sent": len(queries),
         "search_results": len(all_results),
         "urls_scraped": len(scraped_content),
         "total_text_chars": len(combined_text),
+        "own_domain_found": own_domain_scraped,
         "mode": "deep",
     }
 
@@ -698,6 +777,8 @@ class SandboxCompanyResponse(BaseModel):
     category_scores: dict
     dimension_details: list
     research_summary: str
+    confidence_score: Optional[float] = None
+    confidence_breakdown: Optional[dict] = None
 
 
 # ── Endpoints ─────────────────────────────────────────────────────────────────
@@ -758,11 +839,12 @@ async def score_company(req: SandboxScoreRequest, db: Session = Depends(get_db))
         ds = DimensionScore(company_id=company.id, dimension=dim, score=score)
         db.add(ds)
 
-    # 5. Compute composite + tier + wave
+    # 5. Compute composite + tier + wave + confidence
     composite = compute_composite(pillar_scores)
     tier = classify_tier(composite)
     wave = assign_wave(composite)
     cat_scores = compute_category_scores(pillar_scores)
+    confidence = compute_confidence_score(features, research_meta)
 
     # 6. Save company score
     cs = CompanyScore(
@@ -772,6 +854,8 @@ async def score_company(req: SandboxScoreRequest, db: Session = Depends(get_db))
         wave=wave,
         pillar_scores=pillar_scores,
         category_scores=cat_scores,
+        confidence_score=confidence["total"],
+        confidence_breakdown=confidence["breakdown"],
     )
     db.add(cs)
     db.commit()
@@ -806,6 +890,8 @@ async def score_company(req: SandboxScoreRequest, db: Session = Depends(get_db))
         category_scores=cat_scores,
         dimension_details=dimension_details,
         research_summary=research_summary[:1500],
+        confidence_score=confidence["total"],
+        confidence_breakdown=confidence["breakdown"],
     )
 
 

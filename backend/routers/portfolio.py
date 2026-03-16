@@ -32,6 +32,8 @@ async def get_portfolio_scores(db: Session = Depends(get_db)):
             "wave": score.wave,
             "pillar_scores": score.pillar_scores or {},
             "category_scores": score.category_scores or {},
+            "confidence_score": score.confidence_score,
+            "confidence_breakdown": score.confidence_breakdown,
         })
     return result
 

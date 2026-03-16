@@ -34,6 +34,14 @@ interface SandboxResult {
     weight: number
   }[]
   research_summary: string
+  confidence_score?: number
+  confidence_breakdown?: {
+    search_coverage: number
+    scrape_depth: number
+    corpus_volume: number
+    structured_extraction: number
+    signal_richness: number
+  }
 }
 
 interface SandboxCompany {
@@ -342,6 +350,18 @@ export default function Sandbox() {
                     <span className="text-xs text-[var(--text-muted)]">{result.vertical}</span>
                     <span className="text-xs text-[var(--text-muted)]">·</span>
                     <span className="text-xs font-medium" style={{ color: 'var(--teal)' }}>Wave {result.wave}</span>
+                    {result.confidence_score != null && (
+                      <>
+                        <span className="text-xs text-[var(--text-muted)]">·</span>
+                        <span className="text-xs font-medium" style={{
+                          color: result.confidence_score >= 75 ? '#10b981'
+                               : result.confidence_score >= 50 ? '#f59e0b'
+                               : '#ef4444'
+                        }}>
+                          {result.confidence_score}% confidence
+                        </span>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
@@ -542,7 +562,7 @@ export default function Sandbox() {
                 <Sparkles className="w-4 h-4 text-[var(--teal)]" />
                 Quick Assessment
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]">
                   <div className="text-[10px] uppercase tracking-wider text-[var(--text-muted)] mb-1.5">Wave Placement</div>
                   <div className="text-lg font-bold" style={{ color: 'var(--teal)' }}>Wave {result.wave}</div>
@@ -570,6 +590,46 @@ export default function Sandbox() {
                     At {insights.weaknesses[0]?.score.toFixed(1)}/5.0 — biggest opportunity for improvement
                   </div>
                 </div>
+                {result.confidence_score != null && (
+                  <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                    <div className="text-[10px] uppercase tracking-wider text-[var(--text-muted)] mb-1.5">Research Confidence</div>
+                    <div className="text-lg font-bold" style={{
+                      color: result.confidence_score >= 75 ? '#10b981'
+                           : result.confidence_score >= 50 ? '#f59e0b'
+                           : '#ef4444'
+                    }}>
+                      {result.confidence_score}%
+                    </div>
+                    {result.confidence_breakdown && (
+                      <div className="mt-2 space-y-1">
+                        {[
+                          { key: 'search_coverage', label: 'Search', max: 25 },
+                          { key: 'scrape_depth', label: 'Scrape', max: 20 },
+                          { key: 'corpus_volume', label: 'Corpus', max: 15 },
+                          { key: 'structured_extraction', label: 'Facts', max: 25 },
+                          { key: 'signal_richness', label: 'Signals', max: 15 },
+                        ].map(({ key, label, max }) => {
+                          const val = (result.confidence_breakdown as Record<string, number>)?.[key] ?? 0
+                          return (
+                            <div key={key} className="flex items-center gap-1.5">
+                              <span className="text-[9px] text-[var(--text-muted)] w-10">{label}</span>
+                              <div className="flex-1 h-1 rounded-full bg-white/[0.06] overflow-hidden">
+                                <div
+                                  className="h-full rounded-full transition-all duration-700"
+                                  style={{
+                                    width: `${(val / max) * 100}%`,
+                                    background: val / max >= 0.7 ? '#10b981' : val / max >= 0.4 ? '#f59e0b' : '#ef4444',
+                                  }}
+                                />
+                              </div>
+                              <span className="text-[9px] text-[var(--text-muted)] w-7 text-right">{val}/{max}</span>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           )}

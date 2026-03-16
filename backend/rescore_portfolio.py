@@ -29,6 +29,7 @@ from routers.sandbox import (
     research_company_deep,
     estimate_dimension_scores,
     compute_composite,
+    compute_confidence_score,
     classify_tier,
     assign_wave,
     compute_category_scores,
@@ -102,12 +103,13 @@ async def rescore_company(
     tier = classify_tier(composite)
     wave = assign_wave(composite)
     cat_scores = compute_category_scores(pillar_scores)
+    confidence = compute_confidence_score(features, research_meta)
 
     delta = composite - old_composite if old_composite else 0
     direction = "+" if delta > 0 else ""
     logger.info(
         f"  Score: {old_composite} -> {composite} ({direction}{delta:.2f}) | "
-        f"Tier: {old_tier} -> {tier}"
+        f"Tier: {old_tier} -> {tier} | Confidence: {confidence['total']}%"
     )
 
     summary = {
@@ -118,6 +120,8 @@ async def rescore_company(
         "old_tier": old_tier,
         "new_tier": tier,
         "wave": wave,
+        "confidence": confidence["total"],
+        "confidence_breakdown": confidence["breakdown"],
         "research_results": research_meta.get("search_results", 0),
         "urls_scraped": research_meta.get("urls_scraped", 0),
         "features": features,
@@ -170,6 +174,8 @@ async def rescore_company(
         old_score_row.wave = wave
         old_score_row.pillar_scores = pillar_scores
         old_score_row.category_scores = cat_scores
+        old_score_row.confidence_score = confidence["total"]
+        old_score_row.confidence_breakdown = confidence["breakdown"]
         old_score_row.model_version = "2.0-deep"
     else:
         cs = CompanyScore(
@@ -179,6 +185,8 @@ async def rescore_company(
             wave=wave,
             pillar_scores=pillar_scores,
             category_scores=cat_scores,
+            confidence_score=confidence["total"],
+            confidence_breakdown=confidence["breakdown"],
             model_version="2.0-deep",
         )
         db.add(cs)
@@ -270,14 +278,15 @@ def print_report(results: list[dict], dry_run: bool):
     failures = [r for r in results if "error" in r]
 
     if successes:
-        logger.info(f"\n{'Company':<30s} {'Old':>6s} {'New':>6s} {'Delta':>7s} {'Old Tier':<15s} {'New Tier':<15s}")
-        logger.info(f"{'-'*30} {'-'*6} {'-'*6} {'-'*7} {'-'*15} {'-'*15}")
+        logger.info(f"\n{'Company':<30s} {'Old':>6s} {'New':>6s} {'Delta':>7s} {'Conf':>5s} {'Old Tier':<15s} {'New Tier':<15s}")
+        logger.info(f"{'-'*30} {'-'*6} {'-'*6} {'-'*7} {'-'*5} {'-'*15} {'-'*15}")
 
         for r in sorted(successes, key=lambda x: x.get("new_composite", 0), reverse=True):
             delta_str = f"{'+' if r['delta'] > 0 else ''}{r['delta']:.2f}"
+            conf_str = f"{r.get('confidence', 0):.0f}%"
             logger.info(
                 f"{r['name']:<30s} {r.get('old_composite', 0):>6.2f} {r['new_composite']:>6.2f} "
-                f"{delta_str:>7s} {r.get('old_tier', 'N/A'):<15s} {r['new_tier']:<15s}"
+                f"{delta_str:>7s} {conf_str:>5s} {r.get('old_tier', 'N/A'):<15s} {r['new_tier']:<15s}"
             )
 
         # Tier distribution
