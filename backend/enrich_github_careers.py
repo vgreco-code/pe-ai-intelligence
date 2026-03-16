@@ -45,6 +45,10 @@ CAREERS_PATHS = [
     "/join-us",
     "/work-with-us",
     "/open-positions",
+    "/about-us/careers",
+    "/careers/open-positions",
+    "/career",
+    "/hiring",
 ]
 
 
@@ -270,102 +274,174 @@ def extract_jobs_from_text(text: str, company_name: str) -> list[dict]:
     return jobs[:25]  # Cap at 25 jobs
 
 
-async def scrape_careers_page(client: httpx.AsyncClient, website: str, company_name: str) -> dict:
-    """Try to find and scrape a company's careers page."""
+def _clean_html(text: str) -> str:
+    """Strip HTML to plain text for job extraction."""
+    clean = re.sub(r'<script[^>]*>.*?</script>', '', text, flags=re.DOTALL)
+    clean = re.sub(r'<style[^>]*>.*?</style>', '', clean, flags=re.DOTALL)
+    clean = re.sub(r'<[^>]+>', '\n', clean)
+    clean = re.sub(r'\n{3,}', '\n\n', clean)
+    clean = re.sub(r'[ \t]+', ' ', clean)
+    return clean
+
+
+def _build_careers_result(jobs: list[dict], url: str) -> dict:
+    """Build a careers result dict from extracted jobs."""
+    ai_jobs = [j for j in jobs if j["is_ai_related"]]
+    depts: dict[str, int] = {}
+    for j in jobs:
+        depts[j["department"]] = depts.get(j["department"], 0) + 1
+    return {
+        "found": True,
+        "careers_url": url,
+        "total_openings": len(jobs),
+        "ai_ml_openings": len(ai_jobs),
+        "departments": depts,
+        "sample_roles": [j["title"] for j in jobs[:12]],
+        "ai_roles": [j["title"] for j in ai_jobs[:8]],
+    }
+
+
+async def _try_url(client: httpx.AsyncClient, url: str, company_name: str, require_jobs: bool = True) -> dict | None:
+    """Try to scrape a URL for careers content. Returns result dict or None."""
+    try:
+        resp = await client.get(
+            url,
+            follow_redirects=True,
+            timeout=15.0,
+            headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"},
+        )
+        if resp.status_code != 200:
+            return None
+        text = resp.text
+        text_lower = text.lower()
+
+        # Check if page has careers-related content
+        careers_keywords = ["career", "job opening", "open position", "we're hiring", "join our team", "apply now"]
+        if not any(kw in text_lower for kw in careers_keywords):
+            return None
+
+        # IMPORTANT: Validate this page actually belongs to the target company.
+        # Without this, we get false positives from platform marketing pages
+        # (e.g., BambooHR testimonials, Greenhouse homepage).
+        company_lower = company_name.lower()
+        company_words = [w for w in company_lower.split() if len(w) > 2]
+        page_mentions_company = (
+            company_lower in text_lower
+            or (company_words and sum(1 for w in company_words if w in text_lower) >= len(company_words) * 0.5)
+        )
+        # Also check if the URL itself contains the company name
+        url_lower = url.lower()
+        url_has_company = any(w in url_lower for w in company_words) if company_words else company_lower.replace(" ", "") in url_lower
+
+        if not page_mentions_company and not url_has_company:
+            logger.debug(f"  Skipping {url} — page doesn't mention {company_name}")
+            return None
+
+        clean_text = _clean_html(text)
+        jobs = extract_jobs_from_text(clean_text, company_name)
+
+        if not jobs:
+            return None
+
+        return _build_careers_result(jobs, url)
+    except Exception as e:
+        logger.debug(f"  Failed {url}: {e}")
+        return None
+
+
+async def scrape_careers_page(client: httpx.AsyncClient, website: str, company_name: str, tavily_key: str = "") -> dict:
+    """Try to find and scrape a company's careers page.
+
+    Strategy:
+      1. Try common /careers paths on the company website
+      2. Try jobs.{domain} subdomain
+      3. Try Greenhouse / Lever / Ashby job boards
+      4. Fallback: Tavily search for "{company} careers jobs"
+    """
     if not website or "stackoverflow.com" in website or "bakersfield.com" in website:
-        return {"found": False, "reason": "invalid_website"}
+        # Skip obviously wrong websites, but still try job boards + Tavily
+        pass
+    else:
+        # ── Strategy 1: Direct paths on company website ─────────────────────
+        parsed = urlparse(website)
+        base_url = f"{parsed.scheme}://{parsed.netloc}" if parsed.scheme else f"https://{parsed.netloc or website}"
 
-    # Normalize website
-    parsed = urlparse(website)
-    base_url = f"{parsed.scheme}://{parsed.netloc}" if parsed.scheme else f"https://{parsed.netloc or website}"
+        for path in CAREERS_PATHS:
+            result = await _try_url(client, f"{base_url}{path}", company_name)
+            if result and result.get("total_openings", 0) > 0:
+                return result
 
-    # Try common careers page paths
-    for path in CAREERS_PATHS:
-        url = f"{base_url}{path}"
-        try:
-            resp = await client.get(
-                url,
-                follow_redirects=True,
-                timeout=15.0,
-                headers={"User-Agent": "Mozilla/5.0 (compatible; PE-AI-Platform/1.0)"},
-            )
-            if resp.status_code == 200:
-                text = resp.text
-                # Basic check: does this look like a careers page?
-                careers_keywords = ["career", "job", "position", "opening", "hiring", "apply", "join"]
-                text_lower = text.lower()
-                if any(kw in text_lower for kw in careers_keywords):
-                    # Strip HTML tags for job extraction
-                    clean_text = re.sub(r'<script[^>]*>.*?</script>', '', text, flags=re.DOTALL)
-                    clean_text = re.sub(r'<style[^>]*>.*?</style>', '', clean_text, flags=re.DOTALL)
-                    clean_text = re.sub(r'<[^>]+>', '\n', clean_text)
-                    clean_text = re.sub(r'\n{3,}', '\n\n', clean_text)
-                    clean_text = re.sub(r'[ \t]+', ' ', clean_text)
+        # ── Strategy 2: jobs.{domain} subdomain ────────────────────────────
+        domain = parsed.netloc.replace("www.", "")
+        jobs_subdomain = f"https://jobs.{domain}"
+        result = await _try_url(client, jobs_subdomain, company_name)
+        if result and result.get("total_openings", 0) > 0:
+            return result
 
-                    jobs = extract_jobs_from_text(clean_text, company_name)
-
-                    # Count AI-related jobs
-                    ai_jobs = [j for j in jobs if j["is_ai_related"]]
-
-                    # Department breakdown
-                    depts: dict[str, int] = {}
-                    for j in jobs:
-                        depts[j["department"]] = depts.get(j["department"], 0) + 1
-
-                    return {
-                        "found": True,
-                        "careers_url": url,
-                        "total_openings": len(jobs),
-                        "ai_ml_openings": len(ai_jobs),
-                        "departments": depts,
-                        "sample_roles": [j["title"] for j in jobs[:12]],
-                        "ai_roles": [j["title"] for j in ai_jobs[:8]],
-                    }
-        except Exception as e:
-            logger.debug(f"  Failed {url}: {e}")
-            continue
-
-    # Also try searching for external job board (Greenhouse, Lever, etc.)
-    greenhouse_patterns = [
-        f"https://boards.greenhouse.io/{company_name.lower().replace(' ', '')}",
-        f"https://jobs.lever.co/{company_name.lower().replace(' ', '')}",
+    # ── Strategy 3: Job board platforms ────────────────────────────────────
+    slugs = [
+        company_name.lower().replace(" ", ""),
+        company_name.lower().replace(" ", "-"),
+        company_name.lower().replace(" ", "").replace(".", ""),
     ]
-    for url in greenhouse_patterns:
+    # Add first-word-only slug for multi-word names
+    if " " in company_name:
+        slugs.append(company_name.split()[0].lower())
+
+    job_board_urls = []
+    for slug in slugs:
+        job_board_urls.extend([
+            f"https://boards.greenhouse.io/{slug}",
+            f"https://jobs.lever.co/{slug}",
+            f"https://jobs.ashbyhq.com/{slug}",
+            f"https://apply.workable.com/{slug}",
+            f"https://{slug}.bamboohr.com/careers",
+        ])
+
+    for url in job_board_urls:
+        result = await _try_url(client, url, company_name)
+        if result and result.get("total_openings", 0) > 0:
+            return result
+
+    # ── Strategy 4: Tavily search for company careers page URL ─────────
+    if tavily_key:
         try:
-            resp = await client.get(
-                url,
-                follow_redirects=True,
-                timeout=10.0,
-                headers={"User-Agent": "Mozilla/5.0 (compatible; PE-AI-Platform/1.0)"},
+            # Search specifically for the company's own careers page
+            resp = await client.post(
+                "https://api.tavily.com/search",
+                json={
+                    "api_key": tavily_key,
+                    "query": f'"{company_name}" careers page jobs hiring',
+                    "search_depth": "basic",
+                    "max_results": 5,
+                },
+                timeout=15.0,
             )
-            if resp.status_code == 200:
-                text = resp.text
-                clean_text = re.sub(r'<[^>]+>', '\n', text)
-                clean_text = re.sub(r'\n{3,}', '\n\n', clean_text)
-                jobs = extract_jobs_from_text(clean_text, company_name)
-                if jobs:
-                    ai_jobs = [j for j in jobs if j["is_ai_related"]]
-                    depts: dict[str, int] = {}
-                    for j in jobs:
-                        depts[j["department"]] = depts.get(j["department"], 0) + 1
-                    return {
-                        "found": True,
-                        "careers_url": url,
-                        "total_openings": len(jobs),
-                        "ai_ml_openings": len(ai_jobs),
-                        "departments": depts,
-                        "sample_roles": [j["title"] for j in jobs[:12]],
-                        "ai_roles": [j["title"] for j in ai_jobs[:8]],
-                    }
-        except:
-            continue
+            data = resp.json()
+            for r in data.get("results", []):
+                url = r.get("url", "")
+                content = r.get("content", "").lower()
+                # Only follow URLs that look like actual careers pages
+                # AND whose content mentions the company (not just any careers page)
+                company_in_content = company_name.lower() in content
+                is_careers_url = any(kw in url.lower() for kw in ["career", "jobs", "hiring", "lever.co", "greenhouse.io", "ashby", "workable"])
+                # Exclude job aggregator sites (LinkedIn, Indeed, Glassdoor) — these are
+                # generic and match many unrelated companies
+                is_aggregator = any(site in url.lower() for site in ["linkedin.com", "indeed.com", "glassdoor.com", "ziprecruiter.com", "monster.com"])
+
+                if is_careers_url and company_in_content and not is_aggregator:
+                    result = await _try_url(client, url, company_name)
+                    if result and result.get("total_openings", 0) > 0:
+                        return result
+        except Exception as e:
+            logger.debug(f"  Tavily careers search failed: {e}")
 
     return {"found": False, "reason": "no_careers_page_found"}
 
 
 # ── Main Pipeline ─────────────────────────────────────────────────────────────
 
-async def enrich_company(client: httpx.AsyncClient, company: dict) -> dict:
+async def enrich_company(client: httpx.AsyncClient, company: dict, tavily_key: str = "") -> dict:
     """Run GitHub + careers enrichment for a single company."""
     name = company["name"]
     website = company.get("website", "")
@@ -378,7 +454,7 @@ async def enrich_company(client: httpx.AsyncClient, company: dict) -> dict:
         logger.info(f"  → GitHub: not found ({github_data.get('reason', 'unknown')})")
 
     logger.info(f"  Careers page scrape ({website})...")
-    careers_data = await scrape_careers_page(client, website, name)
+    careers_data = await scrape_careers_page(client, website, name, tavily_key=tavily_key)
     if careers_data.get("found"):
         logger.info(f"  → Careers: {careers_data['total_openings']} openings ({careers_data['ai_ml_openings']} AI/ML) at {careers_data['careers_url']}")
     else:
@@ -412,6 +488,10 @@ async def main():
             logger.error(f"Company '{target}' not found")
             sys.exit(1)
 
+    tavily_key = os.environ.get("TAVILY_API_KEY", "")
+    if tavily_key:
+        logger.info("Tavily API key found — will use for careers page discovery")
+
     logger.info(f"GitHub + Careers enrichment for {len(portfolio)} companies")
 
     if dry_run:
@@ -433,13 +513,31 @@ async def main():
             name = company["name"]
             logger.info(f"[{i+1}/{len(portfolio)}] {name}")
 
-            result = await enrich_company(client, company)
+            result = await enrich_company(client, company, tavily_key=tavily_key)
 
-            # Merge into existing evidence
+            # Merge into existing evidence — only overwrite if new data is better
             if name not in all_evidence:
                 all_evidence[name] = {}
-            all_evidence[name]["github"] = result["github"]
-            all_evidence[name]["careers"] = result["careers"]
+
+            # GitHub: only overwrite if new result found, or no previous data existed
+            new_gh = result["github"]
+            old_gh = all_evidence[name].get("github", {})
+            if new_gh.get("found"):
+                all_evidence[name]["github"] = new_gh
+            elif not old_gh.get("found"):
+                all_evidence[name]["github"] = new_gh  # both empty, use new
+            else:
+                logger.info(f"  Keeping existing GitHub data for {name}")
+
+            # Careers: only overwrite if new result found, or no previous data existed
+            new_cr = result["careers"]
+            old_cr = all_evidence[name].get("careers", {})
+            if new_cr.get("found"):
+                all_evidence[name]["careers"] = new_cr
+            elif not old_cr.get("found"):
+                all_evidence[name]["careers"] = new_cr  # both empty, use new
+            else:
+                logger.info(f"  Keeping existing careers data for {name}")
 
             if i < len(portfolio) - 1:
                 await asyncio.sleep(DELAY_BETWEEN_COMPANIES)
