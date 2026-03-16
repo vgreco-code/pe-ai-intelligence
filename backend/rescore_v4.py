@@ -101,9 +101,9 @@ PILLAR_OVERRIDES = {
         "ai_governance": 1.80,          # was 3.20 — no governance framework
     },
     "Thought Foundry": {
-        # 8-person content platform — "data-driven" ≠ AI
+        # 8-person content platform — website has zero content, no public evidence
         "ai_product_features": 2.80,    # "data-driven platform" is not AI
-        "revenue_ai_upside": 3.50,      # content entitlements has AI potential
+        "revenue_ai_upside": 3.00,      # was 3.50 — zero public evidence of AI potential
         "ai_talent_density": 1.80,      # 8 people, no AI roles verified
         "ai_momentum": 2.50,            # no recent AI launches
         "leadership_ai_vision": 2.80,   # no AI vision evidence
@@ -123,11 +123,12 @@ PILLAR_OVERRIDES = {
         "ai_momentum": 2.50,            # was 4.00 — SES partnership is connectivity, not AI
     },
     "Primate": {
-        # Control room SCADA visualization — threshold alerting is rules-based, not AI
-        "ai_product_features": 2.50,    # was 3.20←4.92 — threshold alerting is rules-based, not ML
+        # GridGuardian: real-time data integration + automated anomaly detection for utilities
+        "ai_product_features": 2.80,    # was 2.50←4.92 — automated anomaly detection IS real (not deep ML)
         "revenue_ai_upside": 3.10,      # was 3.60←4.54 — AI grid analytics is speculative, requires build
-        "margin_ai_upside": 3.30,       # was 4.20 — display panels, limited automation opportunity
+        "margin_ai_upside": 3.30,       # was 4.20 — data integration platform, moderate automation
         "leadership_ai_vision": 2.80,   # was 3.62 — zero evidence of AI vision from leadership
+        "data_integration": 3.30,       # was 2.85 — SCADA/EMS/OMS/GIS via SQL/MQTT/XML/custom APIs
         "ai_talent_density": 1.60,      # was 1.98 — 11 people, no AI team
         "ai_momentum": 2.30,            # was 3.54 — no recent AI product launches
     },
@@ -179,24 +180,26 @@ PILLAR_OVERRIDES = {
         "leadership_ai_vision": 3.00,   # was 3.71 — no AI background in leadership
     },
     "FMSI": {
-        # Analytics-driven staffing, Appli AI partnership, 140+ customers, $5.3M ARR
-        "ai_momentum": 3.80,            # relaunch March 2026, Appli AI partnership, rapid new sales
-        "ai_product_features": 3.20,    # was 3.80 — analytics-driven staffing recommendations, not deep AI
-        "partner_ecosystem": 3.20,      # Appli AI partnership, banking integrations
+        # Analytics-driven staffing — AI via partners (Appli calculators + Posh conversational AI)
+        "ai_momentum": 3.80,            # relaunch + two AI partnerships (Appli + Posh) + rapid sales
+        "ai_product_features": 2.80,    # was 3.20←3.80 — FMSI builds no AI; partner-provided only
+        "partner_ecosystem": 3.40,      # was 3.20 — TWO AI partners: Appli + Posh (125+ FI clients)
         "revenue_ai_upside": 3.50,      # was 4.12 — branch analytics has AI upside but moderate
     },
     "SMRTR": {
-        # ML predictive maintenance, route optimization, compliance anomaly detection
-        "ai_product_features": 3.50,    # was 3.80 — ML features are real but early-stage
-        "ai_engineering": 2.80,         # built ML for backhaul, route optimization
+        # AP automation + compliance — "automation layer for ERP-driven operations" (no ML on site)
+        "ai_product_features": 3.00,    # was 3.50←3.80 — homepage shows no ML; document/AP automation only
+        "ai_engineering": 2.30,         # was 2.80 — workflow automation, not ML engineering
+        "revenue_ai_upside": 3.50,      # was 3.81 — AI potential in supply chain but not current
         "ai_momentum": 3.30,            # merger + VAI partnership = momentum
         "margin_ai_upside": 3.60,       # was 4.47 — route optimization has margin impact but not yet scaled
         "cloud_architecture": 3.40,     # was 4.14 — cloud SaaS but ERP integrations suggest hybrid
     },
     "ViaPeople": {
-        # AI Instant Insights feature, I/O psychology foundation, SOC 2
-        "ai_product_features": 3.00,    # was 3.50←3.70 — "AI Instant Insights" likely basic NLP summaries
+        # AI Instant Insights = API-wrapped LLM (confirmed: "no data training used by OpenAI")
+        "ai_product_features": 3.00,    # was 3.50←3.70 — LLM-wrapped feedback synthesis, not proprietary ML
         "cloud_architecture": 2.80,     # was 3.90 — no evidence of cloud architecture
+        "margin_ai_upside": 3.20,       # was 3.72 — small talent mgmt firm, limited margin leverage
         "analytics_maturity": 2.50,     # was 1.99 — I/O psych firm with perf analytics; too low before
         "ai_momentum": 3.00,            # was 2.82 — SpiraLinks merger, AI R&D investment
         "regulatory_readiness": 3.30,   # was 3.02 — SOC 2 certified

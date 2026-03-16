@@ -1,51 +1,5 @@
 [
   {
-    "name": "SMRTR",
-    "vertical": "Food & Beverage/Manufacturing",
-    "employee_count": 30,
-    "description": "SMRTR was formed July 1, 2025 from the merger of Dash (founded 1998, AP automation) and S4i Systems (founded 2002, compliance solutions). The combined platform streamlines accounts payable, document automation, supplier onboarding, electronic proof of delivery, food safety compliance, and regulatory management for manufacturing and food & beverage industries. Operates fully remote from Cottonwood Heights, Utah. Part of Solen Software Group.",
-    "website": "https://smrtrsolutions.com",
-    "founded_year": 2025,
-    "composite_score": 3.16,
-    "tier": "AI-Buildable",
-    "wave": 2,
-    "pillar_scores": {
-      "data_quality": 3.4,
-      "data_integration": 2.94,
-      "analytics_maturity": 3.43,
-      "cloud_architecture": 3.4,
-      "tech_stack_modernity": 3.61,
-      "ai_engineering": 2.8,
-      "ai_product_features": 3.5,
-      "revenue_ai_upside": 3.81,
-      "margin_ai_upside": 3.6,
-      "product_differentiation": 2.94,
-      "ai_talent_density": 2.19,
-      "leadership_ai_vision": 3.46,
-      "org_change_readiness": 2.56,
-      "partner_ecosystem": 2.18,
-      "ai_governance": 3.07,
-      "regulatory_readiness": 3.19,
-      "ai_momentum": 3.3
-    },
-    "category_scores": {
-      "Data & Analytics": 3.26,
-      "Technology & Infrastructure": 3.27,
-      "AI Product & Value": 3.46,
-      "Organization & Talent": 2.6,
-      "Governance & Risk": 3.13,
-      "Velocity & Momentum": 3.3
-    },
-    "confidence_score": 96.0,
-    "confidence_breakdown": {
-      "search_coverage": 25.0,
-      "scrape_depth": 20.0,
-      "corpus_volume": 13.5,
-      "structured_extraction": 25,
-      "signal_richness": 12.5
-    }
-  },
-  {
     "name": "Dash",
     "vertical": "Manufacturing/Distribution",
     "employee_count": 15,
@@ -184,6 +138,52 @@
     }
   },
   {
+    "name": "SMRTR",
+    "vertical": "Food & Beverage/Manufacturing",
+    "employee_count": 30,
+    "description": "SMRTR was formed July 1, 2025 from the merger of Dash (founded 1998, AP automation) and S4i Systems (founded 2002, compliance solutions). The combined platform streamlines accounts payable, document automation, supplier onboarding, electronic proof of delivery, food safety compliance, and regulatory management for manufacturing and food & beverage industries. Operates fully remote from Cottonwood Heights, Utah. Part of Solen Software Group.",
+    "website": "https://smrtrsolutions.com",
+    "founded_year": 2025,
+    "composite_score": 3.03,
+    "tier": "AI-Buildable",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.4,
+      "data_integration": 2.94,
+      "analytics_maturity": 3.43,
+      "cloud_architecture": 3.4,
+      "tech_stack_modernity": 3.61,
+      "ai_engineering": 2.3,
+      "ai_product_features": 3.0,
+      "revenue_ai_upside": 3.5,
+      "margin_ai_upside": 3.6,
+      "product_differentiation": 2.94,
+      "ai_talent_density": 2.19,
+      "leadership_ai_vision": 3.46,
+      "org_change_readiness": 2.56,
+      "partner_ecosystem": 2.18,
+      "ai_governance": 3.07,
+      "regulatory_readiness": 3.19,
+      "ai_momentum": 3.3
+    },
+    "category_scores": {
+      "Data & Analytics": 3.26,
+      "Technology & Infrastructure": 3.1,
+      "AI Product & Value": 3.26,
+      "Organization & Talent": 2.6,
+      "Governance & Risk": 3.13,
+      "Velocity & Momentum": 3.3
+    },
+    "confidence_score": 96.0,
+    "confidence_breakdown": {
+      "search_coverage": 25.0,
+      "scrape_depth": 20.0,
+      "corpus_volume": 13.5,
+      "structured_extraction": 25,
+      "signal_richness": 12.5
+    }
+  },
+  {
     "name": "Champ",
     "vertical": "Healthcare/Public Health",
     "employee_count": 35,
@@ -227,52 +227,6 @@
       "corpus_volume": 14.2,
       "structured_extraction": 25,
       "signal_richness": 14.6
-    }
-  },
-  {
-    "name": "FMSI",
-    "vertical": "Banking/Credit Unions",
-    "employee_count": 48,
-    "description": "Financial Management Software, Inc. (FMSI) provides the Omnix suite of SaaS applications for banks and credit unions: staff scheduling, performance analytics, lobby tracking, and appointment scheduling via the FMSI OneCX platform. Founded in 1990 by W. Michael Scott, headquartered in Alpharetta, GA. Serves 140+ financial institution clients. Acquired by Kronos (now UKG) in 2017. $5.3M annual revenue. Part of Solen Software Group.",
-    "website": "https://www.fmsi.com",
-    "founded_year": 1990,
-    "composite_score": 2.95,
-    "tier": "AI-Buildable",
-    "wave": 2,
-    "pillar_scores": {
-      "data_quality": 2.98,
-      "data_integration": 2.74,
-      "analytics_maturity": 2.53,
-      "cloud_architecture": 2.77,
-      "tech_stack_modernity": 2.6,
-      "ai_engineering": 2.2,
-      "ai_product_features": 3.2,
-      "revenue_ai_upside": 3.5,
-      "margin_ai_upside": 3.83,
-      "product_differentiation": 3.42,
-      "ai_talent_density": 2.23,
-      "leadership_ai_vision": 3.52,
-      "org_change_readiness": 1.79,
-      "partner_ecosystem": 3.2,
-      "ai_governance": 2.51,
-      "regulatory_readiness": 2.7,
-      "ai_momentum": 3.8
-    },
-    "category_scores": {
-      "Data & Analytics": 2.75,
-      "Technology & Infrastructure": 2.52,
-      "AI Product & Value": 3.49,
-      "Organization & Talent": 2.69,
-      "Governance & Risk": 2.6,
-      "Velocity & Momentum": 3.8
-    },
-    "confidence_score": 97.0,
-    "confidence_breakdown": {
-      "search_coverage": 25.0,
-      "scrape_depth": 20.0,
-      "corpus_volume": 14.6,
-      "structured_extraction": 25,
-      "signal_richness": 12.1
     }
   },
   {
@@ -322,14 +276,60 @@
     }
   },
   {
+    "name": "FMSI",
+    "vertical": "Banking/Credit Unions",
+    "employee_count": 48,
+    "description": "Financial Management Software, Inc. (FMSI) provides the Omnix suite of SaaS applications for banks and credit unions: staff scheduling, performance analytics, lobby tracking, and appointment scheduling via the FMSI OneCX platform. Founded in 1990 by W. Michael Scott, headquartered in Alpharetta, GA. Serves 140+ financial institution clients. Acquired by Kronos (now UKG) in 2017. $5.3M annual revenue. Part of Solen Software Group.",
+    "website": "https://www.fmsi.com",
+    "founded_year": 1990,
+    "composite_score": 2.9,
+    "tier": "AI-Buildable",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 2.98,
+      "data_integration": 2.74,
+      "analytics_maturity": 2.53,
+      "cloud_architecture": 2.77,
+      "tech_stack_modernity": 2.6,
+      "ai_engineering": 2.2,
+      "ai_product_features": 2.8,
+      "revenue_ai_upside": 3.5,
+      "margin_ai_upside": 3.83,
+      "product_differentiation": 3.42,
+      "ai_talent_density": 2.23,
+      "leadership_ai_vision": 3.52,
+      "org_change_readiness": 1.79,
+      "partner_ecosystem": 3.4,
+      "ai_governance": 2.51,
+      "regulatory_readiness": 2.7,
+      "ai_momentum": 3.8
+    },
+    "category_scores": {
+      "Data & Analytics": 2.75,
+      "Technology & Infrastructure": 2.52,
+      "AI Product & Value": 3.39,
+      "Organization & Talent": 2.73,
+      "Governance & Risk": 2.6,
+      "Velocity & Momentum": 3.8
+    },
+    "confidence_score": 97.0,
+    "confidence_breakdown": {
+      "search_coverage": 25.0,
+      "scrape_depth": 20.0,
+      "corpus_volume": 14.6,
+      "structured_extraction": 25,
+      "signal_richness": 12.1
+    }
+  },
+  {
     "name": "Thought Foundry",
     "vertical": "Entertainment/Digital Content",
     "employee_count": 8,
     "description": "Thought Foundry is a digital innovations company that builds data-driven exchange platform-as-a-service solutions for entertainment companies to manage digital content entitlements. Founded in 2012 by Timur Insepov and headquartered in Los Angeles (Culver City). Part of Solen Software Group.",
     "website": "https://thoughtfoundry.com",
     "founded_year": 2012,
-    "composite_score": 2.83,
-    "tier": "AI-Buildable",
+    "composite_score": 2.79,
+    "tier": "AI-Emerging",
     "wave": 2,
     "pillar_scores": {
       "data_quality": 3.3,
@@ -339,7 +339,7 @@
       "tech_stack_modernity": 2.5,
       "ai_engineering": 2.71,
       "ai_product_features": 2.8,
-      "revenue_ai_upside": 3.5,
+      "revenue_ai_upside": 3.0,
       "margin_ai_upside": 2.8,
       "product_differentiation": 2.5,
       "ai_talent_density": 1.8,
@@ -353,7 +353,7 @@
     "category_scores": {
       "Data & Analytics": 3.29,
       "Technology & Infrastructure": 2.67,
-      "AI Product & Value": 2.9,
+      "AI Product & Value": 2.77,
       "Organization & Talent": 2.59,
       "Governance & Risk": 3.13,
       "Velocity & Momentum": 2.5
@@ -368,13 +368,59 @@
     }
   },
   {
+    "name": "Primate",
+    "vertical": "Energy/Utilities",
+    "employee_count": 11,
+    "description": "Primate Technologies specializes in mission-critical control room visualization software for energy providers. Products include GridGuardian (real-time SCADA/EMS data integration), BlackBoard, TileViewer, and TileBuilder. Serves electric transmission & distribution, pipeline operations, gas utilities, and emergency management. Founded in 2001 in Melbourne, Florida. Joined Solen Software Group in 2024.",
+    "website": "https://primate-tech.com",
+    "founded_year": 2001,
+    "composite_score": 2.71,
+    "tier": "AI-Emerging",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.4,
+      "data_integration": 3.3,
+      "analytics_maturity": 3.07,
+      "cloud_architecture": 2.95,
+      "tech_stack_modernity": 2.52,
+      "ai_engineering": 2.04,
+      "ai_product_features": 2.8,
+      "revenue_ai_upside": 3.1,
+      "margin_ai_upside": 3.3,
+      "product_differentiation": 3.54,
+      "ai_talent_density": 1.6,
+      "leadership_ai_vision": 2.8,
+      "org_change_readiness": 1.53,
+      "partner_ecosystem": 2.61,
+      "ai_governance": 2.83,
+      "regulatory_readiness": 2.98,
+      "ai_momentum": 2.3
+    },
+    "category_scores": {
+      "Data & Analytics": 3.26,
+      "Technology & Infrastructure": 2.5,
+      "AI Product & Value": 3.18,
+      "Organization & Talent": 2.14,
+      "Governance & Risk": 2.91,
+      "Velocity & Momentum": 2.3
+    },
+    "confidence_score": 92.0,
+    "confidence_breakdown": {
+      "search_coverage": 25.0,
+      "scrape_depth": 20.0,
+      "corpus_volume": 14.1,
+      "structured_extraction": 20,
+      "signal_richness": 13.3
+    }
+  },
+  {
     "name": "ViaPeople",
     "vertical": "HR Technology",
     "employee_count": 18,
     "description": "ViaPeople provides flexible people management software including performance management, AI instant insights, 360-degree feedback, deal team feedback, succession planning, and automated promotion processes. Founded in 2002 by Jim Perry. Merged with SpiraLinks (compensation planning for global teams) to deliver a full-suite HR platform connecting performance management with compensation. Part of Solen Software Group.",
     "website": "https://viapeople.com",
     "founded_year": 2002,
-    "composite_score": 2.68,
+    "composite_score": 2.66,
     "tier": "AI-Emerging",
     "wave": 2,
     "pillar_scores": {
@@ -386,7 +432,7 @@
       "ai_engineering": 1.54,
       "ai_product_features": 3.0,
       "revenue_ai_upside": 3.33,
-      "margin_ai_upside": 3.72,
+      "margin_ai_upside": 3.2,
       "product_differentiation": 3.0,
       "ai_talent_density": 1.31,
       "leadership_ai_vision": 3.05,
@@ -399,7 +445,7 @@
     "category_scores": {
       "Data & Analytics": 2.62,
       "Technology & Infrastructure": 2.54,
-      "AI Product & Value": 3.26,
+      "AI Product & Value": 3.13,
       "Organization & Talent": 2.18,
       "Governance & Risk": 3.17,
       "Velocity & Momentum": 3.0
@@ -457,52 +503,6 @@
       "corpus_volume": 14.1,
       "structured_extraction": 25,
       "signal_richness": 9.6
-    }
-  },
-  {
-    "name": "Primate",
-    "vertical": "Energy/Utilities",
-    "employee_count": 11,
-    "description": "Primate Technologies specializes in mission-critical control room visualization software for energy providers. Products include GridGuardian (real-time SCADA/EMS data integration), BlackBoard, TileViewer, and TileBuilder. Serves electric transmission & distribution, pipeline operations, gas utilities, and emergency management. Founded in 2001 in Melbourne, Florida. Joined Solen Software Group in 2024.",
-    "website": "https://primate-tech.com",
-    "founded_year": 2001,
-    "composite_score": 2.64,
-    "tier": "AI-Emerging",
-    "wave": 2,
-    "pillar_scores": {
-      "data_quality": 3.4,
-      "data_integration": 2.85,
-      "analytics_maturity": 3.07,
-      "cloud_architecture": 2.95,
-      "tech_stack_modernity": 2.52,
-      "ai_engineering": 2.04,
-      "ai_product_features": 2.5,
-      "revenue_ai_upside": 3.1,
-      "margin_ai_upside": 3.3,
-      "product_differentiation": 3.54,
-      "ai_talent_density": 1.6,
-      "leadership_ai_vision": 2.8,
-      "org_change_readiness": 1.53,
-      "partner_ecosystem": 2.61,
-      "ai_governance": 2.83,
-      "regulatory_readiness": 2.98,
-      "ai_momentum": 2.3
-    },
-    "category_scores": {
-      "Data & Analytics": 3.11,
-      "Technology & Infrastructure": 2.5,
-      "AI Product & Value": 3.11,
-      "Organization & Talent": 2.14,
-      "Governance & Risk": 2.91,
-      "Velocity & Momentum": 2.3
-    },
-    "confidence_score": 92.0,
-    "confidence_breakdown": {
-      "search_coverage": 25.0,
-      "scrape_depth": 20.0,
-      "corpus_volume": 14.1,
-      "structured_extraction": 20,
-      "signal_richness": 13.3
     }
   },
   {
