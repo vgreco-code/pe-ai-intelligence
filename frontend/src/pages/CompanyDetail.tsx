@@ -11,6 +11,8 @@ import {
   CATEGORIES, CATEGORY_COLORS, getScoreColor, getTierBg,
 } from '../App'
 import type { BenchmarkCompany } from './CompetitiveBenchmarks'
+import AIUseCases from '../components/AIUseCases'
+import ResearchEvidence from '../components/ResearchEvidence'
 
 interface Props {
   company: PortfolioCompany
@@ -55,40 +57,14 @@ function getWeaknesses(company: PortfolioCompany): { dim: string; score: number;
     .slice(0, 5)
 }
 
-function getActionableRecs(company: PortfolioCompany): string[] {
-  const recs: string[] = []
-  const ps = company.pillar_scores
-
-  if ((ps.data_quality || 0) < 2.5)
-    recs.push('Invest in data quality infrastructure — implement data validation, cataloging, and governance tools to create a reliable foundation for AI/ML.')
-  if ((ps.ai_engineering || 0) < 2.5)
-    recs.push('Build AI/ML engineering capability — hire or upskill engineers with ML ops experience, establish model development and deployment pipelines.')
-  if ((ps.cloud_architecture || 0) < 2.5)
-    recs.push('Modernize cloud architecture — migrate to cloud-native infrastructure to enable scalable AI workloads and reduce infrastructure friction.')
-  if ((ps.ai_product_features || 0) < 3.0)
-    recs.push('Identify quick-win AI product features — analyze customer workflows for automation opportunities and predictive capabilities that drive immediate value.')
-  if ((ps.data_integration || 0) < 2.5)
-    recs.push('Strengthen API and data integration layer — build robust ETL pipelines and API infrastructure to unify data sources for AI training and inference.')
-  if ((ps.ai_talent_density || 0) < 2.5)
-    recs.push('Develop AI talent strategy — create AI-focused roles, upskilling programs, and partnerships with AI consultancies to build internal capability.')
-  if ((ps.leadership_ai_vision || 0) < 2.5)
-    recs.push('Align leadership on AI vision — establish an AI steering committee and develop a clear AI strategy linked to business outcomes and ROI targets.')
-  if ((ps.ai_momentum || 0) >= 3.0)
-    recs.push('Capitalize on AI momentum — the company shows strong signals of AI adoption activity; accelerate investment to maintain competitive advantage.')
-
-  if (company.tier === 'AI-Buildable' || company.tier === 'AI-Ready') {
-    recs.push('Prioritize Wave 1 deployment — this company is ready for immediate AI value creation; focus on revenue-generating AI features first.')
-  }
-
-  return recs.slice(0, 4)
-}
+// Actionable recommendations now handled by the AIUseCases component
 
 export default function CompanyDetail({ company, benchmark, onBack }: Props) {
   const tierInfo = TIER_DESCRIPTIONS[company.tier] || TIER_DESCRIPTIONS['AI-Limited']
   const TierIcon = tierInfo.icon
   const strengths = getStrengths(company)
   const weaknesses = getWeaknesses(company)
-  const recommendations = getActionableRecs(company)
+  // recommendations now handled by AIUseCases component
 
   const radarData = Object.entries(company.pillar_scores).map(([key, value]) => ({
     dimension: DIMENSION_LABELS[key] || key,
@@ -407,23 +383,11 @@ export default function CompanyDetail({ company, benchmark, onBack }: Props) {
         </div>
       </div>
 
-      {/* Recommendations */}
-      <div className="glass-card rounded-xl border border-purple-500/20 p-6">
-        <h2 className="text-lg font-bold text-purple-400 mb-4 flex items-center gap-2">
-          <Lightbulb className="w-5 h-5" />
-          Strategic Recommendations
-        </h2>
-        <div className="grid grid-cols-2 gap-4">
-          {recommendations.map((rec, i) => (
-            <div key={i} className="flex items-start gap-3 p-4 bg-slate-800/30 rounded-xl border border-slate-700/30">
-              <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <span className="text-xs font-bold text-purple-400">{i + 1}</span>
-              </div>
-              <p className="text-sm text-[var(--text-secondary)]">{rec}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* Research Evidence */}
+      <ResearchEvidence company={company} />
+
+      {/* AI Use Case Recommendations */}
+      <AIUseCases company={company} />
 
       {/* Wave Assignment */}
       <div className="glass-card rounded-xl border border-slate-700/50 p-6">
