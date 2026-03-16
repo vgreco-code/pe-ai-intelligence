@@ -86,7 +86,7 @@ PILLAR_OVERRIDES = {
     "Spokane": {
         # AS/400 RPG system from 1989 — no AI, legacy tech, but dominant market position
         "ai_product_features": 2.20,    # NO shipping AI features
-        "revenue_ai_upside": 3.80,      # huge modernization opportunity (64% US oranges)
+        "revenue_ai_upside": 2.80,      # was 3.80 — data has value but can't deliver AI on RPG code
         "tech_stack_modernity": 1.50,   # IBM AS/400, RPG, DB2 = legacy
         "cloud_architecture": 1.80,     # not cloud-native, web reporting only
         "ai_engineering": 1.20,         # no ML engineering capacity
@@ -118,13 +118,16 @@ PILLAR_OVERRIDES = {
         "revenue_ai_upside": 3.80,      # population health analytics is real AI opportunity
         "margin_ai_upside": 3.50,       # automation potential but not AI today
         "cloud_architecture": 3.30,     # was 4.17 — AWS-hosted but likely lift-and-shift
+        "tech_stack_modernity": 3.20,   # was 3.68 — founded 1985, "on AWS" likely lift-and-shift
         "leadership_ai_vision": 2.80,   # was 3.95 — no AI vision evidence from leadership
         "ai_momentum": 2.50,            # was 4.00 — SES partnership is connectivity, not AI
     },
     "Primate": {
-        # Control room SCADA visualization — some anomaly detection but not deep AI
-        "ai_product_features": 3.20,    # was 4.92 — GridGuardian has threshold alerting, not ML
-        "revenue_ai_upside": 3.60,      # was 4.54 — predictive grid analytics is real opportunity
+        # Control room SCADA visualization — threshold alerting is rules-based, not AI
+        "ai_product_features": 2.50,    # was 3.20←4.92 — threshold alerting is rules-based, not ML
+        "revenue_ai_upside": 3.10,      # was 3.60←4.54 — AI grid analytics is speculative, requires build
+        "margin_ai_upside": 3.30,       # was 4.20 — display panels, limited automation opportunity
+        "leadership_ai_vision": 2.80,   # was 3.62 — zero evidence of AI vision from leadership
         "ai_talent_density": 1.60,      # was 1.98 — 11 people, no AI team
         "ai_momentum": 2.30,            # was 3.54 — no recent AI product launches
     },
@@ -192,14 +195,21 @@ PILLAR_OVERRIDES = {
     },
     "ViaPeople": {
         # AI Instant Insights feature, I/O psychology foundation, SOC 2
-        "ai_product_features": 3.50,    # was 3.70 — AI Instant Insights is real but limited
+        "ai_product_features": 3.00,    # was 3.50←3.70 — "AI Instant Insights" likely basic NLP summaries
+        "cloud_architecture": 2.80,     # was 3.90 — no evidence of cloud architecture
+        "analytics_maturity": 2.50,     # was 1.99 — I/O psych firm with perf analytics; too low before
         "ai_momentum": 3.00,            # was 2.82 — SpiraLinks merger, AI R&D investment
         "regulatory_readiness": 3.30,   # was 3.02 — SOC 2 certified
     },
     "ThingTech": {
         # IoT predictive maintenance, Salesforce AppExchange, government contracts
         "ai_product_features": 3.20,    # was 2.83 — IoT predictive maintenance is genuine AI
+        "cloud_architecture": 3.20,     # was 3.94 — built ON Salesforce, not own cloud architecture
         "ai_momentum": 2.50,            # was 2.28 — acquired by Track Star, less independent momentum
+    },
+    "TrackIt Transit": {
+        # Paperless safety/compliance forms for transit agencies — not AI
+        "ai_product_features": 2.20,    # was 3.15 — configurable forms tool, not AI
     },
     "Cairn Applications": {
         # Basic route optimization SaaS — deterministic algorithms, not ML/AI

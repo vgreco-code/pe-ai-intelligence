@@ -190,7 +190,7 @@
     "description": "Champ Software develops Nightingale Notes, an electronic health records (EHR) system built specifically for public health departments. Founded over 40 years ago in Mankato, Minnesota, the platform serves more than 130 public health agencies nationwide with community health documentation, evidence-based outcomes tracking via the Omaha System, batch billing, scheduling, and 100% time tracking. Part of Solen Software Group.",
     "website": "https://www.champsoftware.com",
     "founded_year": 1985,
-    "composite_score": 3.04,
+    "composite_score": 3.02,
     "tier": "AI-Buildable",
     "wave": 2,
     "pillar_scores": {
@@ -198,7 +198,7 @@
       "data_integration": 3.71,
       "analytics_maturity": 3.54,
       "cloud_architecture": 3.3,
-      "tech_stack_modernity": 3.68,
+      "tech_stack_modernity": 3.2,
       "ai_engineering": 2.48,
       "ai_product_features": 2.6,
       "revenue_ai_upside": 3.8,
@@ -214,7 +214,7 @@
     },
     "category_scores": {
       "Data & Analytics": 3.61,
-      "Technology & Infrastructure": 3.15,
+      "Technology & Infrastructure": 2.99,
       "AI Product & Value": 3.33,
       "Organization & Talent": 2.65,
       "Governance & Risk": 3.13,
@@ -322,52 +322,6 @@
     }
   },
   {
-    "name": "Primate",
-    "vertical": "Energy/Utilities",
-    "employee_count": 11,
-    "description": "Primate Technologies specializes in mission-critical control room visualization software for energy providers. Products include GridGuardian (real-time SCADA/EMS data integration), BlackBoard, TileViewer, and TileBuilder. Serves electric transmission & distribution, pipeline operations, gas utilities, and emergency management. Founded in 2001 in Melbourne, Florida. Joined Solen Software Group in 2024.",
-    "website": "https://primate-tech.com",
-    "founded_year": 2001,
-    "composite_score": 2.9,
-    "tier": "AI-Buildable",
-    "wave": 2,
-    "pillar_scores": {
-      "data_quality": 3.4,
-      "data_integration": 2.85,
-      "analytics_maturity": 3.07,
-      "cloud_architecture": 2.95,
-      "tech_stack_modernity": 2.52,
-      "ai_engineering": 2.04,
-      "ai_product_features": 3.2,
-      "revenue_ai_upside": 3.6,
-      "margin_ai_upside": 4.2,
-      "product_differentiation": 3.54,
-      "ai_talent_density": 1.6,
-      "leadership_ai_vision": 3.62,
-      "org_change_readiness": 1.53,
-      "partner_ecosystem": 2.61,
-      "ai_governance": 2.83,
-      "regulatory_readiness": 2.98,
-      "ai_momentum": 2.3
-    },
-    "category_scores": {
-      "Data & Analytics": 3.11,
-      "Technology & Infrastructure": 2.5,
-      "AI Product & Value": 3.63,
-      "Organization & Talent": 2.34,
-      "Governance & Risk": 2.91,
-      "Velocity & Momentum": 2.3
-    },
-    "confidence_score": 92.0,
-    "confidence_breakdown": {
-      "search_coverage": 25.0,
-      "scrape_depth": 20.0,
-      "corpus_volume": 14.1,
-      "structured_extraction": 20,
-      "signal_richness": 13.3
-    }
-  },
-  {
     "name": "Thought Foundry",
     "vertical": "Entertainment/Digital Content",
     "employee_count": 8,
@@ -420,17 +374,17 @@
     "description": "ViaPeople provides flexible people management software including performance management, AI instant insights, 360-degree feedback, deal team feedback, succession planning, and automated promotion processes. Founded in 2002 by Jim Perry. Merged with SpiraLinks (compensation planning for global teams) to deliver a full-suite HR platform connecting performance management with compensation. Part of Solen Software Group.",
     "website": "https://viapeople.com",
     "founded_year": 2002,
-    "composite_score": 2.77,
+    "composite_score": 2.68,
     "tier": "AI-Emerging",
     "wave": 2,
     "pillar_scores": {
       "data_quality": 2.15,
       "data_integration": 3.21,
-      "analytics_maturity": 1.99,
-      "cloud_architecture": 3.9,
+      "analytics_maturity": 2.5,
+      "cloud_architecture": 2.8,
       "tech_stack_modernity": 3.29,
       "ai_engineering": 1.54,
-      "ai_product_features": 3.5,
+      "ai_product_features": 3.0,
       "revenue_ai_upside": 3.33,
       "margin_ai_upside": 3.72,
       "product_differentiation": 3.0,
@@ -443,9 +397,9 @@
       "ai_momentum": 3.0
     },
     "category_scores": {
-      "Data & Analytics": 2.45,
-      "Technology & Infrastructure": 2.91,
-      "AI Product & Value": 3.39,
+      "Data & Analytics": 2.62,
+      "Technology & Infrastructure": 2.54,
+      "AI Product & Value": 3.26,
       "Organization & Talent": 2.18,
       "Governance & Risk": 3.17,
       "Velocity & Momentum": 3.0
@@ -466,14 +420,14 @@
     "description": "ThingTech provides an IoT platform that helps companies with a mobile workforce track, manage, and maintain their assets using GPS technology. Founded in 2014 in Atlanta, Georgia by Tim Quinn and Brian Corcoran. Raised $5.45M in funding ($4M Series A). Serves construction and utility firms with enterprise asset management. Acquired by Track Star to expand IoT capabilities. Part of Solen Software Group.",
     "website": "https://thingtech.com",
     "founded_year": 2014,
-    "composite_score": 2.69,
+    "composite_score": 2.66,
     "tier": "AI-Emerging",
     "wave": 2,
     "pillar_scores": {
       "data_quality": 2.79,
       "data_integration": 2.72,
       "analytics_maturity": 2.81,
-      "cloud_architecture": 3.94,
+      "cloud_architecture": 3.2,
       "tech_stack_modernity": 3.56,
       "ai_engineering": 1.85,
       "ai_product_features": 3.2,
@@ -490,7 +444,7 @@
     },
     "category_scores": {
       "Data & Analytics": 2.77,
-      "Technology & Infrastructure": 3.12,
+      "Technology & Infrastructure": 2.87,
       "AI Product & Value": 2.95,
       "Organization & Talent": 2.11,
       "Governance & Risk": 3.13,
@@ -503,6 +457,52 @@
       "corpus_volume": 14.1,
       "structured_extraction": 25,
       "signal_richness": 9.6
+    }
+  },
+  {
+    "name": "Primate",
+    "vertical": "Energy/Utilities",
+    "employee_count": 11,
+    "description": "Primate Technologies specializes in mission-critical control room visualization software for energy providers. Products include GridGuardian (real-time SCADA/EMS data integration), BlackBoard, TileViewer, and TileBuilder. Serves electric transmission & distribution, pipeline operations, gas utilities, and emergency management. Founded in 2001 in Melbourne, Florida. Joined Solen Software Group in 2024.",
+    "website": "https://primate-tech.com",
+    "founded_year": 2001,
+    "composite_score": 2.64,
+    "tier": "AI-Emerging",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.4,
+      "data_integration": 2.85,
+      "analytics_maturity": 3.07,
+      "cloud_architecture": 2.95,
+      "tech_stack_modernity": 2.52,
+      "ai_engineering": 2.04,
+      "ai_product_features": 2.5,
+      "revenue_ai_upside": 3.1,
+      "margin_ai_upside": 3.3,
+      "product_differentiation": 3.54,
+      "ai_talent_density": 1.6,
+      "leadership_ai_vision": 2.8,
+      "org_change_readiness": 1.53,
+      "partner_ecosystem": 2.61,
+      "ai_governance": 2.83,
+      "regulatory_readiness": 2.98,
+      "ai_momentum": 2.3
+    },
+    "category_scores": {
+      "Data & Analytics": 3.11,
+      "Technology & Infrastructure": 2.5,
+      "AI Product & Value": 3.11,
+      "Organization & Talent": 2.14,
+      "Governance & Risk": 2.91,
+      "Velocity & Momentum": 2.3
+    },
+    "confidence_score": 92.0,
+    "confidence_breakdown": {
+      "search_coverage": 25.0,
+      "scrape_depth": 20.0,
+      "corpus_volume": 14.1,
+      "structured_extraction": 20,
+      "signal_richness": 13.3
     }
   },
   {
@@ -558,7 +558,7 @@
     "description": "Spokane Software Systems produces a leading agricultural ERP system for growers, packers, and shippers of agricultural products throughout the U.S. for over 37 years. 64% of US orange varieties and 80% of US lemon varieties flow through the Spokane System. Key modules include PackPoint (PTI/GTIN compliance), packing operations, shipping workflows, and grower accounting. Based in Spokane, WA with $3M annual revenue. Part of Solen Software Group.",
     "website": "https://sssonline.com",
     "founded_year": 1989,
-    "composite_score": 2.4,
+    "composite_score": 2.32,
     "tier": "AI-Emerging",
     "wave": 3,
     "pillar_scores": {
@@ -569,7 +569,7 @@
       "tech_stack_modernity": 1.5,
       "ai_engineering": 1.2,
       "ai_product_features": 2.2,
-      "revenue_ai_upside": 3.8,
+      "revenue_ai_upside": 2.8,
       "margin_ai_upside": 2.5,
       "product_differentiation": 4.2,
       "ai_talent_density": 1.3,
@@ -583,7 +583,7 @@
     "category_scores": {
       "Data & Analytics": 3.06,
       "Technology & Infrastructure": 1.5,
-      "AI Product & Value": 3.17,
+      "AI Product & Value": 2.92,
       "Organization & Talent": 2.0,
       "Governance & Risk": 2.61,
       "Velocity & Momentum": 1.5
@@ -604,7 +604,7 @@
     "description": "TrackIt provides transit-specific, cloud-based SaaS software for public transit agencies. Enables paperless workflows, inter-departmental collaboration, and real-time data by replacing paper-based processes with searchable digital records. Supports 100+ transit locations. Founded in 2013 by Mark Anderson. Acquired by Solen Software Group in February 2026.",
     "website": "https://trackittransit.com",
     "founded_year": 2013,
-    "composite_score": 2.37,
+    "composite_score": 2.22,
     "tier": "AI-Emerging",
     "wave": 3,
     "pillar_scores": {
@@ -614,7 +614,7 @@
       "cloud_architecture": 2.89,
       "tech_stack_modernity": 2.38,
       "ai_engineering": 1.25,
-      "ai_product_features": 3.15,
+      "ai_product_features": 2.2,
       "revenue_ai_upside": 2.59,
       "margin_ai_upside": 2.91,
       "product_differentiation": 2.31,
@@ -629,7 +629,7 @@
     "category_scores": {
       "Data & Analytics": 2.1,
       "Technology & Infrastructure": 2.17,
-      "AI Product & Value": 2.74,
+      "AI Product & Value": 2.5,
       "Organization & Talent": 1.94,
       "Governance & Risk": 3.13,
       "Velocity & Momentum": 2.7
