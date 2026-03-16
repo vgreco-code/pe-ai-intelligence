@@ -4,7 +4,7 @@ Changes from v3:
   1. Rebalanced weights: ai_product_features down from 4.45→2.80, ai_momentum up from 0.27→0.80
   2. Softer ECF curve: small companies less harshly penalized (0.65 floor vs 0.55)
   3. Manual pillar corrections for companies where web scraping produced wrong signals
-  4. Entity fix: Dash is Dash ComplyOps (cloud compliance), not Dash AP automation
+  4. Entity fix: Dash IS Dash Development Group (dashdev.com) — DDX doc mgmt + AP Robot for mfg/distribution
 
 Run: cd backend && source .env && python rescore_v4.py
 """
@@ -149,25 +149,26 @@ PILLAR_OVERRIDES = {
         "data_quality": 2.80,           # was 1.95 — speech data collection for ASR training
     },
     "Dash": {
-        # This is Dash ComplyOps (dashsdk.com) — AWS Advanced Technology Partner
-        # NOT the old Dash AP automation company (merged into SMRTR)
-        "ai_product_features": 3.80,    # was 2.90 — CloudScanner AI, NLP policy config, auto evidence
-        "ai_engineering": 2.50,         # was 1.22 — built CloudScanner V4.0 engine
-        "revenue_ai_upside": 3.50,      # was 2.10 — 6 compliance frameworks, growing market
-        "ai_talent_density": 2.00,      # was 1.15 — small but has AI engineering
-        "ai_momentum": 3.60,            # was 2.19 — V4.0 launch, AWS Marketplace, AWS for Health
-        "leadership_ai_vision": 3.20,   # was 2.17 — deliberate AI compliance strategy
-        "tech_stack_modernity": 3.50,   # was 1.33 — AWS-native, modern cloud stack
-        "cloud_architecture": 4.00,     # was 1.32 — AWS Advanced Technology Partner!
-        "product_differentiation": 3.40, # was 1.68 — AWS Healthcare Competency, 6 frameworks
-        "partner_ecosystem": 3.50,      # was 1.60 — AWS partner, Relevance Lab integration
-        "regulatory_readiness": 3.80,   # was 2.36 — compliance IS their product
-        "ai_governance": 3.80,          # was 2.01 — compliance/governance is core business
-        "data_quality": 2.80,           # was 1.62 — compliance data collection
-        "data_integration": 2.80,       # was 1.52 — AWS Config, GuardDuty integration
-        "analytics_maturity": 2.50,     # was 1.50 — compliance dashboards and reporting
-        "org_change_readiness": 2.20,   # was 1.11 — small team but focused
-        "margin_ai_upside": 3.20,       # was 1.55 — automated compliance saves 100s hrs/month
+        # CORRECTED: This is Dash Development Group (dashdev.com) — DDX document management
+        # + AP Robot for manufacturing/distribution. Founded 1998, ~15 employees.
+        # Previous overrides were for WRONG ENTITY (Dash ComplyOps/dashsdk.com).
+        "cloud_architecture": 2.50,     # was 4.00 — offers cloud/on-prem/hybrid; 25yr old product, not cloud-native
+        "tech_stack_modernity": 2.30,   # was 3.50 — 25+ year codebase, SYSPRO integrations, traditional dev
+        "ai_product_features": 2.40,    # was 3.80 — AP Robot "AI" is OCR + rules-based matching, not ML
+        "ai_engineering": 1.80,         # was 2.50 — VP R&D is traditional dev, no AI/ML engineers
+        "ai_talent_density": 1.30,      # was 2.00 — 15 employees, zero AI talent on leadership page
+        "leadership_ai_vision": 2.20,   # was 3.20 — "document management evangelist", no AI strategy
+        "ai_momentum": 2.00,            # was 3.60 — merged into SMRTR but no AI-specific launches
+        "ai_governance": 1.80,          # was 3.80 — no AI governance; has AP audit trails only
+        "regulatory_readiness": 2.50,   # was 3.80 — SOX audit trails from AP, not AI-specific compliance
+        "product_differentiation": 2.80, # was 3.40 — only DDX pre-integrated with SYSPRO (niche moat)
+        "partner_ecosystem": 2.50,      # was 3.50 — SYSPRO, Aptean, a few ERP partners; not AI partners
+        "revenue_ai_upside": 2.80,      # was 3.50 — IDP market has AI upside but Dash isn't building it
+        "margin_ai_upside": 2.50,       # was 3.20 — some automation gains possible, small company
+        "data_quality": 2.50,           # was 2.80 — invoice/PO data, structured but narrow scope
+        "data_integration": 2.80,       # keep — ERP connectors (SYSPRO, Aptean, Syteline, Made2Manage)
+        "analytics_maturity": 2.20,     # was 2.50 — basic AP reporting, no analytics product
+        "org_change_readiness": 2.20,   # keep — small team, merger disruption
     },
     "Track Star": {
         # AI video telematics, predictive maintenance, $24.4M revenue

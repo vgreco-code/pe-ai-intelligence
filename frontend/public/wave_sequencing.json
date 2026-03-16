@@ -1,12 +1,6 @@
 {
   "Wave 1 (Deploy Now)": [
     {
-      "name": "Dash",
-      "score": 3.14,
-      "tier": "AI-Buildable",
-      "top_category": "Governance & Risk"
-    },
-    {
       "name": "Track Star",
       "score": 3.05,
       "tier": "AI-Buildable",
@@ -81,6 +75,12 @@
       "score": 2.32,
       "tier": "AI-Emerging",
       "top_category": "Data & Analytics"
+    },
+    {
+      "name": "Dash",
+      "score": 2.28,
+      "tier": "AI-Emerging",
+      "top_category": "AI Product & Value"
     },
     {
       "name": "TrackIt Transit",

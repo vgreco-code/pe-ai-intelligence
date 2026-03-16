@@ -1314,36 +1314,36 @@
   "Dash": {
     "executives": [
       {
-        "name": "Raphael Sperle",
-        "role": "Founder & CEO"
+        "name": "Susanne Moore",
+        "role": "CEO, S4i Systems dba SMRTR (oversees Dash post-merger)"
       },
       {
-        "name": "Jacob Nemetz",
-        "role": "Co-Founder"
+        "name": "Jim Van Hecke",
+        "role": "President & Document Management Evangelist"
+      },
+      {
+        "name": "Steve Bayliss",
+        "role": "Vice President of R&D"
       }
     ],
     "ai_initiatives": [
       {
-        "text": "CloudScanner automated compliance monitoring \u2014 AI-powered continuous scanning of AWS infrastructure for security and compliance violations with click-to-fix remediation",
+        "text": "AP Robot claims 'Artificial Intelligence (AI) technology to automate AP invoice processing' — in practice this is OCR-based data extraction with rules-based 3-way matching, achieving 90%+ accuracy on standard invoices",
         "type": "ai_feature"
       },
       {
-        "text": "Automated evidence collection \u2014 AI gathers compliance artifacts for audit readiness, saving 100s of hours per month",
-        "type": "ai_feature"
-      },
-      {
-        "text": "Natural language policy configuration \u2014 plain-English interface for administering security policies without technical expertise",
-        "type": "ai_feature"
+        "text": "Duplicate and fraudulent invoice detection — rule-based pattern matching, not ML",
+        "type": "automation"
       }
     ],
     "tech_stack": [
-      "AWS (core platform)",
-      "AWS Config integration",
-      "AWS GuardDuty integration",
-      "CloudScanner engine",
-      "REST APIs",
-      "AWS Marketplace distribution",
-      "HIPAA/SOC 2/ISO 27001/PCI DSS/NIST 800-53/GDPR frameworks"
+      "DDX Document Management (25+ year codebase)",
+      "AP Robot (OCR + rules-based matching)",
+      "SYSPRO ERP integration (primary, pre-integrated)",
+      "Aptean/WorkWise ERP connector",
+      "Syteline ERP connector",
+      "Made2Manage ERP connector",
+      "Cloud/on-premise/hybrid deployment options"
     ],
     "github": {},
     "careers": {},
@@ -1351,82 +1351,69 @@
       "found": true,
       "leadership": [
         {
-          "name": "Raphael Sperle",
-          "role": "Founder & CEO \u2014 cloud security and compliance expert"
+          "name": "Jim Van Hecke",
+          "role": "President — co-designer of DDX, document management specialist (no AI background)"
         },
         {
-          "name": "Jacob Nemetz",
-          "role": "Co-Founder \u2014 technical architecture"
+          "name": "Steve Bayliss",
+          "role": "VP R&D — traditional software design and application development"
         }
       ],
       "team_skills": [
-        "AWS cloud security",
-        "Compliance automation",
-        "HIPAA",
-        "SOC 2",
-        "Cloud infrastructure",
-        "Security engineering"
+        "Document management",
+        "ERP integration",
+        "AP automation",
+        "OCR/document capture",
+        "Manufacturing workflows"
       ]
     },
     "named_customers": [
-      "Hundreds of software teams and healthtech companies",
-      "Healthcare organizations (HIPAA)",
-      "SaaS companies (SOC 2)",
-      "Financial services firms (PCI DSS)"
+      "Venco Venturo Industries (Scott Collins testimonial)",
+      "Faytex (Jeff Baker testimonial)",
+      "Western Plows (Paul Stolzman — $14K postage savings year 1)",
+      "Manufacturing and distribution enterprises using SYSPRO, Aptean, Syteline"
     ],
     "recent_news": [
       {
-        "title": "Dash ComplyOps V4.0 Release",
+        "title": "Dash joins Solen Software Group",
         "date": "2024",
-        "summary": "Introduced rearchitected CloudScanner engine for enhanced continuous AWS compliance monitoring with click-to-fix remediation.",
-        "url": "https://dashsdk.com/introducing-dash-version-4/"
+        "summary": "Dash Development Group acquired by Solen Software Group as part of their vertical SaaS portfolio strategy.",
+        "url": "https://www.solensoftwaregroup.com/companies"
       },
       {
-        "title": "AWS for Health Initiative Support",
-        "date": "2024",
-        "summary": "Dash announced support for AWS for Health initiative, positioning as compliance solution for healthcare organizations building on AWS.",
-        "url": "https://www.prweb.com/releases/dash-solutions-announces-support-for-aws-for-health-initiative-878745631.html"
-      },
-      {
-        "title": "AWS Marketplace Availability",
-        "date": "2024",
-        "summary": "Dash ComplyOps available on AWS Marketplace with 7-day free trial including SOC 2 Acceleration Package.",
-        "url": "https://aws.amazon.com/marketplace/pp/prodview-brgjv7fvs2xe2"
+        "title": "Dash + S4i Systems merge to form SMRTR",
+        "date": "2025-07",
+        "summary": "Dash merged with S4i Systems to create SMRTR, combining AP automation with compliance solutions for food & beverage and manufacturing industries.",
+        "url": "https://smrtrsolutions.com"
       }
     ],
     "hiring_signals": [],
     "key_evidence": [
       {
-        "title": "AWS Advanced Technology Partner",
-        "url": "https://aws.amazon.com/blogs/apn/streamline-your-hipaa-security-program-on-aws-with-dash-complyops/",
-        "source": "aws_blog",
-        "text": "Dash ComplyOps is an AWS Advanced Technology Partner with Healthcare Competency status. Member of AWS Global Security & Compliance Acceleration (GSCA) program. Streamlines HIPAA security programs on AWS with automated scanning and remediation."
-      },
-      {
-        "title": "Multi-Framework Compliance",
-        "url": "https://dashsdk.com",
+        "title": "DDX: Only Doc Mgmt Pre-Integrated with SYSPRO",
+        "url": "https://dashdev.com/about-dash/partners/syspro/",
         "source": "company_website",
-        "text": "Supports 6 compliance frameworks: HIPAA/HITECH, SOC 2 (Type 1 & 2), ISO 27001, PCI DSS, NIST 800-53, and GDPR. Automated controls via CloudScanner, continuous monitoring, and click-to-fix remediation across AWS infrastructure."
+        "text": "DASH DDX is the only document management software offered pre-integrated with SYSPRO ERP, in individual modules or pre-bundled suites. Founded in 1998, over 25 years of manufacturing-focused document automation."
       },
       {
-        "title": "Efficiency Impact",
-        "url": "https://dashsdk.com",
+        "title": "AP Robot Invoice Automation",
+        "url": "https://dashdev.com/apautomation/",
         "source": "company_website",
-        "text": "Dash provides instant visibility into cloud environments, puts security and operations teams on the same page, and saves 100s of hours of manual compliance work per month through automated evidence collection and monitoring."
+        "text": "AP Robot uses OCR-based invoice capture with automated 3-way matching (invoice vs PO vs receipt). Claims 90%+ accuracy, processing invoices in under 60 seconds. Marketing describes this as 'AI technology' but technical details indicate rules-based matching with OCR."
       },
       {
-        "title": "V4.0 CloudScanner Engine",
-        "url": "https://dashsdk.com/introducing-dash-version-4/",
-        "source": "company_blog",
-        "text": "Version 4.0 introduced rearchitected CloudScanner engine: plain-English policy management, automated technical controls with guardrails, continuous compliance status monitoring, and one-click security issue resolution."
-      },
-      {
-        "title": "Relevance Lab Integration",
-        "url": "https://dashsdk.com",
+        "title": "Cloud/On-Premise/Hybrid Deployment",
+        "url": "https://dashdev.com/",
         "source": "company_website",
-        "text": "Integration with Relevance Lab's Governance360 platform for multi-cloud compliance orchestration. Extends Dash's AWS-native capabilities into broader enterprise cloud governance."
+        "text": "Dash offers three deployment models: fully managed cloud, on-premise (customizable), and hybrid. This legacy flexibility is typical of 25-year-old enterprise software products, not cloud-native architecture."
+      },
+      {
+        "title": "Entity Clarification",
+        "url": "https://dashdev.com/",
+        "source": "audit_note",
+        "text": "IMPORTANT: This is Dash Development Group (dashdev.com), NOT Dash ComplyOps (dashsdk.com). Previous scoring rounds incorrectly conflated these two companies. Dash Development Group is a traditional document management/AP automation company for manufacturing — not a cloud security/compliance platform."
       }
     ],
-    "narrative_summary": "Dash ComplyOps (dashsdk.com) is an AWS Advanced Technology Partner providing automated cloud security and compliance for healthcare, SaaS, and financial services. The platform supports 6 compliance frameworks (HIPAA, SOC 2, ISO 27001, PCI DSS, NIST 800-53, GDPR) with the V4.0 CloudScanner engine delivering continuous monitoring, automated evidence collection, and click-to-fix remediation. Saves 100s of hours per month in manual compliance work. Founded by Raphael Sperle (CEO) and Jacob Nemetz, the company holds AWS Healthcare Competency status and is available on AWS Marketplace. Serves hundreds of software teams and healthtech companies. Integration with Relevance Lab extends into multi-cloud governance. Part of Solen Software Group portfolio."
+    "narrative_summary": "Dash Development Group (dashdev.com) is a 25-year-old document management and AP automation company serving manufacturing and distribution enterprises. Core products are DDX (document management pre-integrated with SYSPRO ERP) and AP Robot (OCR-based invoice processing with rules-based 3-way matching). The company offers cloud, on-premise, and hybrid deployment. Leadership team (Jim Van Hecke, Steve Bayliss) has deep document management expertise but no AI/ML background. AP Robot's 'AI' marketing describes OCR + rules-based automation, not machine learning. Joined Solen Software Group in 2024 and merged with S4i Systems to form SMRTR in July 2025. NOTE: Previous scoring rounds incorrectly used data from Dash ComplyOps (dashsdk.com), a completely different company. All scores corrected in v4.3 audit."
   }
 }

@@ -1,51 +1,5 @@
 [
   {
-    "name": "Dash",
-    "vertical": "Document Management/Compliance",
-    "employee_count": 15,
-    "description": "Dash provided ERP-integrated document management and accounts payable automation software (DASH DDX) for manufacturing and distribution enterprises worldwide for over 20 years. In 2024 Dash joined the Solen portfolio; in July 2025, Dash merged with S4i Systems to form SMRTR, combining AP automation with compliance solutions for food & beverage and manufacturing industries.",
-    "website": "https://dashdev.com",
-    "founded_year": 1998,
-    "composite_score": 3.14,
-    "tier": "AI-Buildable",
-    "wave": 1,
-    "pillar_scores": {
-      "data_quality": 2.8,
-      "data_integration": 2.8,
-      "analytics_maturity": 2.5,
-      "cloud_architecture": 4.0,
-      "tech_stack_modernity": 3.5,
-      "ai_engineering": 2.5,
-      "ai_product_features": 3.8,
-      "revenue_ai_upside": 3.5,
-      "margin_ai_upside": 3.2,
-      "product_differentiation": 3.4,
-      "ai_talent_density": 2.0,
-      "leadership_ai_vision": 3.2,
-      "org_change_readiness": 2.2,
-      "partner_ecosystem": 3.5,
-      "ai_governance": 3.8,
-      "regulatory_readiness": 3.8,
-      "ai_momentum": 3.6
-    },
-    "category_scores": {
-      "Data & Analytics": 2.7,
-      "Technology & Infrastructure": 3.33,
-      "AI Product & Value": 3.48,
-      "Organization & Talent": 2.73,
-      "Governance & Risk": 3.8,
-      "Velocity & Momentum": 3.6
-    },
-    "confidence_score": 74.0,
-    "confidence_breakdown": {
-      "search_coverage": 25.0,
-      "scrape_depth": 15.0,
-      "corpus_volume": 15.0,
-      "structured_extraction": 15,
-      "signal_richness": 4.0
-    }
-  },
-  {
     "name": "Track Star",
     "vertical": "Fleet Management/Government",
     "employee_count": 10,
@@ -595,6 +549,52 @@
       "corpus_volume": 14.9,
       "structured_extraction": 20,
       "signal_richness": 13.7
+    }
+  },
+  {
+    "name": "Dash",
+    "vertical": "Document Management/AP Automation",
+    "employee_count": 15,
+    "description": "Dash Development Group provides ERP-integrated document management (DDX) and accounts payable automation (AP Robot) software for manufacturing and distribution enterprises. Founded in 1998 in Wisconsin. DDX is the only document management software pre-integrated with SYSPRO ERP, with additional connectors for Aptean, Syteline, and Made2Manage. AP Robot uses OCR-based invoice capture with rules-based 3-way matching. Offers cloud, on-premise, and hybrid deployment. Joined Solen Software Group in 2024; merged with S4i Systems in July 2025 to form SMRTR.",
+    "website": "https://dashdev.com",
+    "founded_year": 1998,
+    "composite_score": 2.28,
+    "tier": "AI-Emerging",
+    "wave": 3,
+    "pillar_scores": {
+      "data_quality": 2.5,
+      "data_integration": 2.8,
+      "analytics_maturity": 2.2,
+      "cloud_architecture": 2.5,
+      "tech_stack_modernity": 2.3,
+      "ai_engineering": 1.8,
+      "ai_product_features": 2.4,
+      "revenue_ai_upside": 2.8,
+      "margin_ai_upside": 2.5,
+      "product_differentiation": 2.8,
+      "ai_talent_density": 1.3,
+      "leadership_ai_vision": 2.2,
+      "org_change_readiness": 2.2,
+      "partner_ecosystem": 2.5,
+      "ai_governance": 1.8,
+      "regulatory_readiness": 2.5,
+      "ai_momentum": 2.0
+    },
+    "category_scores": {
+      "Data & Analytics": 2.5,
+      "Technology & Infrastructure": 2.2,
+      "AI Product & Value": 2.62,
+      "Organization & Talent": 2.05,
+      "Governance & Risk": 2.15,
+      "Velocity & Momentum": 2.0
+    },
+    "confidence_score": 74.0,
+    "confidence_breakdown": {
+      "search_coverage": 25.0,
+      "scrape_depth": 15.0,
+      "corpus_volume": 15.0,
+      "structured_extraction": 15,
+      "signal_richness": 4.0
     }
   },
   {
