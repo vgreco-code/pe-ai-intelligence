@@ -79,11 +79,11 @@ async def get_wave_sequencing(db: Session = Depends(get_db)):
     )
 
     waves = {
-        "Wave 1 (Q1-Q2)": [],
-        "Wave 2 (Q3-Q4)": [],
-        "Wave 3 (Year 2)": [],
+        "Wave 1 (Deploy Now)": [],
+        "Wave 2 (Build Foundation)": [],
+        "Wave 3 (Groundwork)": [],
     }
-    wave_labels = {1: "Wave 1 (Q1-Q2)", 2: "Wave 2 (Q3-Q4)", 3: "Wave 3 (Year 2)"}
+    wave_labels = {1: "Wave 1 (Deploy Now)", 2: "Wave 2 (Build Foundation)", 3: "Wave 3 (Groundwork)"}
 
     for company, score in companies:
         wave_key = wave_labels.get(score.wave, "Wave 3 (Year 2)")
