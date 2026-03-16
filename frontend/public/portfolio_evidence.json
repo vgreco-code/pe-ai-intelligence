@@ -2,16 +2,12 @@
   "AutoTime": {
     "ai_initiatives": [
       {
-        "text": "launched an AI-powered predictive model to enhance customer engagement and",
+        "text": "launched an AI product featuring machine learning for predictive analytics",
         "type": "product_launch"
       },
       {
-        "text": "AI-powered predictive model to enhance customer eng",
+        "text": "AI-driven solutions and a Chief AI Officer leading",
         "type": "ai_feature"
-      },
-      {
-        "text": "predictive model",
-        "type": "ml_capability"
       }
     ],
     "named_products": [],
@@ -20,16 +16,19 @@
     "recent_news": [],
     "executives": [],
     "hiring_signals": [
-      "Data Scientist"
+      "AI/ML Engineer",
+      "Data Scientist",
+      "Data Engineer",
+      "Full Stack"
     ],
     "key_evidence": [
       {
-        "text": "AutoTime Financial Services launched an AI-powered predictive model to enhance customer engagement and retention. The model uses machine learning to identify high-value account holders.",
+        "text": "AutoTime Financial Services launched an AI product featuring machine learning for predictive analytics and customer experience personalization. The product uses AI to enhance fraud detection and risk management.",
         "source": "",
         "url": null
       },
       {
-        "text": "AutoTime Financial Services is used by companies like Marriott International and Michelin. Customer success is demonstrated by their evaluations of other software solutions.",
+        "text": "AutoTime Financial Services is used by companies like Marriott International and Michelin. Customers include financial institutions like Citigroup and banks like Swedbank. Testimonials highlight customer success with AutoTime Financial Services.",
         "source": "",
         "url": null
       },
@@ -44,7 +43,7 @@
         "url": "https://www.appsruntheworld.com/customers-database/products/view/hfx-autotime"
       },
       {
-        "text": "AutoTime announced a $100M funding round in 2024. No recent partnerships, acquisitions, or product launches were found. No relevant news for 2025 or 2026.",
+        "text": "AutoTime Financial Services announced a $100M funding round in 2025. They are preparing for Series A funding. No recent partnerships or acquisitions noted.",
         "source": "",
         "url": null
       },
@@ -54,29 +53,29 @@
         "url": "https://www.linkedin.com/in/glenn-doughty-3767875"
       },
       {
-        "text": "AutoTime Financial Services is hiring for machine learning and AI roles, including data scientists and engineers. Positions offer competitive salaries and remote work options. Check their latest job postings for specifics.",
+        "text": "AutoTime Financial Services is hiring for machine learning and AI roles, including data scientist and ML engineer positions. These roles are remote and offer competitive salaries. Check LinkedIn for current openings.",
         "source": "",
         "url": null
       },
       {
-        "text": "AutoTime Financial Services' CEO is Rajesh Vashist, and its CTO is Edward Abbo. Abbo has extensive tech leadership experience.",
+        "text": "AutoTime Financial Services' leadership includes a CTO focused on AI-driven solutions and a Chief AI Officer leading AI integration. The company's CTO oversees technology strategy and AI platform development.",
         "source": "",
         "url": null
       }
     ],
     "enrichment_stats": {
       "total_results": 36,
-      "relevant_results": 13,
-      "total_text_chars": 14712,
-      "ai_initiatives_found": 3,
+      "relevant_results": 14,
+      "total_text_chars": 17277,
+      "ai_initiatives_found": 2,
       "tech_stack_signals": 1,
       "customers_found": 0,
       "news_events": 0,
       "executives_found": 0,
-      "hiring_roles_detected": 1,
+      "hiring_roles_detected": 4,
       "evidence_snippets": 8
     },
-    "narrative_summary": "AutoTime shows moderate AI engagement with 3 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: web-detected stack includes Python. Key signals: hiring signals for Data Scientist.",
+    "narrative_summary": "AutoTime shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: 3 public repos (no recent activity) primarily in Java. Key signals: broad technical hiring across 4 role categories.",
     "github": {
       "found": true,
       "org_login": "AutoTimer",
@@ -104,51 +103,82 @@
     },
     "careers": {
       "found": false,
-      "reason": "invalid_website"
+      "reason": "wrong_company"
     },
-    "tech_stack_github_confirmed": []
+    "tech_stack_github_confirmed": [],
+    "talent": {
+      "found": false,
+      "total_profiles_found": 0,
+      "linkedin_profiles_discovered": 4,
+      "leadership": [],
+      "ai_ml_talent": [],
+      "senior_engineers": [],
+      "engineering_team": [],
+      "management": [],
+      "team_skills": [
+        "aws",
+        "azure",
+        "hadoop",
+        "machine learning",
+        "python",
+        "react",
+        "sql",
+        "tensorflow"
+      ],
+      "estimated_total_employees": 500,
+      "estimated_eng_team": 175,
+      "talent_summary": {
+        "has_cto": false,
+        "has_vp_eng": false,
+        "has_ai_leadership": false,
+        "ai_ml_headcount": 0,
+        "eng_headcount_discovered": 0,
+        "leadership_headcount": 0,
+        "total_discovered": 0
+      }
+    }
   },
   "Spokane": {
     "ai_initiatives": [
       {
-        "text": "launched an AI-powered platform for expense processing automation",
+        "text": "launched AI-powered predictive analytics",
         "type": "product_launch"
       },
       {
-        "text": "AI-powered platform for expense processing automati",
+        "text": "AI-powered predictive analytics",
         "type": "ai_feature"
       },
       {
-        "text": "AI-driven projects",
-        "type": "ai_feature"
+        "text": "Assistant Director",
+        "type": "genai_feature"
       }
     ],
     "named_products": [],
     "tech_stack": [
       "AWS",
-      "Kubernetes",
       "Python",
-      "React",
       "Java",
+      "Redis",
       "TensorFlow",
       "PyTorch",
-      "OpenAI",
-      "Anthropic"
+      "OpenAI"
     ],
     "named_customers": [],
-    "recent_news": [],
+    "recent_news": [
+      "in 2024, officials as part of the effort learned that Spokane was not among the list of 12 groups selected to receive funds as part of the program."
+    ],
     "executives": [
       {
         "name": "Tom Simpson",
         "role": "president"
       },
       {
-        "name": "Farr III",
-        "role": "VP of Engineering"
+        "name": "Latah County",
+        "role": "Chief Information Officer"
       },
       {
-        "name": "Nathan Brown",
-        "role": "co-founder"
+        "name": "Vista Title",
+        "role": "Chief Information Officer"
       }
     ],
     "hiring_signals": [
@@ -156,16 +186,20 @@
       "Data Scientist",
       "Data Engineer",
       "NLP Engineer",
-      "MLOps",
       "AI Researcher",
       "Full Stack",
       "DevOps/SRE"
     ],
     "key_evidence": [
       {
-        "text": "Spokane Financial Services launched an AI-powered platform for expense processing automation, featuring machine learning for real-time data insights. The company also offers NLP solutions and predictive analytics.",
+        "text": "Spokane Financial Services launched AI-powered predictive analytics, NLP solutions, and machine learning models for data-driven decision making. Moat Metrics uses AI to provide insights into company innovation.",
         "source": "",
         "url": null
+      },
+      {
+        "text": "The importance of using AI-powered tools to make better informed investment decisions is growing at a rapid pace, Fleming adds.\n\n\u201cFive years from now, if you\u2019re not using AI tools in your investment strategies ...",
+        "source": "spokanejournal.com",
+        "url": "https://www.spokanejournal.com/articles/16152-former-lee-and-hayes-execs-launch-moat-metrics"
       },
       {
         "text": "About Next IT\n\nNext IT is the provider of conversational AI systems for the Global 5000. We propel businesses into the intelligence revolution with AI technologies that are enterprise ready on day one.",
@@ -173,49 +207,44 @@
         "url": "https://www.prweb.com/releases/next_it_launches_ai_initiative_to_propel_businesses_into_the_intelligence_revolution/prweb14710859.htm"
       },
       {
+        "text": "HomeSpokaneBootcamps ScholarshipsJob Outcomes Business Blogs F.A.Q.More\n\nSolo AI Tech Entrepreneur icon\n\nSolo AI Tech EntrepreneurAI Essentials for Work icon\n\nAI Essentials for WorkCybersecurity Fundamentals icon\n\nCybersecurity FundamentalsWeb Fundam",
+        "source": "nucamp.co",
+        "url": "https://www.nucamp.co/blog/coding-bootcamp-spokane-wa-financial-services-the-complete-guide-to-using-ai-in-the-financial-services-industry-in-spokane-in-2025"
+      },
+      {
         "text": "# Treasury4\nWe enable companies to unlock the power of their treasury data\nSoftware Development \u2022 Spokane, Washington \u2022 9,001 followers \u2022 51-200 employees\n\n## Overview\nTreasury4 is a data-first treasury management platform built by former practitione",
         "source": "linkedin.com",
         "url": "https://www.linkedin.com/company/treasury4"
       },
       {
-        "text": "Spokane Financial Services offers personalized financial planning and wealth management. Testimonials highlight their tax optimization and fiduciary approach. They emphasize client-centered, transparent investment strategies.",
+        "text": "Spokane Teachers Credit Union successfully implemented a learning management system for continuous employee development. The company achieved significant growth and customer satisfaction.",
         "source": "",
         "url": null
       },
       {
-        "text": "#### Edwin Hill, CFP\u00ae\n\n#### Noah Schwab, CFP\u00ae\n\n#### Edwin Hill, CFP\u00ae\n\nFinancial Advisor, Founder \n\n  \n\n Finds refreshment in a good book, long bike rides, and time with his family\n Loves backpacking adventures with his wife Kerry\n\n## Trusted Spokane ",
-        "source": "scfinancials.com",
-        "url": "https://scfinancials.com/"
+        "text": "USE CASES\n\n Learning Aligned to Performance\n Compliance Management\n Customer & Partner Training\n Content Curation\n Dynamic Workforce Planning\n Frontline Worker Development\n Leadership Development & Succession Planning\n Internal Recruiting & Talent Mo",
+        "source": "cornerstoneondemand.com",
+        "url": "https://www.cornerstoneondemand.com/resources/article/spokane-teachers-credit-union-case-study/"
       },
       {
         "text": "Among the numerous things FCI promises to deliver to its customers are: attorneys, accountants, personal investment consultants, tax assistance and real estate training.",
         "source": "spokesman.com",
         "url": "https://www.spokesman.com/stories/1996/mar/29/financial-advice-may-bounce-experts-warn/"
-      },
-      {
-        "text": "Since 2011, Remitly has been tirelessly delivering on our promises to our customers sending their hard earned money home. Today, we are incredibly proud to have served millions of customers globally.",
-        "source": "builtin.com",
-        "url": "https://builtin.com/companies/location/spokane/type/financial-services-companies"
-      },
-      {
-        "text": "Quick Guide\n\nFollow Us\n\nGreater Spokane Inc. Logo.\n\nGreater Spokane Incorporated  \n801 W. Riverside, Suite 200  \nSpokane, WA 99201\n\nMain \u2013 (509) 624-1393   \nFax \u2013 (509) 747-0077   \nToll-free \u2013 1 (800) 776-5263\n\nEmail \u2013 (\n\nFollow Us [...",
-        "source": "web.greaterspokane.org",
-        "url": "https://web.greaterspokane.org/Financial-Services"
       }
     ],
     "enrichment_stats": {
       "total_results": 36,
-      "relevant_results": 33,
-      "total_text_chars": 52626,
+      "relevant_results": 30,
+      "total_text_chars": 49893,
       "ai_initiatives_found": 3,
-      "tech_stack_signals": 9,
+      "tech_stack_signals": 7,
       "customers_found": 0,
-      "news_events": 0,
+      "news_events": 1,
       "executives_found": 3,
-      "hiring_roles_detected": 8,
+      "hiring_roles_detected": 7,
       "evidence_snippets": 8
     },
-    "narrative_summary": "Spokane shows strong AI activity with public product launches incorporating AI/ML capabilities, active hiring for AI-focused roles (AI/ML Engineer, Data Scientist), and a modern ML-capable tech stack. Technical footprint: web-detected stack includes AWS, Kubernetes, Python, React. Key signals: broad technical hiring across 8 role categories.",
+    "narrative_summary": "Spokane shows strong AI activity with public product launches incorporating AI/ML capabilities, active hiring for AI-focused roles (AI/ML Engineer, Data Scientist), and a modern ML-capable tech stack. Technical footprint: web-detected stack includes AWS, Python, Java, Redis. Key signals: ~524 employees (~183 engineering est.); identified tech leadership (CTO, VP Eng); AI-relevant team skills: deep learning, machine learning, tensorflow; broad technical hiring across 7 role categories; 1 recent news event.",
     "github": {
       "found": true,
       "org_login": "spokane",
@@ -223,9 +252,63 @@
     },
     "careers": {
       "found": false,
-      "reason": "no_careers_page_found"
+      "reason": "wrong_company"
     },
-    "tech_stack_github_confirmed": []
+    "tech_stack_github_confirmed": [],
+    "talent": {
+      "found": true,
+      "total_profiles_found": 5,
+      "linkedin_profiles_discovered": 7,
+      "leadership": [
+        {
+          "name": "Ken Farr III",
+          "role": "VP of Eng"
+        },
+        {
+          "name": "Michael Jerrow",
+          "role": "Chief Technology Officer"
+        }
+      ],
+      "ai_ml_talent": [],
+      "senior_engineers": [],
+      "engineering_team": [
+        {
+          "name": "Isaiah Weaver",
+          "role": "Software Engineer"
+        }
+      ],
+      "management": [
+        {
+          "name": "View Post",
+          "role": "head"
+        }
+      ],
+      "team_skills": [
+        "agile",
+        "aws",
+        "azure",
+        "deep learning",
+        "java",
+        "javascript",
+        "kubernetes",
+        "machine learning",
+        "python",
+        "snowflake",
+        "sql",
+        "tensorflow"
+      ],
+      "estimated_total_employees": 524,
+      "estimated_eng_team": 183,
+      "talent_summary": {
+        "has_cto": true,
+        "has_vp_eng": true,
+        "has_ai_leadership": false,
+        "ai_ml_headcount": 0,
+        "eng_headcount_discovered": 1,
+        "leadership_headcount": 3,
+        "total_discovered": 5
+      }
+    }
   },
   "Thought Foundry": {
     "ai_initiatives": [
@@ -234,36 +317,53 @@
         "type": "product_launch"
       },
       {
+        "text": "introduced an AI-optimized cloud platform for developers",
+        "type": "product_launch"
+      },
+      {
         "text": "intelligent document processing and machine learning",
         "type": "ai_feature"
       }
     ],
-    "named_products": [
-      "provides AI"
-    ],
+    "named_products": [],
     "tech_stack": [
+      "AWS",
       "Azure",
+      "Kubernetes",
+      "Docker",
+      "Python",
+      "React",
       "Databricks"
     ],
     "named_customers": [
-      "SustainableIT"
+      "SustainableIT",
+      "Linkerd",
+      "Traefik"
     ],
     "recent_news": [],
-    "executives": [],
+    "executives": [
+      {
+        "name": "Timur Insepov",
+        "role": "CEO"
+      }
+    ],
     "hiring_signals": [
       "AI/ML Engineer",
       "Data Scientist",
       "Data Engineer",
-      "NLP Engineer"
+      "NLP Engineer",
+      "Full Stack",
+      "DevOps/SRE",
+      "Backend Engineer"
     ],
     "key_evidence": [
       {
-        "text": "Thought Foundry Financial Services launched an AI product featuring intelligent document processing and machine learning for financial services. The platform enhances data accuracy and automates financial document analysis.",
+        "text": "Thought Foundry Financial Services launched an AI product featuring intelligent document processing and machine learning. Foundry also introduced an AI-optimized cloud platform for developers.",
         "source": "",
         "url": null
       },
       {
-        "text": "Thought Foundry provides AI solutions for business growth, with successful case studies and customer success in financial services. They focus on AI strategy, development, and integration. Their expertise drives innovation and operational excellence.",
+        "text": "Thought Foundry provides AI services, with notable clients like Commerzbank AG and HPE. It specializes in AI strategy and implementation. The company is based in California.",
         "source": "",
         "url": null
       },
@@ -273,29 +373,29 @@
         "url": "https://compworth.com/company/thought-foundry"
       },
       {
-        "text": "Thought Foundry Financial Services announced a $15 million funding round in 2025 and expanded its platform with new features in October 2025. The company focuses on fintech partnerships and technological advancements.",
-        "source": "",
-        "url": null
+        "text": "Thought Foundry appears in search results as Thought Foundry, Thought Foundry Inc, Pixel Thought Foundry LLCThought Foundrie, Thought Foundry LLC...",
+        "source": "datanyze.com",
+        "url": "https://www.datanyze.com/companies/thought-foundry/61014738"
       },
       {
-        "text": "Thought Foundry Financial Services is hiring for AI and machine learning roles, including positions for AI/ML engineers, data scientists, and product engineers.",
+        "text": "Thought Foundry uses React, Kubernetes, and AWS for its tech stack. It also leverages machine learning on Kubernetes. The company focuses on financial services tech.",
         "source": "",
         "url": null
       }
     ],
     "enrichment_stats": {
       "total_results": 36,
-      "relevant_results": 31,
-      "total_text_chars": 49262,
-      "ai_initiatives_found": 2,
-      "tech_stack_signals": 2,
-      "customers_found": 1,
+      "relevant_results": 33,
+      "total_text_chars": 52856,
+      "ai_initiatives_found": 3,
+      "tech_stack_signals": 7,
+      "customers_found": 3,
       "news_events": 0,
-      "executives_found": 0,
-      "hiring_roles_detected": 4,
+      "executives_found": 1,
+      "hiring_roles_detected": 7,
       "evidence_snippets": 5
     },
-    "narrative_summary": "Thought Foundry shows strong AI activity with public product launches incorporating AI/ML capabilities, active hiring for AI-focused roles (AI/ML Engineer, Data Scientist), and a modern ML-capable tech stack. Technical footprint: web-detected stack includes Azure, Databricks. Key signals: broad technical hiring across 4 role categories.",
+    "narrative_summary": "Thought Foundry shows strong AI activity with public product launches incorporating AI/ML capabilities, active hiring for AI-focused roles (AI/ML Engineer, Data Scientist), and a modern ML-capable tech stack. Technical footprint: web-detected stack includes AWS, Azure, Kubernetes, Docker. Key signals: ~999 employees (~349 engineering est.); identified tech leadership (CTO, VP Eng); AI-relevant team skills: deep learning, machine learning; broad technical hiring across 7 role categories.",
     "github": {
       "found": true,
       "org_login": "Thought-Foundry",
@@ -303,14 +403,66 @@
     },
     "careers": {
       "found": false,
-      "reason": "no_careers_page_found"
+      "reason": "wrong_company"
     },
-    "tech_stack_github_confirmed": []
+    "tech_stack_github_confirmed": [],
+    "talent": {
+      "found": true,
+      "total_profiles_found": 4,
+      "linkedin_profiles_discovered": 7,
+      "leadership": [
+        {
+          "name": "Mike Knott",
+          "role": "CTO & VP Engineering"
+        },
+        {
+          "name": "Laith Yousif",
+          "role": "CTO / VP Engineering - LinkedIn"
+        },
+        {
+          "name": "Palantir Foundry",
+          "role": "Director"
+        }
+      ],
+      "ai_ml_talent": [],
+      "senior_engineers": [],
+      "engineering_team": [
+        {
+          "name": "Moser Consulting",
+          "role": "Data Engineer"
+        }
+      ],
+      "management": [],
+      "team_skills": [
+        "aws",
+        "azure",
+        "ci/cd",
+        "deep learning",
+        "java",
+        "jenkins",
+        "machine learning",
+        "python",
+        "spark",
+        "sql",
+        "terraform"
+      ],
+      "estimated_total_employees": 999,
+      "estimated_eng_team": 349,
+      "talent_summary": {
+        "has_cto": true,
+        "has_vp_eng": true,
+        "has_ai_leadership": false,
+        "ai_ml_headcount": 0,
+        "eng_headcount_discovered": 1,
+        "leadership_headcount": 3,
+        "total_discovered": 4
+      }
+    }
   },
   "Champ": {
     "ai_initiatives": [
       {
-        "text": "launched an AI-enabled provider directory to expand its Medicare plans",
+        "text": "launched an AI-enabled provider directory to expand its Medicare Advantage",
         "type": "product_launch"
       },
       {
@@ -319,32 +471,25 @@
       }
     ],
     "named_products": [],
-    "tech_stack": [
-      "AWS",
-      "React"
-    ],
+    "tech_stack": [],
     "named_customers": [],
     "recent_news": [],
     "executives": [
       {
-        "name": "Shane McRann",
-        "role": "CEO"
+        "name": "Scott Dunnewind",
+        "role": "Chief Executive Officer"
       }
     ],
     "hiring_signals": [
       "AI/ML Engineer",
-      "Data Scientist"
+      "Data Scientist",
+      "MLOps"
     ],
     "key_evidence": [
       {
-        "text": "Champ Healthcare launched an AI-enabled provider directory to expand its Medicare plans. The directory uses AI for data ingestion and validation. It offers scalable infrastructure and dynamic search filters.",
+        "text": "Champ Healthcare launched an AI-enabled provider directory to expand its Medicare Advantage plans. The directory uses AI for data ingestion and validation, enhancing network scalability and data integrity.",
         "source": "",
         "url": null
-      },
-      {
-        "text": "LONG BEACH, CA, UNITED STATES, February 24, 2026 /EINPresswire.com/ \u2014 Champion Health Plan, in collaboration with Leap Orbit, today announces the launch of a next-generation, AI-enabled provider directory designed to support continued expansion of it",
-        "source": "thetimesherald.com",
-        "url": "https://www.thetimesherald.com/press-release/story/36110/champion-health-plan-and-leap-orbit-launch-ai-enabled-provider-directory-to-accelerate-growth-and-market-expansion/"
       },
       {
         "text": "\u2014 Jay B. Davis, EVP & COO, Champion Health Plan\n\nLONG BEACH, CA, UNITED STATES, February 24, 2026 /EINPresswire.",
@@ -352,14 +497,19 @@
         "url": "https://www.dnj.com/press-release/story/55622/champion-health-plan-and-leap-orbit-launch-ai-enabled-provider-directory-to-accelerate-growth-and-market-expansion/"
       },
       {
-        "text": "Champ Healthcare/Life Sciences provides data-driven insights for improving healthcare outcomes; notable case studies include neonatal infection prevention and maternal healthcare improvements; the platform emphasizes community-centered interventions.",
-        "source": "",
-        "url": null
+        "text": "LONG BEACH, CA, UNITED STATES, February 24, 2026 /EINPresswire.com/ \u2014 Champion Health Plan, in collaboration with Leap Orbit, today announces the launch of a next-generation, AI-enabled provider directory designed to support continued expansion of it",
+        "source": "freep.com",
+        "url": "https://www.freep.com/press-release/story/158561/champion-health-plan-and-leap-orbit-launch-ai-enabled-provider-directory-to-accelerate-growth-and-market-expansion/"
       },
       {
-        "text": "Healthcare is a business. CHAMP is the mechanism for collecting data that businesses can use to understand the impact of investments and actions.\n\nPatients are healthcare consumers.",
-        "source": "participatorymedicine.org",
-        "url": "https://participatorymedicine.org/champ/"
+        "text": "\u2014 Jay B. Davis, EVP & COO, Champion Health Plan\n\nLONG BEACH, CA, UNITED STATES, February 24, 2026 /EINPresswire.",
+        "source": "lubbockonline.com",
+        "url": "https://www.lubbockonline.com/press-release/story/137432/champion-health-plan-and-leap-orbit-launch-ai-enabled-provider-directory-to-accelerate-growth-and-market-expansion/"
+      },
+      {
+        "text": "Champ Healthcare/Life Sciences is known for impactful case studies addressing health challenges, and it has been used in various successful interventions, including improving maternal and newborn care.",
+        "source": "",
+        "url": null
       },
       {
         "text": "Read more \n\nCASE STUDY\n\nJuly 30, 2024\n\nUtilizing the CHAMPS platform to address health and non-health related issues\n\nCHAMPS findings show high levels of poverty, and socio-economic and systematic challenges, especially in urban townships where CHAMP",
@@ -367,29 +517,29 @@
         "url": "https://www.champshealth.org/case-studies/"
       },
       {
-        "text": "Read more \n\nCASE STUDY\n\nMarch 2, 2026\n\nImpact of sharing cause of death results with mothers and families in improving healthcare seeking behavior and pregnancy outcomes in subsequent pregnancies, Baliakandi, CHAMPS Bangladesh\n\nIn rural Bangladesh, C",
-        "source": "champshealth.org",
-        "url": "https://champshealth.org/"
+        "text": "To provide better work-life balance and develop a sense of fellowship among our CHAMPions, we instituted a number of actions and held a variety of activities.",
+        "source": "champ.usuhs.edu",
+        "url": "https://champ.usuhs.edu/sites/default/files/media/documents/champ_2022_annual_report_081523_508.pdf"
       },
       {
-        "text": "We partnered with top scientists and world-class toothpaste manufacturers to create a product that tastes great, cleans, freshens, whitens \u2014 and delivers breakthrough immunotherapy.",
-        "source": "champ.health",
-        "url": "https://www.champ.health/about-4"
+        "text": "Not met: No formal process has been created at this time. Otherwise, an action plan will be developed to formally conduct case management, oral health services, and the integration of oral health and medical services delivery.\n3.\na.",
+        "source": "mchoralhealth.org",
+        "url": "https://www.mchoralhealth.org/projects/sbcohs/c4oh-appendices.pdf"
       }
     ],
     "enrichment_stats": {
       "total_results": 36,
-      "relevant_results": 19,
-      "total_text_chars": 24282,
+      "relevant_results": 20,
+      "total_text_chars": 25857,
       "ai_initiatives_found": 2,
-      "tech_stack_signals": 3,
+      "tech_stack_signals": 0,
       "customers_found": 0,
       "news_events": 0,
       "executives_found": 1,
-      "hiring_roles_detected": 2,
+      "hiring_roles_detected": 3,
       "evidence_snippets": 8
     },
-    "narrative_summary": "Champ shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: web-detected stack includes AWS, Kubernetes, React. Key signals: hiring signals for AI/ML Engineer, Data Scientist.",
+    "narrative_summary": "Champ shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: 11 public repos (no recent activity) primarily in HCL, Shell, Go. Key signals: ~500 employees (~175 engineering est.); AI-relevant team skills: machine learning, tensorflow; 2 open positions.",
     "github": {
       "found": true,
       "org_login": "champtitles",
@@ -423,25 +573,73 @@
         "Engineering": 2
       },
       "sample_roles": [
-        "Solutions\n\nI",
-        "Solutions"
+        "Software Engineer",
+        "Senior Developer"
       ],
       "ai_roles": []
     },
-    "tech_stack_github_confirmed": []
+    "tech_stack_github_confirmed": [],
+    "talent": {
+      "found": true,
+      "total_profiles_found": 4,
+      "linkedin_profiles_discovered": 6,
+      "leadership": [],
+      "ai_ml_talent": [],
+      "senior_engineers": [],
+      "engineering_team": [
+        {
+          "name": "GE HealthCare",
+          "role": "Senior Software Engineer"
+        },
+        {
+          "name": "Applied Industrial",
+          "role": "Senior Software Developer"
+        },
+        {
+          "name": "AmTrust Financial",
+          "role": "Senior Software Engineer"
+        },
+        {
+          "name": "LayerZero Power",
+          "role": "Senior Software Engineer"
+        }
+      ],
+      "management": [],
+      "team_skills": [
+        "agile",
+        "aws",
+        "azure",
+        "databricks",
+        "gcp",
+        "java",
+        "machine learning",
+        "python",
+        "react",
+        "sql",
+        "tensorflow",
+        "typescript"
+      ],
+      "estimated_total_employees": 500,
+      "estimated_eng_team": 175,
+      "talent_summary": {
+        "has_cto": false,
+        "has_vp_eng": false,
+        "has_ai_leadership": false,
+        "ai_ml_headcount": 0,
+        "eng_headcount_discovered": 4,
+        "leadership_headcount": 0,
+        "total_discovered": 4
+      }
+    }
   },
   "Primate": {
     "ai_initiatives": [
       {
-        "text": "launched AI-powered tools for financial advisors",
+        "text": "launched an AI-powered financial analytics tool for Southeast Asian SMEs",
         "type": "product_launch"
       },
       {
-        "text": "AI-powered tools for financial advisors",
-        "type": "ai_feature"
-      },
-      {
-        "text": "intelligent automation and predictive analytics",
+        "text": "AI-powered financial analytics tool for Southeast A",
         "type": "ai_feature"
       }
     ],
@@ -451,17 +649,18 @@
     "recent_news": [],
     "executives": [
       {
-        "name": "Sara Wise",
+        "name": "Andrew Browning",
         "role": "Chief Technology Officer"
       }
     ],
     "hiring_signals": [
       "AI/ML Engineer",
-      "Data Scientist"
+      "Data Scientist",
+      "AI Researcher"
     ],
     "key_evidence": [
       {
-        "text": "Primate Financial Services launched AI-powered tools for financial advisors, including intelligent automation and predictive analytics. PrimateAI-3D predicts disease-causing genetic mutations.",
+        "text": "Primate Financial Services launched an AI-powered financial analytics tool for Southeast Asian SMEs, leveraging machine learning for financial modeling and forecasting. The tool aims to help businesses make data-driven decisions.",
         "source": "",
         "url": null
       },
@@ -471,49 +670,49 @@
         "url": "https://www.illumina.com/company/news-center/press-releases/press-release-details.html?newsid=b067ea3b-be0e-4318-a910-6bd659e0d232"
       },
       {
-        "text": "Primate Financial Services is not mentioned in the retrieved data. Known facts: no customer testimonials or success stories found.",
+        "text": "Primate Financial Services is a financial technology company. It offers solutions to improve payment processing and compliance. Testimonials and success stories highlight its effectiveness in various financial sectors.",
         "source": "",
         "url": null
       },
       {
-        "text": "Call or email us at info@suncoast-primate.org today to become a sponsor! \n\np: (727) 943.5897\n\nA COPY OF THE OFFICIAL REGISTRATION AND FINANCIAL INFORMATION MAY BE OBTAINED FROM THE DIVISION OF CONSUMER SERVICES BY CALLING TOLL-FREE, WITHIN THE STATE,",
-        "source": "suncoast-primate.org",
-        "url": "https://www.suncoast-primate.org/support/sponsorships"
+        "text": "Contract research organizations like Alpha Genesis, which sell services to government and private clients, have more flexibility. CROs now account for 56,000 of the nation\u2019s monkeys.",
+        "source": "postandcourier.com",
+        "url": "https://www.postandcourier.com/news/special_reports/monkey-primate-research-alpha-genesis-yemassee-sc/article_1a0466cf-5944-4601-9e65-e77c2c52771e.html"
       },
       {
-        "text": "Primate Financial Services has not announced any partnerships, acquisitions, funding rounds, or product launches in 2024 or 2025. The latest known activity is a Q1 2025 presentation by Roche.",
+        "text": "- New non-human primate (NHP) data for VRDN-008, a next-generation bispecific neonatal Fc receptor (FcRn) inhibitor, demonstrates a potential best-in-class pharmacokinetic (PK) and pharmacodynamic (PD) profile; Investigational New Drug (IND) submissi",
+        "source": "investors.viridiantherapeutics.com",
+        "url": "https://investors.viridiantherapeutics.com/news/news-details/2024/Viridian-Therapeutics-Reports-Third-Quarter-2024-Financial-Results-and-Recent-Progress-Including-New-FcRn-Data/default.aspx"
+      },
+      {
+        "text": "Primate Financial Services is hiring for machine learning and AI roles, including positions for AI engineers and data scientists. Positions are available in various locations, including remote roles.",
         "source": "",
         "url": null
       },
       {
-        "text": "Primate Financial Services is hiring for machine learning and AI engineering roles, including ML Engineer and Data Scientist positions. These roles require expertise in machine learning and data science, with competitive salaries and benefits.",
-        "source": "",
-        "url": null
+        "text": "AI Search Logo\n\nPosted on 2025/02/27\n\n# AI Workload Engineer\n\nPrimate Labs\n\nToronto, ON\n\n## Full Description\n\n\u2022 Company Overview\\\n\nPrimate Labs is a software company that develops benchmark applications for desktop and mobile platforms.",
+        "source": "ai-search.io",
+        "url": "https://ai-search.io/job-board/primate-labs-ai-workload-engineer-20250227"
       },
       {
-        "text": "The Primate Financial Services leadership includes a Chief Technology Officer and a VP of engineering. The CTO is responsible for technology strategy and development. The VP of engineering oversees engineering operations and initiatives.",
+        "text": "Andrew Browning is the Chief Technology Officer at Primate Financial Services. FactSet appointed Kate Stepp as Chief AI Officer and Bob Stolte as Chief Technology Officer.",
         "source": "",
         "url": null
-      },
-      {
-        "text": "Search Bar\n\n# Leadership\n\n## Administrative Leadership\n\n Officers\n\nDr. Larry S. Schlesinger  \n President and Chief Executive Officer\n\nBruce Edwards  \n Executive Vice President, Finance & Administration and Chief Financial Officer\n\n Administration\n\nDr",
-        "source": "txbiomed.org",
-        "url": "https://www.txbiomed.org/about/leadership/"
       }
     ],
     "enrichment_stats": {
       "total_results": 36,
-      "relevant_results": 8,
-      "total_text_chars": 6031,
-      "ai_initiatives_found": 3,
+      "relevant_results": 9,
+      "total_text_chars": 10833,
+      "ai_initiatives_found": 2,
       "tech_stack_signals": 0,
       "customers_found": 0,
       "news_events": 0,
       "executives_found": 1,
-      "hiring_roles_detected": 2,
+      "hiring_roles_detected": 3,
       "evidence_snippets": 8
     },
-    "narrative_summary": "Primate shows moderate AI engagement with 3 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. No public GitHub presence or detectable tech stack \u2014 engineering practices are opaque from external research. Key signals: hiring signals for AI/ML Engineer, Data Scientist; identified tech leadership: Sara Wise (Chief Technology Officer).",
+    "narrative_summary": "Primate shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: 30 public repos (27 recently active) primarily in TypeScript, JavaScript, Vue. Key signals: hiring signals for AI/ML Engineer, Data Scientist, AI Researcher; identified tech leadership: Andrew Browning (Chief Technology Officer).",
     "github": {
       "found": true,
       "org_login": "primate-run",
@@ -611,7 +810,37 @@
       "found": false,
       "reason": "no_careers_page_found"
     },
-    "tech_stack_github_confirmed": []
+    "tech_stack_github_confirmed": [],
+    "talent": {
+      "found": false,
+      "total_profiles_found": 0,
+      "linkedin_profiles_discovered": 6,
+      "leadership": [],
+      "ai_ml_talent": [],
+      "senior_engineers": [],
+      "engineering_team": [],
+      "management": [],
+      "team_skills": [
+        "aws",
+        "deep learning",
+        "machine learning",
+        "python",
+        "pytorch",
+        "react",
+        "tensorflow"
+      ],
+      "estimated_total_employees": 50,
+      "estimated_eng_team": 17,
+      "talent_summary": {
+        "has_cto": false,
+        "has_vp_eng": false,
+        "has_ai_leadership": false,
+        "ai_ml_headcount": 0,
+        "eng_headcount_discovered": 0,
+        "leadership_headcount": 0,
+        "total_discovered": 0
+      }
+    }
   },
   "Track Star": {
     "ai_initiatives": [],
@@ -624,38 +853,28 @@
     ],
     "named_customers": [],
     "recent_news": [],
-    "executives": [
-      {
-        "name": "Amir Preminger",
-        "role": "Chief Technology Officer"
-      }
-    ],
+    "executives": [],
     "hiring_signals": [
       "AI/ML Engineer",
       "Data Scientist",
+      "AI Product Manager",
       "Data Engineer",
       "MLOps",
-      "Full Stack",
       "DevOps/SRE"
     ],
     "key_evidence": [
       {
-        "text": "Track Star Financial Services has received positive testimonials for credit restoration and lending services. Notable success stories include improved credit scores and expanded lending programs.",
+        "text": "Track Star Financial Services has received positive testimonials for its customer success and integrations. Companies highlight improved operations and customer satisfaction. Track Star's services are praised for their reliability and ease of use.",
         "source": "",
         "url": null
       },
       {
-        "text": "Track Star Financial Services is hiring for AI/ML Engineer positions in New York, NY. Adidev Technologies Inc. also seeks Machine Learning/AI Engineers. Statera is looking for a Machine Learning Engineer/Data Scientist.",
+        "text": "Track Star Financial Services is hiring for AI/ML Engineer, data scientist, and ML engineer roles. Positions emphasize advanced machine learning and AI expertise. Competitive salaries and benefits offered.",
         "source": "",
         "url": null
       },
       {
-        "text": "Track Star's leadership includes CTOs and VPs in engineering and AI. Key figures include John Maeda and Sarah Bird from Microsoft. Amir Preminger is the Chief Technology Officer at Claroty.",
-        "source": "",
-        "url": null
-      },
-      {
-        "text": "Track Star uses Python, React, and AWS in its tech stack. It also leverages AI for data quality and financial services. The company focuses on supply chain integrations.",
+        "text": "Track Star Financial Services uses AWS for infrastructure, Python and React for development, and Kubernetes for orchestration.",
         "source": "",
         "url": null
       }
@@ -663,16 +882,16 @@
     "enrichment_stats": {
       "total_results": 36,
       "relevant_results": 31,
-      "total_text_chars": 46170,
+      "total_text_chars": 41994,
       "ai_initiatives_found": 0,
-      "tech_stack_signals": 7,
+      "tech_stack_signals": 5,
       "customers_found": 0,
       "news_events": 0,
-      "executives_found": 1,
+      "executives_found": 0,
       "hiring_roles_detected": 6,
-      "evidence_snippets": 4
+      "evidence_snippets": 3
     },
-    "narrative_summary": "Track Star appears to be building AI capability \u2014 hiring signals for AI/ML Engineer, Data Scientist detected, but no public AI product launches or features identified yet. Technical footprint: web-detected stack includes AWS, Azure, GCP, Kubernetes. Key signals: broad technical hiring across 6 role categories; identified tech leadership: Amir Preminger (Chief Technology Officer).",
+    "narrative_summary": "Track Star appears to be building AI capability \u2014 hiring signals for AI/ML Engineer, Data Scientist detected, but no public AI product launches or features identified yet. Technical footprint: 3 public repos (3 recently active) primarily in C++, Python, Kotlin; GitHub-confirmed stack: Python. Key signals: ~50 employees (~17 engineering est.); identified tech leadership (CTO, VP Eng); AI-relevant team skills: deep learning, machine learning, pytorch; broad technical hiring across 6 role categories.",
     "github": {
       "found": true,
       "org_login": "OG-star-tech",
@@ -720,13 +939,81 @@
     },
     "tech_stack_github_confirmed": [
       "Python"
-    ]
+    ],
+    "talent": {
+      "found": true,
+      "total_profiles_found": 4,
+      "linkedin_profiles_discovered": 9,
+      "leadership": [
+        {
+          "name": "Christopher Beach",
+          "role": "CTO"
+        },
+        {
+          "name": "Technology Executive",
+          "role": "VP of Engineering"
+        },
+        {
+          "name": "Corporate Development",
+          "role": "Director"
+        }
+      ],
+      "ai_ml_talent": [],
+      "senior_engineers": [
+        {
+          "name": "Oleg Paliivets",
+          "role": "VP, Head of Data Architecture and Engineering ..."
+        }
+      ],
+      "engineering_team": [],
+      "management": [],
+      "team_skills": [
+        "aws",
+        "ci/cd",
+        "databricks",
+        "deep learning",
+        "kubernetes",
+        "machine learning",
+        "python",
+        "pytorch",
+        "react",
+        "scrum",
+        "snowflake",
+        "sql",
+        "tensorflow"
+      ],
+      "estimated_total_employees": 50,
+      "estimated_eng_team": 17,
+      "talent_summary": {
+        "has_cto": true,
+        "has_vp_eng": true,
+        "has_ai_leadership": false,
+        "ai_ml_headcount": 0,
+        "eng_headcount_discovered": 1,
+        "leadership_headcount": 3,
+        "total_discovered": 4
+      }
+    }
   },
   "SMRTR": {
-    "ai_initiatives": [],
+    "ai_initiatives": [
+      {
+        "text": "launched AI advisory services for financial institutions",
+        "type": "product_launch"
+      },
+      {
+        "text": "AI-powered innovation program for smart operations",
+        "type": "ai_feature"
+      }
+    ],
     "named_products": [],
     "tech_stack": [],
-    "named_customers": [],
+    "named_customers": [
+      "News Corp",
+      "NBN Co",
+      "AMP",
+      "Miele"
+    ],
     "recent_news": [],
     "executives": [
       {
@@ -734,16 +1021,26 @@
         "role": "CEO"
       },
       {
+        "name": "Sangeeth Ponathil",
+        "role": "Chief Information Officer"
+      },
+      {
         "name": "Stef Merks",
-        "role": "CTO"
+        "role": "Co-Founder"
       }
     ],
     "hiring_signals": [
+      "AI/ML Engineer",
       "Data Scientist"
     ],
     "key_evidence": [
       {
-        "text": "SMRTR Financial Services is praised for exceptional support and customer satisfaction. Testimonials highlight reliable, efficient solutions and strong customer service. SMRTR's transparency builds consumer trust.",
+        "text": "SMRTR Financial Services launched AI advisory services for financial institutions, focusing on compliance and risk mitigation. SmartRent introduced a $10M AI-powered innovation program for smart operations.",
+        "source": "",
+        "url": null
+      },
+      {
+        "text": "SMRTR Financial Services is praised for its reliable document management and financial automation solutions, with testimonials highlighting exceptional support and efficiency.",
         "source": "",
         "url": null
       },
@@ -753,49 +1050,44 @@
         "url": "https://smrtrsolutions.com/"
       },
       {
-        "text": "Consumer feedback plays a pivotal role in this process. By gathering and analyzing feedback from the end-users, SMRTR can identify any issues or pain points that users may encounter while interacting with their software.",
-        "source": "smrtrsolutions.com",
-        "url": "https://smrtrsolutions.com/2024/03/09/what-is-the-purpose-of-conducting-product-testing/"
-      },
-      {
         "text": "April 28, 2024\n\nIn an increasingly digital and interconnected marketplace, the concept of transparency has become a cornerstone in the foundation of consumer trust.",
         "source": "smrtrsolutions.com",
         "url": "https://smrtrsolutions.com/2024/04/28/how-does-transparency-affect-consumer-trust/"
       },
       {
-        "text": "In conclusion, Personalized Customer Experience, as facilitated by Predictive Analytics in ePOD Data Insights, is a game-changer for companies like SMRTR.",
+        "text": "Accounts payable and receivable automation services offered by SMRTR also play a vital role in maintaining transparency.",
         "source": "smrtrsolutions.com",
-        "url": "https://smrtrsolutions.com/2024/06/04/what-are-the-major-benefits-of-using-predictive-analytics-in-epod-data-insights/"
+        "url": "https://smrtrsolutions.com/2024/04/02/how-to-maintain-financial-transparency-in-an-organization/"
       },
       {
-        "text": "SMRTR Financial Services is hiring for machine learning and AI roles, including data scientists and engineers, with competitive salaries and remote opportunities. Positions require expertise in frameworks like TensorFlow and Python.",
+        "text": "Firstly, we will delve into how meticulously designed supplier selection and evaluation criteria are essential for setting the stage for compliance from the onset.",
+        "source": "smrtrsolutions.com",
+        "url": "https://smrtrsolutions.com/2024/04/05/how-can-supplier-compliance-reduce-supply-chain-risks/"
+      },
+      {
+        "text": "SMRTR Financial Services hires machine learning and AI engineers, data scientists, and ML engineers for roles focused on fintech and data analytics. Positions include senior roles with competitive salaries.",
         "source": "",
         "url": null
       },
       {
-        "text": "Georgie Brooke is the CEO of SMRTR Financial Services; Stef Merks is the CTO; no chief AI or VP engineering roles are mentioned.",
-        "source": "",
-        "url": null
-      },
-      {
-        "text": "Craft\n\nCompany\n\n Home\n / smrtr\n / Executives\n\nsmrtr\n\n Overview\n Locations\n Financials\n Operating Metrics\n Human Capital\n Key People\n Competitors\n Supplier Risk\n\n# smrtr CEO and Key Executive Team\n\nHeader placeholder lorem ipsum dolor sit amet, consec",
-        "source": "craft.co",
-        "url": "https://craft.co/smrtr/executives"
+        "text": "## Atlassian to cut roughly 1600 jobs\n\nServices Australia describes fraud, debt-related machine learning use cases\n\n## Services Australia describes fraud, debt-related machine learning use cases\n\ntechpartner.",
+        "source": "itnews.com.au",
+        "url": "https://www.itnews.com.au/news/stockland-invests-25-million-in-data-startup-smrtr-561705"
       }
     ],
     "enrichment_stats": {
       "total_results": 36,
-      "relevant_results": 9,
-      "total_text_chars": 11124,
-      "ai_initiatives_found": 0,
-      "tech_stack_signals": 0,
-      "customers_found": 0,
+      "relevant_results": 12,
+      "total_text_chars": 12407,
+      "ai_initiatives_found": 2,
+      "tech_stack_signals": 1,
+      "customers_found": 4,
       "news_events": 0,
-      "executives_found": 2,
-      "hiring_roles_detected": 1,
+      "executives_found": 3,
+      "hiring_roles_detected": 2,
       "evidence_snippets": 8
     },
-    "narrative_summary": "SMRTR appears to be building AI capability \u2014 hiring signals for Data Scientist detected, but no public AI product launches or features identified yet. No public GitHub presence or detectable tech stack \u2014 engineering practices are opaque from external research. Key signals: hiring signals for Data Scientist.",
+    "narrative_summary": "SMRTR shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: 5 public repos (no recent activity) primarily in PHP. Key signals: hiring signals for AI/ML Engineer, Data Scientist.",
     "github": {
       "found": true,
       "org_login": "smrtr",
@@ -849,69 +1141,82 @@
       "found": false,
       "reason": "no_careers_page_found"
     },
-    "tech_stack_github_confirmed": []
+    "tech_stack_github_confirmed": [],
+    "talent": {
+      "found": false,
+      "total_profiles_found": 0,
+      "linkedin_profiles_discovered": 3,
+      "leadership": [],
+      "ai_ml_talent": [],
+      "senior_engineers": [],
+      "engineering_team": [],
+      "management": [],
+      "team_skills": [
+        "azure",
+        "databricks",
+        "hadoop",
+        "java",
+        "machine learning",
+        "mongodb",
+        "postgresql",
+        "python",
+        "pytorch",
+        "react",
+        "spark",
+        "sql",
+        "tensorflow"
+      ],
+      "estimated_total_employees": 200,
+      "estimated_eng_team": 70,
+      "talent_summary": {
+        "has_cto": false,
+        "has_vp_eng": false,
+        "has_ai_leadership": false,
+        "ai_ml_headcount": 0,
+        "eng_headcount_discovered": 0,
+        "leadership_headcount": 0,
+        "total_discovered": 0
+      }
+    }
   },
   "FMSI": {
     "ai_initiatives": [
       {
-        "text": "AI-powered financial calculators to enhance credit",
+        "text": "AI-powered tools",
         "type": "ai_feature"
-      },
-      {
-        "text": "generative AI to boost customer confidence a",
-        "type": "genai_feature"
       },
       {
         "text": "AI-powered financial calculators are gaining tracti",
         "type": "ai_feature"
+      },
+      {
+        "text": "AI-powered financial calculators gives credit union",
+        "type": "ai_feature"
       }
     ],
     "named_products": [
-      "team",
-      "OneCX"
+      "team"
     ],
     "tech_stack": [
-      "Kubernetes"
+      "Kubernetes",
+      "Segment"
     ],
     "named_customers": [],
-    "recent_news": [
-      "in 2017, FMSI benefits from the backing of a major player in workforce management, indicating stability and potential for expanded product offerings a",
-      "FMSI announced a partnership with staffing acquisition experts in 2024."
-    ],
+    "recent_news": [],
     "executives": [
       {
-        "name": "Eric Garza",
-        "role": "founder"
-      },
-      {
-        "name": "Ryan Sturm",
-        "role": "president"
-      },
-      {
-        "name": "Mark Hewitt",
-        "role": "founder"
+        "name": "Nicolas Busch",
+        "role": "CEO"
       }
     ],
     "hiring_signals": [
-      "AI/ML Engineer",
-      "Data Scientist",
       "DevOps/SRE"
     ],
     "key_evidence": [
       {
-        "text": "FMSI announced a partnership with Appli, integrating AI-powered financial calculators to enhance credit union branches' revenue. Appli's tools use generative AI to boost customer confidence and conversion rates.",
+        "text": "FMSI announced a partnership with Appli to enhance credit union branches' revenue through AI-powered tools. The collaboration leverages AI for financial calculators and branch performance management.",
         "source": "",
         "url": null
-      },
-      {
-        "text": "7,688 followers [...] Agree & Join LinkedIn\n\nBy clicking Continue to join or sign in, you agree to LinkedIn\u2019s User Agreement, Privacy Policy, and Cookie Policy.",
-        "source": "linkedin.com",
-        "url": "https://www.linkedin.com/posts/fmsi_were-pleased-to-announce-a-new-partnership-activity-7422273542437707778-ZjjJ"
-      },
-      {
-        "text": "Legal Disclaimer:\n\nEIN Presswire provides this news content \u201cas is\u201d without warranty of any kind. We do not accept any responsibility or liability  \n for the accuracy, content, images, videos, licenses, completeness, legality, or reliability of the i",
-        "source": "lohud.com",
-        "url": "https://www.lohud.com/press-release/story/144122/fmsi-relaunches-bringing-renewed-focus-to-branch-performance-for-banks-and-credit-unions/"
       },
       {
         "text": "SALT LAKE CITY, UT, UNITED STATES, March 16, 2026 /EINPresswire.com/ \u2014 FMSI, a provider of branch performance and workforce management software for financial institutions, and Appli, whose AI-powered financial calculators are gaining traction across ",
@@ -924,7 +1229,7 @@
         "url": "https://www.pressconnects.com/press-release/story/43313/fmsi-and-appli-partner-to-help-credit-union-branches-drive-member-revenue/"
       },
       {
-        "text": "FMSI Financial Services provides software solutions to enhance financial institutions' productivity and collaboration. FMSI was acquired by Kronos in 2017, boosting its market presence. FMSI's tools include FMSI Appointments and FMSI Analytics.",
+        "text": "FMSI Financial Services helps banks and credit unions improve operations and customer experiences. They partner to provide financial analytics and strategies. FMSI's solutions enhance net interest margins and manage interest rate risks.",
         "source": "",
         "url": null
       },
@@ -934,54 +1239,87 @@
         "url": "https://www.koncert.com/case-studies-archive/fmsi-cuts-appointment-setting-costs-with-connectleader-outbound-calling-solutions"
       },
       {
-        "text": "March 16, 2026\n\nInfluential Women Profiles Tara Hooey: Experienced Customer Success Leader Driving Enterprise Impact and Innovation\n\n### Influential Women Profiles Tara Hooey: Experienced Customer Success Leader Driving Enterprise Impact and Innovati",
-        "source": "blufftontoday.com",
-        "url": "https://www.blufftontoday.com/press-release/story/60914/fmsi-and-appli-partner-to-help-credit-union-branches-drive-member-revenue/"
+        "text": "2025 has been an important year for FMSI, and we are grateful for the relationships we have built and the progress we have made together.",
+        "source": "linkedin.com",
+        "url": "https://www.linkedin.com/company/fmsi"
+      },
+      {
+        "text": "Home Icons.png\n\nPlan & Control Liquidity\n\n## What We Do\n\nFinancial Management Services, Inc. (FMSI) partners with financial institutions to provide executive support with proprietary, independent financial analytics and strategies.",
+        "source": "fmsiconsulting.com",
+        "url": "https://www.fmsiconsulting.com/"
+      },
+      {
+        "text": "Bob Hughes, chief strategy officer, Kronos  \n   \u201cKronos\u2019 acquisition of FMSI demonstrates our commitment to helping financial services organizations, especially credit unions and retail banks, more effectively manage their most valuable asset \u2013 the w",
+        "source": "jmi.com",
+        "url": "https://www.jmi.com/kronos-acquires-financial-management-solutions-inc-deepen-financial-services-industry-expertise/"
       }
     ],
     "enrichment_stats": {
       "total_results": 36,
       "relevant_results": 20,
-      "total_text_chars": 26732,
+      "total_text_chars": 27064,
       "ai_initiatives_found": 3,
-      "tech_stack_signals": 1,
+      "tech_stack_signals": 2,
       "customers_found": 0,
-      "news_events": 2,
-      "executives_found": 3,
-      "hiring_roles_detected": 3,
+      "news_events": 0,
+      "executives_found": 1,
+      "hiring_roles_detected": 1,
       "evidence_snippets": 8
     },
-    "narrative_summary": "FMSI shows moderate AI engagement with 3 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: web-detected stack includes Kubernetes. Key signals: hiring signals for AI/ML Engineer, Data Scientist, DevOps/SRE; 2 recent news events.",
+    "narrative_summary": "FMSI references AI capabilities in public materials, but limited evidence of dedicated AI infrastructure, hiring, or ML tooling suggests these may be aspirational or vendor-integrated features. Technical footprint: web-detected stack includes Kubernetes, Segment. Key signals: ~200 employees (~70 engineering est.); identified tech leadership (CTO); AI-relevant team skills: machine learning; hiring signals for DevOps/SRE.",
     "github": {
       "found": true,
       "org_login": "fmsi-dev",
       "org_url": "https://github.com/fmsi-dev"
     },
     "careers": {
-      "found": true,
-      "careers_url": "https://interface.ai/careers",
-      "total_openings": 8,
-      "ai_ml_openings": 0,
-      "departments": {
-        "Infrastructure": 1,
-        "Security": 1,
-        "Engineering": 3,
-        "Product & Design": 2,
-        "Marketing": 1
-      },
-      "sample_roles": [
-        "Platform",
-        "Security",
-        "Solutions",
-        "Customer",
-        "Head of Product",
-        "VP of Engineering",
-        "VP of Marketing",
-        "Lead Product Manager"
-      ],
-      "ai_roles": []
+      "found": false,
+      "reason": "wrong_company"
     },
-    "tech_stack_github_confirmed": []
+    "tech_stack_github_confirmed": [],
+    "talent": {
+      "found": true,
+      "total_profiles_found": 2,
+      "linkedin_profiles_discovered": 2,
+      "leadership": [
+        {
+          "name": "James Reggio",
+          "role": "CTO"
+        }
+      ],
+      "ai_ml_talent": [],
+      "senior_engineers": [
+        {
+          "name": "Cloud Architect",
+          "role": "Solutions Architect"
+        }
+      ],
+      "engineering_team": [],
+      "management": [],
+      "team_skills": [
+        "agile",
+        "aws",
+        "azure",
+        "databricks",
+        "java",
+        "javascript",
+        "machine learning",
+        "python",
+        "spark",
+        "sql"
+      ],
+      "estimated_total_employees": 200,
+      "estimated_eng_team": 70,
+      "talent_summary": {
+        "has_cto": true,
+        "has_vp_eng": false,
+        "has_ai_leadership": false,
+        "ai_ml_headcount": 0,
+        "eng_headcount_discovered": 1,
+        "leadership_headcount": 1,
+        "total_discovered": 2
+      }
+    }
   },
   "Cairn Applications": {
     "ai_initiatives": [],
@@ -993,7 +1331,7 @@
       "Kubernetes",
       "Python",
       "React",
-      "TensorFlow"
+      "OpenAI"
     ],
     "named_customers": [],
     "recent_news": [
@@ -1003,21 +1341,25 @@
       {
         "name": "James Moser",
         "role": "Founder"
+      },
+      {
+        "name": "Scott Cairns",
+        "role": "Chief Technology Officer"
       }
     ],
     "hiring_signals": [
       "AI/ML Engineer",
-      "Data Scientist",
+      "Data Engineer",
       "NLP Engineer"
     ],
     "key_evidence": [
       {
-        "text": "Cairn Applications Enterprise Software is used by various companies to improve efficiency and reduce costs, with notable success stories in hospitality and healthcare sectors.",
+        "text": "Cairn Applications Enterprise Software is used by various companies for operational efficiency, with testimonials highlighting improved customer service and cost savings. Notable users include a mid-sized funeral home and a hotel group.",
         "source": "",
         "url": null
       },
       {
-        "text": "Solen Software Group acquired Cairn Applications in December 2025. Cairn will continue operating autonomously under Solen's ownership. No further major announcements or partnerships are known as of 2026.",
+        "text": "Solen Software Group acquired Cairn Applications in December 2025. Cairn Applications will continue operating autonomously under Solen's ownership. The financial terms of the acquisition were not disclosed.",
         "source": "",
         "url": null
       },
@@ -1034,27 +1376,32 @@
       {
         "text": "Synopsis\n\nSolen Software Group, a group of software operators and investors, completed the acquisition of Cairn Applications, a provider of cloud software purpose-built for the waste hauling industry. Financial terms were not disclosed.",
         "source": "app.mergerlinks.com",
-        "url": "https://app.mergerlinks.com/transactions/2026-01-27-cairn-applications-inc/dealmakers"
+        "url": "https://app.mergerlinks.com/transactions/2026-01-27-cairn-applications-inc"
       },
       {
-        "text": "Cairn Applications Enterprise Software is hiring for machine learning and AI roles, including data scientists and ML engineers. Positions require advanced degrees and experience in deep learning frameworks and cloud deployment.",
+        "text": "Cairn Applications Enterprise Software is hiring for machine learning and AI roles. They focus on enterprise solutions and data science consulting. Check their latest job postings for specific openings.",
+        "source": "",
+        "url": null
+      },
+      {
+        "text": "Scott Cairns is the Chief Technology Officer at Atos. Ryan Cairns works at Meta. Cairn Applications offers a Virtual Chief AI Officer service.",
         "source": "",
         "url": null
       }
     ],
     "enrichment_stats": {
       "total_results": 36,
-      "relevant_results": 31,
-      "total_text_chars": 47312,
+      "relevant_results": 33,
+      "total_text_chars": 49560,
       "ai_initiatives_found": 0,
       "tech_stack_signals": 5,
       "customers_found": 0,
       "news_events": 1,
-      "executives_found": 1,
+      "executives_found": 2,
       "hiring_roles_detected": 3,
-      "evidence_snippets": 6
+      "evidence_snippets": 7
     },
-    "narrative_summary": "Cairn Applications appears to be building AI capability \u2014 hiring signals for AI/ML Engineer, Data Scientist detected, but no public AI product launches or features identified yet. Technical footprint: web-detected stack includes AWS, Kubernetes, Python, React. Key signals: hiring signals for AI/ML Engineer, Data Scientist, NLP Engineer; 1 recent news event.",
+    "narrative_summary": "Cairn Applications appears to be building AI capability \u2014 hiring signals for AI/ML Engineer, NLP Engineer detected, but no public AI product launches or features identified yet. Technical footprint: web-detected stack includes AWS, Kubernetes, Python, React. Key signals: ~3,000 employees (~1,050 engineering est.); 1 AI/ML specialists discovered on LinkedIn; AI-relevant team skills: deep learning, machine learning; hiring signals for AI/ML Engineer, Data Engineer, NLP Engineer; 1 recent news event.",
     "github": {
       "found": true,
       "org_login": "cairnapps",
@@ -1064,30 +1411,83 @@
       "found": false,
       "reason": "no_careers_page_found"
     },
-    "tech_stack_github_confirmed": []
+    "tech_stack_github_confirmed": [],
+    "talent": {
+      "found": true,
+      "total_profiles_found": 4,
+      "linkedin_profiles_discovered": 7,
+      "leadership": [],
+      "ai_ml_talent": [
+        {
+          "name": "Charles Jacob Tan",
+          "role": "Data Scientist, Cairns Oneil Strategic Media"
+        }
+      ],
+      "senior_engineers": [],
+      "engineering_team": [
+        {
+          "name": "Sean Cairns",
+          "role": "Senior Software Engineer"
+        },
+        {
+          "name": "Andreas Roeseler",
+          "role": "Senior Software Engineer"
+        }
+      ],
+      "management": [
+        {
+          "name": "Scott Cairns",
+          "role": "Head of Technology Strategy & Innovation - LinkedIn"
+        }
+      ],
+      "team_skills": [
+        "agile",
+        "aws",
+        "deep learning",
+        "gcp",
+        "java",
+        "machine learning",
+        "python",
+        "react",
+        "spark"
+      ],
+      "estimated_total_employees": 3000,
+      "estimated_eng_team": 1050,
+      "talent_summary": {
+        "has_cto": false,
+        "has_vp_eng": false,
+        "has_ai_leadership": false,
+        "ai_ml_headcount": 1,
+        "eng_headcount_discovered": 2,
+        "leadership_headcount": 1,
+        "total_discovered": 4
+      }
+    }
   },
   "ViaPeople": {
     "ai_initiatives": [
       {
-        "text": "launched AI-powered features for performance management",
+        "text": "launched AI-powered features for performance management and instant ins",
         "type": "product_launch"
       },
       {
-        "text": "AI-powered features for performance management",
+        "text": "AI-powered features for performance management and",
         "type": "ai_feature"
       }
     ],
-    "named_products": [],
+    "named_products": [
+      "software"
+    ],
     "tech_stack": [],
     "named_customers": [],
     "recent_news": [],
     "executives": [],
     "hiring_signals": [
-      "Full Stack"
+      "AI/ML Engineer"
     ],
     "key_evidence": [
       {
-        "text": "ViaPeople launched AI-powered features for performance management, including AI Instant Insights for feedback summaries. The platform uses machine learning to enhance workforce productivity.",
+        "text": "ViaPeople launched AI-powered features for performance management and instant insights. The AI tools enhance feedback and streamline performance reviews. These innovations aim to improve workforce productivity and efficiency.",
         "source": "",
         "url": null
       },
@@ -1102,7 +1502,7 @@
         "url": "https://www.viapeople.com/blog/5-key-strategies-for-integrating-ai-into-performance-management"
       },
       {
-        "text": "ViaPeople HR/Workforce is praised for its customizable software and exceptional customer service. Clients highlight its intuitive UI and expert support. Success stories emphasize its tailored solutions and positive impact on talent management.",
+        "text": "ViaPeople HR/Workforce is praised for its customizable software and exceptional customer service. Clients highlight its intuitive UI and expert support. Success stories include Starwood Hotels and Frankenmuth Insurance.",
         "source": "",
         "url": null
       },
@@ -1117,29 +1517,29 @@
         "url": "https://www.viapeople.com/"
       },
       {
+        "text": "by Karen N. Caruso, Ph.D.\n\n5 min read\n\nFebruary 10, 2022\n\nHand of HR or people ops team lead on keyboard with lines of code overlaid showing them implementing a new people management software \n\nHR Software Workforce Analytics\n\n### Case Study: Starwoo",
+        "source": "viapeople.com",
+        "url": "https://www.viapeople.com/blog/topic/workforce-analytics"
+      },
+      {
         "text": "## Concierge Service Where Every Customer Is a VIP\n\nAt viaPeople, every customer receives the same VIP treatment.",
         "source": "viapeople.com",
         "url": "https://www.viapeople.com/approach"
-      },
-      {
-        "text": "+ Talent Library\n  + Blog\n\nSchedule Now\n\nAll Topics Performance Management Performance Evaluation 360 Degree Feedback Succession Planning Talent Management HR Software High Potentials Upward Feedback Goal Setting Development Planning 9 Box Competency",
-        "source": "viapeople.com",
-        "url": "https://www.viapeople.com/blog/topic/case-studies"
       }
     ],
     "enrichment_stats": {
       "total_results": 36,
-      "relevant_results": 17,
-      "total_text_chars": 21414,
+      "relevant_results": 20,
+      "total_text_chars": 27071,
       "ai_initiatives_found": 2,
-      "tech_stack_signals": 1,
+      "tech_stack_signals": 2,
       "customers_found": 0,
       "news_events": 0,
       "executives_found": 0,
       "hiring_roles_detected": 1,
       "evidence_snippets": 8
     },
-    "narrative_summary": "ViaPeople references AI capabilities in public materials, but limited evidence of dedicated AI infrastructure, hiring, or ML tooling suggests these may be aspirational or vendor-integrated features. Technical footprint: web-detected stack includes Kubernetes. Key signals: hiring signals for Full Stack.",
+    "narrative_summary": "ViaPeople shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: 3 public repos (1 recently active) primarily in Rust. Key signals: hiring signals for AI/ML Engineer.",
     "github": {
       "found": true,
       "org_login": "viapeople-inc",
@@ -1177,12 +1577,46 @@
       "found": false,
       "reason": "no_careers_page_found"
     },
-    "tech_stack_github_confirmed": []
+    "tech_stack_github_confirmed": [],
+    "talent": {
+      "found": false,
+      "total_profiles_found": 0,
+      "linkedin_profiles_discovered": 3,
+      "leadership": [],
+      "ai_ml_talent": [],
+      "senior_engineers": [],
+      "engineering_team": [],
+      "management": [],
+      "team_skills": [
+        "aws",
+        "databricks",
+        "deep learning",
+        "java",
+        "react",
+        "scrum",
+        "spark"
+      ],
+      "estimated_total_employees": 50,
+      "estimated_eng_team": 17,
+      "talent_summary": {
+        "has_cto": false,
+        "has_vp_eng": false,
+        "has_ai_leadership": false,
+        "ai_ml_headcount": 0,
+        "eng_headcount_discovered": 0,
+        "leadership_headcount": 0,
+        "total_discovered": 0
+      }
+    }
   },
   "ThingTech": {
     "ai_initiatives": [
       {
-        "text": "AI-powered IoT platform for enterprise asset manage",
+        "text": "launched an AI-powered IoT platform for asset management",
+        "type": "product_launch"
+      },
+      {
+        "text": "AI-powered IoT platform for asset management",
         "type": "ai_feature"
       },
       {
@@ -1192,7 +1626,9 @@
     ],
     "named_products": [],
     "tech_stack": [],
-    "named_customers": [],
+    "named_customers": [
+      "ThingTech"
+    ],
     "recent_news": [],
     "executives": [
       {
@@ -1204,16 +1640,25 @@
         "role": "CEO"
       },
       {
-        "name": "De Caux",
-        "role": "Chief AI Officer"
+        "name": "Jim Lester",
+        "role": "CEO"
+      },
+      {
+        "name": "Morris Qiu",
+        "role": "CTO"
+      },
+      {
+        "name": "Manisha Raisinghani",
+        "role": "CTO"
       }
     ],
     "hiring_signals": [
+      "AI/ML Engineer",
       "Data Scientist"
     ],
     "key_evidence": [
       {
-        "text": "ThingTech launched ThingX Connect, an AI-powered IoT platform for enterprise asset management. MIT Sloan Executive Education introduced a course on AI for financial services. BCG reported a $200 billion AI opportunity in tech services.",
+        "text": "ThingTech launched an AI-powered IoT platform for asset management. The platform uses machine learning to optimize asset productivity and reduce maintenance costs. It integrates connectivity and automation for field services.",
         "source": "",
         "url": null
       },
@@ -1228,7 +1673,22 @@
         "url": "https://hypepotamus.com/news/thingtech-raises-4-million/"
       },
       {
-        "text": "ThingTech raised $4 million in Series A funding in 2024, and secured $200 million in 2025 for growth. It focuses on IoT asset tracking. The company is based in Atlanta.",
+        "text": "ThingTech Financial Services aids companies in managing IoT devices, improving efficiency and customer satisfaction. KORE's platform enhances ThingTech's connectivity management.",
+        "source": "",
+        "url": null
+      },
+      {
+        "text": "By using a single, powerful connectivity management platform through KORE, ThingTech can more easily manage data and billing for its customers, without the hassle of dealing with carriers separately.",
+        "source": "korewireless.com",
+        "url": "https://www.korewireless.com/resources/case-studies/thingtech-partners-streamline-iot-offerings"
+      },
+      {
+        "text": "### Primary Industries\n\nSoftware\n\n### Contact Information\n\nHeadquarters\n\n3340 Peachtree Rd NE Ste 1505, Atlanta, Georgia, 30326, United States\n\n(800) 645-2298\n\n### Revenue\n\n$4 M\n\n### Employees\n\n17\n\n### Founded\n\n2014\n\n### Funding History\n\nThingTech ra",
+        "source": "datanyze.com",
+        "url": "https://www.datanyze.com/companies/thingtech/370074366"
+      },
+      {
+        "text": "ThingTech raised $7M in funding in 2017, and its competitors saw significant funding in 2025. The fintech sector saw larger funding rounds in 2025, with notable deals including iCapital's $820M raise.",
         "source": "",
         "url": null
       },
@@ -1236,36 +1696,21 @@
         "text": "Discover potential investors for your next round of investment.\n\n## FAQs about Thingtech\n\nThingtech was founded in 2014 and raised its 1st funding round 3 years after it was founded.\n\nThingtechis headquartered in Atlanta, United States.",
         "source": "tracxn.com",
         "url": "https://tracxn.com/d/companies/thingtech/__arquV_HRoiiw3P7Y4CHf6wAVWnHL5lhiM4ecRSy9tJg"
-      },
-      {
-        "text": "Hypepotamus logo\nHypepotamus logo\nHypepotamus logo\n\nHome // ThingTech Raises $4 Million Series A to Continue Cornering The IoT Asset Tracking Marketplace\n\n# ThingTech Raises $4 Million Series A to Continue Cornering The IoT Asset Tracking Marketplace",
-        "source": "hypepotamus.com",
-        "url": "https://hypepotamus.com/news/thingtech-raises-4-million/"
-      },
-      {
-        "text": "ThingTech Financial Services is hiring for machine learning and AI roles, including data scientists and engineers, in various locations. Positions offer competitive salaries and require advanced technical skills.",
-        "source": "",
-        "url": null
-      },
-      {
-        "text": "ThingTech Financial Services has a leadership team including Chief Technology Officer, Chief AI Officer, VP of Engineering, and Head of AI roles. Bob De Caux is Chief AI Officer at IFS. Chris D'Agostino is Chief Data & AI Officer at FIS.",
-        "source": "",
-        "url": null
       }
     ],
     "enrichment_stats": {
       "total_results": 36,
-      "relevant_results": 9,
-      "total_text_chars": 11006,
-      "ai_initiatives_found": 2,
+      "relevant_results": 11,
+      "total_text_chars": 13263,
+      "ai_initiatives_found": 3,
       "tech_stack_signals": 0,
-      "customers_found": 0,
+      "customers_found": 1,
       "news_events": 0,
-      "executives_found": 3,
-      "hiring_roles_detected": 1,
+      "executives_found": 5,
+      "hiring_roles_detected": 2,
       "evidence_snippets": 8
     },
-    "narrative_summary": "ThingTech shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. No public GitHub presence or detectable tech stack \u2014 engineering practices are opaque from external research. Key signals: hiring signals for Data Scientist; identified tech leadership: De Caux (Chief AI Officer).",
+    "narrative_summary": "ThingTech shows moderate AI engagement with 3 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: 5 public repos (no recent activity) primarily in JavaScript, Ruby. Key signals: hiring signals for AI/ML Engineer, Data Scientist.",
     "github": {
       "found": true,
       "org_login": "thingtech",
@@ -1331,22 +1776,44 @@
       "found": false,
       "reason": "no_careers_page_found"
     },
-    "tech_stack_github_confirmed": []
+    "tech_stack_github_confirmed": [],
+    "talent": {
+      "found": false,
+      "total_profiles_found": 0,
+      "linkedin_profiles_discovered": 2,
+      "leadership": [],
+      "ai_ml_talent": [],
+      "senior_engineers": [],
+      "engineering_team": [],
+      "management": [],
+      "team_skills": [
+        "aws",
+        "deep learning",
+        "java",
+        "javascript",
+        "machine learning",
+        "python",
+        "pytorch",
+        "react",
+        "tensorflow"
+      ],
+      "estimated_total_employees": 500,
+      "estimated_eng_team": 175,
+      "talent_summary": {
+        "has_cto": false,
+        "has_vp_eng": false,
+        "has_ai_leadership": false,
+        "ai_ml_headcount": 0,
+        "eng_headcount_discovered": 0,
+        "leadership_headcount": 0,
+        "total_discovered": 0
+      }
+    }
   },
   "TrackIt Transit": {
-    "ai_initiatives": [
-      {
-        "text": "launched AI-powered VidFleet for fleet safety",
-        "type": "product_launch"
-      },
-      {
-        "text": "AI-powered VidFleet for fleet safety",
-        "type": "ai_feature"
-      }
-    ],
+    "ai_initiatives": [],
     "named_products": [],
     "tech_stack": [
-      "Python",
       "AWS"
     ],
     "named_customers": [],
@@ -1361,27 +1828,19 @@
         "role": "Founder"
       },
       {
-        "name": "Charles Kriete",
+        "name": "Gerry Leonard",
         "role": "CEO"
-      },
-      {
-        "name": "Jason Craven",
-        "role": "Chief Technology Officer"
       }
     ],
     "hiring_signals": [
       "AI/ML Engineer",
       "Data Scientist",
+      "AI Product Manager",
       "DevOps/SRE"
     ],
     "key_evidence": [
       {
-        "text": "TrackIt Transit Financial Services launched AI-powered VidFleet for fleet safety, featuring machine learning for real-time driver coaching. Solen Software Group acquired Trackit LLC in 2026.",
-        "source": "",
-        "url": null
-      },
-      {
-        "text": "TrackIt Transit Financial Services is used by transit agencies for compliance and record management. It has been acquired by Solen Software Group. Customer testimonials highlight its efficiency in customer service and compliance.",
+        "text": "TrackIt Transit Financial Services is praised for its customer engagement and reliability, and it offers software solutions for compliance and asset management. TrackIt was acquired by Solen Software Group in 2023.",
         "source": "",
         "url": null
       },
@@ -1401,34 +1860,34 @@
         "url": "https://pulse2.com/solen-acquires-transit-software-provider-trackit/"
       },
       {
-        "text": "Terms\n Privacy\n Your Privacy Choices \n Feedback\n\n\u00a9 2026 All rights reserved.\n\nAbout our ads  Advertising  Careers\n\n# Yahoo Finance\n\n Yahoo Finance\n\nMail\n\nSign in\n\nThis is a paid press release.",
-        "source": "finance.yahoo.com",
-        "url": "https://finance.yahoo.com/news/solen-software-group-acquires-trackit-140000457.html"
-      },
-      {
         "text": "\u201cTrackit has grown significantly, now supporting over 100 transit locations in running their agencies more effectively.",
         "source": "lasvegassun.com",
         "url": "https://lasvegassun.com/news/2026/mar/10/solen-software-group-acquires-trackit-llc/"
       },
       {
-        "text": "TrackIt Transit Financial Services is hiring for AI engineers, data scientists, and ML engineers in the United States, India, and the UK. Positions require expertise in Python, ML, and AI technologies.",
+        "text": "TrackIt Transit Financial Services hires machine learning engineers, data scientists, and AI product managers for fintech roles. Positions require expertise in ML models and data analytics. Salaries range from mid to senior levels.",
+        "source": "",
+        "url": null
+      },
+      {
+        "text": "Gerry Leonard is the CEO of TrackIt Transit Financial Services. Srithal Bellary is the Chief Technology, Data, and AI Officer. The leadership team includes Ric Ilgenfritz as CEO of Community Transit.",
         "source": "",
         "url": null
       }
     ],
     "enrichment_stats": {
       "total_results": 36,
-      "relevant_results": 29,
-      "total_text_chars": 41707,
-      "ai_initiatives_found": 2,
-      "tech_stack_signals": 3,
+      "relevant_results": 25,
+      "total_text_chars": 36527,
+      "ai_initiatives_found": 0,
+      "tech_stack_signals": 2,
       "customers_found": 0,
       "news_events": 0,
-      "executives_found": 4,
-      "hiring_roles_detected": 3,
-      "evidence_snippets": 8
+      "executives_found": 3,
+      "hiring_roles_detected": 4,
+      "evidence_snippets": 7
     },
-    "narrative_summary": "TrackIt Transit shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: web-detected stack includes AWS, Kubernetes, Python. Key signals: hiring signals for AI/ML Engineer, Data Scientist, DevOps/SRE; identified tech leadership: Jason Craven (Chief Technology Officer).",
+    "narrative_summary": "TrackIt Transit appears to be building AI capability \u2014 hiring signals for AI/ML Engineer, Data Scientist detected, but no public AI product launches or features identified yet. Technical footprint: 30 public repos (19 recently active) primarily in TypeScript, HCL, Python; web-detected stack includes AWS. Key signals: broad technical hiring across 4 role categories.",
     "github": {
       "found": true,
       "org_login": "trackit",
@@ -1512,43 +1971,96 @@
     },
     "careers": {
       "found": false,
-      "reason": "invalid_website"
+      "reason": "no_careers_page_found"
     },
-    "tech_stack_github_confirmed": [
-      "Python"
-    ]
+    "tech_stack_github_confirmed": [],
+    "talent": {
+      "found": false,
+      "total_profiles_found": 0,
+      "linkedin_profiles_discovered": 7,
+      "leadership": [],
+      "ai_ml_talent": [],
+      "senior_engineers": [],
+      "engineering_team": [],
+      "management": [],
+      "team_skills": [
+        "agile",
+        "aws",
+        "azure",
+        "databricks",
+        "deep learning",
+        "java",
+        "kubernetes",
+        "machine learning",
+        "mongodb",
+        "python",
+        "scrum",
+        "spark",
+        "sql",
+        "tensorflow"
+      ],
+      "estimated_total_employees": 200,
+      "estimated_eng_team": 70,
+      "talent_summary": {
+        "has_cto": false,
+        "has_vp_eng": false,
+        "has_ai_leadership": false,
+        "ai_ml_headcount": 0,
+        "eng_headcount_discovered": 0,
+        "leadership_headcount": 0,
+        "total_discovered": 0
+      }
+    }
   },
   "NexTalk": {
     "ai_initiatives": [
       {
-        "text": "launched an AI product featuring machine learning for real-time decision ma",
+        "text": "launched an AI-powered conversational AI product for real-time financial i",
         "type": "product_launch"
       },
       {
-        "text": "assistant Max",
-        "type": "genai_feature"
+        "text": "AI-powered conversational AI product for real-time",
+        "type": "ai_feature"
       }
     ],
-    "named_products": [],
+    "named_products": [
+      "provides communication"
+    ],
     "tech_stack": [
       "AWS"
     ],
     "named_customers": [],
     "recent_news": [],
-    "executives": [],
+    "executives": [
+      {
+        "name": "or CTO",
+        "role": "CEO"
+      }
+    ],
     "hiring_signals": [
+      "AI/ML Engineer",
       "Data Scientist"
     ],
     "key_evidence": [
       {
-        "text": "NexTalk Financial Services launched an AI product featuring machine learning for real-time decision making and data-driven insights. Vianai Systems introduced Boomi FinTalk for finance, powered by conversational AI.",
+        "text": "NexTalk Financial Services launched an AI-powered conversational AI product for real-time financial insights. The product uses machine learning for accurate, domain-specific AI solutions.",
         "source": "",
         "url": null
       },
       {
-        "text": "NexTalk Financial Services provides accessible communication solutions for financial institutions, ensuring compliance and privacy. They support TTY lines, on-demand interpreting, and integration with contact center platforms.",
+        "text": "university students at the \u201cnexTalk\u201d event, held for the first time in 2019. Akbank LAB cultivates an innovation culture across our Bank through such efforts while cooperating closely with the People and Culture and Corporate Communications Departmen",
+        "source": "akbankinvestorrelations.com",
+        "url": "https://www.akbankinvestorrelations.com/en/images/pdf/2019_akbank_annual_report.pdf"
+      },
+      {
+        "text": "NexTalk Financial Services offers accessible communication solutions for financial institutions, enhancing compliance and privacy. It includes direct TTY lines and on-demand interpreting tools.",
         "source": "",
         "url": null
+      },
+      {
+        "text": "### Testimonials\n\n## What Our  Customers Are  Saying\n\n\u201cAccess Remote Interpreting from NexTalk has allowed us to communicate directly with all of our patients. We no longer need to schedule and wait for an in-person interpreter.",
+        "source": "nextalk.com",
+        "url": "https://www.nextalk.com/"
       },
       {
         "text": "The U.S. Internal Revenue Service is also one of our clients. While they are mandated to provide adequate communication services to the deaf and hard of hearing since they are a government agency, they could have chosen another company to provide thi",
@@ -1561,39 +2073,29 @@
         "url": "https://www.linkedin.com/company/nextalk"
       },
       {
-        "text": "About NexTalk\n\nNexTalk, Inc is located in South Jordan, UT and is the leader in telecommunications solutions for deaf, hard of hearing, and limited English speaking individuals.",
-        "source": "fiercehealthcare.com",
-        "url": "https://www.fiercehealthcare.com/healthcare/tmg-health-offering-new-tty-service-supported-by-nextalk"
-      },
-      {
         "text": "12\n\nLike   Comment\n\nTo view or add a comment, sign in\n\n3,016 followers\n\n 692 Posts\n 1 Article\n\nView Profile   Connect\n\n## More from this author\n\n ### Zig Don't Zag: Why Customer Success Leaders Must Prioritize the Customer Experience\n\n  Travis Gollah",
         "source": "linkedin.com",
         "url": "https://www.linkedin.com/posts/travis-gollaher_if-you-operate-in-a-highly-regulated-bank-activity-7407480165955481600-wtHv"
       },
       {
-        "text": "In 2024, Tikehau Capital finalized a strategic partnership with Nikko Asset Management. In 2025, TalkTalk appointed PJT Partners to manage the sale of its remaining businesses. No recent news on NexTalk Financial Services was found.",
-        "source": "",
-        "url": null
-      },
-      {
-        "text": "NexTalk Financial Services is hiring for machine learning and AI roles, including senior positions for engineers and data scientists in the fintech sector. Salaries range from $113K to $310K annually.",
+        "text": "NexTalk Financial Services announced a major acquisition in 2024. The company also secured a significant funding round in 2025. No product launches or partnerships were announced.",
         "source": "",
         "url": null
       }
     ],
     "enrichment_stats": {
       "total_results": 36,
-      "relevant_results": 17,
-      "total_text_chars": 18456,
+      "relevant_results": 20,
+      "total_text_chars": 26727,
       "ai_initiatives_found": 2,
       "tech_stack_signals": 1,
       "customers_found": 0,
       "news_events": 0,
-      "executives_found": 0,
-      "hiring_roles_detected": 1,
+      "executives_found": 1,
+      "hiring_roles_detected": 2,
       "evidence_snippets": 8
     },
-    "narrative_summary": "NexTalk shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: web-detected stack includes AWS. Key signals: hiring signals for Data Scientist.",
+    "narrative_summary": "NexTalk shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: web-detected stack includes AWS. Key signals: ~50 employees (~17 engineering est.); identified tech leadership (CTO); AI-relevant team skills: deep learning, machine learning; 3 open positions.",
     "github": {
       "found": true,
       "org_login": "NexTalk",
@@ -1601,7 +2103,7 @@
     },
     "careers": {
       "found": true,
-      "careers_url": "https://www.nextalk.com/careers",
+      "careers_url": "https://nextalk.com/careers",
       "total_openings": 3,
       "ai_ml_openings": 0,
       "departments": {
@@ -1615,44 +2117,85 @@
       ],
       "ai_roles": []
     },
-    "tech_stack_github_confirmed": []
+    "tech_stack_github_confirmed": [],
+    "talent": {
+      "found": true,
+      "total_profiles_found": 1,
+      "linkedin_profiles_discovered": 1,
+      "leadership": [
+        {
+          "name": "Corporate Development",
+          "role": "Director"
+        }
+      ],
+      "ai_ml_talent": [],
+      "senior_engineers": [],
+      "engineering_team": [],
+      "management": [],
+      "team_skills": [
+        "aws",
+        "deep learning",
+        "java",
+        "javascript",
+        "machine learning",
+        "mongodb",
+        "node.js",
+        "react"
+      ],
+      "estimated_total_employees": 50,
+      "estimated_eng_team": 17,
+      "talent_summary": {
+        "has_cto": true,
+        "has_vp_eng": false,
+        "has_ai_leadership": false,
+        "ai_ml_headcount": 0,
+        "eng_headcount_discovered": 0,
+        "leadership_headcount": 1,
+        "total_discovered": 1
+      }
+    }
   },
   "Dash": {
     "ai_initiatives": [
       {
-        "text": "AI-powered tool that automates tasks and enhances p",
+        "text": "launched AI-powered risk and allocation tools in 2021",
+        "type": "product_launch"
+      },
+      {
+        "text": "AI-powered risk and allocation tools in 2021",
         "type": "ai_feature"
       },
       {
-        "text": "AI-powered content concierge and support assistant",
-        "type": "ai_feature"
+        "text": "introduced an AI SMS agent",
+        "type": "product_launch"
       },
       {
-        "text": "intelligent guide that helps anyone interested in co",
+        "text": "AI-powered reporting",
         "type": "ai_feature"
-      },
-      {
-        "text": "assistant designed to make it easier for",
-        "type": "genai_feature"
       },
       {
         "text": "AI-powered observability and security platform for",
         "type": "ai_feature"
       },
       {
-        "text": "generative AI to automate most advisory grun",
-        "type": "genai_feature"
+        "text": "AI-driven systems",
+        "type": "ai_feature"
       }
     ],
     "named_products": [],
     "tech_stack": [
       "Python",
-      "Kubernetes",
-      "OpenAI"
+      "React",
+      "AWS",
+      "Kubernetes"
     ],
-    "named_customers": [],
+    "named_customers": [
+      "Terms\n Privacy Policy\n Disclaimers"
+    ],
     "recent_news": [
-      "In November, DASH enacted two internal promotions with Terri Ho, formerly the head of adviser solutions, stepping up to the chief risk officer role an"
+      "In May, DASH announced a strategic partnership with global alternatives fintech firm S64 to enhance private market investment accessibility for Austra",
+      "In November, DASH enacted two internal promotions with Terri Ho, formerly the head of adviser solutions, stepping up to the chief risk officer role an",
+      "DASH announced a strategic partnership with global alternatives fintech firm S64 to enhance private market investment accessibility for Australian fin"
     ],
     "executives": [
       {
@@ -1670,46 +2213,53 @@
       {
         "name": "Jim Lim",
         "role": "CTO"
+      },
+      {
+        "name": "As DASH",
+        "role": "Chief Technology Officer"
       }
     ],
     "hiring_signals": [
+      "AI/ML Engineer",
       "Data Scientist",
       "NLP Engineer",
-      "DevOps/SRE"
+      "MLOps",
+      "DevOps/SRE",
+      "Backend Engineer"
     ],
     "key_evidence": [
       {
-        "text": "DASH is an AI-powered tool that automates tasks and enhances productivity. It integrates with various platforms like Gmail and Slack. Built by a team of inventors at Amazon, it focuses on simplifying complex processes.",
+        "text": "Dash Financial Services launched AI-powered risk and allocation tools in 2021. These tools enhance market access and trade management. They are part of DASH360 analytics suite.",
         "source": "",
         "url": null
       },
       {
-        "text": "## CFMA Launches DASH: A New AI Content Concierge Simplifies Access to Construction Financial Management Resources\n\nFOR IMMEDIATE RELEASE  \nContact:  \nKristy Domboski  \nVice President, Marketing, Communications & Brand  \nkdomboski@cfma.",
-        "source": "houston.cfma.org",
-        "url": "https://houston.cfma.org/articles/cfma-launches-dash-a-new-ai-content-concierge-simplifies-access-to-construction-financial-management"
+        "text": "NEW YORK, Oct. 24, 2025 /PRNewswire/ -- Consumer Edge, the leading provider of global consumer data-driven insights, announced the beta launch of a new artificial-intelligence (AI) tool designed to make querying and analyzing data faster and discover",
+        "source": "prnewswire.com",
+        "url": "https://www.prnewswire.com/news-releases/consumer-edge-announces-beta-launch-of-ai-powered-chat-to-transform-how-companies-uncover-more-insights-faster-302593437.html"
       },
       {
-        "text": "The start page is a dashboard that gives you access to universal search, stacks, shortcuts to recent work, and meetings, making it easier to navigate your day. You can also use it to access the activity feed, which consolidates your work streams.",
-        "source": "blog.dropbox.com",
-        "url": "https://blog.dropbox.com/topics/company/dash-for-business-launch-2024"
+        "text": "LocaliQ Expands Product Portfolio Incorporating AI With Dash by LocaliQ\n\n--LocaliQ, Gannett Co., Inc.\u2019s (NYSE: GCI) Digital Marketing Solutions (DMS) business, has launched Dash by LocaliQ, an Artificial Intelligence (AI) lead management SaaS solutio",
+        "source": "businesswire.com",
+        "url": "https://www.businesswire.com/news/home/20250127682999/en/LocaliQ-Expands-Product-Portfolio-Incorporating-AI-With-Dash-by-LocaliQ"
       },
       {
-        "text": "As Datadog\u2019s flagship annual customer conference, DASH has continued to expand alongside the company\u2019s platform and global customer base.",
-        "source": "investors.datadoghq.com",
-        "url": "https://investors.datadoghq.com/news-releases/news-release-details/datadog-announces-dash-2026-ai-and-observability-event-year/"
+        "text": "Analysis\n\nThis announcement positions DASH 2026, held on June 9\u201310, 2026 in New York, as Datadog\u2019s flagship platform event for AI observability and security.",
+        "source": "stocktitan.net",
+        "url": "https://www.stocktitan.net/news/DDOG/datadog-announces-dash-2026-the-ai-and-observability-event-of-the-ay0k298r6kjz.html"
       },
       {
-        "text": "AI-powered automation, Murray says, provides a commercial edge \u2013 improving profitability for advisers by driving operational efficiency and enabling scalable personalisation.",
-        "source": "bailador.com.au",
-        "url": "https://bailador.com.au/news/dash-features-on-ausbiz"
+        "text": "[addthis tool=\"addthis\\_inline\\_share\\_toolbox\\_hpry\"]\n\nNew York, June 09, 2021 (GLOBE NEWSWIRE) \u2014 DASH Financial Technologies (\u201cDASH\u201d), the leading U.S.",
+        "source": "dashfinancial.com",
+        "url": "https://dashfinancial.com/media/dash-expands-product-suite-risk-allocation/"
       },
       {
-        "text": "### About the author\n\n### David J. Phillips\n\nDavid is the CEO & Founder of Fondo (YC W18). He is an angel investor in Rippling, Flexport, LiquidDeath, and 100+ other startups.",
-        "source": "fondo.com",
-        "url": "https://fondo.com/blog/dash-launches"
+        "text": "Datadog is the leading AI-powered observability and security platform for cloud applications. Our SaaS platform integrates and automates infrastructure monitoring, application performance monitoring, log management, user experience monitoring, cloud ",
+        "source": "datadoghq.com",
+        "url": "https://www.datadoghq.com/about/latest-news/press-releases/datadog-announces-dash-2026-ai-and-observability-event/"
       },
       {
-        "text": "Dash Financial Services has been praised for its innovative trading technology and successful client transformations, including significant growth and efficiency improvements.",
+        "text": "Dash Financial Services has been highlighted in multiple customer success stories showcasing its impact on client growth and technology adoption. Notable testimonials emphasize its role in transforming businesses and enhancing market competitiveness.",
         "source": "",
         "url": null
       },
@@ -1721,17 +2271,17 @@
     ],
     "enrichment_stats": {
       "total_results": 36,
-      "relevant_results": 30,
-      "total_text_chars": 39736,
+      "relevant_results": 34,
+      "total_text_chars": 51255,
       "ai_initiatives_found": 6,
-      "tech_stack_signals": 3,
-      "customers_found": 0,
-      "news_events": 1,
-      "executives_found": 4,
-      "hiring_roles_detected": 3,
+      "tech_stack_signals": 8,
+      "customers_found": 1,
+      "news_events": 3,
+      "executives_found": 5,
+      "hiring_roles_detected": 6,
       "evidence_snippets": 8
     },
-    "narrative_summary": "Dash demonstrates meaningful AI adoption with 6 identified AI-related features, active hiring across 2 AI/ML disciplines, and investment in modern ML infrastructure (OpenAI). Technical footprint: web-detected stack includes Kubernetes, Python, OpenAI. Key signals: hiring signals for Data Scientist, NLP Engineer, DevOps/SRE; 1 recent news event.",
+    "narrative_summary": "Dash shows moderate AI engagement with 6 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: 30 public repos (30 recently active) primarily in Rust, Python, JavaScript; GitHub-confirmed stack: Python, React. Key signals: ~200 employees (~70 engineering est.); identified tech leadership (CTO); 2 AI/ML specialists discovered on LinkedIn; AI-relevant team skills: machine learning; broad technical hiring across 6 role categories; 3 recent news events.",
     "github": {
       "found": true,
       "org_login": "dashpay",
@@ -1762,11 +2312,11 @@
           "repo_count": 2
         },
         {
-          "language": "HTML",
+          "language": "C++",
           "repo_count": 1
         },
         {
-          "language": "C++",
+          "language": "HTML",
           "repo_count": 1
         },
         {
@@ -1781,7 +2331,7 @@
           "language": "C++",
           "stars": 1535,
           "forks": 1198,
-          "updated": "2026-03-14"
+          "updated": "2026-03-16"
         },
         {
           "name": "dash-wallet",
@@ -1830,7 +2380,62 @@
       "reason": "no_careers_page_found"
     },
     "tech_stack_github_confirmed": [
-      "Python"
-    ]
+      "Python",
+      "React"
+    ],
+    "talent": {
+      "found": true,
+      "total_profiles_found": 6,
+      "linkedin_profiles_discovered": 6,
+      "leadership": [
+        {
+          "name": "Jim Lim",
+          "role": "CTO"
+        },
+        {
+          "name": "Data Science",
+          "role": "Director"
+        }
+      ],
+      "ai_ml_talent": [
+        {
+          "name": "Sudeep Das",
+          "role": "Head of New Verticals AI @DoorDash - LinkedIn"
+        },
+        {
+          "name": "Ludo Robotics",
+          "role": "AI Engineer"
+        }
+      ],
+      "senior_engineers": [
+        {
+          "name": "Software Engineer",
+          "role": "Lead"
+        }
+      ],
+      "engineering_team": [
+        {
+          "name": "Wei Song",
+          "role": "Senior Software Engineer"
+        }
+      ],
+      "management": [],
+      "team_skills": [
+        "machine learning",
+        "react",
+        "sql"
+      ],
+      "estimated_total_employees": 200,
+      "estimated_eng_team": 70,
+      "talent_summary": {
+        "has_cto": true,
+        "has_vp_eng": false,
+        "has_ai_leadership": false,
+        "ai_ml_headcount": 2,
+        "eng_headcount_discovered": 2,
+        "leadership_headcount": 2,
+        "total_discovered": 6
+      }
+    }
   }
 }
