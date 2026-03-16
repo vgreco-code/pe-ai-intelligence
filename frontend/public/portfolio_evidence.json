@@ -9,7 +9,8 @@
     "ai_initiatives": [
       {
         "text": "DCAA-compliant automated time allocation engine \u2014 uses rule-based logic to distribute labor hours across contracts, reducing audit exceptions by automating complex A&D timekeeping rules",
-        "type": "ai_feature"
+        "type": "ai_feature",
+        "url": "https://www.autotimesoftware.com"
       }
     ],
     "tech_stack": [
@@ -177,7 +178,8 @@
     "ai_initiatives": [
       {
         "text": "Data-driven exchange platform-as-a-service \u2014 builds intelligent content entitlement and distribution systems for entertainment companies",
-        "type": "ai_feature"
+        "type": "ai_feature",
+        "url": "https://thoughtfoundry.com"
       }
     ],
     "tech_stack": [
@@ -242,7 +244,8 @@
     "ai_initiatives": [
       {
         "text": "Omaha System taxonomy-based evidence analytics \u2014 structured data collection enables population health trend analysis across 145+ public health agencies",
-        "type": "ml_capability"
+        "type": "ml_capability",
+        "url": "https://www.champsoftware.com"
       }
     ],
     "tech_stack": [
@@ -332,7 +335,8 @@
     "ai_initiatives": [
       {
         "text": "GridGuardian anomaly detection \u2014 real-time SCADA/EMS monitoring with automated alerting for grid anomalies and operational deviations",
-        "type": "ai_feature"
+        "type": "ai_feature",
+        "url": "https://primate-tech.com"
       }
     ],
     "tech_stack": [
@@ -428,11 +432,13 @@
     "ai_initiatives": [
       {
         "text": "AI-powered video telematics with edge computing \u2014 detects risky driving behavior, provides real-time coaching, and captures on-demand video evidence",
-        "type": "ai_feature"
+        "type": "ai_feature",
+        "url": "https://www.trackstar.com"
       },
       {
         "text": "Predictive maintenance algorithms \u2014 triggers work orders based on telematics data patterns (time, mileage, engine diagnostics)",
-        "type": "ml_capability"
+        "type": "ml_capability",
+        "url": "https://www.trackstar.com"
       }
     ],
     "tech_stack": [
@@ -571,15 +577,18 @@
     "ai_initiatives": [
       {
         "text": "ML-powered predictive maintenance for distribution fleet \u2014 predicts equipment failures before occurrence using telematics data",
-        "type": "ml_capability"
+        "type": "ml_capability",
+        "url": "https://smrtrsolutions.com"
       },
       {
         "text": "AI route optimization for delivery logistics \u2014 reduces fuel costs and delivery times for F&B distributors",
-        "type": "ai_feature"
+        "type": "ai_feature",
+        "url": "https://smrtrsolutions.com"
       },
       {
         "text": "ML anomaly detection for compliance monitoring \u2014 identifies regulatory compliance issues via pattern recognition",
-        "type": "ml_capability"
+        "type": "ml_capability",
+        "url": "https://smrtrsolutions.com"
       }
     ],
     "tech_stack": [
@@ -668,11 +677,13 @@
     "ai_initiatives": [
       {
         "text": "FMSI OneCX analytics-driven staffing recommendations \u2014 predictive insights for no-show trends, peak activity patterns, and optimal staff-to-demand ratios",
-        "type": "ai_feature"
+        "type": "ai_feature",
+        "url": "https://www.fmsi.com"
       },
       {
         "text": "Appli partnership: AI-powered financial calculators helping members make decisions before branch visits",
-        "type": "ai_feature"
+        "type": "ai_feature",
+        "url": "https://www.fmsi.com"
       }
     ],
     "tech_stack": [
@@ -776,7 +787,8 @@
     "ai_initiatives": [
       {
         "text": "Automated route optimization algorithms for waste hauling \u2014 optimizes driver routes across container pickups and deliveries",
-        "type": "ai_feature"
+        "type": "ai_feature",
+        "url": "https://cairnapps.com"
       }
     ],
     "tech_stack": [
@@ -878,11 +890,13 @@
     "ai_initiatives": [
       {
         "text": "AI Instant Insights for performance management \u2014 automated analysis of performance data with actionable recommendations for talent decisions",
-        "type": "ai_feature"
+        "type": "ai_feature",
+        "url": "https://viapeople.com"
       },
       {
         "text": "Significant R&D investment in AI advancements for talent management analytics",
-        "type": "ai_feature"
+        "type": "ai_feature",
+        "url": "https://viapeople.com"
       }
     ],
     "tech_stack": [
@@ -1001,11 +1015,13 @@
     "ai_initiatives": [
       {
         "text": "IoT-powered predictive maintenance \u2014 connected sensors generate work orders based on asset condition, time, mileage, and telematics data patterns",
-        "type": "ai_feature"
+        "type": "ai_feature",
+        "url": "https://thingtech.com"
       },
       {
         "text": "Real-time asset condition monitoring via IIoT sensors for anomaly detection",
-        "type": "ml_capability"
+        "type": "ml_capability",
+        "url": "https://thingtech.com"
       }
     ],
     "tech_stack": [
@@ -1122,7 +1138,8 @@
     "ai_initiatives": [
       {
         "text": "Compliance automation engine \u2014 automates PTASP (Public Transportation Agency Safety Plan) data collection and reporting for FTA compliance",
-        "type": "ai_feature"
+        "type": "ai_feature",
+        "url": "https://trackittransit.com"
       }
     ],
     "tech_stack": [
@@ -1205,11 +1222,13 @@
     "ai_initiatives": [
       {
         "text": "SpeechPath automated speech recognition \u2014 AI-powered text engine achieving industry-leading Word Error Rate and latency for real-time captioning",
-        "type": "ai_feature"
+        "type": "ai_feature",
+        "url": "https://nextalk.com"
       },
       {
         "text": "Automated caption agents replacing traditional human steno captioning \u2014 faster, more accurate, and privacy-preserving",
-        "type": "ai_feature"
+        "type": "ai_feature",
+        "url": "https://nextalk.com"
       }
     ],
     "tech_stack": [
@@ -1328,12 +1347,14 @@
     ],
     "ai_initiatives": [
       {
-        "text": "AP Robot claims 'Artificial Intelligence (AI) technology to automate AP invoice processing' — in practice this is OCR-based data extraction with rules-based 3-way matching, achieving 90%+ accuracy on standard invoices",
-        "type": "ai_feature"
+        "text": "AP Robot claims 'Artificial Intelligence (AI) technology to automate AP invoice processing' \u2014 in practice this is OCR-based data extraction with rules-based 3-way matching, achieving 90%+ accuracy on standard invoices",
+        "type": "ai_feature",
+        "url": "https://dashdev.com/apautomation/"
       },
       {
-        "text": "Duplicate and fraudulent invoice detection — rule-based pattern matching, not ML",
-        "type": "automation"
+        "text": "Duplicate and fraudulent invoice detection \u2014 rule-based pattern matching, not ML",
+        "type": "automation",
+        "url": "https://dashdev.com/apautomation/"
       }
     ],
     "tech_stack": [
@@ -1352,11 +1373,11 @@
       "leadership": [
         {
           "name": "Jim Van Hecke",
-          "role": "President — co-designer of DDX, document management specialist (no AI background)"
+          "role": "President \u2014 co-designer of DDX, document management specialist (no AI background)"
         },
         {
           "name": "Steve Bayliss",
-          "role": "VP R&D — traditional software design and application development"
+          "role": "VP R&D \u2014 traditional software design and application development"
         }
       ],
       "team_skills": [
@@ -1370,7 +1391,7 @@
     "named_customers": [
       "Venco Venturo Industries (Scott Collins testimonial)",
       "Faytex (Jeff Baker testimonial)",
-      "Western Plows (Paul Stolzman — $14K postage savings year 1)",
+      "Western Plows (Paul Stolzman \u2014 $14K postage savings year 1)",
       "Manufacturing and distribution enterprises using SYSPRO, Aptean, Syteline"
     ],
     "recent_news": [
@@ -1411,7 +1432,7 @@
         "title": "Entity Clarification",
         "url": "https://dashdev.com/",
         "source": "audit_note",
-        "text": "IMPORTANT: This is Dash Development Group (dashdev.com), NOT Dash ComplyOps (dashsdk.com). Previous scoring rounds incorrectly conflated these two companies. Dash Development Group is a traditional document management/AP automation company for manufacturing — not a cloud security/compliance platform."
+        "text": "IMPORTANT: This is Dash Development Group (dashdev.com), NOT Dash ComplyOps (dashsdk.com). Previous scoring rounds incorrectly conflated these two companies. Dash Development Group is a traditional document management/AP automation company for manufacturing \u2014 not a cloud security/compliance platform."
       }
     ],
     "narrative_summary": "Dash Development Group (dashdev.com) is a 25-year-old document management and AP automation company serving manufacturing and distribution enterprises. Core products are DDX (document management pre-integrated with SYSPRO ERP) and AP Robot (OCR-based invoice processing with rules-based 3-way matching). The company offers cloud, on-premise, and hybrid deployment. Leadership team (Jim Van Hecke, Steve Bayliss) has deep document management expertise but no AI/ML background. AP Robot's 'AI' marketing describes OCR + rules-based automation, not machine learning. Joined Solen Software Group in 2024 and merged with S4i Systems to form SMRTR in July 2025. NOTE: Previous scoring rounds incorrectly used data from Dash ComplyOps (dashsdk.com), a completely different company. All scores corrected in v4.3 audit."

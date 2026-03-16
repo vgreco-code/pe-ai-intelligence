@@ -65,7 +65,7 @@ interface TalentData {
 interface Props {
   company: PortfolioCompany
   evidence?: {
-    ai_initiatives?: { text: string; type: string }[]
+    ai_initiatives?: { text: string; type: string; url?: string }[]
     tech_stack?: string[]
     tech_stack_github_confirmed?: string[]
     named_customers?: string[]
@@ -123,7 +123,10 @@ export default function ResearchEvidence({ company, evidence }: Props) {
   const customers = ev.named_customers || []
   const rawNews = ev.recent_news || []
   // Normalize news: accept both string[] and {title,summary,url,date}[]
-  const news = rawNews.map((item: any) => typeof item === 'string' ? item : (item.summary || item.title || ''))
+  const news = rawNews.map((item: any) => typeof item === 'string'
+    ? { text: item, url: '', date: '' }
+    : { text: item.summary || item.title || '', url: item.url || '', date: item.date || '' }
+  )
   const executives = ev.executives || []
   // Support both hiring_signals and careers.titles
   const hiring = ev.hiring_signals || ((ev.careers as any)?.titles) || []
@@ -257,7 +260,15 @@ export default function ResearchEvidence({ company, evidence }: Props) {
                     <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-400 flex-shrink-0 mt-0.5">
                       {INITIATIVE_TYPE_LABELS[init.type] || init.type}
                     </span>
-                    <span className="text-xs text-[var(--text-secondary)] leading-snug">{init.text}</span>
+                    <div className="flex-1 min-w-0">
+                      <span className="text-xs text-[var(--text-secondary)] leading-snug">{init.text}</span>
+                      {init.url && (
+                        <a href={init.url} target="_blank" rel="noopener noreferrer"
+                          className="inline-flex items-center gap-0.5 ml-1.5 text-[10px] text-violet-400 hover:text-violet-300 transition-colors">
+                          <ExternalLink className="w-2.5 h-2.5" />source
+                        </a>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -327,8 +338,14 @@ export default function ResearchEvidence({ company, evidence }: Props) {
                   </div>
                   <div className="space-y-1">
                     {news.slice(0, 3).map((item, i) => (
-                      <div key={i} className="text-xs text-[var(--text-secondary)] leading-snug p-1.5 bg-slate-800/20 rounded">
-                        {item}
+                      <div key={i} className="text-xs text-[var(--text-secondary)] leading-snug p-1.5 bg-slate-800/20 rounded flex items-start gap-1.5">
+                        <span className="flex-1">{item.text}</span>
+                        {item.url && (
+                          <a href={item.url} target="_blank" rel="noopener noreferrer"
+                            className="flex-shrink-0 text-blue-400 hover:text-blue-300 transition-colors mt-0.5">
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -564,11 +581,21 @@ export default function ResearchEvidence({ company, evidence }: Props) {
               <div className="space-y-2">
                 {(showAllEvidence ? keyEvidence : keyEvidence.slice(0, 3)).map((ev, i) => (
                   <div key={i} className="p-3 bg-slate-800/30 rounded-lg border border-slate-700/20 hover:border-violet-500/20 transition-all">
+                    {(ev as any).title && (
+                      <div className="text-[10px] font-semibold text-violet-400 mb-1">{(ev as any).title}</div>
+                    )}
                     <p className="text-xs text-[var(--text-secondary)] leading-relaxed">&ldquo;{ev.text}&rdquo;</p>
-                    {ev.source && (
+                    {(ev.source || ev.url) && (
                       <div className="flex items-center gap-1 mt-1.5">
                         <ExternalLink className="w-3 h-3 text-[var(--text-muted)]" />
-                        <span className="text-[10px] text-[var(--text-muted)]">{ev.source}</span>
+                        {ev.url ? (
+                          <a href={ev.url} target="_blank" rel="noopener noreferrer"
+                            className="text-[10px] text-violet-400 hover:text-violet-300 transition-colors">
+                            {ev.source || new URL(ev.url).hostname}
+                          </a>
+                        ) : (
+                          <span className="text-[10px] text-[var(--text-muted)]">{ev.source}</span>
+                        )}
                       </div>
                     )}
                   </div>
