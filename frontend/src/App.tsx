@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import {
   LayoutDashboard, Building2, Brain, Database, ChevronLeft, ChevronRight,
-  Zap, TrendingUp, BarChart3, GitCompareArrows, Workflow, Github
+  Zap, TrendingUp, BarChart3, GitCompareArrows, Workflow, Github, Grid3X3
 } from 'lucide-react'
 import Dashboard from './pages/Dashboard'
 import Portfolio from './pages/Portfolio'
@@ -11,6 +11,7 @@ import CompetitiveBenchmarks from './pages/CompetitiveBenchmarks'
 import CompanyDetail from './pages/CompanyDetail'
 import CompareCompanies from './pages/CompareCompanies'
 import PipelineArchitecture from './pages/PipelineArchitecture'
+import Heatmap from './pages/Heatmap'
 import Sandbox from './pages/Sandbox'
 import type { BenchmarkCompany } from './pages/CompetitiveBenchmarks'
 
@@ -164,13 +165,14 @@ export const getScoreColor = (score: number): string => {
   return '#ef4444'
 }
 
-type Page = 'dashboard' | 'portfolio' | 'compare' | 'benchmarks' | 'pipeline' | 'model' | 'training' | 'sandbox' | 'company-detail'
+type Page = 'dashboard' | 'portfolio' | 'compare' | 'benchmarks' | 'heatmap' | 'pipeline' | 'model' | 'training' | 'sandbox' | 'company-detail'
 
 const NAV_ITEMS: { id: Page; label: string; icon: typeof LayoutDashboard }[] = [
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { id: 'portfolio', label: 'Portfolio', icon: Building2 },
   { id: 'compare', label: 'Compare', icon: GitCompareArrows },
   { id: 'benchmarks', label: 'Benchmarks', icon: BarChart3 },
+  { id: 'heatmap', label: 'Heatmap', icon: Grid3X3 },
   { id: 'sandbox', label: 'Sandbox', icon: Zap },
   { id: 'pipeline', label: 'Pipeline', icon: Workflow },
   { id: 'model', label: 'Model Intelligence', icon: Brain },
@@ -341,6 +343,12 @@ export default function App() {
           )}
           {page === 'benchmarks' && (
             <CompetitiveBenchmarks benchmarks={benchmarkData} />
+          )}
+          {page === 'heatmap' && (
+            <Heatmap
+              portfolio={portfolio}
+              onCompanyClick={navigateToCompany}
+            />
           )}
           {page === 'sandbox' && <Sandbox />}
           {page === 'pipeline' && (
