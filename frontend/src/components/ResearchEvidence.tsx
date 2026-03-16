@@ -46,6 +46,7 @@ interface Props {
     hiring_signals?: string[]
     key_evidence?: { text: string; source: string; url: string }[]
     enrichment_stats?: Record<string, number>
+    narrative_summary?: string
     github?: GitHubData
     careers?: CareersData
   }
@@ -99,7 +100,7 @@ export default function ResearchEvidence({ company, evidence }: Props) {
   const github = ev.github
   const careers = ev.careers
 
-  const hasEnrichment = aiInits.length > 0 || techStack.length > 0 || keyEvidence.length > 0
+  const hasEnrichment = !!ev.narrative_summary || aiInits.length > 0 || techStack.length > 0 || keyEvidence.length > 0
 
   return (
     <div className="glass-card rounded-xl border border-violet-500/20 p-6">
@@ -150,6 +151,19 @@ export default function ResearchEvidence({ company, evidence }: Props) {
 
       {hasEnrichment ? (
         <div className="space-y-5">
+          {/* Narrative Summary */}
+          {ev.narrative_summary && (
+            <div className="bg-gradient-to-r from-violet-500/5 to-blue-500/5 rounded-lg p-4 border border-violet-500/15">
+              <div className="flex items-center gap-2 mb-2">
+                <Brain className="w-4 h-4 text-violet-400" />
+                <span className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">AI Readiness Assessment</span>
+              </div>
+              <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                {ev.narrative_summary}
+              </p>
+            </div>
+          )}
+
           {/* Tech Stack */}
           {techStack.length > 0 && (
             <div>

@@ -140,22 +140,42 @@ def extract_evidence(company_name: str, all_results: list[dict]) -> dict:
         "key_evidence": [],
     }
 
-    # ── AI Initiatives — only from results that mention the company ───────
+    # ── AI Initiatives — strict proximity validation ─────────────────────
+    # Only extract initiatives that appear within 200 chars of the company name
+    # and filter out academic/generic artifacts (code paths, model names, etc.)
     ai_initiative_patterns = [
         (r'(?:launched?|introduced?|unveiled?|announced?|released?|built)\s+(?:an?\s+)?(?:AI|ML|machine learning|intelligent|smart)\s*[\w\s-]{5,60}', 'product_launch'),
         (r'(?:AI-powered|AI-driven|ML-based|intelligent)\s+[\w\s-]{5,40}', 'ai_feature'),
-        (r'(?:generative AI|GenAI|LLM|copilot|assistant|chatbot)\s*[\w\s-]{3,30}', 'genai_feature'),
+        (r'(?:generative AI|GenAI|LLM|copilot|assistant|chatbot)\s+[\w\s-]{3,30}', 'genai_feature'),
         (r'(?:predictive|recommendation|automation|optimization)\s+(?:engine|model|system|platform|tool)', 'ml_capability'),
     ]
+    # Blocklist: patterns that indicate academic papers, code, or unrelated content
+    ai_blocklist_patterns = [
+        r'_dir\b', r'_ckp', r'\bcheckpoint\b', r'\.py\b', r'\.json\b',
+        r'\bLLaMA\b', r'\bGPT-\d\b', r'\bBERT\b',  # model names without company context
+        r'\bfigure\s+\d', r'\btable\s+\d', r'\bappendix\b',  # academic paper artifacts
+        r'et\s+al\.?', r'arxiv', r'proceedings',  # citations
+    ]
     seen_initiatives = set()
-    # Only search within individual relevant results for proximity
     for r in relevant_results:
         content = r.get("content", "")
-        if not content or company_lower not in content.lower():
+        if not content:
+            continue
+        content_lower = content.lower()
+        if company_lower not in content_lower:
             continue
         for pat, init_type in ai_initiative_patterns:
             for m in re.finditer(pat, content, re.IGNORECASE):
                 initiative = m.group(0).strip()
+                # Check proximity: initiative must be within 200 chars of company name
+                match_start = m.start()
+                company_positions = [i for i in range(len(content_lower)) if content_lower[i:i+len(company_lower)] == company_lower]
+                near_company = any(abs(match_start - cp) < 200 for cp in company_positions)
+                if not near_company:
+                    continue
+                # Check blocklist
+                if any(re.search(bp, initiative, re.IGNORECASE) for bp in ai_blocklist_patterns):
+                    continue
                 fingerprint = initiative.lower()[:40]
                 if fingerprint not in seen_initiatives and len(initiative) > 10:
                     seen_initiatives.add(fingerprint)
@@ -163,7 +183,7 @@ def extract_evidence(company_name: str, all_results: list[dict]) -> dict:
                         "text": initiative,
                         "type": init_type,
                     })
-    evidence["ai_initiatives"] = evidence["ai_initiatives"][:8]
+    evidence["ai_initiatives"] = evidence["ai_initiatives"][:6]
 
     # ── Named Products — require company name proximity ───────────────────
     product_patterns = [
@@ -236,20 +256,43 @@ def extract_evidence(company_name: str, all_results: list[dict]) -> dict:
     evidence["tech_stack"] = list(tech_with_counts.keys())
     evidence["_tech_mention_counts"] = tech_with_counts
 
-    # ── Named Customers — only from relevant results ──────────────────────
+    # ── Named Customers — strict validation ───────────────────────────────
+    # Only accept proper nouns that look like company/org names
     customer_patterns = [
-        r'(?:customers?\s+(?:include|like|such as)|trusted by|used by|works? with|serves?|chosen by)\s+([\w\s,&]+?)(?:\.|,\s*and|\band\b)',
+        r'(?:customers?\s+(?:include|like|such as)|trusted by|used by|works?\s+with|serves?|chosen by|partnered?\s+with)\s+([\w\s,&]+?)(?:\.|,\s*and|\band\b)',
         r'([\w\s]+?)\s+(?:uses?|chose|selected|implemented|deployed|partnered with)\s+' + re.escape(company_name),
     ]
+    # Words that are not customer names
+    customer_blocklist = {
+        'but they', 'science', 'technology', 'the company', 'their clients',
+        'customers', 'organizations', 'businesses', 'enterprises', 'users',
+        'companies', 'institutions', 'agencies', 'teams', 'professionals',
+        'individuals', 'financial institutions', 'credit unions', 'banks',
+        'healthcare', 'hospitals', 'schools', 'universities',
+    }
     seen_customers = set()
     for pat in customer_patterns:
         for m in re.finditer(pat, relevant_text, re.IGNORECASE):
             raw = m.group(1).strip()
-            for name in re.split(r',\s*|\s+and\s+', raw):
-                name = name.strip()
-                if 2 < len(name) < 40 and name.lower() not in seen_customers and name[0].isupper():
-                    seen_customers.add(name.lower())
-                    evidence["named_customers"].append(name)
+            for cname in re.split(r',\s*|\s+and\s+', raw):
+                cname = cname.strip()
+                if len(cname) < 3 or len(cname) > 40:
+                    continue
+                if not cname[0].isupper():
+                    continue
+                if cname.lower() in customer_blocklist:
+                    continue
+                if cname.lower() in seen_customers:
+                    continue
+                # Must have at least one word with 3+ chars
+                if not any(len(w) >= 3 for w in cname.split()):
+                    continue
+                # Should not be a generic phrase (all lowercase words except first)
+                words = cname.split()
+                if len(words) > 1 and all(w[0].islower() for w in words[1:]):
+                    continue
+                seen_customers.add(cname.lower())
+                evidence["named_customers"].append(cname)
     evidence["named_customers"] = evidence["named_customers"][:8]
 
     # ── Recent News / Events — only from relevant results ─────────────────
@@ -267,21 +310,61 @@ def extract_evidence(company_name: str, all_results: list[dict]) -> dict:
                 evidence["recent_news"].append(snippet)
     evidence["recent_news"] = evidence["recent_news"][:6]
 
-    # ── Executives — only from relevant results ───────────────────────────
+    # ── Executives — strict name validation ───────────────────────────────
+    # Extract person names with C-suite/VP roles, with rigorous filtering
+    ROLE_PATTERN = r'(?:CEO|CTO|CFO|COO|CAIO|Chief\s+(?:Technology|Executive|AI|Data|Operating|Financial|Information)\s+Officer|VP\s+(?:of\s+)?(?:Engineering|Product|Technology|Sales)|Head\s+of\s+(?:AI|Engineering|Product|Data)|President|Founder|Co-Founder)'
     exec_patterns = [
-        r'(?:CEO|CTO|CFO|COO|CAIO|Chief\s+(?:Technology|Executive|AI|Data|Operating|Financial)\s+Officer|VP\s+(?:of\s+)?Engineering|Head of AI|President)\s*(?:,?\s*)([\w\s.]+?)(?:,|\.|said|stated|noted|explained|at\s)',
-        r'([\w\s.]+?),?\s*(?:CEO|CTO|CFO|COO|CAIO|Chief\s+(?:Technology|Executive|AI|Data)\s+Officer|VP\s+Engineering|Head of AI)\s*(?:of|at)\s*' + re.escape(company_name),
+        # "Name, Role" or "Name, Role at Company"
+        r'([A-Z][a-z]+(?:\s+[A-Z]\.?\s*)?[A-Z][a-z]+)\s*,\s*' + ROLE_PATTERN,
+        # "Role Name" (e.g., "CEO John Smith")
+        ROLE_PATTERN + r'\s+([A-Z][a-z]+(?:\s+[A-Z]\.?\s*)?[A-Z][a-z]+)',
+        # "Name is the Role" or "Name serves as Role"
+        r'([A-Z][a-z]+(?:\s+[A-Z]\.?\s*)?[A-Z][a-z]+)\s+(?:is\s+(?:the\s+)?|serves?\s+as\s+)' + ROLE_PATTERN,
     ]
+    # Blocklist: things that look like names but aren't
+    exec_name_blocklist = {
+        'long beach', 'new york', 'san francisco', 'los angeles', 'champion health',
+        'balance sheet', 'artificial intelligence', 'machine learning', 'deep learning',
+        'chief technology', 'chief executive', 'vice president', 'managing director',
+        'financial advisor', 'technology officer', 'of employee', 'of human',
+        'of black', 'of engineering', 'of limitless',
+    }
+    # Single-word blocklist for first/last names that are clearly not person names
+    exec_word_blocklist = {'is', 'at', 'of', 'the', 'and', 'for', 'was', 'has', 'its', 'in', 'ai', 'an'}
     seen_execs = set()
-    for pat in exec_patterns:
-        for m in re.finditer(pat, relevant_text, re.IGNORECASE):
-            name = m.group(1).strip() if m.lastindex else m.group(0).strip()
-            name = re.sub(r'^(CEO|CTO|CFO|COO|CAIO|Chief\s+\w+\s+Officer)\s*,?\s*', '', name).strip()
-            if 3 < len(name) < 40 and name[0].isupper() and name.lower() not in seen_execs:
-                seen_execs.add(name.lower())
-                role_match = re.search(r'(CEO|CTO|CFO|COO|CAIO|Chief\s+\w+\s+Officer|VP\s+\w+|Head of \w+)', m.group(0))
-                role = role_match.group(0) if role_match else "Executive"
-                evidence["executives"].append({"name": name, "role": role})
+    for r in relevant_results:
+        content = r.get("content", "")
+        if not content or company_lower not in content.lower():
+            continue
+        for pat in exec_patterns:
+            for m in re.finditer(pat, content, re.IGNORECASE):
+                # Find the name group (first capturing group)
+                name = m.group(1).strip() if m.lastindex else None
+                if not name:
+                    continue
+                # Validate: must look like a person name (2-4 words, each capitalized)
+                name_words = name.split()
+                if len(name_words) < 2 or len(name_words) > 4:
+                    continue
+                if not all(w[0].isupper() or len(w) <= 2 for w in name_words):
+                    continue
+                # First word must not be a preposition/article/verb
+                if name_words[0].lower() in exec_word_blocklist:
+                    continue
+                # Check against blocklist
+                if name.lower() in exec_name_blocklist:
+                    continue
+                # Must not contain digits, newlines, or common non-name words
+                if re.search(r'[\d\n\r]', name):
+                    continue
+                # Each word should be 2+ chars (no lone initials without period)
+                if any(len(w) == 1 and '.' not in w for w in name_words):
+                    continue
+                if name.lower() not in seen_execs:
+                    seen_execs.add(name.lower())
+                    role_match = re.search(ROLE_PATTERN, m.group(0), re.IGNORECASE)
+                    role = role_match.group(0) if role_match else "Executive"
+                    evidence["executives"].append({"name": name, "role": role})
     evidence["executives"] = evidence["executives"][:5]
 
     # ── Hiring Signals — only from relevant results ───────────────────────
@@ -342,7 +425,108 @@ def extract_evidence(company_name: str, all_results: list[dict]) -> dict:
         "evidence_snippets": len(evidence["key_evidence"]),
     }
 
+    # ── Generate analytical narrative summary ──────────────────────────────
+    evidence["narrative_summary"] = _generate_narrative(company_name, evidence)
+
     return evidence
+
+
+def _generate_narrative(company_name: str, evidence: dict) -> str:
+    """Generate a 2-3 sentence analytical summary of a company's AI posture.
+
+    Uses a template-driven approach based on signal strength across dimensions.
+    Tone: analytical, data-driven — suitable for a PE CAIO briefing.
+    """
+    ai_inits = evidence.get("ai_initiatives", [])
+    tech = evidence.get("tech_stack", [])
+    gh_confirmed = evidence.get("tech_stack_github_confirmed", [])
+    hiring = evidence.get("hiring_signals", [])
+    execs = evidence.get("executives", [])
+    customers = evidence.get("named_customers", [])
+    news = evidence.get("recent_news", [])
+    github = evidence.get("github", {})
+    careers = evidence.get("careers", {})
+    stats = evidence.get("enrichment_stats", {})
+
+    sentences = []
+
+    # ── Sentence 1: AI activity level ──────────────────────────────────────
+    ai_roles_hiring = [r for r in hiring if any(kw in r.lower() for kw in ['ai', 'ml', 'data sci', 'nlp', 'mlops', 'computer vision'])]
+    has_ai_initiatives = len(ai_inits) > 0
+    has_ai_hiring = len(ai_roles_hiring) > 0
+    has_modern_stack = any(t in tech for t in ['TensorFlow', 'PyTorch', 'OpenAI', 'Anthropic', 'Hugging Face', 'Databricks', 'Snowflake'])
+
+    if has_ai_initiatives and has_ai_hiring and has_modern_stack:
+        # Strong signals
+        init_types = set(a["type"] for a in ai_inits)
+        if "product_launch" in init_types:
+            sentences.append(f"{company_name} shows strong AI activity with public product launches incorporating AI/ML capabilities, active hiring for AI-focused roles ({', '.join(ai_roles_hiring[:2])}), and a modern ML-capable tech stack.")
+        else:
+            ml_tech = [t for t in tech if t in ['TensorFlow', 'PyTorch', 'OpenAI', 'Anthropic', 'Databricks', 'Snowflake', 'Hugging Face']][:3]
+            sentences.append(f"{company_name} demonstrates meaningful AI adoption with {len(ai_inits)} identified AI-related features, active hiring across {len(ai_roles_hiring)} AI/ML disciplines, and investment in modern ML infrastructure ({', '.join(ml_tech)}).")
+    elif has_ai_initiatives and (has_ai_hiring or has_modern_stack):
+        # Moderate signals
+        sentences.append(f"{company_name} shows moderate AI engagement with {len(ai_inits)} detected AI feature{'s' if len(ai_inits) > 1 else ''}, though evidence suggests early-stage adoption rather than mature AI product development.")
+    elif has_ai_initiatives:
+        # Initiatives only, no supporting infrastructure
+        sentences.append(f"{company_name} references AI capabilities in public materials, but limited evidence of dedicated AI infrastructure, hiring, or ML tooling suggests these may be aspirational or vendor-integrated features.")
+    elif has_ai_hiring:
+        # Hiring but no visible products
+        sentences.append(f"{company_name} appears to be building AI capability — hiring signals for {', '.join(ai_roles_hiring[:2])} detected, but no public AI product launches or features identified yet.")
+    else:
+        # Minimal signals
+        relevant_pct = stats.get("relevant_results", 0) / max(stats.get("total_results", 1), 1) * 100
+        if relevant_pct < 40:
+            sentences.append(f"{company_name} has limited public web presence (only {stats.get('relevant_results', 0)} of {stats.get('total_results', 0)} search results were company-relevant), making AI readiness assessment difficult from public sources alone.")
+        else:
+            sentences.append(f"No public AI initiatives, ML tooling, or AI-specific hiring detected for {company_name} — current operations appear to rely on traditional software approaches.")
+
+    # ── Sentence 2: Technical foundation ───────────────────────────────────
+    gh_repos = github.get("total_public_repos", 0) if github.get("found") else 0
+    gh_recent = github.get("recently_active_repos", 0) if github.get("found") else 0
+    gh_langs = [l["language"] for l in github.get("primary_languages", [])] if github.get("found") else []
+
+    tech_parts = []
+    if gh_repos > 0:
+        activity_note = f"{gh_recent} recently active" if gh_recent > 0 else "no recent activity"
+        tech_parts.append(f"{gh_repos} public repos ({activity_note}) primarily in {', '.join(gh_langs[:3]) if gh_langs else 'various languages'}")
+    if gh_confirmed:
+        tech_parts.append(f"GitHub-confirmed stack: {', '.join(gh_confirmed[:4])}")
+    elif tech:
+        tech_parts.append(f"web-detected stack includes {', '.join(tech[:4])}")
+
+    if tech_parts:
+        sentences.append(f"Technical footprint: {'; '.join(tech_parts)}.")
+    elif not github.get("found"):
+        sentences.append("No public GitHub presence or detectable tech stack — engineering practices are opaque from external research.")
+
+    # ── Sentence 3: Talent & investment signals ────────────────────────────
+    career_openings = careers.get("total_openings", 0) if careers and careers.get("found") else 0
+    career_ai = careers.get("ai_ml_openings", 0) if careers and careers.get("found") else 0
+
+    talent_parts = []
+    if career_openings > 0:
+        if career_ai > 0:
+            talent_parts.append(f"{career_openings} open positions ({career_ai} AI/ML-specific)")
+        else:
+            talent_parts.append(f"{career_openings} open positions (none AI/ML-specific)")
+    if len(hiring) > 3:
+        talent_parts.append(f"broad technical hiring across {len(hiring)} role categories")
+    elif len(hiring) > 0:
+        talent_parts.append(f"hiring signals for {', '.join(hiring[:3])}")
+    if execs:
+        # Only include execs whose names don't contain "at [OtherCompany]" patterns
+        clean_execs = [e for e in execs if not e["name"].lower().startswith("at ") and not e["name"].lower().startswith("of ")]
+        ai_execs = [e for e in clean_execs if any(kw in e["role"].lower() for kw in ['ai', 'data', 'technology'])]
+        if ai_execs:
+            talent_parts.append(f"identified tech leadership: {ai_execs[0]['name']} ({ai_execs[0]['role']})")
+    if news:
+        talent_parts.append(f"{len(news)} recent news event{'s' if len(news) > 1 else ''}")
+
+    if talent_parts:
+        sentences.append(f"Key signals: {'; '.join(talent_parts)}.")
+
+    return " ".join(sentences)
 
 
 async def enrich_company(

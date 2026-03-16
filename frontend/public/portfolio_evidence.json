@@ -12,22 +12,6 @@
       {
         "text": "predictive model",
         "type": "ml_capability"
-      },
-      {
-        "text": "LLMs as foundation models for tim",
-        "type": "genai_feature"
-      },
-      {
-        "text": "LLM-based forecasters",
-        "type": "genai_feature"
-      },
-      {
-        "text": "LLM is LLaMA-7B",
-        "type": "genai_feature"
-      },
-      {
-        "text": "llm_ckp_dir",
-        "type": "genai_feature"
       }
     ],
     "named_products": [],
@@ -84,7 +68,7 @@
       "total_results": 36,
       "relevant_results": 13,
       "total_text_chars": 14712,
-      "ai_initiatives_found": 7,
+      "ai_initiatives_found": 3,
       "tech_stack_signals": 1,
       "customers_found": 0,
       "news_events": 0,
@@ -92,6 +76,7 @@
       "hiring_roles_detected": 1,
       "evidence_snippets": 8
     },
+    "narrative_summary": "AutoTime shows moderate AI engagement with 3 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: web-detected stack includes Python. Key signals: hiring signals for Data Scientist.",
     "github": {
       "found": true,
       "org_login": "AutoTimer",
@@ -134,10 +119,6 @@
         "type": "ai_feature"
       },
       {
-        "text": "predictive model",
-        "type": "ml_capability"
-      },
-      {
         "text": "AI-driven projects",
         "type": "ai_feature"
       }
@@ -154,11 +135,22 @@
       "OpenAI",
       "Anthropic"
     ],
-    "named_customers": [
-      "Science"
-    ],
+    "named_customers": [],
     "recent_news": [],
-    "executives": [],
+    "executives": [
+      {
+        "name": "Tom Simpson",
+        "role": "president"
+      },
+      {
+        "name": "Farr III",
+        "role": "VP of Engineering"
+      },
+      {
+        "name": "Nathan Brown",
+        "role": "co-founder"
+      }
+    ],
     "hiring_signals": [
       "AI/ML Engineer",
       "Data Scientist",
@@ -215,14 +207,15 @@
       "total_results": 36,
       "relevant_results": 33,
       "total_text_chars": 52626,
-      "ai_initiatives_found": 4,
+      "ai_initiatives_found": 3,
       "tech_stack_signals": 9,
-      "customers_found": 1,
+      "customers_found": 0,
       "news_events": 0,
-      "executives_found": 0,
+      "executives_found": 3,
       "hiring_roles_detected": 8,
       "evidence_snippets": 8
     },
+    "narrative_summary": "Spokane shows strong AI activity with public product launches incorporating AI/ML capabilities, active hiring for AI-focused roles (AI/ML Engineer, Data Scientist), and a modern ML-capable tech stack. Technical footprint: web-detected stack includes AWS, Kubernetes, Python, React. Key signals: broad technical hiring across 8 role categories.",
     "github": {
       "found": true,
       "org_login": "spokane",
@@ -245,7 +238,9 @@
         "type": "ai_feature"
       }
     ],
-    "named_products": [],
+    "named_products": [
+      "provides AI"
+    ],
     "tech_stack": [
       "Azure",
       "Databricks"
@@ -254,24 +249,7 @@
       "SustainableIT"
     ],
     "recent_news": [],
-    "executives": [
-      {
-        "name": "AI Governance and Risk Consulting",
-        "role": "Executive"
-      },
-      {
-        "name": "BER 21",
-        "role": "CTO"
-      },
-      {
-        "name": "BER 22",
-        "role": "CTO"
-      },
-      {
-        "name": "Balance Sheet and Analytics",
-        "role": "Executive"
-      }
-    ],
+    "executives": [],
     "hiring_signals": [
       "AI/ML Engineer",
       "Data Scientist",
@@ -285,7 +263,7 @@
         "url": null
       },
       {
-        "text": "Thought Foundry provides AI services, with notable clients including Commerzbank AG and IBM. It focuses on AI strategy, development, and integration. The company was founded in 2012.",
+        "text": "Thought Foundry provides AI solutions for business growth, with successful case studies and customer success in financial services. They focus on AI strategy, development, and integration. Their expertise drives innovation and operational excellence.",
         "source": "",
         "url": null
       },
@@ -293,11 +271,6 @@
         "text": "Thought Foundry is a premier artificial intelligence services company, empowering businesses with innovative AI solutions.",
         "source": "compworth.com",
         "url": "https://compworth.com/company/thought-foundry"
-      },
-      {
-        "text": "Thought Foundry appears in search results as Thought Foundry, Thought Foundry Inc, Pixel Thought Foundry LLCThought Foundrie, Thought Foundry LLC...",
-        "source": "datanyze.com",
-        "url": "https://www.datanyze.com/companies/thought-foundry/61014738"
       },
       {
         "text": "Thought Foundry Financial Services announced a $15 million funding round in 2025 and expanded its platform with new features in October 2025. The company focuses on fintech partnerships and technological advancements.",
@@ -313,15 +286,16 @@
     "enrichment_stats": {
       "total_results": 36,
       "relevant_results": 31,
-      "total_text_chars": 50351,
+      "total_text_chars": 49262,
       "ai_initiatives_found": 2,
       "tech_stack_signals": 2,
       "customers_found": 1,
       "news_events": 0,
-      "executives_found": 4,
+      "executives_found": 0,
       "hiring_roles_detected": 4,
-      "evidence_snippets": 6
+      "evidence_snippets": 5
     },
+    "narrative_summary": "Thought Foundry shows strong AI activity with public product launches incorporating AI/ML capabilities, active hiring for AI-focused roles (AI/ML Engineer, Data Scientist), and a modern ML-capable tech stack. Technical footprint: web-detected stack includes Azure, Databricks. Key signals: broad technical hiring across 4 role categories.",
     "github": {
       "found": true,
       "org_login": "Thought-Foundry",
@@ -342,10 +316,6 @@
       {
         "text": "AI-powered provider data ingestion and validation w",
         "type": "ai_feature"
-      },
-      {
-        "text": "AI-Powered Aesthetic Simulation and Lead Generation",
-        "type": "ai_feature"
       }
     ],
     "named_products": [],
@@ -357,8 +327,8 @@
     "recent_news": [],
     "executives": [
       {
-        "name": "Champion Health Plan\n\nLONG BEACH",
-        "role": "COO"
+        "name": "Shane McRann",
+        "role": "CEO"
       }
     ],
     "hiring_signals": [
@@ -411,7 +381,7 @@
       "total_results": 36,
       "relevant_results": 19,
       "total_text_chars": 24282,
-      "ai_initiatives_found": 3,
+      "ai_initiatives_found": 2,
       "tech_stack_signals": 3,
       "customers_found": 0,
       "news_events": 0,
@@ -419,6 +389,7 @@
       "hiring_roles_detected": 2,
       "evidence_snippets": 8
     },
+    "narrative_summary": "Champ shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: web-detected stack includes AWS, Kubernetes, React. Key signals: hiring signals for AI/ML Engineer, Data Scientist.",
     "github": {
       "found": true,
       "org_login": "champtitles",
@@ -480,20 +451,8 @@
     "recent_news": [],
     "executives": [
       {
-        "name": "Administration\n\nDr",
-        "role": "Chief Financial Officer"
-      },
-      {
-        "name": "Research\n\nJohn M",
-        "role": "Executive"
-      },
-      {
-        "name": "Corporate Communications\n\nDr",
-        "role": "Executive"
-      },
-      {
-        "name": "Applied Science and Innovation\n\nDr",
-        "role": "Executive"
+        "name": "Sara Wise",
+        "role": "Chief Technology Officer"
       }
     ],
     "hiring_signals": [
@@ -550,10 +509,11 @@
       "tech_stack_signals": 0,
       "customers_found": 0,
       "news_events": 0,
-      "executives_found": 4,
+      "executives_found": 1,
       "hiring_roles_detected": 2,
       "evidence_snippets": 8
     },
+    "narrative_summary": "Primate shows moderate AI engagement with 3 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. No public GitHub presence or detectable tech stack \u2014 engineering practices are opaque from external research. Key signals: hiring signals for AI/ML Engineer, Data Scientist; identified tech leadership: Sara Wise (Chief Technology Officer).",
     "github": {
       "found": true,
       "org_login": "primate-run",
@@ -654,12 +614,7 @@
     "tech_stack_github_confirmed": []
   },
   "Track Star": {
-    "ai_initiatives": [
-      {
-        "text": "AI-driven insights have significantly boosted clie",
-        "type": "ai_feature"
-      }
-    ],
+    "ai_initiatives": [],
     "named_products": [],
     "tech_stack": [
       "Python",
@@ -671,8 +626,8 @@
     "recent_news": [],
     "executives": [
       {
-        "name": "Tobias L\u00fctke",
-        "role": "CEO"
+        "name": "Amir Preminger",
+        "role": "Chief Technology Officer"
       }
     ],
     "hiring_signals": [
@@ -709,7 +664,7 @@
       "total_results": 36,
       "relevant_results": 31,
       "total_text_chars": 46170,
-      "ai_initiatives_found": 1,
+      "ai_initiatives_found": 0,
       "tech_stack_signals": 7,
       "customers_found": 0,
       "news_events": 0,
@@ -717,6 +672,7 @@
       "hiring_roles_detected": 6,
       "evidence_snippets": 4
     },
+    "narrative_summary": "Track Star appears to be building AI capability \u2014 hiring signals for AI/ML Engineer, Data Scientist detected, but no public AI product launches or features identified yet. Technical footprint: web-detected stack includes AWS, Azure, GCP, Kubernetes. Key signals: broad technical hiring across 6 role categories; identified tech leadership: Amir Preminger (Chief Technology Officer).",
     "github": {
       "found": true,
       "org_login": "OG-star-tech",
@@ -772,7 +728,16 @@
     "tech_stack": [],
     "named_customers": [],
     "recent_news": [],
-    "executives": [],
+    "executives": [
+      {
+        "name": "Georgie Brooke",
+        "role": "CEO"
+      },
+      {
+        "name": "Stef Merks",
+        "role": "CTO"
+      }
+    ],
     "hiring_signals": [
       "Data Scientist"
     ],
@@ -826,10 +791,11 @@
       "tech_stack_signals": 0,
       "customers_found": 0,
       "news_events": 0,
-      "executives_found": 0,
+      "executives_found": 2,
       "hiring_roles_detected": 1,
       "evidence_snippets": 8
     },
+    "narrative_summary": "SMRTR appears to be building AI capability \u2014 hiring signals for Data Scientist detected, but no public AI product launches or features identified yet. No public GitHub presence or detectable tech stack \u2014 engineering practices are opaque from external research. Key signals: hiring signals for Data Scientist.",
     "github": {
       "found": true,
       "org_login": "smrtr",
@@ -896,23 +862,7 @@
         "type": "genai_feature"
       },
       {
-        "text": "AI-Powered National Directory Connecting Homeowners",
-        "type": "ai_feature"
-      },
-      {
         "text": "AI-powered financial calculators are gaining tracti",
-        "type": "ai_feature"
-      },
-      {
-        "text": "AI-Powered Aesthetic Simulation and Lead Generation",
-        "type": "ai_feature"
-      },
-      {
-        "text": "AI-powered financial calculators that help lenders",
-        "type": "ai_feature"
-      },
-      {
-        "text": "AI-powered meal scanning technology instantly ident",
         "type": "ai_feature"
       }
     ],
@@ -921,8 +871,7 @@
       "OneCX"
     ],
     "tech_stack": [
-      "Kubernetes",
-      "Python"
+      "Kubernetes"
     ],
     "named_customers": [],
     "recent_news": [
@@ -931,12 +880,16 @@
     ],
     "executives": [
       {
-        "name": "FMSI uses AWS for cloud solutions",
-        "role": "CEO"
+        "name": "Eric Garza",
+        "role": "founder"
       },
       {
-        "name": "Chairman and",
-        "role": "CEO"
+        "name": "Ryan Sturm",
+        "role": "president"
+      },
+      {
+        "name": "Mark Hewitt",
+        "role": "founder"
       }
     ],
     "hiring_signals": [
@@ -989,15 +942,16 @@
     "enrichment_stats": {
       "total_results": 36,
       "relevant_results": 20,
-      "total_text_chars": 26709,
-      "ai_initiatives_found": 7,
-      "tech_stack_signals": 2,
+      "total_text_chars": 26732,
+      "ai_initiatives_found": 3,
+      "tech_stack_signals": 1,
       "customers_found": 0,
       "news_events": 2,
-      "executives_found": 2,
+      "executives_found": 3,
       "hiring_roles_detected": 3,
       "evidence_snippets": 8
     },
+    "narrative_summary": "FMSI shows moderate AI engagement with 3 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: web-detected stack includes Kubernetes. Key signals: hiring signals for AI/ML Engineer, Data Scientist, DevOps/SRE; 2 recent news events.",
     "github": {
       "found": true,
       "org_login": "fmsi-dev",
@@ -1047,8 +1001,8 @@
     ],
     "executives": [
       {
-        "name": "Venk",
-        "role": "Chief Technology Officer"
+        "name": "James Moser",
+        "role": "Founder"
       }
     ],
     "hiring_signals": [
@@ -1100,6 +1054,7 @@
       "hiring_roles_detected": 3,
       "evidence_snippets": 6
     },
+    "narrative_summary": "Cairn Applications appears to be building AI capability \u2014 hiring signals for AI/ML Engineer, Data Scientist detected, but no public AI product launches or features identified yet. Technical footprint: web-detected stack includes AWS, Kubernetes, Python, React. Key signals: hiring signals for AI/ML Engineer, Data Scientist, NLP Engineer; 1 recent news event.",
     "github": {
       "found": true,
       "org_login": "cairnapps",
@@ -1119,10 +1074,6 @@
       },
       {
         "text": "AI-powered features for performance management",
-        "type": "ai_feature"
-      },
-      {
-        "text": "intelligent scheduling over traditional office",
         "type": "ai_feature"
       }
     ],
@@ -1180,7 +1131,7 @@
       "total_results": 36,
       "relevant_results": 17,
       "total_text_chars": 21414,
-      "ai_initiatives_found": 3,
+      "ai_initiatives_found": 2,
       "tech_stack_signals": 1,
       "customers_found": 0,
       "news_events": 0,
@@ -1188,6 +1139,7 @@
       "hiring_roles_detected": 1,
       "evidence_snippets": 8
     },
+    "narrative_summary": "ViaPeople references AI capabilities in public materials, but limited evidence of dedicated AI infrastructure, hiring, or ML tooling suggests these may be aspirational or vendor-integrated features. Technical footprint: web-detected stack includes Kubernetes. Key signals: hiring signals for Full Stack.",
     "github": {
       "found": true,
       "org_login": "viapeople-inc",
@@ -1236,17 +1188,26 @@
       {
         "text": "intelligent IIoT platform and product suite that int",
         "type": "ai_feature"
-      },
-      {
-        "text": "AI-powered mapping platform",
-        "type": "ai_feature"
       }
     ],
     "named_products": [],
     "tech_stack": [],
     "named_customers": [],
     "recent_news": [],
-    "executives": [],
+    "executives": [
+      {
+        "name": "Brian Corcoran",
+        "role": "co-founder"
+      },
+      {
+        "name": "Tim Quinn",
+        "role": "CEO"
+      },
+      {
+        "name": "De Caux",
+        "role": "Chief AI Officer"
+      }
+    ],
     "hiring_signals": [
       "Data Scientist"
     ],
@@ -1296,14 +1257,15 @@
       "total_results": 36,
       "relevant_results": 9,
       "total_text_chars": 11006,
-      "ai_initiatives_found": 3,
+      "ai_initiatives_found": 2,
       "tech_stack_signals": 0,
       "customers_found": 0,
       "news_events": 0,
-      "executives_found": 0,
+      "executives_found": 3,
       "hiring_roles_detected": 1,
       "evidence_snippets": 8
     },
+    "narrative_summary": "ThingTech shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. No public GitHub presence or detectable tech stack \u2014 engineering practices are opaque from external research. Key signals: hiring signals for Data Scientist; identified tech leadership: De Caux (Chief AI Officer).",
     "github": {
       "found": true,
       "org_login": "thingtech",
@@ -1391,8 +1353,20 @@
     "recent_news": [],
     "executives": [
       {
-        "name": "Brad Winett",
-        "role": "Executive"
+        "name": "Mark Anderson",
+        "role": "President"
+      },
+      {
+        "name": "Alexander Spencer",
+        "role": "Founder"
+      },
+      {
+        "name": "Charles Kriete",
+        "role": "CEO"
+      },
+      {
+        "name": "Jason Craven",
+        "role": "Chief Technology Officer"
       }
     ],
     "hiring_signals": [
@@ -1450,10 +1424,11 @@
       "tech_stack_signals": 3,
       "customers_found": 0,
       "news_events": 0,
-      "executives_found": 1,
+      "executives_found": 4,
       "hiring_roles_detected": 3,
       "evidence_snippets": 8
     },
+    "narrative_summary": "TrackIt Transit shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: web-detected stack includes AWS, Kubernetes, Python. Key signals: hiring signals for AI/ML Engineer, Data Scientist, DevOps/SRE; identified tech leadership: Jason Craven (Chief Technology Officer).",
     "github": {
       "found": true,
       "org_login": "trackit",
@@ -1558,9 +1533,7 @@
     "tech_stack": [
       "AWS"
     ],
-    "named_customers": [
-      "But they"
-    ],
+    "named_customers": [],
     "recent_news": [],
     "executives": [],
     "hiring_signals": [
@@ -1614,12 +1587,13 @@
       "total_text_chars": 18456,
       "ai_initiatives_found": 2,
       "tech_stack_signals": 1,
-      "customers_found": 1,
+      "customers_found": 0,
       "news_events": 0,
       "executives_found": 0,
       "hiring_roles_detected": 1,
       "evidence_snippets": 8
     },
+    "narrative_summary": "NexTalk shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: web-detected stack includes AWS. Key signals: hiring signals for Data Scientist.",
     "github": {
       "found": true,
       "org_login": "NexTalk",
@@ -1662,20 +1636,12 @@
         "type": "genai_feature"
       },
       {
-        "text": "AI-powered feature that allows you to ask questions",
-        "type": "ai_feature"
-      },
-      {
         "text": "AI-powered observability and security platform for",
         "type": "ai_feature"
       },
       {
-        "text": "LLM-powered workloads move from e",
+        "text": "generative AI to automate most advisory grun",
         "type": "genai_feature"
-      },
-      {
-        "text": "AI-powered automation",
-        "type": "ai_feature"
       }
     ],
     "named_products": [],
@@ -1690,24 +1656,20 @@
     ],
     "executives": [
       {
-        "name": "Marketing",
-        "role": "Executive"
+        "name": "Stino Milito",
+        "role": "President"
       },
       {
-        "name": "Peter Maragos as an industry voice",
+        "name": "Peter Maragos",
         "role": "CEO"
       },
       {
-        "name": "Jim Lim is CTO",
+        "name": "Andrew Whelan",
         "role": "CEO"
       },
       {
-        "name": "Sullivan is",
-        "role": "Head of AI"
-      },
-      {
-        "name": "Andrew Whelan is the",
-        "role": "Chief Executive Officer"
+        "name": "Jim Lim",
+        "role": "CTO"
       }
     ],
     "hiring_signals": [
@@ -1761,14 +1723,15 @@
       "total_results": 36,
       "relevant_results": 30,
       "total_text_chars": 39736,
-      "ai_initiatives_found": 8,
+      "ai_initiatives_found": 6,
       "tech_stack_signals": 3,
       "customers_found": 0,
       "news_events": 1,
-      "executives_found": 5,
+      "executives_found": 4,
       "hiring_roles_detected": 3,
       "evidence_snippets": 8
     },
+    "narrative_summary": "Dash demonstrates meaningful AI adoption with 6 identified AI-related features, active hiring across 2 AI/ML disciplines, and investment in modern ML infrastructure (OpenAI). Technical footprint: web-detected stack includes Kubernetes, Python, OpenAI. Key signals: hiring signals for Data Scientist, NLP Engineer, DevOps/SRE; 1 recent news event.",
     "github": {
       "found": true,
       "org_login": "dashpay",
