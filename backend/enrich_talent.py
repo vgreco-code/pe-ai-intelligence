@@ -77,14 +77,111 @@ async def tavily_search(client: httpx.AsyncClient, query: str, tavily_key: str) 
         return {"answer": "", "results": []}
 
 
-def _extract_people(text: str, company_name: str) -> list[dict]:
-    """Extract person-role pairs from text that mention the target company."""
+def _is_valid_person_name(name: str, company_name: str) -> bool:
+    """Strict validation that a string is actually a person's name, not a company/role/artifact."""
+    name_words = name.split()
+    if len(name_words) < 2 or len(name_words) > 4:
+        return False
+
+    # Every word must start with uppercase (except short connectors like "de", "van")
+    for w in name_words:
+        if len(w) <= 2:
+            continue
+        if not w[0].isupper():
+            return False
+
+    # Blocklist: prepositions, articles, common junk as first word
+    first_word_blocklist = {
+        'is', 'at', 'of', 'the', 'and', 'for', 'in', 'as', 'to', 'by',
+        'view', 'click', 'see', 'more', 'read', 'about', 'our', 'this',
+        'new', 'top', 'best', 'all', 'get', 'how',
+    }
+    if name_words[0].lower() in first_word_blocklist:
+        return False
+
+    # Blocklist: any word that's a company suffix or business term
+    business_words = {
+        'inc', 'llc', 'corp', 'ltd', 'consulting', 'solutions', 'technologies',
+        'technology', 'software', 'systems', 'services', 'group', 'partners',
+        'capital', 'ventures', 'financial', 'industrial', 'healthcare',
+        'robotics', 'foundry', 'analytics', 'labs', 'global', 'international',
+        'executive', 'development', 'corporate', 'architect', 'engineer',
+        'engineering', 'scientist', 'science', 'manager', 'director', 'lead',
+        'senior', 'junior', 'principal', 'staff', 'post', 'power', 'energy',
+        'data', 'cloud', 'platform', 'product', 'marketing', 'sales',
+        'operations', 'research', 'design', 'infrastructure', 'security',
+    }
+    if any(w.lower() in business_words for w in name_words):
+        return False
+
+    # Must not contain digits or special chars
+    if re.search(r'[\d\n\r@#$%&*(){}[\]]', name):
+        return False
+
+    # Must not be the company name itself or a close variant
+    company_words = set(w.lower() for w in company_name.split() if len(w) > 2)
+    name_lower_words = set(w.lower() for w in name_words if len(w) > 2)
+    if company_words and name_lower_words.issubset(company_words):
+        return False
+
+    # Known non-person patterns (product names, LinkedIn artifacts)
+    known_non_persons = [
+        'view post', 'read more', 'see all', 'learn more', 'sign in',
+        'palantir', 'doordash', 'healthcare', 'bamboo',
+    ]
+    name_lower = name.lower()
+    if any(bad in name_lower for bad in known_non_persons):
+        return False
+
+    # Each name word should look like a human name (2+ chars, no all-caps unless 2-3 letter initials)
+    for w in name_words:
+        if len(w) > 3 and w.isupper():
+            return False  # Likely an acronym, not a name
+
+    return True
+
+
+def _result_mentions_company_strict(result: dict, company_name: str) -> bool:
+    """Check if a search result is specifically about the target company.
+
+    Stricter than the portfolio enrichment version: requires exact company name
+    match to avoid DoorDash→Dash, Palantir Foundry→Thought Foundry contamination.
+    """
+    company_lower = company_name.lower().strip()
+    # For multi-word company names, require the full phrase
+    # For single-word names, require word-boundary match to avoid substring false positives
+    text = f"{result.get('title', '')} {result.get('content', '')}".lower()
+    url = result.get("url", "").lower()
+
+    if len(company_lower.split()) > 1:
+        # Multi-word: require exact phrase
+        return company_lower in text or company_lower.replace(" ", "") in url
+    else:
+        # Single-word: require word boundary match to prevent "Dash" matching "DoorDash"
+        pattern = r'\b' + re.escape(company_lower) + r'\b'
+        return bool(re.search(pattern, text))
+
+
+def _extract_people_from_result(result: dict, company_name: str) -> list[dict]:
+    """Extract person-role pairs from a SINGLE search result that is confirmed
+    to be about the target company.
+
+    Key difference from old approach: we require BOTH that the result is about
+    the company AND that the person-role extraction is proximate to company mentions.
+    """
     people = []
-    seen = set()
     company_lower = company_name.lower()
 
-    # Pattern: "Name - Title at Company" or "Name | Title | Company"
-    # Also: "Name, Title at Company"
+    title = result.get("title", "")
+    content = result.get("content", "")
+    url = result.get("url", "").lower()
+    text = f"{title}\n{content}"
+
+    # Is this a LinkedIn profile page for someone AT this company?
+    is_linkedin_profile = "linkedin.com/in/" in url
+    # Is this a LinkedIn company page?
+    is_linkedin_company = "linkedin.com/company/" in url
+
     role_keywords = (
         r'(?:CTO|CEO|CFO|COO|CAIO|VP|Vice President|Director|Head|Lead|'
         r'Chief\s+(?:Technology|AI|Data|Information|Engineering)\s+Officer|'
@@ -95,75 +192,61 @@ def _extract_people(text: str, company_name: str) -> list[dict]:
         r'Data\s+(?:Analyst|Architect|Engineer)|Solutions?\s+Architect)'
     )
 
-    # "Name - Role" or "Name, Role" patterns from LinkedIn results
-    patterns = [
-        # "Name - Role at/| Company"  (LinkedIn title format)
-        r'([A-Z][a-z]+(?:\s+[A-Z]\.?\s*)?[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)\s*[-–|]\s*(' + role_keywords + r'[^|\n]{0,60})',
-        # "Role: Name" patterns
-        r'(' + role_keywords + r')\s+(?:is\s+)?([A-Z][a-z]+(?:\s+[A-Z]\.?\s*)?[A-Z][a-z]+)',
-    ]
+    # Primary pattern: "Name - Role" (LinkedIn title format)
+    pattern = r'([A-Z][a-z]+(?:\s+[A-Z]\.?\s*)?[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)\s*[-–|]\s*(' + role_keywords + r'[^|\n]{0,60})'
 
-    text_lower = text.lower()
-    # Only extract from text that mentions the company
-    if company_lower not in text_lower:
-        # Check partial matches
-        words = [w for w in company_lower.split() if len(w) > 2]
-        if not words or sum(1 for w in words if w in text_lower) < len(words) * 0.5:
-            return []
+    for m in re.finditer(pattern, text, re.IGNORECASE):
+        name = m.group(1).strip(' -–|,')
+        role = m.group(2).strip(' -–|,')[:80]
 
-    for pat in patterns:
-        for m in re.finditer(pat, text, re.IGNORECASE):
-            groups = m.groups()
-            if len(groups) >= 2:
-                # Determine which group is the name vs role
-                g1, g2 = groups[0].strip(), groups[1].strip()
-                # If first group looks like a role keyword, swap
-                if re.match(role_keywords, g1, re.IGNORECASE):
-                    name, role = g2, g1
-                else:
-                    name, role = g1, g2
+        # Clean role: remove "at Company" suffix
+        role = re.sub(r'\s+at\s+.*$', '', role, flags=re.IGNORECASE)
+        role = re.sub(r'\s*\|.*$', '', role)
+        role = re.sub(r'\s*-\s*LinkedIn.*$', '', role, flags=re.IGNORECASE)
 
-                # Validate name
-                name = name.strip(' -–|,')
-                name_words = name.split()
-                if len(name_words) < 2 or len(name_words) > 4:
-                    continue
-                if not all(w[0].isupper() or len(w) <= 2 for w in name_words):
-                    continue
-                if name_words[0].lower() in {'is', 'at', 'of', 'the', 'and', 'for', 'in', 'as'}:
-                    continue
-                if re.search(r'[\d\n\r]', name):
-                    continue
+        if not _is_valid_person_name(name, company_name):
+            continue
 
-                # Clean role
-                role = role.strip(' -–|,')[:80]
-                role = re.sub(r'\s+at\s+.*$', '', role, flags=re.IGNORECASE)
-                role = re.sub(r'\s*\|.*$', '', role)
+        # CRITICAL: Verify this person is associated with THIS company
+        # For LinkedIn profiles, check if the company is mentioned near the person's entry
+        match_pos = m.start()
+        context_window = text[max(0, match_pos - 150):match_pos + len(m.group(0)) + 150].lower()
 
-                fingerprint = name.lower()
-                if fingerprint not in seen:
-                    seen.add(fingerprint)
+        # The company name must appear in proximity to this person
+        if len(company_lower.split()) > 1:
+            company_in_context = company_lower in context_window
+        else:
+            company_in_context = bool(re.search(r'\b' + re.escape(company_lower) + r'\b', context_window))
 
-                    # Classify the role
-                    role_lower = role.lower()
-                    if any(kw in role_lower for kw in ['cto', 'chief technology', 'vp of eng', 'vp engineering', 'head of eng']):
-                        category = 'leadership'
-                    elif any(kw in role_lower for kw in ['ai', 'ml', 'machine learning', 'data scien', 'nlp', 'deep learning']):
-                        category = 'ai_ml'
-                    elif any(kw in role_lower for kw in ['architect', 'principal', 'staff', 'lead']):
-                        category = 'senior_eng'
-                    elif any(kw in role_lower for kw in ['engineer', 'developer', 'devops', 'sre']):
-                        category = 'engineering'
-                    elif any(kw in role_lower for kw in ['director', 'head', 'manager', 'vp']):
-                        category = 'management'
-                    else:
-                        category = 'other'
+        # For LinkedIn profile pages, also accept if the URL or page title has the company
+        if is_linkedin_profile:
+            company_in_context = company_in_context or (
+                company_lower in title.lower()
+            )
 
-                    people.append({
-                        "name": name,
-                        "role": role,
-                        "category": category,
-                    })
+        if not company_in_context:
+            continue
+
+        # Classify the role
+        role_lower = role.lower()
+        if any(kw in role_lower for kw in ['cto', 'chief technology', 'vp of eng', 'vp engineering', 'head of eng']):
+            category = 'leadership'
+        elif any(kw in role_lower for kw in ['ai', 'ml', 'machine learning', 'data scien', 'nlp', 'deep learning']):
+            category = 'ai_ml'
+        elif any(kw in role_lower for kw in ['architect', 'principal', 'staff', 'lead']):
+            category = 'senior_eng'
+        elif any(kw in role_lower for kw in ['engineer', 'developer', 'devops', 'sre']):
+            category = 'engineering'
+        elif any(kw in role_lower for kw in ['director', 'head', 'manager', 'vp']):
+            category = 'management'
+        else:
+            category = 'other'
+
+        people.append({
+            "name": name,
+            "role": role,
+            "category": category,
+        })
 
     return people
 
@@ -211,29 +294,40 @@ def _estimate_team_size(answers: list[str], results: list[dict], company_name: s
 
 
 def extract_talent_signals(company_name: str, query_results: list[dict]) -> dict:
-    """Extract talent signals from search results."""
+    """Extract talent signals from search results with strict company validation.
+
+    Key principles:
+    1. Only process results that are specifically about the target company
+    2. Require person-company proximity (name near company mention)
+    3. Strict person-name validation to reject companies/roles/artifacts as names
+    4. Only count skills from company-relevant results
+    """
     company_lower = company_name.lower()
 
     all_people = []
     all_answers = []
-    all_results = []
+    relevant_results = []
+    total_results = 0
 
     for qr in query_results:
         answer = qr.get("answer", "")
         results = qr.get("results", [])
         all_answers.append(answer)
-        all_results.extend(results)
+        total_results += len(results)
 
-        # Extract people from answer
-        if answer:
-            all_people.extend(_extract_people(answer, company_name))
-
-        # Extract people from search results
+        # Filter results: only process ones that are clearly about this company
         for r in results:
-            content = r.get("content", "")
-            title = r.get("title", "")
-            combined = f"{title}\n{content}"
-            all_people.extend(_extract_people(combined, company_name))
+            if _result_mentions_company_strict(r, company_name):
+                relevant_results.append(r)
+                all_people.extend(_extract_people_from_result(r, company_name))
+
+        # Extract from Tavily answer too (with answer wrapped as a pseudo-result)
+        if answer:
+            answer_result = {"title": "", "content": answer, "url": ""}
+            if _result_mentions_company_strict(answer_result, company_name):
+                all_people.extend(_extract_people_from_result(answer_result, company_name))
+
+    logger.info(f"  {company_name}: {len(relevant_results)}/{total_results} results were company-relevant")
 
     # Deduplicate people by name
     seen_names = set()
@@ -250,17 +344,17 @@ def extract_talent_signals(company_name: str, query_results: list[dict]) -> dict
     engineering = [p for p in unique_people if p["category"] == "engineering"]
     management = [p for p in unique_people if p["category"] == "management"]
 
-    # LinkedIn profile URLs found
+    # LinkedIn profile URLs found (only from relevant results)
     linkedin_urls = set()
-    for r in all_results:
+    for r in relevant_results:
         url = r.get("url", "")
         if "linkedin.com/in/" in url:
             linkedin_urls.add(url)
 
-    # Team size estimate
-    size_est = _estimate_team_size(all_answers, all_results, company_name)
+    # Team size estimate (only from relevant results)
+    size_est = _estimate_team_size(all_answers, relevant_results, company_name)
 
-    # Aggregate skills/tech mentions from profiles
+    # Aggregate skills/tech mentions ONLY from company-relevant results
     tech_skills = set()
     skill_keywords = {
         'python', 'java', 'javascript', 'typescript', 'react', 'node.js',
@@ -270,15 +364,17 @@ def extract_talent_signals(company_name: str, query_results: list[dict]) -> dict
         'spark', 'hadoop', 'snowflake', 'databricks', 'airflow',
         'ci/cd', 'jenkins', 'github actions', 'agile', 'scrum',
     }
-    all_text_lower = " ".join(all_answers).lower() + " " + " ".join(r.get("content", "").lower() for r in all_results)
+    relevant_text = " ".join(r.get("content", "").lower() for r in relevant_results)
     for skill in skill_keywords:
-        if skill in all_text_lower:
+        if skill in relevant_text:
             tech_skills.add(skill)
 
     return {
         "found": len(unique_people) > 0,
         "total_profiles_found": len(unique_people),
         "linkedin_profiles_discovered": len(linkedin_urls),
+        "relevant_results": len(relevant_results),
+        "total_results": total_results,
         "leadership": [{"name": p["name"], "role": p["role"]} for p in leadership[:5]],
         "ai_ml_talent": [{"name": p["name"], "role": p["role"]} for p in ai_ml[:8]],
         "senior_engineers": [{"name": p["name"], "role": p["role"]} for p in senior_eng[:8]],

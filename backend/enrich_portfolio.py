@@ -88,19 +88,46 @@ async def tavily_search(client: httpx.AsyncClient, query: str, tavily_key: str) 
         return []
 
 
+def _is_tavily_hallucination(text: str, company_name: str) -> bool:
+    """Detect Tavily AI answer hallucinations.
+
+    Tavily's answer synthesis appends industry suffixes like 'Financial Services'
+    to company names and generates plausible but fictional details.
+    """
+    text_lower = text.lower()
+    company_lower = company_name.lower()
+    hallucination_suffixes = [
+        'financial services', 'enterprise software', 'hr/workforce',
+        'healthcare', 'life sciences', 'healthcare/life sciences',
+    ]
+    for suffix in hallucination_suffixes:
+        if f"{company_lower} {suffix}" in text_lower:
+            return True
+    return False
+
+
 def _result_mentions_company(result: dict, company_name: str) -> bool:
     """Check if a search result actually mentions the target company."""
     content = (result.get("content", "") + " " + result.get("title", "")).lower()
     name_lower = company_name.lower()
 
-    # Full name match
-    if name_lower in content:
+    # Full name match (with word-boundary check for single-word names)
+    if len(name_lower.split()) == 1:
+        # Single-word: require word boundary to prevent "Dash" matching "DoorDash"
+        import re as _re
+        if not _re.search(r'\b' + _re.escape(name_lower) + r'\b', content):
+            return False
+    elif name_lower in content:
         return True
-    # Match significant words (skip short words like "AI", "IT")
-    words = [w for w in name_lower.split() if len(w) > 2]
-    if words and sum(1 for w in words if w in content) >= len(words) * 0.5:
-        return True
-    return False
+    else:
+        # Match significant words (skip short words like "AI", "IT")
+        words = [w for w in name_lower.split() if len(w) > 2]
+        if words and sum(1 for w in words if w in content) >= len(words) * 0.5:
+            return True
+        else:
+            return False
+
+    return True
 
 
 def extract_evidence(company_name: str, all_results: list[dict]) -> dict:
@@ -112,9 +139,14 @@ def extract_evidence(company_name: str, all_results: list[dict]) -> dict:
     company_lower = company_name.lower()
 
     # ── Step 1: Split results into company-relevant vs generic ────────────
+    # Also filter out Tavily AI answer hallucinations
     relevant_results = []
     generic_results = []
     for r in all_results:
+        # Skip Tavily answer hallucinations (fabricated content with industry suffixes)
+        if r.get("source") == "tavily_answer" and _is_tavily_hallucination(r.get("content", ""), company_name):
+            generic_results.append(r)
+            continue
         if _result_mentions_company(r, company_name):
             relevant_results.append(r)
         else:
@@ -386,10 +418,13 @@ def extract_evidence(company_name: str, all_results: list[dict]) -> dict:
         if any(kw in relevant_lower for kw in keywords):
             evidence["hiring_signals"].append(role)
 
-    # ── Key Evidence Snippets — only from relevant results ────────────────
+    # ── Key Evidence Snippets — only from relevant, non-hallucinated results ─
     for r in relevant_results:
         content = r.get("content", "").strip()
         if not content or len(content) < 80:
+            continue
+        # Skip Tavily answer hallucinations that got through initial filter
+        if _is_tavily_hallucination(content, company_name):
             continue
         if company_lower in content.lower():
             snippet = content[:250]
