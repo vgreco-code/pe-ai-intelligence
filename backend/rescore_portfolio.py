@@ -28,6 +28,7 @@ from models.company import Base, Company, DimensionScore, CompanyScore, Benchmar
 from routers.sandbox import (
     research_company_deep,
     estimate_dimension_scores,
+    validate_plausibility,
     compute_composite,
     compute_confidence_score,
     classify_tier,
@@ -119,7 +120,8 @@ async def rescore_company(
         f"{research_meta.get('total_text_chars', 0)} chars"
     )
 
-    # Compute new scores
+    # Plausibility check + compute new scores
+    features = validate_plausibility(features, is_pe_portfolio=True)
     pillar_scores = estimate_dimension_scores(features)
     composite = compute_composite(pillar_scores)
     tier = classify_tier(composite)

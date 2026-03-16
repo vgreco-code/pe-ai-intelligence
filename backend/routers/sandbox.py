@@ -1080,6 +1080,145 @@ def detect_vertical(text: str) -> str:
     return "Technology"
 
 
+# ── Plausibility validator ─────────────────────────────────────────────────────
+
+def validate_plausibility(
+    features: dict,
+    is_pe_portfolio: bool = True,
+) -> dict:
+    """Cross-check extracted features for plausibility and apply corrections.
+
+    Problem: Companies with generic names (e.g., "Thought Foundry", "Dash",
+    "Primate") pull in web results from unrelated entities with the same name.
+    This causes wildly inflated funding, employee counts, and intensity scores.
+
+    This validator applies three layers of correction:
+
+    1. PE portfolio reality check:
+       - PE portcos are NOT publicly traded (override is_public)
+       - Cap funding relative to employee count (a 50-person company
+         doesn't have $300M in funding)
+       - Cap employee count (PE software portcos are typically <500)
+
+    2. Intensity ceiling by company size:
+       - A 10-person company cannot realistically score 5.0 on governance,
+         analytics maturity, AI talent, and engineering practices simultaneously
+       - Apply a size-aware ceiling to prevent small companies from maxing out
+
+    3. Contamination detection:
+       - If too many intensity signals hit 5.0, the data is likely contaminated
+       - Apply a broad discount proportional to how many signals are maxed
+
+    Returns a corrected copy of features with a _plausibility_adjustments log.
+    """
+    data = dict(features)  # Work on a copy
+    adjustments = []
+    emp = data.get("employee_count") or 50
+    funding = data.get("funding_total_usd") or 0
+
+    # ── 1. PE portfolio reality check ─────────────────────────────────────
+    if is_pe_portfolio:
+        # PE portfolio companies are not publicly traded
+        if data.get("is_public"):
+            data["is_public"] = False
+            adjustments.append("is_public: overridden to False (PE portfolio company)")
+
+        # Funding plausibility: cap at reasonable levels for company size
+        # Rule of thumb: funding rarely exceeds ~$500K per employee for PE portcos
+        # (most PE software companies are acquired for $20-200M total)
+        if funding > 0:
+            max_plausible_funding = max(emp * 500_000, 10_000_000)  # At least $10M floor
+            if is_pe_portfolio:
+                max_plausible_funding = min(max_plausible_funding, 200_000_000)  # Hard cap $200M for PE
+            if funding > max_plausible_funding:
+                old_funding = funding
+                data["funding_total_usd"] = max_plausible_funding
+                funding = max_plausible_funding
+                adjustments.append(
+                    f"funding: ${old_funding/1e6:.0f}M → ${max_plausible_funding/1e6:.0f}M "
+                    f"(capped for {emp}-person PE company)"
+                )
+
+        # Employee count plausibility: PE software portcos are typically <1000
+        if emp > 1000:
+            old_emp = emp
+            emp = min(emp, 500)
+            data["employee_count"] = emp
+            adjustments.append(f"employee_count: {old_emp} → {emp} (capped for PE portfolio)")
+
+    # ── 2. Size-aware intensity ceiling ───────────────────────────────────
+    # Small companies (< 50 people) can't realistically max out on
+    # governance, analytics, AI talent, engineering practices, etc.
+    # These capabilities require dedicated teams and budget.
+    if emp <= 15:
+        intensity_ceiling = 3.0
+    elif emp <= 30:
+        intensity_ceiling = 3.5
+    elif emp <= 75:
+        intensity_ceiling = 4.0
+    elif emp <= 150:
+        intensity_ceiling = 4.5
+    else:
+        intensity_ceiling = 5.0
+
+    # Apply ceiling to execution-dependent signals
+    # (AI intensity and market position are exempt — small companies can
+    #  genuinely be AI-focused or market leaders in a niche)
+    ceiling_fields = [
+        "governance_depth", "analytics_depth", "org_change_depth",
+        "ai_talent_depth", "eng_practice_depth", "partnership_depth",
+        "data_richness", "regulatory_burden",
+    ]
+    for field in ceiling_fields:
+        val = data.get(field, 0)
+        if val > intensity_ceiling:
+            data[field] = intensity_ceiling
+            adjustments.append(f"{field}: {val:.1f} → {intensity_ceiling:.1f} (size ceiling, {emp} emp)")
+
+    # ── 3. Contamination detection ────────────────────────────────────────
+    # If too many signals are at or near their max, the data is likely
+    # pulling from multiple unrelated entities. Apply a broad discount.
+    intensity_fields = [
+        "ai_intensity", "cloud_intensity", "data_richness", "regulatory_burden",
+        "market_position", "governance_depth", "analytics_depth", "org_change_depth",
+        "ai_talent_depth", "eng_practice_depth", "partnership_depth",
+    ]
+    near_max_count = sum(1 for f in intensity_fields if data.get(f, 0) >= 4.5)
+    total_fields = len(intensity_fields)
+
+    # If more than 60% of signals are near-maxed, likely contamination
+    contamination_ratio = near_max_count / total_fields
+    if contamination_ratio > 0.6:
+        discount = 0.7 + (1.0 - contamination_ratio) * 0.75  # 0.70-0.85 range
+        adjustments.append(
+            f"contamination_discount: {discount:.2f} applied "
+            f"({near_max_count}/{total_fields} signals near-maxed)"
+        )
+        for field in intensity_fields:
+            val = data.get(field, 0)
+            if val > 2.0:
+                data[field] = round(max(2.0, val * discount), 2)
+    elif contamination_ratio > 0.4:
+        # Mild contamination — apply lighter discount
+        discount = 0.85 + (1.0 - contamination_ratio) * 0.25
+        adjustments.append(
+            f"mild_contamination_discount: {discount:.2f} applied "
+            f"({near_max_count}/{total_fields} signals near-maxed)"
+        )
+        for field in intensity_fields:
+            val = data.get(field, 0)
+            if val > 3.0:
+                data[field] = round(max(2.5, val * discount), 2)
+
+    data["_plausibility_adjustments"] = adjustments
+    if adjustments:
+        logger.info(f"  Plausibility adjustments ({len(adjustments)}):")
+        for adj in adjustments:
+            logger.info(f"    → {adj}")
+
+    return data
+
+
 # ── Heuristic dimension scorer ────────────────────────────────────────────────
 
 def estimate_dimension_scores(data: dict) -> dict[str, float]:
@@ -1301,7 +1440,8 @@ async def score_company(req: SandboxScoreRequest, db: Session = Depends(get_db))
     db.add(company)
     db.flush()
 
-    # 3. Estimate dimension scores
+    # 3. Plausibility check + dimension scoring
+    features = validate_plausibility(features, is_pe_portfolio=True)
     pillar_scores = estimate_dimension_scores(features)
 
     # 4. Save dimension scores
