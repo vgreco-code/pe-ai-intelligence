@@ -61,19 +61,33 @@ DIMENSION_LABELS = {
 # ── Scoring functions ─────────────────────────────────────────────────────────
 
 def classify_tier(score: float) -> str:
-    if score >= 4.0:
+    """Classify company into AI maturity tier.
+
+    Thresholds calibrated for PE portfolio realism (v3 model):
+      AI-Ready (≥3.5):    Has AI in-product, data infra, and team to execute
+      AI-Buildable (≥2.8): Foundation exists, AI buildable with investment
+      AI-Emerging (≥2.0):  Early-stage, some signals but needs significant work
+      AI-Limited (<2.0):   Major gaps across data, tech, and talent
+    """
+    if score >= 3.5:
         return "AI-Ready"
-    if score >= 3.2:
+    if score >= 2.8:
         return "AI-Buildable"
-    if score >= 2.5:
+    if score >= 2.0:
         return "AI-Emerging"
     return "AI-Limited"
 
 
 def assign_wave(score: float) -> int:
-    if score >= 3.5:
+    """Assign implementation wave for AI rollout sequencing.
+
+    Wave 1: Deploy AI immediately (strong foundation)
+    Wave 2: Build foundation first, then deploy (6-12 months)
+    Wave 3: Significant investment needed (12-24 months)
+    """
+    if score >= 3.2:
         return 1
-    if score >= 2.8:
+    if score >= 2.5:
         return 2
     return 3
 
@@ -796,18 +810,26 @@ def extract_features(company_name: str, text: str) -> dict:
                 founded_year = yr
                 break
 
-    # ── Boolean signals (expanded keyword lists) ─────────────────────────────
-    ai_keywords = [
-        'artificial intelligence', 'machine learning', 'deep learning', 'ai-powered',
-        'ai features', 'neural network', 'nlp', 'natural language processing',
-        'generative ai', 'llm', 'large language model', 'copilot', 'ai assistant',
-        'computer vision', 'predictive model', 'recommendation engine', 'chatbot',
-        'intelligent automation', 'ai/ml', 'openai', 'anthropic', 'gpt',
-        'transformer model', 'fine-tuning', 'embeddings', 'vector search',
-        'rag', 'retrieval augmented', 'prompt engineering',
+    # ── AI signal extraction — split into STRONG (company-specific) vs GENERIC ─
+    # Strong evidence = the company itself builds/ships AI features
+    # Generic evidence = AI mentioned in industry context (common in any research)
+    ai_strong_keywords = [
+        'ai-powered', 'ai features', 'ai assistant', 'copilot', 'chatbot',
+        'recommendation engine', 'predictive model', 'intelligent automation',
+        'ai/ml pipeline', 'ml model', 'ai-driven', 'ai-enabled',
+        'ai product', 'ai solution', 'ai platform',
     ]
-    ai_match_count = sum(1 for kw in ai_keywords if kw in text_lower)
-    has_ai_features = ai_match_count >= 1
+    ai_generic_keywords = [
+        'artificial intelligence', 'machine learning', 'deep learning',
+        'neural network', 'nlp', 'natural language processing',
+        'generative ai', 'llm', 'large language model', 'openai', 'anthropic',
+        'gpt', 'transformer model', 'fine-tuning', 'embeddings', 'vector search',
+        'rag', 'retrieval augmented', 'prompt engineering', 'computer vision',
+    ]
+    ai_strong_count = sum(1 for kw in ai_strong_keywords if kw in text_lower)
+    ai_generic_count = sum(1 for kw in ai_generic_keywords if kw in text_lower)
+    ai_match_count = ai_strong_count + ai_generic_count
+    has_ai_features = ai_strong_count >= 2 or ai_match_count >= 4  # Stricter: need real evidence
 
     cloud_keywords = [
         'cloud-native', 'aws', 'amazon web services', 'azure', 'google cloud', 'gcp',
@@ -817,7 +839,7 @@ def extract_features(company_name: str, text: str) -> dict:
         'heroku', 'digital ocean', 'cloud infrastructure',
     ]
     cloud_match_count = sum(1 for kw in cloud_keywords if kw in text_lower)
-    cloud_native = cloud_match_count >= 1
+    cloud_native = cloud_match_count >= 2  # Stricter: need multiple cloud signals
 
     public_keywords = [
         'publicly traded', 'ipo', 'nasdaq', 'nyse', 'stock price',
@@ -826,9 +848,9 @@ def extract_features(company_name: str, text: str) -> dict:
     ]
     is_public = any(kw in text_lower for kw in public_keywords)
 
-    # ── Intensity scores (1-5) — keyword density with depth-aware scaling ────
-    # With deeper text, we count actual occurrences (not just presence)
-    # to differentiate "mentions AI once" from "AI is core to the product"
+    # ── Intensity scores (1-5) — recalibrated for PE portco realism ──────────
+    # Old model: any 10 keyword matches → 4.5/5.0 (way too generous)
+    # New model: strong evidence counts 2x, generic counts 0.5x, with log scaling
 
     api_keywords = [
         'api', 'rest api', 'graphql', 'webhook', 'integration', 'sdk',
@@ -837,7 +859,7 @@ def extract_features(company_name: str, text: str) -> dict:
         'third-party', 'zapier', 'extensible', 'plugins',
     ]
     api_count = sum(1 for kw in api_keywords if kw in text_lower)
-    api_ecosystem = min(5.0, 1.5 + api_count * 0.4)
+    api_ecosystem = min(5.0, 1.0 + api_count * 0.3)
 
     data_keywords = [
         'data platform', 'data warehouse', 'big data', 'analytics', 'dashboard',
@@ -847,7 +869,7 @@ def extract_features(company_name: str, text: str) -> dict:
         'redshift', 'bigquery',
     ]
     data_count = sum(1 for kw in data_keywords if kw in text_lower)
-    data_richness = min(5.0, 1.5 + data_count * 0.45)
+    data_richness = min(5.0, 1.0 + data_count * 0.35)
 
     reg_keywords = [
         'compliance', 'gdpr', 'hipaa', 'sox', 'regulated', 'regulatory',
@@ -856,7 +878,7 @@ def extract_features(company_name: str, text: str) -> dict:
         'ccpa', 'risk management', 'governance framework',
     ]
     reg_count = sum(1 for kw in reg_keywords if kw in text_lower)
-    regulatory_burden = min(5.0, 1.5 + reg_count * 0.45)
+    regulatory_burden = min(5.0, 1.0 + reg_count * 0.35)
 
     market_keywords = [
         'market leader', 'industry leader', 'dominant', '#1', 'leading provider',
@@ -866,12 +888,13 @@ def extract_features(company_name: str, text: str) -> dict:
         'global leader', 'award-winning',
     ]
     mkt_count = sum(1 for kw in market_keywords if kw in text_lower)
-    market_position = min(5.0, 2.0 + mkt_count * 0.5)
+    market_position = min(5.0, 1.5 + mkt_count * 0.4)
 
-    # ── AI depth signal: use match count for better scoring in deep mode ─────
-    # Feeds into ai_product_features and ai_momentum with more nuance
-    ai_intensity = min(5.0, 1.0 + ai_match_count * 0.35) if ai_match_count > 0 else 1.0
-    cloud_intensity = min(5.0, 1.0 + cloud_match_count * 0.4) if cloud_match_count > 0 else 1.0
+    # ── AI intensity: strong evidence counts double, generic counts half ──────
+    # This separates "company actually builds AI" from "article mentions AI"
+    ai_weighted = ai_strong_count * 2.0 + ai_generic_count * 0.5
+    ai_intensity = min(5.0, 1.0 + ai_weighted * 0.2) if ai_match_count > 0 else 1.0
+    cloud_intensity = min(5.0, 1.0 + cloud_match_count * 0.3) if cloud_match_count > 0 else 1.0
 
     # Vertical detection
     vertical = detect_vertical(text_lower)
@@ -898,6 +921,9 @@ def extract_features(company_name: str, text: str) -> dict:
         # Depth-aware intensity signals (used by estimate_dimension_scores)
         "ai_intensity": round(ai_intensity, 2),
         "cloud_intensity": round(cloud_intensity, 2),
+        # Evidence quality breakdown (strong = company-specific, generic = industry)
+        "ai_strong_evidence_count": ai_strong_count,
+        "ai_generic_evidence_count": ai_generic_count,
     }
 
 
@@ -935,56 +961,100 @@ def detect_vertical(text: str) -> str:
 def estimate_dimension_scores(data: dict) -> dict[str, float]:
     """Estimate 17-dimension scores from extracted company features.
 
-    Uses both boolean signals (has_ai, cloud) AND intensity signals
-    (ai_intensity, cloud_intensity) for more nuanced scoring when
-    deep research data is available.
+    v3 scoring model — calibrated for PE portfolio realism:
+    - Execution capacity factor penalizes resource-constrained companies
+      on dimensions that require headcount/budget to execute
+    - AI evidence quality distinguishes "company ships AI" from "industry has AI"
+    - Tighter intensity curves require stronger evidence for high scores
+    - Starting-point awareness: small teams get credit for agility but
+      discounted on execution-heavy dimensions
     """
     scores = {}
-    emp = data.get("employee_count") or 100
+    emp = data.get("employee_count") or 50  # Default 50 (typical PE portco)
     funding = data.get("funding_total_usd") or 0
     is_public = data.get("is_public", False)
     has_ai = data.get("has_ai_features", False)
     cloud = data.get("cloud_native", False)
-    api_str = data.get("api_ecosystem_strength") or 2.5
-    data_rich = data.get("data_richness") or 2.5
-    reg_burden = data.get("regulatory_burden") or 2.5
-    mkt_pos = data.get("market_position") or 2.5
+    api_str = data.get("api_ecosystem_strength") or 2.0
+    data_rich = data.get("data_richness") or 2.0
+    reg_burden = data.get("regulatory_burden") or 2.0
+    mkt_pos = data.get("market_position") or 2.0
 
     # Intensity signals — fall back to binary thresholds for backward compatibility
-    ai_int = data.get("ai_intensity") or (3.5 if has_ai else 1.0)
-    cloud_int = data.get("cloud_intensity") or (3.5 if cloud else 1.0)
+    ai_int = data.get("ai_intensity") or (2.5 if has_ai else 1.0)
+    cloud_int = data.get("cloud_intensity") or (2.5 if cloud else 1.0)
 
-    funding_score = min(5.0, max(1.0, (1.0 + math.log10(max(funding, 1e6)) - 6) * 1.5)) if funding > 0 else 2.0
-    size_factor = min(5.0, max(1.0, 1.0 + math.log10(max(emp, 10)) / 1.5))
+    # ── Execution Capacity Factor (ECF) ──────────────────────────────────────
+    # Measures whether the company has the resources to actually execute on AI.
+    # A 17-person company simply cannot staff an ML team, build data infra,
+    # and ship AI features the way a 200+ person company can.
+    #
+    # ECF range: 0.5 (very small) → 1.0 (large enough to execute)
+    #   <25 employees:  0.55  — can experiment but can't staff dedicated AI
+    #   25-50:          0.65  — can hire 1-2 ML roles, limited bandwidth
+    #   50-100:         0.75  — can build a small AI team
+    #   100-250:        0.85  — reasonable execution capacity
+    #   250-500:        0.92  — solid execution capacity
+    #   500+:           1.0   — full execution capacity
+    if emp < 25:
+        exec_capacity = 0.55
+    elif emp < 50:
+        exec_capacity = 0.55 + (emp - 25) * 0.004  # 0.55 → 0.65
+    elif emp < 100:
+        exec_capacity = 0.65 + (emp - 50) * 0.002  # 0.65 → 0.75
+    elif emp < 250:
+        exec_capacity = 0.75 + (emp - 100) * 0.00067  # 0.75 → 0.85
+    elif emp < 500:
+        exec_capacity = 0.85 + (emp - 250) * 0.00028  # 0.85 → 0.92
+    else:
+        exec_capacity = min(1.0, 0.92 + (emp - 500) * 0.00016)  # 0.92 → 1.0
 
-    # Data & Analytics
-    scores["data_quality"] = round(min(5.0, data_rich * 0.7 + size_factor * 0.3), 2)
-    scores["data_integration"] = round(min(5.0, api_str * 0.6 + cloud_int * 0.4), 2)
+    # Funding also contributes to execution capacity (can hire/buy AI talent)
+    funding_boost = 0.0
+    if funding > 0:
+        if funding >= 50e6:
+            funding_boost = 0.08
+        elif funding >= 10e6:
+            funding_boost = 0.05
+        elif funding >= 2e6:
+            funding_boost = 0.03
+    exec_capacity = min(1.0, exec_capacity + funding_boost)
+
+    # ── Base factors ─────────────────────────────────────────────────────────
+    funding_score = min(4.5, max(1.0, (1.0 + math.log10(max(funding, 1e6)) - 6) * 1.3)) if funding > 0 else 1.5
+    size_factor = min(4.0, max(1.0, 1.0 + math.log10(max(emp, 10)) / 2.0))
+
+    # ── Data & Analytics ─────────────────────────────────────────────────────
+    scores["data_quality"] = round(min(5.0, data_rich * 0.6 + size_factor * 0.4), 2)
+    scores["data_integration"] = round(min(5.0, api_str * 0.55 + cloud_int * 0.45), 2)
     scores["analytics_maturity"] = round(min(5.0, (data_rich + size_factor + funding_score) / 3), 2)
 
-    # Technology & Infrastructure — use cloud_int for gradient instead of binary
+    # ── Technology & Infrastructure ──────────────────────────────────────────
     scores["cloud_architecture"] = round(min(5.0, cloud_int * 0.6 + api_str * 0.4), 2)
-    scores["tech_stack_modernity"] = round(min(5.0, cloud_int * 0.45 + funding_score * 0.3 + api_str * 0.25), 2)
-    scores["ai_engineering"] = round(min(5.0, ai_int * 0.5 + size_factor * 0.25 + funding_score * 0.25), 2)
+    scores["tech_stack_modernity"] = round(min(5.0, cloud_int * 0.4 + funding_score * 0.3 + api_str * 0.3), 2)
+    # AI engineering requires execution capacity — can't build AI infra with 10 people
+    scores["ai_engineering"] = round(min(5.0, (ai_int * 0.5 + size_factor * 0.25 + funding_score * 0.25) * exec_capacity), 2)
 
-    # AI Product & Value — use ai_int for gradient instead of binary
-    scores["ai_product_features"] = round(min(5.0, ai_int * 0.65 + mkt_pos * 0.35), 2)
-    scores["revenue_ai_upside"] = round(min(5.0, mkt_pos * 0.4 + ai_int * 0.3 + data_rich * 0.3), 2)
-    scores["margin_ai_upside"] = round(min(5.0, ai_int * 0.35 + data_rich * 0.3 + cloud_int * 0.35), 2)
+    # ── AI Product & Value ───────────────────────────────────────────────────
+    # ai_product_features: need strong evidence, not just generic AI mentions
+    scores["ai_product_features"] = round(min(5.0, ai_int * 0.6 + mkt_pos * 0.25 + (1.0 if has_ai else 0.0) * 0.15 * 5), 2)
+    scores["revenue_ai_upside"] = round(min(5.0, mkt_pos * 0.35 + ai_int * 0.3 + data_rich * 0.35), 2)
+    scores["margin_ai_upside"] = round(min(5.0, ai_int * 0.3 + data_rich * 0.35 + cloud_int * 0.35), 2)
     scores["product_differentiation"] = round(min(5.0, mkt_pos * 0.5 + api_str * 0.3 + data_rich * 0.2), 2)
 
-    # Organization & Talent
-    scores["ai_talent_density"] = round(min(5.0, ai_int * 0.5 + size_factor * 0.25 + funding_score * 0.25), 2)
-    scores["leadership_ai_vision"] = round(min(5.0, ai_int * 0.45 + mkt_pos * 0.3 + funding_score * 0.25), 2)
-    scores["org_change_readiness"] = round(min(5.0, size_factor * 0.3 + cloud_int * 0.3 + funding_score * 0.4), 2)
+    # ── Organization & Talent — heavily gated by execution capacity ──────────
+    # A 17-person company can't have "high AI talent density"
+    scores["ai_talent_density"] = round(min(5.0, (ai_int * 0.4 + size_factor * 0.3 + funding_score * 0.3) * exec_capacity), 2)
+    scores["leadership_ai_vision"] = round(min(5.0, ai_int * 0.4 + mkt_pos * 0.3 + funding_score * 0.3), 2)
+    scores["org_change_readiness"] = round(min(5.0, (size_factor * 0.3 + cloud_int * 0.3 + funding_score * 0.4) * exec_capacity), 2)
     scores["partner_ecosystem"] = round(min(5.0, api_str * 0.5 + mkt_pos * 0.3 + size_factor * 0.2), 2)
 
-    # Governance & Risk
-    scores["ai_governance"] = round(min(5.0, (3.5 if is_public else 2.0) * 0.4 + reg_burden * 0.3 + size_factor * 0.3), 2)
-    scores["regulatory_readiness"] = round(min(5.0, (3.5 if is_public else 2.0) * 0.3 + reg_burden * 0.4 + size_factor * 0.3), 2)
+    # ── Governance & Risk ────────────────────────────────────────────────────
+    scores["ai_governance"] = round(min(5.0, (3.0 if is_public else 1.5) * 0.3 + reg_burden * 0.4 + size_factor * 0.3), 2)
+    scores["regulatory_readiness"] = round(min(5.0, (3.0 if is_public else 1.5) * 0.25 + reg_burden * 0.45 + size_factor * 0.3), 2)
 
-    # Velocity & Momentum
-    scores["ai_momentum"] = round(min(5.0, ai_int * 0.5 + funding_score * 0.25 + mkt_pos * 0.25), 2)
+    # ── Velocity & Momentum ──────────────────────────────────────────────────
+    scores["ai_momentum"] = round(min(5.0, ai_int * 0.45 + funding_score * 0.25 + mkt_pos * 0.3), 2)
 
     return scores
 
