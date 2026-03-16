@@ -11,6 +11,12 @@ import {
 type TierFilter = 'AI-Ready' | 'AI-Buildable' | 'AI-Emerging' | 'AI-Limited' | 'All'
 type SortType = 'score' | 'name' | 'wave'
 
+const WAVE_LABELS: Record<number, { label: string; color: string }> = {
+  1: { label: 'Deploy Now', color: '#02C39A' },
+  2: { label: 'Build Foundation', color: '#F5A623' },
+  3: { label: 'Groundwork', color: '#F24E1E' },
+}
+
 interface Props {
   portfolio: PortfolioCompany[]
   onCompanyClick?: (name: string) => void
@@ -67,7 +73,7 @@ export default function Portfolio({ portfolio, onCompanyClick }: Props) {
           </span>
         </div>
         <p className="text-[var(--text-secondary)] text-lg">
-          16-dimension AI readiness analysis across {portfolio.length} portfolio companies
+          17-dimension AI readiness analysis across {portfolio.length} portfolio companies
         </p>
       </div>
 
@@ -106,8 +112,8 @@ export default function Portfolio({ portfolio, onCompanyClick }: Props) {
 
       {/* Company Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredAndSorted.map(company => (
-          <div key={company.name}>
+        {filteredAndSorted.map((company, idx) => (
+          <div key={company.name} className="relative">
             {expandedCard === company.name ? (
               <div className="glass-card rounded-2xl p-8 border border-slate-700/50">
                 <button onClick={() => setExpandedCard(null)} className="mb-4 text-[var(--text-muted)] hover:text-white transition-colors underline text-sm">
@@ -175,6 +181,13 @@ export default function Portfolio({ portfolio, onCompanyClick }: Props) {
                 onClick={() => handleCardClick(company.name)}
                 className="glass-card rounded-2xl p-6 border border-slate-700/50 w-full text-left hover:border-teal-500/50 transition-all cursor-pointer group h-full"
               >
+                {/* Rank badge */}
+                {sortBy === 'score' && (
+                  <div className="absolute -top-2 -left-2 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white z-10"
+                    style={{ background: TIER_COLORS[company.tier] }}>
+                    {idx + 1}
+                  </div>
+                )}
                 <div className="mb-3">
                   <h3 className="text-xl font-bold text-[var(--text-primary)] mb-1 group-hover:text-teal-400 transition-colors">{company.name}</h3>
                   <span className="inline-block bg-slate-800 text-[var(--text-muted)] rounded-full px-3 py-1 text-xs">{company.vertical}</span>
@@ -189,11 +202,17 @@ export default function Portfolio({ portfolio, onCompanyClick }: Props) {
                   <p className="text-4xl font-bold" style={{ color: TIER_COLORS[company.tier] }}>{company.composite_score.toFixed(2)}</p>
                 </div>
 
-                <div className="flex gap-2 mb-4">
+                <div className="flex gap-2 mb-4 flex-wrap">
                   <span className="rounded-full px-3 py-1 text-xs font-bold text-white" style={{ backgroundColor: TIER_COLORS[company.tier] }}>
                     {company.tier.replace('AI-', '')}
                   </span>
-                  <span className="bg-slate-800 text-slate-300 rounded-full px-3 py-1 text-xs font-bold">Wave {company.wave}</span>
+                  <span className="rounded-full px-3 py-1 text-xs font-bold" style={{
+                    backgroundColor: `${WAVE_LABELS[company.wave]?.color}20`,
+                    color: WAVE_LABELS[company.wave]?.color || '#94a3b8',
+                    border: `1px solid ${WAVE_LABELS[company.wave]?.color}40`
+                  }}>
+                    Wave {company.wave} — {WAVE_LABELS[company.wave]?.label}
+                  </span>
                 </div>
 
                 {/* Radar Chart */}
