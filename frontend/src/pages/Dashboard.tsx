@@ -112,7 +112,7 @@ export default function Dashboard({ portfolio, metrics, trainingStats, waveData,
             <div className="flex-shrink-0 hidden lg:block">
               <div className="glass-card px-5 py-3 rounded-xl text-sm border border-teal-500/20">
                 <div className="text-[var(--text-muted)] text-xs mb-1">Model</div>
-                <div className="text-teal-400 font-bold">v1.0</div>
+                <div className="text-teal-400 font-bold">v{metrics?.model_version || '4.2'}</div>
                 <div className="text-[var(--text-muted)] text-xs mt-2 mb-1">Accuracy</div>
                 <div className="text-[var(--text-primary)] font-bold">{modelAccuracy}% CV</div>
                 <div className="text-[var(--text-muted)] text-xs mt-2 mb-1">Adjacent</div>
