@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import {
   Search, Loader2, Trash2, ChevronDown, ChevronUp, Zap, Building2,
-  Users, DollarSign, Globe, Cloud, Cpu, Shield
+  Users, DollarSign, Globe, Cloud, Cpu, Shield, TrendingUp,
+  Sparkles, Target, AlertTriangle
 } from 'lucide-react'
 import {
   RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar,
@@ -49,6 +50,63 @@ interface SandboxCompany {
 
 const API = import.meta.env.VITE_API_URL || ''
 
+// ── Animated counter hook ───────────────────────────────────────────────────
+
+function useAnimatedScore(target: number, duration = 1200) {
+  const [current, setCurrent] = useState(0)
+  const startTime = useRef<number>(0)
+  const rafId = useRef<number>(0)
+
+  useEffect(() => {
+    if (target === 0) { setCurrent(0); return }
+    startTime.current = performance.now()
+
+    const animate = (now: number) => {
+      const elapsed = now - startTime.current
+      const progress = Math.min(elapsed / duration, 1)
+      // Ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3)
+      setCurrent(eased * target)
+      if (progress < 1) {
+        rafId.current = requestAnimationFrame(animate)
+      }
+    }
+    rafId.current = requestAnimationFrame(animate)
+    return () => cancelAnimationFrame(rafId.current)
+  }, [target, duration])
+
+  return current
+}
+
+// ── Deep research pipeline steps ────────────────────────────────────────────
+
+const PIPELINE_STEPS = [
+  { label: 'Launching deep research across 8 dimensions...', icon: '🔍', duration: 2000 },
+  { label: 'Analyzing AI capabilities & engineering signals...', icon: '🤖', duration: 2500 },
+  { label: 'Scraping company pages for richer data...', icon: '🌐', duration: 3000 },
+  { label: 'Extracting features from research corpus...', icon: '⚡', duration: 2000 },
+  { label: 'Running 17-dimension scoring model...', icon: '📊', duration: 2000 },
+  { label: 'Computing tier & wave classification...', icon: '🏆', duration: 1500 },
+]
+
+// ── Helper: top strengths and weaknesses ────────────────────────────────────
+
+function getInsights(details: SandboxResult['dimension_details']) {
+  const sorted = [...details].sort((a, b) => b.score - a.score)
+  return {
+    strengths: sorted.slice(0, 3),
+    weaknesses: sorted.slice(-3).reverse(),
+  }
+}
+
+// ── Helper: format funding ──────────────────────────────────────────────────
+
+function formatFunding(usd: number): string {
+  if (usd >= 1e9) return `$${(usd / 1e9).toFixed(1)}B`
+  if (usd >= 1e6) return `$${(usd / 1e6).toFixed(0)}M`
+  return `$${usd.toLocaleString()}`
+}
+
 export default function Sandbox() {
   const [companyName, setCompanyName] = useState('')
   const [scoring, setScoring] = useState(false)
@@ -57,7 +115,10 @@ export default function Sandbox() {
   const [history, setHistory] = useState<SandboxCompany[]>([])
   const [historyLoaded, setHistoryLoaded] = useState(false)
   const [expandedResult, setExpandedResult] = useState(true)
-  const [pipelineStep, setPipelineStep] = useState('')
+  const [pipelineIdx, setPipelineIdx] = useState(-1)
+  const [showResult, setShowResult] = useState(false)
+
+  const animatedScore = useAnimatedScore(showResult && result ? result.composite_score : 0, 1400)
 
   const loadHistory = async () => {
     try {
@@ -75,22 +136,23 @@ export default function Sandbox() {
     setScoring(true)
     setError(null)
     setResult(null)
+    setShowResult(false)
+    setPipelineIdx(0)
 
-    // Simulate pipeline steps for UX
-    const steps = [
-      'Searching web for company data...',
-      'Extracting features & signals...',
-      'Running 17-dimension scoring model...',
-      'Computing tier classification...',
-    ]
+    // Advance pipeline steps on timers
     let stepIdx = 0
-    setPipelineStep(steps[0])
-    const interval = setInterval(() => {
+    const advanceStep = () => {
       stepIdx++
-      if (stepIdx < steps.length) {
-        setPipelineStep(steps[stepIdx])
+      if (stepIdx < PIPELINE_STEPS.length) {
+        setPipelineIdx(stepIdx)
       }
-    }, 2500)
+    }
+    const timers: ReturnType<typeof setTimeout>[] = []
+    let cumulative = 0
+    for (let i = 1; i < PIPELINE_STEPS.length; i++) {
+      cumulative += PIPELINE_STEPS[i - 1].duration
+      timers.push(setTimeout(advanceStep, cumulative))
+    }
 
     try {
       const resp = await fetch(`${API}/api/sandbox/score`, {
@@ -99,7 +161,7 @@ export default function Sandbox() {
         body: JSON.stringify({ company_name: companyName.trim() }),
       })
 
-      clearInterval(interval)
+      timers.forEach(clearTimeout)
 
       if (!resp.ok) {
         const err = await resp.json()
@@ -109,12 +171,15 @@ export default function Sandbox() {
       const data: SandboxResult = await resp.json()
       setResult(data)
       setCompanyName('')
+
+      // Brief pause then reveal with animation
+      setTimeout(() => setShowResult(true), 300)
       loadHistory()
     } catch (e: any) {
       setError(e.message || 'Failed to score company')
     } finally {
       setScoring(false)
-      setPipelineStep('')
+      setPipelineIdx(-1)
     }
   }
 
@@ -122,14 +187,14 @@ export default function Sandbox() {
     try {
       await fetch(`${API}/api/sandbox/companies/${id}`, { method: 'DELETE' })
       setHistory(h => h.filter(c => c.id !== id))
-      if (result?.id === id) setResult(null)
+      if (result?.id === id) { setResult(null); setShowResult(false) }
     } catch { /* ignore */ }
   }
 
   // Load history on mount
   if (!historyLoaded) loadHistory()
 
-  // Radar chart data for scored result
+  // Radar chart data
   const radarData = result
     ? Object.entries(result.pillar_scores).map(([dim, score]) => ({
         dimension: DIMENSION_LABELS[dim] || dim,
@@ -145,6 +210,8 @@ export default function Sandbox() {
         .map(([cat, score]) => ({ category: cat, score, color: CATEGORY_COLORS[cat] || '#666' }))
     : []
 
+  const insights = result ? getInsights(result.dimension_details) : null
+
   return (
     <div className="space-y-8">
       {/* Header */}
@@ -156,7 +223,7 @@ export default function Sandbox() {
           AI Scoring Sandbox
         </h1>
         <p className="text-[var(--text-secondary)] mt-1 text-sm">
-          Enter any company name — we'll research it and run it through the full 17-dimension AI maturity pipeline
+          Deep research any company — 8 dimension-specific queries, page scraping, and full 17-dimension AI maturity scoring
         </p>
       </div>
 
@@ -190,133 +257,156 @@ export default function Sandbox() {
             {scoring ? (
               <>
                 <Loader2 className="w-4 h-4 animate-spin" />
-                Scoring...
+                Researching...
               </>
             ) : (
               <>
-                <Zap className="w-4 h-4" />
+                <Sparkles className="w-4 h-4" />
                 Score Company
               </>
             )}
           </button>
         </div>
 
-        {/* Pipeline progress */}
-        {scoring && pipelineStep && (
-          <div className="mt-4 flex items-center gap-3">
-            <div className="flex gap-1">
-              {[0, 1, 2, 3].map(i => (
+        {/* Pipeline progress — enhanced for deep research */}
+        {scoring && pipelineIdx >= 0 && (
+          <div className="mt-5">
+            <div className="flex gap-1.5 mb-3">
+              {PIPELINE_STEPS.map((_, i) => (
                 <div
                   key={i}
-                  className="h-1 w-8 rounded-full transition-all duration-500"
+                  className="h-1.5 flex-1 rounded-full transition-all duration-700"
                   style={{
-                    background: i <= ['Searching', 'Extracting', 'Running', 'Computing'].findIndex(s => pipelineStep.startsWith(s))
-                      ? 'var(--teal)' : 'rgba(255,255,255,0.1)',
+                    background: i <= pipelineIdx
+                      ? 'var(--teal)'
+                      : 'rgba(255,255,255,0.08)',
+                    boxShadow: i === pipelineIdx ? '0 0 8px rgba(2,195,154,0.4)' : 'none',
                   }}
                 />
               ))}
             </div>
-            <span className="text-xs text-[var(--teal)] font-medium animate-pulse">{pipelineStep}</span>
+            <div className="flex items-center gap-2">
+              <span className="text-base">{PIPELINE_STEPS[pipelineIdx]?.icon}</span>
+              <span className="text-xs text-[var(--teal)] font-medium">{PIPELINE_STEPS[pipelineIdx]?.label}</span>
+              <span className="text-[10px] text-[var(--text-muted)] ml-auto">Step {pipelineIdx + 1}/{PIPELINE_STEPS.length}</span>
+            </div>
           </div>
         )}
 
         {error && (
-          <div className="mt-4 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+          <div className="mt-4 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm flex items-center gap-2">
+            <AlertTriangle className="w-4 h-4 flex-shrink-0" />
             {error}
           </div>
         )}
       </div>
 
       {/* Result card */}
-      {result && (
-        <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-          {/* Score hero */}
-          <div className="card-dark p-6">
-            <div className="flex items-start justify-between mb-6">
-              <div className="flex items-center gap-4">
-                <div
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold"
-                  style={{
-                    background: `${TIER_COLORS[result.tier]}15`,
-                    color: TIER_COLORS[result.tier],
-                    border: `2px solid ${TIER_COLORS[result.tier]}30`,
-                  }}
-                >
-                  {result.composite_score.toFixed(1)}
+      {result && showResult && (
+        <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          {/* Score hero — with animated counter */}
+          <div className="card-dark p-6 relative overflow-hidden">
+            {/* Subtle gradient glow behind score */}
+            <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full opacity-[0.07]"
+                 style={{ background: `radial-gradient(circle, ${TIER_COLORS[result.tier]}, transparent)` }} />
+
+            <div className="flex items-start justify-between mb-6 relative">
+              <div className="flex items-center gap-5">
+                {/* Animated score circle */}
+                <div className="relative">
+                  <svg width="80" height="80" viewBox="0 0 80 80">
+                    <circle cx="40" cy="40" r="35" fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="4" />
+                    <circle
+                      cx="40" cy="40" r="35"
+                      fill="none"
+                      stroke={TIER_COLORS[result.tier]}
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      strokeDasharray={`${(animatedScore / 5) * 220} 220`}
+                      transform="rotate(-90 40 40)"
+                      style={{ transition: 'stroke-dasharray 0.1s ease-out' }}
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-2xl font-bold" style={{ color: TIER_COLORS[result.tier] }}>
+                      {animatedScore.toFixed(1)}
+                    </span>
+                  </div>
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-white">{result.name}</h2>
-                  <div className="flex items-center gap-2 mt-1">
-                    <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${getTierBg(result.tier)}`}>
+                  <div className="flex items-center gap-2 mt-1.5">
+                    <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${getTierBg(result.tier)}`}>
                       {result.tier}
                     </span>
                     <span className="text-xs text-[var(--text-muted)]">{result.vertical}</span>
                     <span className="text-xs text-[var(--text-muted)]">·</span>
-                    <span className="text-xs text-[var(--text-muted)]">Wave {result.wave}</span>
+                    <span className="text-xs font-medium" style={{ color: 'var(--teal)' }}>Wave {result.wave}</span>
                   </div>
                 </div>
               </div>
               <button
                 onClick={() => setExpandedResult(!expandedResult)}
-                className="p-2 rounded-lg text-[var(--text-muted)] hover:text-white hover:bg-white/5"
+                className="p-2 rounded-lg text-[var(--text-muted)] hover:text-white hover:bg-white/5 transition-all"
               >
                 {expandedResult ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
               </button>
             </div>
 
-            {/* Extracted features summary */}
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 mb-6">
+            {/* Extracted features chips */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2.5 mb-6">
               {result.employee_count && (
-                <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[0.03] border border-white/[0.06]">
-                  <Users className="w-3.5 h-3.5 text-[var(--text-muted)]" />
+                <div className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
+                  <Users className="w-3.5 h-3.5 text-cyan-400" />
                   <span className="text-xs text-[var(--text-secondary)]">{result.employee_count.toLocaleString()} employees</span>
                 </div>
               )}
               {result.funding_total_usd && (
-                <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[0.03] border border-white/[0.06]">
-                  <DollarSign className="w-3.5 h-3.5 text-[var(--text-muted)]" />
-                  <span className="text-xs text-[var(--text-secondary)]">
-                    ${result.funding_total_usd >= 1e9
-                      ? `${(result.funding_total_usd / 1e9).toFixed(1)}B`
-                      : `${(result.funding_total_usd / 1e6).toFixed(0)}M`}
-                  </span>
+                <div className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
+                  <DollarSign className="w-3.5 h-3.5 text-green-400" />
+                  <span className="text-xs text-[var(--text-secondary)]">{formatFunding(result.funding_total_usd)} funding</span>
                 </div>
               )}
               {result.website && (
-                <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[0.03] border border-white/[0.06]">
-                  <Globe className="w-3.5 h-3.5 text-[var(--text-muted)]" />
-                  <a href={result.website} target="_blank" rel="noopener" className="text-xs text-[var(--teal)] truncate">{result.website.replace('https://', '')}</a>
+                <div className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
+                  <Globe className="w-3.5 h-3.5 text-blue-400" />
+                  <a href={result.website} target="_blank" rel="noopener" className="text-xs text-[var(--teal)] truncate">
+                    {result.website.replace('https://', '').replace('http://', '')}
+                  </a>
                 </div>
               )}
               {result.has_ai_features && (
-                <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-purple-500/10 border border-purple-500/20">
+                <div className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-purple-500/10 border border-purple-500/20">
                   <Cpu className="w-3.5 h-3.5 text-purple-400" />
                   <span className="text-xs text-purple-400 font-medium">AI Features</span>
                 </div>
               )}
               {result.cloud_native && (
-                <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-500/10 border border-blue-500/20">
+                <div className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-blue-500/10 border border-blue-500/20">
                   <Cloud className="w-3.5 h-3.5 text-blue-400" />
                   <span className="text-xs text-blue-400 font-medium">Cloud Native</span>
                 </div>
               )}
               {result.is_public && (
-                <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-amber-500/10 border border-amber-500/20">
+                <div className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20">
                   <Shield className="w-3.5 h-3.5 text-amber-400" />
                   <span className="text-xs text-amber-400 font-medium">Public Company</span>
                 </div>
               )}
             </div>
 
-            {/* Category scores bar */}
-            <div className="grid grid-cols-6 gap-2 mb-2">
+            {/* Category scores — horizontal bars */}
+            <div className="grid grid-cols-6 gap-2">
               {categoryData.map(({ category, score, color }) => (
                 <div key={category} className="text-center">
                   <div className="text-[10px] text-[var(--text-muted)] mb-1 truncate" title={category}>
                     {category.split(' ')[0]}
                   </div>
                   <div className="h-2 rounded-full bg-white/[0.06] overflow-hidden">
-                    <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${(score / 5) * 100}%`, background: color }} />
+                    <div
+                      className="h-full rounded-full transition-all duration-1000 ease-out"
+                      style={{ width: `${(score / 5) * 100}%`, background: color }}
+                    />
                   </div>
                   <div className="text-[10px] font-semibold mt-0.5" style={{ color }}>{score.toFixed(1)}</div>
                 </div>
@@ -324,7 +414,63 @@ export default function Sandbox() {
             </div>
           </div>
 
-          {/* Expanded charts */}
+          {/* Strengths & Weaknesses — NEW */}
+          {expandedResult && insights && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="card-dark p-5">
+                <h3 className="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                  <TrendingUp className="w-3.5 h-3.5" />
+                  Top Strengths
+                </h3>
+                <div className="space-y-2.5">
+                  {insights.strengths.map((d, i) => (
+                    <div key={d.dimension} className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold bg-emerald-500/15 text-emerald-400">
+                        {i + 1}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs text-[var(--text-secondary)] truncate">{d.label}</span>
+                          <span className="text-xs font-bold text-emerald-400 ml-2">{d.score.toFixed(1)}</span>
+                        </div>
+                        <div className="h-1 rounded-full bg-white/[0.06] mt-1 overflow-hidden">
+                          <div className="h-full rounded-full bg-emerald-400/60 transition-all duration-1000"
+                               style={{ width: `${(d.score / 5) * 100}%` }} />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="card-dark p-5">
+                <h3 className="text-xs font-semibold text-orange-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                  <Target className="w-3.5 h-3.5" />
+                  Key Development Areas
+                </h3>
+                <div className="space-y-2.5">
+                  {insights.weaknesses.map((d, i) => (
+                    <div key={d.dimension} className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold bg-orange-500/15 text-orange-400">
+                        {i + 1}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs text-[var(--text-secondary)] truncate">{d.label}</span>
+                          <span className="text-xs font-bold text-orange-400 ml-2">{d.score.toFixed(1)}</span>
+                        </div>
+                        <div className="h-1 rounded-full bg-white/[0.06] mt-1 overflow-hidden">
+                          <div className="h-full rounded-full bg-orange-400/60 transition-all duration-1000"
+                               style={{ width: `${(d.score / 5) * 100}%` }} />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Charts */}
           {expandedResult && (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Radar */}
@@ -389,13 +535,57 @@ export default function Sandbox() {
             </div>
           )}
 
-          {/* Research context */}
+          {/* Investment thesis — NEW */}
+          {expandedResult && insights && (
+            <div className="card-dark p-6">
+              <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-3 flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-[var(--teal)]" />
+                Quick Assessment
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                  <div className="text-[10px] uppercase tracking-wider text-[var(--text-muted)] mb-1.5">Wave Placement</div>
+                  <div className="text-lg font-bold" style={{ color: 'var(--teal)' }}>Wave {result.wave}</div>
+                  <div className="text-xs text-[var(--text-secondary)] mt-1">
+                    {result.wave === 1 ? 'Priority investment — ready for immediate AI acceleration'
+                     : result.wave === 2 ? 'Near-term opportunity — build foundations first'
+                     : 'Long-term play — significant enablement needed'}
+                  </div>
+                </div>
+                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                  <div className="text-[10px] uppercase tracking-wider text-[var(--text-muted)] mb-1.5">Strongest Category</div>
+                  <div className="text-lg font-bold" style={{ color: categoryData[0]?.color }}>
+                    {categoryData[0]?.category?.split('&')[0]?.trim()}
+                  </div>
+                  <div className="text-xs text-[var(--text-secondary)] mt-1">
+                    Scoring {categoryData[0]?.score.toFixed(1)}/5.0 — {categoryData[0]?.score >= 4 ? 'exceptional' : categoryData[0]?.score >= 3 ? 'strong' : 'developing'}
+                  </div>
+                </div>
+                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                  <div className="text-[10px] uppercase tracking-wider text-[var(--text-muted)] mb-1.5">Priority Focus</div>
+                  <div className="text-lg font-bold text-orange-400">
+                    {insights.weaknesses[0]?.label}
+                  </div>
+                  <div className="text-xs text-[var(--text-secondary)] mt-1">
+                    At {insights.weaknesses[0]?.score.toFixed(1)}/5.0 — biggest opportunity for improvement
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Research context — cleaned up */}
           {expandedResult && result.research_summary && (
             <div className="card-dark p-6">
-              <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-3">Research Context</h3>
-              <p className="text-xs text-[var(--text-secondary)] leading-relaxed whitespace-pre-wrap">
-                {result.research_summary}
-              </p>
+              <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-3 flex items-center gap-2">
+                <Search className="w-4 h-4 text-[var(--text-muted)]" />
+                Research Context
+              </h3>
+              <div className="text-xs text-[var(--text-secondary)] leading-relaxed space-y-3">
+                {result.research_summary.split('\n\n').filter(Boolean).map((para, i) => (
+                  <p key={i} className="pl-3 border-l-2 border-white/[0.06]">{para}</p>
+                ))}
+              </div>
             </div>
           )}
         </div>
@@ -429,6 +619,8 @@ export default function Sandbox() {
                         {company.tier}
                       </span>
                       <span className="text-[10px] text-[var(--text-muted)]">{company.vertical}</span>
+                      <span className="text-[10px] text-[var(--text-muted)]">·</span>
+                      <span className="text-[10px] text-[var(--text-muted)]">Wave {company.wave}</span>
                     </div>
                   </div>
                 </div>
@@ -455,8 +647,8 @@ export default function Sandbox() {
           </div>
           <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">Score any company</h3>
           <p className="text-sm text-[var(--text-muted)] max-w-md mx-auto">
-            Enter a company name above and our pipeline will research it across the web,
-            extract AI-readiness signals, and generate a full 17-dimension maturity assessment.
+            Enter a company name above and our deep research pipeline will analyze it across 8 dimensions,
+            scrape key pages, and generate a full 17-dimension maturity assessment.
           </p>
           <div className="flex items-center justify-center gap-2 mt-6">
             {['Stripe', 'Datadog', 'Snowflake', 'UiPath'].map(name => (
