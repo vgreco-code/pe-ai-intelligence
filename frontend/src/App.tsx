@@ -213,12 +213,17 @@ export default function App() {
           '/wave_sequencing.json',
           '/large_training_set.json',
           '/competitive_benchmarks.json',
-          '/portfolio_evidence.json',
         ]
 
-    Promise.all(
-      urls.map((url, i) => fetch(url).then(r => r.json()).catch(i >= 5 ? () => (i === 6 ? {} : { portfolio_benchmarks: [] }) : undefined))
-    ).then(([p, m, ts, w, t, cb, ev]) => {
+    // Evidence JSON is always loaded from static path (not served by API)
+    const evidenceUrl = '/portfolio_evidence.json'
+
+    Promise.all([
+      ...urls.map((url, i) =>
+        fetch(url).then(r => r.json()).catch(i >= 5 ? () => ({ portfolio_benchmarks: [] }) : undefined)
+      ),
+      fetch(evidenceUrl).then(r => r.ok ? r.json() : {}).catch(() => ({})),
+    ]).then(([p, m, ts, w, t, cb, ev]) => {
       setPortfolio(p)
       setMetrics(m)
       setTrainingStats(ts)

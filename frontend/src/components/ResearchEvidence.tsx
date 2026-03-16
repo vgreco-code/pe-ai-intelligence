@@ -122,7 +122,7 @@ export default function ResearchEvidence({ company, evidence }: Props) {
         </div>
       </div>
       <p className="text-xs text-[var(--text-muted)] mb-5">
-        Evidence gathered from {hasEnrichment ? '14 targeted web research queries' : 'deep web research'}
+        Evidence gathered from {hasEnrichment ? '20 targeted web research queries' : 'deep web research'}
         {github?.found ? ', GitHub API' : ''}{careers?.found ? ', careers page' : ''} on {company.name}
       </p>
 
