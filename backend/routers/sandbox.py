@@ -992,8 +992,10 @@ def estimate_dimension_scores(data: dict) -> dict[str, float]:
 # ── Request / response models ─────────────────────────────────────────────────
 
 class SandboxScoreRequest(BaseModel):
-    """User just provides a company name — we handle the rest"""
+    """User provides a company name, plus optional context for entity validation"""
     company_name: str = Field(..., min_length=1, max_length=200)
+    website: Optional[str] = Field(None, description="Company website URL for entity-match validation")
+    description: Optional[str] = Field(None, max_length=500, description="Brief company description for disambiguation")
 
 
 class SandboxCompanyResponse(BaseModel):
@@ -1037,15 +1039,39 @@ async def score_company(req: SandboxScoreRequest, db: Session = Depends(get_db))
 
     settings = get_settings()
 
-    # 1. Web research
+    # 1. Web research with entity-match validation
     if not settings.tavily_api_key:
         raise HTTPException(status_code=503, detail="Research API not configured")
 
-    logger.info(f"Researching company (deep mode): {req.company_name}")
-    features = await research_company_deep(req.company_name, settings.tavily_api_key)
+    # Build context hint and identity markers from user-provided context
+    context_parts = []
+    if req.description:
+        context_parts.append(req.description[:60].strip())
+    context_hint = " ".join(context_parts) if context_parts else ""
+
+    identity_markers = build_identity_markers(
+        company_name=req.company_name,
+        website=req.website,
+        description=req.description,
+    )
+    logger.info(
+        f"Researching company (deep mode): {req.company_name} | "
+        f"markers: domain={identity_markers.get('domain', 'N/A')}, "
+        f"desc_kw={identity_markers.get('desc_keywords', [])[:3]}"
+    )
+
+    features = await research_company_deep(
+        req.company_name, settings.tavily_api_key,
+        context_hint=context_hint,
+        identity_markers=identity_markers,
+    )
     research_meta = features.pop("_research_meta", {})
     research_summary = features.pop("research_summary", "")
-    logger.info(f"Research complete for '{req.company_name}': {research_meta}")
+    logger.info(
+        f"Research complete for '{req.company_name}': {research_meta.get('search_results', 0)} results "
+        f"({research_meta.get('validated_results', 'N/A')} validated, "
+        f"{research_meta.get('results_dropped', 0)} dropped)"
+    )
 
     # 2. Create company record
     company = Company(

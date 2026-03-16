@@ -90,8 +90,9 @@ function useAnimatedScore(target: number, duration = 1200) {
 
 const PIPELINE_STEPS = [
   { label: 'Launching deep research across 8 dimensions...', icon: '🔍', duration: 2000 },
+  { label: 'Validating entity matches against identity markers...', icon: '🛡️', duration: 1500 },
   { label: 'Analyzing AI capabilities & engineering signals...', icon: '🤖', duration: 2500 },
-  { label: 'Scraping company pages for richer data...', icon: '🌐', duration: 3000 },
+  { label: 'Scraping company pages for richer data...', icon: '🌐', duration: 2500 },
   { label: 'Extracting features from research corpus...', icon: '⚡', duration: 2000 },
   { label: 'Running 17-dimension scoring model...', icon: '📊', duration: 2000 },
   { label: 'Computing tier & wave classification...', icon: '🏆', duration: 1500 },
@@ -125,6 +126,9 @@ export default function Sandbox() {
   const [expandedResult, setExpandedResult] = useState(true)
   const [pipelineIdx, setPipelineIdx] = useState(-1)
   const [showResult, setShowResult] = useState(false)
+  const [showContext, setShowContext] = useState(false)
+  const [website, setWebsite] = useState('')
+  const [description, setDescription] = useState('')
 
   const animatedScore = useAnimatedScore(showResult && result ? result.composite_score : 0, 1400)
 
@@ -166,7 +170,11 @@ export default function Sandbox() {
       const resp = await fetch(`${API}/api/sandbox/score`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ company_name: companyName.trim() }),
+        body: JSON.stringify({
+          company_name: companyName.trim(),
+          ...(website.trim() && { website: website.trim() }),
+          ...(description.trim() && { description: description.trim() }),
+        }),
       })
 
       timers.forEach(clearTimeout)
@@ -275,6 +283,54 @@ export default function Sandbox() {
             )}
           </button>
         </div>
+
+        {/* Optional context for entity-match validation */}
+        <button
+          type="button"
+          onClick={() => setShowContext(!showContext)}
+          className="mt-3 flex items-center gap-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-secondary)] transition-colors"
+        >
+          <Shield className="w-3.5 h-3.5" />
+          <span>Entity validation context</span>
+          {showContext ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+          {(website.trim() || description.trim()) && (
+            <span className="ml-1 px-1.5 py-0.5 rounded bg-[var(--teal)]/20 text-[var(--teal)] text-[10px] font-medium">active</span>
+          )}
+        </button>
+
+        {showContext && (
+          <div className="mt-3 grid grid-cols-2 gap-3">
+            <div>
+              <label className="text-[10px] uppercase tracking-wider text-[var(--text-muted)] mb-1 block">Website URL</label>
+              <input
+                type="text"
+                value={website}
+                onChange={e => setWebsite(e.target.value)}
+                placeholder="https://company.com"
+                disabled={scoring}
+                className="w-full px-3 py-2 rounded-lg text-xs text-white placeholder-[var(--text-muted)]
+                           bg-white/[0.05] border border-white/[0.08] focus:border-[var(--teal)]/50 focus:outline-none
+                           transition-all disabled:opacity-50"
+              />
+            </div>
+            <div>
+              <label className="text-[10px] uppercase tracking-wider text-[var(--text-muted)] mb-1 block">Company Description</label>
+              <input
+                type="text"
+                value={description}
+                onChange={e => setDescription(e.target.value)}
+                placeholder="Brief description to disambiguate (e.g., AP automation platform)"
+                disabled={scoring}
+                className="w-full px-3 py-2 rounded-lg text-xs text-white placeholder-[var(--text-muted)]
+                           bg-white/[0.05] border border-white/[0.08] focus:border-[var(--teal)]/50 focus:outline-none
+                           transition-all disabled:opacity-50"
+              />
+            </div>
+            <p className="col-span-2 text-[10px] text-[var(--text-muted)] -mt-1">
+              Optional — helps ensure we research the right company when names are generic (e.g., "Dash", "Primate")
+            </p>
+          </div>
+        )}
 
         {/* Pipeline progress — enhanced for deep research */}
         {scoring && pipelineIdx >= 0 && (
