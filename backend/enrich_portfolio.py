@@ -88,11 +88,46 @@ async def tavily_search(client: httpx.AsyncClient, query: str, tavily_key: str) 
         return []
 
 
+def _result_mentions_company(result: dict, company_name: str) -> bool:
+    """Check if a search result actually mentions the target company."""
+    content = (result.get("content", "") + " " + result.get("title", "")).lower()
+    name_lower = company_name.lower()
+
+    # Full name match
+    if name_lower in content:
+        return True
+    # Match significant words (skip short words like "AI", "IT")
+    words = [w for w in name_lower.split() if len(w) > 2]
+    if words and sum(1 for w in words if w in content) >= len(words) * 0.5:
+        return True
+    return False
+
+
 def extract_evidence(company_name: str, all_results: list[dict]) -> dict:
-    """Extract structured evidence signals from enrichment search results."""
-    combined_text = "\n\n".join(r.get("content", "") for r in all_results)
-    text_lower = combined_text.lower()
+    """Extract structured evidence signals from enrichment search results.
+
+    IMPORTANT: Only extracts signals from results that actually mention the
+    target company, to prevent entity contamination from generic search results.
+    """
     company_lower = company_name.lower()
+
+    # ── Step 1: Split results into company-relevant vs generic ────────────
+    relevant_results = []
+    generic_results = []
+    for r in all_results:
+        if _result_mentions_company(r, company_name):
+            relevant_results.append(r)
+        else:
+            generic_results.append(r)
+
+    logger.info(
+        f"  Evidence filter: {len(relevant_results)} relevant / "
+        f"{len(generic_results)} generic of {len(all_results)} total results"
+    )
+
+    # Only use relevant results for extraction (except key_evidence which shows sources)
+    relevant_text = "\n\n".join(r.get("content", "") for r in relevant_results)
+    relevant_lower = relevant_text.lower()
 
     evidence = {
         "ai_initiatives": [],
@@ -102,10 +137,10 @@ def extract_evidence(company_name: str, all_results: list[dict]) -> dict:
         "recent_news": [],
         "executives": [],
         "hiring_signals": [],
-        "key_evidence": [],  # Top evidence snippets for display
+        "key_evidence": [],
     }
 
-    # ── AI Initiatives ──────────────────────────────────────────────────────
+    # ── AI Initiatives — only from results that mention the company ───────
     ai_initiative_patterns = [
         (r'(?:launched?|introduced?|unveiled?|announced?|released?|built)\s+(?:an?\s+)?(?:AI|ML|machine learning|intelligent|smart)\s*[\w\s-]{5,60}', 'product_launch'),
         (r'(?:AI-powered|AI-driven|ML-based|intelligent)\s+[\w\s-]{5,40}', 'ai_feature'),
@@ -113,34 +148,40 @@ def extract_evidence(company_name: str, all_results: list[dict]) -> dict:
         (r'(?:predictive|recommendation|automation|optimization)\s+(?:engine|model|system|platform|tool)', 'ml_capability'),
     ]
     seen_initiatives = set()
-    for pat, init_type in ai_initiative_patterns:
-        for m in re.finditer(pat, combined_text, re.IGNORECASE):
-            initiative = m.group(0).strip()
-            # Only keep if it seems related to the company
-            fingerprint = initiative.lower()[:40]
-            if fingerprint not in seen_initiatives and len(initiative) > 10:
-                seen_initiatives.add(fingerprint)
-                evidence["ai_initiatives"].append({
-                    "text": initiative,
-                    "type": init_type,
-                })
+    # Only search within individual relevant results for proximity
+    for r in relevant_results:
+        content = r.get("content", "")
+        if not content or company_lower not in content.lower():
+            continue
+        for pat, init_type in ai_initiative_patterns:
+            for m in re.finditer(pat, content, re.IGNORECASE):
+                initiative = m.group(0).strip()
+                fingerprint = initiative.lower()[:40]
+                if fingerprint not in seen_initiatives and len(initiative) > 10:
+                    seen_initiatives.add(fingerprint)
+                    evidence["ai_initiatives"].append({
+                        "text": initiative,
+                        "type": init_type,
+                    })
     evidence["ai_initiatives"] = evidence["ai_initiatives"][:8]
 
-    # ── Named Products ──────────────────────────────────────────────────────
+    # ── Named Products — require company name proximity ───────────────────
     product_patterns = [
         rf'{re.escape(company_name)}\s+([\w]+(?:\s+[\w]+)?)\s*(?:platform|product|solution|suite|module|tool|engine)',
         rf'([\w]+(?:\s+[\w]+)?)\s*(?:platform|product|solution|suite|module)\s*(?:by|from)\s*{re.escape(company_name)}',
     ]
     seen_products = set()
     for pat in product_patterns:
-        for m in re.finditer(pat, combined_text, re.IGNORECASE):
+        for m in re.finditer(pat, relevant_text, re.IGNORECASE):
             product = m.group(1).strip() if m.group(1) else m.group(0).strip()
             if product.lower() not in seen_products and len(product) > 2 and len(product) < 50:
                 seen_products.add(product.lower())
                 evidence["named_products"].append(product)
     evidence["named_products"] = evidence["named_products"][:6]
 
-    # ── Tech Stack (specific named technologies) ────────────────────────────
+    # ── Tech Stack — ONLY from company-relevant results ───────────────────
+    # Additional requirement: the tech keyword must appear in a result
+    # that mentions the company, not just anywhere in the search results.
     tech_map = {
         # Cloud
         'AWS': ['aws', 'amazon web services', 'ec2', 's3 bucket', 'lambda'],
@@ -181,20 +222,29 @@ def extract_evidence(company_name: str, all_results: list[dict]) -> dict:
         'Twilio': ['twilio'],
         'Segment': ['segment'],
     }
+    # Count tech mentions across company-relevant results only
+    # Require at least 2 mentions to filter noise
+    tech_with_counts = {}
     for tech, keywords in tech_map.items():
-        if any(kw in text_lower for kw in keywords):
-            evidence["tech_stack"].append(tech)
+        mention_count = 0
+        for r in relevant_results:
+            r_lower = r.get("content", "").lower()
+            if any(kw in r_lower for kw in keywords):
+                mention_count += 1
+        if mention_count >= 2:
+            tech_with_counts[tech] = mention_count
+    evidence["tech_stack"] = list(tech_with_counts.keys())
+    evidence["_tech_mention_counts"] = tech_with_counts
 
-    # ── Named Customers ─────────────────────────────────────────────────────
+    # ── Named Customers — only from relevant results ──────────────────────
     customer_patterns = [
         r'(?:customers?\s+(?:include|like|such as)|trusted by|used by|works? with|serves?|chosen by)\s+([\w\s,&]+?)(?:\.|,\s*and|\band\b)',
         r'([\w\s]+?)\s+(?:uses?|chose|selected|implemented|deployed|partnered with)\s+' + re.escape(company_name),
     ]
     seen_customers = set()
     for pat in customer_patterns:
-        for m in re.finditer(pat, combined_text, re.IGNORECASE):
+        for m in re.finditer(pat, relevant_text, re.IGNORECASE):
             raw = m.group(1).strip()
-            # Split by comma or "and"
             for name in re.split(r',\s*|\s+and\s+', raw):
                 name = name.strip()
                 if 2 < len(name) < 40 and name.lower() not in seen_customers and name[0].isupper():
@@ -202,14 +252,14 @@ def extract_evidence(company_name: str, all_results: list[dict]) -> dict:
                     evidence["named_customers"].append(name)
     evidence["named_customers"] = evidence["named_customers"][:8]
 
-    # ── Recent News / Events ────────────────────────────────────────────────
+    # ── Recent News / Events — only from relevant results ─────────────────
     news_patterns = [
         r'(?:in\s+(?:20\d\d|January|February|March|April|May|June|July|August|September|October|November|December)[\w\s,]*?),?\s*' + re.escape(company_name) + r'\s+([\w\s,]+?)(?:\.|$)',
         re.escape(company_name) + r'\s+(?:announced?|launched?|raised?|acquired?|partnered?|released?|expanded?)\s+([\w\s,]+?)(?:\.|$)',
     ]
     seen_news = set()
     for pat in news_patterns:
-        for m in re.finditer(pat, combined_text, re.IGNORECASE):
+        for m in re.finditer(pat, relevant_text, re.IGNORECASE):
             snippet = m.group(0).strip()[:150]
             fp = snippet.lower()[:60]
             if fp not in seen_news and len(snippet) > 20:
@@ -217,14 +267,14 @@ def extract_evidence(company_name: str, all_results: list[dict]) -> dict:
                 evidence["recent_news"].append(snippet)
     evidence["recent_news"] = evidence["recent_news"][:6]
 
-    # ── Executives ──────────────────────────────────────────────────────────
+    # ── Executives — only from relevant results ───────────────────────────
     exec_patterns = [
         r'(?:CEO|CTO|CFO|COO|CAIO|Chief\s+(?:Technology|Executive|AI|Data|Operating|Financial)\s+Officer|VP\s+(?:of\s+)?Engineering|Head of AI|President)\s*(?:,?\s*)([\w\s.]+?)(?:,|\.|said|stated|noted|explained|at\s)',
         r'([\w\s.]+?),?\s*(?:CEO|CTO|CFO|COO|CAIO|Chief\s+(?:Technology|Executive|AI|Data)\s+Officer|VP\s+Engineering|Head of AI)\s*(?:of|at)\s*' + re.escape(company_name),
     ]
     seen_execs = set()
     for pat in exec_patterns:
-        for m in re.finditer(pat, combined_text, re.IGNORECASE):
+        for m in re.finditer(pat, relevant_text, re.IGNORECASE):
             name = m.group(1).strip() if m.lastindex else m.group(0).strip()
             name = re.sub(r'^(CEO|CTO|CFO|COO|CAIO|Chief\s+\w+\s+Officer)\s*,?\s*', '', name).strip()
             if 3 < len(name) < 40 and name[0].isupper() and name.lower() not in seen_execs:
@@ -234,7 +284,7 @@ def extract_evidence(company_name: str, all_results: list[dict]) -> dict:
                 evidence["executives"].append({"name": name, "role": role})
     evidence["executives"] = evidence["executives"][:5]
 
-    # ── Hiring Signals ──────────────────────────────────────────────────────
+    # ── Hiring Signals — only from relevant results ───────────────────────
     hiring_roles = {
         'AI/ML Engineer': ['machine learning engineer', 'ml engineer', 'ai engineer'],
         'Data Scientist': ['data scientist', 'senior data scientist'],
@@ -250,17 +300,15 @@ def extract_evidence(company_name: str, all_results: list[dict]) -> dict:
         'Frontend Engineer': ['frontend engineer', 'frontend developer'],
     }
     for role, keywords in hiring_roles.items():
-        if any(kw in text_lower for kw in keywords):
+        if any(kw in relevant_lower for kw in keywords):
             evidence["hiring_signals"].append(role)
 
-    # ── Key Evidence Snippets (best snippets for display) ───────────────────
-    # Pick the most informative result snippets that mention the company
-    for r in all_results:
+    # ── Key Evidence Snippets — only from relevant results ────────────────
+    for r in relevant_results:
         content = r.get("content", "").strip()
         if not content or len(content) < 80:
             continue
         if company_lower in content.lower():
-            # Truncate to ~200 chars at a sentence boundary
             snippet = content[:250]
             last_period = snippet.rfind('.')
             if last_period > 100:
@@ -271,7 +319,7 @@ def extract_evidence(company_name: str, all_results: list[dict]) -> dict:
                 try:
                     from urllib.parse import urlparse
                     source_name = urlparse(source_url).netloc.replace("www.", "")
-                except:
+                except Exception:
                     source_name = source_url[:40]
             evidence["key_evidence"].append({
                 "text": snippet,
@@ -283,7 +331,8 @@ def extract_evidence(company_name: str, all_results: list[dict]) -> dict:
     # Summary stats
     evidence["enrichment_stats"] = {
         "total_results": len(all_results),
-        "total_text_chars": len(combined_text),
+        "relevant_results": len(relevant_results),
+        "total_text_chars": len(relevant_text),
         "ai_initiatives_found": len(evidence["ai_initiatives"]),
         "tech_stack_signals": len(evidence["tech_stack"]),
         "customers_found": len(evidence["named_customers"]),
@@ -386,9 +435,77 @@ async def main():
                 logger.info(f"  Waiting {DELAY_BETWEEN_COMPANIES}s...")
                 await asyncio.sleep(DELAY_BETWEEN_COMPANIES)
 
-    # Save enrichment data
+    # ── Merge with existing GitHub/careers data and cross-validate ─────────
     output_path = os.path.join(os.path.dirname(__file__), "..", "frontend", "public", "portfolio_evidence.json")
     output_path = os.path.normpath(output_path)
+
+    # Load existing data (may contain github/careers from enrich_github_careers.py)
+    existing_data = {}
+    if os.path.exists(output_path):
+        try:
+            with open(output_path) as f:
+                existing_data = json.load(f)
+            logger.info(f"Loaded existing evidence data with {len(existing_data)} companies")
+        except Exception:
+            pass
+
+    # Merge: keep github/careers from existing, update everything else
+    for name, evidence in all_evidence.items():
+        if name in existing_data:
+            # Preserve github and careers data from previous enrichment
+            for key in ("github", "careers"):
+                if key in existing_data[name] and key not in evidence:
+                    evidence[key] = existing_data[name][key]
+
+        # Cross-validate tech stack against GitHub languages
+        github_data = evidence.get("github", {})
+        github_languages = set()
+        if github_data.get("found"):
+            for lang_entry in github_data.get("primary_languages", []):
+                lang = lang_entry.get("language", "")
+                if lang:
+                    github_languages.add(lang.lower())
+
+        # Map GitHub languages to tech_map names
+        github_to_tech = {
+            "php": "PHP", "python": "Python", "javascript": "Node.js",
+            "typescript": "TypeScript", "java": "Java", "go": "Go",
+            "c#": ".NET", "ruby": "Ruby", "rust": "Rust", "swift": "Swift",
+            "html": "React",  # not a guarantee, but common
+        }
+
+        # Annotate tech stack with confidence
+        confirmed_tech = []
+        web_only_tech = []
+        mention_counts = evidence.pop("_tech_mention_counts", {})
+
+        for tech in evidence.get("tech_stack", []):
+            # Check if GitHub confirms this technology
+            tech_lower = tech.lower()
+            github_confirmed = False
+            for gl, tn in github_to_tech.items():
+                if tn == tech and gl in github_languages:
+                    github_confirmed = True
+                    break
+            # Also check direct match
+            if tech_lower in github_languages:
+                github_confirmed = True
+
+            if github_confirmed:
+                confirmed_tech.append(tech)
+            else:
+                web_only_tech.append(tech)
+
+        # If company has GitHub data with repos, require 3+ mentions for
+        # unconfirmed tech (stricter threshold without GitHub backing)
+        if github_data.get("found") and github_data.get("total_public_repos", 0) > 0:
+            web_only_tech = [t for t in web_only_tech if mention_counts.get(t, 0) >= 3]
+
+        evidence["tech_stack"] = confirmed_tech + web_only_tech
+        evidence["tech_stack_github_confirmed"] = confirmed_tech
+        all_evidence[name] = evidence
+
+    # Save enrichment data
     with open(output_path, "w") as f:
         json.dump(all_evidence, f, indent=2)
     logger.info(f"\nSaved enrichment data to {output_path}")

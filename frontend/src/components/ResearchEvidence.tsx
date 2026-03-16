@@ -39,6 +39,7 @@ interface Props {
   evidence?: {
     ai_initiatives?: { text: string; type: string }[]
     tech_stack?: string[]
+    tech_stack_github_confirmed?: string[]
     named_customers?: string[]
     recent_news?: string[]
     executives?: { name: string; role: string }[]
@@ -88,6 +89,7 @@ export default function ResearchEvidence({ company, evidence }: Props) {
   const ev = evidence || {}
   const aiInits = ev.ai_initiatives || []
   const techStack = ev.tech_stack || []
+  const githubConfirmedTech = new Set(ev.tech_stack_github_confirmed || [])
   const customers = ev.named_customers || []
   const news = ev.recent_news || []
   const executives = ev.executives || []
@@ -110,7 +112,7 @@ export default function ResearchEvidence({ company, evidence }: Props) {
         <div className="flex items-center gap-3">
           {stats && (
             <span className="text-[10px] text-[var(--text-muted)]">
-              {stats.total_results} sources analyzed
+              {stats.relevant_results || stats.total_results}/{stats.total_results} relevant sources
             </span>
           )}
           {confidenceScore != null && (
@@ -156,19 +158,24 @@ export default function ResearchEvidence({ company, evidence }: Props) {
                 <span className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">Detected Tech Stack</span>
               </div>
               <div className="flex flex-wrap gap-1.5">
-                {techStack.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="px-2.5 py-1 rounded-full text-[11px] font-semibold border"
-                    style={{
-                      color: TECH_COLORS[tech] || '#94a3b8',
-                      backgroundColor: `${TECH_COLORS[tech] || '#94a3b8'}12`,
-                      borderColor: `${TECH_COLORS[tech] || '#94a3b8'}25`,
-                    }}
-                  >
-                    {tech}
-                  </span>
-                ))}
+                {techStack.map((tech, i) => {
+                  const isConfirmed = githubConfirmedTech.has(tech)
+                  return (
+                    <span
+                      key={i}
+                      className="px-2.5 py-1 rounded-full text-[11px] font-semibold border flex items-center gap-1"
+                      style={{
+                        color: TECH_COLORS[tech] || '#94a3b8',
+                        backgroundColor: `${TECH_COLORS[tech] || '#94a3b8'}12`,
+                        borderColor: `${TECH_COLORS[tech] || '#94a3b8'}25`,
+                      }}
+                      title={isConfirmed ? 'Confirmed via GitHub repos' : 'Detected from web sources'}
+                    >
+                      {tech}
+                      {isConfirmed && <GitBranch className="w-3 h-3 opacity-70" />}
+                    </span>
+                  )
+                })}
               </div>
             </div>
           )}
