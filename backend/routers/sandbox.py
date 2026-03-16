@@ -91,6 +91,77 @@ def compute_category_scores(pillar_scores: dict[str, float]) -> dict[str, float]
     return result
 
 
+# ── Confidence score ─────────────────────────────────────────────────────────
+
+def compute_confidence_score(features: dict, research_meta: dict) -> dict:
+    """Compute a 0-100 research confidence score with a detailed breakdown.
+
+    Measures how much evidence the pipeline gathered — NOT whether the
+    company is good, but whether we trust the scoring.
+
+    Five components:
+      1. Search Coverage (0-25):  How many search results came back
+      2. Scrape Depth (0-20):     How many URLs were successfully scraped
+      3. Corpus Volume (0-15):    Total text size of the research corpus
+      4. Structured Extraction (0-25): Whether key facts were extracted
+                                       (employees, funding, year, website, own domain)
+      5. Signal Richness (0-15):  Non-default intensity scores (AI, cloud, API, data)
+    """
+    breakdown = {}
+
+    # 1. Search coverage: 48 results is perfect (8 queries × 6 results each)
+    search_results = research_meta.get("search_results", 0)
+    search_pct = min(search_results / 40, 1.0)  # 40+ results = full marks
+    breakdown["search_coverage"] = round(search_pct * 25, 1)
+
+    # 2. Scrape depth: 5 URLs is perfect
+    urls_scraped = research_meta.get("urls_scraped", 0)
+    scrape_pct = min(urls_scraped / 4, 1.0)  # 4+ URLs = full marks
+    breakdown["scrape_depth"] = round(scrape_pct * 20, 1)
+
+    # 3. Corpus volume: 80K+ chars of research text is excellent
+    total_chars = research_meta.get("total_text_chars", 0)
+    corpus_pct = min(total_chars / 80000, 1.0)
+    breakdown["corpus_volume"] = round(corpus_pct * 15, 1)
+
+    # 4. Structured extraction: 5 points each for key facts found
+    struct_score = 0
+    if features.get("employee_count"):
+        struct_score += 5
+    if features.get("funding_total_usd"):
+        struct_score += 5
+    if features.get("founded_year"):
+        struct_score += 5
+    if features.get("website"):
+        struct_score += 5
+    if research_meta.get("own_domain_found"):
+        struct_score += 5  # Strong relevance signal — we found the actual company
+    breakdown["structured_extraction"] = min(struct_score, 25)
+
+    # 5. Signal richness: non-default AI/cloud/API/data signals
+    signal_score = 0
+    ai_int = features.get("ai_intensity", 1.0)
+    cloud_int = features.get("cloud_intensity", 1.0)
+    api_str = features.get("api_ecosystem_strength", 1.5)
+    data_rich = features.get("data_richness", 1.5)
+    # Each signal that exceeds its default contributes
+    if ai_int > 1.0:
+        signal_score += min((ai_int - 1.0) / 3.0, 1.0) * 4
+    if cloud_int > 1.0:
+        signal_score += min((cloud_int - 1.0) / 3.0, 1.0) * 4
+    if api_str > 1.5:
+        signal_score += min((api_str - 1.5) / 2.5, 1.0) * 3.5
+    if data_rich > 1.5:
+        signal_score += min((data_rich - 1.5) / 2.5, 1.0) * 3.5
+    breakdown["signal_richness"] = round(min(signal_score, 15), 1)
+
+    total = sum(breakdown.values())
+    return {
+        "total": round(min(total, 100), 0),
+        "breakdown": breakdown,
+    }
+
+
 # ── Web research → feature extraction ─────────────────────────────────────────
 
 async def research_company(company_name: str, tavily_key: str) -> dict:
@@ -288,6 +359,216 @@ def _clean_text_block(text: str) -> str:
     return " ".join(cleaned)
 
 
+# ── Entity-match validation ──────────────────────────────────────────────────
+
+def build_identity_markers(
+    company_name: str,
+    website: str = None,
+    vertical: str = None,
+    description: str = None,
+) -> dict:
+    """Build an identity fingerprint from known company data.
+
+    Used to validate that web research results actually match the target
+    company rather than a different entity with the same name.
+    """
+    markers = {"company_name": company_name.lower()}
+
+    # Extract domain from website (e.g., "nextalk.com" from "https://www.nextalk.com/")
+    if website:
+        try:
+            domain = website.lower().split("//")[-1].split("/")[0].replace("www.", "")
+            if domain and "." in domain:
+                markers["domain"] = domain
+        except Exception:
+            pass
+
+    # Vertical keywords (skip short words)
+    if vertical:
+        stop = {"and", "the", "for", "of"}
+        markers["vertical_keywords"] = [
+            w.lower() for w in re.split(r'[\s/&]+', vertical) if len(w) > 2 and w.lower() not in stop
+        ]
+
+    # Extract meaningful keywords from description
+    if description:
+        stop_words = {
+            "the", "and", "for", "with", "has", "was", "are", "that", "this",
+            "from", "been", "have", "will", "its", "they", "their", "which",
+            "about", "into", "over", "more", "than", "also", "other", "some",
+            "company", "founded", "employees", "revenue", "provides", "based",
+        }
+        words = [w.lower().strip(".,;:()\"'") for w in description.split()]
+        keywords = [w for w in words if len(w) > 3 and w not in stop_words]
+        # Take up to 15 unique keywords
+        seen = set()
+        unique = []
+        for w in keywords:
+            if w not in seen:
+                seen.add(w)
+                unique.append(w)
+            if len(unique) >= 15:
+                break
+        markers["desc_keywords"] = unique
+
+    return markers
+
+
+def _score_result_relevance(
+    result: dict,
+    company_name: str,
+    markers: dict,
+) -> float:
+    """Score how likely a search result is about the target company (0.0-1.0).
+
+    Uses multiple signals:
+      - Company name in text/title (strong)
+      - Known website domain in URL (very strong)
+      - Vertical keywords in text (moderate)
+      - Description keywords in text (moderate)
+
+    Returns 0.5 (neutral) when no identity markers are available.
+    """
+    content = (result.get("content") or "").lower()
+    title = (result.get("title") or "").lower()
+    url = (result.get("url") or "").lower()
+    text = content + " " + title
+
+    score = 0.0
+    max_score = 0.0
+
+    # 1. Company name appears in text/title (weight: 3)
+    name_lower = markers.get("company_name", company_name.lower())
+    # Try full name and individual significant words
+    name_words = [w for w in name_lower.split() if len(w) > 2]
+    if name_lower in text:
+        score += 3.0
+    elif any(w in text for w in name_words):
+        score += 1.5  # Partial name match
+    max_score += 3.0
+
+    # 2. Website domain in URL or text (weight: 4 — strongest signal)
+    domain = markers.get("domain")
+    if domain:
+        # Check both URL and text content
+        domain_root = domain.split(".")[0]  # e.g., "nextalk" from "nextalk.com"
+        if domain in url:
+            score += 4.0
+        elif domain in text:
+            score += 3.0
+        elif domain_root in url or domain_root in text:
+            score += 2.0
+        max_score += 4.0
+
+    # 3. Vertical keyword match (weight: 2)
+    vertical_kws = markers.get("vertical_keywords", [])
+    if vertical_kws:
+        matches = sum(1 for kw in vertical_kws if kw in text)
+        score += min(matches / max(len(vertical_kws), 1), 1.0) * 2.0
+        max_score += 2.0
+
+    # 4. Description keyword match (weight: 2)
+    desc_kws = markers.get("desc_keywords", [])
+    if desc_kws:
+        matches = sum(1 for kw in desc_kws if kw in text)
+        score += min(matches / max(len(desc_kws), 1), 1.0) * 2.0
+        max_score += 2.0
+
+    # AI Summary results (no URL) get a slight boost — Tavily AI answers
+    # are usually synthesized about the queried company
+    if result.get("title") == "AI Summary":
+        score += 1.0
+        max_score += 1.0
+
+    return score / max_score if max_score > 0 else 0.5
+
+
+def _filter_by_relevance(
+    all_results: list[dict],
+    company_name: str,
+    markers: dict,
+    threshold: float = 0.15,
+) -> tuple[list[dict], dict]:
+    """Filter search results to only those that likely match the target company.
+
+    Returns:
+        (filtered_results, stats) where stats has counts of kept/dropped results.
+    """
+    if not markers or len(markers) <= 1:
+        # No identity markers beyond company name — skip validation
+        return all_results, {"kept": len(all_results), "dropped": 0, "mode": "unvalidated"}
+
+    kept = []
+    dropped = 0
+
+    for r in all_results:
+        relevance = _score_result_relevance(r, company_name, markers)
+        if relevance >= threshold:
+            kept.append(r)
+        else:
+            dropped += 1
+            title = (r.get("title") or "")[:60]
+            logger.debug(f"  Dropped irrelevant result (relevance={relevance:.2f}): {title}")
+
+    logger.info(
+        f"  Relevance filter: kept {len(kept)}/{len(all_results)} results "
+        f"(dropped {dropped} below {threshold} threshold)"
+    )
+
+    return kept, {"kept": len(kept), "dropped": dropped, "mode": "validated"}
+
+
+def _filter_scraped_by_relevance(
+    scraped_texts: list[str],
+    urls: list[str],
+    company_name: str,
+    markers: dict,
+    threshold: float = 0.10,
+) -> list[str]:
+    """Filter scraped page content by relevance to the target company.
+
+    More lenient than search result filtering since scraped content is longer
+    and more likely to contain some relevant signal even if noisy.
+    """
+    if not markers or len(markers) <= 1:
+        return scraped_texts
+
+    filtered = []
+    name_lower = company_name.lower()
+    domain = markers.get("domain", "")
+    desc_kws = markers.get("desc_keywords", [])
+    vert_kws = markers.get("vertical_keywords", [])
+    all_kws = desc_kws + vert_kws
+
+    for text, url in zip(scraped_texts, urls):
+        text_lower = text.lower()
+        url_lower = url.lower()
+
+        # Always keep content from the company's own domain
+        if domain and domain in url_lower:
+            filtered.append(text)
+            continue
+
+        # Check for company name or keyword matches
+        name_found = name_lower in text_lower or any(
+            w in text_lower for w in name_lower.split() if len(w) > 2
+        )
+        kw_matches = sum(1 for kw in all_kws if kw in text_lower) if all_kws else 0
+        kw_ratio = kw_matches / max(len(all_kws), 1)
+
+        if name_found or kw_ratio >= threshold:
+            filtered.append(text)
+        else:
+            logger.debug(f"  Dropped irrelevant scraped page: {url[:80]}")
+
+    if len(filtered) < len(scraped_texts):
+        logger.info(
+            f"  Scraped content filter: kept {len(filtered)}/{len(scraped_texts)} pages"
+        )
+
+    return filtered
+
+
 def _build_display_summary(all_results: list[dict], company_name: str) -> str:
     """Build a clean, readable research summary for UI display.
 
@@ -348,13 +629,28 @@ def _build_display_summary(all_results: list[dict], company_name: str) -> str:
     return summary[:2500]
 
 
-async def research_company_deep(company_name: str, tavily_key: str) -> dict:
+async def research_company_deep(
+    company_name: str,
+    tavily_key: str,
+    context_hint: str = "",
+    identity_markers: dict = None,
+) -> dict:
     """Deep single-company research: 8 dimension-specific queries + URL follow-up scraping.
 
     Returns the same feature dict as research_company() but with significantly
     richer underlying text, leading to better feature extraction and scoring.
+
+    Args:
+        company_name: Company name to research
+        tavily_key: Tavily API key
+        context_hint: Optional context (e.g., "waste hauling SaaS") to append to queries
+                      for disambiguating companies with generic names
+        identity_markers: Optional dict from build_identity_markers() for entity-match
+                          validation. When provided, search results and scraped pages
+                          are filtered to discard content about different companies.
     """
-    queries = [q.format(company=company_name) for q in DEEP_QUERIES]
+    hint = f" {context_hint}" if context_hint else ""
+    queries = [q.format(company=company_name + hint) for q in DEEP_QUERIES]
 
     # Phase 1: Run all 8 Tavily searches concurrently
     async with httpx.AsyncClient(timeout=30.0) as client:
@@ -363,49 +659,76 @@ async def research_company_deep(company_name: str, tavily_key: str) -> dict:
 
     # Flatten results
     all_results: list[dict] = []
-    search_content: list[str] = []
     for batch in search_results:
         if isinstance(batch, Exception):
             continue
         for r in batch:
             all_results.append(r)
-            if r.get("content"):
-                search_content.append(r["content"])
 
-    logger.info(f"Deep research for '{company_name}': {len(all_results)} search results from {len(queries)} queries")
+    raw_result_count = len(all_results)
+    logger.info(f"Deep research for '{company_name}': {raw_result_count} search results from {len(queries)} queries")
 
-    # Phase 2: Follow-up scraping on best URLs
+    # Phase 1b: Entity-match validation — filter results about the wrong company
+    relevance_stats = {"kept": raw_result_count, "dropped": 0, "mode": "unvalidated"}
+    if identity_markers:
+        all_results, relevance_stats = _filter_by_relevance(
+            all_results, company_name, identity_markers, threshold=0.15
+        )
+
+    # Build search content from validated results only
+    search_content: list[str] = [r["content"] for r in all_results if r.get("content")]
+
+    # Phase 2: Follow-up scraping on best URLs (from validated results)
     best_urls = _pick_best_urls(all_results, company_name, max_urls=5)
     scraped_content: list[str] = []
+    scraped_urls: list[str] = []
 
     if best_urls:
         async with httpx.AsyncClient(timeout=20.0) as client:
             scrape_tasks = [_scrape_url(client, url) for url in best_urls]
             scrape_results = await asyncio.gather(*scrape_tasks, return_exceptions=True)
 
-        for text in scrape_results:
+        for text, url in zip(scrape_results, best_urls):
             if isinstance(text, str) and len(text) > 100:
                 scraped_content.append(text)
+                scraped_urls.append(url)
 
         logger.info(f"Deep research for '{company_name}': scraped {len(scraped_content)}/{len(best_urls)} URLs successfully")
+
+        # Phase 2b: Filter scraped pages by relevance
+        if identity_markers and scraped_content:
+            scraped_content = _filter_scraped_by_relevance(
+                scraped_content, scraped_urls, company_name, identity_markers
+            )
 
     # Combine all text: search summaries first, then scraped pages
     research_text = "\n\n".join(search_content)
     scraped_text = "\n\n".join(scraped_content)
     combined_text = research_text + "\n\n--- SCRAPED PAGE CONTENT ---\n\n" + scraped_text
 
-    # Extract features from the full corpus
+    # Extract features from the validated corpus
     features = extract_features(company_name, combined_text)
 
-    # Build a clean research summary for display
+    # Build a clean research summary for display (from validated results)
     features["research_summary"] = _build_display_summary(all_results, company_name)
+
+    # Check if company's own domain was found among scraped URLs
+    company_slug = company_name.lower().replace(" ", "").replace("-", "")
+    own_domain_scraped = any(
+        company_slug in url.lower().replace(".", "").replace("-", "")
+        for url in best_urls
+    ) if best_urls else False
 
     # Track data quality signals
     features["_research_meta"] = {
         "queries_sent": len(queries),
-        "search_results": len(all_results),
+        "search_results": raw_result_count,
+        "validated_results": relevance_stats["kept"],
+        "results_dropped": relevance_stats["dropped"],
+        "validation_mode": relevance_stats["mode"],
         "urls_scraped": len(scraped_content),
         "total_text_chars": len(combined_text),
+        "own_domain_found": own_domain_scraped,
         "mode": "deep",
     }
 
@@ -669,8 +992,10 @@ def estimate_dimension_scores(data: dict) -> dict[str, float]:
 # ── Request / response models ─────────────────────────────────────────────────
 
 class SandboxScoreRequest(BaseModel):
-    """User just provides a company name — we handle the rest"""
+    """User provides a company name, plus optional context for entity validation"""
     company_name: str = Field(..., min_length=1, max_length=200)
+    website: Optional[str] = Field(None, description="Company website URL for entity-match validation")
+    description: Optional[str] = Field(None, max_length=500, description="Brief company description for disambiguation")
 
 
 class SandboxCompanyResponse(BaseModel):
@@ -691,6 +1016,8 @@ class SandboxCompanyResponse(BaseModel):
     category_scores: dict
     dimension_details: list
     research_summary: str
+    confidence_score: Optional[float] = None
+    confidence_breakdown: Optional[dict] = None
 
 
 # ── Endpoints ─────────────────────────────────────────────────────────────────
@@ -712,15 +1039,39 @@ async def score_company(req: SandboxScoreRequest, db: Session = Depends(get_db))
 
     settings = get_settings()
 
-    # 1. Web research
+    # 1. Web research with entity-match validation
     if not settings.tavily_api_key:
         raise HTTPException(status_code=503, detail="Research API not configured")
 
-    logger.info(f"Researching company (deep mode): {req.company_name}")
-    features = await research_company_deep(req.company_name, settings.tavily_api_key)
+    # Build context hint and identity markers from user-provided context
+    context_parts = []
+    if req.description:
+        context_parts.append(req.description[:60].strip())
+    context_hint = " ".join(context_parts) if context_parts else ""
+
+    identity_markers = build_identity_markers(
+        company_name=req.company_name,
+        website=req.website,
+        description=req.description,
+    )
+    logger.info(
+        f"Researching company (deep mode): {req.company_name} | "
+        f"markers: domain={identity_markers.get('domain', 'N/A')}, "
+        f"desc_kw={identity_markers.get('desc_keywords', [])[:3]}"
+    )
+
+    features = await research_company_deep(
+        req.company_name, settings.tavily_api_key,
+        context_hint=context_hint,
+        identity_markers=identity_markers,
+    )
     research_meta = features.pop("_research_meta", {})
     research_summary = features.pop("research_summary", "")
-    logger.info(f"Research complete for '{req.company_name}': {research_meta}")
+    logger.info(
+        f"Research complete for '{req.company_name}': {research_meta.get('search_results', 0)} results "
+        f"({research_meta.get('validated_results', 'N/A')} validated, "
+        f"{research_meta.get('results_dropped', 0)} dropped)"
+    )
 
     # 2. Create company record
     company = Company(
@@ -751,11 +1102,12 @@ async def score_company(req: SandboxScoreRequest, db: Session = Depends(get_db))
         ds = DimensionScore(company_id=company.id, dimension=dim, score=score)
         db.add(ds)
 
-    # 5. Compute composite + tier + wave
+    # 5. Compute composite + tier + wave + confidence
     composite = compute_composite(pillar_scores)
     tier = classify_tier(composite)
     wave = assign_wave(composite)
     cat_scores = compute_category_scores(pillar_scores)
+    confidence = compute_confidence_score(features, research_meta)
 
     # 6. Save company score
     cs = CompanyScore(
@@ -765,6 +1117,8 @@ async def score_company(req: SandboxScoreRequest, db: Session = Depends(get_db))
         wave=wave,
         pillar_scores=pillar_scores,
         category_scores=cat_scores,
+        confidence_score=confidence["total"],
+        confidence_breakdown=confidence["breakdown"],
     )
     db.add(cs)
     db.commit()
@@ -799,6 +1153,8 @@ async def score_company(req: SandboxScoreRequest, db: Session = Depends(get_db))
         category_scores=cat_scores,
         dimension_details=dimension_details,
         research_summary=research_summary[:1500],
+        confidence_score=confidence["total"],
+        confidence_breakdown=confidence["breakdown"],
     )
 
 
