@@ -6,7 +6,7 @@
     "description": "AutoTime is the leading time and labor tracking solution purpose-built for the Aerospace and Defense industry. For over 20 years, AutoTime has partnered with top A&D contractors to deliver compliance-driven, DCAA-compliant solutions for managing complex labor requirements and payroll accuracy. Part of Solen Software Group since February 2025.",
     "website": "https://www.autotimesoftware.com",
     "founded_year": 2003,
-    "composite_score": 3.94,
+    "composite_score": 3.85,
     "tier": "AI-Ready",
     "wave": 1,
     "pillar_scores": {
@@ -46,105 +46,13 @@
     }
   },
   {
-    "name": "Spokane",
-    "vertical": "Agriculture/Produce",
-    "employee_count": 9,
-    "description": "Spokane Software Systems produces a leading agricultural ERP system for growers, packers, and shippers of agricultural products throughout the U.S. for over 37 years. 64% of US orange varieties and 80% of US lemon varieties flow through the Spokane System. Key modules include PackPoint (PTI/GTIN compliance), packing operations, shipping workflows, and grower accounting. Based in Spokane, WA with $3M annual revenue. Part of Solen Software Group.",
-    "website": "https://sssonline.com",
-    "founded_year": 1989,
-    "composite_score": 3.92,
-    "tier": "AI-Ready",
-    "wave": 1,
-    "pillar_scores": {
-      "data_quality": 4.33,
-      "data_integration": 2.89,
-      "analytics_maturity": 4.06,
-      "cloud_architecture": 3.35,
-      "tech_stack_modernity": 2.86,
-      "ai_engineering": 3.38,
-      "ai_product_features": 4.68,
-      "revenue_ai_upside": 4.58,
-      "margin_ai_upside": 4.58,
-      "product_differentiation": 3.37,
-      "ai_talent_density": 3.37,
-      "leadership_ai_vision": 3.99,
-      "org_change_readiness": 3.1,
-      "partner_ecosystem": 2.39,
-      "ai_governance": 3.2,
-      "regulatory_readiness": 3.42,
-      "ai_momentum": 3.99
-    },
-    "category_scores": {
-      "Data & Analytics": 3.76,
-      "Technology & Infrastructure": 3.2,
-      "AI Product & Value": 4.3,
-      "Organization & Talent": 3.21,
-      "Governance & Risk": 3.31,
-      "Velocity & Momentum": 3.99
-    },
-    "confidence_score": 94.0,
-    "confidence_breakdown": {
-      "search_coverage": 25.0,
-      "scrape_depth": 20.0,
-      "corpus_volume": 14.9,
-      "structured_extraction": 20,
-      "signal_richness": 13.7
-    }
-  },
-  {
-    "name": "Thought Foundry",
-    "vertical": "Entertainment/Digital Content",
-    "employee_count": 8,
-    "description": "Thought Foundry is a digital innovations company that builds data-driven exchange platform-as-a-service solutions for entertainment companies to manage digital content entitlements. Founded in 2012 by Timur Insepov and headquartered in Los Angeles (Culver City). Part of Solen Software Group.",
-    "website": "https://thoughtfoundry.com",
-    "founded_year": 2012,
-    "composite_score": 3.86,
-    "tier": "AI-Ready",
-    "wave": 1,
-    "pillar_scores": {
-      "data_quality": 3.3,
-      "data_integration": 3.29,
-      "analytics_maturity": 3.27,
-      "cloud_architecture": 4.06,
-      "tech_stack_modernity": 3.81,
-      "ai_engineering": 2.71,
-      "ai_product_features": 4.92,
-      "revenue_ai_upside": 4.54,
-      "margin_ai_upside": 4.51,
-      "product_differentiation": 3.9,
-      "ai_talent_density": 2.52,
-      "leadership_ai_vision": 4.3,
-      "org_change_readiness": 2.76,
-      "partner_ecosystem": 3.0,
-      "ai_governance": 3.07,
-      "regulatory_readiness": 3.19,
-      "ai_momentum": 4.35
-    },
-    "category_scores": {
-      "Data & Analytics": 3.29,
-      "Technology & Infrastructure": 3.53,
-      "AI Product & Value": 4.47,
-      "Organization & Talent": 3.15,
-      "Governance & Risk": 3.13,
-      "Velocity & Momentum": 4.35
-    },
-    "confidence_score": 96.0,
-    "confidence_breakdown": {
-      "search_coverage": 25.0,
-      "scrape_depth": 20.0,
-      "corpus_volume": 12.3,
-      "structured_extraction": 25,
-      "signal_richness": 13.3
-    }
-  },
-  {
     "name": "Champ",
     "vertical": "Healthcare/Public Health",
     "employee_count": 35,
     "description": "Champ Software develops Nightingale Notes, an electronic health records (EHR) system built specifically for public health departments. Founded over 40 years ago in Mankato, Minnesota, the platform serves more than 130 public health agencies nationwide with community health documentation, evidence-based outcomes tracking via the Omaha System, batch billing, scheduling, and 100% time tracking. Part of Solen Software Group.",
     "website": "https://www.champsoftware.com",
     "founded_year": 1985,
-    "composite_score": 3.75,
+    "composite_score": 3.65,
     "tier": "AI-Ready",
     "wave": 1,
     "pillar_scores": {
@@ -184,59 +92,13 @@
     }
   },
   {
-    "name": "Primate",
-    "vertical": "Energy/Utilities",
-    "employee_count": 11,
-    "description": "Primate Technologies specializes in mission-critical control room visualization software for energy providers. Products include GridGuardian (real-time SCADA/EMS data integration), BlackBoard, TileViewer, and TileBuilder. Serves electric transmission & distribution, pipeline operations, gas utilities, and emergency management. Founded in 2001 in Melbourne, Florida. Joined Solen Software Group in 2024.",
-    "website": "https://primate-tech.com",
-    "founded_year": 2001,
-    "composite_score": 3.54,
-    "tier": "AI-Ready",
-    "wave": 1,
-    "pillar_scores": {
-      "data_quality": 3.4,
-      "data_integration": 2.85,
-      "analytics_maturity": 3.07,
-      "cloud_architecture": 2.95,
-      "tech_stack_modernity": 2.52,
-      "ai_engineering": 2.04,
-      "ai_product_features": 4.92,
-      "revenue_ai_upside": 4.54,
-      "margin_ai_upside": 4.2,
-      "product_differentiation": 3.54,
-      "ai_talent_density": 1.98,
-      "leadership_ai_vision": 3.62,
-      "org_change_readiness": 1.53,
-      "partner_ecosystem": 2.61,
-      "ai_governance": 2.83,
-      "regulatory_readiness": 2.98,
-      "ai_momentum": 3.75
-    },
-    "category_scores": {
-      "Data & Analytics": 3.11,
-      "Technology & Infrastructure": 2.5,
-      "AI Product & Value": 4.3,
-      "Organization & Talent": 2.44,
-      "Governance & Risk": 2.91,
-      "Velocity & Momentum": 3.75
-    },
-    "confidence_score": 92.0,
-    "confidence_breakdown": {
-      "search_coverage": 25.0,
-      "scrape_depth": 20.0,
-      "corpus_volume": 14.1,
-      "structured_extraction": 20,
-      "signal_richness": 13.3
-    }
-  },
-  {
     "name": "Track Star",
     "vertical": "Fleet Management/Government",
     "employee_count": 10,
     "description": "Track Star International provides fleet management solutions combining GPS tracking, telematics, Enterprise Asset Management (EAM), predictive maintenance, and video intelligence in a unified platform. Founded in 2000 by former U.S. Air Force navigation systems expert Michael Hughes. Processes millions of GPS points daily serving government, utilities, public safety, equipment rental, and education sectors. Headquartered in Charlotte, NC. Acquired ThingTech to expand IoT capabilities. Part of Solen Software Group since 2021.",
     "website": "https://www.trackstar.com",
     "founded_year": 2000,
-    "composite_score": 3.47,
+    "composite_score": 3.35,
     "tier": "AI-Buildable",
     "wave": 1,
     "pillar_scores": {
@@ -245,26 +107,26 @@
       "analytics_maturity": 2.66,
       "cloud_architecture": 4.2,
       "tech_stack_modernity": 3.74,
-      "ai_engineering": 1.96,
-      "ai_product_features": 4.67,
+      "ai_engineering": 2.5,
+      "ai_product_features": 4.3,
       "revenue_ai_upside": 3.88,
       "margin_ai_upside": 4.27,
       "product_differentiation": 3.4,
-      "ai_talent_density": 1.8,
+      "ai_talent_density": 2.2,
       "leadership_ai_vision": 3.71,
       "org_change_readiness": 1.99,
       "partner_ecosystem": 3.33,
       "ai_governance": 2.4,
       "regulatory_readiness": 2.47,
-      "ai_momentum": 3.81
+      "ai_momentum": 3.5
     },
     "category_scores": {
       "Data & Analytics": 3.11,
-      "Technology & Infrastructure": 3.3,
-      "AI Product & Value": 4.05,
-      "Organization & Talent": 2.71,
+      "Technology & Infrastructure": 3.48,
+      "AI Product & Value": 3.96,
+      "Organization & Talent": 2.81,
       "Governance & Risk": 2.44,
-      "Velocity & Momentum": 3.81
+      "Velocity & Momentum": 3.5
     },
     "confidence_score": 99.0,
     "confidence_breakdown": {
@@ -282,7 +144,7 @@
     "description": "SMRTR was formed July 1, 2025 from the merger of Dash (founded 1998, AP automation) and S4i Systems (founded 2002, compliance solutions). The combined platform streamlines accounts payable, document automation, supplier onboarding, electronic proof of delivery, food safety compliance, and regulatory management for manufacturing and food & beverage industries. Operates fully remote from Cottonwood Heights, Utah. Part of Solen Software Group.",
     "website": "https://smrtrsolutions.com",
     "founded_year": 2025,
-    "composite_score": 3.39,
+    "composite_score": 3.28,
     "tier": "AI-Buildable",
     "wave": 1,
     "pillar_scores": {
@@ -291,8 +153,8 @@
       "analytics_maturity": 3.43,
       "cloud_architecture": 4.14,
       "tech_stack_modernity": 3.61,
-      "ai_engineering": 2.51,
-      "ai_product_features": 4.17,
+      "ai_engineering": 2.8,
+      "ai_product_features": 3.8,
       "revenue_ai_upside": 3.81,
       "margin_ai_upside": 4.47,
       "product_differentiation": 2.94,
@@ -302,15 +164,15 @@
       "partner_ecosystem": 2.18,
       "ai_governance": 3.07,
       "regulatory_readiness": 3.19,
-      "ai_momentum": 3.48
+      "ai_momentum": 3.3
     },
     "category_scores": {
       "Data & Analytics": 3.26,
-      "Technology & Infrastructure": 3.42,
-      "AI Product & Value": 3.85,
+      "Technology & Infrastructure": 3.52,
+      "AI Product & Value": 3.75,
       "Organization & Talent": 2.6,
       "Governance & Risk": 3.13,
-      "Velocity & Momentum": 3.48
+      "Velocity & Momentum": 3.3
     },
     "confidence_score": 96.0,
     "confidence_breakdown": {
@@ -322,15 +184,61 @@
     }
   },
   {
+    "name": "Dash",
+    "vertical": "Manufacturing/Distribution",
+    "employee_count": 15,
+    "description": "Dash provided ERP-integrated document management and accounts payable automation software (DASH DDX) for manufacturing and distribution enterprises worldwide for over 20 years. In 2024 Dash joined the Solen portfolio; in July 2025, Dash merged with S4i Systems to form SMRTR, combining AP automation with compliance solutions for food & beverage and manufacturing industries.",
+    "website": "https://dashdev.com",
+    "founded_year": 1998,
+    "composite_score": 3.14,
+    "tier": "AI-Buildable",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 2.8,
+      "data_integration": 2.8,
+      "analytics_maturity": 2.5,
+      "cloud_architecture": 4.0,
+      "tech_stack_modernity": 3.5,
+      "ai_engineering": 2.5,
+      "ai_product_features": 3.8,
+      "revenue_ai_upside": 3.5,
+      "margin_ai_upside": 3.2,
+      "product_differentiation": 3.4,
+      "ai_talent_density": 2.0,
+      "leadership_ai_vision": 3.2,
+      "org_change_readiness": 2.2,
+      "partner_ecosystem": 3.5,
+      "ai_governance": 3.8,
+      "regulatory_readiness": 3.8,
+      "ai_momentum": 3.6
+    },
+    "category_scores": {
+      "Data & Analytics": 2.7,
+      "Technology & Infrastructure": 3.33,
+      "AI Product & Value": 3.48,
+      "Organization & Talent": 2.73,
+      "Governance & Risk": 3.8,
+      "Velocity & Momentum": 3.6
+    },
+    "confidence_score": 74.0,
+    "confidence_breakdown": {
+      "search_coverage": 25.0,
+      "scrape_depth": 15.0,
+      "corpus_volume": 15.0,
+      "structured_extraction": 15,
+      "signal_richness": 4.0
+    }
+  },
+  {
     "name": "FMSI",
     "vertical": "Banking/Credit Unions",
     "employee_count": 48,
     "description": "Financial Management Software, Inc. (FMSI) provides the Omnix suite of SaaS applications for banks and credit unions: staff scheduling, performance analytics, lobby tracking, and appointment scheduling via the FMSI OneCX platform. Founded in 1990 by W. Michael Scott, headquartered in Alpharetta, GA. Serves 140+ financial institution clients. Acquired by Kronos (now UKG) in 2017. $5.3M annual revenue. Part of Solen Software Group.",
     "website": "https://www.fmsi.com",
     "founded_year": 1990,
-    "composite_score": 3.31,
+    "composite_score": 3.09,
     "tier": "AI-Buildable",
-    "wave": 1,
+    "wave": 2,
     "pillar_scores": {
       "data_quality": 2.98,
       "data_integration": 2.74,
@@ -338,25 +246,25 @@
       "cloud_architecture": 2.77,
       "tech_stack_modernity": 2.6,
       "ai_engineering": 2.2,
-      "ai_product_features": 4.42,
+      "ai_product_features": 3.8,
       "revenue_ai_upside": 4.12,
       "margin_ai_upside": 3.83,
       "product_differentiation": 3.42,
       "ai_talent_density": 2.23,
       "leadership_ai_vision": 3.52,
       "org_change_readiness": 1.79,
-      "partner_ecosystem": 2.68,
+      "partner_ecosystem": 3.2,
       "ai_governance": 2.51,
       "regulatory_readiness": 2.7,
-      "ai_momentum": 3.6
+      "ai_momentum": 3.8
     },
     "category_scores": {
       "Data & Analytics": 2.75,
       "Technology & Infrastructure": 2.52,
-      "AI Product & Value": 3.95,
-      "Organization & Talent": 2.56,
+      "AI Product & Value": 3.79,
+      "Organization & Talent": 2.69,
       "Governance & Risk": 2.6,
-      "Velocity & Momentum": 3.6
+      "Velocity & Momentum": 3.8
     },
     "confidence_score": 97.0,
     "confidence_breakdown": {
@@ -368,14 +276,152 @@
     }
   },
   {
+    "name": "Thought Foundry",
+    "vertical": "Entertainment/Digital Content",
+    "employee_count": 8,
+    "description": "Thought Foundry is a digital innovations company that builds data-driven exchange platform-as-a-service solutions for entertainment companies to manage digital content entitlements. Founded in 2012 by Timur Insepov and headquartered in Los Angeles (Culver City). Part of Solen Software Group.",
+    "website": "https://thoughtfoundry.com",
+    "founded_year": 2012,
+    "composite_score": 3.06,
+    "tier": "AI-Buildable",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.3,
+      "data_integration": 3.29,
+      "analytics_maturity": 3.27,
+      "cloud_architecture": 4.06,
+      "tech_stack_modernity": 3.81,
+      "ai_engineering": 2.71,
+      "ai_product_features": 2.8,
+      "revenue_ai_upside": 3.5,
+      "margin_ai_upside": 4.51,
+      "product_differentiation": 3.9,
+      "ai_talent_density": 1.8,
+      "leadership_ai_vision": 2.8,
+      "org_change_readiness": 2.76,
+      "partner_ecosystem": 3.0,
+      "ai_governance": 3.07,
+      "regulatory_readiness": 3.19,
+      "ai_momentum": 2.5
+    },
+    "category_scores": {
+      "Data & Analytics": 3.29,
+      "Technology & Infrastructure": 3.53,
+      "AI Product & Value": 3.68,
+      "Organization & Talent": 2.59,
+      "Governance & Risk": 3.13,
+      "Velocity & Momentum": 2.5
+    },
+    "confidence_score": 96.0,
+    "confidence_breakdown": {
+      "search_coverage": 25.0,
+      "scrape_depth": 20.0,
+      "corpus_volume": 12.3,
+      "structured_extraction": 25,
+      "signal_richness": 13.3
+    }
+  },
+  {
+    "name": "NexTalk",
+    "vertical": "Accessibility/Communication",
+    "employee_count": 9,
+    "description": "NexTalk provides secure, ADA-compliant communication software for deaf and hard-of-hearing individuals. Products include Access Contact Center (call management for contact centers), remote interpreting services, SpeechPath (speech-to-text), and TTY call management. Over 200 companies trust NexTalk. Based in Utah. Part of Solen Software Group.",
+    "website": "https://nextalk.com",
+    "founded_year": 2008,
+    "composite_score": 3.05,
+    "tier": "AI-Buildable",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 2.8,
+      "data_integration": 2.5,
+      "analytics_maturity": 1.96,
+      "cloud_architecture": 3.0,
+      "tech_stack_modernity": 2.8,
+      "ai_engineering": 2.8,
+      "ai_product_features": 4.2,
+      "revenue_ai_upside": 3.8,
+      "margin_ai_upside": 2.52,
+      "product_differentiation": 3.6,
+      "ai_talent_density": 2.2,
+      "leadership_ai_vision": 3.5,
+      "org_change_readiness": 1.36,
+      "partner_ecosystem": 3.2,
+      "ai_governance": 2.22,
+      "regulatory_readiness": 3.5,
+      "ai_momentum": 3.8
+    },
+    "category_scores": {
+      "Data & Analytics": 2.42,
+      "Technology & Infrastructure": 2.87,
+      "AI Product & Value": 3.53,
+      "Organization & Talent": 2.57,
+      "Governance & Risk": 2.86,
+      "Velocity & Momentum": 3.8
+    },
+    "confidence_score": 92.0,
+    "confidence_breakdown": {
+      "search_coverage": 25.0,
+      "scrape_depth": 20.0,
+      "corpus_volume": 15.0,
+      "structured_extraction": 25,
+      "signal_richness": 6.8
+    }
+  },
+  {
+    "name": "Primate",
+    "vertical": "Energy/Utilities",
+    "employee_count": 11,
+    "description": "Primate Technologies specializes in mission-critical control room visualization software for energy providers. Products include GridGuardian (real-time SCADA/EMS data integration), BlackBoard, TileViewer, and TileBuilder. Serves electric transmission & distribution, pipeline operations, gas utilities, and emergency management. Founded in 2001 in Melbourne, Florida. Joined Solen Software Group in 2024.",
+    "website": "https://primate-tech.com",
+    "founded_year": 2001,
+    "composite_score": 2.9,
+    "tier": "AI-Buildable",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.4,
+      "data_integration": 2.85,
+      "analytics_maturity": 3.07,
+      "cloud_architecture": 2.95,
+      "tech_stack_modernity": 2.52,
+      "ai_engineering": 2.04,
+      "ai_product_features": 3.2,
+      "revenue_ai_upside": 3.6,
+      "margin_ai_upside": 4.2,
+      "product_differentiation": 3.54,
+      "ai_talent_density": 1.6,
+      "leadership_ai_vision": 3.62,
+      "org_change_readiness": 1.53,
+      "partner_ecosystem": 2.61,
+      "ai_governance": 2.83,
+      "regulatory_readiness": 2.98,
+      "ai_momentum": 2.3
+    },
+    "category_scores": {
+      "Data & Analytics": 3.11,
+      "Technology & Infrastructure": 2.5,
+      "AI Product & Value": 3.63,
+      "Organization & Talent": 2.34,
+      "Governance & Risk": 2.91,
+      "Velocity & Momentum": 2.3
+    },
+    "confidence_score": 92.0,
+    "confidence_breakdown": {
+      "search_coverage": 25.0,
+      "scrape_depth": 20.0,
+      "corpus_volume": 14.1,
+      "structured_extraction": 20,
+      "signal_richness": 13.3
+    }
+  },
+  {
     "name": "Cairn Applications",
     "vertical": "Waste Management",
     "employee_count": 10,
     "description": "Cairn Applications develops cloud-based SaaS software for the waste hauling industry. Founded in 2008 by James Moser in Nashua, NH. Flagship product Box Tracker manages order management, logistics, billing, merchant services, asset and employee tracking, navigation, CRM, and automated customer communication. Also offers Scale House (landfill/transfer station operations) and Route Tracker (commercial trash service, curbside pickup, port-a-potty rentals). Supports 350+ customers managing 65,000+ dumpsters, facilitating ~$150M in annual commerce. Acquired by Solen Software Group in December 2025.",
     "website": "https://cairnapps.com",
     "founded_year": 2008,
-    "composite_score": 2.86,
-    "tier": "AI-Buildable",
+    "composite_score": 2.79,
+    "tier": "AI-Emerging",
     "wave": 2,
     "pillar_scores": {
       "data_quality": 2.7,
@@ -420,8 +466,8 @@
     "description": "ViaPeople provides flexible people management software including performance management, AI instant insights, 360-degree feedback, deal team feedback, succession planning, and automated promotion processes. Founded in 2002 by Jim Perry. Merged with SpiraLinks (compensation planning for global teams) to deliver a full-suite HR platform connecting performance management with compensation. Part of Solen Software Group.",
     "website": "https://viapeople.com",
     "founded_year": 2002,
-    "composite_score": 2.86,
-    "tier": "AI-Buildable",
+    "composite_score": 2.77,
+    "tier": "AI-Emerging",
     "wave": 2,
     "pillar_scores": {
       "data_quality": 2.15,
@@ -430,7 +476,7 @@
       "cloud_architecture": 3.9,
       "tech_stack_modernity": 3.29,
       "ai_engineering": 1.54,
-      "ai_product_features": 3.7,
+      "ai_product_features": 3.5,
       "revenue_ai_upside": 3.33,
       "margin_ai_upside": 3.72,
       "product_differentiation": 3.0,
@@ -439,16 +485,16 @@
       "org_change_readiness": 1.87,
       "partner_ecosystem": 2.51,
       "ai_governance": 3.05,
-      "regulatory_readiness": 3.17,
-      "ai_momentum": 3.07
+      "regulatory_readiness": 3.3,
+      "ai_momentum": 3.0
     },
     "category_scores": {
       "Data & Analytics": 2.45,
       "Technology & Infrastructure": 2.91,
-      "AI Product & Value": 3.44,
+      "AI Product & Value": 3.39,
       "Organization & Talent": 2.18,
-      "Governance & Risk": 3.11,
-      "Velocity & Momentum": 3.07
+      "Governance & Risk": 3.17,
+      "Velocity & Momentum": 3.0
     },
     "confidence_score": 96.0,
     "confidence_breakdown": {
@@ -466,7 +512,7 @@
     "description": "ThingTech provides an IoT platform that helps companies with a mobile workforce track, manage, and maintain their assets using GPS technology. Founded in 2014 in Atlanta, Georgia by Tim Quinn and Brian Corcoran. Raised $5.45M in funding ($4M Series A). Serves construction and utility firms with enterprise asset management. Acquired by Track Star to expand IoT capabilities. Part of Solen Software Group.",
     "website": "https://thingtech.com",
     "founded_year": 2014,
-    "composite_score": 2.61,
+    "composite_score": 2.69,
     "tier": "AI-Emerging",
     "wave": 2,
     "pillar_scores": {
@@ -476,7 +522,7 @@
       "cloud_architecture": 3.94,
       "tech_stack_modernity": 3.56,
       "ai_engineering": 1.85,
-      "ai_product_features": 2.83,
+      "ai_product_features": 3.2,
       "revenue_ai_upside": 2.75,
       "margin_ai_upside": 3.55,
       "product_differentiation": 2.3,
@@ -486,15 +532,15 @@
       "partner_ecosystem": 1.86,
       "ai_governance": 3.07,
       "regulatory_readiness": 3.19,
-      "ai_momentum": 2.58
+      "ai_momentum": 2.5
     },
     "category_scores": {
       "Data & Analytics": 2.77,
       "Technology & Infrastructure": 3.12,
-      "AI Product & Value": 2.86,
+      "AI Product & Value": 2.95,
       "Organization & Talent": 2.11,
       "Governance & Risk": 3.13,
-      "Velocity & Momentum": 2.58
+      "Velocity & Momentum": 2.5
     },
     "confidence_score": 94.0,
     "confidence_breakdown": {
@@ -506,13 +552,59 @@
     }
   },
   {
+    "name": "Spokane",
+    "vertical": "Agriculture/Produce",
+    "employee_count": 9,
+    "description": "Spokane Software Systems produces a leading agricultural ERP system for growers, packers, and shippers of agricultural products throughout the U.S. for over 37 years. 64% of US orange varieties and 80% of US lemon varieties flow through the Spokane System. Key modules include PackPoint (PTI/GTIN compliance), packing operations, shipping workflows, and grower accounting. Based in Spokane, WA with $3M annual revenue. Part of Solen Software Group.",
+    "website": "https://sssonline.com",
+    "founded_year": 1989,
+    "composite_score": 2.59,
+    "tier": "AI-Emerging",
+    "wave": 2,
+    "pillar_scores": {
+      "data_quality": 3.5,
+      "data_integration": 2.89,
+      "analytics_maturity": 2.8,
+      "cloud_architecture": 1.8,
+      "tech_stack_modernity": 1.5,
+      "ai_engineering": 1.2,
+      "ai_product_features": 2.2,
+      "revenue_ai_upside": 3.8,
+      "margin_ai_upside": 4.58,
+      "product_differentiation": 4.2,
+      "ai_talent_density": 1.3,
+      "leadership_ai_vision": 2.5,
+      "org_change_readiness": 3.1,
+      "partner_ecosystem": 2.39,
+      "ai_governance": 3.2,
+      "regulatory_readiness": 3.42,
+      "ai_momentum": 1.5
+    },
+    "category_scores": {
+      "Data & Analytics": 3.06,
+      "Technology & Infrastructure": 1.5,
+      "AI Product & Value": 3.7,
+      "Organization & Talent": 2.32,
+      "Governance & Risk": 3.31,
+      "Velocity & Momentum": 1.5
+    },
+    "confidence_score": 94.0,
+    "confidence_breakdown": {
+      "search_coverage": 25.0,
+      "scrape_depth": 20.0,
+      "corpus_volume": 14.9,
+      "structured_extraction": 20,
+      "signal_richness": 13.7
+    }
+  },
+  {
     "name": "TrackIt Transit",
     "vertical": "Public Transit",
     "employee_count": 15,
     "description": "TrackIt provides transit-specific, cloud-based SaaS software for public transit agencies. Enables paperless workflows, inter-departmental collaboration, and real-time data by replacing paper-based processes with searchable digital records. Supports 100+ transit locations. Founded in 2013 by Mark Anderson. Acquired by Solen Software Group in February 2026.",
     "website": "https://trackittransit.com",
     "founded_year": 2013,
-    "composite_score": 2.42,
+    "composite_score": 2.37,
     "tier": "AI-Emerging",
     "wave": 3,
     "pillar_scores": {
@@ -549,98 +641,6 @@
       "corpus_volume": 13.5,
       "structured_extraction": 15,
       "signal_richness": 8.4
-    }
-  },
-  {
-    "name": "NexTalk",
-    "vertical": "Accessibility/Communication",
-    "employee_count": 9,
-    "description": "NexTalk provides secure, ADA-compliant communication software for deaf and hard-of-hearing individuals. Products include Access Contact Center (call management for contact centers), remote interpreting services, SpeechPath (speech-to-text), and TTY call management. Over 200 companies trust NexTalk. Based in Utah. Part of Solen Software Group.",
-    "website": "https://nextalk.com",
-    "founded_year": 2008,
-    "composite_score": 2.31,
-    "tier": "AI-Emerging",
-    "wave": 3,
-    "pillar_scores": {
-      "data_quality": 1.95,
-      "data_integration": 2.5,
-      "analytics_maturity": 1.96,
-      "cloud_architecture": 2.77,
-      "tech_stack_modernity": 2.51,
-      "ai_engineering": 1.03,
-      "ai_product_features": 2.98,
-      "revenue_ai_upside": 2.7,
-      "margin_ai_upside": 2.52,
-      "product_differentiation": 2.67,
-      "ai_talent_density": 1.0,
-      "leadership_ai_vision": 2.58,
-      "org_change_readiness": 1.36,
-      "partner_ecosystem": 2.26,
-      "ai_governance": 2.22,
-      "regulatory_readiness": 2.38,
-      "ai_momentum": 2.58
-    },
-    "category_scores": {
-      "Data & Analytics": 2.14,
-      "Technology & Infrastructure": 2.1,
-      "AI Product & Value": 2.72,
-      "Organization & Talent": 1.8,
-      "Governance & Risk": 2.3,
-      "Velocity & Momentum": 2.58
-    },
-    "confidence_score": 92.0,
-    "confidence_breakdown": {
-      "search_coverage": 25.0,
-      "scrape_depth": 20.0,
-      "corpus_volume": 15.0,
-      "structured_extraction": 25,
-      "signal_richness": 6.8
-    }
-  },
-  {
-    "name": "Dash",
-    "vertical": "Manufacturing/Distribution",
-    "employee_count": 15,
-    "description": "Dash provided ERP-integrated document management and accounts payable automation software (DASH DDX) for manufacturing and distribution enterprises worldwide for over 20 years. In 2024 Dash joined the Solen portfolio; in July 2025, Dash merged with S4i Systems to form SMRTR, combining AP automation with compliance solutions for food & beverage and manufacturing industries.",
-    "website": "https://dashdev.com",
-    "founded_year": 1998,
-    "composite_score": 1.97,
-    "tier": "AI-Limited",
-    "wave": 3,
-    "pillar_scores": {
-      "data_quality": 1.62,
-      "data_integration": 1.58,
-      "analytics_maturity": 1.5,
-      "cloud_architecture": 1.57,
-      "tech_stack_modernity": 1.54,
-      "ai_engineering": 1.22,
-      "ai_product_features": 2.9,
-      "revenue_ai_upside": 2.1,
-      "margin_ai_upside": 2.0,
-      "product_differentiation": 1.58,
-      "ai_talent_density": 1.15,
-      "leadership_ai_vision": 2.17,
-      "org_change_readiness": 1.11,
-      "partner_ecosystem": 1.53,
-      "ai_governance": 2.15,
-      "regulatory_readiness": 2.36,
-      "ai_momentum": 2.19
-    },
-    "category_scores": {
-      "Data & Analytics": 1.57,
-      "Technology & Infrastructure": 1.44,
-      "AI Product & Value": 2.15,
-      "Organization & Talent": 1.49,
-      "Governance & Risk": 2.25,
-      "Velocity & Momentum": 2.19
-    },
-    "confidence_score": 74.0,
-    "confidence_breakdown": {
-      "search_coverage": 25.0,
-      "scrape_depth": 15.0,
-      "corpus_volume": 15.0,
-      "structured_extraction": 15,
-      "signal_richness": 4.0
     }
   }
 ]

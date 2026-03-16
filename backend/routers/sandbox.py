@@ -27,12 +27,29 @@ router = APIRouter(prefix="/api/sandbox", tags=["sandbox"])
 # ── Scoring engine constants ──────────────────────────────────────────────────
 
 DERIVED_WEIGHTS = {
-    "data_quality": 0.997, "data_integration": 0.913, "analytics_maturity": 1.126,
-    "cloud_architecture": 0.559, "tech_stack_modernity": 0.297, "ai_engineering": 0.519,
-    "ai_product_features": 4.447, "revenue_ai_upside": 2.019, "margin_ai_upside": 0.644,
-    "product_differentiation": 0.481, "ai_talent_density": 2.346, "leadership_ai_vision": 1.432,
-    "org_change_readiness": 0.534, "partner_ecosystem": 0.972, "ai_governance": 0.422,
-    "regulatory_readiness": 0.32, "ai_momentum": 0.272,
+    # ── Data & Analytics ───────────────────────────────────────────────────────
+    "data_quality": 1.10,           # ↑ from 0.997 — data foundation matters
+    "data_integration": 1.00,       # ↑ from 0.913 — API/integration maturity
+    "analytics_maturity": 1.20,     # ↑ from 1.126 — can they actually use data?
+    # ── Technology & Infrastructure ────────────────────────────────────────────
+    "cloud_architecture": 0.80,     # ↑ from 0.559 — cloud-native = AI-ready infra
+    "tech_stack_modernity": 0.60,   # ↑ from 0.297 — legacy tech is a real barrier
+    "ai_engineering": 1.00,         # ↑↑ from 0.519 — can they build/deploy AI?
+    # ── AI Product & Value ─────────────────────────────────────────────────────
+    "ai_product_features": 2.80,    # ↓↓ from 4.447 — was too dominant, inflated by keyword noise
+    "revenue_ai_upside": 1.50,      # ↓ from 2.019 — opportunity ≠ readiness
+    "margin_ai_upside": 0.80,       # ↑ from 0.644 — automation potential matters
+    "product_differentiation": 0.70, # ↑ from 0.481 — moat strength
+    # ── Organization & Talent ──────────────────────────────────────────────────
+    "ai_talent_density": 1.80,      # ↓ from 2.346 — important but ECF over-penalizes small cos
+    "leadership_ai_vision": 1.50,   # ↑ from 1.432 — leadership drives AI adoption
+    "org_change_readiness": 0.80,   # ↑ from 0.534 — ability to transform matters
+    "partner_ecosystem": 0.90,      # ~ from 0.972
+    # ── Governance & Risk ──────────────────────────────────────────────────────
+    "ai_governance": 0.50,          # ↑ from 0.422
+    "regulatory_readiness": 0.50,   # ↑ from 0.32 — regulated verticals need this
+    # ── Velocity & Momentum ────────────────────────────────────────────────────
+    "ai_momentum": 0.80,            # ↑↑ from 0.272 — recent activity signals future trajectory
 }
 TOTAL_WEIGHT = sum(DERIVED_WEIGHTS.values())
 
@@ -1257,28 +1274,28 @@ def estimate_dimension_scores(data: dict) -> dict[str, float]:
 
     # ── Execution Capacity Factor (ECF) ──────────────────────────────────────
     # Measures whether the company has the resources to actually execute on AI.
-    # A 17-person company simply cannot staff an ML team, build data infra,
-    # and ship AI features the way a 200+ person company can.
+    # Small PE portcos can leverage Solen shared services + external AI vendors,
+    # so the penalty for small size should be moderate, not crushing.
     #
-    # ECF range: 0.5 (very small) → 1.0 (large enough to execute)
-    #   <25 employees:  0.55  — can experiment but can't staff dedicated AI
-    #   25-50:          0.65  — can hire 1-2 ML roles, limited bandwidth
-    #   50-100:         0.75  — can build a small AI team
-    #   100-250:        0.85  — reasonable execution capacity
-    #   250-500:        0.92  — solid execution capacity
+    # ECF range: 0.65 (very small) → 1.0 (large enough to execute)
+    #   <15 employees:  0.65  — micro team, but can still adopt AI via vendors
+    #   15-30:          0.72  — can hire 1-2 ML roles with PE support
+    #   30-75:          0.80  — small AI team feasible
+    #   75-150:         0.88  — reasonable execution capacity
+    #   150-500:        0.94  — solid execution capacity
     #   500+:           1.0   — full execution capacity
-    if emp < 25:
-        exec_capacity = 0.55
-    elif emp < 50:
-        exec_capacity = 0.55 + (emp - 25) * 0.004  # 0.55 → 0.65
-    elif emp < 100:
-        exec_capacity = 0.65 + (emp - 50) * 0.002  # 0.65 → 0.75
-    elif emp < 250:
-        exec_capacity = 0.75 + (emp - 100) * 0.00067  # 0.75 → 0.85
+    if emp < 15:
+        exec_capacity = 0.65
+    elif emp < 30:
+        exec_capacity = 0.65 + (emp - 15) * 0.0047  # 0.65 → 0.72
+    elif emp < 75:
+        exec_capacity = 0.72 + (emp - 30) * 0.0018  # 0.72 → 0.80
+    elif emp < 150:
+        exec_capacity = 0.80 + (emp - 75) * 0.0011  # 0.80 → 0.88
     elif emp < 500:
-        exec_capacity = 0.85 + (emp - 250) * 0.00028  # 0.85 → 0.92
+        exec_capacity = 0.88 + (emp - 150) * 0.00017  # 0.88 → 0.94
     else:
-        exec_capacity = min(1.0, 0.92 + (emp - 500) * 0.00016)  # 0.92 → 1.0
+        exec_capacity = min(1.0, 0.94 + (emp - 500) * 0.00012)  # 0.94 → 1.0
 
     # Funding also contributes to execution capacity (can hire/buy AI talent)
     funding_boost = 0.0
