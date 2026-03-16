@@ -1,20 +1,16 @@
 {
   "AutoTime": {
-    "ai_initiatives": [
-      {
-        "text": "launched an AI product featuring machine learning for predictive analytics",
-        "type": "product_launch"
-      },
-      {
-        "text": "AI-driven solutions and a Chief AI Officer leading",
-        "type": "ai_feature"
-      }
-    ],
+    "ai_initiatives": [],
     "named_products": [],
     "tech_stack": [],
     "named_customers": [],
     "recent_news": [],
-    "executives": [],
+    "executives": [
+      {
+        "name": "Chris Thomas",
+        "role": "Chief Executive Officer"
+      }
+    ],
     "hiring_signals": [
       "AI/ML Engineer",
       "Data Scientist",
@@ -72,35 +68,19 @@
         "leadership_headcount": 0,
         "total_discovered": 0
       }
-    }
+    },
+    "narrative": "AutoTime operates in the Aerospace & Defense space, founded in 2003 with approximately 25 employees. AutoTime is the leading time and labor tracking solution purpose-built for the Aerospace and Defense industry. Leadership includes Chris Thomas (Chief Executive Officer). Scored 3.94/5.0 (Tier: AI-Ready)."
   },
   "Spokane": {
-    "ai_initiatives": [
-      {
-        "text": "launched AI-powered predictive analytics",
-        "type": "product_launch"
-      },
-      {
-        "text": "AI-powered predictive analytics",
-        "type": "ai_feature"
-      }
-    ],
+    "ai_initiatives": [],
     "named_products": [],
-    "tech_stack": [
-      "AWS",
-      "Python",
-      "Java",
-      "Redis",
-      "TensorFlow",
-      "PyTorch",
-      "OpenAI"
-    ],
+    "tech_stack": [],
     "named_customers": [],
     "recent_news": [],
     "executives": [
       {
-        "name": "Tom Simpson",
-        "role": "president"
+        "name": "Tim Smith",
+        "role": "President"
       }
     ],
     "hiring_signals": [
@@ -140,79 +120,23 @@
       "linkedin_profiles_discovered": 6,
       "relevant_results": 16,
       "total_results": 20,
-      "leadership": [
-        {
-          "name": "Ken Farr III",
-          "role": "VP of Eng"
-        }
-      ],
-      "ai_ml_talent": [],
-      "senior_engineers": [],
-      "engineering_team": [
-        {
-          "name": "Isaiah Weaver",
-          "role": "Software Engineer"
-        }
-      ],
-      "management": [],
-      "team_skills": [
-        "agile",
-        "aws",
-        "azure",
-        "deep learning",
-        "java",
-        "javascript",
-        "kubernetes",
-        "machine learning",
-        "python",
-        "snowflake",
-        "sql",
-        "tensorflow"
-      ],
+      "team_skills": [],
       "estimated_total_employees": 524,
       "estimated_eng_team": 183,
-      "talent_summary": {
-        "has_cto": false,
-        "has_vp_eng": true,
-        "has_ai_leadership": false,
-        "ai_ml_headcount": 0,
-        "eng_headcount_discovered": 1,
-        "leadership_headcount": 1,
-        "total_discovered": 3
-      }
-    }
+      "talent_summary": {}
+    },
+    "narrative": "Spokane operates in the Agriculture/Produce space, founded in 1989 with approximately 9 employees. Spokane Software Systems produces a leading agricultural ERP system for growers, packers, and shippers of agricultural products throughout the U. Leadership includes Tim Smith (President). Scored 3.92/5.0 (Tier: AI-Ready)."
   },
   "Thought Foundry": {
-    "ai_initiatives": [
-      {
-        "text": "launched an AI product featuring intelligent document processing and machin",
-        "type": "product_launch"
-      },
-      {
-        "text": "introduced an AI-optimized cloud platform for developers",
-        "type": "product_launch"
-      },
-      {
-        "text": "intelligent document processing and machine learning",
-        "type": "ai_feature"
-      }
-    ],
+    "ai_initiatives": [],
     "named_products": [],
-    "tech_stack": [
-      "AWS",
-      "Azure",
-      "Kubernetes",
-      "Docker",
-      "Python",
-      "React",
-      "Databricks"
-    ],
+    "tech_stack": [],
     "named_customers": [],
     "recent_news": [],
     "executives": [
       {
         "name": "Timur Insepov",
-        "role": "CEO"
+        "role": "Founder & CEO"
       }
     ],
     "hiring_signals": [
@@ -280,19 +204,11 @@
         "leadership_headcount": 0,
         "total_discovered": 0
       }
-    }
+    },
+    "narrative": "Thought Foundry operates in the Entertainment/Digital Content space, founded in 2012 with approximately 8 employees. Thought Foundry is a digital innovations company that builds data-driven exchange platform-as-a-service solutions for entertainment companies to manage digital content entitlements. Leadership includes Timur Insepov (Founder & CEO). Scored 3.86/5.0 (Tier: AI-Ready)."
   },
   "Champ": {
-    "ai_initiatives": [
-      {
-        "text": "launched an AI-enabled provider directory to expand its Medicare Advantage",
-        "type": "product_launch"
-      },
-      {
-        "text": "AI-powered provider data ingestion and validation w",
-        "type": "ai_feature"
-      }
-    ],
+    "ai_initiatives": [],
     "named_products": [],
     "tech_stack": [],
     "named_customers": [],
@@ -300,7 +216,11 @@
     "executives": [
       {
         "name": "Scott Dunnewind",
-        "role": "Chief Executive Officer"
+        "role": "Owner & CEO (since 2021)"
+      },
+      {
+        "name": "David Rosebaugh",
+        "role": "Founder"
       }
     ],
     "hiring_signals": [
@@ -384,29 +304,16 @@
         "leadership_headcount": 0,
         "total_discovered": 0
       }
-    }
+    },
+    "narrative": "Champ operates in the Healthcare/Public Health space, founded in 1985 with approximately 35 employees. Champ Software develops Nightingale Notes, an electronic health records (EHR) system built specifically for public health departments. Leadership includes Scott Dunnewind (Owner & CEO (since 2021)), David Rosebaugh (Founder). Scored 3.75/5.0 (Tier: AI-Ready)."
   },
   "Primate": {
-    "ai_initiatives": [
-      {
-        "text": "launched an AI-powered financial analytics tool for Southeast Asian SMEs",
-        "type": "product_launch"
-      },
-      {
-        "text": "AI-powered financial analytics tool for Southeast A",
-        "type": "ai_feature"
-      }
-    ],
+    "ai_initiatives": [],
     "named_products": [],
     "tech_stack": [],
     "named_customers": [],
     "recent_news": [],
-    "executives": [
-      {
-        "name": "Andrew Browning",
-        "role": "Chief Technology Officer"
-      }
-    ],
+    "executives": [],
     "hiring_signals": [
       "AI/ML Engineer",
       "Data Scientist",
@@ -461,7 +368,8 @@
         "leadership_headcount": 0,
         "total_discovered": 0
       }
-    }
+    },
+    "narrative": "Primate operates in the Energy/Utilities space, founded in 2001 with approximately 11 employees. Primate Technologies specializes in mission-critical control room visualization software for energy providers. Scored 3.54/5.0 (Tier: AI-Ready)."
   },
   "Track Star": {
     "ai_initiatives": [],
@@ -474,7 +382,12 @@
     ],
     "named_customers": [],
     "recent_news": [],
-    "executives": [],
+    "executives": [
+      {
+        "name": "Michael Hughes",
+        "role": "Founder, President & CEO Emeritus"
+      }
+    ],
     "hiring_signals": [
       "AI/ML Engineer",
       "Data Scientist",
@@ -528,19 +441,11 @@
         "leadership_headcount": 0,
         "total_discovered": 0
       }
-    }
+    },
+    "narrative": "Track Star operates in the Fleet Management/Government space, founded in 2000 with approximately 10 employees. Track Star International provides fleet management solutions combining GPS tracking, telematics, Enterprise Asset Management (EAM), predictive maintenance, and video intelligence in a unified platform. Leadership includes Michael Hughes (Founder, President & CEO Emeritus). Technology stack includes Python, AWS, Kubernetes, React. Scored 3.47/5.0 (Tier: AI-Buildable)."
   },
   "SMRTR": {
-    "ai_initiatives": [
-      {
-        "text": "launched AI advisory services for financial institutions",
-        "type": "product_launch"
-      },
-      {
-        "text": "AI-powered innovation program for smart operations",
-        "type": "ai_feature"
-      }
-    ],
+    "ai_initiatives": [],
     "named_products": [],
     "tech_stack": [],
     "named_customers": [
@@ -552,16 +457,8 @@
     "recent_news": [],
     "executives": [
       {
-        "name": "Georgie Brooke",
-        "role": "CEO"
-      },
-      {
-        "name": "Sangeeth Ponathil",
-        "role": "Chief Information Officer"
-      },
-      {
-        "name": "Stef Merks",
-        "role": "Co-Founder"
+        "name": "Susanne Moore",
+        "role": "Chief Executive Officer"
       }
     ],
     "hiring_signals": [
@@ -624,20 +521,13 @@
         "leadership_headcount": 0,
         "total_discovered": 0
       }
-    }
+    },
+    "narrative": "SMRTR operates in the Food & Beverage/Manufacturing space, founded in 2025 with approximately 30 employees. SMRTR was formed July 1, 2025 from the merger of Dash (founded 1998, AP automation) and S4i Systems (founded 2002, compliance solutions). Leadership includes Susanne Moore (Chief Executive Officer). Scored 3.39/5.0 (Tier: AI-Buildable)."
   },
   "FMSI": {
     "ai_initiatives": [
       {
         "text": "AI-powered tools",
-        "type": "ai_feature"
-      },
-      {
-        "text": "AI-powered financial calculators are gaining tracti",
-        "type": "ai_feature"
-      },
-      {
-        "text": "AI-powered financial calculators gives credit union",
         "type": "ai_feature"
       }
     ],
@@ -652,8 +542,8 @@
     "recent_news": [],
     "executives": [
       {
-        "name": "Nicolas Busch",
-        "role": "CEO"
+        "name": "W. Michael Scott",
+        "role": "Co-Founder, Chairman & CEO"
       }
     ],
     "hiring_signals": [
@@ -738,7 +628,11 @@
         "leadership_headcount": 0,
         "total_discovered": 0
       }
-    }
+    },
+    "narrative": "FMSI operates in the Banking/Credit Unions space, founded in 1990 with approximately 48 employees. Financial Management Software, Inc. Leadership includes W. Michael Scott (Co-Founder, Chairman & CEO). Technology stack includes Kubernetes, Segment. AI signals: AI-powered tools. Notable customers include Apple Federal Credit Union. Scored 3.31/5.0 (Tier: AI-Buildable).",
+    "customers": [
+      "Apple Federal Credit Union"
+    ]
   },
   "Cairn Applications": {
     "ai_initiatives": [],
@@ -749,8 +643,7 @@
       "AWS",
       "Kubernetes",
       "Python",
-      "React",
-      "OpenAI"
+      "React"
     ],
     "named_customers": [],
     "recent_news": [
@@ -759,7 +652,7 @@
     "executives": [
       {
         "name": "James Moser",
-        "role": "Founder"
+        "role": "Founder & President"
       }
     ],
     "hiring_signals": [
@@ -821,16 +714,13 @@
         "leadership_headcount": 0,
         "total_discovered": 0
       }
-    }
+    },
+    "narrative": "Cairn Applications operates in the Waste Management space, founded in 2008 with approximately 10 employees. Cairn Applications develops cloud-based SaaS software for the waste hauling industry. Leadership includes James Moser (Founder & President). Technology stack includes AWS, Kubernetes, Python, React. Scored 2.86/5.0 (Tier: AI-Buildable)."
   },
   "ViaPeople": {
     "ai_initiatives": [
       {
-        "text": "launched AI-powered features for performance management and instant ins",
-        "type": "product_launch"
-      },
-      {
-        "text": "AI-powered features for performance management and",
+        "text": "AI Instant Insights for performance management",
         "type": "ai_feature"
       }
     ],
@@ -840,7 +730,12 @@
     "tech_stack": [],
     "named_customers": [],
     "recent_news": [],
-    "executives": [],
+    "executives": [
+      {
+        "name": "Jim Perry",
+        "role": "Co-Founder & CEO"
+      }
+    ],
     "hiring_signals": [
       "AI/ML Engineer"
     ],
@@ -910,20 +805,13 @@
         "leadership_headcount": 0,
         "total_discovered": 0
       }
-    }
+    },
+    "narrative": "ViaPeople operates in the HR Technology space, founded in 2002 with approximately 18 employees. ViaPeople provides flexible people management software including performance management, AI instant insights, 360-degree feedback, deal team feedback, succession planning, and automated promotion processes. Leadership includes Jim Perry (Co-Founder & CEO). AI signals: AI Instant Insights for performance management. Scored 2.86/5.0 (Tier: AI-Buildable)."
   },
   "ThingTech": {
     "ai_initiatives": [
       {
-        "text": "launched an AI-powered IoT platform for asset management",
-        "type": "product_launch"
-      },
-      {
-        "text": "AI-powered IoT platform for asset management",
-        "type": "ai_feature"
-      },
-      {
-        "text": "intelligent IIoT platform and product suite that int",
+        "text": "intelligent IIoT platform and product suite",
         "type": "ai_feature"
       }
     ],
@@ -933,16 +821,12 @@
     "recent_news": [],
     "executives": [
       {
-        "name": "Brian Corcoran",
-        "role": "co-founder"
-      },
-      {
         "name": "Tim Quinn",
-        "role": "CEO"
+        "role": "Co-Founder & CEO"
       },
       {
-        "name": "Morris Qiu",
-        "role": "CTO"
+        "name": "Brian Corcoran",
+        "role": "Co-Founder & Chief Solution Officer"
       }
     ],
     "hiring_signals": [
@@ -1078,7 +962,8 @@
         "leadership_headcount": 0,
         "total_discovered": 0
       }
-    }
+    },
+    "narrative": "ThingTech operates in the IoT/Asset Management space, founded in 2014 with approximately 11 employees. ThingTech provides an IoT platform that helps companies with a mobile workforce track, manage, and maintain their assets using GPS technology. Leadership includes Tim Quinn (Co-Founder & CEO), Brian Corcoran (Co-Founder & Chief Solution Officer). AI signals: intelligent IIoT platform and product suite. Scored 2.61/5.0 (Tier: AI-Emerging)."
   },
   "TrackIt Transit": {
     "ai_initiatives": [],
@@ -1091,15 +976,7 @@
     "executives": [
       {
         "name": "Mark Anderson",
-        "role": "President"
-      },
-      {
-        "name": "Alexander Spencer",
-        "role": "Founder"
-      },
-      {
-        "name": "Gerry Leonard",
-        "role": "CEO"
+        "role": "Founder & President"
       }
     ],
     "hiring_signals": [
@@ -1164,19 +1041,11 @@
         "leadership_headcount": 0,
         "total_discovered": 0
       }
-    }
+    },
+    "narrative": "TrackIt Transit operates in the Public Transit space, founded in 2013 with approximately 15 employees. TrackIt provides transit-specific, cloud-based SaaS software for public transit agencies. Leadership includes Mark Anderson (Founder & President). Technology stack includes AWS. Scored 2.42/5.0 (Tier: AI-Emerging)."
   },
   "NexTalk": {
-    "ai_initiatives": [
-      {
-        "text": "launched an AI-powered conversational AI product for real-time financial i",
-        "type": "product_launch"
-      },
-      {
-        "text": "AI-powered conversational AI product for real-time",
-        "type": "ai_feature"
-      }
-    ],
+    "ai_initiatives": [],
     "named_products": [
       "provides communication"
     ],
@@ -1185,7 +1054,12 @@
     ],
     "named_customers": [],
     "recent_news": [],
-    "executives": [],
+    "executives": [
+      {
+        "name": "Scott Cummings",
+        "role": "Chief Executive Officer"
+      }
+    ],
     "hiring_signals": [
       "AI/ML Engineer",
       "Data Scientist"
@@ -1245,14 +1119,7 @@
       "senior_engineers": [],
       "engineering_team": [],
       "management": [],
-      "team_skills": [
-        "aws",
-        "java",
-        "javascript",
-        "mongodb",
-        "node.js",
-        "react"
-      ],
+      "team_skills": [],
       "estimated_total_employees": 50,
       "estimated_eng_team": 17,
       "talent_summary": {
@@ -1264,42 +1131,13 @@
         "leadership_headcount": 0,
         "total_discovered": 0
       }
-    }
+    },
+    "narrative": "NexTalk operates in the Accessibility/Communication space, founded in 2008 with approximately 9 employees. NexTalk provides secure, ADA-compliant communication software for deaf and hard-of-hearing individuals. Leadership includes Scott Cummings (Chief Executive Officer). Technology stack includes AWS. Scored 2.31/5.0 (Tier: AI-Emerging)."
   },
   "Dash": {
-    "ai_initiatives": [
-      {
-        "text": "launched AI-powered risk and allocation tools in 2021",
-        "type": "product_launch"
-      },
-      {
-        "text": "AI-powered risk and allocation tools in 2021",
-        "type": "ai_feature"
-      },
-      {
-        "text": "introduced an AI SMS agent",
-        "type": "product_launch"
-      },
-      {
-        "text": "AI-powered reporting",
-        "type": "ai_feature"
-      },
-      {
-        "text": "AI-powered observability and security platform for",
-        "type": "ai_feature"
-      },
-      {
-        "text": "AI-driven systems",
-        "type": "ai_feature"
-      }
-    ],
+    "ai_initiatives": [],
     "named_products": [],
-    "tech_stack": [
-      "Python",
-      "React",
-      "AWS",
-      "Kubernetes"
-    ],
+    "tech_stack": [],
     "named_customers": [],
     "recent_news": [
       "In May, DASH announced a strategic partnership with global alternatives fintech firm S64 to enhance private market investment accessibility for Austra",
@@ -1308,16 +1146,8 @@
     ],
     "executives": [
       {
-        "name": "Stino Milito",
-        "role": "President"
-      },
-      {
-        "name": "Peter Maragos",
-        "role": "CEO"
-      },
-      {
-        "name": "Jim Lim",
-        "role": "CTO"
+        "name": "James Van Hecke",
+        "role": "President & CEO"
       }
     ],
     "hiring_signals": [
@@ -1372,36 +1202,11 @@
       "linkedin_profiles_discovered": 5,
       "relevant_results": 15,
       "total_results": 20,
-      "leadership": [
-        {
-          "name": "Jim Lim",
-          "role": "CTO"
-        }
-      ],
-      "ai_ml_talent": [],
-      "senior_engineers": [],
-      "engineering_team": [
-        {
-          "name": "Wei Song",
-          "role": "Senior Software Engineer"
-        }
-      ],
-      "management": [],
-      "team_skills": [
-        "react",
-        "sql"
-      ],
+      "team_skills": [],
       "estimated_total_employees": 200,
       "estimated_eng_team": 70,
-      "talent_summary": {
-        "has_cto": true,
-        "has_vp_eng": false,
-        "has_ai_leadership": false,
-        "ai_ml_headcount": 0,
-        "eng_headcount_discovered": 1,
-        "leadership_headcount": 1,
-        "total_discovered": 2
-      }
-    }
+      "talent_summary": {}
+    },
+    "narrative": "Dash operates in the Manufacturing/Distribution space, founded in 1998 with approximately 15 employees. Dash provided ERP-integrated document management and accounts payable automation software (DASH DDX) for manufacturing and distribution enterprises worldwide for over 20 years. Leadership includes James Van Hecke (President & CEO). Scored 1.97/5.0 (Tier: AI-Limited)."
   }
 }
