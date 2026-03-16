@@ -348,13 +348,20 @@ def _build_display_summary(all_results: list[dict], company_name: str) -> str:
     return summary[:2500]
 
 
-async def research_company_deep(company_name: str, tavily_key: str) -> dict:
+async def research_company_deep(company_name: str, tavily_key: str, context_hint: str = "") -> dict:
     """Deep single-company research: 8 dimension-specific queries + URL follow-up scraping.
 
     Returns the same feature dict as research_company() but with significantly
     richer underlying text, leading to better feature extraction and scoring.
+
+    Args:
+        company_name: Company name to research
+        tavily_key: Tavily API key
+        context_hint: Optional context (e.g., "waste hauling SaaS") to append to queries
+                      for disambiguating companies with generic names
     """
-    queries = [q.format(company=company_name) for q in DEEP_QUERIES]
+    hint = f" {context_hint}" if context_hint else ""
+    queries = [q.format(company=company_name + hint) for q in DEEP_QUERIES]
 
     # Phase 1: Run all 8 Tavily searches concurrently
     async with httpx.AsyncClient(timeout=30.0) as client:
