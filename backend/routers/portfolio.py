@@ -114,15 +114,18 @@ async def get_portfolio_evidence(db: Session = Depends(get_db)):
     for company, ev in rows:
         result[company.name] = {
             "executives": ev.executives or [],
-            "customers": ev.customers or [],
+            "named_customers": ev.customers or [],
             "ai_initiatives": ev.ai_initiatives or [],
             "tech_stack": ev.tech_stack or [],
             "github": ev.github or {},
             "careers": ev.careers or {},
             "talent": ev.talent or {},
-            "news": ev.news or [],
-            "evidence": ev.evidence or [],
-            "narrative": ev.narrative or "",
+            "recent_news": ev.news or [],
+            "key_evidence": [
+                {**item, "text": item.pop("content", item.get("text", ""))}
+                for item in (ev.evidence or [])
+            ],
+            "narrative_summary": ev.narrative or "",
         }
     return result
 
