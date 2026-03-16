@@ -1,97 +1,5 @@
 [
   {
-    "name": "AutoTime",
-    "vertical": "Aerospace & Defense",
-    "employee_count": 25,
-    "description": "AutoTime is the leading time and labor tracking solution purpose-built for the Aerospace and Defense industry. For over 20 years, AutoTime has partnered with top A&D contractors to deliver compliance-driven, DCAA-compliant solutions for managing complex labor requirements and payroll accuracy. Part of Solen Software Group since February 2025.",
-    "website": "https://www.autotimesoftware.com",
-    "founded_year": 2003,
-    "composite_score": 3.85,
-    "tier": "AI-Ready",
-    "wave": 1,
-    "pillar_scores": {
-      "data_quality": 4.09,
-      "data_integration": 3.34,
-      "analytics_maturity": 4.19,
-      "cloud_architecture": 4.24,
-      "tech_stack_modernity": 3.78,
-      "ai_engineering": 3.76,
-      "ai_product_features": 4.59,
-      "revenue_ai_upside": 4.52,
-      "margin_ai_upside": 4.52,
-      "product_differentiation": 3.87,
-      "ai_talent_density": 3.2,
-      "leadership_ai_vision": 3.56,
-      "org_change_readiness": 3.14,
-      "partner_ecosystem": 3.01,
-      "ai_governance": 2.91,
-      "regulatory_readiness": 3.13,
-      "ai_momentum": 3.63
-    },
-    "category_scores": {
-      "Data & Analytics": 3.87,
-      "Technology & Infrastructure": 3.93,
-      "AI Product & Value": 4.38,
-      "Organization & Talent": 3.23,
-      "Governance & Risk": 3.02,
-      "Velocity & Momentum": 3.63
-    },
-    "confidence_score": 91.0,
-    "confidence_breakdown": {
-      "search_coverage": 25.0,
-      "scrape_depth": 20.0,
-      "corpus_volume": 12.7,
-      "structured_extraction": 20,
-      "signal_richness": 13.7
-    }
-  },
-  {
-    "name": "Champ",
-    "vertical": "Healthcare/Public Health",
-    "employee_count": 35,
-    "description": "Champ Software develops Nightingale Notes, an electronic health records (EHR) system built specifically for public health departments. Founded over 40 years ago in Mankato, Minnesota, the platform serves more than 130 public health agencies nationwide with community health documentation, evidence-based outcomes tracking via the Omaha System, batch billing, scheduling, and 100% time tracking. Part of Solen Software Group.",
-    "website": "https://www.champsoftware.com",
-    "founded_year": 1985,
-    "composite_score": 3.65,
-    "tier": "AI-Ready",
-    "wave": 1,
-    "pillar_scores": {
-      "data_quality": 3.57,
-      "data_integration": 3.71,
-      "analytics_maturity": 3.54,
-      "cloud_architecture": 4.17,
-      "tech_stack_modernity": 3.68,
-      "ai_engineering": 2.48,
-      "ai_product_features": 4.72,
-      "revenue_ai_upside": 4.27,
-      "margin_ai_upside": 4.65,
-      "product_differentiation": 3.42,
-      "ai_talent_density": 2.35,
-      "leadership_ai_vision": 3.95,
-      "org_change_readiness": 2.49,
-      "partner_ecosystem": 2.95,
-      "ai_governance": 3.07,
-      "regulatory_readiness": 3.19,
-      "ai_momentum": 4.0
-    },
-    "category_scores": {
-      "Data & Analytics": 3.61,
-      "Technology & Infrastructure": 3.44,
-      "AI Product & Value": 4.26,
-      "Organization & Talent": 2.94,
-      "Governance & Risk": 3.13,
-      "Velocity & Momentum": 4.0
-    },
-    "confidence_score": 89.0,
-    "confidence_breakdown": {
-      "search_coverage": 25.0,
-      "scrape_depth": 10.0,
-      "corpus_volume": 14.2,
-      "structured_extraction": 25,
-      "signal_richness": 14.6
-    }
-  },
-  {
     "name": "Track Star",
     "vertical": "Fleet Management/Government",
     "employee_count": 10,
@@ -181,6 +89,98 @@
       "corpus_volume": 13.5,
       "structured_extraction": 25,
       "signal_richness": 12.5
+    }
+  },
+  {
+    "name": "AutoTime",
+    "vertical": "Aerospace & Defense",
+    "employee_count": 25,
+    "description": "AutoTime is the leading time and labor tracking solution purpose-built for the Aerospace and Defense industry. For over 20 years, AutoTime has partnered with top A&D contractors to deliver compliance-driven, DCAA-compliant solutions for managing complex labor requirements and payroll accuracy. Part of Solen Software Group since February 2025.",
+    "website": "https://www.autotimesoftware.com",
+    "founded_year": 2003,
+    "composite_score": 3.26,
+    "tier": "AI-Buildable",
+    "wave": 1,
+    "pillar_scores": {
+      "data_quality": 3.5,
+      "data_integration": 3.34,
+      "analytics_maturity": 3.0,
+      "cloud_architecture": 4.24,
+      "tech_stack_modernity": 3.78,
+      "ai_engineering": 3.76,
+      "ai_product_features": 2.8,
+      "revenue_ai_upside": 3.6,
+      "margin_ai_upside": 3.4,
+      "product_differentiation": 3.87,
+      "ai_talent_density": 3.2,
+      "leadership_ai_vision": 3.2,
+      "org_change_readiness": 3.14,
+      "partner_ecosystem": 3.01,
+      "ai_governance": 2.91,
+      "regulatory_readiness": 3.13,
+      "ai_momentum": 2.5
+    },
+    "category_scores": {
+      "Data & Analytics": 3.28,
+      "Technology & Infrastructure": 3.93,
+      "AI Product & Value": 3.42,
+      "Organization & Talent": 3.14,
+      "Governance & Risk": 3.02,
+      "Velocity & Momentum": 2.5
+    },
+    "confidence_score": 91.0,
+    "confidence_breakdown": {
+      "search_coverage": 25.0,
+      "scrape_depth": 20.0,
+      "corpus_volume": 12.7,
+      "structured_extraction": 20,
+      "signal_richness": 13.7
+    }
+  },
+  {
+    "name": "Champ",
+    "vertical": "Healthcare/Public Health",
+    "employee_count": 35,
+    "description": "Champ Software develops Nightingale Notes, an electronic health records (EHR) system built specifically for public health departments. Founded over 40 years ago in Mankato, Minnesota, the platform serves more than 130 public health agencies nationwide with community health documentation, evidence-based outcomes tracking via the Omaha System, batch billing, scheduling, and 100% time tracking. Part of Solen Software Group.",
+    "website": "https://www.champsoftware.com",
+    "founded_year": 1985,
+    "composite_score": 3.24,
+    "tier": "AI-Buildable",
+    "wave": 1,
+    "pillar_scores": {
+      "data_quality": 3.57,
+      "data_integration": 3.71,
+      "analytics_maturity": 3.54,
+      "cloud_architecture": 4.17,
+      "tech_stack_modernity": 3.68,
+      "ai_engineering": 2.48,
+      "ai_product_features": 2.6,
+      "revenue_ai_upside": 3.8,
+      "margin_ai_upside": 3.5,
+      "product_differentiation": 3.42,
+      "ai_talent_density": 2.35,
+      "leadership_ai_vision": 3.95,
+      "org_change_readiness": 2.49,
+      "partner_ecosystem": 2.95,
+      "ai_governance": 3.07,
+      "regulatory_readiness": 3.19,
+      "ai_momentum": 4.0
+    },
+    "category_scores": {
+      "Data & Analytics": 3.61,
+      "Technology & Infrastructure": 3.44,
+      "AI Product & Value": 3.33,
+      "Organization & Talent": 2.94,
+      "Governance & Risk": 3.13,
+      "Velocity & Momentum": 4.0
+    },
+    "confidence_score": 89.0,
+    "confidence_breakdown": {
+      "search_coverage": 25.0,
+      "scrape_depth": 10.0,
+      "corpus_volume": 14.2,
+      "structured_extraction": 25,
+      "signal_richness": 14.6
     }
   },
   {

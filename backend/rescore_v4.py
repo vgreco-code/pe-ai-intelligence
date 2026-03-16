@@ -69,6 +69,18 @@ def cat_scores(pillars):
 # Format: { "dimension": new_score }
 
 PILLAR_OVERRIDES = {
+    "AutoTime": {
+        # DCAA-compliant timekeeping for A&D — solid vertical SaaS but NOT an AI product
+        # Rule-based time allocation ≠ AI. No ML features, no AI product launches.
+        # High scores were from defense industry AI keyword contamination.
+        "ai_product_features": 2.80,    # was 4.59 — timekeeping with rules-based allocation, not AI
+        "revenue_ai_upside": 3.60,      # was 4.52 — real opportunity to add AI (predictive labor, anomaly detection)
+        "margin_ai_upside": 3.40,       # was 4.52 — automation potential exists but not AI-driven today
+        "analytics_maturity": 3.00,     # was 4.19 — standard reporting, not advanced analytics
+        "data_quality": 3.50,           # was 4.09 — good labor data but not AI-grade data platform
+        "ai_momentum": 2.50,            # was 3.63 — hiring eng leadership but no AI launches
+        "leadership_ai_vision": 3.20,   # was 3.56 — CEO has PE execution chops, but no AI strategy evidence
+    },
     "Spokane": {
         # AS/400 RPG system from 1989 — no AI, legacy tech, but dominant market position
         "ai_product_features": 2.20,    # was 4.68 — NO shipping AI features whatsoever
@@ -90,6 +102,13 @@ PILLAR_OVERRIDES = {
         "ai_talent_density": 1.80,      # was 2.52 — 8 people, no AI roles verified
         "ai_momentum": 2.50,            # was 4.51 — no recent AI launches
         "leadership_ai_vision": 2.80,   # was 4.30 — no AI vision evidence
+    },
+    "Champ": {
+        # 40-year public health EHR — Omaha System taxonomy, HIPAA, AWS
+        # Nightingale Notes is a solid cloud EHR but has no AI/ML features
+        "ai_product_features": 2.60,    # was 4.72 — EHR with structured data, not AI product
+        "revenue_ai_upside": 3.80,      # was 4.27 — population health analytics is real AI opportunity
+        "margin_ai_upside": 3.50,       # was 4.65 — automation in billing/scheduling but not AI today
     },
     "Primate": {
         # Control room SCADA visualization — some anomaly detection but not deep AI
