@@ -124,10 +124,9 @@ export default function ResearchEvidence({ company, evidence }: Props) {
   const rawNews = ev.recent_news || []
   // Normalize news: accept both string[] and {title,summary,url,date}[]
   const news = rawNews.map((item: any) => typeof item === 'string' ? item : (item.summary || item.title || ''))
-  const newsLinks = rawNews.filter((item: any) => typeof item === 'object' && item.url)
   const executives = ev.executives || []
   // Support both hiring_signals and careers.titles
-  const hiring = ev.hiring_signals || (ev.careers?.titles) || []
+  const hiring = ev.hiring_signals || ((ev.careers as any)?.titles) || []
   const keyEvidence = ev.key_evidence || []
   const stats = ev.enrichment_stats
   const github = ev.github
@@ -273,7 +272,7 @@ export default function ResearchEvidence({ company, evidence }: Props) {
                 <span className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">Active Hiring Roles</span>
               </div>
               <div className="flex flex-wrap gap-1.5">
-                {hiring.map((role, i) => (
+                {hiring.map((role: string, i: number) => (
                   <span key={i} className="px-2.5 py-1 rounded-full text-[11px] font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">
                     {role}
                   </span>
