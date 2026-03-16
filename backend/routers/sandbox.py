@@ -1,7 +1,11 @@
 """Sandbox endpoint — score a user-submitted company through the full pipeline.
 
 Flow: company name → Tavily web research → feature extraction → 17-dimension scoring → tier classification
+
+Deep mode (single company): dimension-specific queries, advanced search depth,
+URL follow-up scraping for richer signal extraction.
 """
+import asyncio
 import math
 import json
 import re
@@ -11,6 +15,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from pydantic import BaseModel, Field
 from typing import Optional
+from bs4 import BeautifulSoup
 from database import get_db
 from config import get_settings
 from models.company import Company, DimensionScore, CompanyScore
@@ -124,28 +129,239 @@ async def research_company(company_name: str, tavily_key: str) -> dict:
     return features
 
 
+# ── Deep research (single-company mode) ─────────────────────────────────────
+
+# Dimension-specific queries — each targets signals for specific scoring categories
+DEEP_QUERIES = [
+    # Company fundamentals (employee count, funding, founded year, public status)
+    "{company} company overview number of employees headcount revenue funding raised valuation founded",
+    # AI product features & engineering (drives ai_product_features, ai_engineering, ai_momentum)
+    "{company} artificial intelligence machine learning AI features AI-powered products generative AI LLM",
+    # Cloud & tech stack (drives cloud_architecture, tech_stack_modernity)
+    "{company} technology stack engineering blog cloud AWS Azure GCP Kubernetes microservices architecture",
+    # Data & analytics (drives data_quality, data_integration, analytics_maturity)
+    "{company} data platform analytics data warehouse API integrations SDK developer platform ecosystem",
+    # Leadership & talent (drives leadership_ai_vision, ai_talent_density, org_change_readiness)
+    "{company} CTO CEO leadership team AI strategy hiring engineering culture talent team size",
+    # Governance & compliance (drives ai_governance, regulatory_readiness)
+    "{company} compliance security certifications SOC2 GDPR HIPAA ISO regulatory audit privacy",
+    # Market position & differentiation (drives market_position, product_differentiation, revenue_ai_upside)
+    "{company} market leader competitors market share industry position customers case studies growth",
+    # Partner ecosystem (drives partner_ecosystem)
+    "{company} partnerships integrations marketplace ecosystem third-party plugins extensions",
+]
+
+
+async def _tavily_search(client: httpx.AsyncClient, query: str, tavily_key: str) -> list[dict]:
+    """Execute a single Tavily search and return results with URLs."""
+    try:
+        resp = await client.post(
+            "https://api.tavily.com/search",
+            json={
+                "api_key": tavily_key,
+                "query": query,
+                "search_depth": "advanced",
+                "max_results": 5,
+                "include_answer": True,
+            },
+        )
+        data = resp.json()
+        results = []
+        if data.get("answer"):
+            results.append({"content": data["answer"], "url": None, "title": "AI Summary"})
+        for r in data.get("results", []):
+            results.append({
+                "content": r.get("content", ""),
+                "url": r.get("url"),
+                "title": r.get("title", ""),
+            })
+        return results
+    except Exception as e:
+        logger.warning(f"Tavily search failed for '{query}': {e}")
+        return []
+
+
+async def _scrape_url(client: httpx.AsyncClient, url: str) -> str:
+    """Scrape a URL and return clean text content. Returns empty string on failure."""
+    try:
+        resp = await client.get(
+            url,
+            headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"},
+            follow_redirects=True,
+            timeout=15.0,
+        )
+        resp.raise_for_status()
+        soup = BeautifulSoup(resp.text, "html.parser")
+        for tag in soup(["script", "style", "nav", "footer", "header"]):
+            tag.decompose()
+        text = soup.get_text(separator="\n", strip=True)
+        lines = [line.strip() for line in text.split("\n") if line.strip()]
+        return "\n".join(lines)[:8000]
+    except Exception as e:
+        logger.debug(f"Scrape failed for {url}: {e}")
+        return ""
+
+
+def _pick_best_urls(all_results: list[dict], company_name: str, max_urls: int = 5) -> list[str]:
+    """Select the most informative URLs from search results for follow-up scraping.
+
+    Prioritises the company's own domain (about, careers, product pages),
+    then trusted third-party sources (Crunchbase, LinkedIn, G2, etc.).
+    Skips generic social media, PDFs, and video sites.
+    """
+    company_slug = company_name.lower().replace(" ", "").replace("-", "")
+    skip_domains = {"youtube.com", "twitter.com", "x.com", "facebook.com", "instagram.com", "tiktok.com"}
+    skip_extensions = {".pdf", ".png", ".jpg", ".mp4"}
+
+    scored: list[tuple[float, str]] = []
+    seen_domains = set()
+
+    for r in all_results:
+        url = r.get("url")
+        if not url:
+            continue
+        url_lower = url.lower()
+
+        # Skip unwanted
+        if any(d in url_lower for d in skip_domains):
+            continue
+        if any(url_lower.endswith(ext) for ext in skip_extensions):
+            continue
+
+        # Deduplicate by domain
+        try:
+            domain = url_lower.split("//")[1].split("/")[0].replace("www.", "")
+        except IndexError:
+            continue
+        if domain in seen_domains:
+            continue
+        seen_domains.add(domain)
+
+        # Score the URL
+        score = 0.0
+        # Company's own site — highest priority
+        if company_slug in domain.replace(".", "").replace("-", ""):
+            score += 10.0
+            if any(p in url_lower for p in ["/about", "/team", "/careers", "/jobs", "/product", "/platform", "/customers"]):
+                score += 5.0
+        # High-value third-party sources
+        if any(src in domain for src in ["crunchbase.com", "linkedin.com", "g2.com", "pitchbook.com",
+                                          "owler.com", "glassdoor.com", "stackshare.io", "builtwith.com"]):
+            score += 6.0
+        # Tech/engineering content
+        if any(p in url_lower for p in ["/blog", "/engineering", "/tech", "/developers", "/docs", "/api"]):
+            score += 3.0
+        # News sources add some value
+        if any(src in domain for src in ["techcrunch.com", "reuters.com", "bloomberg.com", "venturebeat.com"]):
+            score += 4.0
+
+        scored.append((score, url))
+
+    scored.sort(key=lambda x: x[0], reverse=True)
+    return [url for _, url in scored[:max_urls]]
+
+
+async def research_company_deep(company_name: str, tavily_key: str) -> dict:
+    """Deep single-company research: 8 dimension-specific queries + URL follow-up scraping.
+
+    Returns the same feature dict as research_company() but with significantly
+    richer underlying text, leading to better feature extraction and scoring.
+    """
+    queries = [q.format(company=company_name) for q in DEEP_QUERIES]
+
+    # Phase 1: Run all 8 Tavily searches concurrently
+    async with httpx.AsyncClient(timeout=30.0) as client:
+        search_tasks = [_tavily_search(client, q, tavily_key) for q in queries]
+        search_results = await asyncio.gather(*search_tasks, return_exceptions=True)
+
+    # Flatten results
+    all_results: list[dict] = []
+    search_content: list[str] = []
+    for batch in search_results:
+        if isinstance(batch, Exception):
+            continue
+        for r in batch:
+            all_results.append(r)
+            if r.get("content"):
+                search_content.append(r["content"])
+
+    logger.info(f"Deep research for '{company_name}': {len(all_results)} search results from {len(queries)} queries")
+
+    # Phase 2: Follow-up scraping on best URLs
+    best_urls = _pick_best_urls(all_results, company_name, max_urls=5)
+    scraped_content: list[str] = []
+
+    if best_urls:
+        async with httpx.AsyncClient(timeout=20.0) as client:
+            scrape_tasks = [_scrape_url(client, url) for url in best_urls]
+            scrape_results = await asyncio.gather(*scrape_tasks, return_exceptions=True)
+
+        for text in scrape_results:
+            if isinstance(text, str) and len(text) > 100:
+                scraped_content.append(text)
+
+        logger.info(f"Deep research for '{company_name}': scraped {len(scraped_content)}/{len(best_urls)} URLs successfully")
+
+    # Combine all text: search summaries first, then scraped pages
+    research_text = "\n\n".join(search_content)
+    scraped_text = "\n\n".join(scraped_content)
+    combined_text = research_text + "\n\n--- SCRAPED PAGE CONTENT ---\n\n" + scraped_text
+
+    # Extract features from the full corpus
+    features = extract_features(company_name, combined_text)
+
+    # Build a cleaner research summary for display (prefer the AI-generated answers)
+    ai_summaries = [r["content"] for r in all_results if r.get("title") == "AI Summary" and r.get("content")]
+    display_summary = "\n\n".join(ai_summaries) if ai_summaries else research_text
+    features["research_summary"] = display_summary[:3000]
+
+    # Track data quality signals
+    features["_research_meta"] = {
+        "queries_sent": len(queries),
+        "search_results": len(all_results),
+        "urls_scraped": len(scraped_content),
+        "total_text_chars": len(combined_text),
+        "mode": "deep",
+    }
+
+    return features
+
+
 def extract_features(company_name: str, text: str) -> dict:
-    """Extract structured company features from research text using keyword heuristics."""
+    """Extract structured company features from research text using keyword heuristics.
+
+    Designed to work with both basic (3-query) and deep (8-query + scrape) text corpora.
+    More text → more keyword matches → higher-fidelity intensity scores.
+    """
     text_lower = text.lower()
 
-    # Employee count extraction
+    # ── Employee count extraction (expanded patterns) ────────────────────────
     employee_count = None
     emp_patterns = [
-        r'(\d[\d,]+)\s*(?:employees|staff|team members|people)',
-        r'(?:employs?|workforce of|headcount[:\s])\s*(\d[\d,]+)',
+        r'(\d[\d,]+)\s*(?:employees|staff|team members|people|workers)',
+        r'(?:employs?|workforce of|headcount[:\s]*|team of)\s*(\d[\d,]+)',
         r'(\d[\d,]+)\+?\s*(?:employee)',
+        r'(?:approximately|about|over|more than|nearly|~)\s*(\d[\d,]+)\s*(?:employees|people|staff)',
+        r'(?:company size|team size)[:\s]*(\d[\d,]+)',
+        r'(\d[\d,]+)\s*(?:full-time|FTE)',
     ]
     for pat in emp_patterns:
         m = re.search(pat, text_lower)
         if m:
-            employee_count = int(m.group(1).replace(',', ''))
-            break
+            raw = m.group(1).replace(',', '')
+            count = int(raw)
+            # Sanity check: skip values that are clearly not employee counts
+            if 5 <= count <= 500000:
+                employee_count = count
+                break
 
-    # Funding extraction
+    # ── Funding extraction (expanded patterns) ───────────────────────────────
     funding = None
     fund_patterns = [
-        r'\$(\d+(?:\.\d+)?)\s*(billion|million|B|M)\s*(?:in\s+)?(?:funding|raised|valuation|revenue)',
-        r'(?:raised|funding of|valued at)\s*\$(\d+(?:\.\d+)?)\s*(billion|million|B|M)',
+        r'\$(\d+(?:\.\d+)?)\s*(billion|million|B|M)\s*(?:in\s+)?(?:total\s+)?(?:funding|raised|capital|investment|valuation|revenue)',
+        r'(?:raised|funding of|valued at|total funding|series [a-z] of)\s*\$(\d+(?:\.\d+)?)\s*(billion|million|B|M)',
+        r'(?:revenue of|annual revenue|arr of)\s*\$(\d+(?:\.\d+)?)\s*(billion|million|B|M)',
+        r'\$(\d+(?:\.\d+)?)(B|M)\s+(?:valuation|funding)',
     ]
     for pat in fund_patterns:
         m = re.search(pat, text, re.IGNORECASE)
@@ -158,48 +374,96 @@ def extract_features(company_name: str, text: str) -> dict:
                 funding = amount * 1e6
             break
 
-    # Founded year
+    # ── Founded year ─────────────────────────────────────────────────────────
     founded_year = None
-    m = re.search(r'(?:founded|established|started)\s*(?:in\s+)?(\d{4})', text_lower)
-    if m:
-        yr = int(m.group(1))
-        if 1900 <= yr <= 2026:
-            founded_year = yr
+    founded_patterns = [
+        r'(?:founded|established|started|incorporated|launched)\s*(?:in\s+)?(\d{4})',
+        r'(?:since|est\.?)\s*(\d{4})',
+    ]
+    for pat in founded_patterns:
+        m = re.search(pat, text_lower)
+        if m:
+            yr = int(m.group(1))
+            if 1900 <= yr <= 2026:
+                founded_year = yr
+                break
 
-    # Boolean signals
-    ai_keywords = ['artificial intelligence', 'machine learning', 'deep learning', 'ai-powered',
-                    'ai features', 'neural network', 'nlp', 'natural language processing',
-                    'generative ai', 'llm', 'large language model', 'copilot', 'ai assistant']
-    has_ai_features = any(kw in text_lower for kw in ai_keywords)
+    # ── Boolean signals (expanded keyword lists) ─────────────────────────────
+    ai_keywords = [
+        'artificial intelligence', 'machine learning', 'deep learning', 'ai-powered',
+        'ai features', 'neural network', 'nlp', 'natural language processing',
+        'generative ai', 'llm', 'large language model', 'copilot', 'ai assistant',
+        'computer vision', 'predictive model', 'recommendation engine', 'chatbot',
+        'intelligent automation', 'ai/ml', 'openai', 'anthropic', 'gpt',
+        'transformer model', 'fine-tuning', 'embeddings', 'vector search',
+        'rag', 'retrieval augmented', 'prompt engineering',
+    ]
+    ai_match_count = sum(1 for kw in ai_keywords if kw in text_lower)
+    has_ai_features = ai_match_count >= 1
 
-    cloud_keywords = ['cloud-native', 'aws', 'azure', 'google cloud', 'gcp', 'kubernetes',
-                      'docker', 'microservices', 'saas', 'cloud platform', 'serverless']
-    cloud_native = any(kw in text_lower for kw in cloud_keywords)
+    cloud_keywords = [
+        'cloud-native', 'aws', 'amazon web services', 'azure', 'google cloud', 'gcp',
+        'kubernetes', 'k8s', 'docker', 'microservices', 'saas', 'cloud platform',
+        'serverless', 'lambda', 'terraform', 'infrastructure as code', 'ci/cd',
+        'containerized', 'cloud-first', 'multi-cloud', 'cloudflare', 'vercel',
+        'heroku', 'digital ocean', 'cloud infrastructure',
+    ]
+    cloud_match_count = sum(1 for kw in cloud_keywords if kw in text_lower)
+    cloud_native = cloud_match_count >= 1
 
-    public_keywords = ['publicly traded', 'ipo', 'nasdaq', 'nyse', 'stock price',
-                       'ticker', 'market cap', 'sec filing']
+    public_keywords = [
+        'publicly traded', 'ipo', 'nasdaq', 'nyse', 'stock price',
+        'ticker', 'market cap', 'sec filing', 'annual report', '10-k',
+        'quarterly earnings', 'public company', 'stock symbol', 'shareholders',
+    ]
     is_public = any(kw in text_lower for kw in public_keywords)
 
-    # Intensity scores (1-5) based on keyword density
-    api_keywords = ['api', 'rest api', 'graphql', 'webhook', 'integration', 'sdk',
-                    'developer platform', 'marketplace', 'ecosystem', 'open platform']
+    # ── Intensity scores (1-5) — keyword density with depth-aware scaling ────
+    # With deeper text, we count actual occurrences (not just presence)
+    # to differentiate "mentions AI once" from "AI is core to the product"
+
+    api_keywords = [
+        'api', 'rest api', 'graphql', 'webhook', 'integration', 'sdk',
+        'developer platform', 'marketplace', 'ecosystem', 'open platform',
+        'developer tools', 'api-first', 'developer experience', 'dev portal',
+        'third-party', 'zapier', 'extensible', 'plugins',
+    ]
     api_count = sum(1 for kw in api_keywords if kw in text_lower)
-    api_ecosystem = min(5.0, 1.5 + api_count * 0.5)
+    api_ecosystem = min(5.0, 1.5 + api_count * 0.4)
 
-    data_keywords = ['data platform', 'data warehouse', 'big data', 'analytics',
-                     'data lake', 'real-time data', 'data pipeline', 'etl', 'data-driven']
+    data_keywords = [
+        'data platform', 'data warehouse', 'big data', 'analytics', 'dashboard',
+        'data lake', 'real-time data', 'data pipeline', 'etl', 'data-driven',
+        'business intelligence', 'reporting', 'data science', 'data engineering',
+        'data mesh', 'data catalog', 'data governance', 'snowflake', 'databricks',
+        'redshift', 'bigquery',
+    ]
     data_count = sum(1 for kw in data_keywords if kw in text_lower)
-    data_richness = min(5.0, 1.5 + data_count * 0.6)
+    data_richness = min(5.0, 1.5 + data_count * 0.45)
 
-    reg_keywords = ['compliance', 'gdpr', 'hipaa', 'sox', 'regulated', 'regulatory',
-                    'audit', 'certification', 'iso', 'fedramp']
+    reg_keywords = [
+        'compliance', 'gdpr', 'hipaa', 'sox', 'regulated', 'regulatory',
+        'audit', 'certification', 'iso', 'fedramp', 'soc 2', 'soc2',
+        'pci dss', 'pci compliance', 'data protection', 'privacy',
+        'ccpa', 'risk management', 'governance framework',
+    ]
     reg_count = sum(1 for kw in reg_keywords if kw in text_lower)
-    regulatory_burden = min(5.0, 1.5 + reg_count * 0.6)
+    regulatory_burden = min(5.0, 1.5 + reg_count * 0.45)
 
-    market_keywords = ['market leader', 'industry leader', 'dominant', '#1', 'leading provider',
-                       'largest', 'top player', 'pioneer', 'category leader', 'unicorn']
+    market_keywords = [
+        'market leader', 'industry leader', 'dominant', '#1', 'leading provider',
+        'largest', 'top player', 'pioneer', 'category leader', 'unicorn',
+        'market share', 'industry-leading', 'best-in-class', 'trusted by',
+        'fortune 500', 'enterprise customers', 'thousands of customers',
+        'global leader', 'award-winning',
+    ]
     mkt_count = sum(1 for kw in market_keywords if kw in text_lower)
-    market_position = min(5.0, 2.0 + mkt_count * 0.7)
+    market_position = min(5.0, 2.0 + mkt_count * 0.5)
+
+    # ── AI depth signal: use match count for better scoring in deep mode ─────
+    # Feeds into ai_product_features and ai_momentum with more nuance
+    ai_intensity = min(5.0, 1.0 + ai_match_count * 0.35) if ai_match_count > 0 else 1.0
+    cloud_intensity = min(5.0, 1.0 + cloud_match_count * 0.4) if cloud_match_count > 0 else 1.0
 
     # Vertical detection
     vertical = detect_vertical(text_lower)
@@ -223,6 +487,9 @@ def extract_features(company_name: str, text: str) -> dict:
         "data_richness": round(data_richness, 1),
         "regulatory_burden": round(regulatory_burden, 1),
         "market_position": round(market_position, 1),
+        # Depth-aware intensity signals (used by estimate_dimension_scores)
+        "ai_intensity": round(ai_intensity, 2),
+        "cloud_intensity": round(cloud_intensity, 2),
     }
 
 
@@ -258,7 +525,12 @@ def detect_vertical(text: str) -> str:
 # ── Heuristic dimension scorer ────────────────────────────────────────────────
 
 def estimate_dimension_scores(data: dict) -> dict[str, float]:
-    """Estimate 17-dimension scores from extracted company features."""
+    """Estimate 17-dimension scores from extracted company features.
+
+    Uses both boolean signals (has_ai, cloud) AND intensity signals
+    (ai_intensity, cloud_intensity) for more nuanced scoring when
+    deep research data is available.
+    """
     scores = {}
     emp = data.get("employee_count") or 100
     funding = data.get("funding_total_usd") or 0
@@ -270,29 +542,33 @@ def estimate_dimension_scores(data: dict) -> dict[str, float]:
     reg_burden = data.get("regulatory_burden") or 2.5
     mkt_pos = data.get("market_position") or 2.5
 
+    # Intensity signals — fall back to binary thresholds for backward compatibility
+    ai_int = data.get("ai_intensity") or (3.5 if has_ai else 1.0)
+    cloud_int = data.get("cloud_intensity") or (3.5 if cloud else 1.0)
+
     funding_score = min(5.0, max(1.0, (1.0 + math.log10(max(funding, 1e6)) - 6) * 1.5)) if funding > 0 else 2.0
     size_factor = min(5.0, max(1.0, 1.0 + math.log10(max(emp, 10)) / 1.5))
 
     # Data & Analytics
     scores["data_quality"] = round(min(5.0, data_rich * 0.7 + size_factor * 0.3), 2)
-    scores["data_integration"] = round(min(5.0, api_str * 0.6 + (4.0 if cloud else 2.5) * 0.4), 2)
+    scores["data_integration"] = round(min(5.0, api_str * 0.6 + cloud_int * 0.4), 2)
     scores["analytics_maturity"] = round(min(5.0, (data_rich + size_factor + funding_score) / 3), 2)
 
-    # Technology & Infrastructure
-    scores["cloud_architecture"] = round(min(5.0, (4.5 if cloud else 2.0) * 0.6 + api_str * 0.4), 2)
-    scores["tech_stack_modernity"] = round(min(5.0, (4.0 if cloud else 2.5) * 0.5 + funding_score * 0.3 + api_str * 0.2), 2)
-    scores["ai_engineering"] = round(min(5.0, (4.5 if has_ai else 1.5) * 0.5 + size_factor * 0.25 + funding_score * 0.25), 2)
+    # Technology & Infrastructure — use cloud_int for gradient instead of binary
+    scores["cloud_architecture"] = round(min(5.0, cloud_int * 0.6 + api_str * 0.4), 2)
+    scores["tech_stack_modernity"] = round(min(5.0, cloud_int * 0.45 + funding_score * 0.3 + api_str * 0.25), 2)
+    scores["ai_engineering"] = round(min(5.0, ai_int * 0.5 + size_factor * 0.25 + funding_score * 0.25), 2)
 
-    # AI Product & Value
-    scores["ai_product_features"] = round(min(5.0, (4.5 if has_ai else 1.2) * 0.7 + mkt_pos * 0.3), 2)
-    scores["revenue_ai_upside"] = round(min(5.0, mkt_pos * 0.4 + (3.5 if has_ai else 2.0) * 0.3 + data_rich * 0.3), 2)
-    scores["margin_ai_upside"] = round(min(5.0, (3.5 if has_ai else 2.5) * 0.4 + data_rich * 0.3 + (3.0 if cloud else 2.0) * 0.3), 2)
+    # AI Product & Value — use ai_int for gradient instead of binary
+    scores["ai_product_features"] = round(min(5.0, ai_int * 0.65 + mkt_pos * 0.35), 2)
+    scores["revenue_ai_upside"] = round(min(5.0, mkt_pos * 0.4 + ai_int * 0.3 + data_rich * 0.3), 2)
+    scores["margin_ai_upside"] = round(min(5.0, ai_int * 0.35 + data_rich * 0.3 + cloud_int * 0.35), 2)
     scores["product_differentiation"] = round(min(5.0, mkt_pos * 0.5 + api_str * 0.3 + data_rich * 0.2), 2)
 
     # Organization & Talent
-    scores["ai_talent_density"] = round(min(5.0, (4.0 if has_ai else 1.5) * 0.5 + size_factor * 0.25 + funding_score * 0.25), 2)
-    scores["leadership_ai_vision"] = round(min(5.0, (4.0 if has_ai else 2.0) * 0.5 + mkt_pos * 0.3 + funding_score * 0.2), 2)
-    scores["org_change_readiness"] = round(min(5.0, size_factor * 0.3 + (3.5 if cloud else 2.0) * 0.3 + funding_score * 0.4), 2)
+    scores["ai_talent_density"] = round(min(5.0, ai_int * 0.5 + size_factor * 0.25 + funding_score * 0.25), 2)
+    scores["leadership_ai_vision"] = round(min(5.0, ai_int * 0.45 + mkt_pos * 0.3 + funding_score * 0.25), 2)
+    scores["org_change_readiness"] = round(min(5.0, size_factor * 0.3 + cloud_int * 0.3 + funding_score * 0.4), 2)
     scores["partner_ecosystem"] = round(min(5.0, api_str * 0.5 + mkt_pos * 0.3 + size_factor * 0.2), 2)
 
     # Governance & Risk
@@ -300,7 +576,7 @@ def estimate_dimension_scores(data: dict) -> dict[str, float]:
     scores["regulatory_readiness"] = round(min(5.0, (3.5 if is_public else 2.0) * 0.3 + reg_burden * 0.4 + size_factor * 0.3), 2)
 
     # Velocity & Momentum
-    scores["ai_momentum"] = round(min(5.0, (4.0 if has_ai else 1.5) * 0.5 + funding_score * 0.25 + mkt_pos * 0.25), 2)
+    scores["ai_momentum"] = round(min(5.0, ai_int * 0.5 + funding_score * 0.25 + mkt_pos * 0.25), 2)
 
     return scores
 
@@ -355,9 +631,11 @@ async def score_company(req: SandboxScoreRequest, db: Session = Depends(get_db))
     if not settings.tavily_api_key:
         raise HTTPException(status_code=503, detail="Research API not configured")
 
-    logger.info(f"Researching company: {req.company_name}")
-    features = await research_company(req.company_name, settings.tavily_api_key)
+    logger.info(f"Researching company (deep mode): {req.company_name}")
+    features = await research_company_deep(req.company_name, settings.tavily_api_key)
+    research_meta = features.pop("_research_meta", {})
     research_summary = features.pop("research_summary", "")
+    logger.info(f"Research complete for '{req.company_name}': {research_meta}")
 
     # 2. Create company record
     company = Company(
