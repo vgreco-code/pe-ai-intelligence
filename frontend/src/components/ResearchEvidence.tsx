@@ -34,6 +34,34 @@ interface CareersData {
   ai_roles?: string[]
 }
 
+interface TalentPerson {
+  name: string
+  role: string
+}
+
+interface TalentData {
+  found: boolean
+  total_profiles_found?: number
+  linkedin_profiles_discovered?: number
+  leadership?: TalentPerson[]
+  ai_ml_talent?: TalentPerson[]
+  senior_engineers?: TalentPerson[]
+  engineering_team?: TalentPerson[]
+  management?: TalentPerson[]
+  team_skills?: string[]
+  estimated_total_employees?: number
+  estimated_eng_team?: number
+  talent_summary?: {
+    has_cto: boolean
+    has_vp_eng: boolean
+    has_ai_leadership: boolean
+    ai_ml_headcount: number
+    eng_headcount_discovered: number
+    leadership_headcount: number
+    total_discovered: number
+  }
+}
+
 interface Props {
   company: PortfolioCompany
   evidence?: {
@@ -49,6 +77,7 @@ interface Props {
     narrative_summary?: string
     github?: GitHubData
     careers?: CareersData
+    talent?: TalentData
   }
 }
 
@@ -99,6 +128,24 @@ export default function ResearchEvidence({ company, evidence }: Props) {
   const stats = ev.enrichment_stats
   const github = ev.github
   const careers = ev.careers
+  const talent = ev.talent
+
+  // Filter noise from talent data (e.g. "View Post", company names as people)
+  const TALENT_NAME_BLOCKLIST = ['view post', 'moser consulting', 'palantir foundry', 'linkedin', 'unknown']
+  const isValidPerson = (p: TalentPerson) => {
+    const lower = p.name.toLowerCase()
+    if (TALENT_NAME_BLOCKLIST.some(b => lower.includes(b))) return false
+    if (p.name.length < 3 || p.name.length > 50) return false
+    // Must have at least 2 words (first + last name)
+    if (p.name.trim().split(/\s+/).length < 2) return false
+    return true
+  }
+  const talentLeadership = (talent?.leadership || []).filter(isValidPerson)
+  const talentAiMl = (talent?.ai_ml_talent || []).filter(isValidPerson)
+  const talentEngineers = [...(talent?.senior_engineers || []), ...(talent?.engineering_team || [])].filter(isValidPerson)
+  const talentSkills = talent?.team_skills || []
+  const talentSummary = talent?.talent_summary
+  const hasTalent = talent?.found && (talentLeadership.length > 0 || talentAiMl.length > 0 || talentEngineers.length > 0 || talentSkills.length > 0)
 
   const hasEnrichment = !!ev.narrative_summary || aiInits.length > 0 || techStack.length > 0 || keyEvidence.length > 0
 
@@ -126,7 +173,7 @@ export default function ResearchEvidence({ company, evidence }: Props) {
       </div>
       <p className="text-xs text-[var(--text-muted)] mb-5">
         Evidence gathered from {hasEnrichment ? '20 targeted web research queries' : 'deep web research'}
-        {github?.found ? ', GitHub API' : ''}{careers?.found ? ', careers page' : ''} on {company.name}
+        {github?.found ? ', GitHub API' : ''}{careers?.found ? ', careers page' : ''}{hasTalent ? ', LinkedIn talent analysis' : ''} on {company.name}
       </p>
 
       {/* Summary stats row */}
@@ -392,6 +439,115 @@ export default function ResearchEvidence({ company, evidence }: Props) {
                   <div className="text-[10px] text-[var(--text-muted)] mt-1 opacity-60">Hiring signals from web research shown above</div>
                 </div>
               )}
+            </div>
+          )}
+
+          {/* Tech Talent (LinkedIn) */}
+          {hasTalent && (
+            <div className="bg-gradient-to-r from-blue-500/5 to-teal-500/5 rounded-lg p-4 border border-blue-500/15">
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-2">
+                  <Users className="w-4 h-4 text-blue-400" />
+                  <span className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">Tech Talent Profile</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  {talent?.estimated_total_employees && talent.estimated_total_employees > 0 && (
+                    <span className="text-[10px] text-[var(--text-muted)] bg-slate-800/40 px-2 py-0.5 rounded-full">
+                      ~{talent.estimated_total_employees.toLocaleString()} employees
+                    </span>
+                  )}
+                  {talent?.estimated_eng_team && talent.estimated_eng_team > 0 && (
+                    <span className="text-[10px] text-[var(--text-muted)] bg-blue-500/10 px-2 py-0.5 rounded-full">
+                      ~{talent.estimated_eng_team.toLocaleString()} eng (est.)
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              {/* Leadership indicators */}
+              {talentSummary && (
+                <div className="flex gap-2 mb-3">
+                  <span className={`px-2 py-0.5 rounded text-[10px] font-medium border ${talentSummary.has_cto ? 'bg-green-500/10 text-green-400 border-green-500/20' : 'bg-slate-800/30 text-[var(--text-muted)] border-slate-700/20'}`}>
+                    CTO {talentSummary.has_cto ? '✓' : '—'}
+                  </span>
+                  <span className={`px-2 py-0.5 rounded text-[10px] font-medium border ${talentSummary.has_vp_eng ? 'bg-green-500/10 text-green-400 border-green-500/20' : 'bg-slate-800/30 text-[var(--text-muted)] border-slate-700/20'}`}>
+                    VP Eng {talentSummary.has_vp_eng ? '✓' : '—'}
+                  </span>
+                  <span className={`px-2 py-0.5 rounded text-[10px] font-medium border ${talentSummary.has_ai_leadership ? 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20' : 'bg-slate-800/30 text-[var(--text-muted)] border-slate-700/20'}`}>
+                    AI Leadership {talentSummary.has_ai_leadership ? '✓' : '—'}
+                  </span>
+                  {talentSummary.ai_ml_headcount > 0 && (
+                    <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                      {talentSummary.ai_ml_headcount} AI/ML
+                    </span>
+                  )}
+                </div>
+              )}
+
+              {/* People grid */}
+              <div className="grid grid-cols-2 gap-3">
+                {/* Tech Leadership */}
+                {talentLeadership.length > 0 && (
+                  <div>
+                    <div className="text-[10px] font-semibold text-blue-400 uppercase tracking-wider mb-1.5">Tech Leadership</div>
+                    <div className="space-y-1">
+                      {talentLeadership.map((p, i) => (
+                        <div key={i} className="flex items-center gap-1.5 text-[11px]">
+                          <Briefcase className="w-3 h-3 text-blue-400/60 flex-shrink-0" />
+                          <span className="text-[var(--text-primary)] font-medium">{p.name}</span>
+                          <span className="text-[var(--text-muted)]">— {p.role}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* AI/ML Talent */}
+                {talentAiMl.length > 0 && (
+                  <div>
+                    <div className="text-[10px] font-semibold text-cyan-400 uppercase tracking-wider mb-1.5">AI/ML Talent</div>
+                    <div className="space-y-1">
+                      {talentAiMl.map((p, i) => (
+                        <div key={i} className="flex items-center gap-1.5 text-[11px]">
+                          <Brain className="w-3 h-3 text-cyan-400/60 flex-shrink-0" />
+                          <span className="text-[var(--text-primary)] font-medium">{p.name}</span>
+                          <span className="text-[var(--text-muted)]">— {p.role}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Engineers */}
+                {talentEngineers.length > 0 && (
+                  <div>
+                    <div className="text-[10px] font-semibold text-green-400 uppercase tracking-wider mb-1.5">Engineering Team</div>
+                    <div className="space-y-1">
+                      {talentEngineers.slice(0, 5).map((p, i) => (
+                        <div key={i} className="flex items-center gap-1.5 text-[11px]">
+                          <Code2 className="w-3 h-3 text-green-400/60 flex-shrink-0" />
+                          <span className="text-[var(--text-primary)] font-medium">{p.name}</span>
+                          <span className="text-[var(--text-muted)]">— {p.role}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Team Skills */}
+                {talentSkills.length > 0 && (
+                  <div>
+                    <div className="text-[10px] font-semibold text-teal-400 uppercase tracking-wider mb-1.5">Team Skills (LinkedIn)</div>
+                    <div className="flex flex-wrap gap-1">
+                      {talentSkills.slice(0, 12).map((skill, i) => (
+                        <span key={i} className="px-2 py-0.5 rounded text-[10px] font-medium bg-teal-500/10 text-teal-400 border border-teal-500/20">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           )}
 

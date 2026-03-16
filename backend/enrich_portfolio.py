@@ -503,23 +503,54 @@ def _generate_narrative(company_name: str, evidence: dict) -> str:
     # ── Sentence 3: Talent & investment signals ────────────────────────────
     career_openings = careers.get("total_openings", 0) if careers and careers.get("found") else 0
     career_ai = careers.get("ai_ml_openings", 0) if careers and careers.get("found") else 0
+    talent_data = evidence.get("talent", {})
+    talent_summary = talent_data.get("talent_summary", {})
 
     talent_parts = []
+
+    # LinkedIn talent signals (prioritized over web-scraped hiring)
+    if talent_data.get("found"):
+        est_employees = talent_data.get("estimated_total_employees", 0)
+        est_eng = talent_data.get("estimated_eng_team", 0)
+        if est_employees > 0:
+            talent_parts.append(f"~{est_employees:,} employees (~{est_eng:,} engineering est.)")
+
+        leadership_notes = []
+        if talent_summary.get("has_cto"):
+            leadership_notes.append("CTO")
+        if talent_summary.get("has_vp_eng"):
+            leadership_notes.append("VP Eng")
+        if talent_summary.get("has_ai_leadership"):
+            leadership_notes.append("AI leadership")
+        if leadership_notes:
+            talent_parts.append(f"identified tech leadership ({', '.join(leadership_notes)})")
+
+        ai_ml_count = talent_summary.get("ai_ml_headcount", 0)
+        if ai_ml_count > 0:
+            talent_parts.append(f"{ai_ml_count} AI/ML specialists discovered on LinkedIn")
+
+        team_skills = talent_data.get("team_skills", [])
+        ai_skills = [s for s in team_skills if s.lower() in ['machine learning', 'deep learning', 'tensorflow', 'pytorch', 'nlp', 'computer vision', 'llm']]
+        if ai_skills:
+            talent_parts.append(f"AI-relevant team skills: {', '.join(ai_skills[:3])}")
+
+    # Careers page openings
     if career_openings > 0:
         if career_ai > 0:
             talent_parts.append(f"{career_openings} open positions ({career_ai} AI/ML-specific)")
         else:
-            talent_parts.append(f"{career_openings} open positions (none AI/ML-specific)")
-    if len(hiring) > 3:
+            talent_parts.append(f"{career_openings} open positions")
+    elif len(hiring) > 3:
         talent_parts.append(f"broad technical hiring across {len(hiring)} role categories")
     elif len(hiring) > 0:
         talent_parts.append(f"hiring signals for {', '.join(hiring[:3])}")
-    if execs:
-        # Only include execs whose names don't contain "at [OtherCompany]" patterns
+
+    if not talent_data.get("found") and execs:
         clean_execs = [e for e in execs if not e["name"].lower().startswith("at ") and not e["name"].lower().startswith("of ")]
         ai_execs = [e for e in clean_execs if any(kw in e["role"].lower() for kw in ['ai', 'data', 'technology'])]
         if ai_execs:
             talent_parts.append(f"identified tech leadership: {ai_execs[0]['name']} ({ai_execs[0]['role']})")
+
     if news:
         talent_parts.append(f"{len(news)} recent news event{'s' if len(news) > 1 else ''}")
 
