@@ -39,12 +39,14 @@ interface Props {
   evidence?: {
     ai_initiatives?: { text: string; type: string }[]
     tech_stack?: string[]
+    tech_stack_github_confirmed?: string[]
     named_customers?: string[]
     recent_news?: string[]
     executives?: { name: string; role: string }[]
     hiring_signals?: string[]
     key_evidence?: { text: string; source: string; url: string }[]
     enrichment_stats?: Record<string, number>
+    narrative_summary?: string
     github?: GitHubData
     careers?: CareersData
   }
@@ -88,6 +90,7 @@ export default function ResearchEvidence({ company, evidence }: Props) {
   const ev = evidence || {}
   const aiInits = ev.ai_initiatives || []
   const techStack = ev.tech_stack || []
+  const githubConfirmedTech = new Set(ev.tech_stack_github_confirmed || [])
   const customers = ev.named_customers || []
   const news = ev.recent_news || []
   const executives = ev.executives || []
@@ -97,7 +100,7 @@ export default function ResearchEvidence({ company, evidence }: Props) {
   const github = ev.github
   const careers = ev.careers
 
-  const hasEnrichment = aiInits.length > 0 || techStack.length > 0 || keyEvidence.length > 0
+  const hasEnrichment = !!ev.narrative_summary || aiInits.length > 0 || techStack.length > 0 || keyEvidence.length > 0
 
   return (
     <div className="glass-card rounded-xl border border-violet-500/20 p-6">
@@ -110,7 +113,7 @@ export default function ResearchEvidence({ company, evidence }: Props) {
         <div className="flex items-center gap-3">
           {stats && (
             <span className="text-[10px] text-[var(--text-muted)]">
-              {stats.total_results} sources analyzed
+              {stats.relevant_results || stats.total_results}/{stats.total_results} relevant sources
             </span>
           )}
           {confidenceScore != null && (
@@ -148,6 +151,19 @@ export default function ResearchEvidence({ company, evidence }: Props) {
 
       {hasEnrichment ? (
         <div className="space-y-5">
+          {/* Narrative Summary */}
+          {ev.narrative_summary && (
+            <div className="bg-gradient-to-r from-violet-500/5 to-blue-500/5 rounded-lg p-4 border border-violet-500/15">
+              <div className="flex items-center gap-2 mb-2">
+                <Brain className="w-4 h-4 text-violet-400" />
+                <span className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">AI Readiness Assessment</span>
+              </div>
+              <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                {ev.narrative_summary}
+              </p>
+            </div>
+          )}
+
           {/* Tech Stack */}
           {techStack.length > 0 && (
             <div>
@@ -156,19 +172,24 @@ export default function ResearchEvidence({ company, evidence }: Props) {
                 <span className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">Detected Tech Stack</span>
               </div>
               <div className="flex flex-wrap gap-1.5">
-                {techStack.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="px-2.5 py-1 rounded-full text-[11px] font-semibold border"
-                    style={{
-                      color: TECH_COLORS[tech] || '#94a3b8',
-                      backgroundColor: `${TECH_COLORS[tech] || '#94a3b8'}12`,
-                      borderColor: `${TECH_COLORS[tech] || '#94a3b8'}25`,
-                    }}
-                  >
-                    {tech}
-                  </span>
-                ))}
+                {techStack.map((tech, i) => {
+                  const isConfirmed = githubConfirmedTech.has(tech)
+                  return (
+                    <span
+                      key={i}
+                      className="px-2.5 py-1 rounded-full text-[11px] font-semibold border flex items-center gap-1"
+                      style={{
+                        color: TECH_COLORS[tech] || '#94a3b8',
+                        backgroundColor: `${TECH_COLORS[tech] || '#94a3b8'}12`,
+                        borderColor: `${TECH_COLORS[tech] || '#94a3b8'}25`,
+                      }}
+                      title={isConfirmed ? 'Confirmed via GitHub repos' : 'Detected from web sources'}
+                    >
+                      {tech}
+                      {isConfirmed && <GitBranch className="w-3 h-3 opacity-70" />}
+                    </span>
+                  )
+                })}
               </div>
             </div>
           )}
