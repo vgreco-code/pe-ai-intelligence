@@ -123,9 +123,9 @@ def compute_confidence_score(features: dict, research_meta: dict) -> dict:
     """
     breakdown = {}
 
-    # 1. Search coverage: 84 results is perfect (14 queries × 6 results each)
+    # 1. Search coverage: 120 results is perfect (20 queries × 6 results each)
     search_results = research_meta.get("search_results", 0)
-    search_pct = min(search_results / 70, 1.0)  # 70+ results = full marks
+    search_pct = min(search_results / 100, 1.0)  # 100+ results = full marks
     breakdown["search_coverage"] = round(search_pct * 25, 1)
 
     # 2. Scrape depth: 5 URLs is perfect
@@ -133,9 +133,9 @@ def compute_confidence_score(features: dict, research_meta: dict) -> dict:
     scrape_pct = min(urls_scraped / 4, 1.0)  # 4+ URLs = full marks
     breakdown["scrape_depth"] = round(scrape_pct * 20, 1)
 
-    # 3. Corpus volume: 120K+ chars of research text is excellent (14 queries + scrapes)
+    # 3. Corpus volume: 180K+ chars of research text is excellent (20 queries + scrapes)
     total_chars = research_meta.get("total_text_chars", 0)
-    corpus_pct = min(total_chars / 120000, 1.0)
+    corpus_pct = min(total_chars / 180000, 1.0)
     breakdown["corpus_volume"] = round(corpus_pct * 15, 1)
 
     # 4. Structured extraction: 5 points each for key facts found
@@ -248,6 +248,19 @@ DEEP_QUERIES = [
     '"{company}" CEO CTO leadership team OR "chief technology" OR "chief AI" OR "VP engineering" OR "head of AI"',
     # Technology stack from job postings and tech blogs
     '"{company}" engineering blog OR tech stack OR "we use" OR "built with" OR Python OR React OR Kubernetes OR AWS',
+    # ── Dimension-targeted queries (6) — break score clustering ───────────
+    # Governance & compliance deep dive (breaks ai_governance + regulatory_readiness clustering)
+    '"{company}" SOC2 OR SOC OR GDPR OR HIPAA OR "data privacy" OR "security audit" OR "compliance certification" OR "ISO 27001" OR "data protection officer" OR "privacy policy"',
+    # Analytics & BI maturity (breaks analytics_maturity clustering)
+    '"{company}" analytics OR dashboard OR "business intelligence" OR Tableau OR PowerBI OR Looker OR "data visualization" OR "reporting platform" OR metrics OR KPI OR "data-driven decisions"',
+    # Organizational change & digital transformation (breaks org_change_readiness clustering)
+    '"{company}" "digital transformation" OR "agile" OR "organizational change" OR "company culture" OR "innovation" OR "modernization" OR "cloud migration" OR "process automation" OR "change management"',
+    # AI/ML team & talent specifics (breaks ai_talent_density clustering)
+    '"{company}" "machine learning team" OR "AI team" OR "data science team" OR "ML infrastructure" OR "model training" OR "MLOps" OR "AI research" OR "AI hiring" OR "data engineer" OR "ML platform"',
+    # Modern engineering practices (breaks tech_stack_modernity + ai_engineering clustering)
+    '"{company}" "CI/CD" OR "continuous integration" OR DevOps OR "code review" OR "automated testing" OR monitoring OR observability OR Datadog OR "feature flags" OR "infrastructure as code" OR microservices',
+    # Partnership & integration ecosystem (breaks partner_ecosystem clustering)
+    '"{company}" integration OR marketplace OR "app store" OR partner OR "third-party" OR Zapier OR "API partner" OR "technology partner" OR connector OR plugin OR "integration partner" OR ecosystem',
 ]
 
 
@@ -663,7 +676,7 @@ async def research_company_deep(
     context_hint: str = "",
     identity_markers: dict = None,
 ) -> dict:
-    """Deep single-company research: 14 targeted queries + URL follow-up scraping.
+    """Deep single-company research: 20 targeted queries + URL follow-up scraping.
 
     Returns the same feature dict as research_company() but with significantly
     richer underlying text, leading to better feature extraction and scoring.
@@ -904,6 +917,96 @@ def extract_features(company_name: str, text: str) -> dict:
     mkt_count = sum(1 for kw in market_keywords if kw in text_lower)
     market_position = min(5.0, 1.5 + mkt_count * 0.4)
 
+    # ── NEW: Governance & compliance depth (breaks ai_governance + regulatory clustering)
+    governance_keywords = [
+        'soc 2', 'soc2', 'soc 1', 'iso 27001', 'iso 9001', 'fedramp',
+        'data protection officer', 'dpo', 'privacy officer', 'chief security officer',
+        'security audit', 'penetration testing', 'pen test', 'vulnerability assessment',
+        'security operations center', 'soc report', 'aicpa', 'trust services',
+        'data processing agreement', 'dpa', 'incident response plan',
+        'security framework', 'nist', 'zero trust', 'encryption at rest',
+        'access control', 'mfa', 'multi-factor', 'single sign-on', 'sso',
+        'data retention policy', 'breach notification', 'privacy impact assessment',
+    ]
+    gov_count = sum(1 for kw in governance_keywords if kw in text_lower)
+    governance_depth = min(5.0, 1.0 + gov_count * 0.4)
+
+    # ── NEW: Analytics maturity depth (breaks analytics_maturity clustering)
+    analytics_keywords = [
+        'tableau', 'power bi', 'powerbi', 'looker', 'metabase', 'superset',
+        'data visualization', 'dashboards', 'self-service analytics', 'ad hoc reporting',
+        'data warehouse', 'snowflake', 'databricks', 'redshift', 'bigquery',
+        'etl pipeline', 'data pipeline', 'dbt', 'airflow', 'fivetran',
+        'data catalog', 'data dictionary', 'data lineage', 'data quality',
+        'a/b testing', 'experimentation platform', 'cohort analysis',
+        'predictive analytics', 'customer analytics', 'product analytics',
+        'mixpanel', 'amplitude', 'heap', 'segment', 'customer data platform',
+        'data team', 'data engineering', 'data mesh', 'data lakehouse',
+    ]
+    analytics_count = sum(1 for kw in analytics_keywords if kw in text_lower)
+    analytics_depth = min(5.0, 1.0 + analytics_count * 0.35)
+
+    # ── NEW: Organizational change readiness (breaks org_change_readiness clustering)
+    org_change_keywords = [
+        'digital transformation', 'cloud migration', 'modernization',
+        'agile methodology', 'agile development', 'scrum', 'kanban',
+        'devops culture', 'continuous improvement', 'lean', 'six sigma',
+        'change management', 'transformation roadmap', 'innovation lab',
+        'hackathon', 'r&d', 'research and development', 'skunkworks',
+        'process automation', 'workflow automation', 'rpa',
+        'cross-functional', 'product-led', 'data-driven culture',
+        'upskilling', 'training program', 'learning and development',
+        'center of excellence', 'coe', 'ai council', 'innovation team',
+    ]
+    org_change_count = sum(1 for kw in org_change_keywords if kw in text_lower)
+    org_change_depth = min(5.0, 1.0 + org_change_count * 0.4)
+
+    # ── NEW: AI talent signals (breaks ai_talent_density clustering)
+    ai_talent_keywords = [
+        'machine learning engineer', 'ml engineer', 'ai engineer',
+        'data scientist', 'data science team', 'ml team', 'ai team',
+        'chief ai officer', 'caio', 'vp of ai', 'head of ai', 'head of ml',
+        'director of data science', 'ml infrastructure', 'ml platform',
+        'model training', 'model deployment', 'model serving', 'mlops',
+        'feature store', 'experiment tracking', 'ml pipeline',
+        'ai research', 'research scientist', 'phd', 'computer science',
+        'deep learning', 'pytorch', 'tensorflow', 'hugging face',
+        'ai intern', 'ml intern', 'ai residency',
+    ]
+    ai_talent_count = sum(1 for kw in ai_talent_keywords if kw in text_lower)
+    ai_talent_depth = min(5.0, 1.0 + ai_talent_count * 0.35)
+
+    # ── NEW: Engineering practices maturity (breaks tech_stack_modernity + ai_engineering)
+    eng_practice_keywords = [
+        'ci/cd', 'continuous integration', 'continuous deployment', 'continuous delivery',
+        'github actions', 'gitlab ci', 'jenkins', 'circleci', 'buildkite',
+        'automated testing', 'unit tests', 'integration tests', 'e2e tests',
+        'code review', 'pull request', 'peer review', 'pair programming',
+        'infrastructure as code', 'terraform', 'pulumi', 'cloudformation',
+        'monitoring', 'observability', 'datadog', 'new relic', 'grafana', 'prometheus',
+        'feature flags', 'launchdarkly', 'split.io', 'canary deployment',
+        'blue-green deployment', 'rolling deployment', 'service mesh', 'istio',
+        'api gateway', 'load balancing', 'auto-scaling', 'chaos engineering',
+        'sre', 'site reliability', 'incident management', 'pagerduty', 'opsgenie',
+    ]
+    eng_practice_count = sum(1 for kw in eng_practice_keywords if kw in text_lower)
+    eng_practice_depth = min(5.0, 1.0 + eng_practice_count * 0.3)
+
+    # ── NEW: Partnership & integration ecosystem depth (breaks partner_ecosystem)
+    partnership_keywords = [
+        'integration partner', 'technology partner', 'strategic partner',
+        'partner program', 'partner portal', 'reseller', 'channel partner',
+        'marketplace listing', 'app marketplace', 'app store',
+        'zapier integration', 'make.com', 'workato', 'tray.io',
+        'pre-built integration', 'native integration', 'bidirectional sync',
+        'open api', 'developer ecosystem', 'partner ecosystem',
+        'implementation partner', 'consulting partner', 'si partner',
+        'technology alliance', 'certified partner', 'platinum partner',
+        'integration catalog', 'connector', 'app directory',
+    ]
+    partnership_count = sum(1 for kw in partnership_keywords if kw in text_lower)
+    partnership_depth = min(5.0, 1.0 + partnership_count * 0.4)
+
     # ── AI intensity: strong evidence counts double, generic counts half ──────
     # This separates "company actually builds AI" from "article mentions AI"
     ai_weighted = ai_strong_count * 2.0 + ai_generic_count * 0.5
@@ -938,6 +1041,13 @@ def extract_features(company_name: str, text: str) -> dict:
         # Evidence quality breakdown (strong = company-specific, generic = industry)
         "ai_strong_evidence_count": ai_strong_count,
         "ai_generic_evidence_count": ai_generic_count,
+        # ── NEW granular signals for clustered dimensions ─────────────────
+        "governance_depth": round(governance_depth, 2),
+        "analytics_depth": round(analytics_depth, 2),
+        "org_change_depth": round(org_change_depth, 2),
+        "ai_talent_depth": round(ai_talent_depth, 2),
+        "eng_practice_depth": round(eng_practice_depth, 2),
+        "partnership_depth": round(partnership_depth, 2),
     }
 
 
@@ -998,6 +1108,14 @@ def estimate_dimension_scores(data: dict) -> dict[str, float]:
     ai_int = data.get("ai_intensity") or (2.5 if has_ai else 1.0)
     cloud_int = data.get("cloud_intensity") or (2.5 if cloud else 1.0)
 
+    # NEW: Granular dimension signals (default to base values for backward compat)
+    gov_depth = data.get("governance_depth") or reg_burden
+    analytics_depth = data.get("analytics_depth") or data_rich
+    org_change = data.get("org_change_depth") or 1.5
+    ai_talent = data.get("ai_talent_depth") or ai_int
+    eng_practice = data.get("eng_practice_depth") or cloud_int
+    partner_depth = data.get("partnership_depth") or api_str
+
     # ── Execution Capacity Factor (ECF) ──────────────────────────────────────
     # Measures whether the company has the resources to actually execute on AI.
     # A 17-person company simply cannot staff an ML team, build data infra,
@@ -1039,36 +1157,41 @@ def estimate_dimension_scores(data: dict) -> dict[str, float]:
     size_factor = min(4.0, max(1.0, 1.0 + math.log10(max(emp, 10)) / 2.0))
 
     # ── Data & Analytics ─────────────────────────────────────────────────────
-    scores["data_quality"] = round(min(5.0, data_rich * 0.6 + size_factor * 0.4), 2)
-    scores["data_integration"] = round(min(5.0, api_str * 0.55 + cloud_int * 0.45), 2)
-    scores["analytics_maturity"] = round(min(5.0, (data_rich + size_factor + funding_score) / 3), 2)
+    scores["data_quality"] = round(min(5.0, data_rich * 0.5 + analytics_depth * 0.3 + size_factor * 0.2), 2)
+    scores["data_integration"] = round(min(5.0, api_str * 0.45 + cloud_int * 0.3 + partner_depth * 0.25), 2)
+    # analytics_maturity: now uses dedicated analytics_depth signal
+    scores["analytics_maturity"] = round(min(5.0, analytics_depth * 0.45 + data_rich * 0.25 + eng_practice * 0.15 + size_factor * 0.15), 2)
 
     # ── Technology & Infrastructure ──────────────────────────────────────────
-    scores["cloud_architecture"] = round(min(5.0, cloud_int * 0.6 + api_str * 0.4), 2)
-    scores["tech_stack_modernity"] = round(min(5.0, cloud_int * 0.4 + funding_score * 0.3 + api_str * 0.3), 2)
-    # AI engineering requires execution capacity — can't build AI infra with 10 people
-    scores["ai_engineering"] = round(min(5.0, (ai_int * 0.5 + size_factor * 0.25 + funding_score * 0.25) * exec_capacity), 2)
+    scores["cloud_architecture"] = round(min(5.0, cloud_int * 0.5 + eng_practice * 0.3 + api_str * 0.2), 2)
+    # tech_stack_modernity: now uses engineering practice depth
+    scores["tech_stack_modernity"] = round(min(5.0, eng_practice * 0.35 + cloud_int * 0.30 + api_str * 0.20 + funding_score * 0.15), 2)
+    # AI engineering: now uses dedicated AI talent + engineering practice signals
+    scores["ai_engineering"] = round(min(5.0, (ai_int * 0.30 + ai_talent * 0.25 + eng_practice * 0.25 + size_factor * 0.20) * exec_capacity), 2)
 
     # ── AI Product & Value ───────────────────────────────────────────────────
-    # ai_product_features: need strong evidence, not just generic AI mentions
     scores["ai_product_features"] = round(min(5.0, ai_int * 0.6 + mkt_pos * 0.25 + (1.0 if has_ai else 0.0) * 0.15 * 5), 2)
     scores["revenue_ai_upside"] = round(min(5.0, mkt_pos * 0.35 + ai_int * 0.3 + data_rich * 0.35), 2)
     scores["margin_ai_upside"] = round(min(5.0, ai_int * 0.3 + data_rich * 0.35 + cloud_int * 0.35), 2)
-    scores["product_differentiation"] = round(min(5.0, mkt_pos * 0.5 + api_str * 0.3 + data_rich * 0.2), 2)
+    scores["product_differentiation"] = round(min(5.0, mkt_pos * 0.45 + partner_depth * 0.30 + data_rich * 0.25), 2)
 
     # ── Organization & Talent — heavily gated by execution capacity ──────────
-    # A 17-person company can't have "high AI talent density"
-    scores["ai_talent_density"] = round(min(5.0, (ai_int * 0.4 + size_factor * 0.3 + funding_score * 0.3) * exec_capacity), 2)
-    scores["leadership_ai_vision"] = round(min(5.0, ai_int * 0.4 + mkt_pos * 0.3 + funding_score * 0.3), 2)
-    scores["org_change_readiness"] = round(min(5.0, (size_factor * 0.3 + cloud_int * 0.3 + funding_score * 0.4) * exec_capacity), 2)
-    scores["partner_ecosystem"] = round(min(5.0, api_str * 0.5 + mkt_pos * 0.3 + size_factor * 0.2), 2)
+    # ai_talent_density: now uses dedicated AI talent depth signal
+    scores["ai_talent_density"] = round(min(5.0, (ai_talent * 0.40 + ai_int * 0.20 + size_factor * 0.20 + funding_score * 0.20) * exec_capacity), 2)
+    # leadership_ai_vision: now uses org_change signal as indicator of strategic vision
+    scores["leadership_ai_vision"] = round(min(5.0, ai_int * 0.30 + org_change * 0.25 + mkt_pos * 0.25 + funding_score * 0.20), 2)
+    # org_change_readiness: now uses dedicated org change depth signal
+    scores["org_change_readiness"] = round(min(5.0, (org_change * 0.35 + eng_practice * 0.25 + cloud_int * 0.20 + funding_score * 0.20) * exec_capacity), 2)
+    # partner_ecosystem: now uses dedicated partnership depth signal
+    scores["partner_ecosystem"] = round(min(5.0, partner_depth * 0.40 + api_str * 0.30 + mkt_pos * 0.20 + size_factor * 0.10), 2)
 
     # ── Governance & Risk ────────────────────────────────────────────────────
-    scores["ai_governance"] = round(min(5.0, (3.0 if is_public else 1.5) * 0.3 + reg_burden * 0.4 + size_factor * 0.3), 2)
-    scores["regulatory_readiness"] = round(min(5.0, (3.0 if is_public else 1.5) * 0.25 + reg_burden * 0.45 + size_factor * 0.3), 2)
+    # Now uses dedicated governance depth signal
+    scores["ai_governance"] = round(min(5.0, gov_depth * 0.40 + (3.0 if is_public else 1.5) * 0.20 + reg_burden * 0.20 + size_factor * 0.20), 2)
+    scores["regulatory_readiness"] = round(min(5.0, gov_depth * 0.35 + reg_burden * 0.30 + (3.0 if is_public else 1.5) * 0.15 + size_factor * 0.20), 2)
 
     # ── Velocity & Momentum ──────────────────────────────────────────────────
-    scores["ai_momentum"] = round(min(5.0, ai_int * 0.45 + funding_score * 0.25 + mkt_pos * 0.3), 2)
+    scores["ai_momentum"] = round(min(5.0, ai_int * 0.35 + org_change * 0.20 + funding_score * 0.20 + mkt_pos * 0.25), 2)
 
     return scores
 
