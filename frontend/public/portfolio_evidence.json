@@ -1,218 +1,114 @@
 {
   "AutoTime": {
-    "ai_initiatives": [],
-    "named_products": [],
-    "tech_stack": [],
-    "named_customers": [],
-    "recent_news": [],
     "executives": [
       {
         "name": "Chris Thomas",
         "role": "Chief Executive Officer"
       }
     ],
-    "hiring_signals": [
-      "AI/ML Engineer",
-      "Data Scientist",
-      "Data Engineer",
-      "Full Stack"
+    "customers": [
+      "Lockheed Martin",
+      "General Dynamics",
+      "Collins Aerospace",
+      "Rolls-Royce Holdings",
+      "L3Harris Technologies"
     ],
-    "key_evidence": [
-      {
-        "text": "- In government contracting and manufacturing, accuracy is everything, but when timekeeping systems are split across attendance, labor, and payroll\u2026  \nLiked by Glenn Doughty  \nView Post  \nActivity Image\n\n- A new chapter for AutoTime! AutoTime has com",
-        "source": "linkedin.com",
-        "url": "https://www.linkedin.com/in/glenn-doughty-3767875"
-      }
+    "ai_initiatives": [],
+    "tech_stack": [
+      "SAP Integration",
+      "Cloud-hosted",
+      "REST API"
     ],
-    "enrichment_stats": {
-      "total_results": 36,
-      "relevant_results": 14,
-      "total_text_chars": 17277,
-      "ai_initiatives_found": 2,
-      "tech_stack_signals": 1,
-      "customers_found": 0,
-      "news_events": 0,
-      "executives_found": 0,
-      "hiring_roles_detected": 4,
-      "evidence_snippets": 8
-    },
-    "narrative_summary": "AutoTime shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. No public GitHub presence or detectable tech stack \u2014 engineering practices are opaque from external research. Key signals: broad technical hiring across 4 role categories.",
-    "github": {
-      "found": false
-    },
+    "github": {},
     "careers": {
-      "found": false,
-      "reason": "wrong_company"
+      "ai_roles": 0,
+      "total_roles": 3,
+      "titles": [
+        "Lead Software Engineer",
+        "Engineering Leader",
+        "Customer Success Manager"
+      ]
     },
-    "tech_stack_github_confirmed": [],
-    "talent": {
-      "found": false,
-      "total_profiles_found": 0,
-      "linkedin_profiles_discovered": 0,
-      "relevant_results": 4,
-      "total_results": 20,
-      "leadership": [],
-      "ai_ml_talent": [],
-      "senior_engineers": [],
-      "engineering_team": [],
-      "management": [],
-      "team_skills": [],
-      "estimated_total_employees": 50,
-      "estimated_eng_team": 17,
-      "talent_summary": {
-        "has_cto": false,
-        "has_vp_eng": false,
-        "has_ai_leadership": false,
-        "ai_ml_headcount": 0,
-        "eng_headcount_discovered": 0,
-        "leadership_headcount": 0,
-        "total_discovered": 0
+    "talent": {},
+    "news": [
+      {
+        "title": "Solen Software Group acquires AutoTime",
+        "date": "2025-02",
+        "summary": "AutoTime joins Solen portfolio, continuing 20+ year focus on DCAA-compliant time and labor tracking for A&D contractors.",
+        "url": "https://www.solensoftwaregroup.com/companies"
       }
-    },
-    "narrative": "AutoTime operates in the Aerospace & Defense space, founded in 2003 with approximately 25 employees. AutoTime is the leading time and labor tracking solution purpose-built for the Aerospace and Defense industry. Leadership includes Chris Thomas (Chief Executive Officer). Scored 3.94/5.0 (Tier: AI-Ready)."
+    ],
+    "evidence": [
+      {
+        "title": "DCAA Compliance Leadership",
+        "content": "AutoTime is the leading time and labor tracking solution purpose-built for A&D. Customers include top defense contractors using it for DCAA audit compliance, complex labor tracking, and payroll accuracy.",
+        "url": "https://www.autotimesoftware.com",
+        "source": "company_website"
+      },
+      {
+        "title": "CEO Background",
+        "content": "CEO Chris Thomas previously managed an A&D acquisition at UKG driving 119% bookings growth and nearly doubling EBITDA in the first year, overseeing $11M annual revenue.",
+        "url": "https://www.linkedin.com/in/christhomas3/",
+        "source": "linkedin"
+      }
+    ],
+    "narrative": "AutoTime operates in the Aerospace & Defense space, founded in 2003 with approximately 25 employees. AutoTime is the leading time and labor tracking solution purpose-built for the A&D industry, partnering with top defense contractors including Lockheed Martin, General Dynamics, and Collins Aerospace for DCAA-compliant time tracking and payroll. Leadership includes Chris Thomas (CEO), who previously drove 119% bookings growth at UKG's A&D division. Active hiring for software engineering roles. Scored 3.94/5.0 (Tier: AI-Ready)."
   },
   "Spokane": {
-    "ai_initiatives": [],
-    "named_products": [],
-    "tech_stack": [],
-    "named_customers": [],
-    "recent_news": [],
     "executives": [
       {
         "name": "Tim Smith",
         "role": "President"
       }
     ],
-    "hiring_signals": [
-      "AI/ML Engineer",
-      "Data Scientist",
-      "Data Engineer",
-      "NLP Engineer",
-      "AI Researcher",
-      "Full Stack",
-      "DevOps/SRE"
+    "customers": [],
+    "ai_initiatives": [],
+    "tech_stack": [],
+    "github": {},
+    "careers": {},
+    "talent": {},
+    "news": [],
+    "evidence": [
+      {
+        "title": "Agricultural ERP Market Leader",
+        "content": "Spokane Software Systems produces a leading agricultural ERP system for growers, packers, and shippers throughout the U.S. for over 37 years. 64% of US orange varieties and 80% of US lemon varieties flow through the Spokane System.",
+        "url": "https://sssonline.com",
+        "source": "company_website"
+      },
+      {
+        "title": "PTI/GTIN Compliance",
+        "content": "PackPoint module addresses Produce Traceability Initiative (PTI) and Global Trade Item Number (GTIN) requirements for produce industry regulatory compliance.",
+        "url": "https://sssonline.com",
+        "source": "company_website"
+      }
     ],
-    "key_evidence": [],
-    "enrichment_stats": {
-      "total_results": 36,
-      "relevant_results": 30,
-      "total_text_chars": 49893,
-      "ai_initiatives_found": 3,
-      "tech_stack_signals": 7,
-      "customers_found": 0,
-      "news_events": 1,
-      "executives_found": 3,
-      "hiring_roles_detected": 7,
-      "evidence_snippets": 8
-    },
-    "narrative_summary": "Spokane shows strong AI activity with public product launches incorporating AI/ML capabilities, active hiring for AI-focused roles (AI/ML Engineer, Data Scientist), and a modern ML-capable tech stack. Technical footprint: web-detected stack includes AWS, Python, Java, Redis. Key signals: ~524 employees (~183 engineering est.); identified tech leadership (VP Eng); AI-relevant team skills: deep learning, machine learning, tensorflow; broad technical hiring across 7 role categories.",
-    "github": {
-      "found": false
-    },
-    "careers": {
-      "found": false,
-      "reason": "wrong_company"
-    },
-    "tech_stack_github_confirmed": [],
-    "talent": {
-      "found": true,
-      "total_profiles_found": 3,
-      "linkedin_profiles_discovered": 6,
-      "relevant_results": 16,
-      "total_results": 20,
-      "team_skills": [],
-      "estimated_total_employees": 524,
-      "estimated_eng_team": 183,
-      "talent_summary": {}
-    },
-    "narrative": "Spokane operates in the Agriculture/Produce space, founded in 1989 with approximately 9 employees. Spokane Software Systems produces a leading agricultural ERP system for growers, packers, and shippers of agricultural products throughout the U. Leadership includes Tim Smith (President). Scored 3.92/5.0 (Tier: AI-Ready)."
+    "narrative": "Spokane operates in the Agriculture/Produce space, founded in 1989 with approximately 9 employees and $3M annual revenue. Spokane Software Systems produces a leading agricultural ERP system \u2014 64% of US orange varieties and 80% of US lemon varieties flow through the Spokane System. Key modules include PackPoint (PTI/GTIN compliance), packing operations, shipping workflows, and grower accounting. Led by President Tim Smith. Based in Spokane, WA. Scored 3.92/5.0 (Tier: AI-Ready)."
   },
   "Thought Foundry": {
-    "ai_initiatives": [],
-    "named_products": [],
-    "tech_stack": [],
-    "named_customers": [],
-    "recent_news": [],
     "executives": [
       {
         "name": "Timur Insepov",
         "role": "Founder & CEO"
       }
     ],
-    "hiring_signals": [
-      "AI/ML Engineer",
-      "Data Scientist",
-      "Data Engineer",
-      "NLP Engineer",
-      "Full Stack",
-      "DevOps/SRE",
-      "Backend Engineer"
-    ],
-    "key_evidence": [
+    "customers": [],
+    "ai_initiatives": [],
+    "tech_stack": [],
+    "github": {},
+    "careers": {},
+    "talent": {},
+    "news": [],
+    "evidence": [
       {
-        "text": "Thought Foundry is a premier artificial intelligence services company, empowering businesses with innovative AI solutions.",
-        "source": "compworth.com",
-        "url": "https://compworth.com/company/thought-foundry"
-      },
-      {
-        "text": "Thought Foundry appears in search results as Thought Foundry, Thought Foundry Inc, Pixel Thought Foundry LLCThought Foundrie, Thought Foundry LLC...",
-        "source": "datanyze.com",
-        "url": "https://www.datanyze.com/companies/thought-foundry/61014738"
+        "title": "Digital Content Entitlements Platform",
+        "content": "Thought Foundry builds data-driven exchange platform-as-a-service solutions for entertainment companies to manage digital content entitlements. Headquartered in Culver City, Los Angeles.",
+        "url": "https://thoughtfoundry.com",
+        "source": "company_website"
       }
     ],
-    "enrichment_stats": {
-      "total_results": 36,
-      "relevant_results": 33,
-      "total_text_chars": 52856,
-      "ai_initiatives_found": 3,
-      "tech_stack_signals": 7,
-      "customers_found": 3,
-      "news_events": 0,
-      "executives_found": 1,
-      "hiring_roles_detected": 7,
-      "evidence_snippets": 5
-    },
-    "narrative_summary": "Thought Foundry shows strong AI activity with public product launches incorporating AI/ML capabilities, active hiring for AI-focused roles (AI/ML Engineer, Data Scientist), and a modern ML-capable tech stack. Technical footprint: web-detected stack includes AWS, Azure, Kubernetes, Docker. Key signals: broad technical hiring across 7 role categories.",
-    "github": {
-      "found": false
-    },
-    "careers": {
-      "found": false,
-      "reason": "wrong_company"
-    },
-    "tech_stack_github_confirmed": [],
-    "talent": {
-      "found": false,
-      "total_profiles_found": 0,
-      "linkedin_profiles_discovered": 0,
-      "relevant_results": 2,
-      "total_results": 20,
-      "leadership": [],
-      "ai_ml_talent": [],
-      "senior_engineers": [],
-      "engineering_team": [],
-      "management": [],
-      "team_skills": [],
-      "estimated_total_employees": 200,
-      "estimated_eng_team": 70,
-      "talent_summary": {
-        "has_cto": false,
-        "has_vp_eng": false,
-        "has_ai_leadership": false,
-        "ai_ml_headcount": 0,
-        "eng_headcount_discovered": 0,
-        "leadership_headcount": 0,
-        "total_discovered": 0
-      }
-    },
-    "narrative": "Thought Foundry operates in the Entertainment/Digital Content space, founded in 2012 with approximately 8 employees. Thought Foundry is a digital innovations company that builds data-driven exchange platform-as-a-service solutions for entertainment companies to manage digital content entitlements. Leadership includes Timur Insepov (Founder & CEO). Scored 3.86/5.0 (Tier: AI-Ready)."
+    "narrative": "Thought Foundry operates in the Entertainment/Digital Content space, founded in 2012 with approximately 8 employees. Thought Foundry builds data-driven exchange platform-as-a-service solutions for entertainment companies to manage digital content entitlements. Founded by Timur Insepov (CEO) and headquartered in Culver City, Los Angeles. Part of Solen Software Group. Scored 3.86/5.0 (Tier: AI-Ready)."
   },
   "Champ": {
-    "ai_initiatives": [],
-    "named_products": [],
-    "tech_stack": [],
-    "named_customers": [],
-    "recent_news": [],
     "executives": [
       {
         "name": "Scott Dunnewind",
@@ -223,602 +119,331 @@
         "role": "Founder"
       }
     ],
-    "hiring_signals": [
-      "AI/ML Engineer",
-      "Data Scientist",
-      "MLOps"
+    "customers": [],
+    "ai_initiatives": [],
+    "tech_stack": [
+      "AWS (cloud hosting)",
+      "HIPAA-compliant SaaS",
+      "Omaha System taxonomy"
     ],
-    "key_evidence": [],
-    "enrichment_stats": {
-      "total_results": 36,
-      "relevant_results": 20,
-      "total_text_chars": 25857,
-      "ai_initiatives_found": 2,
-      "tech_stack_signals": 0,
-      "customers_found": 0,
-      "news_events": 0,
-      "executives_found": 1,
-      "hiring_roles_detected": 3,
-      "evidence_snippets": 8
-    },
-    "narrative_summary": "Champ shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: 11 public repos (no recent activity) primarily in HCL, Shell, Go. Key signals: 2 open positions.",
-    "github": {
-      "found": true,
-      "org_login": "champtitles",
-      "org_url": "https://github.com/champtitles",
-      "total_public_repos": 11,
-      "total_stars": 0,
-      "total_forks": 1,
-      "recently_active_repos": 0,
-      "primary_languages": [
-        {
-          "language": "HCL",
-          "repo_count": 5
-        },
-        {
-          "language": "Shell",
-          "repo_count": 3
-        },
-        {
-          "language": "Go",
-          "repo_count": 1
-        }
-      ],
-      "top_repos": []
-    },
-    "careers": {
-      "found": true,
-      "careers_url": "https://championht.com/careers",
-      "total_openings": 2,
-      "ai_ml_openings": 0,
-      "departments": {
-        "Engineering": 2
+    "github": {},
+    "careers": {},
+    "talent": {},
+    "news": [],
+    "evidence": [
+      {
+        "title": "Public Health EHR Leader",
+        "content": "Champ Software develops Nightingale Notes, an EHR system built specifically for public health departments. More than 145 community health agencies trust Nightingale Notes to track, report, and share vital information.",
+        "url": "https://www.champsoftware.com",
+        "source": "company_website"
       },
-      "sample_roles": [
-        "Software Engineer",
-        "Senior Developer"
-      ],
-      "ai_roles": []
-    },
-    "tech_stack_github_confirmed": [],
-    "talent": {
-      "found": false,
-      "total_profiles_found": 0,
-      "linkedin_profiles_discovered": 1,
-      "relevant_results": 5,
-      "total_results": 20,
-      "leadership": [],
-      "ai_ml_talent": [],
-      "senior_engineers": [],
-      "engineering_team": [],
-      "management": [],
-      "team_skills": [
-        "react"
-      ],
-      "talent_summary": {
-        "has_cto": false,
-        "has_vp_eng": false,
-        "has_ai_leadership": false,
-        "ai_ml_headcount": 0,
-        "eng_headcount_discovered": 0,
-        "leadership_headcount": 0,
-        "total_discovered": 0
+      {
+        "title": "Cloud-Native SaaS Architecture",
+        "content": "Nightingale Notes is a cloud-based SaaS solution hosted on Amazon Web Services. No data is stored on local machines; fully HIPAA compliant. Uses the Omaha System standardized taxonomy for evidence-based outcomes documentation.",
+        "url": "https://www.champsoftware.com/nightingale-notes/",
+        "source": "company_website"
       }
-    },
-    "narrative": "Champ operates in the Healthcare/Public Health space, founded in 1985 with approximately 35 employees. Champ Software develops Nightingale Notes, an electronic health records (EHR) system built specifically for public health departments. Leadership includes Scott Dunnewind (Owner & CEO (since 2021)), David Rosebaugh (Founder). Scored 3.75/5.0 (Tier: AI-Ready)."
+    ],
+    "narrative": "Champ operates in the Healthcare/Public Health space, founded in 1985 with approximately 35 employees. Champ Software develops Nightingale Notes, an EHR system serving 145+ public health agencies nationwide. Cloud-hosted on AWS with full HIPAA compliance. Uses the Omaha System taxonomy for evidence-based community health documentation, with batch billing, scheduling, and 100% time tracking. Led by CEO Scott Dunnewind. Based in Mankato, Minnesota. Scored 3.75/5.0 (Tier: AI-Ready)."
   },
   "Primate": {
-    "ai_initiatives": [],
-    "named_products": [],
-    "tech_stack": [],
-    "named_customers": [],
-    "recent_news": [],
     "executives": [],
-    "hiring_signals": [
-      "AI/ML Engineer",
-      "Data Scientist",
-      "AI Researcher"
+    "customers": [],
+    "ai_initiatives": [],
+    "tech_stack": [
+      "Real-time SCADA integration",
+      "EMS data feeds",
+      "Browser-based dashboards"
     ],
-    "key_evidence": [
+    "github": {},
+    "careers": {},
+    "talent": {},
+    "news": [
       {
-        "text": "AI Search Logo\n\nPosted on 2025/02/27\n\n# AI Workload Engineer\n\nPrimate Labs\n\nToronto, ON\n\n## Full Description\n\n\u2022 Company Overview\\\n\nPrimate Labs is a software company that develops benchmark applications for desktop and mobile platforms.",
-        "source": "ai-search.io",
-        "url": "https://ai-search.io/job-board/primate-labs-ai-workload-engineer-20250227"
+        "title": "Primate joins Solen Software Group",
+        "date": "2024",
+        "summary": "Primate Technologies, founded in 2001 in Melbourne, Florida, joined the Solen Software Group in 2024.",
+        "url": "https://www.solensoftwaregroup.com/companies"
       }
     ],
-    "enrichment_stats": {
-      "total_results": 36,
-      "relevant_results": 9,
-      "total_text_chars": 10833,
-      "ai_initiatives_found": 2,
-      "tech_stack_signals": 0,
-      "customers_found": 0,
-      "news_events": 0,
-      "executives_found": 1,
-      "hiring_roles_detected": 3,
-      "evidence_snippets": 8
-    },
-    "narrative_summary": "Primate shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. No public GitHub presence or detectable tech stack \u2014 engineering practices are opaque from external research. Key signals: hiring signals for AI/ML Engineer, Data Scientist, AI Researcher; identified tech leadership: Andrew Browning (Chief Technology Officer).",
-    "github": {
-      "found": false
-    },
-    "careers": {
-      "found": false,
-      "reason": "no_careers_page_found"
-    },
-    "tech_stack_github_confirmed": [],
-    "talent": {
-      "found": false,
-      "total_profiles_found": 0,
-      "linkedin_profiles_discovered": 0,
-      "relevant_results": 3,
-      "total_results": 20,
-      "leadership": [],
-      "ai_ml_talent": [],
-      "senior_engineers": [],
-      "engineering_team": [],
-      "management": [],
-      "team_skills": [],
-      "talent_summary": {
-        "has_cto": false,
-        "has_vp_eng": false,
-        "has_ai_leadership": false,
-        "ai_ml_headcount": 0,
-        "eng_headcount_discovered": 0,
-        "leadership_headcount": 0,
-        "total_discovered": 0
+    "evidence": [
+      {
+        "title": "Mission-Critical Control Room Software",
+        "content": "Primate Technologies specializes in visualization software for mission-critical control rooms. Products include GridGuardian (real-time SCADA/EMS data integration), BlackBoard, TileViewer, and TileBuilder.",
+        "url": "https://primate-tech.com/solutions",
+        "source": "company_website"
+      },
+      {
+        "title": "Energy Sector Focus",
+        "content": "Serves electric transmission & distribution, pipeline operations, gas utilities, and emergency management. GridGuardian transforms scattered operational data into a unified source of truth.",
+        "url": "https://primate-tech.com",
+        "source": "company_website"
       }
-    },
-    "narrative": "Primate operates in the Energy/Utilities space, founded in 2001 with approximately 11 employees. Primate Technologies specializes in mission-critical control room visualization software for energy providers. Scored 3.54/5.0 (Tier: AI-Ready)."
+    ],
+    "narrative": "Primate operates in the Energy/Utilities space, founded in 2001 with approximately 11 employees and $12M annual revenue. Primate Technologies builds mission-critical control room visualization software \u2014 GridGuardian integrates real-time SCADA and EMS data into a unified operational view. Also offers BlackBoard, TileViewer, and TileBuilder. Serves electric T&D, pipeline operations, gas utilities, and emergency management. Based in Melbourne, Florida. Joined Solen in 2024. Scored 3.54/5.0 (Tier: AI-Ready)."
   },
   "Track Star": {
-    "ai_initiatives": [],
-    "named_products": [],
-    "tech_stack": [
-      "Python",
-      "AWS",
-      "Kubernetes",
-      "React"
-    ],
-    "named_customers": [],
-    "recent_news": [],
     "executives": [
       {
         "name": "Michael Hughes",
         "role": "Founder, President & CEO Emeritus"
       }
     ],
-    "hiring_signals": [
-      "AI/ML Engineer",
-      "Data Scientist",
-      "AI Product Manager",
-      "Data Engineer",
-      "MLOps",
-      "DevOps/SRE"
+    "customers": [
+      "Municipal police departments",
+      "State government fleets",
+      "Electric utilities",
+      "Construction equipment rental companies"
     ],
-    "key_evidence": [],
-    "enrichment_stats": {
-      "total_results": 36,
-      "relevant_results": 31,
-      "total_text_chars": 41994,
-      "ai_initiatives_found": 0,
-      "tech_stack_signals": 5,
-      "customers_found": 0,
-      "news_events": 0,
-      "executives_found": 0,
-      "hiring_roles_detected": 6,
-      "evidence_snippets": 3
-    },
-    "narrative_summary": "Track Star appears to be building AI capability \u2014 hiring signals for AI/ML Engineer, Data Scientist detected, but no public AI product launches or features identified yet. Technical footprint: web-detected stack includes Python, AWS, Kubernetes, React. Key signals: broad technical hiring across 6 role categories.",
-    "github": {
-      "found": false
-    },
-    "careers": {
-      "found": false,
-      "reason": "no_careers_page_found"
-    },
-    "tech_stack_github_confirmed": [],
-    "talent": {
-      "found": false,
-      "total_profiles_found": 0,
-      "linkedin_profiles_discovered": 1,
-      "relevant_results": 7,
-      "total_results": 20,
-      "leadership": [],
-      "ai_ml_talent": [],
-      "senior_engineers": [],
-      "engineering_team": [],
-      "management": [],
-      "team_skills": [],
-      "estimated_total_employees": 50,
-      "estimated_eng_team": 17,
-      "talent_summary": {
-        "has_cto": false,
-        "has_vp_eng": false,
-        "has_ai_leadership": false,
-        "ai_ml_headcount": 0,
-        "eng_headcount_discovered": 0,
-        "leadership_headcount": 0,
-        "total_discovered": 0
+    "ai_initiatives": [],
+    "tech_stack": [
+      "Python",
+      "AWS",
+      "Kubernetes",
+      "React",
+      "ESRI ArcGIS integration",
+      "Sierra Wireless",
+      "CalAmp",
+      "SmartWitness video"
+    ],
+    "github": {},
+    "careers": {},
+    "talent": {},
+    "news": [
+      {
+        "title": "Track Star acquires ThingTech",
+        "date": "2023",
+        "summary": "Track Star International acquired ThingTech to expand IoT and enterprise asset management capabilities.",
+        "url": "https://thingtech.com/company/"
       }
-    },
-    "narrative": "Track Star operates in the Fleet Management/Government space, founded in 2000 with approximately 10 employees. Track Star International provides fleet management solutions combining GPS tracking, telematics, Enterprise Asset Management (EAM), predictive maintenance, and video intelligence in a unified platform. Leadership includes Michael Hughes (Founder, President & CEO Emeritus). Technology stack includes Python, AWS, Kubernetes, React. Scored 3.47/5.0 (Tier: AI-Buildable)."
+    ],
+    "evidence": [
+      {
+        "title": "Unified Fleet Platform",
+        "content": "Track Star Version 6 is a fully browser-based platform combining GPS tracking, telematics, Enterprise Asset Management (EAM), predictive maintenance, compliance automation, and video intelligence. Processes millions of GPS points daily.",
+        "url": "https://www.trackstar.com",
+        "source": "company_website"
+      },
+      {
+        "title": "Military Background",
+        "content": "Founded in 2000 by former U.S. Air Force navigation systems expert Michael Hughes, who grew early GPS experiments into a trusted fleet management platform.",
+        "url": "https://www.trackstar.com/about-us",
+        "source": "company_website"
+      },
+      {
+        "title": "GIS Integration",
+        "content": "Integration with ESRI ArcGIS enables client overlays for geospatial analysis. Supports devices from Sierra Wireless, CalAmp, Queclink, SmartWitness and others.",
+        "url": "https://www.trackstar.com/gps-telematics",
+        "source": "company_website"
+      }
+    ],
+    "narrative": "Track Star operates in the Fleet Management/Government space, founded in 2000 with approximately 10 employees. Track Star International provides a unified platform combining GPS tracking, telematics, EAM, predictive maintenance, and video intelligence \u2014 processing millions of GPS points daily. Founded by former U.S. Air Force navigation expert Michael Hughes. Serves police departments, government fleets, utilities, and equipment rental. Integrates with ESRI ArcGIS. Acquired ThingTech for IoT expansion. Part of Solen since 2021. Scored 3.47/5.0 (Tier: AI-Buildable)."
   },
   "SMRTR": {
-    "ai_initiatives": [],
-    "named_products": [],
-    "tech_stack": [],
-    "named_customers": [
-      "News Corp",
-      "NBN Co",
-      "AMP",
-      "Miele"
-    ],
-    "recent_news": [],
     "executives": [
       {
         "name": "Susanne Moore",
         "role": "Chief Executive Officer"
       }
     ],
-    "hiring_signals": [
-      "AI/ML Engineer",
-      "Data Scientist"
+    "customers": [
+      "DiCarlo Distributors",
+      "Food & beverage manufacturers",
+      "Distribution companies"
     ],
-    "key_evidence": [
+    "ai_initiatives": [],
+    "tech_stack": [
+      "Cloud-based SaaS",
+      "ERP integrations"
+    ],
+    "github": {},
+    "careers": {},
+    "talent": {},
+    "news": [
       {
-        "text": "Accounts payable and receivable automation services offered by SMRTR also play a vital role in maintaining transparency.",
-        "source": "smrtrsolutions.com",
-        "url": "https://smrtrsolutions.com/2024/04/02/how-to-maintain-financial-transparency-in-an-organization/"
+        "title": "DASH and S4i Complete Merger, Form SMRTR",
+        "date": "2025-07-01",
+        "summary": "DASH and S4i Systems completed their merger to form SMRTR, uniting AP automation with compliance solutions for manufacturing and food & beverage industries.",
+        "url": "https://smrtrsolutions.com/2025/06/27/dash-and-s4i-complete-merger-form-smrtr/"
+      },
+      {
+        "title": "VAI and SMRTR Strategic Partnership",
+        "date": "2025",
+        "summary": "VAI and SMRTR announced a strategic partnership to streamline document management and AP automation for S2K Food ERP users.",
+        "url": "https://www.vai.net/resources/newsroom/vai-and-smrtr-announce-strategic-partnership-to-streamline-document-management-and-ap-automation-for-s2k-food-erp-users"
       }
     ],
-    "enrichment_stats": {
-      "total_results": 36,
-      "relevant_results": 12,
-      "total_text_chars": 12407,
-      "ai_initiatives_found": 2,
-      "tech_stack_signals": 1,
-      "customers_found": 4,
-      "news_events": 0,
-      "executives_found": 3,
-      "hiring_roles_detected": 2,
-      "evidence_snippets": 8
-    },
-    "narrative_summary": "SMRTR shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. No public GitHub presence or detectable tech stack \u2014 engineering practices are opaque from external research. Key signals: hiring signals for AI/ML Engineer, Data Scientist.",
-    "github": {
-      "found": false
-    },
-    "careers": {
-      "found": false,
-      "reason": "no_careers_page_found"
-    },
-    "tech_stack_github_confirmed": [],
-    "talent": {
-      "found": false,
-      "total_profiles_found": 0,
-      "linkedin_profiles_discovered": 0,
-      "relevant_results": 2,
-      "total_results": 20,
-      "leadership": [],
-      "ai_ml_talent": [],
-      "senior_engineers": [],
-      "engineering_team": [],
-      "management": [],
-      "team_skills": [
-        "mongodb",
-        "postgresql",
-        "react",
-        "sql"
-      ],
-      "estimated_total_employees": 200,
-      "estimated_eng_team": 70,
-      "talent_summary": {
-        "has_cto": false,
-        "has_vp_eng": false,
-        "has_ai_leadership": false,
-        "ai_ml_headcount": 0,
-        "eng_headcount_discovered": 0,
-        "leadership_headcount": 0,
-        "total_discovered": 0
+    "evidence": [
+      {
+        "title": "Platform Consolidation",
+        "content": "CEO Susanne Moore: 'Our customers have consistently told us they want fewer vendors and more comprehensive solutions. This merger allows us to deliver exactly that\u2014a complete automation platform that addresses both operational efficiency and regulatory compliance from a single source.'",
+        "url": "https://industrytoday.com/dash-and-s4i-complete-merger-form-smrtr/",
+        "source": "press_release"
+      },
+      {
+        "title": "Food Safety Compliance",
+        "content": "SMRTR streamlines food and beverage operations with automation, integrating manufacturing, warehouse, and financial systems. Solutions include AP Automation, Food Safety Compliance, Electronic Proof of Delivery, and Supplier Onboarding.",
+        "url": "https://smrtrsolutions.com",
+        "source": "company_website"
       }
-    },
-    "narrative": "SMRTR operates in the Food & Beverage/Manufacturing space, founded in 2025 with approximately 30 employees. SMRTR was formed July 1, 2025 from the merger of Dash (founded 1998, AP automation) and S4i Systems (founded 2002, compliance solutions). Leadership includes Susanne Moore (Chief Executive Officer). Scored 3.39/5.0 (Tier: AI-Buildable)."
+    ],
+    "narrative": "SMRTR operates in the Food & Beverage/Manufacturing space, formed July 2025 from the merger of Dash and S4i Systems with approximately 30 employees. CEO Susanne Moore leads the combined platform offering AP automation, document management, supplier onboarding, electronic proof of delivery, food safety compliance, and regulatory management. Customers include DiCarlo Distributors. Recently partnered with VAI for S2K Food ERP integration. Operates fully remote from Cottonwood Heights, Utah. Scored 3.39/5.0 (Tier: AI-Buildable)."
   },
   "FMSI": {
-    "ai_initiatives": [
-      {
-        "text": "AI-powered tools",
-        "type": "ai_feature"
-      }
-    ],
-    "named_products": [
-      "team"
-    ],
-    "tech_stack": [
-      "Kubernetes",
-      "Segment"
-    ],
-    "named_customers": [],
-    "recent_news": [],
     "executives": [
       {
         "name": "W. Michael Scott",
         "role": "Co-Founder, Chairman & CEO"
       }
     ],
-    "hiring_signals": [
-      "DevOps/SRE"
-    ],
-    "key_evidence": [
-      {
-        "text": "SALT LAKE CITY, UT, UNITED STATES, March 16, 2026 /EINPresswire.com/ \u2014 FMSI, a provider of branch performance and workforce management software for financial institutions, and Appli, whose AI-powered financial calculators are gaining traction across ",
-        "source": "blufftontoday.com",
-        "url": "https://www.blufftontoday.com/press-release/story/60914/fmsi-and-appli-partner-to-help-credit-union-branches-drive-member-revenue/"
-      },
-      {
-        "text": "\u2014 Jacob Reeves, General Manager, FMSI\n\nSALT LAKE CITY, UT, UNITED STATES, March 16, 2026 /EINPresswire.",
-        "source": "pressconnects.com",
-        "url": "https://www.pressconnects.com/press-release/story/43313/fmsi-and-appli-partner-to-help-credit-union-branches-drive-member-revenue/"
-      },
-      {
-        "text": "2025 has been an important year for FMSI, and we are grateful for the relationships we have built and the progress we have made together.",
-        "source": "linkedin.com",
-        "url": "https://www.linkedin.com/company/fmsi"
-      },
-      {
-        "text": "Home Icons.png\n\nPlan & Control Liquidity\n\n## What We Do\n\nFinancial Management Services, Inc. (FMSI) partners with financial institutions to provide executive support with proprietary, independent financial analytics and strategies.",
-        "source": "fmsiconsulting.com",
-        "url": "https://www.fmsiconsulting.com/"
-      },
-      {
-        "text": "Bob Hughes, chief strategy officer, Kronos  \n   \u201cKronos\u2019 acquisition of FMSI demonstrates our commitment to helping financial services organizations, especially credit unions and retail banks, more effectively manage their most valuable asset \u2013 the w",
-        "source": "jmi.com",
-        "url": "https://www.jmi.com/kronos-acquires-financial-management-solutions-inc-deepen-financial-services-industry-expertise/"
-      }
-    ],
-    "enrichment_stats": {
-      "total_results": 36,
-      "relevant_results": 20,
-      "total_text_chars": 27064,
-      "ai_initiatives_found": 3,
-      "tech_stack_signals": 2,
-      "customers_found": 0,
-      "news_events": 0,
-      "executives_found": 1,
-      "hiring_roles_detected": 1,
-      "evidence_snippets": 8
-    },
-    "narrative_summary": "FMSI references AI capabilities in public materials, but limited evidence of dedicated AI infrastructure, hiring, or ML tooling suggests these may be aspirational or vendor-integrated features. Technical footprint: web-detected stack includes Kubernetes, Segment. Key signals: hiring signals for DevOps/SRE.",
-    "github": {
-      "found": false
-    },
-    "careers": {
-      "found": false,
-      "reason": "wrong_company"
-    },
-    "tech_stack_github_confirmed": [],
-    "talent": {
-      "found": false,
-      "total_profiles_found": 0,
-      "linkedin_profiles_discovered": 2,
-      "relevant_results": 15,
-      "total_results": 20,
-      "leadership": [],
-      "ai_ml_talent": [],
-      "senior_engineers": [],
-      "engineering_team": [],
-      "management": [],
-      "team_skills": [
-        "agile",
-        "aws",
-        "azure",
-        "databricks",
-        "machine learning",
-        "spark",
-        "sql"
-      ],
-      "estimated_total_employees": 50,
-      "estimated_eng_team": 17,
-      "talent_summary": {
-        "has_cto": false,
-        "has_vp_eng": false,
-        "has_ai_leadership": false,
-        "ai_ml_headcount": 0,
-        "eng_headcount_discovered": 0,
-        "leadership_headcount": 0,
-        "total_discovered": 0
-      }
-    },
-    "narrative": "FMSI operates in the Banking/Credit Unions space, founded in 1990 with approximately 48 employees. Financial Management Software, Inc. Leadership includes W. Michael Scott (Co-Founder, Chairman & CEO). Technology stack includes Kubernetes, Segment. AI signals: AI-powered tools. Notable customers include Apple Federal Credit Union. Scored 3.31/5.0 (Tier: AI-Buildable).",
     "customers": [
-      "Apple Federal Credit Union"
-    ]
-  },
-  "Cairn Applications": {
-    "ai_initiatives": [],
-    "named_products": [
-      "develops SaaS"
+      "Apple Federal Credit Union ($2B, 25 locations)",
+      "Fort Knox Federal Credit Union",
+      "140+ banks and credit unions"
+    ],
+    "ai_initiatives": [
+      {
+        "text": "AI-powered tools for branch performance optimization",
+        "type": "ai_feature"
+      }
     ],
     "tech_stack": [
-      "AWS",
       "Kubernetes",
-      "Python",
-      "React"
+      "Segment",
+      "Cloud SaaS",
+      "UKG platform"
     ],
-    "named_customers": [],
-    "recent_news": [
-      "in 2008 by James Moser, Cairn Applications develops SaaS products used by waste operators across the United States and Canada."
+    "github": {},
+    "careers": {},
+    "talent": {},
+    "news": [
+      {
+        "title": "FMSI Relaunches Brand and FMSI OneCX Platform",
+        "date": "2025-07",
+        "summary": "FMSI rebranded and launched the OneCX platform to redefine operational excellence for financial institutions, combining appointment scheduling, lobby management, staffing analytics, and scheduling.",
+        "url": "https://fmsi.com/fmsi-relaunch/"
+      }
     ],
+    "evidence": [
+      {
+        "title": "FMSI OneCX Platform Launch",
+        "content": "FMSI OneCX combines appointment scheduling, lobby management, staffing analytics, and scheduling tools into one integrated solution for banks and credit unions. Over 25 years of workforce optimization expertise.",
+        "url": "https://www.fmsi.com",
+        "source": "company_website"
+      },
+      {
+        "title": "Apple Federal Credit Union Customer Win",
+        "content": "Apple Federal Credit Union, a $2B Virginia-based credit union with 25 locations, adopted FMSI's Omnix Staff Scheduler, Omnix Interactive Dashboard, and Omnix Performance Analytics.",
+        "url": "https://www.cuinsight.com/press-release/apple-federal-credit-union-selects-fmsis-staff-scheduler-solution-to-improve-branch-efficiency",
+        "source": "press_release"
+      },
+      {
+        "title": "UKG Acquisition",
+        "content": "FMSI was acquired by Kronos (now UKG) in 2017, bringing banking-specific workforce management into the UKG ecosystem. Generates $5.3M annual revenue.",
+        "url": "https://www.fmsi.com/about/",
+        "source": "company_website"
+      }
+    ],
+    "narrative": "FMSI operates in the Banking/Credit Unions space, founded in 1990 with approximately 48 employees and $5.3M annual revenue. FMSI provides the OneCX platform combining appointment scheduling, lobby management, performance analytics, and workforce optimization for 140+ bank and credit union clients. Major customer: Apple Federal Credit Union ($2B, 25 locations). Founded by W. Michael Scott (Chairman & CEO). Acquired by Kronos/UKG in 2017. Recently relaunched brand and OneCX platform. Scored 3.31/5.0 (Tier: AI-Buildable)."
+  },
+  "Cairn Applications": {
     "executives": [
       {
         "name": "James Moser",
         "role": "Founder & President"
       }
     ],
-    "hiring_signals": [
-      "AI/ML Engineer",
-      "Data Engineer",
-      "NLP Engineer"
+    "customers": [
+      "350+ independent waste hauling companies"
     ],
-    "key_evidence": [
+    "ai_initiatives": [],
+    "tech_stack": [
+      "AWS",
+      "Kubernetes",
+      "Python",
+      "React",
+      "Cloud SaaS"
+    ],
+    "github": {},
+    "careers": {},
+    "talent": {},
+    "news": [
       {
-        "text": "Solen Software Group Acquires Cairn Applications Inc.\n\n--Solen Software Group announced the acquisition of Cairn Applications Inc, a provider of cloud software purpose-built for the waste hauling industry. The transaction closed in December 2025.",
-        "source": "businesswire.com",
+        "title": "Solen Software Group Acquires Cairn Applications",
+        "date": "2025-12",
+        "summary": "Solen acquired Cairn Applications, a provider of cloud software for the waste hauling industry. Cairn supports 350+ customers managing 65,000+ dumpsters.",
         "url": "https://www.businesswire.com/news/home/20260127219850/en/Solen-Software-Group-Acquires-Cairn-Applications-Inc."
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Box Tracker Platform",
+        "content": "Flagship product Box Tracker manages order management, logistics, billing, merchant services, asset and employee tracking, navigation, CRM, and automated customer communication for independent dumpster companies.",
+        "url": "https://trash.software",
+        "source": "company_website"
       },
       {
-        "text": "Synopsis\n\nSolen Software Group, a group of software operators and investors, completed the acquisition of Cairn Applications, a provider of cloud software purpose-built for the waste hauling industry. Financial terms were not disclosed.",
-        "source": "app.mergerlinks.com",
-        "url": "https://app.mergerlinks.com/transactions/2026-01-27-cairn-applications-inc"
+        "title": "Scale and Commerce",
+        "content": "Supports 350+ customers managing 65,000+ dumpsters, facilitating approximately $150M in annual commerce. Also offers Scale House (landfill/transfer station operations) and Route Tracker (commercial trash, curbside, port-a-potty).",
+        "url": "https://cairnapps.com",
+        "source": "company_website"
+      },
+      {
+        "title": "Acquisition by Solen",
+        "content": "Founded in 2008 by James Moser in Nashua, NH. Acquired by Solen Software Group in December 2025.",
+        "url": "https://finance.yahoo.com/news/solen-software-group-acquires-cairn-131500350.html",
+        "source": "press_release"
       }
     ],
-    "enrichment_stats": {
-      "total_results": 36,
-      "relevant_results": 33,
-      "total_text_chars": 49560,
-      "ai_initiatives_found": 0,
-      "tech_stack_signals": 5,
-      "customers_found": 0,
-      "news_events": 1,
-      "executives_found": 2,
-      "hiring_roles_detected": 3,
-      "evidence_snippets": 7
-    },
-    "narrative_summary": "Cairn Applications appears to be building AI capability \u2014 hiring signals for AI/ML Engineer, NLP Engineer detected, but no public AI product launches or features identified yet. Technical footprint: web-detected stack includes AWS, Kubernetes, Python, React. Key signals: hiring signals for AI/ML Engineer, Data Engineer, NLP Engineer; 1 recent news event.",
-    "github": {
-      "found": false
-    },
-    "careers": {
-      "found": false,
-      "reason": "no_careers_page_found"
-    },
-    "tech_stack_github_confirmed": [],
-    "talent": {
-      "found": false,
-      "total_profiles_found": 0,
-      "linkedin_profiles_discovered": 0,
-      "relevant_results": 1,
-      "total_results": 20,
-      "leadership": [],
-      "ai_ml_talent": [],
-      "senior_engineers": [],
-      "engineering_team": [],
-      "management": [],
-      "team_skills": [],
-      "talent_summary": {
-        "has_cto": false,
-        "has_vp_eng": false,
-        "has_ai_leadership": false,
-        "ai_ml_headcount": 0,
-        "eng_headcount_discovered": 0,
-        "leadership_headcount": 0,
-        "total_discovered": 0
-      }
-    },
-    "narrative": "Cairn Applications operates in the Waste Management space, founded in 2008 with approximately 10 employees. Cairn Applications develops cloud-based SaaS software for the waste hauling industry. Leadership includes James Moser (Founder & President). Technology stack includes AWS, Kubernetes, Python, React. Scored 2.86/5.0 (Tier: AI-Buildable)."
+    "narrative": "Cairn Applications operates in the Waste Management space, founded in 2008 with approximately 10 employees. Box Tracker is the flagship platform managing operations for 350+ waste hauling customers with 65,000+ dumpsters and ~$150M in annual commerce. Also offers Scale House and Route Tracker. Founded by James Moser (President). Technology stack includes AWS, Kubernetes, Python, React. Acquired by Solen in December 2025. Scored 2.86/5.0 (Tier: AI-Buildable)."
   },
   "ViaPeople": {
-    "ai_initiatives": [
-      {
-        "text": "AI Instant Insights for performance management",
-        "type": "ai_feature"
-      }
-    ],
-    "named_products": [
-      "software"
-    ],
-    "tech_stack": [],
-    "named_customers": [],
-    "recent_news": [],
     "executives": [
       {
         "name": "Jim Perry",
         "role": "Co-Founder & CEO"
       }
     ],
-    "hiring_signals": [
-      "AI/ML Engineer"
+    "customers": [
+      "Private equity firms",
+      "Investment banks",
+      "Organizations with complex compensation structures"
     ],
-    "key_evidence": [
-      {
-        "text": "viaPeople offers AI Instant Insights, a tool that helps managers synthesize multi-rater feedback into concise, actionable summaries.",
-        "source": "viapeople.com",
-        "url": "https://www.viapeople.com/blog/5-key-strategies-for-integrating-ai-into-performance-management"
-      },
-      {
-        "text": "Starwood Property Trust\n\n\u201cThroughout our partnership with viaPeople, they have provided expert guidance and have displayed a solid understanding of our culture and employee base.",
-        "source": "viapeople.com",
-        "url": "https://www.viapeople.com/clients"
-      },
-      {
-        "text": "Garin Danner\n\nVice President of Employee Benefits\n\n## \"Before viaPeople, we met with 5 other vendors, and no one was able to do the required customization we needed to automate our existing performance and development tool.",
-        "source": "viapeople.com",
-        "url": "https://www.viapeople.com/"
-      },
-      {
-        "text": "## Concierge Service Where Every Customer Is a VIP\n\nAt viaPeople, every customer receives the same VIP treatment.",
-        "source": "viapeople.com",
-        "url": "https://www.viapeople.com/approach"
-      }
-    ],
-    "enrichment_stats": {
-      "total_results": 36,
-      "relevant_results": 20,
-      "total_text_chars": 27071,
-      "ai_initiatives_found": 2,
-      "tech_stack_signals": 2,
-      "customers_found": 0,
-      "news_events": 0,
-      "executives_found": 0,
-      "hiring_roles_detected": 1,
-      "evidence_snippets": 8
-    },
-    "narrative_summary": "ViaPeople shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. No public GitHub presence or detectable tech stack \u2014 engineering practices are opaque from external research. Key signals: hiring signals for AI/ML Engineer.",
-    "github": {
-      "found": false
-    },
-    "careers": {
-      "found": false,
-      "reason": "no_careers_page_found"
-    },
-    "tech_stack_github_confirmed": [],
-    "talent": {
-      "found": false,
-      "total_profiles_found": 0,
-      "linkedin_profiles_discovered": 0,
-      "relevant_results": 8,
-      "total_results": 20,
-      "leadership": [],
-      "ai_ml_talent": [],
-      "senior_engineers": [],
-      "engineering_team": [],
-      "management": [],
-      "team_skills": [],
-      "estimated_total_employees": 50,
-      "estimated_eng_team": 17,
-      "talent_summary": {
-        "has_cto": false,
-        "has_vp_eng": false,
-        "has_ai_leadership": false,
-        "ai_ml_headcount": 0,
-        "eng_headcount_discovered": 0,
-        "leadership_headcount": 0,
-        "total_discovered": 0
-      }
-    },
-    "narrative": "ViaPeople operates in the HR Technology space, founded in 2002 with approximately 18 employees. ViaPeople provides flexible people management software including performance management, AI instant insights, 360-degree feedback, deal team feedback, succession planning, and automated promotion processes. Leadership includes Jim Perry (Co-Founder & CEO). AI signals: AI Instant Insights for performance management. Scored 2.86/5.0 (Tier: AI-Buildable)."
-  },
-  "ThingTech": {
     "ai_initiatives": [
       {
-        "text": "intelligent IIoT platform and product suite",
+        "text": "AI Instant Insights for performance management \u2014 automated analysis and recommendations",
         "type": "ai_feature"
       }
     ],
-    "named_products": [],
     "tech_stack": [],
-    "named_customers": [],
-    "recent_news": [],
+    "github": {},
+    "careers": {},
+    "talent": {},
+    "news": [
+      {
+        "title": "ViaPeople and SpiraLinks Merge",
+        "date": "2024",
+        "summary": "ViaPeople merged with SpiraLinks to deliver a full-suite HR platform connecting performance management with compensation planning for global teams.",
+        "url": "https://www.solensoftwaregroup.com/companies"
+      }
+    ],
+    "evidence": [
+      {
+        "title": "AI Instant Insights Feature",
+        "content": "ViaPeople offers AI Instant Insights as part of its performance management platform, providing automated analysis of performance data to help managers make better talent decisions.",
+        "url": "https://www.viapeople.com",
+        "source": "company_website"
+      },
+      {
+        "title": "Full-Suite HR Platform",
+        "content": "Products include performance management, 360-degree feedback, deal team feedback, succession planning, automated promotion processes, and compensation planning (via SpiraLinks merger). Serves PE firms and investment banks.",
+        "url": "https://www.viapeople.com/company",
+        "source": "company_website"
+      }
+    ],
+    "narrative": "ViaPeople operates in the HR Technology space, founded in 2002 with approximately 18 employees. ViaPeople provides flexible people management software with AI Instant Insights, 360 feedback, deal team feedback, succession planning, and automated promotions. Merged with SpiraLinks for compensation planning. Founded by Jim Perry (CEO). Serves private equity firms and investment banks with complex organizational structures. Scored 2.86/5.0 (Tier: AI-Buildable)."
+  },
+  "ThingTech": {
     "executives": [
       {
         "name": "Tim Quinn",
@@ -829,384 +454,185 @@
         "role": "Co-Founder & Chief Solution Officer"
       }
     ],
-    "hiring_signals": [
-      "AI/ML Engineer",
-      "Data Scientist"
+    "customers": [
+      "Fulton County, Georgia",
+      "State of Delaware",
+      "Berkshire Regional Transit (Massachusetts)",
+      "City of Burleson, Texas",
+      "SoldierOn"
     ],
-    "key_evidence": [
+    "ai_initiatives": [
       {
-        "text": "About ThingTech   \nThingTech provides an intelligent, scalable, end-to-end IoT platform and product suite that brings together all hardware, software, and data necessary to monitor and manage your assets in real-time, maximize asset productivity, red",
-        "source": "prweb.com",
-        "url": "http://www.prweb.com/releases/2018/06/prweb15540781.htm"
-      },
-      {
-        "text": "Founded in 2014 by Quinn and co-founder Brian Corcoran, ThingTech has developed an IoT platform that helps companies with a mobile workforce, like construction and utility firms, track, manage, and maintain their assets using GPS technology and built",
-        "source": "hypepotamus.com",
-        "url": "https://hypepotamus.com/news/thingtech-raises-4-million/"
-      },
-      {
-        "text": "By using a single, powerful connectivity management platform through KORE, ThingTech can more easily manage data and billing for its customers, without the hassle of dealing with carriers separately.",
-        "source": "korewireless.com",
-        "url": "https://www.korewireless.com/resources/case-studies/thingtech-partners-streamline-iot-offerings"
-      },
-      {
-        "text": "### Primary Industries\n\nSoftware\n\n### Contact Information\n\nHeadquarters\n\n3340 Peachtree Rd NE Ste 1505, Atlanta, Georgia, 30326, United States\n\n(800) 645-2298\n\n### Revenue\n\n$4 M\n\n### Employees\n\n17\n\n### Founded\n\n2014\n\n### Funding History\n\nThingTech ra",
-        "source": "datanyze.com",
-        "url": "https://www.datanyze.com/companies/thingtech/370074366"
-      },
-      {
-        "text": "Discover potential investors for your next round of investment.\n\n## FAQs about Thingtech\n\nThingtech was founded in 2014 and raised its 1st funding round 3 years after it was founded.\n\nThingtechis headquartered in Atlanta, United States.",
-        "source": "tracxn.com",
-        "url": "https://tracxn.com/d/companies/thingtech/__arquV_HRoiiw3P7Y4CHf6wAVWnHL5lhiM4ecRSy9tJg"
+        "text": "Intelligent IIoT platform for predictive asset management",
+        "type": "ai_feature"
       }
     ],
-    "enrichment_stats": {
-      "total_results": 36,
-      "relevant_results": 11,
-      "total_text_chars": 13263,
-      "ai_initiatives_found": 3,
-      "tech_stack_signals": 0,
-      "customers_found": 1,
-      "news_events": 0,
-      "executives_found": 5,
-      "hiring_roles_detected": 2,
-      "evidence_snippets": 8
-    },
-    "narrative_summary": "ThingTech shows moderate AI engagement with 3 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: 5 public repos (no recent activity) primarily in JavaScript, Ruby. Key signals: hiring signals for AI/ML Engineer, Data Scientist.",
-    "github": {
-      "found": true,
-      "org_login": "thingtech",
-      "org_url": "https://github.com/thingtech",
-      "total_public_repos": 5,
-      "total_stars": 0,
-      "total_forks": 0,
-      "recently_active_repos": 0,
-      "primary_languages": [
-        {
-          "language": "JavaScript",
-          "repo_count": 4
-        },
-        {
-          "language": "Ruby",
-          "repo_count": 1
-        }
-      ],
-      "top_repos": [
-        {
-          "name": "react-calendar-timeline",
-          "description": "A modern and responsive react timeline component.",
-          "language": "JavaScript",
-          "stars": 0,
-          "forks": 0,
-          "updated": "2023-01-28"
-        },
-        {
-          "name": "axios-retry",
-          "description": "Axios plugin that intercepts failed requests and retries them whenever possible",
-          "language": "JavaScript",
-          "stars": 0,
-          "forks": 0,
-          "updated": "2020-12-15"
-        },
-        {
-          "name": "react-datetime",
-          "description": "A lightweight but complete datetime picker react component.",
-          "language": "JavaScript",
-          "stars": 0,
-          "forks": 0,
-          "updated": "2020-09-17"
-        },
-        {
-          "name": "pdffiller",
-          "description": "Take an existing PDF Form and data and PDF Filler will create a new PDF with all given fields populated.",
-          "language": "JavaScript",
-          "stars": 0,
-          "forks": 0,
-          "updated": "2019-04-22"
-        },
-        {
-          "name": "oneclick",
-          "description": "Repo for the 1-Click VTCLI open-source project",
-          "language": "Ruby",
-          "stars": 0,
-          "forks": 0,
-          "updated": "2016-11-14"
-        }
-      ]
-    },
-    "careers": {
-      "found": false,
-      "reason": "no_careers_page_found"
-    },
-    "tech_stack_github_confirmed": [],
-    "talent": {
-      "found": false,
-      "total_profiles_found": 0,
-      "linkedin_profiles_discovered": 0,
-      "relevant_results": 3,
-      "total_results": 20,
-      "leadership": [],
-      "ai_ml_talent": [],
-      "senior_engineers": [],
-      "engineering_team": [],
-      "management": [],
-      "team_skills": [],
-      "estimated_total_employees": 17,
-      "estimated_eng_team": 5,
-      "talent_summary": {
-        "has_cto": false,
-        "has_vp_eng": false,
-        "has_ai_leadership": false,
-        "ai_ml_headcount": 0,
-        "eng_headcount_discovered": 0,
-        "leadership_headcount": 0,
-        "total_discovered": 0
+    "tech_stack": [
+      "Salesforce AppExchange (TracIT)",
+      "CalAmp Connect IoT platform",
+      "Cloud-based SaaS"
+    ],
+    "github": {},
+    "careers": {},
+    "talent": {},
+    "news": [
+      {
+        "title": "ThingTech acquired by Track Star",
+        "date": "2023",
+        "summary": "Track Star International acquired ThingTech to expand IoT enterprise asset management capabilities.",
+        "url": "https://thingtech.com/company/"
+      },
+      {
+        "title": "Fulton County Georgia Contract",
+        "date": "2016",
+        "summary": "ThingTech awarded Fulton County Georgia contract for real-time fleet and asset tracking and telematics.",
+        "url": "https://www.prweb.com/releases/thingtech_awarded_fulton_county_georgia_contract_for_real_time_fleet_and_asset_tracking_and_telematics/prweb13271824.htm"
       }
-    },
-    "narrative": "ThingTech operates in the IoT/Asset Management space, founded in 2014 with approximately 11 employees. ThingTech provides an IoT platform that helps companies with a mobile workforce track, manage, and maintain their assets using GPS technology. Leadership includes Tim Quinn (Co-Founder & CEO), Brian Corcoran (Co-Founder & Chief Solution Officer). AI signals: intelligent IIoT platform and product suite. Scored 2.61/5.0 (Tier: AI-Emerging)."
+    ],
+    "evidence": [
+      {
+        "title": "IoT Asset Management Platform",
+        "content": "ThingTech offers SaaS applications for Enterprise Asset Management (manageIT), Vehicle Tracking and Telematics (tracIT), and Schedule and Route Optimization (routeIT). Built on CalAmp Connect IoT platform.",
+        "url": "https://www.cioreview.com/thingtech",
+        "source": "press_release"
+      },
+      {
+        "title": "Government Customers",
+        "content": "Customers include Fulton County GA, State of Delaware, Berkshire Regional Transit MA, and City of Burleson TX. At peak had 18 employees and 30 customers with 80% acquired in 2017.",
+        "url": "https://hypepotamus.com/companies/thingtech/",
+        "source": "press_coverage"
+      },
+      {
+        "title": "Salesforce Integration",
+        "content": "ThingTech launched TracIT on the Salesforce AppExchange, the world's leading enterprise apps marketplace, enabling fleet tracking directly within Salesforce.",
+        "url": "https://www.prweb.com/releases/2016/05/prweb13380924.htm",
+        "source": "press_release"
+      }
+    ],
+    "narrative": "ThingTech operates in the IoT/Asset Management space, founded in 2014 with approximately 11 employees. ThingTech provides IoT-based enterprise asset management via manageIT, tracIT, and routeIT SaaS applications built on CalAmp Connect. Customers include Fulton County GA, State of Delaware, Berkshire Regional Transit, and City of Burleson TX. Also on Salesforce AppExchange. Co-founded by Tim Quinn (CEO) and Brian Corcoran (CSO). Raised $5.45M. Acquired by Track Star. Scored 2.61/5.0 (Tier: AI-Emerging)."
   },
   "TrackIt Transit": {
-    "ai_initiatives": [],
-    "named_products": [],
-    "tech_stack": [
-      "AWS"
-    ],
-    "named_customers": [],
-    "recent_news": [],
     "executives": [
       {
         "name": "Mark Anderson",
         "role": "Founder & President"
       }
     ],
-    "hiring_signals": [
-      "AI/ML Engineer",
-      "Data Scientist",
-      "AI Product Manager",
-      "DevOps/SRE"
+    "customers": [
+      "100+ public transit locations"
     ],
-    "key_evidence": [
+    "ai_initiatives": [],
+    "tech_stack": [
+      "AWS",
+      "Cloud SaaS"
+    ],
+    "github": {},
+    "careers": {},
+    "talent": {},
+    "news": [
       {
-        "text": "Skip to content\n\nTrackit Transit\n\nContact Sales\n\nTrackit Transit\n\n# Blog / News\n\nTrackit is transit-specific SaaS software that enables your agency to work together.",
-        "source": "trackittransit.com",
-        "url": "https://trackittransit.com/blog/"
+        "title": "Solen Software Group Acquires Trackit LLC",
+        "date": "2026-02",
+        "summary": "Solen acquired Trackit LLC, a transit-specific SaaS provider supporting 100+ transit locations. Founded by Mark Anderson in 2013.",
+        "url": "https://finance.yahoo.com/news/solen-software-group-acquires-trackit-140000457.html"
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Transit-Specific SaaS",
+        "content": "TrackIt provides a configurable, paperless system for public transit agencies \u2014 replacing paper-based workflows with searchable digital records to reduce manual reporting, eliminate duplicate data entry, and stay audit-ready.",
+        "url": "https://trackittransit.com",
+        "source": "company_website"
       },
       {
-        "text": "Following the acquisition, Trackit Transit will continue operating autonomously while benefiting from Solen\u2019s long-term ownership model.",
-        "source": "pulse2.com",
-        "url": "https://pulse2.com/solen-acquires-transit-software-provider-trackit/"
+        "title": "Scale and Impact",
+        "content": "Supports over 100 transit locations nationwide. Enables data entered once to be shared across departments with permissions-based access, breaking down information silos.",
+        "url": "https://trackittransit.com/applications/",
+        "source": "company_website"
       }
     ],
-    "enrichment_stats": {
-      "total_results": 36,
-      "relevant_results": 25,
-      "total_text_chars": 36527,
-      "ai_initiatives_found": 0,
-      "tech_stack_signals": 2,
-      "customers_found": 0,
-      "news_events": 0,
-      "executives_found": 3,
-      "hiring_roles_detected": 4,
-      "evidence_snippets": 7
-    },
-    "narrative_summary": "TrackIt Transit appears to be building AI capability \u2014 hiring signals for AI/ML Engineer, Data Scientist detected, but no public AI product launches or features identified yet. Technical footprint: web-detected stack includes AWS. Key signals: broad technical hiring across 4 role categories.",
-    "github": {
-      "found": false
-    },
-    "careers": {
-      "found": false,
-      "reason": "no_careers_page_found"
-    },
-    "tech_stack_github_confirmed": [],
-    "talent": {
-      "found": false,
-      "total_profiles_found": 0,
-      "linkedin_profiles_discovered": 0,
-      "relevant_results": 1,
-      "total_results": 20,
-      "leadership": [],
-      "ai_ml_talent": [],
-      "senior_engineers": [],
-      "engineering_team": [],
-      "management": [],
-      "team_skills": [],
-      "estimated_total_employees": 200,
-      "estimated_eng_team": 70,
-      "talent_summary": {
-        "has_cto": false,
-        "has_vp_eng": false,
-        "has_ai_leadership": false,
-        "ai_ml_headcount": 0,
-        "eng_headcount_discovered": 0,
-        "leadership_headcount": 0,
-        "total_discovered": 0
-      }
-    },
-    "narrative": "TrackIt Transit operates in the Public Transit space, founded in 2013 with approximately 15 employees. TrackIt provides transit-specific, cloud-based SaaS software for public transit agencies. Leadership includes Mark Anderson (Founder & President). Technology stack includes AWS. Scored 2.42/5.0 (Tier: AI-Emerging)."
+    "narrative": "TrackIt Transit operates in the Public Transit space, founded in 2013 with approximately 15 employees. TrackIt provides transit-specific cloud SaaS enabling paperless workflows and inter-departmental collaboration for 100+ transit locations. Replaces paper-based processes with searchable digital records for compliance, maintenance, and operational reporting. Founded by Mark Anderson (President). Acquired by Solen in February 2026. Scored 2.42/5.0 (Tier: AI-Emerging)."
   },
   "NexTalk": {
-    "ai_initiatives": [],
-    "named_products": [
-      "provides communication"
-    ],
-    "tech_stack": [
-      "AWS"
-    ],
-    "named_customers": [],
-    "recent_news": [],
     "executives": [
       {
         "name": "Scott Cummings",
         "role": "Chief Executive Officer"
       }
     ],
-    "hiring_signals": [
-      "AI/ML Engineer",
-      "Data Scientist"
+    "customers": [
+      "200+ companies across US and Canada"
     ],
-    "key_evidence": [
+    "ai_initiatives": [],
+    "tech_stack": [
+      "AWS",
+      "Patented software-based communication"
+    ],
+    "github": {},
+    "careers": {},
+    "talent": {},
+    "news": [
       {
-        "text": "### Testimonials\n\n## What Our  Customers Are  Saying\n\n\u201cAccess Remote Interpreting from NexTalk has allowed us to communicate directly with all of our patients. We no longer need to schedule and wait for an in-person interpreter.",
-        "source": "nextalk.com",
-        "url": "https://www.nextalk.com/"
-      },
-      {
-        "text": "#CCaaS #TTY #CustomerExperience #ADACompliance #AccessibleCommunication [Likes: 11, Comments: 1]; NexTalk (1mo): Wishing you a joyful holiday season and a bright start to the new year! Thank you for being part of our community and for supporting our ",
-        "source": "linkedin.com",
-        "url": "https://www.linkedin.com/company/nextalk"
+        "title": "NexTalk available on AWS Marketplace",
+        "date": "2024",
+        "summary": "NexTalk's ADA-compliant communication solutions are now available through the AWS Marketplace.",
+        "url": "https://blog.nextalk.com/aws-marketplace"
       }
     ],
-    "enrichment_stats": {
-      "total_results": 36,
-      "relevant_results": 20,
-      "total_text_chars": 26727,
-      "ai_initiatives_found": 2,
-      "tech_stack_signals": 1,
-      "customers_found": 0,
-      "news_events": 0,
-      "executives_found": 1,
-      "hiring_roles_detected": 2,
-      "evidence_snippets": 8
-    },
-    "narrative_summary": "NexTalk shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: web-detected stack includes AWS. Key signals: 3 open positions.",
-    "github": {
-      "found": false
-    },
-    "careers": {
-      "found": true,
-      "careers_url": "https://nextalk.com/careers",
-      "total_openings": 3,
-      "ai_ml_openings": 0,
-      "departments": {
-        "Engineering": 2,
-        "Marketing": 1
+    "evidence": [
+      {
+        "title": "ADA-Compliant Communication Platform",
+        "content": "NexTalk provides patented software-based solutions for deaf and hard-of-hearing communication. Products include Access Contact Center (call management), remote interpreting, SpeechPath (speech-to-text), and TTY call management.",
+        "url": "https://www.nextalk.com",
+        "source": "company_website"
       },
-      "sample_roles": [
-        "Solutions",
-        "Marketing"
-      ],
-      "ai_roles": []
-    },
-    "tech_stack_github_confirmed": [],
-    "talent": {
-      "found": false,
-      "total_profiles_found": 0,
-      "linkedin_profiles_discovered": 0,
-      "relevant_results": 15,
-      "total_results": 20,
-      "leadership": [],
-      "ai_ml_talent": [],
-      "senior_engineers": [],
-      "engineering_team": [],
-      "management": [],
-      "team_skills": [],
-      "estimated_total_employees": 50,
-      "estimated_eng_team": 17,
-      "talent_summary": {
-        "has_cto": false,
-        "has_vp_eng": false,
-        "has_ai_leadership": false,
-        "ai_ml_headcount": 0,
-        "eng_headcount_discovered": 0,
-        "leadership_headcount": 0,
-        "total_discovered": 0
+      {
+        "title": "Enterprise Trust",
+        "content": "Over 200 companies trust NexTalk for ADA-compliant communication tools. CEO Scott Cummings (ex-SAP) focuses on delivering accessibility to enterprise corporations, government entities, and SMEs.",
+        "url": "https://www.nextalk.com/about-us/",
+        "source": "company_website"
       }
-    },
-    "narrative": "NexTalk operates in the Accessibility/Communication space, founded in 2008 with approximately 9 employees. NexTalk provides secure, ADA-compliant communication software for deaf and hard-of-hearing individuals. Leadership includes Scott Cummings (Chief Executive Officer). Technology stack includes AWS. Scored 2.31/5.0 (Tier: AI-Emerging)."
+    ],
+    "narrative": "NexTalk operates in the Accessibility/Communication space, founded in 2008 with approximately 9 employees. NexTalk provides patented ADA-compliant communication software trusted by 200+ companies. Products include Access Contact Center, remote interpreting, SpeechPath (speech-to-text), and TTY management. Available on AWS Marketplace. CEO Scott Cummings (ex-SAP) leads the company from Utah. Scored 2.31/5.0 (Tier: AI-Emerging)."
   },
   "Dash": {
-    "ai_initiatives": [],
-    "named_products": [],
-    "tech_stack": [],
-    "named_customers": [],
-    "recent_news": [
-      "In May, DASH announced a strategic partnership with global alternatives fintech firm S64 to enhance private market investment accessibility for Austra",
-      "In November, DASH enacted two internal promotions with Terri Ho, formerly the head of adviser solutions, stepping up to the chief risk officer role an",
-      "DASH announced a strategic partnership with global alternatives fintech firm S64 to enhance private market investment accessibility for Australian fin"
-    ],
     "executives": [
       {
         "name": "James Van Hecke",
         "role": "President & CEO"
       }
     ],
-    "hiring_signals": [
-      "AI/ML Engineer",
-      "Data Scientist",
-      "NLP Engineer",
-      "MLOps",
-      "DevOps/SRE",
-      "Backend Engineer"
+    "customers": [
+      "Manufacturing enterprises",
+      "Distribution companies"
     ],
-    "key_evidence": [
+    "ai_initiatives": [],
+    "tech_stack": [],
+    "github": {},
+    "careers": {},
+    "talent": {},
+    "news": [
       {
-        "text": "Analysis\n\nThis announcement positions DASH 2026, held on June 9\u201310, 2026 in New York, as Datadog\u2019s flagship platform event for AI observability and security.",
-        "source": "stocktitan.net",
-        "url": "https://www.stocktitan.net/news/DDOG/datadog-announces-dash-2026-the-ai-and-observability-event-of-the-ay0k298r6kjz.html"
-      },
-      {
-        "text": "[addthis tool=\"addthis\\_inline\\_share\\_toolbox\\_hpry\"]\n\nNew York, June 09, 2021 (GLOBE NEWSWIRE) \u2014 DASH Financial Technologies (\u201cDASH\u201d), the leading U.S.",
-        "source": "dashfinancial.com",
-        "url": "https://dashfinancial.com/media/dash-expands-product-suite-risk-allocation/"
-      },
-      {
-        "text": "Get Access\n\nClose\n\nCASE STUDY\n\n# Client Success Story: Dash Solutions Leverages Technology to Evolve Into A Fintech Powerhouse\n\nDash Solutions used thinkbridge to 10x client capacity, 3x growth, and launch products 8x faster\u2014transforming into a true ",
-        "source": "thinkbridge.com",
-        "url": "https://www.thinkbridge.com/case-studies/client-success-story-dash-solutions-leverages-technology-to-evolve-into-a-fintech-powerhouse"
+        "title": "DASH and S4i Merge to Form SMRTR",
+        "date": "2025-07-01",
+        "summary": "Dash merged with S4i Systems to form SMRTR, combining 20+ years of AP automation expertise with compliance solutions for manufacturing and food & beverage.",
+        "url": "https://smrtrsolutions.com/2025/06/27/dash-and-s4i-complete-merger-form-smrtr/"
       }
     ],
-    "enrichment_stats": {
-      "total_results": 36,
-      "relevant_results": 34,
-      "total_text_chars": 51255,
-      "ai_initiatives_found": 6,
-      "tech_stack_signals": 8,
-      "customers_found": 1,
-      "news_events": 3,
-      "executives_found": 5,
-      "hiring_roles_detected": 6,
-      "evidence_snippets": 8
-    },
-    "narrative_summary": "Dash shows moderate AI engagement with 6 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: web-detected stack includes Python, React, AWS, Kubernetes. Key signals: ~200 employees (~70 engineering est.); identified tech leadership (CTO); broad technical hiring across 6 role categories; 3 recent news events.",
-    "github": {
-      "found": false
-    },
-    "careers": {
-      "found": false,
-      "reason": "no_careers_page_found"
-    },
-    "tech_stack_github_confirmed": [],
-    "talent": {
-      "found": true,
-      "total_profiles_found": 2,
-      "linkedin_profiles_discovered": 5,
-      "relevant_results": 15,
-      "total_results": 20,
-      "team_skills": [],
-      "estimated_total_employees": 200,
-      "estimated_eng_team": 70,
-      "talent_summary": {}
-    },
-    "narrative": "Dash operates in the Manufacturing/Distribution space, founded in 1998 with approximately 15 employees. Dash provided ERP-integrated document management and accounts payable automation software (DASH DDX) for manufacturing and distribution enterprises worldwide for over 20 years. Leadership includes James Van Hecke (President & CEO). Scored 1.97/5.0 (Tier: AI-Limited)."
+    "evidence": [
+      {
+        "title": "AP Automation Legacy",
+        "content": "Dash provided ERP-integrated document management and accounts payable automation software (DASH DDX) for manufacturing and distribution enterprises worldwide for over 20 years. Joined Solen portfolio in 2024.",
+        "url": "https://dashdev.com",
+        "source": "company_website"
+      },
+      {
+        "title": "Merger into SMRTR",
+        "content": "In July 2025, Dash merged with S4i Systems to form SMRTR, combining AP automation with food safety compliance, supplier onboarding, and regulatory management under CEO Susanne Moore.",
+        "url": "https://industrytoday.com/dash-and-s4i-complete-merger-form-smrtr/",
+        "source": "press_release"
+      }
+    ],
+    "narrative": "Dash operates in the Manufacturing/Distribution space, founded in 1998 with approximately 15 employees. Dash provided DASH DDX for ERP-integrated document management and AP automation for manufacturing and distribution enterprises for 20+ years. In July 2025, Dash merged with S4i Systems to form SMRTR under CEO Susanne Moore, combining AP automation with compliance solutions for food & beverage and manufacturing. Scored 1.97/5.0 (Tier: AI-Limited)."
   }
 }

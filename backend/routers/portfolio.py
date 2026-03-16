@@ -2,7 +2,7 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from database import get_db
-from models.company import Company, CompanyScore, Benchmark
+from models.company import Company, CompanyScore, Benchmark, PortfolioEvidence
 
 router = APIRouter(prefix="/api", tags=["portfolio"])
 
@@ -98,6 +98,33 @@ async def get_wave_sequencing(db: Session = Depends(get_db)):
         })
 
     return waves
+
+
+@router.get("/portfolio_evidence")
+async def get_portfolio_evidence(db: Session = Depends(get_db)):
+    """Returns evidence data for all portfolio companies — matches portfolio_evidence.json shape"""
+    rows = (
+        db.query(Company, PortfolioEvidence)
+        .join(PortfolioEvidence, Company.id == PortfolioEvidence.company_id)
+        .filter(Company.is_portfolio == True)
+        .all()
+    )
+
+    result = {}
+    for company, ev in rows:
+        result[company.name] = {
+            "executives": ev.executives or [],
+            "customers": ev.customers or [],
+            "ai_initiatives": ev.ai_initiatives or [],
+            "tech_stack": ev.tech_stack or [],
+            "github": ev.github or {},
+            "careers": ev.careers or {},
+            "talent": ev.talent or {},
+            "news": ev.news or [],
+            "evidence": ev.evidence or [],
+            "narrative": ev.narrative or "",
+        }
+    return result
 
 
 @router.get("/tier_distribution")
