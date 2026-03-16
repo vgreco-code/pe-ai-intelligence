@@ -8,7 +8,7 @@
     "founded_year": 1998,
     "composite_score": 3.14,
     "tier": "AI-Buildable",
-    "wave": 2,
+    "wave": 1,
     "pillar_scores": {
       "data_quality": 2.8,
       "data_integration": 2.8,
@@ -54,7 +54,7 @@
     "founded_year": 2000,
     "composite_score": 3.05,
     "tier": "AI-Buildable",
-    "wave": 2,
+    "wave": 1,
     "pillar_scores": {
       "data_quality": 2.62,
       "data_integration": 3.2,
@@ -100,7 +100,7 @@
     "founded_year": 2008,
     "composite_score": 3.05,
     "tier": "AI-Buildable",
-    "wave": 2,
+    "wave": 1,
     "pillar_scores": {
       "data_quality": 2.8,
       "data_integration": 2.5,
@@ -146,7 +146,7 @@
     "founded_year": 2025,
     "composite_score": 3.03,
     "tier": "AI-Buildable",
-    "wave": 2,
+    "wave": 1,
     "pillar_scores": {
       "data_quality": 3.4,
       "data_integration": 2.94,
@@ -192,7 +192,7 @@
     "founded_year": 1985,
     "composite_score": 3.02,
     "tier": "AI-Buildable",
-    "wave": 2,
+    "wave": 1,
     "pillar_scores": {
       "data_quality": 3.57,
       "data_integration": 3.71,
@@ -514,7 +514,7 @@
     "founded_year": 2008,
     "composite_score": 2.51,
     "tier": "AI-Emerging",
-    "wave": 2,
+    "wave": 3,
     "pillar_scores": {
       "data_quality": 2.7,
       "data_integration": 2.71,

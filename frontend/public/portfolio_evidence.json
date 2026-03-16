@@ -1,200 +1,493 @@
 {
   "AutoTime": {
     "executives": [
-      { "name": "Chris Thomas", "role": "Chief Executive Officer" }
+      {
+        "name": "Chris Thomas",
+        "role": "Chief Executive Officer"
+      }
     ],
     "ai_initiatives": [
-      { "text": "DCAA-compliant automated time allocation engine — uses rule-based logic to distribute labor hours across contracts, reducing audit exceptions by automating complex A&D timekeeping rules", "type": "ai_feature" }
+      {
+        "text": "DCAA-compliant automated time allocation engine \u2014 uses rule-based logic to distribute labor hours across contracts, reducing audit exceptions by automating complex A&D timekeeping rules",
+        "type": "ai_feature"
+      }
     ],
     "tech_stack": [
-      "SAP Integration", "Cloud-hosted SaaS", "REST API", "SSO/SAML", "SQL Server", "Mobile-responsive web app"
+      "SAP Integration",
+      "Cloud-hosted SaaS",
+      "REST API",
+      "SSO/SAML",
+      "SQL Server",
+      "Mobile-responsive web app"
     ],
     "github": {},
     "careers": {
       "ai_roles": 0,
       "total_roles": 3,
-      "titles": ["Lead Software Engineer", "Engineering Leader", "Customer Success Manager"]
+      "titles": [
+        "Lead Software Engineer",
+        "Engineering Leader",
+        "Customer Success Manager"
+      ]
     },
     "talent": {
       "found": true,
       "leadership": [
-        { "name": "Chris Thomas", "role": "CEO — ex-UKG A&D division, drove 119% bookings growth" }
+        {
+          "name": "Chris Thomas",
+          "role": "CEO \u2014 ex-UKG A&D division, drove 119% bookings growth"
+        }
       ],
-      "team_skills": ["DCAA compliance", "A&D timekeeping", "SAP integration", "Cloud migration", "Enterprise SaaS"]
+      "team_skills": [
+        "DCAA compliance",
+        "A&D timekeeping",
+        "SAP integration",
+        "Cloud migration",
+        "Enterprise SaaS"
+      ]
     },
     "named_customers": [
-      "Lockheed Martin", "General Dynamics", "Collins Aerospace", "Rolls-Royce Holdings", "L3Harris Technologies"
+      "Lockheed Martin",
+      "General Dynamics",
+      "Collins Aerospace",
+      "Rolls-Royce Holdings",
+      "L3Harris Technologies"
     ],
     "recent_news": [
-      { "title": "Solen Software Group acquires AutoTime", "date": "2025-02", "summary": "AutoTime joins Solen portfolio, continuing 20+ year focus on DCAA-compliant time and labor tracking for A&D contractors.", "url": "https://www.solensoftwaregroup.com/companies" }
+      {
+        "title": "Solen Software Group acquires AutoTime",
+        "date": "2025-02",
+        "summary": "AutoTime joins Solen portfolio, continuing 20+ year focus on DCAA-compliant time and labor tracking for A&D contractors.",
+        "url": "https://www.solensoftwaregroup.com/companies"
+      }
     ],
-    "hiring_signals": ["Lead Software Engineer", "Engineering Leader", "Customer Success Manager"],
+    "hiring_signals": [
+      "Lead Software Engineer",
+      "Engineering Leader",
+      "Customer Success Manager"
+    ],
     "key_evidence": [
-      { "title": "DCAA Compliance Leadership", "url": "https://www.autotimesoftware.com", "source": "company_website", "text": "AutoTime is the leading time and labor tracking solution purpose-built for A&D. Customers include top defense contractors using it for DCAA audit compliance, complex labor tracking, and payroll accuracy. Modules include TTA (Time and Task Allocation) for automated labor distribution across contracts." },
-      { "title": "CEO Track Record", "url": "https://www.linkedin.com/in/christhomas3/", "source": "linkedin", "text": "CEO Chris Thomas previously managed an A&D acquisition at UKG driving 119% bookings growth and nearly doubling EBITDA in the first year, overseeing $11M annual revenue. Deep domain expertise in defense contractor workforce management." },
-      { "title": "Defense Contractor Customer Base", "url": "https://www.autotimesoftware.com", "source": "company_website", "text": "AutoTime's customer roster includes the top 5 U.S. defense prime contractors. The platform handles complex labor distribution requirements unique to government contracting — DCAA audit trail, contract-level time allocation, and multi-rate payroll calculations." },
-      { "title": "20+ Year Market Tenure", "url": "https://www.solensoftwaregroup.com/companies", "source": "solen_website", "text": "Founded in 2003, AutoTime has served the A&D industry for over 20 years. The long tenure demonstrates deep domain lock-in and high switching costs — critical for PE investment thesis around sticky, mission-critical vertical SaaS." }
+      {
+        "title": "DCAA Compliance Leadership",
+        "url": "https://www.autotimesoftware.com",
+        "source": "company_website",
+        "text": "AutoTime is the leading time and labor tracking solution purpose-built for A&D. Customers include top defense contractors using it for DCAA audit compliance, complex labor tracking, and payroll accuracy. Modules include TTA (Time and Task Allocation) for automated labor distribution across contracts."
+      },
+      {
+        "title": "CEO Track Record",
+        "url": "https://www.linkedin.com/in/christhomas3/",
+        "source": "linkedin",
+        "text": "CEO Chris Thomas previously managed an A&D acquisition at UKG driving 119% bookings growth and nearly doubling EBITDA in the first year, overseeing $11M annual revenue. Deep domain expertise in defense contractor workforce management."
+      },
+      {
+        "title": "Defense Contractor Customer Base",
+        "url": "https://www.autotimesoftware.com",
+        "source": "company_website",
+        "text": "AutoTime's customer roster includes the top 5 U.S. defense prime contractors. The platform handles complex labor distribution requirements unique to government contracting \u2014 DCAA audit trail, contract-level time allocation, and multi-rate payroll calculations."
+      },
+      {
+        "title": "20+ Year Market Tenure",
+        "url": "https://www.solensoftwaregroup.com/companies",
+        "source": "solen_website",
+        "text": "Founded in 2003, AutoTime has served the A&D industry for over 20 years. The long tenure demonstrates deep domain lock-in and high switching costs \u2014 critical for PE investment thesis around sticky, mission-critical vertical SaaS."
+      }
     ],
-    "narrative_summary": "AutoTime is a 20+ year market leader in DCAA-compliant time and labor tracking for the Aerospace & Defense industry. The platform serves elite defense primes including Lockheed Martin, General Dynamics, Collins Aerospace, Rolls-Royce, and L3Harris — with complex labor distribution across government contracts, audit-ready timekeeping, and multi-rate payroll. CEO Chris Thomas brings proven PE execution, having driven 119% bookings growth at UKG's A&D division. AutoTime was acquired by Solen in February 2025. The company is actively hiring software engineering leadership, signaling a product modernization push. Core tech includes SAP integration, cloud-hosted SaaS, and REST APIs. Scored 3.94/5.0 (Tier: AI-Ready)."
+    "narrative_summary": "AutoTime is a 20+ year market leader in DCAA-compliant time and labor tracking for the Aerospace & Defense industry. The platform serves elite defense primes including Lockheed Martin, General Dynamics, Collins Aerospace, Rolls-Royce, and L3Harris \u2014 with complex labor distribution across government contracts, audit-ready timekeeping, and multi-rate payroll. CEO Chris Thomas brings proven PE execution, having driven 119% bookings growth at UKG's A&D division. AutoTime was acquired by Solen in February 2025. The company is actively hiring software engineering leadership, signaling a product modernization push. Core tech includes SAP integration, cloud-hosted SaaS, and REST APIs."
   },
   "Spokane": {
     "executives": [
-      { "name": "Tim Smith", "role": "President" }
+      {
+        "name": "Tim Smith",
+        "role": "President"
+      }
     ],
     "ai_initiatives": [],
     "tech_stack": [
-      "IBM Power Systems (AS/400)", "RPG programming language", "DB2 database", "Web-based reporting modules"
+      "IBM Power Systems (AS/400)",
+      "RPG programming language",
+      "DB2 database",
+      "Web-based reporting modules"
     ],
     "github": {},
     "careers": {},
     "talent": {
       "found": true,
       "leadership": [
-        { "name": "Tim Smith", "role": "President — 37+ years leading agricultural ERP development" }
+        {
+          "name": "Tim Smith",
+          "role": "President \u2014 37+ years leading agricultural ERP development"
+        }
       ],
-      "team_skills": ["Agricultural ERP", "IBM AS/400", "RPG", "Produce traceability", "Supply chain"]
+      "team_skills": [
+        "Agricultural ERP",
+        "IBM AS/400",
+        "RPG",
+        "Produce traceability",
+        "Supply chain"
+      ]
     },
     "named_customers": [
-      "Sun Pacific (major citrus grower/shipper)"
+      "Sun Pacific (major citrus grower/shipper, $100M revenue, 480 employees)",
+      "US citrus growers representing 64% of orange production",
+      "US lemon growers representing 80% of lemon production"
     ],
     "recent_news": [],
     "hiring_signals": [],
     "key_evidence": [
-      { "title": "Agricultural ERP Market Dominance", "url": "https://sssonline.com", "source": "company_website", "text": "Spokane Software Systems produces the leading agricultural ERP system for growers, packers, and shippers throughout the U.S. for over 37 years. 64% of US orange varieties and 80% of US lemon varieties flow through the Spokane System — extraordinary market penetration for a 9-person company." },
-      { "title": "PTI/GTIN Compliance Module", "url": "https://sssonline.com", "source": "company_website", "text": "PackPoint module addresses Produce Traceability Initiative (PTI) and Global Trade Item Number (GTIN) requirements. Critical for produce industry regulatory compliance and food safety traceability mandates." },
-      { "title": "Sun Pacific Customer Reference", "url": "https://sssonline.com", "source": "company_website", "text": "Sun Pacific, one of the largest citrus growers and shippers in the United States, uses the Spokane System for its packing operations and grower accounting." },
-      { "title": "Full-Suite Agricultural Operations", "url": "https://sssonline.com", "source": "company_website", "text": "Modules include packing house operations, shipping and logistics, grower accounting, field labor tracking, grove management, and regulatory compliance. Deep vertical integration covering the entire citrus supply chain from grove to retail." }
+      {
+        "title": "Agricultural ERP Market Dominance",
+        "url": "https://sssonline.com",
+        "source": "company_website",
+        "text": "Spokane Software Systems produces the leading agricultural ERP system for growers, packers, and shippers throughout the U.S. for over 37 years. 64% of US orange varieties and 80% of US lemon varieties flow through the Spokane System \u2014 extraordinary market penetration for a 9-person company."
+      },
+      {
+        "title": "PTI/GTIN Compliance Module",
+        "url": "https://sssonline.com",
+        "source": "company_website",
+        "text": "PackPoint module addresses Produce Traceability Initiative (PTI) and Global Trade Item Number (GTIN) requirements. Critical for produce industry regulatory compliance and food safety traceability mandates."
+      },
+      {
+        "title": "Sun Pacific Customer Reference",
+        "url": "https://sssonline.com",
+        "source": "company_website",
+        "text": "Sun Pacific, one of the largest citrus growers and shippers in the United States, uses the Spokane System for its packing operations and grower accounting."
+      },
+      {
+        "title": "Full-Suite Agricultural Operations",
+        "url": "https://sssonline.com",
+        "source": "company_website",
+        "text": "Modules include packing house operations, shipping and logistics, grower accounting, field labor tracking, grove management, and regulatory compliance. Deep vertical integration covering the entire citrus supply chain from grove to retail."
+      },
+      {
+        "title": "IBM Power Systems Architecture",
+        "url": "https://sssonline.com",
+        "source": "company_website",
+        "text": "Platform-independent clients built on IBM Power Systems technology for reliability, performance, and ease of use. Core ERP runs on AS/400 with RPG programming and DB2 database \u2014 legacy architecture but proven for 37+ years of continuous agricultural operations."
+      }
     ],
-    "narrative_summary": "Spokane Software Systems is the dominant ERP platform for the U.S. citrus industry with extraordinary market penetration — 64% of US orange varieties and 80% of US lemon varieties flow through the Spokane System. The 37-year-old platform runs on IBM Power Systems (AS/400) with RPG programming, serving growers, packers, and shippers with modules spanning packing operations, shipping logistics, grower accounting, field labor, grove management, and PTI/GTIN compliance. Led by President Tim Smith. Key customer: Sun Pacific (major US citrus grower/shipper). The legacy technology stack presents a significant modernization opportunity. Scored 3.92/5.0 (Tier: AI-Ready)."
+    "narrative_summary": "Spokane Software Systems is the dominant ERP platform for the U.S. citrus industry with extraordinary market penetration \u2014 64% of US orange varieties and 80% of US lemon varieties flow through the Spokane System. Founded 37+ years ago, the platform runs on IBM Power Systems (AS/400) with RPG and DB2 \u2014 legacy technology but proven. Key customer Sun Pacific ($100M revenue, 480 employees) is one of the largest citrus growers in the US. PackPoint module addresses PTI and GTIN compliance for produce traceability. Full-suite includes packing house operations, shipping/logistics, grower accounting, and payroll. The extreme market dominance (product_differentiation 4.20) represents the strongest competitive moat in the Solen portfolio, but the AS/400 architecture means significant modernization investment would be needed before AI features are feasible."
   },
   "Thought Foundry": {
     "executives": [
-      { "name": "Timur Insepov", "role": "Founder & CEO" }
+      {
+        "name": "Timur Insepov",
+        "role": "Founder & CEO"
+      }
     ],
     "ai_initiatives": [
-      { "text": "Data-driven exchange platform-as-a-service — builds intelligent content entitlement and distribution systems for entertainment companies", "type": "ai_feature" }
+      {
+        "text": "Data-driven exchange platform-as-a-service \u2014 builds intelligent content entitlement and distribution systems for entertainment companies",
+        "type": "ai_feature"
+      }
     ],
     "tech_stack": [
-      "Cloud-native platform", "API-first architecture", "Content management systems", "Digital rights management"
+      "Cloud-native platform",
+      "API-first architecture",
+      "Content management systems",
+      "Digital rights management"
     ],
     "github": {},
     "careers": {},
     "talent": {
       "found": true,
       "leadership": [
-        { "name": "Timur Insepov", "role": "Founder & CEO — design + technology background" }
+        {
+          "name": "Timur Insepov",
+          "role": "Founder & CEO \u2014 design + technology background"
+        }
       ],
-      "team_skills": ["Digital content management", "Entertainment tech", "Platform engineering", "API design"]
+      "team_skills": [
+        "Digital content management",
+        "Entertainment tech",
+        "Platform engineering",
+        "API design"
+      ]
     },
     "named_customers": [],
     "recent_news": [],
     "hiring_signals": [],
     "key_evidence": [
-      { "title": "Digital Content Entitlements Platform", "url": "https://thoughtfoundry.com", "source": "company_website", "text": "Thought Foundry builds data-driven exchange platform-as-a-service solutions for entertainment companies to manage digital content entitlements. Headquartered in Culver City, Los Angeles — embedded in the entertainment industry hub." },
-      { "title": "Solen Portfolio Company", "url": "https://www.solensoftwaregroup.com/companies", "source": "solen_website", "text": "Thought Foundry is part of Solen Software Group's portfolio of mission-critical vertical SaaS companies. Founded in 2012, the company specializes in building digital content platforms for the entertainment industry." }
+      {
+        "title": "Digital Content Entitlements Platform",
+        "url": "https://thoughtfoundry.com",
+        "source": "company_website",
+        "text": "Thought Foundry builds data-driven exchange platform-as-a-service solutions for entertainment companies to manage digital content entitlements. Headquartered in Culver City, Los Angeles \u2014 embedded in the entertainment industry hub."
+      },
+      {
+        "title": "Solen Portfolio Company",
+        "url": "https://www.solensoftwaregroup.com/companies",
+        "source": "solen_website",
+        "text": "Thought Foundry joined Solen Software Group. Founder Timur Insepov stated: 'Joining forces with Solen marks an exciting new chapter for Thought Foundry. Their expertise in scaling software businesses and commitment to preserving culture make them ideal.'"
+      },
+      {
+        "title": "Limited Public Presence",
+        "url": "https://thoughtfoundry.com",
+        "source": "analyst_note",
+        "text": "NOTE: Thought Foundry has minimal public web presence \u2014 website contains only navigation and tagline. No customer references, case studies, product details, or technology specifications publicly available. Company profile data sourced primarily from Solen portfolio page and D&B/LinkedIn listings."
+      }
     ],
-    "narrative_summary": "Thought Foundry builds data-driven exchange platform-as-a-service solutions for entertainment companies to manage digital content entitlements. Founded in 2012 by Timur Insepov and headquartered in Culver City, Los Angeles — embedded in the heart of the entertainment industry. The company operates with approximately 8 employees and is part of the Solen Software Group portfolio. The entertainment tech niche and content entitlements focus presents opportunities for AI-powered content recommendation, rights management automation, and distribution optimization. Scored 3.86/5.0 (Tier: AI-Ready)."
+    "narrative_summary": "Thought Foundry builds data-driven exchange platform-as-a-service solutions for entertainment companies to manage digital content entitlements. Founded in 2012 by Timur Insepov, headquartered in Culver City, Los Angeles \u2014 embedded in the entertainment industry hub. The company joined Solen Software Group as part of its vertical SaaS portfolio. IMPORTANT CAVEAT: Thought Foundry has minimal public web presence. No customer references, case studies, product screenshots, or technology details are publicly available. All scoring is based on the company description and Solen's characterization. This is the least-verifiable company in the portfolio and scores should be treated with appropriate uncertainty."
   },
   "Champ": {
     "executives": [
-      { "name": "Scott Dunnewind", "role": "Owner & CEO (since 2021)" },
-      { "name": "David Rosebaugh", "role": "Founder (1985)" }
+      {
+        "name": "Scott Dunnewind",
+        "role": "Owner & CEO (since 2021)"
+      },
+      {
+        "name": "David Rosebaugh",
+        "role": "Founder (1985)"
+      }
     ],
     "ai_initiatives": [
-      { "text": "Omaha System taxonomy-based evidence analytics — structured data collection enables population health trend analysis across 145+ public health agencies", "type": "ml_capability" }
+      {
+        "text": "Omaha System taxonomy-based evidence analytics \u2014 structured data collection enables population health trend analysis across 145+ public health agencies",
+        "type": "ml_capability"
+      }
     ],
     "tech_stack": [
-      "AWS (cloud hosting)", "HIPAA-compliant SaaS", "Omaha System taxonomy", "Secure Exchange Solutions (Direct messaging)", "SQL database", "HL7/FHIR integration capable"
+      "AWS (cloud hosting)",
+      "HIPAA-compliant SaaS",
+      "Omaha System taxonomy",
+      "Secure Exchange Solutions (Direct messaging)",
+      "SQL database",
+      "HL7/FHIR integration capable"
     ],
     "github": {},
     "careers": {},
     "talent": {
       "found": true,
       "leadership": [
-        { "name": "Scott Dunnewind", "role": "CEO — acquired ownership in 2021" },
-        { "name": "David Rosebaugh", "role": "Founder — built Nightingale Notes from 1985" }
+        {
+          "name": "Scott Dunnewind",
+          "role": "CEO \u2014 acquired ownership in 2021"
+        },
+        {
+          "name": "David Rosebaugh",
+          "role": "Founder \u2014 built Nightingale Notes from 1985"
+        }
       ],
-      "team_skills": ["Public health informatics", "HIPAA compliance", "AWS cloud", "EHR development", "Omaha System"]
+      "team_skills": [
+        "Public health informatics",
+        "HIPAA compliance",
+        "AWS cloud",
+        "EHR development",
+        "Omaha System"
+      ]
     },
     "named_customers": [
       "145+ community health agencies nationwide",
       "State and county public health departments"
     ],
     "recent_news": [
-      { "title": "Secure Exchange Solutions Partnership", "date": "2025-01", "summary": "Champ partnered with SES to add Direct messaging capabilities to Nightingale Notes, enabling secure health information exchange between public health agencies.", "url": "https://www.champsoftware.com" },
-      { "title": "Primate joins Solen Software Group", "date": "2024", "summary": "Champ is part of Solen's growing portfolio of mission-critical vertical SaaS companies serving government and healthcare.", "url": "https://www.solensoftwaregroup.com/companies" }
+      {
+        "title": "Secure Exchange Solutions Partnership",
+        "date": "2025-01",
+        "summary": "Champ partnered with SES to add Direct messaging capabilities to Nightingale Notes, enabling secure health information exchange between public health agencies.",
+        "url": "https://www.champsoftware.com"
+      },
+      {
+        "title": "Primate joins Solen Software Group",
+        "date": "2024",
+        "summary": "Champ is part of Solen's growing portfolio of mission-critical vertical SaaS companies serving government and healthcare.",
+        "url": "https://www.solensoftwaregroup.com/companies"
+      }
     ],
     "hiring_signals": [],
     "key_evidence": [
-      { "title": "Public Health EHR Market Leader", "url": "https://www.champsoftware.com", "source": "company_website", "text": "Champ Software develops Nightingale Notes, an EHR system built specifically for public health departments. More than 145 community health agencies trust Nightingale Notes to track, report, and share vital information. Uses the Omaha System standardized taxonomy for evidence-based outcomes documentation." },
-      { "title": "Cloud-Native HIPAA Architecture", "url": "https://www.champsoftware.com/nightingale-notes/", "source": "company_website", "text": "Nightingale Notes is a cloud-based SaaS solution hosted on Amazon Web Services. No data is stored on local machines; fully HIPAA compliant. Features include batch billing, scheduling, and 100% time tracking for public health workers." },
-      { "title": "SES Partnership for Health Information Exchange", "url": "https://www.champsoftware.com", "source": "company_website", "text": "Partnership with Secure Exchange Solutions adds Direct messaging to Nightingale Notes, enabling public health agencies to securely exchange patient data with hospitals, labs, and other care providers." },
-      { "title": "40-Year Heritage", "url": "https://www.champsoftware.com/about/", "source": "company_website", "text": "Founded in 1985 in Mankato, Minnesota by David Rosebaugh. The 40-year tenure in public health software demonstrates deep domain expertise and high customer loyalty — critical attributes for PE investment in vertical SaaS." }
+      {
+        "title": "Public Health EHR Market Leader",
+        "url": "https://www.champsoftware.com",
+        "source": "company_website",
+        "text": "Champ Software develops Nightingale Notes, an EHR system built specifically for public health departments. More than 145 community health agencies trust Nightingale Notes to track, report, and share vital information. Uses the Omaha System standardized taxonomy for evidence-based outcomes documentation."
+      },
+      {
+        "title": "Cloud-Native HIPAA Architecture",
+        "url": "https://www.champsoftware.com/nightingale-notes/",
+        "source": "company_website",
+        "text": "Nightingale Notes is a cloud-based SaaS solution hosted on Amazon Web Services. No data is stored on local machines; fully HIPAA compliant. Features include batch billing, scheduling, and 100% time tracking for public health workers."
+      },
+      {
+        "title": "SES Partnership for Health Information Exchange",
+        "url": "https://www.champsoftware.com",
+        "source": "company_website",
+        "text": "Partnership with Secure Exchange Solutions adds Direct messaging to Nightingale Notes, enabling public health agencies to securely exchange patient data with hospitals, labs, and other care providers."
+      },
+      {
+        "title": "40-Year Heritage",
+        "url": "https://www.champsoftware.com/about/",
+        "source": "company_website",
+        "text": "Founded in 1985 in Mankato, Minnesota by David Rosebaugh. The 40-year tenure in public health software demonstrates deep domain expertise and high customer loyalty \u2014 critical attributes for PE investment in vertical SaaS."
+      }
     ],
-    "narrative_summary": "Champ Software develops Nightingale Notes, the leading EHR system purpose-built for public health departments, serving 145+ community health agencies nationwide. Cloud-hosted on AWS with full HIPAA compliance, the platform uses the Omaha System standardized taxonomy for evidence-based outcomes documentation. Features include batch billing, scheduling, 100% time tracking, and secure health information exchange via the SES Direct messaging partnership. Founded in 1985 by David Rosebaugh in Mankato, Minnesota; CEO Scott Dunnewind acquired ownership in 2021. The 40-year domain tenure, regulatory moat (HIPAA/Omaha System), and 145+ agency install base create significant switching costs. Scored 3.75/5.0 (Tier: AI-Ready)."
+    "narrative_summary": "Champ Software develops Nightingale Notes, the leading EHR system purpose-built for public health departments, serving 145+ community health agencies nationwide. Cloud-hosted on AWS with full HIPAA compliance, the platform uses the Omaha System standardized taxonomy for evidence-based outcomes documentation. Features include batch billing, scheduling, 100% time tracking, and secure health information exchange via the SES Direct messaging partnership. Founded in 1985 by David Rosebaugh in Mankato, Minnesota; CEO Scott Dunnewind acquired ownership in 2021. The 40-year domain tenure, regulatory moat (HIPAA/Omaha System), and 145+ agency install base create significant switching costs."
   },
   "Primate": {
-    "executives": [],
+    "executives": [
+      {
+        "name": "Unknown",
+        "role": "CEO (founded 2001, Melbourne FL)"
+      }
+    ],
     "ai_initiatives": [
-      { "text": "GridGuardian anomaly detection — real-time SCADA/EMS monitoring with automated alerting for grid anomalies and operational deviations", "type": "ai_feature" }
+      {
+        "text": "GridGuardian anomaly detection \u2014 real-time SCADA/EMS monitoring with automated alerting for grid anomalies and operational deviations",
+        "type": "ai_feature"
+      }
     ],
     "tech_stack": [
-      "Real-time SCADA integration", "EMS data feeds", "Browser-based dashboards", "Vector graphics rendering", "NERC CIP compliance architecture"
+      "Real-time SCADA/EMS/OMS integration",
+      "SQL/MQTT/XML data protocols",
+      "Custom API connectors",
+      "Vector-based visualization engine",
+      "NERC CIP compliance architecture",
+      "Multi-display control room systems",
+      "Browser-based TileViewer for remote access"
     ],
     "github": {},
     "careers": {},
     "talent": {
       "found": true,
       "leadership": [],
-      "team_skills": ["SCADA systems", "EMS integration", "Vector graphics", "Real-time data visualization", "NERC compliance", "Control room design"]
+      "team_skills": [
+        "SCADA systems",
+        "EMS integration",
+        "Vector graphics",
+        "Real-time data visualization",
+        "NERC compliance",
+        "Control room design"
+      ]
     },
     "named_customers": [
       "Electric transmission & distribution operators",
       "Pipeline operations companies",
       "Gas utilities",
-      "Emergency management agencies"
+      "Emergency management agencies",
+      "Electric cooperatives"
     ],
     "recent_news": [
-      { "title": "Primate joins Solen Software Group", "date": "2024", "summary": "Primate Technologies, founded in 2001 in Melbourne, Florida, joined the Solen Software Group in 2024 to accelerate growth in mission-critical control room software.", "url": "https://www.solensoftwaregroup.com/companies" }
+      {
+        "title": "Primate joins Solen Software Group",
+        "date": "2024",
+        "summary": "Primate Technologies, founded in 2001 in Melbourne, Florida, joined the Solen Software Group in 2024 to accelerate growth in mission-critical control room software.",
+        "url": "https://www.solensoftwaregroup.com/companies"
+      }
     ],
     "hiring_signals": [],
     "key_evidence": [
-      { "title": "Mission-Critical Control Room Software", "url": "https://primate-tech.com/solutions", "source": "company_website", "text": "Primate Technologies specializes in visualization software for mission-critical control rooms. Products include GridGuardian (real-time SCADA/EMS data integration with anomaly detection), BlackBoard (operational dashboards), TileViewer and TileBuilder (custom display layouts)." },
-      { "title": "Energy Sector Dominance", "url": "https://primate-tech.com", "source": "company_website", "text": "Serves electric transmission & distribution, pipeline operations, gas utilities, and emergency management. GridGuardian transforms scattered operational data from multiple SCADA and EMS systems into a unified source of truth for control room operators." },
-      { "title": "NERC CIP Compliance", "url": "https://primate-tech.com", "source": "company_website", "text": "Platform architecture designed for NERC Critical Infrastructure Protection (CIP) compliance — essential for utilities operating bulk electric systems. This regulatory requirement creates significant barriers to entry and customer lock-in." },
-      { "title": "Solen Portfolio Thesis", "url": "https://www.solensoftwaregroup.com/companies", "source": "solen_website", "text": "Primate exemplifies Solen's thesis: mission-critical, hyper-niche vertical SaaS with high switching costs. Control room operators cannot easily switch visualization platforms — the integration depth with SCADA/EMS systems creates operational lock-in." }
+      {
+        "title": "GridGuardian Data Integration Platform",
+        "url": "https://www.primate-tech.com/products/grid-guardian-data-integration",
+        "source": "company_website",
+        "text": "GridGuardian is an intelligent data processing engine that ingests, aggregates, and processes real-time and historical control room data. Consolidates SCADA, EMS, OMS, and other operational platforms through SQL, MQTT, XML, and custom APIs into unified operational visibility."
+      },
+      {
+        "title": "Automated Anomaly Detection",
+        "url": "https://www.primate-tech.com/products/grid-guardian-data-integration",
+        "source": "company_website",
+        "text": "Automated anomaly detection isolates abnormal patterns in real time for predictive maintenance. Uses advanced algorithms to turn complex, high-volume data into precise operational intelligence. Smart alerts prioritize critical updates via rule-based notification system."
+      },
+      {
+        "title": "NERC Compliance & Event Tracking",
+        "url": "https://www.primate-tech.com/products/grid-guardian-data-integration",
+        "source": "company_website",
+        "text": "Tracks reportable operational events in real time including line outages and restoration intervals. Auto-timestamps each event providing accurate, auditable records for NERC reporting. Replaces manual note-taking with automated compliance documentation."
+      },
+      {
+        "title": "Business Impact Metrics",
+        "url": "https://www.primate-tech.com/products/grid-guardian-data-integration",
+        "source": "company_website",
+        "text": "Claims $150K+ annual labor savings (96% faster grid updates), prevents $6.7B blackout-scale losses, stops $1M/day NERC violation penalties, and reduces average outage recovery from 5.8 hours to minutes."
+      },
+      {
+        "title": "Product Suite",
+        "url": "https://www.primate-tech.com/solutions",
+        "source": "company_website",
+        "text": "Full suite: GridGuardian (data integration + anomaly detection), BlackBoard (crystal-clear multi-display visualization), TileViewer (secure multi-platform control room access), TileBuilder (custom display layout designer). NERC CIP architecture throughout."
+      },
+      {
+        "title": "Solen Portfolio Company",
+        "url": "https://www.solensoftwaregroup.com/companies",
+        "source": "solen_website",
+        "text": "Founded in 2001 in Melbourne, Florida. Joined Solen Software Group in 2024. Exemplifies Solen thesis: mission-critical, hyper-niche vertical SaaS with deep domain expertise and high switching costs."
+      }
     ],
-    "narrative_summary": "Primate Technologies builds mission-critical control room visualization software for the energy and utilities sector. The product suite — GridGuardian, BlackBoard, TileViewer, and TileBuilder — integrates real-time SCADA and EMS data into unified operational views for control room operators managing electric T&D, pipelines, gas utilities, and emergency management. GridGuardian includes anomaly detection capabilities for real-time grid monitoring. The platform is architected for NERC CIP compliance, creating strong regulatory moats and switching costs. Founded in 2001 in Melbourne, Florida with approximately 11 employees and $12M annual revenue. Joined Solen in 2024. Scored 3.54/5.0 (Tier: AI-Ready)."
+    "narrative_summary": "Primate Technologies builds GridGuardian, an intelligent data processing engine for mission-critical utility control rooms. The platform ingests real-time and historical data from SCADA, EMS, OMS, and other operational systems via SQL, MQTT, XML, and custom APIs, consolidating fragmented data streams into unified operational visibility. Key capabilities include automated anomaly detection that isolates abnormal patterns in real time, smart alerting, and automated NERC compliance event tracking. The company claims $150K+ annual labor savings per deployment and 96% faster grid updates. Product suite includes BlackBoard (multi-display visualization), TileViewer (secure remote access), and TileBuilder (custom layouts). Founded 2001 in Melbourne, FL, joined Solen in 2024."
   },
   "Track Star": {
     "executives": [
-      { "name": "Michael Hughes", "role": "Founder & Strategic Advisor (ex-USAF)" },
-      { "name": "Gabriel Reza", "role": "Chief Executive Officer" }
+      {
+        "name": "Michael Hughes",
+        "role": "Founder & Strategic Advisor (ex-USAF)"
+      },
+      {
+        "name": "Gabriel Reza",
+        "role": "Chief Executive Officer"
+      }
     ],
     "ai_initiatives": [
-      { "text": "AI-powered video telematics with edge computing — detects risky driving behavior, provides real-time coaching, and captures on-demand video evidence", "type": "ai_feature" },
-      { "text": "Predictive maintenance algorithms — triggers work orders based on telematics data patterns (time, mileage, engine diagnostics)", "type": "ml_capability" }
+      {
+        "text": "AI-powered video telematics with edge computing \u2014 detects risky driving behavior, provides real-time coaching, and captures on-demand video evidence",
+        "type": "ai_feature"
+      },
+      {
+        "text": "Predictive maintenance algorithms \u2014 triggers work orders based on telematics data patterns (time, mileage, engine diagnostics)",
+        "type": "ml_capability"
+      }
     ],
     "tech_stack": [
-      "HTML/CSS/JavaScript", "PHP", "Nginx", "Agile CRM",
-      "Sierra Wireless", "CalAmp", "Garmin", "SmartWitness video",
-      "Peplink", "Cradlepoint", "Queclink", "Teltonika", "PacificTrack", "DCT",
-      "ESRI ArcGIS integration", "Open API (GIS, CAD, ERP, EAM, OEM)"
+      "HTML/CSS/JavaScript",
+      "PHP",
+      "Nginx",
+      "Agile CRM",
+      "Sierra Wireless",
+      "CalAmp",
+      "Garmin",
+      "SmartWitness video",
+      "Peplink",
+      "Cradlepoint",
+      "Queclink",
+      "Teltonika",
+      "PacificTrack",
+      "DCT",
+      "ESRI ArcGIS integration",
+      "Open API (GIS, CAD, ERP, EAM, OEM)"
     ],
     "github": {},
     "careers": {
       "ai_roles": 0,
       "total_roles": 5,
-      "titles": ["Customer Service Representative", "Partnership Manager", "Technical Support", "Fleet Solutions Consultant"]
+      "titles": [
+        "Customer Service Representative",
+        "Partnership Manager",
+        "Technical Support",
+        "Fleet Solutions Consultant"
+      ]
     },
     "talent": {
       "found": true,
       "leadership": [
-        { "name": "Gabriel Reza", "role": "CEO — leads current operations and growth strategy" },
-        { "name": "Michael Hughes", "role": "Founder — ex-USAF navigation systems expert, Strategic Advisor" },
-        { "name": "David Churchill", "role": "Lead Software Developer" }
+        {
+          "name": "Gabriel Reza",
+          "role": "CEO \u2014 leads current operations and growth strategy"
+        },
+        {
+          "name": "Michael Hughes",
+          "role": "Founder \u2014 ex-USAF navigation systems expert, Strategic Advisor"
+        },
+        {
+          "name": "David Churchill",
+          "role": "Lead Software Developer"
+        }
       ],
-      "team_skills": ["GPS/telematics", "Fleet management", "ArcGIS", "IoT", "Video analytics", "Government contracting"]
+      "team_skills": [
+        "GPS/telematics",
+        "Fleet management",
+        "ArcGIS",
+        "IoT",
+        "Video analytics",
+        "Government contracting"
+      ]
     },
     "named_customers": [
       "Municipal police departments",
@@ -204,42 +497,118 @@
       "School districts"
     ],
     "recent_news": [
-      { "title": "Track Star acquires ThingTech", "date": "2023", "summary": "Track Star International acquired ThingTech to expand IoT and enterprise asset management capabilities, creating a unified fleet + asset platform.", "url": "https://thingtech.com/company/" },
-      { "title": "Track Star Enterprise Launch", "date": "2024", "summary": "Launched Track Star Enterprise with expanded EAM, predictive maintenance, and open API capabilities post-Solen acquisition.", "url": "https://www.trackstar.com" },
-      { "title": "Esri ArcGIS Integration Partnership", "date": "2023", "summary": "Rebuilt AVLS product around Esri ArcGIS Platform for advanced geospatial analysis, PursuitAlert integration for law enforcement.", "url": "https://www.esri.com/about/newsroom/announcements/esri-partner-track-star-integrates-arcgis-platform" }
+      {
+        "title": "Track Star acquires ThingTech",
+        "date": "2023",
+        "summary": "Track Star International acquired ThingTech to expand IoT and enterprise asset management capabilities, creating a unified fleet + asset platform.",
+        "url": "https://thingtech.com/company/"
+      },
+      {
+        "title": "Track Star Enterprise Launch",
+        "date": "2024",
+        "summary": "Launched Track Star Enterprise with expanded EAM, predictive maintenance, and open API capabilities post-Solen acquisition.",
+        "url": "https://www.trackstar.com"
+      },
+      {
+        "title": "Esri ArcGIS Integration Partnership",
+        "date": "2023",
+        "summary": "Rebuilt AVLS product around Esri ArcGIS Platform for advanced geospatial analysis, PursuitAlert integration for law enforcement.",
+        "url": "https://www.esri.com/about/newsroom/announcements/esri-partner-track-star-integrates-arcgis-platform"
+      }
     ],
-    "hiring_signals": ["Customer Service Representative", "Partnership Manager", "Fleet Solutions Consultant"],
+    "hiring_signals": [
+      "Customer Service Representative",
+      "Partnership Manager",
+      "Fleet Solutions Consultant"
+    ],
     "key_evidence": [
-      { "title": "Unified Fleet & Asset Platform", "url": "https://www.trackstar.com", "source": "company_website", "text": "Track Star Version 6 is a fully browser-based platform combining GPS tracking, telematics, Enterprise Asset Management (EAM), predictive maintenance, compliance automation, and video intelligence. Processes millions of GPS points daily across government, utilities, public safety, equipment rental, and education sectors." },
-      { "title": "Military-Grade Heritage", "url": "https://www.trackstar.com/about-us", "source": "company_website", "text": "Founded in 2000 by former U.S. Air Force navigation systems expert Michael Hughes in Calabash, North Carolina. 25 years of enterprise-grade GPS and fleet management deployments for government and critical infrastructure." },
-      { "title": "AI Video Telematics", "url": "https://www.trackstar.com/solutions/fleet-management-software", "source": "company_website", "text": "AI-powered video telematics enhances safety and reduces liability by improving driver behavior through real-time coaching at the edge. Captures on-demand video evidence for incident review and insurance claims reduction." },
-      { "title": "ThingTech Acquisition & IoT Expansion", "url": "https://www.trackstar.com/thingtech", "source": "company_website", "text": "ThingTech's IoT platform merged with Track Star to deliver enhanced fleet management and enterprise asset management. Combined platform supports connected sensors, predictive intelligence, and work order automation." },
-      { "title": "Esri ArcGIS Partnership", "url": "https://www.esri.com/about/newsroom/announcements/esri-partner-track-star-integrates-arcgis-platform", "source": "press_release", "text": "Rebuilt AVLS product around Esri ArcGIS Platform enabling client overlays for geospatial analysis. Supports devices from Sierra Wireless, CalAmp, Queclink, SmartWitness, and 10+ other hardware partners." },
-      { "title": "Founder on Solen Partnership", "url": "https://www.solensoftwaregroup.com/companies", "source": "solen_website", "text": "Michael Hughes: 'Solen's unique approach to investing is valuable because it seeks to buy and hold, becoming a long-term partner with the companies they acquire.' Revenue reported at $24.4M." }
+      {
+        "title": "Unified Fleet & Asset Platform",
+        "url": "https://www.trackstar.com",
+        "source": "company_website",
+        "text": "Track Star Version 6 is a fully browser-based platform combining GPS tracking, telematics, Enterprise Asset Management (EAM), predictive maintenance, compliance automation, and video intelligence. Processes millions of GPS points daily across government, utilities, public safety, equipment rental, and education sectors."
+      },
+      {
+        "title": "Military-Grade Heritage",
+        "url": "https://www.trackstar.com/about-us",
+        "source": "company_website",
+        "text": "Founded in 2000 by former U.S. Air Force navigation systems expert Michael Hughes in Calabash, North Carolina. 25 years of enterprise-grade GPS and fleet management deployments for government and critical infrastructure."
+      },
+      {
+        "title": "AI Video Telematics",
+        "url": "https://www.trackstar.com/solutions/fleet-management-software",
+        "source": "company_website",
+        "text": "AI-powered video telematics enhances safety and reduces liability by improving driver behavior through real-time coaching at the edge. Captures on-demand video evidence for incident review and insurance claims reduction."
+      },
+      {
+        "title": "ThingTech Acquisition & IoT Expansion",
+        "url": "https://www.trackstar.com/thingtech",
+        "source": "company_website",
+        "text": "ThingTech's IoT platform merged with Track Star to deliver enhanced fleet management and enterprise asset management. Combined platform supports connected sensors, predictive intelligence, and work order automation."
+      },
+      {
+        "title": "Esri ArcGIS Partnership",
+        "url": "https://www.esri.com/about/newsroom/announcements/esri-partner-track-star-integrates-arcgis-platform",
+        "source": "press_release",
+        "text": "Rebuilt AVLS product around Esri ArcGIS Platform enabling client overlays for geospatial analysis. Supports devices from Sierra Wireless, CalAmp, Queclink, SmartWitness, and 10+ other hardware partners."
+      },
+      {
+        "title": "Founder on Solen Partnership",
+        "url": "https://www.solensoftwaregroup.com/companies",
+        "source": "solen_website",
+        "text": "Michael Hughes: 'Solen's unique approach to investing is valuable because it seeks to buy and hold, becoming a long-term partner with the companies they acquire.' Revenue reported at $24.4M."
+      }
     ],
-    "narrative_summary": "Track Star International provides a unified fleet management and enterprise asset management platform processing millions of GPS points daily. The Version 6 browser-based platform combines GPS tracking, telematics, EAM, predictive maintenance, AI-powered video telematics, and compliance automation. Founded in 2000 by ex-USAF navigation expert Michael Hughes; now led by CEO Gabriel Reza. The company acquired ThingTech to expand IoT capabilities and rebuilt its AVLS product on Esri ArcGIS. Serves government fleets, law enforcement, utilities, equipment rental, and education. Supports 10+ hardware partners (Sierra Wireless, CalAmp, SmartWitness). Revenue reported at $24.4M. Part of Solen since 2021. Scored 3.47/5.0 (Tier: AI-Buildable)."
+    "narrative_summary": "Track Star International provides a unified fleet management and enterprise asset management platform processing millions of GPS points daily. The Version 6 browser-based platform combines GPS tracking, telematics, EAM, predictive maintenance, AI-powered video telematics, and compliance automation. Founded in 2000 by ex-USAF navigation expert Michael Hughes; now led by CEO Gabriel Reza. The company acquired ThingTech to expand IoT capabilities and rebuilt its AVLS product on Esri ArcGIS. Serves government fleets, law enforcement, utilities, equipment rental, and education. Supports 10+ hardware partners (Sierra Wireless, CalAmp, SmartWitness). Revenue reported at $24.4M. Part of Solen since 2021."
   },
   "SMRTR": {
     "executives": [
-      { "name": "Susanne Moore", "role": "Chief Executive Officer" }
+      {
+        "name": "Susanne Moore",
+        "role": "Chief Executive Officer"
+      }
     ],
     "ai_initiatives": [
-      { "text": "ML-powered predictive maintenance for distribution fleet — predicts equipment failures before occurrence using telematics data", "type": "ml_capability" },
-      { "text": "AI route optimization for delivery logistics — reduces fuel costs and delivery times for F&B distributors", "type": "ai_feature" },
-      { "text": "ML anomaly detection for compliance monitoring — identifies regulatory compliance issues via pattern recognition", "type": "ml_capability" }
+      {
+        "text": "ML-powered predictive maintenance for distribution fleet \u2014 predicts equipment failures before occurrence using telematics data",
+        "type": "ml_capability"
+      },
+      {
+        "text": "AI route optimization for delivery logistics \u2014 reduces fuel costs and delivery times for F&B distributors",
+        "type": "ai_feature"
+      },
+      {
+        "text": "ML anomaly detection for compliance monitoring \u2014 identifies regulatory compliance issues via pattern recognition",
+        "type": "ml_capability"
+      }
     ],
     "tech_stack": [
-      "Cloud-based SaaS", "SYSPRO ERP integration", "SAP integration", "JD Edwards E1 integration",
-      "Infor integration", "VIP Beverage platform", "NCR ERP integration", "API-first architecture"
+      "Cloud-based SaaS",
+      "SYSPRO ERP integration",
+      "SAP integration",
+      "JD Edwards E1 integration",
+      "Infor integration",
+      "VIP Beverage platform",
+      "NCR ERP integration",
+      "API-first architecture"
     ],
     "github": {},
     "careers": {},
     "talent": {
       "found": true,
       "leadership": [
-        { "name": "Susanne Moore", "role": "CEO — led DASH/S4i merger, 20+ years in F&B automation" }
+        {
+          "name": "Susanne Moore",
+          "role": "CEO \u2014 led DASH/S4i merger, 20+ years in F&B automation"
+        }
       ],
-      "team_skills": ["AP automation", "Food safety compliance", "ERP integration", "Document management", "Distribution logistics"]
+      "team_skills": [
+        "AP automation",
+        "Food safety compliance",
+        "ERP integration",
+        "Document management",
+        "Distribution logistics"
+      ]
     },
     "named_customers": [
       "DiCarlo Distributors",
@@ -247,38 +616,91 @@
       "Distribution companies using SYSPRO, SAP, JD Edwards"
     ],
     "recent_news": [
-      { "title": "DASH and S4i Complete Merger, Form SMRTR", "date": "2025-07-01", "summary": "DASH and S4i Systems completed their merger to form SMRTR, uniting AP automation with compliance solutions for manufacturing and food & beverage industries. HQ moved to Cottonwood Heights, Utah.", "url": "https://smrtrsolutions.com/2025/06/27/dash-and-s4i-complete-merger-form-smrtr/" },
-      { "title": "VAI Strategic Partnership", "date": "2025", "summary": "VAI and SMRTR announced strategic partnership to streamline document management and AP automation for S2K Food ERP users.", "url": "https://www.vai.net/resources/newsroom/vai-and-smrtr-announce-strategic-partnership-to-streamline-document-management-and-ap-automation-for-s2k-food-erp-users" }
+      {
+        "title": "DASH and S4i Complete Merger, Form SMRTR",
+        "date": "2025-07-01",
+        "summary": "DASH and S4i Systems completed their merger to form SMRTR, uniting AP automation with compliance solutions for manufacturing and food & beverage industries. HQ moved to Cottonwood Heights, Utah.",
+        "url": "https://smrtrsolutions.com/2025/06/27/dash-and-s4i-complete-merger-form-smrtr/"
+      },
+      {
+        "title": "VAI Strategic Partnership",
+        "date": "2025",
+        "summary": "VAI and SMRTR announced strategic partnership to streamline document management and AP automation for S2K Food ERP users.",
+        "url": "https://www.vai.net/resources/newsroom/vai-and-smrtr-announce-strategic-partnership-to-streamline-document-management-and-ap-automation-for-s2k-food-erp-users"
+      }
     ],
     "hiring_signals": [],
     "key_evidence": [
-      { "title": "CEO on Platform Consolidation", "url": "https://www.pymnts.com/news/b2b-payments/2025/dash-and-s4i-merge-to-form-automation-and-compliance-firm-smrtr/", "source": "press_release", "text": "CEO Susanne Moore: 'Our customers have consistently told us they want fewer vendors and more comprehensive solutions. This merger allows us to deliver exactly that — a complete automation platform that addresses both operational efficiency and regulatory compliance from a single source.'" },
-      { "title": "Full Automation Platform", "url": "https://smrtrsolutions.com", "source": "company_website", "text": "SMRTR delivers unified automation: AP Automation (invoice processing, approval workflows), Food Safety Compliance, Electronic Proof of Delivery (ePOD), Supplier Onboarding, Nutrition Labeling, and Document Management. Integrates with SYSPRO, SAP, JD Edwards, Infor, VIP Beverage, and NCR ERPs." },
-      { "title": "AI/ML Capabilities", "url": "https://smrtrsolutions.com/2024/06/19/what-is-the-role-of-ai-in-backhaul-tracking/", "source": "company_blog", "text": "Machine learning enhances backhaul tracking by predicting equipment failures before they occur. ML anomaly detection for preventive maintenance identifies issues before they escalate. AI route optimization reduces fuel costs and delivery times for distribution operations." },
-      { "title": "VAI Partnership for ERP Integration", "url": "https://www.vai.net/resources/newsroom/vai-and-smrtr-announce-strategic-partnership-to-streamline-document-management-and-ap-automation-for-s2k-food-erp-users", "source": "press_release", "text": "Strategic partnership with VAI brings SMRTR's document management and AP automation directly into the S2K Food ERP workflow, targeting food and beverage distribution companies running VAI's ERP system." }
+      {
+        "title": "CEO on Platform Consolidation",
+        "url": "https://www.pymnts.com/news/b2b-payments/2025/dash-and-s4i-merge-to-form-automation-and-compliance-firm-smrtr/",
+        "source": "press_release",
+        "text": "CEO Susanne Moore: 'Our customers have consistently told us they want fewer vendors and more comprehensive solutions. This merger allows us to deliver exactly that \u2014 a complete automation platform that addresses both operational efficiency and regulatory compliance from a single source.'"
+      },
+      {
+        "title": "Full Automation Platform",
+        "url": "https://smrtrsolutions.com",
+        "source": "company_website",
+        "text": "SMRTR delivers unified automation: AP Automation (invoice processing, approval workflows), Food Safety Compliance, Electronic Proof of Delivery (ePOD), Supplier Onboarding, Nutrition Labeling, and Document Management. Integrates with SYSPRO, SAP, JD Edwards, Infor, VIP Beverage, and NCR ERPs."
+      },
+      {
+        "title": "AI/ML Capabilities",
+        "url": "https://smrtrsolutions.com/2024/06/19/what-is-the-role-of-ai-in-backhaul-tracking/",
+        "source": "company_blog",
+        "text": "Machine learning enhances backhaul tracking by predicting equipment failures before they occur. ML anomaly detection for preventive maintenance identifies issues before they escalate. AI route optimization reduces fuel costs and delivery times for distribution operations."
+      },
+      {
+        "title": "VAI Partnership for ERP Integration",
+        "url": "https://www.vai.net/resources/newsroom/vai-and-smrtr-announce-strategic-partnership-to-streamline-document-management-and-ap-automation-for-s2k-food-erp-users",
+        "source": "press_release",
+        "text": "Strategic partnership with VAI brings SMRTR's document management and AP automation directly into the S2K Food ERP workflow, targeting food and beverage distribution companies running VAI's ERP system."
+      }
     ],
-    "narrative_summary": "SMRTR was formed in July 2025 from the merger of Dash (AP automation) and S4i Systems (compliance/content management), creating a unified automation platform for manufacturing and food & beverage distribution. CEO Susanne Moore leads the combined entity from Cottonwood Heights, Utah. The platform spans AP Automation, Food Safety Compliance, Electronic Proof of Delivery, Supplier Onboarding, Nutrition Labeling, and Document Management — integrating with 6 major ERP systems (SYSPRO, SAP, JD Edwards, Infor, VIP Beverage, NCR). AI/ML capabilities include predictive maintenance, route optimization, and compliance anomaly detection. Strategic partnerships with VAI (S2K Food ERP) and industry distributors. Scored 3.39/5.0 (Tier: AI-Buildable)."
+    "narrative_summary": "SMRTR was formed in July 2025 from the merger of Dash (AP automation) and S4i Systems (compliance/content management), creating a unified automation platform for manufacturing and food & beverage distribution. CEO Susanne Moore leads the combined entity from Cottonwood Heights, Utah. The platform spans AP Automation, Food Safety Compliance, Electronic Proof of Delivery, Supplier Onboarding, Nutrition Labeling, and Document Management \u2014 integrating with 6 major ERP systems (SYSPRO, SAP, JD Edwards, Infor, VIP Beverage, NCR). AI/ML capabilities include predictive maintenance, route optimization, and compliance anomaly detection. Strategic partnerships with VAI (S2K Food ERP) and industry distributors."
   },
   "FMSI": {
     "executives": [
-      { "name": "W. Michael Scott", "role": "Co-Founder, Chairman & CEO" }
+      {
+        "name": "W. Michael Scott",
+        "role": "Co-Founder, Chairman & CEO"
+      }
     ],
     "ai_initiatives": [
-      { "text": "FMSI OneCX analytics-driven staffing recommendations — predictive insights for no-show trends, peak activity patterns, and optimal staff-to-demand ratios", "type": "ai_feature" },
-      { "text": "Appli partnership: AI-powered financial calculators helping members make decisions before branch visits", "type": "ai_feature" }
+      {
+        "text": "FMSI OneCX analytics-driven staffing recommendations \u2014 predictive insights for no-show trends, peak activity patterns, and optimal staff-to-demand ratios",
+        "type": "ai_feature"
+      },
+      {
+        "text": "Appli partnership: AI-powered financial calculators helping members make decisions before branch visits",
+        "type": "ai_feature"
+      }
     ],
     "tech_stack": [
-      "Azure cloud (transitioning)", "Microsoft Exchange Online", "Microsoft Outlook", "Nginx",
-      "REST APIs", "Cloud SaaS platform", "Outlook/Gmail calendar integration"
+      "Azure cloud (transitioning)",
+      "Microsoft Exchange Online",
+      "Microsoft Outlook",
+      "Nginx",
+      "REST APIs",
+      "Cloud SaaS platform",
+      "Outlook/Gmail calendar integration"
     ],
     "github": {},
     "careers": {},
     "talent": {
       "found": true,
       "leadership": [
-        { "name": "W. Michael Scott", "role": "Co-Founder, Chairman & CEO — 25+ years in credit union analytics" }
+        {
+          "name": "W. Michael Scott",
+          "role": "Co-Founder, Chairman & CEO \u2014 25+ years in credit union analytics"
+        }
       ],
-      "team_skills": ["Credit union operations", "Workforce analytics", "Branch optimization", "Scheduling algorithms", "Financial services"]
+      "team_skills": [
+        "Credit union operations",
+        "Workforce analytics",
+        "Branch optimization",
+        "Scheduling algorithms",
+        "Financial services"
+      ]
     },
     "named_customers": [
       "Apple Federal Credit Union ($2B, 25 locations)",
@@ -287,82 +709,216 @@
       "140+ banks and credit unions"
     ],
     "recent_news": [
-      { "title": "FMSI Relaunches as Independent Company", "date": "2026-03", "summary": "FMSI relaunched brand after December 2025 divestiture from UKG, with renewed focus on branch performance for banks and credit unions. Multiple new clients signed within 60 days.", "url": "https://www.utahbusiness.com/press-releases/2026/03/02/fmsi-relaunches-bringing-renewed-focus-branch-performance-banks-and-credit-unions/" },
-      { "title": "Appli Partnership for AI Financial Calculators", "date": "2025-2026", "summary": "FMSI partnered with Appli to combine AI-powered financial calculators with FMSI scheduling/analytics for a connected member journey.", "url": "https://www.finopotamus.com/post/fmsi-and-appli-partner-to-help-credit-union-branches-drive-member-revenue/" },
-      { "title": "First Central Credit Union Customer Win", "date": "2026-01", "summary": "First Central CU (Waco, TX) signed within 60 days of FMSI relaunch, focusing on appointment scheduling with bilingual staff coordination.", "url": "https://www.fmsi.com" }
+      {
+        "title": "FMSI Relaunches as Independent Company",
+        "date": "2026-03",
+        "summary": "FMSI relaunched brand after December 2025 divestiture from UKG, with renewed focus on branch performance for banks and credit unions. Multiple new clients signed within 60 days.",
+        "url": "https://www.utahbusiness.com/press-releases/2026/03/02/fmsi-relaunches-bringing-renewed-focus-branch-performance-banks-and-credit-unions/"
+      },
+      {
+        "title": "Appli Partnership for AI Financial Calculators",
+        "date": "2025-2026",
+        "summary": "FMSI partnered with Appli to combine AI-powered financial calculators with FMSI scheduling/analytics for a connected member journey.",
+        "url": "https://www.finopotamus.com/post/fmsi-and-appli-partner-to-help-credit-union-branches-drive-member-revenue/"
+      },
+      {
+        "title": "First Central Credit Union Customer Win",
+        "date": "2026-01",
+        "summary": "First Central CU (Waco, TX) signed within 60 days of FMSI relaunch, focusing on appointment scheduling with bilingual staff coordination.",
+        "url": "https://www.fmsi.com"
+      }
     ],
-    "hiring_signals": ["Product development roles", "Customer success roles"],
+    "hiring_signals": [
+      "Product development roles",
+      "Customer success roles"
+    ],
     "key_evidence": [
-      { "title": "FMSI OneCX Platform", "url": "https://www.fmsi.com", "source": "company_website", "text": "FMSI OneCX combines appointment scheduling, lobby management, staffing analytics, and staff scheduling into one integrated solution for banks and credit unions. Over 25 years of workforce optimization expertise serving 140+ financial institutions." },
-      { "title": "Apple Federal Credit Union Win", "url": "https://www.cuinsight.com/press-release/apple-federal-credit-union-selects-fmsis-staff-scheduler-solution-to-improve-branch-efficiency", "source": "press_release", "text": "Apple Federal Credit Union, a $2B Virginia-based credit union with 25 locations, adopted FMSI's Omnix Staff Scheduler, Omnix Interactive Dashboard, and Omnix Performance Analytics for branch-wide workforce optimization." },
-      { "title": "40% Lobby Wait Time Reduction", "url": "https://www.fmsi.com", "source": "company_website", "text": "Regional credit union achieved 40% reduction in lobby wait times through FMSI's structured appointment tools without additional hiring — demonstrating measurable ROI for branch operations." },
-      { "title": "Post-UKG Independence", "url": "https://www.utahbusiness.com/press-releases/2026/03/02/fmsi-relaunches-bringing-renewed-focus-branch-performance-banks-and-credit-unions/", "source": "press_release", "text": "FMSI was acquired by Kronos in 2017, became part of UKG in 2020, and was divested as independent company in December 2025. The relaunch positions FMSI as 'the branch advisory hub' — shifting from transactional to advisory banking." },
-      { "title": "Appli AI Partnership", "url": "https://www.finopotamus.com/post/fmsi-and-appli-partner-to-help-credit-union-branches-drive-member-revenue/", "source": "press_release", "text": "Partnership with Appli adds AI-powered financial calculators helping members make informed decisions before branch visits. Combined with FMSI scheduling and analytics, creates a connected member journey from digital engagement to in-branch advisory." }
+      {
+        "title": "FMSI OneCX Platform",
+        "url": "https://www.fmsi.com",
+        "source": "company_website",
+        "text": "FMSI OneCX combines appointment scheduling, lobby management, staffing analytics, and staff scheduling into one integrated solution for banks and credit unions. Over 25 years of workforce optimization expertise serving 140+ financial institutions."
+      },
+      {
+        "title": "Apple Federal Credit Union Win",
+        "url": "https://www.cuinsight.com/press-release/apple-federal-credit-union-selects-fmsis-staff-scheduler-solution-to-improve-branch-efficiency",
+        "source": "press_release",
+        "text": "Apple Federal Credit Union, a $2B Virginia-based credit union with 25 locations, adopted FMSI's Omnix Staff Scheduler, Omnix Interactive Dashboard, and Omnix Performance Analytics for branch-wide workforce optimization."
+      },
+      {
+        "title": "40% Lobby Wait Time Reduction",
+        "url": "https://www.fmsi.com",
+        "source": "company_website",
+        "text": "Regional credit union achieved 40% reduction in lobby wait times through FMSI's structured appointment tools without additional hiring \u2014 demonstrating measurable ROI for branch operations."
+      },
+      {
+        "title": "Post-UKG Independence",
+        "url": "https://www.utahbusiness.com/press-releases/2026/03/02/fmsi-relaunches-bringing-renewed-focus-branch-performance-banks-and-credit-unions/",
+        "source": "press_release",
+        "text": "FMSI was acquired by Kronos in 2017, became part of UKG in 2020, and was divested as independent company in December 2025. The relaunch positions FMSI as 'the branch advisory hub' \u2014 shifting from transactional to advisory banking."
+      },
+      {
+        "title": "Appli AI Partnership",
+        "url": "https://www.finopotamus.com/post/fmsi-and-appli-partner-to-help-credit-union-branches-drive-member-revenue/",
+        "source": "press_release",
+        "text": "Partnership with Appli adds AI-powered financial calculators helping members make informed decisions before branch visits. Combined with FMSI scheduling and analytics, creates a connected member journey from digital engagement to in-branch advisory."
+      }
     ],
-    "narrative_summary": "FMSI provides the OneCX platform combining appointment scheduling, lobby management, staffing analytics, and workforce optimization for 140+ banks and credit unions. Founded in 1990 by W. Michael Scott, acquired by Kronos/UKG in 2017, and relaunched as an independent company in March 2026 after UKG divestiture. Major customers include Apple Federal Credit Union ($2B, 25 locations) and Fort Knox FCU. A regional credit union achieved 40% lobby wait time reduction using FMSI tools. Recent Appli partnership adds AI-powered financial calculators. Generating $5.3M annual revenue with rapid post-relaunch customer acquisition (new clients signed within 60 days). Scored 3.31/5.0 (Tier: AI-Buildable)."
+    "narrative_summary": "FMSI provides the OneCX platform combining appointment scheduling, lobby management, staffing analytics, and workforce optimization for 140+ banks and credit unions. Founded in 1990 by W. Michael Scott, acquired by Kronos/UKG in 2017, and relaunched as an independent company in March 2026 after UKG divestiture. Major customers include Apple Federal Credit Union ($2B, 25 locations) and Fort Knox FCU. A regional credit union achieved 40% lobby wait time reduction using FMSI tools. Recent Appli partnership adds AI-powered financial calculators. Generating $5.3M annual revenue with rapid post-relaunch customer acquisition (new clients signed within 60 days)."
   },
   "Cairn Applications": {
     "executives": [
-      { "name": "James Moser", "role": "Founder & President" }
+      {
+        "name": "James Moser",
+        "role": "Founder & President"
+      }
     ],
     "ai_initiatives": [
-      { "text": "Automated route optimization algorithms for waste hauling — optimizes driver routes across container pickups and deliveries", "type": "ai_feature" }
+      {
+        "text": "Automated route optimization algorithms for waste hauling \u2014 optimizes driver routes across container pickups and deliveries",
+        "type": "ai_feature"
+      }
     ],
     "tech_stack": [
-      "Cloud-native SaaS ('born in the cloud')", "Google Maps integration (MapIt!)", "Browser-based (device/platform agnostic)",
-      "GoDaddy DNS", "GlobalSign SSL", "Google Analytics", "Mobile driver app"
+      "Cloud-native SaaS ('born in the cloud')",
+      "Google Maps integration (MapIt!)",
+      "Browser-based (device/platform agnostic)",
+      "GoDaddy DNS",
+      "GlobalSign SSL",
+      "Google Analytics",
+      "Mobile driver app"
     ],
     "github": {},
     "careers": {},
     "talent": {
       "found": true,
       "leadership": [
-        { "name": "James Moser", "role": "Founder & President — MS in IT, 15+ years mission-critical app development" }
+        {
+          "name": "James Moser",
+          "role": "Founder & President \u2014 MS in IT, 15+ years mission-critical app development"
+        }
       ],
-      "team_skills": ["Waste management software", "Cloud SaaS", "Route optimization", "Asset tracking", "Google Maps API"]
+      "team_skills": [
+        "Waste management software",
+        "Cloud SaaS",
+        "Route optimization",
+        "Asset tracking",
+        "Google Maps API"
+      ]
     },
     "named_customers": [
       "350+ independent waste hauling companies (US & Canada)"
     ],
     "recent_news": [
-      { "title": "Solen Software Group Acquires Cairn Applications", "date": "2025-12", "summary": "Solen acquired Cairn Applications in December 2025. Cairn supports 350+ customers managing 65,000+ dumpsters and ~$150M in annual commerce.", "url": "https://www.businesswire.com/news/home/20260127219850/en/Solen-Software-Group-Acquires-Cairn-Applications-Inc." }
+      {
+        "title": "Solen Software Group Acquires Cairn Applications",
+        "date": "2025-12",
+        "summary": "Solen acquired Cairn Applications in December 2025. Cairn supports 350+ customers managing 65,000+ dumpsters and ~$150M in annual commerce.",
+        "url": "https://www.businesswire.com/news/home/20260127219850/en/Solen-Software-Group-Acquires-Cairn-Applications-Inc."
+      }
     ],
     "hiring_signals": [],
     "key_evidence": [
-      { "title": "Box Tracker Flagship Platform", "url": "https://trash.software", "source": "company_website", "text": "Flagship product Box Tracker manages order management, logistics, billing, merchant services, asset tracking, employee/driver tracking, GPS navigation, CRM, and automated customer communication for independent dumpster companies. Top features: real-time tracking, route optimization, inventory management, automated reporting, customer portal." },
-      { "title": "Market Scale & Commerce", "url": "https://www.businesswire.com/news/home/20260127219850/en/Solen-Software-Group-Acquires-Cairn-Applications-Inc.", "source": "press_release", "text": "Supports 350+ customers managing 65,000+ dumpsters and containers, facilitating approximately $150 million in annual commerce across the United States and Canada." },
-      { "title": "Multi-Product Suite", "url": "https://cairnapps.com", "source": "company_website", "text": "Three products: Box Tracker (dumpster/roll-off container management), Scale House (landfill/transfer station operations), and Route Tracker (commercial trash, curbside pickup, port-a-potty management). Covers the full waste hauling operations workflow." },
-      { "title": "Born in the Cloud Architecture", "url": "https://trash.software", "source": "company_website", "text": "Platform is 'born in the cloud' — requires only internet and a browser. Device, platform, and geographically agnostic. MapIt! feature provides deep Google Maps integration for real-time visibility of drivers, work orders, containers, and local traffic." },
-      { "title": "Solen Acquisition Context", "url": "https://www.businesswire.com/news/home/20260127219850/en/Solen-Software-Group-Acquires-Cairn-Applications-Inc.", "source": "press_release", "text": "Founded in 2008 by James Moser (MS in IT, 15+ years experience) in Nashua, NH. Cairn continues operating with autonomy within Solen, with access to shared playbooks in growth strategy, digital transformation, and operational excellence." }
+      {
+        "title": "Box Tracker Flagship Platform",
+        "url": "https://trash.software",
+        "source": "company_website",
+        "text": "Flagship product Box Tracker manages order management, logistics, billing, merchant services, asset tracking, employee/driver tracking, GPS navigation, CRM, and automated customer communication for independent dumpster companies. Top features: real-time tracking, route optimization, inventory management, automated reporting, customer portal."
+      },
+      {
+        "title": "Market Scale & Commerce",
+        "url": "https://www.businesswire.com/news/home/20260127219850/en/Solen-Software-Group-Acquires-Cairn-Applications-Inc.",
+        "source": "press_release",
+        "text": "Supports 350+ customers managing 65,000+ dumpsters and containers, facilitating approximately $150 million in annual commerce across the United States and Canada."
+      },
+      {
+        "title": "Multi-Product Suite",
+        "url": "https://cairnapps.com",
+        "source": "company_website",
+        "text": "Three products: Box Tracker (dumpster/roll-off container management), Scale House (landfill/transfer station operations), and Route Tracker (commercial trash, curbside pickup, port-a-potty management). Covers the full waste hauling operations workflow."
+      },
+      {
+        "title": "Born in the Cloud Architecture",
+        "url": "https://trash.software",
+        "source": "company_website",
+        "text": "Platform is 'born in the cloud' \u2014 requires only internet and a browser. Device, platform, and geographically agnostic. MapIt! feature provides deep Google Maps integration for real-time visibility of drivers, work orders, containers, and local traffic."
+      },
+      {
+        "title": "Solen Acquisition Context",
+        "url": "https://www.businesswire.com/news/home/20260127219850/en/Solen-Software-Group-Acquires-Cairn-Applications-Inc.",
+        "source": "press_release",
+        "text": "Founded in 2008 by James Moser (MS in IT, 15+ years experience) in Nashua, NH. Cairn continues operating with autonomy within Solen, with access to shared playbooks in growth strategy, digital transformation, and operational excellence."
+      }
     ],
-    "narrative_summary": "Cairn Applications is the leading cloud SaaS platform for independent waste hauling operations, managing 350+ customers, 65,000+ dumpsters, and ~$150M in annual commerce across the US and Canada. The product suite includes Box Tracker (dumpster management with real-time GPS tracking, route optimization, billing, and CRM), Scale House (landfill operations), and Route Tracker (commercial trash/curbside). Founded in 2008 by James Moser in Nashua, NH. The 'born in the cloud' platform is device-agnostic with deep Google Maps integration (MapIt!). Acquired by Solen in December 2025. The waste hauling vertical presents AI opportunities in route optimization, predictive demand forecasting, and automated dispatch. Scored 2.86/5.0 (Tier: AI-Buildable)."
+    "narrative_summary": "Cairn Applications is the leading cloud SaaS platform for independent waste hauling operations, managing 350+ customers, 65,000+ dumpsters, and ~$150M in annual commerce across the US and Canada. The product suite includes Box Tracker (dumpster management with real-time GPS tracking, route optimization, billing, and CRM), Scale House (landfill operations), and Route Tracker (commercial trash/curbside). Founded in 2008 by James Moser in Nashua, NH. The 'born in the cloud' platform is device-agnostic with deep Google Maps integration (MapIt!). Acquired by Solen in December 2025. The waste hauling vertical presents AI opportunities in route optimization, predictive demand forecasting, and automated dispatch."
   },
   "ViaPeople": {
     "executives": [
-      { "name": "Jerry Dunne", "role": "Chief Executive Officer" },
-      { "name": "Artur Gazdowski", "role": "Co-Founder & VP Operations (since 2003)" },
-      { "name": "James Perry", "role": "Co-Founder" },
-      { "name": "Karen Caruso, Ph.D.", "role": "Co-Founder (I/O Psychology)" },
-      { "name": "Leah Groehler, Ph.D.", "role": "Co-Founder & VP Consulting Services" }
+      {
+        "name": "Jerry Dunne",
+        "role": "Chief Executive Officer"
+      },
+      {
+        "name": "Artur Gazdowski",
+        "role": "Co-Founder & VP Operations (since 2003)"
+      },
+      {
+        "name": "James Perry",
+        "role": "Co-Founder"
+      },
+      {
+        "name": "Karen Caruso, Ph.D.",
+        "role": "Co-Founder (I/O Psychology)"
+      },
+      {
+        "name": "Leah Groehler, Ph.D.",
+        "role": "Co-Founder & VP Consulting Services"
+      }
     ],
     "ai_initiatives": [
-      { "text": "AI Instant Insights for performance management — automated analysis of performance data with actionable recommendations for talent decisions", "type": "ai_feature" },
-      { "text": "Significant R&D investment in AI advancements for talent management analytics", "type": "ai_feature" }
+      {
+        "text": "AI Instant Insights for performance management \u2014 automated analysis of performance data with actionable recommendations for talent decisions",
+        "type": "ai_feature"
+      },
+      {
+        "text": "Significant R&D investment in AI advancements for talent management analytics",
+        "type": "ai_feature"
+      }
     ],
     "tech_stack": [
-      "Cloudflare CDN & Website Optimization", "HubSpot CMS", "Google Analytics",
-      "HRIS integration layer", "SOC 2 certified (security, confidentiality, availability)", "Cloud SaaS"
+      "Cloudflare CDN & Website Optimization",
+      "HubSpot CMS",
+      "Google Analytics",
+      "HRIS integration layer",
+      "SOC 2 certified (security, confidentiality, availability)",
+      "Cloud SaaS"
     ],
     "github": {},
     "careers": {},
     "talent": {
       "found": true,
       "leadership": [
-        { "name": "Jerry Dunne", "role": "CEO — leading growth post-Solen acquisition" },
-        { "name": "Artur Gazdowski", "role": "Co-Founder & VP Operations — 20+ years" },
-        { "name": "Leah Groehler, Ph.D.", "role": "VP Consulting — I/O psychology expert" }
+        {
+          "name": "Jerry Dunne",
+          "role": "CEO \u2014 leading growth post-Solen acquisition"
+        },
+        {
+          "name": "Artur Gazdowski",
+          "role": "Co-Founder & VP Operations \u2014 20+ years"
+        },
+        {
+          "name": "Leah Groehler, Ph.D.",
+          "role": "VP Consulting \u2014 I/O psychology expert"
+        }
       ],
-      "team_skills": ["I/O Psychology", "Talent management", "Performance analytics", "360 feedback", "Succession planning", "SOC 2 compliance"]
+      "team_skills": [
+        "I/O Psychology",
+        "Talent management",
+        "Performance analytics",
+        "360 feedback",
+        "Succession planning",
+        "SOC 2 compliance"
+      ]
     },
     "named_customers": [
       "Large retail organizations (leadership development)",
@@ -371,45 +927,122 @@
       "Investment banks (compensation planning)"
     ],
     "recent_news": [
-      { "title": "ViaPeople and SpiraLinks Merge", "date": "2024", "summary": "ViaPeople merged with SpiraLinks to deliver a full-suite HR platform connecting performance management with compensation planning for global teams.", "url": "https://www.solensoftwaregroup.com/companies" },
-      { "title": "Arrowroot Family Office M&A Advisory", "date": "2024", "summary": "Arrowroot Family Office served as M&A advisor for ViaPeople's acquisition into the Solen portfolio.", "url": "https://arrowrootfamilyoffice.com/press-releases/ma-advisor-to-viapeople/" }
+      {
+        "title": "ViaPeople and SpiraLinks Merge",
+        "date": "2024",
+        "summary": "ViaPeople merged with SpiraLinks to deliver a full-suite HR platform connecting performance management with compensation planning for global teams.",
+        "url": "https://www.solensoftwaregroup.com/companies"
+      },
+      {
+        "title": "Arrowroot Family Office M&A Advisory",
+        "date": "2024",
+        "summary": "Arrowroot Family Office served as M&A advisor for ViaPeople's acquisition into the Solen portfolio.",
+        "url": "https://arrowrootfamilyoffice.com/press-releases/ma-advisor-to-viapeople/"
+      }
     ],
-    "hiring_signals": ["Software engineers (AI capabilities)", "Consulting services", "Customer success"],
+    "hiring_signals": [
+      "Software engineers (AI capabilities)",
+      "Consulting services",
+      "Customer success"
+    ],
     "key_evidence": [
-      { "title": "AI Instant Insights", "url": "https://www.viapeople.com", "source": "company_website", "text": "ViaPeople offers AI Instant Insights as part of its performance management platform, providing automated analysis of performance data to help managers make better talent decisions. The company is making significant R&D investment in AI advancements." },
-      { "title": "I/O Psychology-Founded Platform", "url": "https://www.viapeople.com/company", "source": "company_website", "text": "Founded in 2002 by I/O psychology experts (Karen Caruso Ph.D., Leah Groehler Ph.D., Artur Gazdowski, James Perry). This academic foundation differentiates ViaPeople from generic HR platforms — the 'concierge service' model provides expert-customized talent processes." },
-      { "title": "Full-Suite HR Platform", "url": "https://www.viapeople.com/company", "source": "company_website", "text": "Products: performance management, 360-degree feedback (with bias-reduction features), deal team feedback, succession planning (9-box analysis), automated promotion processes, organizational charting, and compensation planning (via SpiraLinks merger)." },
-      { "title": "Enterprise Case Studies", "url": "https://www.viapeople.com/blog/viaPeople-blog/bid/63163/Case-Study-Merging-Succession-Planning-and-Career-Development/", "source": "company_blog", "text": "Large retail organization: developed leadership assessment increasing diversity at leadership levels. Large pharma company: implemented succession planning unique in industry for sales force, preparing internal talent for acquisition-driven growth." },
-      { "title": "SOC 2 Certified", "url": "https://www.viapeople.com", "source": "company_website", "text": "SOC 2 certification covering security, confidentiality, and availability controls — critical for enterprise HR data. Starting at $5,000/user annually, positioning as premium talent management platform." }
+      {
+        "title": "AI Instant Insights",
+        "url": "https://www.viapeople.com",
+        "source": "company_website",
+        "text": "ViaPeople offers AI Instant Insights as part of its performance management platform, providing automated analysis of performance data to help managers make better talent decisions. The company is making significant R&D investment in AI advancements."
+      },
+      {
+        "title": "I/O Psychology-Founded Platform",
+        "url": "https://www.viapeople.com/company",
+        "source": "company_website",
+        "text": "Founded in 2002 by I/O psychology experts (Karen Caruso Ph.D., Leah Groehler Ph.D., Artur Gazdowski, James Perry). This academic foundation differentiates ViaPeople from generic HR platforms \u2014 the 'concierge service' model provides expert-customized talent processes."
+      },
+      {
+        "title": "Full-Suite HR Platform",
+        "url": "https://www.viapeople.com/company",
+        "source": "company_website",
+        "text": "Products: performance management, 360-degree feedback (with bias-reduction features), deal team feedback, succession planning (9-box analysis), automated promotion processes, organizational charting, and compensation planning (via SpiraLinks merger)."
+      },
+      {
+        "title": "Enterprise Case Studies",
+        "url": "https://www.viapeople.com/blog/viaPeople-blog/bid/63163/Case-Study-Merging-Succession-Planning-and-Career-Development/",
+        "source": "company_blog",
+        "text": "Large retail organization: developed leadership assessment increasing diversity at leadership levels. Large pharma company: implemented succession planning unique in industry for sales force, preparing internal talent for acquisition-driven growth."
+      },
+      {
+        "title": "SOC 2 Certified",
+        "url": "https://www.viapeople.com",
+        "source": "company_website",
+        "text": "SOC 2 certification covering security, confidentiality, and availability controls \u2014 critical for enterprise HR data. Starting at $5,000/user annually, positioning as premium talent management platform."
+      }
     ],
-    "narrative_summary": "ViaPeople provides flexible, I/O psychology-founded talent management software with AI Instant Insights, 360-degree feedback (with bias-reduction), deal team feedback, succession planning (9-box), automated promotions, and compensation planning (via SpiraLinks merger). Founded in 2002 by PhD organizational psychologists and headquartered in Plainsboro, NJ. CEO Jerry Dunne leads the ~31-person team. SOC 2 certified. Serves PE firms, investment banks, and large enterprises with complex talent structures. Case studies include a large retailer increasing leadership diversity and a pharma company building internal talent pipelines. Premium pricing ($5,000+/user). Significant AI R&D investment underway. Scored 2.86/5.0 (Tier: AI-Buildable)."
+    "narrative_summary": "ViaPeople provides flexible, I/O psychology-founded talent management software with AI Instant Insights, 360-degree feedback (with bias-reduction), deal team feedback, succession planning (9-box), automated promotions, and compensation planning (via SpiraLinks merger). Founded in 2002 by PhD organizational psychologists and headquartered in Plainsboro, NJ. CEO Jerry Dunne leads the ~31-person team. SOC 2 certified. Serves PE firms, investment banks, and large enterprises with complex talent structures. Case studies include a large retailer increasing leadership diversity and a pharma company building internal talent pipelines. Premium pricing ($5,000+/user). Significant AI R&D investment underway."
   },
   "ThingTech": {
     "executives": [
-      { "name": "Tim Quinn", "role": "Co-Founder & Former CEO" },
-      { "name": "Brian Corcoran", "role": "Co-Founder & Chief Solutions Officer" },
-      { "name": "Jim Lester", "role": "CEO (as of 2019)" },
-      { "name": "Andy Davies", "role": "Former COO & President (post-Series A)" }
+      {
+        "name": "Tim Quinn",
+        "role": "Co-Founder & Former CEO"
+      },
+      {
+        "name": "Brian Corcoran",
+        "role": "Co-Founder & Chief Solutions Officer"
+      },
+      {
+        "name": "Jim Lester",
+        "role": "CEO (as of 2019)"
+      },
+      {
+        "name": "Andy Davies",
+        "role": "Former COO & President (post-Series A)"
+      }
     ],
     "ai_initiatives": [
-      { "text": "IoT-powered predictive maintenance — connected sensors generate work orders based on asset condition, time, mileage, and telematics data patterns", "type": "ai_feature" },
-      { "text": "Real-time asset condition monitoring via IIoT sensors for anomaly detection", "type": "ml_capability" }
+      {
+        "text": "IoT-powered predictive maintenance \u2014 connected sensors generate work orders based on asset condition, time, mileage, and telematics data patterns",
+        "type": "ai_feature"
+      },
+      {
+        "text": "Real-time asset condition monitoring via IIoT sensors for anomaly detection",
+        "type": "ml_capability"
+      }
     ],
     "tech_stack": [
-      "CalAmp Connect IoT platform", "Salesforce AppExchange (TracIT)",
-      "Cloud-based SaaS", "IoT sensors (out-of-the-box connected)", "Web-based dashboards",
-      "Work order automation engine", "Parts inventory management"
+      "CalAmp Connect IoT platform",
+      "Salesforce AppExchange (TracIT)",
+      "Cloud-based SaaS",
+      "IoT sensors (out-of-the-box connected)",
+      "Web-based dashboards",
+      "Work order automation engine",
+      "Parts inventory management"
     ],
     "github": {},
     "careers": {},
     "talent": {
       "found": true,
       "leadership": [
-        { "name": "Tim Quinn", "role": "Co-Founder — 76/100 CEO approval rating" },
-        { "name": "Brian Corcoran", "role": "Co-Founder & CSO — leads solution architecture" },
-        { "name": "Jim Lester", "role": "CEO since 2019" }
+        {
+          "name": "Tim Quinn",
+          "role": "Co-Founder \u2014 76/100 CEO approval rating"
+        },
+        {
+          "name": "Brian Corcoran",
+          "role": "Co-Founder & CSO \u2014 leads solution architecture"
+        },
+        {
+          "name": "Jim Lester",
+          "role": "CEO since 2019"
+        }
       ],
-      "team_skills": ["IoT/IIoT", "Asset management", "Telematics", "Salesforce integration", "Transit systems", "CalAmp"]
+      "team_skills": [
+        "IoT/IIoT",
+        "Asset management",
+        "Telematics",
+        "Salesforce integration",
+        "Transit systems",
+        "CalAmp"
+      ]
     },
     "named_customers": [
       "NAIPTA (Northern Arizona Intergovernmental Public Transportation Authority)",
@@ -419,117 +1052,297 @@
       "City of Burleson, Texas"
     ],
     "recent_news": [
-      { "title": "ThingTech acquired by Track Star International", "date": "2024", "summary": "ThingTech merged with Track Star to deliver enhanced fleet management and IoT enterprise asset management capabilities under Solen backing.", "url": "https://www.trackstar.com/thingtech" },
-      { "title": "$4M Series A Funding", "date": "2019-01", "summary": "Raised $4 million Series A led by BIP Capital with Engage Ventures follow-on, funding sales, marketing, customer success, and product development.", "url": "https://www.prnewswire.com/news-releases/thingtech-raises-4-million-series-a-round-led-by-bip-capital-300783302.html" },
-      { "title": "NAIPTA Transit Asset Management Deployment", "date": "2017-11", "summary": "Selected by NAIPTA for comprehensive Transit Asset Management system supporting FTA 'State of Good Repair' compliance under the FAST Act.", "url": "https://www.prweb.com/releases/2017/11/prweb14861547.htm" },
-      { "title": "Fulton County Georgia Contract", "date": "2016", "summary": "Awarded Fulton County Georgia contract for real-time fleet and asset tracking and telematics.", "url": "https://www.prweb.com/releases/thingtech_awarded_fulton_county_georgia_contract_for_real_time_fleet_and_asset_tracking_and_telematics/prweb13271824.htm" }
+      {
+        "title": "ThingTech acquired by Track Star International",
+        "date": "2024",
+        "summary": "ThingTech merged with Track Star to deliver enhanced fleet management and IoT enterprise asset management capabilities under Solen backing.",
+        "url": "https://www.trackstar.com/thingtech"
+      },
+      {
+        "title": "$4M Series A Funding",
+        "date": "2019-01",
+        "summary": "Raised $4 million Series A led by BIP Capital with Engage Ventures follow-on, funding sales, marketing, customer success, and product development.",
+        "url": "https://www.prnewswire.com/news-releases/thingtech-raises-4-million-series-a-round-led-by-bip-capital-300783302.html"
+      },
+      {
+        "title": "NAIPTA Transit Asset Management Deployment",
+        "date": "2017-11",
+        "summary": "Selected by NAIPTA for comprehensive Transit Asset Management system supporting FTA 'State of Good Repair' compliance under the FAST Act.",
+        "url": "https://www.prweb.com/releases/2017/11/prweb14861547.htm"
+      },
+      {
+        "title": "Fulton County Georgia Contract",
+        "date": "2016",
+        "summary": "Awarded Fulton County Georgia contract for real-time fleet and asset tracking and telematics.",
+        "url": "https://www.prweb.com/releases/thingtech_awarded_fulton_county_georgia_contract_for_real_time_fleet_and_asset_tracking_and_telematics/prweb13271824.htm"
+      }
     ],
     "hiring_signals": [],
     "key_evidence": [
-      { "title": "IoT Enterprise Asset Management", "url": "https://www.cioreview.com/thingtech", "source": "press_release", "text": "ThingTech offers SaaS applications: manageIT (Enterprise Asset Management), tracIT (Vehicle Tracking and Telematics), and routeIT (Schedule and Route Optimization). Built on CalAmp Connect IoT platform with out-of-the-box connected sensors." },
-      { "title": "NAIPTA Partnership", "url": "https://www.prweb.com/releases/2017/11/prweb14861547.htm", "source": "press_release", "text": "NAIPTA selected ThingTech for comprehensive Transit Asset Management to maintain, manage, and forecast asset needs in compliance with FTA 'State of Good Repair' requirements under the FAST program." },
-      { "title": "Government Customer Track Record", "url": "https://hypepotamus.com/companies/thingtech/", "source": "press_coverage", "text": "Customers include Fulton County GA, State of Delaware, Berkshire Regional Transit MA, and City of Burleson TX. At peak had 18 employees and 30 customers with 80% acquired in 2017." },
-      { "title": "Salesforce AppExchange Integration", "url": "https://www.prweb.com/releases/2016/05/prweb13380924.htm", "source": "press_release", "text": "Launched TracIT on the Salesforce AppExchange, enabling fleet tracking directly within Salesforce CRM. Also listed on Salesforce EAM solutions marketplace." },
-      { "title": "Series A & Investor Backing", "url": "https://www.prnewswire.com/news-releases/thingtech-raises-4-million-series-a-round-led-by-bip-capital-300783302.html", "source": "press_release", "text": "Raised $4M Series A in January 2019 led by BIP Capital (now Panoramic Ventures). Total funding: $5.45M. Based in Atlanta, Georgia. Founded in 2014." }
+      {
+        "title": "IoT Enterprise Asset Management",
+        "url": "https://www.cioreview.com/thingtech",
+        "source": "press_release",
+        "text": "ThingTech offers SaaS applications: manageIT (Enterprise Asset Management), tracIT (Vehicle Tracking and Telematics), and routeIT (Schedule and Route Optimization). Built on CalAmp Connect IoT platform with out-of-the-box connected sensors."
+      },
+      {
+        "title": "NAIPTA Partnership",
+        "url": "https://www.prweb.com/releases/2017/11/prweb14861547.htm",
+        "source": "press_release",
+        "text": "NAIPTA selected ThingTech for comprehensive Transit Asset Management to maintain, manage, and forecast asset needs in compliance with FTA 'State of Good Repair' requirements under the FAST program."
+      },
+      {
+        "title": "Government Customer Track Record",
+        "url": "https://hypepotamus.com/companies/thingtech/",
+        "source": "press_coverage",
+        "text": "Customers include Fulton County GA, State of Delaware, Berkshire Regional Transit MA, and City of Burleson TX. At peak had 18 employees and 30 customers with 80% acquired in 2017."
+      },
+      {
+        "title": "Salesforce AppExchange Integration",
+        "url": "https://www.prweb.com/releases/2016/05/prweb13380924.htm",
+        "source": "press_release",
+        "text": "Launched TracIT on the Salesforce AppExchange, enabling fleet tracking directly within Salesforce CRM. Also listed on Salesforce EAM solutions marketplace."
+      },
+      {
+        "title": "Series A & Investor Backing",
+        "url": "https://www.prnewswire.com/news-releases/thingtech-raises-4-million-series-a-round-led-by-bip-capital-300783302.html",
+        "source": "press_release",
+        "text": "Raised $4M Series A in January 2019 led by BIP Capital (now Panoramic Ventures). Total funding: $5.45M. Based in Atlanta, Georgia. Founded in 2014."
+      }
     ],
-    "narrative_summary": "ThingTech provides an IoT-based enterprise asset management platform with three SaaS products: manageIT (EAM), tracIT (vehicle tracking/telematics), and routeIT (schedule/route optimization). Built on CalAmp Connect IoT with out-of-the-box connected sensors for predictive maintenance and real-time condition monitoring. Government customers include NAIPTA, Fulton County GA, State of Delaware, and Berkshire Regional Transit. Also on Salesforce AppExchange. Founded in 2014 in Atlanta by Tim Quinn and Brian Corcoran. Raised $5.45M (Series A led by BIP Capital/Panoramic Ventures). Acquired by Track Star International in 2024, creating a combined fleet + IoT asset platform under Solen. Scored 2.61/5.0 (Tier: AI-Emerging)."
+    "narrative_summary": "ThingTech provides an IoT-based enterprise asset management platform with three SaaS products: manageIT (EAM), tracIT (vehicle tracking/telematics), and routeIT (schedule/route optimization). Built on CalAmp Connect IoT with out-of-the-box connected sensors for predictive maintenance and real-time condition monitoring. Government customers include NAIPTA, Fulton County GA, State of Delaware, and Berkshire Regional Transit. Also on Salesforce AppExchange. Founded in 2014 in Atlanta by Tim Quinn and Brian Corcoran. Raised $5.45M (Series A led by BIP Capital/Panoramic Ventures). Acquired by Track Star International in 2024, creating a combined fleet + IoT asset platform under Solen."
   },
   "TrackIt Transit": {
     "executives": [
-      { "name": "Mark Anderson", "role": "Founder & President" }
+      {
+        "name": "Mark Anderson",
+        "role": "Founder & President"
+      }
     ],
     "ai_initiatives": [
-      { "text": "Compliance automation engine — automates PTASP (Public Transportation Agency Safety Plan) data collection and reporting for FTA compliance", "type": "ai_feature" }
+      {
+        "text": "Compliance automation engine \u2014 automates PTASP (Public Transportation Agency Safety Plan) data collection and reporting for FTA compliance",
+        "type": "ai_feature"
+      }
     ],
     "tech_stack": [
-      "Cloud-based SaaS", "Mobile app (Google Play - Trackit Assessment)", "Browser-based interface",
-      "Digital records with search/filter", "Permissions-based data sharing"
+      "Cloud-based SaaS",
+      "Mobile app (Google Play - Trackit Assessment)",
+      "Browser-based interface",
+      "Digital records with search/filter",
+      "Permissions-based data sharing"
     ],
     "github": {},
     "careers": {},
     "talent": {
       "found": true,
       "leadership": [
-        { "name": "Mark Anderson", "role": "Founder & President — continues post-Solen acquisition" }
+        {
+          "name": "Mark Anderson",
+          "role": "Founder & President \u2014 continues post-Solen acquisition"
+        }
       ],
-      "team_skills": ["Transit operations", "Safety compliance", "PTASP", "FTA regulations", "Paperless workflows"]
+      "team_skills": [
+        "Transit operations",
+        "Safety compliance",
+        "PTASP",
+        "FTA regulations",
+        "Paperless workflows"
+      ]
     },
     "named_customers": [
       "100+ transit agencies across the US",
       "SWTA (Southwestern Transit Association) member agencies"
     ],
     "recent_news": [
-      { "title": "Solen Software Group Acquires Trackit LLC", "date": "2026-02", "summary": "Solen acquired Trackit LLC in February 2026. Mark Anderson continues as President. More than 100 transit agencies rely on Trackit for PTASP compliance.", "url": "https://www.businesswire.com/news/home/20260310131726/en/Solen-Software-Group-Acquires-Trackit-LLC" }
+      {
+        "title": "Solen Software Group Acquires Trackit LLC",
+        "date": "2026-02",
+        "summary": "Solen acquired Trackit LLC in February 2026. Mark Anderson continues as President. More than 100 transit agencies rely on Trackit for PTASP compliance.",
+        "url": "https://www.businesswire.com/news/home/20260310131726/en/Solen-Software-Group-Acquires-Trackit-LLC"
+      }
     ],
     "hiring_signals": [],
     "key_evidence": [
-      { "title": "Transit-Specific SaaS Platform", "url": "https://trackittransit.com", "source": "company_website", "text": "TrackIt provides a configurable, paperless system for public transit agencies — replacing paper-based workflows with searchable digital records. Modules include attendance, claims tracking, compliance/doc management, customer service, eLearning, event logging, safety reporting, form management, and HR." },
-      { "title": "100+ Transit Agency Adoption", "url": "https://www.businesswire.com/news/home/20260310131726/en/Solen-Software-Group-Acquires-Trackit-LLC", "source": "press_release", "text": "More than 100 transit agencies have adopted Trackit to develop agency-wide safety plans with sophisticated record keeping. Data entered once is shared across departments with permissions-based access, breaking down information silos." },
-      { "title": "PTASP Compliance Leadership", "url": "https://trackittransit.com/applications/", "source": "company_website", "text": "TrackIt enables transit agencies to comply with PTASP (Public Transportation Agency Safety Plan) requirements under FTA regulations. The platform facilitates communication and workflow between departments while providing audit-ready compliance documentation." },
-      { "title": "Rapid Deployment", "url": "https://www.getapp.com/government-social-services-software/a/trackit/", "source": "review_site", "text": "Cloud-hosted platform enables rapid deployment in under 1 day. Trackit Assessment mobile app available on Google Play for field operations and safety inspections." }
+      {
+        "title": "Transit-Specific SaaS Platform",
+        "url": "https://trackittransit.com",
+        "source": "company_website",
+        "text": "TrackIt provides a configurable, paperless system for public transit agencies \u2014 replacing paper-based workflows with searchable digital records. Modules include attendance, claims tracking, compliance/doc management, customer service, eLearning, event logging, safety reporting, form management, and HR."
+      },
+      {
+        "title": "100+ Transit Agency Adoption",
+        "url": "https://www.businesswire.com/news/home/20260310131726/en/Solen-Software-Group-Acquires-Trackit-LLC",
+        "source": "press_release",
+        "text": "More than 100 transit agencies have adopted Trackit to develop agency-wide safety plans with sophisticated record keeping. Data entered once is shared across departments with permissions-based access, breaking down information silos."
+      },
+      {
+        "title": "PTASP Compliance Leadership",
+        "url": "https://trackittransit.com/applications/",
+        "source": "company_website",
+        "text": "TrackIt enables transit agencies to comply with PTASP (Public Transportation Agency Safety Plan) requirements under FTA regulations. The platform facilitates communication and workflow between departments while providing audit-ready compliance documentation."
+      },
+      {
+        "title": "Rapid Deployment",
+        "url": "https://www.getapp.com/government-social-services-software/a/trackit/",
+        "source": "review_site",
+        "text": "Cloud-hosted platform enables rapid deployment in under 1 day. Trackit Assessment mobile app available on Google Play for field operations and safety inspections."
+      }
     ],
-    "narrative_summary": "TrackIt Transit is a transit-specific cloud SaaS platform deployed by 100+ public transit agencies for PTASP compliance, safety management, and paperless operations. Modules span attendance, claims tracking, compliance documentation, customer service, eLearning, event logging, safety reporting, and HR management. Data entered once flows across departments with permissions-based access. Founded in 2013 by Mark Anderson, who continues as President post-Solen acquisition (February 2026). SWTA member. Mobile app (Trackit Assessment) available on Google Play. Rapid deployment capability (<1 day). The transit safety compliance niche presents AI opportunities in predictive safety analytics and automated incident reporting. Scored 2.42/5.0 (Tier: AI-Emerging)."
+    "narrative_summary": "TrackIt Transit is a transit-specific cloud SaaS platform deployed by 100+ public transit agencies for PTASP compliance, safety management, and paperless operations. Modules span attendance, claims tracking, compliance documentation, customer service, eLearning, event logging, safety reporting, and HR management. Data entered once flows across departments with permissions-based access. Founded in 2013 by Mark Anderson, who continues as President post-Solen acquisition (February 2026). SWTA member. Mobile app (Trackit Assessment) available on Google Play. Rapid deployment capability (<1 day). The transit safety compliance niche presents AI opportunities in predictive safety analytics and automated incident reporting."
   },
   "NexTalk": {
     "executives": [
-      { "name": "Scott Cummings", "role": "President & CEO (ex-SAP VP)" },
-      { "name": "Gary Tanner", "role": "Executive Vice President, Sales" }
+      {
+        "name": "Scott Cummings",
+        "role": "President & CEO (ex-SAP VP)"
+      },
+      {
+        "name": "Gary Tanner",
+        "role": "Executive Vice President, Sales"
+      }
     ],
     "ai_initiatives": [
-      { "text": "SpeechPath automated speech recognition — AI-powered text engine achieving industry-leading Word Error Rate and latency for real-time captioning", "type": "ai_feature" },
-      { "text": "Automated caption agents replacing traditional human steno captioning — faster, more accurate, and privacy-preserving", "type": "ai_feature" }
+      {
+        "text": "SpeechPath automated speech recognition \u2014 AI-powered text engine achieving industry-leading Word Error Rate and latency for real-time captioning",
+        "type": "ai_feature"
+      },
+      {
+        "text": "Automated caption agents replacing traditional human steno captioning \u2014 faster, more accurate, and privacy-preserving",
+        "type": "ai_feature"
+      }
     ],
     "tech_stack": [
-      "AWS cloud", "SpeechPath Text Engine Server (speech-to-text)", "IP CTS (FCC-approved)",
-      "CXexchange (NICE inContact) integration", "Windows desktop deployment",
-      "TTY/RTT call management", "Patented communication technology"
+      "AWS cloud",
+      "SpeechPath Text Engine Server (speech-to-text)",
+      "IP CTS (FCC-approved)",
+      "CXexchange (NICE inContact) integration",
+      "Windows desktop deployment",
+      "TTY/RTT call management",
+      "Patented communication technology"
     ],
     "github": {},
     "careers": {},
     "talent": {
       "found": true,
       "leadership": [
-        { "name": "Scott Cummings", "role": "CEO — ex-SAP VP West Region, ex-Fujitsu, ex-RightNow Technologies" },
-        { "name": "Gary Tanner", "role": "EVP Sales — driving expansion into government and healthcare" }
+        {
+          "name": "Scott Cummings",
+          "role": "CEO \u2014 ex-SAP VP West Region, ex-Fujitsu, ex-RightNow Technologies"
+        },
+        {
+          "name": "Gary Tanner",
+          "role": "EVP Sales \u2014 driving expansion into government and healthcare"
+        }
       ],
-      "team_skills": ["Speech-to-text", "Accessibility", "FCC compliance", "Contact center tech", "ADA requirements"]
+      "team_skills": [
+        "Speech-to-text",
+        "Accessibility",
+        "FCC compliance",
+        "Contact center tech",
+        "ADA requirements"
+      ]
     },
     "named_customers": [
-      "Healthfirst (Medicare/Medicaid health plan — nearly $1M increase in government rebates)",
+      "Healthfirst (Medicare/Medicaid health plan \u2014 nearly $1M increase in government rebates)",
       "200+ companies across US and Canada",
       "Federal and state government agencies",
       "Healthcare organizations",
       "Financial services firms"
     ],
     "recent_news": [
-      { "title": "FCC Grants IP CTS Certification", "date": "2025-06", "summary": "FCC granted NexTalk Software Inc. conditional IP CTS certification (24-month term through June 2027), enabling SpeechPath captioned telephone service.", "url": "https://www.fcc.gov/consumer-governmental-affairs/fcc-grants-conditional-ip-cts-certification-nextalk-software-inc" },
-      { "title": "Solen Ventures Acquires NexTalk", "date": "2025-05", "summary": "Solen Ventures LLC acquired NexTalk with Foley & Lardner as legal advisor. Scott Cummings continues as CEO.", "url": "https://www.foley.com/news/2025/05/foley-serves-as-legal-advisor-to-nextalk-in-acquisition-by-private-equity-firm/" },
-      { "title": "SpeechPath FCC Approval", "date": "2025", "summary": "NexTalk approved by FCC as IP CTS provider with SpeechPath — automated speech-to-text captioning achieving industry-leading accuracy and speed.", "url": "https://blog.nextalk.com/nextalk-approved-by-the-fcc-as-an-ip-cts-provider-meet-speechpath" },
-      { "title": "Carahsoft Government Partnership", "date": "2024", "summary": "NexTalk accessibility solutions available through Carahsoft for federal and state government procurement.", "url": "https://www.carahsoft.com/nextalk" }
+      {
+        "title": "FCC Grants IP CTS Certification",
+        "date": "2025-06",
+        "summary": "FCC granted NexTalk Software Inc. conditional IP CTS certification (24-month term through June 2027), enabling SpeechPath captioned telephone service.",
+        "url": "https://www.fcc.gov/consumer-governmental-affairs/fcc-grants-conditional-ip-cts-certification-nextalk-software-inc"
+      },
+      {
+        "title": "Solen Ventures Acquires NexTalk",
+        "date": "2025-05",
+        "summary": "Solen Ventures LLC acquired NexTalk with Foley & Lardner as legal advisor. Scott Cummings continues as CEO.",
+        "url": "https://www.foley.com/news/2025/05/foley-serves-as-legal-advisor-to-nextalk-in-acquisition-by-private-equity-firm/"
+      },
+      {
+        "title": "SpeechPath FCC Approval",
+        "date": "2025",
+        "summary": "NexTalk approved by FCC as IP CTS provider with SpeechPath \u2014 automated speech-to-text captioning achieving industry-leading accuracy and speed.",
+        "url": "https://blog.nextalk.com/nextalk-approved-by-the-fcc-as-an-ip-cts-provider-meet-speechpath"
+      },
+      {
+        "title": "Carahsoft Government Partnership",
+        "date": "2024",
+        "summary": "NexTalk accessibility solutions available through Carahsoft for federal and state government procurement.",
+        "url": "https://www.carahsoft.com/nextalk"
+      }
     ],
     "hiring_signals": [],
     "key_evidence": [
-      { "title": "FCC-Approved IP CTS Provider", "url": "https://www.fcc.gov/consumer-governmental-affairs/fcc-grants-conditional-ip-cts-certification-nextalk-software-inc", "source": "fcc_filing", "text": "FCC granted NexTalk conditional IP CTS certification in June 2025. SpeechPath uses a Text Engine Server to convert speech to text — faster and more accurate than human steno captioning, and fully private/confidential. Funded by FCC TRS Fund." },
-      { "title": "Healthfirst $1M Impact", "url": "https://blog.nextalk.com/address-call-center-monitoring-discrepancies", "source": "company_blog", "text": "Healthfirst (Medicare/Medicaid health plan) achieved nearly $1 million increase in government rebates through improved 5-Star CMS Program ratings after deploying NexTalk's accessibility solutions for deaf, hard of hearing, and non-English speaking customers." },
-      { "title": "50 Million Market Opportunity", "url": "https://www.nextalk.com", "source": "company_website", "text": "50 million deaf and hard-of-hearing people across the U.S. and Canada represent the addressable market. Products: Access Contact Center (agent-side TTY/RTT + interpreter), SpeechPath (AI speech-to-text), Access Home (consumer IP CTS), SimpliciTTY (legacy TTY)." },
-      { "title": "Enterprise Sales Leadership", "url": "https://theorg.com/org/nextalk/org-chart/scott-cummings", "source": "company_profile", "text": "CEO Scott Cummings brings enterprise SaaS sales expertise from SAP (VP West Region for SuccessFactors and High Growth Market), Fujitsu America, and RightNow Technologies. EVP Sales Gary Tanner driving expansion into government and healthcare verticals." },
-      { "title": "Carahsoft Government Channel", "url": "https://www.carahsoft.com/nextalk", "source": "partner_listing", "text": "NexTalk's Access Government package available through Carahsoft, the trusted government IT solutions provider. Enables federal and state agency procurement of ADA-compliant communication tools." }
+      {
+        "title": "FCC-Approved IP CTS Provider",
+        "url": "https://www.fcc.gov/consumer-governmental-affairs/fcc-grants-conditional-ip-cts-certification-nextalk-software-inc",
+        "source": "fcc_filing",
+        "text": "FCC granted NexTalk conditional IP CTS certification in June 2025. SpeechPath uses a Text Engine Server to convert speech to text \u2014 faster and more accurate than human steno captioning, and fully private/confidential. Funded by FCC TRS Fund."
+      },
+      {
+        "title": "Healthfirst $1M Impact",
+        "url": "https://blog.nextalk.com/address-call-center-monitoring-discrepancies",
+        "source": "company_blog",
+        "text": "Healthfirst (Medicare/Medicaid health plan) achieved nearly $1 million increase in government rebates through improved 5-Star CMS Program ratings after deploying NexTalk's accessibility solutions for deaf, hard of hearing, and non-English speaking customers."
+      },
+      {
+        "title": "50 Million Market Opportunity",
+        "url": "https://www.nextalk.com",
+        "source": "company_website",
+        "text": "50 million deaf and hard-of-hearing people across the U.S. and Canada represent the addressable market. Products: Access Contact Center (agent-side TTY/RTT + interpreter), SpeechPath (AI speech-to-text), Access Home (consumer IP CTS), SimpliciTTY (legacy TTY)."
+      },
+      {
+        "title": "Enterprise Sales Leadership",
+        "url": "https://theorg.com/org/nextalk/org-chart/scott-cummings",
+        "source": "company_profile",
+        "text": "CEO Scott Cummings brings enterprise SaaS sales expertise from SAP (VP West Region for SuccessFactors and High Growth Market), Fujitsu America, and RightNow Technologies. EVP Sales Gary Tanner driving expansion into government and healthcare verticals."
+      },
+      {
+        "title": "Carahsoft Government Channel",
+        "url": "https://www.carahsoft.com/nextalk",
+        "source": "partner_listing",
+        "text": "NexTalk's Access Government package available through Carahsoft, the trusted government IT solutions provider. Enables federal and state agency procurement of ADA-compliant communication tools."
+      }
     ],
-    "narrative_summary": "NexTalk provides FCC-approved accessible communication software serving 200+ companies and 50 million deaf/hard-of-hearing individuals across the US and Canada. The SpeechPath platform uses AI-powered automated speech recognition achieving industry-leading Word Error Rate and latency — replacing traditional human steno captioning with faster, more accurate, and privacy-preserving technology. Key products: Access Contact Center, SpeechPath (AI speech-to-text), Access Home (consumer IP CTS), and Access Government. Major customer Healthfirst achieved nearly $1M in government rebate increases. CEO Scott Cummings (ex-SAP VP) and EVP Sales Gary Tanner lead growth into government (via Carahsoft) and healthcare. Acquired by Solen in May 2025; FCC IP CTS certification granted June 2025. Scored 2.31/5.0 (Tier: AI-Emerging)."
+    "narrative_summary": "NexTalk provides FCC-approved accessible communication software serving 200+ companies and 50 million deaf/hard-of-hearing individuals across the US and Canada. The SpeechPath platform uses AI-powered automated speech recognition achieving industry-leading Word Error Rate and latency \u2014 replacing traditional human steno captioning with faster, more accurate, and privacy-preserving technology. Key products: Access Contact Center, SpeechPath (AI speech-to-text), Access Home (consumer IP CTS), and Access Government. Major customer Healthfirst achieved nearly $1M in government rebate increases. CEO Scott Cummings (ex-SAP VP) and EVP Sales Gary Tanner lead growth into government (via Carahsoft) and healthcare. Acquired by Solen in May 2025; FCC IP CTS certification granted June 2025."
   },
   "Dash": {
     "executives": [
-      { "name": "Raphael Sperle", "role": "Founder & CEO" },
-      { "name": "Jacob Nemetz", "role": "Co-Founder" }
+      {
+        "name": "Raphael Sperle",
+        "role": "Founder & CEO"
+      },
+      {
+        "name": "Jacob Nemetz",
+        "role": "Co-Founder"
+      }
     ],
     "ai_initiatives": [
-      { "text": "CloudScanner automated compliance monitoring — AI-powered continuous scanning of AWS infrastructure for security and compliance violations with click-to-fix remediation", "type": "ai_feature" },
-      { "text": "Automated evidence collection — AI gathers compliance artifacts for audit readiness, saving 100s of hours per month", "type": "ai_feature" },
-      { "text": "Natural language policy configuration — plain-English interface for administering security policies without technical expertise", "type": "ai_feature" }
+      {
+        "text": "CloudScanner automated compliance monitoring \u2014 AI-powered continuous scanning of AWS infrastructure for security and compliance violations with click-to-fix remediation",
+        "type": "ai_feature"
+      },
+      {
+        "text": "Automated evidence collection \u2014 AI gathers compliance artifacts for audit readiness, saving 100s of hours per month",
+        "type": "ai_feature"
+      },
+      {
+        "text": "Natural language policy configuration \u2014 plain-English interface for administering security policies without technical expertise",
+        "type": "ai_feature"
+      }
     ],
     "tech_stack": [
-      "AWS (core platform)", "AWS Config integration", "AWS GuardDuty integration",
-      "CloudScanner engine", "REST APIs", "AWS Marketplace distribution",
+      "AWS (core platform)",
+      "AWS Config integration",
+      "AWS GuardDuty integration",
+      "CloudScanner engine",
+      "REST APIs",
+      "AWS Marketplace distribution",
       "HIPAA/SOC 2/ISO 27001/PCI DSS/NIST 800-53/GDPR frameworks"
     ],
     "github": {},
@@ -537,10 +1350,23 @@
     "talent": {
       "found": true,
       "leadership": [
-        { "name": "Raphael Sperle", "role": "Founder & CEO — cloud security and compliance expert" },
-        { "name": "Jacob Nemetz", "role": "Co-Founder — technical architecture" }
+        {
+          "name": "Raphael Sperle",
+          "role": "Founder & CEO \u2014 cloud security and compliance expert"
+        },
+        {
+          "name": "Jacob Nemetz",
+          "role": "Co-Founder \u2014 technical architecture"
+        }
       ],
-      "team_skills": ["AWS cloud security", "Compliance automation", "HIPAA", "SOC 2", "Cloud infrastructure", "Security engineering"]
+      "team_skills": [
+        "AWS cloud security",
+        "Compliance automation",
+        "HIPAA",
+        "SOC 2",
+        "Cloud infrastructure",
+        "Security engineering"
+      ]
     },
     "named_customers": [
       "Hundreds of software teams and healthtech companies",
@@ -549,18 +1375,58 @@
       "Financial services firms (PCI DSS)"
     ],
     "recent_news": [
-      { "title": "Dash ComplyOps V4.0 Release", "date": "2024", "summary": "Introduced rearchitected CloudScanner engine for enhanced continuous AWS compliance monitoring with click-to-fix remediation.", "url": "https://dashsdk.com/introducing-dash-version-4/" },
-      { "title": "AWS for Health Initiative Support", "date": "2024", "summary": "Dash announced support for AWS for Health initiative, positioning as compliance solution for healthcare organizations building on AWS.", "url": "https://www.prweb.com/releases/dash-solutions-announces-support-for-aws-for-health-initiative-878745631.html" },
-      { "title": "AWS Marketplace Availability", "date": "2024", "summary": "Dash ComplyOps available on AWS Marketplace with 7-day free trial including SOC 2 Acceleration Package.", "url": "https://aws.amazon.com/marketplace/pp/prodview-brgjv7fvs2xe2" }
+      {
+        "title": "Dash ComplyOps V4.0 Release",
+        "date": "2024",
+        "summary": "Introduced rearchitected CloudScanner engine for enhanced continuous AWS compliance monitoring with click-to-fix remediation.",
+        "url": "https://dashsdk.com/introducing-dash-version-4/"
+      },
+      {
+        "title": "AWS for Health Initiative Support",
+        "date": "2024",
+        "summary": "Dash announced support for AWS for Health initiative, positioning as compliance solution for healthcare organizations building on AWS.",
+        "url": "https://www.prweb.com/releases/dash-solutions-announces-support-for-aws-for-health-initiative-878745631.html"
+      },
+      {
+        "title": "AWS Marketplace Availability",
+        "date": "2024",
+        "summary": "Dash ComplyOps available on AWS Marketplace with 7-day free trial including SOC 2 Acceleration Package.",
+        "url": "https://aws.amazon.com/marketplace/pp/prodview-brgjv7fvs2xe2"
+      }
     ],
     "hiring_signals": [],
     "key_evidence": [
-      { "title": "AWS Advanced Technology Partner", "url": "https://aws.amazon.com/blogs/apn/streamline-your-hipaa-security-program-on-aws-with-dash-complyops/", "source": "aws_blog", "text": "Dash ComplyOps is an AWS Advanced Technology Partner with Healthcare Competency status. Member of AWS Global Security & Compliance Acceleration (GSCA) program. Streamlines HIPAA security programs on AWS with automated scanning and remediation." },
-      { "title": "Multi-Framework Compliance", "url": "https://dashsdk.com", "source": "company_website", "text": "Supports 6 compliance frameworks: HIPAA/HITECH, SOC 2 (Type 1 & 2), ISO 27001, PCI DSS, NIST 800-53, and GDPR. Automated controls via CloudScanner, continuous monitoring, and click-to-fix remediation across AWS infrastructure." },
-      { "title": "Efficiency Impact", "url": "https://dashsdk.com", "source": "company_website", "text": "Dash provides instant visibility into cloud environments, puts security and operations teams on the same page, and saves 100s of hours of manual compliance work per month through automated evidence collection and monitoring." },
-      { "title": "V4.0 CloudScanner Engine", "url": "https://dashsdk.com/introducing-dash-version-4/", "source": "company_blog", "text": "Version 4.0 introduced rearchitected CloudScanner engine: plain-English policy management, automated technical controls with guardrails, continuous compliance status monitoring, and one-click security issue resolution." },
-      { "title": "Relevance Lab Integration", "url": "https://dashsdk.com", "source": "company_website", "text": "Integration with Relevance Lab's Governance360 platform for multi-cloud compliance orchestration. Extends Dash's AWS-native capabilities into broader enterprise cloud governance." }
+      {
+        "title": "AWS Advanced Technology Partner",
+        "url": "https://aws.amazon.com/blogs/apn/streamline-your-hipaa-security-program-on-aws-with-dash-complyops/",
+        "source": "aws_blog",
+        "text": "Dash ComplyOps is an AWS Advanced Technology Partner with Healthcare Competency status. Member of AWS Global Security & Compliance Acceleration (GSCA) program. Streamlines HIPAA security programs on AWS with automated scanning and remediation."
+      },
+      {
+        "title": "Multi-Framework Compliance",
+        "url": "https://dashsdk.com",
+        "source": "company_website",
+        "text": "Supports 6 compliance frameworks: HIPAA/HITECH, SOC 2 (Type 1 & 2), ISO 27001, PCI DSS, NIST 800-53, and GDPR. Automated controls via CloudScanner, continuous monitoring, and click-to-fix remediation across AWS infrastructure."
+      },
+      {
+        "title": "Efficiency Impact",
+        "url": "https://dashsdk.com",
+        "source": "company_website",
+        "text": "Dash provides instant visibility into cloud environments, puts security and operations teams on the same page, and saves 100s of hours of manual compliance work per month through automated evidence collection and monitoring."
+      },
+      {
+        "title": "V4.0 CloudScanner Engine",
+        "url": "https://dashsdk.com/introducing-dash-version-4/",
+        "source": "company_blog",
+        "text": "Version 4.0 introduced rearchitected CloudScanner engine: plain-English policy management, automated technical controls with guardrails, continuous compliance status monitoring, and one-click security issue resolution."
+      },
+      {
+        "title": "Relevance Lab Integration",
+        "url": "https://dashsdk.com",
+        "source": "company_website",
+        "text": "Integration with Relevance Lab's Governance360 platform for multi-cloud compliance orchestration. Extends Dash's AWS-native capabilities into broader enterprise cloud governance."
+      }
     ],
-    "narrative_summary": "Dash ComplyOps (dashsdk.com) is an AWS Advanced Technology Partner providing automated cloud security and compliance for healthcare, SaaS, and financial services. The platform supports 6 compliance frameworks (HIPAA, SOC 2, ISO 27001, PCI DSS, NIST 800-53, GDPR) with the V4.0 CloudScanner engine delivering continuous monitoring, automated evidence collection, and click-to-fix remediation. Saves 100s of hours per month in manual compliance work. Founded by Raphael Sperle (CEO) and Jacob Nemetz, the company holds AWS Healthcare Competency status and is available on AWS Marketplace. Serves hundreds of software teams and healthtech companies. Integration with Relevance Lab extends into multi-cloud governance. Part of Solen Software Group portfolio. Scored 1.97/5.0 (Tier: AI-Limited)."
+    "narrative_summary": "Dash ComplyOps (dashsdk.com) is an AWS Advanced Technology Partner providing automated cloud security and compliance for healthcare, SaaS, and financial services. The platform supports 6 compliance frameworks (HIPAA, SOC 2, ISO 27001, PCI DSS, NIST 800-53, GDPR) with the V4.0 CloudScanner engine delivering continuous monitoring, automated evidence collection, and click-to-fix remediation. Saves 100s of hours per month in manual compliance work. Founded by Raphael Sperle (CEO) and Jacob Nemetz, the company holds AWS Healthcare Competency status and is available on AWS Marketplace. Serves hundreds of software teams and healthtech companies. Integration with Relevance Lab extends into multi-cloud governance. Part of Solen Software Group portfolio."
   }
 }

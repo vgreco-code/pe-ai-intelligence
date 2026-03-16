@@ -102,9 +102,9 @@ def assign_wave(score: float) -> int:
     Wave 2: Build foundation first, then deploy (6-12 months)
     Wave 3: Significant investment needed (12-24 months)
     """
-    if score >= 3.2:
+    if score >= 3.0:
         return 1
-    if score >= 2.5:
+    if score >= 2.65:
         return 2
     return 3
 

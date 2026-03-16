@@ -45,9 +45,10 @@ def tier(score):
     return "AI-Limited"
 
 def wave(score):
-    if score >= 3.2: return 1
-    if score >= 2.5: return 2
-    return 3
+    # Adjusted post-audit: old thresholds put 12/14 in Wave 2
+    if score >= 3.0: return 1   # AI-ready for investment now
+    if score >= 2.65: return 2  # Needs development before AI
+    return 3                    # Requires significant groundwork
 
 def cat_scores(pillars):
     cats = {

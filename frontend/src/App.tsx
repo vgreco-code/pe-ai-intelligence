@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import {
   LayoutDashboard, Building2, Brain, Database, ChevronLeft, ChevronRight,
-  Zap, TrendingUp, BarChart3, GitCompareArrows, Workflow, Github, Grid3X3
+  Zap, TrendingUp, BarChart3, GitCompareArrows, Workflow, Github, Grid3X3, BookOpen
 } from 'lucide-react'
 import Dashboard from './pages/Dashboard'
 import Portfolio from './pages/Portfolio'
@@ -13,6 +13,7 @@ import CompareCompanies from './pages/CompareCompanies'
 import PipelineArchitecture from './pages/PipelineArchitecture'
 import Heatmap from './pages/Heatmap'
 import Sandbox from './pages/Sandbox'
+import Methodology from './pages/Methodology'
 import type { BenchmarkCompany } from './pages/CompetitiveBenchmarks'
 
 // Types
@@ -165,7 +166,7 @@ export const getScoreColor = (score: number): string => {
   return '#ef4444'
 }
 
-type Page = 'dashboard' | 'portfolio' | 'compare' | 'benchmarks' | 'heatmap' | 'pipeline' | 'model' | 'training' | 'sandbox' | 'company-detail'
+type Page = 'dashboard' | 'portfolio' | 'compare' | 'benchmarks' | 'heatmap' | 'pipeline' | 'model' | 'training' | 'sandbox' | 'methodology' | 'company-detail'
 
 const NAV_ITEMS: { id: Page; label: string; icon: typeof LayoutDashboard }[] = [
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
@@ -177,6 +178,7 @@ const NAV_ITEMS: { id: Page; label: string; icon: typeof LayoutDashboard }[] = [
   { id: 'pipeline', label: 'Pipeline', icon: Workflow },
   { id: 'model', label: 'Model Intelligence', icon: Brain },
   { id: 'training', label: 'Training Explorer', icon: Database },
+  { id: 'methodology', label: 'Methodology', icon: BookOpen },
 ]
 
 export default function App() {
@@ -374,6 +376,7 @@ export default function App() {
           )}
           {page === 'model' && metrics && <ModelIntelligence metrics={metrics} trainingStats={trainingStats} />}
           {page === 'training' && <TrainingExplorer companies={trainingSet} />}
+          {page === 'methodology' && <Methodology />}
         </div>
       </main>
     </div>
