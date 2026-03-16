@@ -96,9 +96,7 @@
       "OpenAI"
     ],
     "named_customers": [],
-    "recent_news": [
-      "in 2024, officials as part of the effort learned that Spokane was not among the list of 12 groups selected to receive funds as part of the program."
-    ],
+    "recent_news": [],
     "executives": [
       {
         "name": "Tom Simpson",
@@ -114,13 +112,7 @@
       "Full Stack",
       "DevOps/SRE"
     ],
-    "key_evidence": [
-      {
-        "text": "Spokane Teachers Credit Union successfully implemented a learning management system for continuous employee development. The company achieved significant growth and customer satisfaction.",
-        "source": "",
-        "url": null
-      }
-    ],
+    "key_evidence": [],
     "enrichment_stats": {
       "total_results": 36,
       "relevant_results": 30,
@@ -133,7 +125,7 @@
       "hiring_roles_detected": 7,
       "evidence_snippets": 8
     },
-    "narrative_summary": "Spokane shows strong AI activity with public product launches incorporating AI/ML capabilities, active hiring for AI-focused roles (AI/ML Engineer, Data Scientist), and a modern ML-capable tech stack. Technical footprint: web-detected stack includes AWS, Python, Java, Redis. Key signals: ~524 employees (~183 engineering est.); identified tech leadership (VP Eng); AI-relevant team skills: deep learning, machine learning, tensorflow; broad technical hiring across 7 role categories; 1 recent news event.",
+    "narrative_summary": "Spokane shows strong AI activity with public product launches incorporating AI/ML capabilities, active hiring for AI-focused roles (AI/ML Engineer, Data Scientist), and a modern ML-capable tech stack. Technical footprint: web-detected stack includes AWS, Python, Java, Redis. Key signals: ~524 employees (~183 engineering est.); identified tech leadership (VP Eng); AI-relevant team skills: deep learning, machine learning, tensorflow; broad technical hiring across 7 role categories.",
     "github": {
       "found": false
     },
@@ -234,11 +226,6 @@
     ],
     "key_evidence": [
       {
-        "text": "Thought Foundry provides AI services, with notable clients like Commerzbank AG and HPE. It specializes in AI strategy and implementation. The company is based in California.",
-        "source": "",
-        "url": null
-      },
-      {
         "text": "Thought Foundry is a premier artificial intelligence services company, empowering businesses with innovative AI solutions.",
         "source": "compworth.com",
         "url": "https://compworth.com/company/thought-foundry"
@@ -247,11 +234,6 @@
         "text": "Thought Foundry appears in search results as Thought Foundry, Thought Foundry Inc, Pixel Thought Foundry LLCThought Foundrie, Thought Foundry LLC...",
         "source": "datanyze.com",
         "url": "https://www.datanyze.com/companies/thought-foundry/61014738"
-      },
-      {
-        "text": "Thought Foundry uses React, Kubernetes, and AWS for its tech stack. It also leverages machine learning on Kubernetes. The company focuses on financial services tech.",
-        "source": "",
-        "url": null
       }
     ],
     "enrichment_stats": {
@@ -268,9 +250,7 @@
     },
     "narrative_summary": "Thought Foundry shows strong AI activity with public product launches incorporating AI/ML capabilities, active hiring for AI-focused roles (AI/ML Engineer, Data Scientist), and a modern ML-capable tech stack. Technical footprint: web-detected stack includes AWS, Azure, Kubernetes, Docker. Key signals: broad technical hiring across 7 role categories.",
     "github": {
-      "found": true,
-      "org_login": "Thought-Foundry",
-      "org_url": "https://github.com/Thought-Foundry"
+      "found": false
     },
     "careers": {
       "found": false,
@@ -681,11 +661,6 @@
     ],
     "key_evidence": [
       {
-        "text": "FMSI announced a partnership with Appli to enhance credit union branches' revenue through AI-powered tools. The collaboration leverages AI for financial calculators and branch performance management.",
-        "source": "",
-        "url": null
-      },
-      {
         "text": "SALT LAKE CITY, UT, UNITED STATES, March 16, 2026 /EINPresswire.com/ \u2014 FMSI, a provider of branch performance and workforce management software for financial institutions, and Appli, whose AI-powered financial calculators are gaining traction across ",
         "source": "blufftontoday.com",
         "url": "https://www.blufftontoday.com/press-release/story/60914/fmsi-and-appli-partner-to-help-credit-union-branches-drive-member-revenue/"
@@ -725,9 +700,7 @@
     },
     "narrative_summary": "FMSI references AI capabilities in public materials, but limited evidence of dedicated AI infrastructure, hiring, or ML tooling suggests these may be aspirational or vendor-integrated features. Technical footprint: web-detected stack includes Kubernetes, Segment. Key signals: hiring signals for DevOps/SRE.",
     "github": {
-      "found": true,
-      "org_login": "fmsi-dev",
-      "org_url": "https://github.com/fmsi-dev"
+      "found": false
     },
     "careers": {
       "found": false,
@@ -787,10 +760,6 @@
       {
         "name": "James Moser",
         "role": "Founder"
-      },
-      {
-        "name": "Scott Cairns",
-        "role": "Chief Technology Officer"
       }
     ],
     "hiring_signals": [
@@ -800,11 +769,6 @@
     ],
     "key_evidence": [
       {
-        "text": "Solen Software Group acquired Cairn Applications in December 2025. Cairn Applications will continue operating autonomously under Solen's ownership. The financial terms of the acquisition were not disclosed.",
-        "source": "",
-        "url": null
-      },
-      {
         "text": "Solen Software Group Acquires Cairn Applications Inc.\n\n--Solen Software Group announced the acquisition of Cairn Applications Inc, a provider of cloud software purpose-built for the waste hauling industry. The transaction closed in December 2025.",
         "source": "businesswire.com",
         "url": "https://www.businesswire.com/news/home/20260127219850/en/Solen-Software-Group-Acquires-Cairn-Applications-Inc."
@@ -813,11 +777,6 @@
         "text": "Synopsis\n\nSolen Software Group, a group of software operators and investors, completed the acquisition of Cairn Applications, a provider of cloud software purpose-built for the waste hauling industry. Financial terms were not disclosed.",
         "source": "app.mergerlinks.com",
         "url": "https://app.mergerlinks.com/transactions/2026-01-27-cairn-applications-inc"
-      },
-      {
-        "text": "Scott Cairns is the Chief Technology Officer at Atos. Ryan Cairns works at Meta. Cairn Applications offers a Virtual Chief AI Officer service.",
-        "source": "",
-        "url": null
       }
     ],
     "enrichment_stats": {
@@ -832,11 +791,9 @@
       "hiring_roles_detected": 3,
       "evidence_snippets": 7
     },
-    "narrative_summary": "Cairn Applications appears to be building AI capability \u2014 hiring signals for AI/ML Engineer, NLP Engineer detected, but no public AI product launches or features identified yet. Technical footprint: web-detected stack includes AWS, Kubernetes, Python, React. Key signals: hiring signals for AI/ML Engineer, Data Engineer, NLP Engineer; identified tech leadership: Scott Cairns (Chief Technology Officer); 1 recent news event.",
+    "narrative_summary": "Cairn Applications appears to be building AI capability \u2014 hiring signals for AI/ML Engineer, NLP Engineer detected, but no public AI product launches or features identified yet. Technical footprint: web-detected stack includes AWS, Kubernetes, Python, React. Key signals: hiring signals for AI/ML Engineer, Data Engineer, NLP Engineer; 1 recent news event.",
     "github": {
-      "found": true,
-      "org_login": "cairnapps",
-      "org_url": "https://github.com/cairnapps"
+      "found": false
     },
     "careers": {
       "found": false,
@@ -888,11 +845,6 @@
       "AI/ML Engineer"
     ],
     "key_evidence": [
-      {
-        "text": "ViaPeople launched AI-powered features for performance management and instant insights. The AI tools enhance feedback and streamline performance reviews. These innovations aim to improve workforce productivity and efficiency.",
-        "source": "",
-        "url": null
-      },
       {
         "text": "viaPeople offers AI Instant Insights, a tool that helps managers synthesize multi-rater feedback into concise, actionable summaries.",
         "source": "viapeople.com",
@@ -989,15 +941,7 @@
         "role": "CEO"
       },
       {
-        "name": "Jim Lester",
-        "role": "CEO"
-      },
-      {
         "name": "Morris Qiu",
-        "role": "CTO"
-      },
-      {
-        "name": "Manisha Raisinghani",
         "role": "CTO"
       }
     ],
@@ -1006,11 +950,6 @@
       "Data Scientist"
     ],
     "key_evidence": [
-      {
-        "text": "ThingTech launched an AI-powered IoT platform for asset management. The platform uses machine learning to optimize asset productivity and reduce maintenance costs. It integrates connectivity and automation for field services.",
-        "source": "",
-        "url": null
-      },
       {
         "text": "About ThingTech   \nThingTech provides an intelligent, scalable, end-to-end IoT platform and product suite that brings together all hardware, software, and data necessary to monitor and manage your assets in real-time, maximize asset productivity, red",
         "source": "prweb.com",
@@ -1030,11 +969,6 @@
         "text": "### Primary Industries\n\nSoftware\n\n### Contact Information\n\nHeadquarters\n\n3340 Peachtree Rd NE Ste 1505, Atlanta, Georgia, 30326, United States\n\n(800) 645-2298\n\n### Revenue\n\n$4 M\n\n### Employees\n\n17\n\n### Founded\n\n2014\n\n### Funding History\n\nThingTech ra",
         "source": "datanyze.com",
         "url": "https://www.datanyze.com/companies/thingtech/370074366"
-      },
-      {
-        "text": "ThingTech raised $7M in funding in 2017, and its competitors saw significant funding in 2025. The fintech sector saw larger funding rounds in 2025, with notable deals including iCapital's $820M raise.",
-        "source": "",
-        "url": null
       },
       {
         "text": "Discover potential investors for your next round of investment.\n\n## FAQs about Thingtech\n\nThingtech was founded in 2014 and raised its 1st funding round 3 years after it was founded.\n\nThingtechis headquartered in Atlanta, United States.",
@@ -1282,9 +1216,7 @@
     },
     "narrative_summary": "NexTalk shows moderate AI engagement with 2 detected AI features, though evidence suggests early-stage adoption rather than mature AI product development. Technical footprint: web-detected stack includes AWS. Key signals: 3 open positions.",
     "github": {
-      "found": true,
-      "org_login": "NexTalk",
-      "org_url": "https://github.com/NexTalk"
+      "found": false
     },
     "careers": {
       "found": true,
@@ -1381,10 +1313,6 @@
       },
       {
         "name": "Peter Maragos",
-        "role": "CEO"
-      },
-      {
-        "name": "Andrew Whelan",
         "role": "CEO"
       },
       {

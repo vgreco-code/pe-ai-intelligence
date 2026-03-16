@@ -368,22 +368,28 @@ def is_tavily_hallucination(text: str, company_name: str) -> bool:
 
 
 def fix_hallucinated_evidence(data):
-    """Remove key evidence entries that came from Tavily AI answer hallucinations."""
+    """Remove key evidence entries that came from Tavily AI answer hallucinations.
+
+    Now also removes ALL sourceless evidence entries — Tavily AI answers are
+    fundamentally unreliable (hallucinate company details, mix entities, fabricate
+    funding rounds and customer names). Only evidence from real web pages with
+    source URLs should be shown.
+    """
     changes = []
     for company, ev in data.items():
-        # Key evidence: remove sourceless entries that match hallucination patterns
         items = ev.get("key_evidence", [])
         if items:
             valid = []
             for e in items:
-                # Entries without a source URL came from Tavily's AI answer
-                if not e.get("source") and is_tavily_hallucination(e.get("text", ""), company):
+                # Remove ALL sourceless entries — they come from Tavily AI answers
+                # which are unreliable (hallucinate details, mix companies)
+                if not e.get("source"):
                     continue
                 valid.append(e)
             removed = len(items) - len(valid)
             if removed > 0:
                 ev["key_evidence"] = valid
-                changes.append(f"  {company}: removed {removed} hallucinated evidence item(s)")
+                changes.append(f"  {company}: removed {removed} sourceless evidence item(s)")
 
         # AI initiatives: remove entries that are just restated Tavily answer hallucinations
         inits = ev.get("ai_initiatives", [])
@@ -391,7 +397,6 @@ def fix_hallucinated_evidence(data):
             valid_inits = []
             for i in inits:
                 text = i.get("text", "")
-                # Check if this initiative is just a generic Tavily answer restatement
                 if is_tavily_hallucination(text, company):
                     continue
                 valid_inits.append(i)
@@ -403,10 +408,148 @@ def fix_hallucinated_evidence(data):
     return changes
 
 
-# ── 8. Hiring signals quality check ──────────────────────────────────────
-# Many hiring signals come from Tavily answer synthesis, not actual job postings.
-# Without a careers page to verify, these are unreliable.
-# We'll flag them but keep them since they may still be directionally useful.
+# ── 8. Empty GitHub orgs ─────────────────────────────────────────────────
+
+def fix_empty_github(data):
+    """Mark GitHub orgs with 0/None repos as not found."""
+    changes = []
+    for company, ev in data.items():
+        gh = ev.get("github", {})
+        if gh.get("found") and (not gh.get("total_public_repos") or gh["total_public_repos"] == 0):
+            org = gh.get("org_login", "?")
+            ev["github"] = {"found": False}
+            changes.append(f"  {company}: marked @{org} as not found (0 repos)")
+    return changes
+
+
+# ── 9. Duplicate/historical executives ───────────────────────────────────
+
+def fix_duplicate_executives(data):
+    """Limit to max 1 per C-level role to prevent current+historical mixing."""
+    changes = []
+    for company, ev in data.items():
+        execs = ev.get("executives", [])
+        if len(execs) <= 2:
+            continue
+
+        # Deduplicate by role type — keep first (most likely current)
+        seen_roles = set()
+        unique = []
+        for e in execs:
+            role_lower = e["role"].lower()
+            # Normalize role to category
+            if 'ceo' in role_lower or 'chief executive' in role_lower:
+                role_key = 'ceo'
+            elif 'cto' in role_lower or 'chief technology' in role_lower:
+                role_key = 'cto'
+            elif 'cfo' in role_lower or 'chief financial' in role_lower:
+                role_key = 'cfo'
+            elif 'cio' in role_lower or 'chief information' in role_lower:
+                role_key = 'cio'
+            elif 'president' in role_lower:
+                role_key = 'president'
+            elif 'founder' in role_lower or 'co-founder' in role_lower:
+                role_key = 'founder'
+            else:
+                role_key = role_lower[:20]
+
+            if role_key not in seen_roles:
+                seen_roles.add(role_key)
+                unique.append(e)
+
+        removed = len(execs) - len(unique)
+        if removed > 0:
+            dropped = [e for e in execs if e not in unique]
+            ev["executives"] = unique
+            desc = [e["name"] + " — " + e["role"] for e in dropped]
+            changes.append(f"  {company}: deduplicated {removed} exec(s): {desc}")
+    return changes
+
+
+# ── 10. Cross-company executive contamination ────────────────────────────
+
+def fix_cross_company_executives(data):
+    """Remove executives who are clearly at a different company (detected by
+    context clues like 'at Atos', 'at Meta' in surrounding evidence)."""
+    changes = []
+
+    # Known cross-contamination from the audit
+    EXEC_BLOCKLIST = {
+        "Cairn Applications": {"Scott Cairns"},  # CTO at Atos, not Cairn Applications
+    }
+
+    for company, ev in data.items():
+        if company not in EXEC_BLOCKLIST:
+            continue
+        bad_names = EXEC_BLOCKLIST[company]
+        execs = ev.get("executives", [])
+        valid = [e for e in execs if e["name"] not in bad_names]
+        removed = len(execs) - len(valid)
+        if removed > 0:
+            ev["executives"] = valid
+            changes.append(f"  {company}: removed {removed} cross-company exec(s): {list(bad_names)}")
+    return changes
+
+
+# ── 11. News validation ──────────────────────────────────────────────────
+
+def fix_news(data):
+    """Remove news items that are about the wrong entity (city vs company)."""
+    changes = []
+    for company, ev in data.items():
+        news = ev.get("recent_news", [])
+        if not news:
+            continue
+
+        company_lower = company.lower()
+        valid = []
+        for n in news:
+            n_lower = n.lower()
+            # Spokane news about the city government
+            if company_lower == "spokane" and any(kw in n_lower for kw in
+                ['officials', 'city council', 'county', 'government', 'municipality',
+                 'groups selected', 'fire department', 'school district']):
+                continue
+            valid.append(n)
+
+        removed = len(news) - len(valid)
+        if removed > 0:
+            ev["recent_news"] = valid
+            changes.append(f"  {company}: removed {removed} city/gov news item(s)")
+    return changes
+
+
+# ── 12. Website mapping corrections in portfolio_scores.json ─────────────
+
+CORRECT_WEBSITES = {
+    # These mappings are wrong in portfolio_scores.json
+    # Set to empty string to indicate "unknown" rather than leaving wrong data
+    "FMSI": "",          # Was interface.ai (different company)
+    "TrackIt Transit": "",  # Was fidelity.com (different company)
+    "Dash": "",          # Was vic.ai (different company)
+    "AutoTime": "",      # Was pnptc.com (Plug and Play, different company)
+    "Spokane": "",       # Was naiblack.com (NAI Black real estate, different company)
+}
+
+
+def fix_websites():
+    """Fix wrong website mappings in portfolio_scores.json."""
+    changes = []
+    with open(SCORES_PATH) as f:
+        scores = json.load(f)
+
+    for company in scores:
+        name = company["name"]
+        if name in CORRECT_WEBSITES:
+            old = company.get("website", "")
+            new = CORRECT_WEBSITES[name]
+            if old != new:
+                company["website"] = new
+                changes.append(f"  {name}: {old} → (removed — wrong company)")
+
+    with open(SCORES_PATH, "w") as f:
+        json.dump(scores, f, indent=2)
+    return changes
 
 
 # ── Main ──────────────────────────────────────────────────────────────────
@@ -460,15 +603,50 @@ def main():
     if not changes:
         print("  (none)")
 
-    print("\n7. Tavily hallucination cleanup:")
+    print("\n7. Tavily hallucination + sourceless evidence cleanup:")
     changes = fix_hallucinated_evidence(data)
     for c in changes:
         print(c)
     if not changes:
         print("  (none)")
 
+    print("\n8. Empty GitHub orgs:")
+    changes = fix_empty_github(data)
+    for c in changes:
+        print(c)
+    if not changes:
+        print("  (none)")
+
+    print("\n9. Duplicate executives:")
+    changes = fix_duplicate_executives(data)
+    for c in changes:
+        print(c)
+    if not changes:
+        print("  (none)")
+
+    print("\n10. Cross-company executive contamination:")
+    changes = fix_cross_company_executives(data)
+    for c in changes:
+        print(c)
+    if not changes:
+        print("  (none)")
+
+    print("\n11. News validation:")
+    changes = fix_news(data)
+    for c in changes:
+        print(c)
+    if not changes:
+        print("  (none)")
+
+    print("\n12. Website mapping corrections:")
+    changes = fix_websites()
+    for c in changes:
+        print(c)
+    if not changes:
+        print("  (none)")
+
     # Regenerate narratives with clean data
-    print("\n7. Regenerating narrative summaries...")
+    print("\n13. Regenerating narrative summaries...")
     for name, ev in data.items():
         ev["narrative_summary"] = _generate_narrative(name, ev)
         print(f"  {name}: {ev['narrative_summary'][:80]}...")
