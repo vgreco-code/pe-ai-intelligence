@@ -261,6 +261,93 @@ def _pick_best_urls(all_results: list[dict], company_name: str, max_urls: int = 
     return [url for _, url in scored[:max_urls]]
 
 
+def _clean_text_block(text: str) -> str:
+    """Remove common scrape artifacts from a text block."""
+    lines = text.split("\n")
+    cleaned = []
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+        # Skip lines that are just navigation / UI artifacts
+        if len(line) < 4:
+            continue
+        # Skip markdown headers that are just section labels (e.g., "## Overview", "### Website")
+        if re.match(r'^#{1,4}\s*(Overview|Website|Crunchbase|LinkedIn|Industry|Company Size|'
+                     r'Locations|Get Directions|Directions|Specialties|Investors|Funding|'
+                     r'Founded|Key People|Similar Pages|People Also Viewed|Show more|'
+                     r'See all|View all|Sign in|Join now|N/A)\s*$', line, re.IGNORECASE):
+            continue
+        # Skip lines that are just bullet markers or short labels
+        if re.match(r'^[\•\-\→\›]\s*$', line):
+            continue
+        # Skip LinkedIn-style metadata lines
+        if re.match(r'^\d+\s*(associated members|followers|connections)', line, re.IGNORECASE):
+            continue
+        cleaned.append(line)
+    return " ".join(cleaned)
+
+
+def _build_display_summary(all_results: list[dict], company_name: str) -> str:
+    """Build a clean, readable research summary for UI display.
+
+    Priority order:
+    1. Tavily AI-generated answers (cleanest prose)
+    2. High-quality search result snippets (non-LinkedIn, non-scraped)
+    3. Fallback: cleaned versions of whatever we have
+
+    Caps at 2500 chars to keep the UI concise.
+    """
+    ai_summaries: list[str] = []
+    good_snippets: list[str] = []
+
+    for r in all_results:
+        content = r.get("content", "").strip()
+        if not content or len(content) < 50:
+            continue
+
+        url = (r.get("url") or "").lower()
+        title = (r.get("title") or "").strip()
+
+        # Tier 1: Tavily AI answers — these are clean prose summaries
+        if title == "AI Summary":
+            cleaned = _clean_text_block(content)
+            if len(cleaned) > 80:
+                ai_summaries.append(cleaned)
+            continue
+
+        # Skip noisy sources for display purposes
+        if any(src in url for src in ["linkedin.com", "glassdoor.com", "indeed.com"]):
+            continue
+
+        # Tier 2: Search result snippets from quality sources
+        cleaned = _clean_text_block(content)
+        if len(cleaned) > 80:
+            good_snippets.append(cleaned)
+
+    # Assemble display text — AI summaries first, then snippets
+    parts: list[str] = []
+    seen_text = set()
+
+    for text in ai_summaries + good_snippets:
+        # Basic dedup: skip if first 100 chars match something already included
+        fingerprint = text[:100].lower()
+        if fingerprint in seen_text:
+            continue
+        seen_text.add(fingerprint)
+        parts.append(text)
+
+        # Stop once we have enough
+        if sum(len(p) for p in parts) > 2500:
+            break
+
+    if not parts:
+        return f"Research data collected for {company_name}. Scoring based on web signals across 8 search queries."
+
+    summary = "\n\n".join(parts)
+    return summary[:2500]
+
+
 async def research_company_deep(company_name: str, tavily_key: str) -> dict:
     """Deep single-company research: 8 dimension-specific queries + URL follow-up scraping.
 
@@ -310,10 +397,8 @@ async def research_company_deep(company_name: str, tavily_key: str) -> dict:
     # Extract features from the full corpus
     features = extract_features(company_name, combined_text)
 
-    # Build a cleaner research summary for display (prefer the AI-generated answers)
-    ai_summaries = [r["content"] for r in all_results if r.get("title") == "AI Summary" and r.get("content")]
-    display_summary = "\n\n".join(ai_summaries) if ai_summaries else research_text
-    features["research_summary"] = display_summary[:3000]
+    # Build a clean research summary for display
+    features["research_summary"] = _build_display_summary(all_results, company_name)
 
     # Track data quality signals
     features["_research_meta"] = {
