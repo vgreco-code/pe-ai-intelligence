@@ -2,6 +2,7 @@ import { useState } from 'react'
 import {
   Search, ChevronDown, ChevronUp, Brain, Users, ExternalLink,
   Cpu, Briefcase, Newspaper, Code2, UserCheck,
+  GitBranch, Star, Building2,
 } from 'lucide-react'
 import type { PortfolioCompany } from '../App'
 import { CATEGORIES, DIMENSION_LABELS, getScoreColor } from '../App'
@@ -10,6 +11,28 @@ import { CATEGORIES, DIMENSION_LABELS, getScoreColor } from '../App'
 // Displays enrichment data from the Tavily deep research pipeline.
 // Shows: AI initiatives, tech stack, key evidence, hiring signals,
 //        executives, customers, news events, and score insights.
+
+interface GitHubData {
+  found: boolean
+  org_login?: string
+  org_url?: string
+  total_public_repos?: number
+  total_stars?: number
+  total_forks?: number
+  recently_active_repos?: number
+  primary_languages?: { language: string; repo_count: number }[]
+  top_repos?: { name: string; description: string; language: string; stars: number; forks: number; updated: string }[]
+}
+
+interface CareersData {
+  found: boolean
+  careers_url?: string
+  total_openings?: number
+  ai_ml_openings?: number
+  departments?: Record<string, number>
+  sample_roles?: string[]
+  ai_roles?: string[]
+}
 
 interface Props {
   company: PortfolioCompany
@@ -22,6 +45,8 @@ interface Props {
     hiring_signals?: string[]
     key_evidence?: { text: string; source: string; url: string }[]
     enrichment_stats?: Record<string, number>
+    github?: GitHubData
+    careers?: CareersData
   }
 }
 
@@ -69,6 +94,8 @@ export default function ResearchEvidence({ company, evidence }: Props) {
   const hiring = ev.hiring_signals || []
   const keyEvidence = ev.key_evidence || []
   const stats = ev.enrichment_stats
+  const github = ev.github
+  const careers = ev.careers
 
   const hasEnrichment = aiInits.length > 0 || techStack.length > 0 || keyEvidence.length > 0
 
@@ -95,7 +122,8 @@ export default function ResearchEvidence({ company, evidence }: Props) {
         </div>
       </div>
       <p className="text-xs text-[var(--text-muted)] mb-5">
-        Evidence gathered from {hasEnrichment ? '14 targeted web research queries' : 'deep web research'} on {company.name}
+        Evidence gathered from {hasEnrichment ? '14 targeted web research queries' : 'deep web research'}
+        {github?.found ? ', GitHub API' : ''}{careers?.found ? ', careers page' : ''} on {company.name}
       </p>
 
       {/* Summary stats row */}
@@ -237,6 +265,114 @@ export default function ResearchEvidence({ company, evidence }: Props) {
               )}
             </div>
           </div>
+
+          {/* GitHub + Careers Row */}
+          {(github?.found || careers?.found) && (
+            <div className="grid grid-cols-2 gap-4">
+              {/* GitHub Presence */}
+              {github?.found && (
+                <div className="bg-slate-800/30 rounded-lg p-4 border border-slate-700/30">
+                  <div className="flex items-center gap-2 mb-3">
+                    <GitBranch className="w-4 h-4 text-green-400" />
+                    <span className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">GitHub Presence</span>
+                    <a href={github.org_url} target="_blank" rel="noopener noreferrer" className="ml-auto text-[10px] text-green-400 hover:text-green-300 flex items-center gap-1">
+                      @{github.org_login} <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 mb-3">
+                    <div className="text-center">
+                      <div className="text-lg font-bold text-green-400">{github.total_public_repos}</div>
+                      <div className="text-[9px] text-[var(--text-muted)]">Public Repos</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-lg font-bold text-yellow-400 flex items-center justify-center gap-1">
+                        <Star className="w-3 h-3" />{github.total_stars}
+                      </div>
+                      <div className="text-[9px] text-[var(--text-muted)]">Total Stars</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-lg font-bold text-blue-400">{github.recently_active_repos || 0}</div>
+                      <div className="text-[9px] text-[var(--text-muted)]">Recent Active</div>
+                    </div>
+                  </div>
+                  {github.primary_languages && github.primary_languages.length > 0 && (
+                    <div className="flex flex-wrap gap-1 mb-2">
+                      {github.primary_languages.slice(0, 5).map((lang, i) => (
+                        <span key={i} className="px-2 py-0.5 rounded text-[10px] font-medium bg-green-500/10 text-green-400 border border-green-500/20">
+                          {lang.language} ({lang.repo_count})
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  {github.top_repos && github.top_repos.length > 0 && (
+                    <div className="space-y-1 mt-2">
+                      {github.top_repos.slice(0, 3).map((repo, i) => (
+                        <div key={i} className="text-[11px] text-[var(--text-muted)] flex items-center gap-1.5">
+                          <Code2 className="w-3 h-3 flex-shrink-0 text-green-400/60" />
+                          <span className="text-green-400/80 font-medium">{repo.name}</span>
+                          {repo.stars > 0 && <span className="text-yellow-400/60 text-[9px]">({repo.stars}★)</span>}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Careers / Open Positions */}
+              {careers?.found && (
+                <div className="bg-slate-800/30 rounded-lg p-4 border border-slate-700/30">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Building2 className="w-4 h-4 text-rose-400" />
+                    <span className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">Open Positions</span>
+                    <a href={careers.careers_url} target="_blank" rel="noopener noreferrer" className="ml-auto text-[10px] text-rose-400 hover:text-rose-300 flex items-center gap-1">
+                      Careers page <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2 mb-3">
+                    <div className="text-center">
+                      <div className="text-lg font-bold text-rose-400">{careers.total_openings}</div>
+                      <div className="text-[9px] text-[var(--text-muted)]">Total Openings</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-lg font-bold text-cyan-400">{careers.ai_ml_openings || 0}</div>
+                      <div className="text-[9px] text-[var(--text-muted)]">AI/ML Roles</div>
+                    </div>
+                  </div>
+                  {careers.departments && Object.keys(careers.departments).length > 0 && (
+                    <div className="mb-2">
+                      <div className="text-[10px] text-[var(--text-muted)] mb-1">By Department:</div>
+                      <div className="flex flex-wrap gap-1">
+                        {Object.entries(careers.departments).map(([dept, count], i) => (
+                          <span key={i} className="px-2 py-0.5 rounded text-[10px] font-medium bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                            {dept} ({count})
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {careers.sample_roles && careers.sample_roles.length > 0 && (
+                    <div className="space-y-0.5 mt-2">
+                      {careers.sample_roles.slice(0, 5).map((role, i) => (
+                        <div key={i} className="text-[11px] text-[var(--text-muted)] flex items-center gap-1.5">
+                          <Users className="w-3 h-3 flex-shrink-0 text-rose-400/60" />
+                          <span>{role}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* GitHub-only: fill second column with summary if no careers */}
+              {github?.found && !careers?.found && (
+                <div className="bg-slate-800/30 rounded-lg p-4 border border-slate-700/30 flex flex-col items-center justify-center text-center">
+                  <Building2 className="w-5 h-5 text-[var(--text-muted)] mb-2 opacity-40" />
+                  <div className="text-[11px] text-[var(--text-muted)]">No public careers page found</div>
+                  <div className="text-[10px] text-[var(--text-muted)] mt-1 opacity-60">Hiring signals from web research shown above</div>
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Key Evidence Snippets */}
           {keyEvidence.length > 0 && (

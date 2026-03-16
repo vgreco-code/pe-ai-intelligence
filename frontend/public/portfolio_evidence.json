@@ -112,6 +112,44 @@
       "executives_found": 0,
       "hiring_roles_detected": 5,
       "evidence_snippets": 8
+    },
+    "github": {
+      "found": true,
+      "org_login": "champtitles",
+      "org_url": "https://github.com/champtitles",
+      "total_public_repos": 11,
+      "total_stars": 0,
+      "total_forks": 1,
+      "recently_active_repos": 0,
+      "primary_languages": [
+        {
+          "language": "HCL",
+          "repo_count": 5
+        },
+        {
+          "language": "Shell",
+          "repo_count": 3
+        },
+        {
+          "language": "Go",
+          "repo_count": 1
+        }
+      ],
+      "top_repos": []
+    },
+    "careers": {
+      "found": true,
+      "careers_url": "https://championht.com/careers",
+      "total_openings": 2,
+      "ai_ml_openings": 0,
+      "departments": {
+        "Engineering": 2
+      },
+      "sample_roles": [
+        "Solutions\n\nI",
+        "Solutions"
+      ],
+      "ai_roles": []
     }
   },
   "Thought Foundry": {
@@ -226,6 +264,15 @@
       "executives_found": 1,
       "hiring_roles_detected": 9,
       "evidence_snippets": 5
+    },
+    "github": {
+      "found": true,
+      "org_login": "Thought-Foundry",
+      "org_url": "https://github.com/Thought-Foundry"
+    },
+    "careers": {
+      "found": false,
+      "reason": "no_careers_page_found"
     }
   },
   "Spokane": {
@@ -358,6 +405,15 @@
       "executives_found": 2,
       "hiring_roles_detected": 7,
       "evidence_snippets": 8
+    },
+    "github": {
+      "found": true,
+      "org_login": "spokane",
+      "org_url": "https://github.com/spokane"
+    },
+    "careers": {
+      "found": false,
+      "reason": "no_careers_page_found"
     }
   },
   "SMRTR": {
@@ -492,6 +548,59 @@
       "executives_found": 2,
       "hiring_roles_detected": 9,
       "evidence_snippets": 8
+    },
+    "github": {
+      "found": true,
+      "org_login": "smrtr",
+      "org_url": "https://github.com/smrtr",
+      "total_public_repos": 5,
+      "total_stars": 26,
+      "total_forks": 2,
+      "recently_active_repos": 0,
+      "primary_languages": [
+        {
+          "language": "PHP",
+          "repo_count": 5
+        }
+      ],
+      "top_repos": [
+        {
+          "name": "mysql-version-control",
+          "description": "A crude version control system for mysql written in php",
+          "language": "PHP",
+          "stars": 22,
+          "forks": 2,
+          "updated": "2025-06-12"
+        },
+        {
+          "name": "HaltoRouter",
+          "description": "A small but powerful routing class for PHP 5.3+. It's dynamic, lightning-fast and dead easy to use.",
+          "language": "PHP",
+          "stars": 4,
+          "forks": 0,
+          "updated": "2016-10-24"
+        },
+        {
+          "name": "smrtr-datagrid",
+          "description": "A 2D array wrapper with methods for operating on, importing & exporting tabular data",
+          "language": "PHP",
+          "stars": 0,
+          "forks": 0,
+          "updated": "2017-04-08"
+        },
+        {
+          "name": "spawn-point",
+          "description": "Quickly install fixtures as a starting point for small projects",
+          "language": "PHP",
+          "stars": 0,
+          "forks": 0,
+          "updated": "2015-11-10"
+        }
+      ]
+    },
+    "careers": {
+      "found": false,
+      "reason": "no_careers_page_found"
     }
   },
   "Track Star": {
@@ -604,6 +713,51 @@
       "executives_found": 1,
       "hiring_roles_detected": 9,
       "evidence_snippets": 5
+    },
+    "github": {
+      "found": true,
+      "org_login": "OG-star-tech",
+      "org_url": "https://github.com/OG-star-tech",
+      "total_public_repos": 3,
+      "total_stars": 250,
+      "total_forks": 46,
+      "recently_active_repos": 3,
+      "primary_languages": [
+        {
+          "language": "C++",
+          "repo_count": 1
+        },
+        {
+          "language": "Python",
+          "repo_count": 1
+        },
+        {
+          "language": "Kotlin",
+          "repo_count": 1
+        }
+      ],
+      "top_repos": [
+        {
+          "name": "OG-star-tracker-",
+          "description": "",
+          "language": "C++",
+          "stars": 245,
+          "forks": 42,
+          "updated": "2026-03-08"
+        },
+        {
+          "name": "OGScope",
+          "description": "A modern and comprehensive electronic finderscope project that offers functions such as guiding, polar alignment, and as",
+          "language": "Python",
+          "stars": 1,
+          "forks": 0,
+          "updated": "2025-12-06"
+        }
+      ]
+    },
+    "careers": {
+      "found": false,
+      "reason": "no_careers_page_found"
     }
   },
   "AutoTime": {
@@ -730,6 +884,35 @@
       "executives_found": 2,
       "hiring_roles_detected": 5,
       "evidence_snippets": 8
+    },
+    "github": {
+      "found": true,
+      "org_login": "AutoTimer",
+      "org_url": "https://github.com/AutoTimer",
+      "total_public_repos": 3,
+      "total_stars": 1,
+      "total_forks": 1,
+      "recently_active_repos": 0,
+      "primary_languages": [
+        {
+          "language": "Java",
+          "repo_count": 3
+        }
+      ],
+      "top_repos": [
+        {
+          "name": "TimeCardClient",
+          "description": "Time Card Client for Machester Hack 2015, take 2",
+          "language": "Java",
+          "stars": 0,
+          "forks": 0,
+          "updated": "2019-09-15"
+        }
+      ]
+    },
+    "careers": {
+      "found": false,
+      "reason": "invalid_website"
     }
   },
   "Cairn Applications": {
@@ -842,6 +1025,15 @@
       "executives_found": 0,
       "hiring_roles_detected": 7,
       "evidence_snippets": 6
+    },
+    "github": {
+      "found": true,
+      "org_login": "cairnapps",
+      "org_url": "https://github.com/cairnapps"
+    },
+    "careers": {
+      "found": false,
+      "reason": "no_careers_page_found"
     }
   },
   "ViaPeople": {
@@ -948,6 +1140,43 @@
       "executives_found": 1,
       "hiring_roles_detected": 6,
       "evidence_snippets": 8
+    },
+    "github": {
+      "found": true,
+      "org_login": "viapeople-inc",
+      "org_url": "https://github.com/viapeople-inc",
+      "total_public_repos": 3,
+      "total_stars": 0,
+      "total_forks": 1,
+      "recently_active_repos": 1,
+      "primary_languages": [
+        {
+          "language": "Rust",
+          "repo_count": 1
+        }
+      ],
+      "top_repos": [
+        {
+          "name": "DefinitelyTyped",
+          "description": "The repository for high quality TypeScript type definitions.",
+          "language": null,
+          "stars": 0,
+          "forks": 1,
+          "updated": "2023-06-28"
+        },
+        {
+          "name": "xls2txt",
+          "description": "Utility for converting excel or opendocument spreadsheet files to text",
+          "language": "Rust",
+          "stars": 0,
+          "forks": 0,
+          "updated": "2023-05-31"
+        }
+      ]
+    },
+    "careers": {
+      "found": false,
+      "reason": "no_careers_page_found"
     }
   },
   "FMSI": {
@@ -1081,6 +1310,35 @@
       "executives_found": 1,
       "hiring_roles_detected": 7,
       "evidence_snippets": 8
+    },
+    "github": {
+      "found": true,
+      "org_login": "fmsi-dev",
+      "org_url": "https://github.com/fmsi-dev"
+    },
+    "careers": {
+      "found": true,
+      "careers_url": "https://interface.ai/careers",
+      "total_openings": 8,
+      "ai_ml_openings": 0,
+      "departments": {
+        "Infrastructure": 1,
+        "Security": 1,
+        "Engineering": 3,
+        "Product & Design": 2,
+        "Marketing": 1
+      },
+      "sample_roles": [
+        "Platform",
+        "Security",
+        "Solutions",
+        "Customer",
+        "Head of Product",
+        "VP of Engineering",
+        "VP of Marketing",
+        "Lead Product Manager"
+      ],
+      "ai_roles": []
     }
   },
   "Primate": {
@@ -1193,6 +1451,103 @@
       "executives_found": 4,
       "hiring_roles_detected": 5,
       "evidence_snippets": 3
+    },
+    "github": {
+      "found": true,
+      "org_login": "primate-run",
+      "org_url": "https://github.com/primate-run",
+      "total_public_repos": 30,
+      "total_stars": 284,
+      "total_forks": 14,
+      "recently_active_repos": 27,
+      "primary_languages": [
+        {
+          "language": "TypeScript",
+          "repo_count": 19
+        },
+        {
+          "language": "JavaScript",
+          "repo_count": 5
+        },
+        {
+          "language": "Vue",
+          "repo_count": 1
+        },
+        {
+          "language": "Svelte",
+          "repo_count": 1
+        },
+        {
+          "language": "HTML",
+          "repo_count": 1
+        },
+        {
+          "language": "Python",
+          "repo_count": 1
+        },
+        {
+          "language": "Ruby",
+          "repo_count": 1
+        },
+        {
+          "language": "Go",
+          "repo_count": 1
+        }
+      ],
+      "top_repos": [
+        {
+          "name": "primate",
+          "description": "The universal web framework",
+          "language": "TypeScript",
+          "stars": 281,
+          "forks": 12,
+          "updated": "2026-03-14"
+        },
+        {
+          "name": "poly",
+          "description": "Svelte 4 LTS fork",
+          "language": "JavaScript",
+          "stars": 3,
+          "forks": 1,
+          "updated": "2025-11-07"
+        },
+        {
+          "name": "webc-template",
+          "description": "Primate Web Components template",
+          "language": "TypeScript",
+          "stars": 0,
+          "forks": 0,
+          "updated": "2026-02-15"
+        },
+        {
+          "name": "vue-template",
+          "description": "Primate Vue template",
+          "language": "Vue",
+          "stars": 0,
+          "forks": 0,
+          "updated": "2026-02-15"
+        },
+        {
+          "name": "ts-template",
+          "description": "Primate TypeScript template",
+          "language": "TypeScript",
+          "stars": 0,
+          "forks": 0,
+          "updated": "2026-02-15"
+        },
+        {
+          "name": "tailwind-template",
+          "description": "Primate Tailwind template",
+          "language": "TypeScript",
+          "stars": 0,
+          "forks": 1,
+          "updated": "2026-02-15"
+        }
+      ]
+    },
+    "careers": {
+      "found": false,
+      "reason": "no_careers_page_found"
     }
   },
   "ThingTech": {
@@ -1312,6 +1667,71 @@
       "executives_found": 2,
       "hiring_roles_detected": 6,
       "evidence_snippets": 7
+    },
+    "github": {
+      "found": true,
+      "org_login": "thingtech",
+      "org_url": "https://github.com/thingtech",
+      "total_public_repos": 5,
+      "total_stars": 0,
+      "total_forks": 0,
+      "recently_active_repos": 0,
+      "primary_languages": [
+        {
+          "language": "JavaScript",
+          "repo_count": 4
+        },
+        {
+          "language": "Ruby",
+          "repo_count": 1
+        }
+      ],
+      "top_repos": [
+        {
+          "name": "react-calendar-timeline",
+          "description": "A modern and responsive react timeline component.",
+          "language": "JavaScript",
+          "stars": 0,
+          "forks": 0,
+          "updated": "2023-01-28"
+        },
+        {
+          "name": "axios-retry",
+          "description": "Axios plugin that intercepts failed requests and retries them whenever possible",
+          "language": "JavaScript",
+          "stars": 0,
+          "forks": 0,
+          "updated": "2020-12-15"
+        },
+        {
+          "name": "react-datetime",
+          "description": "A lightweight but complete datetime picker react component.",
+          "language": "JavaScript",
+          "stars": 0,
+          "forks": 0,
+          "updated": "2020-09-17"
+        },
+        {
+          "name": "pdffiller",
+          "description": "Take an existing PDF Form and data and PDF Filler will create a new PDF with all given fields populated.",
+          "language": "JavaScript",
+          "stars": 0,
+          "forks": 0,
+          "updated": "2019-04-22"
+        },
+        {
+          "name": "oneclick",
+          "description": "Repo for the 1-Click VTCLI open-source project",
+          "language": "Ruby",
+          "stars": 0,
+          "forks": 0,
+          "updated": "2016-11-14"
+        }
+      ]
+    },
+    "careers": {
+      "found": false,
+      "reason": "no_careers_page_found"
     }
   },
   "Dash": {
@@ -1454,6 +1874,103 @@
       "executives_found": 3,
       "hiring_roles_detected": 5,
       "evidence_snippets": 8
+    },
+    "github": {
+      "found": true,
+      "org_login": "dashpay",
+      "org_url": "https://github.com/dashpay",
+      "total_public_repos": 30,
+      "total_stars": 2392,
+      "total_forks": 1885,
+      "recently_active_repos": 30,
+      "primary_languages": [
+        {
+          "language": "Rust",
+          "repo_count": 7
+        },
+        {
+          "language": "Python",
+          "repo_count": 5
+        },
+        {
+          "language": "JavaScript",
+          "repo_count": 4
+        },
+        {
+          "language": "Kotlin",
+          "repo_count": 2
+        },
+        {
+          "language": "Objective-C",
+          "repo_count": 2
+        },
+        {
+          "language": "HTML",
+          "repo_count": 1
+        },
+        {
+          "language": "C++",
+          "repo_count": 1
+        },
+        {
+          "language": "Go",
+          "repo_count": 1
+        }
+      ],
+      "top_repos": [
+        {
+          "name": "dash",
+          "description": "Dash - Reinventing Cryptocurrency",
+          "language": "C++",
+          "stars": 1535,
+          "forks": 1198,
+          "updated": "2026-03-14"
+        },
+        {
+          "name": "dash-wallet",
+          "description": "DashPay Wallet for Android",
+          "language": "Kotlin",
+          "stars": 219,
+          "forks": 177,
+          "updated": "2026-03-10"
+        },
+        {
+          "name": "platform",
+          "description": "Structured data storage blockchain with secondary indices and identities.",
+          "language": "Rust",
+          "stars": 89,
+          "forks": 49,
+          "updated": "2026-03-16"
+        },
+        {
+          "name": "dips",
+          "description": "Dash Improvement Proposals",
+          "language": "Python",
+          "stars": 81,
+          "forks": 59,
+          "updated": "2026-03-11"
+        },
+        {
+          "name": "dashj",
+          "description": "Dash Java Library (X11, DGW, LLMQ, InstantSend, Chainlocks)",
+          "language": "Java",
+          "stars": 79,
+          "forks": 100,
+          "updated": "2026-03-10"
+        },
+        {
+          "name": "docs",
+          "description": "Dash User and Core Documentation",
+          "language": "Python",
+          "stars": 49,
+          "forks": 87,
+          "updated": "2026-03-16"
+        }
+      ]
+    },
+    "careers": {
+      "found": false,
+      "reason": "no_careers_page_found"
     }
   },
   "NexTalk": {
@@ -1572,6 +2089,27 @@
       "executives_found": 0,
       "hiring_roles_detected": 6,
       "evidence_snippets": 8
+    },
+    "github": {
+      "found": true,
+      "org_login": "NexTalk",
+      "org_url": "https://github.com/NexTalk"
+    },
+    "careers": {
+      "found": true,
+      "careers_url": "https://www.nextalk.com/careers",
+      "total_openings": 3,
+      "ai_ml_openings": 0,
+      "departments": {
+        "Engineering": 2,
+        "Marketing": 1
+      },
+      "sample_roles": [
+        "Solutions",
+        "Engineering\n\n \n\n I",
+        "Marketing"
+      ],
+      "ai_roles": []
     }
   },
   "TrackIt Transit": {
@@ -1695,6 +2233,91 @@
       "executives_found": 2,
       "hiring_roles_detected": 5,
       "evidence_snippets": 8
+    },
+    "github": {
+      "found": true,
+      "org_login": "trackit",
+      "org_url": "https://github.com/trackit",
+      "total_public_repos": 30,
+      "total_stars": 497,
+      "total_forks": 140,
+      "recently_active_repos": 19,
+      "primary_languages": [
+        {
+          "language": "TypeScript",
+          "repo_count": 11
+        },
+        {
+          "language": "HCL",
+          "repo_count": 11
+        },
+        {
+          "language": "Python",
+          "repo_count": 5
+        },
+        {
+          "language": "Go",
+          "repo_count": 1
+        },
+        {
+          "language": "JavaScript",
+          "repo_count": 1
+        }
+      ],
+      "top_repos": [
+        {
+          "name": "trackit",
+          "description": "Trackit helps you understand and improve your use of AWS",
+          "language": "Go",
+          "stars": 150,
+          "forks": 35,
+          "updated": "2026-02-24"
+        },
+        {
+          "name": "aws-cost-report",
+          "description": "Generate Sheets (Google, Excel and CSV) with useful information about your AWS spendings.",
+          "language": "Python",
+          "stars": 114,
+          "forks": 37,
+          "updated": "2026-01-28"
+        },
+        {
+          "name": "aws-workflow-video-on-demand",
+          "description": "AWS Workflow for video-on-demand with automated API",
+          "language": "HCL",
+          "stars": 64,
+          "forks": 20,
+          "updated": "2025-10-05"
+        },
+        {
+          "name": "terraform-boilerplate",
+          "description": "",
+          "language": "HCL",
+          "stars": 63,
+          "forks": 16,
+          "updated": "2025-11-01"
+        },
+        {
+          "name": "trackit-client",
+          "description": "TrackIt WebUI repository",
+          "language": "JavaScript",
+          "stars": 21,
+          "forks": 11,
+          "updated": "2025-10-06"
+        },
+        {
+          "name": "terraform-aws-client-vpn",
+          "description": "Terraform module which creates Client VPN resources on AWS",
+          "language": "HCL",
+          "stars": 17,
+          "forks": 10,
+          "updated": "2025-02-10"
+        }
+      ]
+    },
+    "careers": {
+      "found": false,
+      "reason": "invalid_website"
     }
   }
 }
