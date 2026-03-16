@@ -121,9 +121,13 @@ export default function ResearchEvidence({ company, evidence }: Props) {
   const techStack = ev.tech_stack || []
   const githubConfirmedTech = new Set(ev.tech_stack_github_confirmed || [])
   const customers = ev.named_customers || []
-  const news = ev.recent_news || []
+  const rawNews = ev.recent_news || []
+  // Normalize news: accept both string[] and {title,summary,url,date}[]
+  const news = rawNews.map((item: any) => typeof item === 'string' ? item : (item.summary || item.title || ''))
+  const newsLinks = rawNews.filter((item: any) => typeof item === 'object' && item.url)
   const executives = ev.executives || []
-  const hiring = ev.hiring_signals || []
+  // Support both hiring_signals and careers.titles
+  const hiring = ev.hiring_signals || (ev.careers?.titles) || []
   const keyEvidence = ev.key_evidence || []
   const stats = ev.enrichment_stats
   const github = ev.github
