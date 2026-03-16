@@ -33,6 +33,7 @@ from routers.sandbox import (
     classify_tier,
     assign_wave,
     compute_category_scores,
+    build_identity_markers,
     CATEGORIES,
     DERIVED_WEIGHTS,
     DIMENSION_LABELS,
@@ -86,13 +87,34 @@ async def rescore_company(
         context_parts.append(company.description[:60].strip())
     context_hint = " ".join(context_parts) if context_parts else ""
 
-    # Run deep research with context hint
-    features = await research_company_deep(company_name, tavily_key, context_hint=context_hint)
+    # Build identity markers for entity-match validation
+    # This filters out search results for wrong companies with similar names
+    identity_markers = build_identity_markers(
+        company_name=company_name,
+        website=company.website,
+        vertical=company.vertical,
+        description=company.description,
+    )
+    logger.info(
+        f"  Identity markers: domain={identity_markers.get('domain', 'N/A')}, "
+        f"vertical_kw={identity_markers.get('vertical_keywords', [])[:3]}, "
+        f"desc_kw={identity_markers.get('desc_keywords', [])[:3]}"
+    )
+
+    # Run deep research with context hint + entity validation
+    features = await research_company_deep(
+        company_name, tavily_key,
+        context_hint=context_hint,
+        identity_markers=identity_markers,
+    )
     research_meta = features.pop("_research_meta", {})
     research_summary = features.pop("research_summary", "")
 
+    validated = research_meta.get("validated_results", research_meta.get("search_results", 0))
+    dropped = research_meta.get("results_dropped", 0)
     logger.info(
-        f"  Research complete: {research_meta.get('search_results', 0)} results, "
+        f"  Research complete: {research_meta.get('search_results', 0)} results "
+        f"({validated} validated, {dropped} dropped), "
         f"{research_meta.get('urls_scraped', 0)} URLs scraped, "
         f"{research_meta.get('total_text_chars', 0)} chars"
     )
@@ -123,6 +145,8 @@ async def rescore_company(
         "confidence": confidence["total"],
         "confidence_breakdown": confidence["breakdown"],
         "research_results": research_meta.get("search_results", 0),
+        "validated_results": research_meta.get("validated_results", research_meta.get("search_results", 0)),
+        "results_dropped": research_meta.get("results_dropped", 0),
         "urls_scraped": research_meta.get("urls_scraped", 0),
         "features": features,
         "pillar_scores": pillar_scores,
@@ -278,15 +302,16 @@ def print_report(results: list[dict], dry_run: bool):
     failures = [r for r in results if "error" in r]
 
     if successes:
-        logger.info(f"\n{'Company':<30s} {'Old':>6s} {'New':>6s} {'Delta':>7s} {'Conf':>5s} {'Old Tier':<15s} {'New Tier':<15s}")
-        logger.info(f"{'-'*30} {'-'*6} {'-'*6} {'-'*7} {'-'*5} {'-'*15} {'-'*15}")
+        logger.info(f"\n{'Company':<30s} {'Old':>6s} {'New':>6s} {'Delta':>7s} {'Conf':>5s} {'Drop':>5s} {'Old Tier':<15s} {'New Tier':<15s}")
+        logger.info(f"{'-'*30} {'-'*6} {'-'*6} {'-'*7} {'-'*5} {'-'*5} {'-'*15} {'-'*15}")
 
         for r in sorted(successes, key=lambda x: x.get("new_composite", 0), reverse=True):
             delta_str = f"{'+' if r['delta'] > 0 else ''}{r['delta']:.2f}"
             conf_str = f"{r.get('confidence', 0):.0f}%"
+            drop_str = f"{r.get('results_dropped', 0)}"
             logger.info(
                 f"{r['name']:<30s} {r.get('old_composite', 0):>6.2f} {r['new_composite']:>6.2f} "
-                f"{delta_str:>7s} {conf_str:>5s} {r.get('old_tier', 'N/A'):<15s} {r['new_tier']:<15s}"
+                f"{delta_str:>7s} {conf_str:>5s} {drop_str:>5s} {r.get('old_tier', 'N/A'):<15s} {r['new_tier']:<15s}"
             )
 
         # Tier distribution
