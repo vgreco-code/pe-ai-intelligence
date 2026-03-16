@@ -71,44 +71,55 @@ def cat_scores(pillars):
 PILLAR_OVERRIDES = {
     "AutoTime": {
         # DCAA-compliant timekeeping for A&D — solid vertical SaaS but NOT an AI product
-        # Rule-based time allocation ≠ AI. No ML features, no AI product launches.
-        # High scores were from defense industry AI keyword contamination.
-        "ai_product_features": 2.80,    # was 4.59 — timekeeping with rules-based allocation, not AI
-        "revenue_ai_upside": 3.60,      # was 4.52 — real opportunity to add AI (predictive labor, anomaly detection)
-        "margin_ai_upside": 3.40,       # was 4.52 — automation potential exists but not AI-driven today
-        "analytics_maturity": 3.00,     # was 4.19 — standard reporting, not advanced analytics
-        "data_quality": 3.50,           # was 4.09 — good labor data but not AI-grade data platform
-        "ai_momentum": 2.50,            # was 3.63 — hiring eng leadership but no AI launches
-        "leadership_ai_vision": 3.20,   # was 3.56 — CEO has PE execution chops, but no AI strategy evidence
+        "ai_product_features": 2.80,    # was 4.59 — rules-based allocation, not AI
+        "revenue_ai_upside": 3.60,      # was 4.52 — real AI opportunity (predictive labor, anomaly detection)
+        "margin_ai_upside": 3.40,       # was 4.52 — automation potential but not AI-driven today
+        "analytics_maturity": 3.00,     # was 4.19 — standard reporting
+        "data_quality": 3.50,           # was 4.09 — good labor data but not AI-grade
+        "ai_momentum": 2.50,            # was 3.63 — hiring eng but no AI launches
+        "leadership_ai_vision": 3.20,   # was 3.56 — PE execution chops but no AI strategy
+        "cloud_architecture": 3.00,     # was 4.24 — "cloud-hosted" ≠ cloud-native architecture
+        "ai_engineering": 1.80,         # was 3.76 — no AI/ML engineering team or capability
+        "tech_stack_modernity": 2.80,   # was 3.78 — SAP integration, REST API — decent not modern
+        "ai_talent_density": 1.80,      # was 3.20 — 25 emp, no AI talent verified
     },
     "Spokane": {
         # AS/400 RPG system from 1989 — no AI, legacy tech, but dominant market position
-        "ai_product_features": 2.20,    # was 4.68 — NO shipping AI features whatsoever
-        "revenue_ai_upside": 3.80,      # was 4.58 — huge modernization opportunity (64% US oranges)
-        "tech_stack_modernity": 1.50,    # was 2.86 — IBM AS/400, RPG, DB2 = legacy
-        "cloud_architecture": 1.80,     # was 3.40 — not cloud-native, web reporting only
-        "ai_engineering": 1.20,         # was 2.21 — no ML engineering capacity
-        "ai_talent_density": 1.30,      # was 3.37 — 9 employees, no AI talent
-        "ai_momentum": 1.50,            # was 3.85 — no recent AI activity
-        "analytics_maturity": 2.80,     # was 4.06 — basic reporting, no advanced analytics
-        "data_quality": 3.50,           # keep high — 37 years of agricultural data
-        "product_differentiation": 4.20, # keep high — 64% of US oranges is massive moat
-        "leadership_ai_vision": 2.50,   # was 3.99 — no evidence of AI vision
+        "ai_product_features": 2.20,    # NO shipping AI features
+        "revenue_ai_upside": 3.80,      # huge modernization opportunity (64% US oranges)
+        "tech_stack_modernity": 1.50,   # IBM AS/400, RPG, DB2 = legacy
+        "cloud_architecture": 1.80,     # not cloud-native, web reporting only
+        "ai_engineering": 1.20,         # no ML engineering capacity
+        "ai_talent_density": 1.30,      # 9 employees, no AI talent
+        "ai_momentum": 1.50,            # no recent AI activity
+        "analytics_maturity": 2.80,     # basic reporting
+        "data_quality": 3.50,           # 37 years of agricultural data
+        "product_differentiation": 4.20, # 64% of US oranges is massive moat
+        "leadership_ai_vision": 2.50,   # no evidence of AI vision
+        "margin_ai_upside": 2.50,       # was 4.58 — legacy system limits automation potential today
+        "org_change_readiness": 1.80,   # was 3.10 — 9-person AS/400 shop, low change capacity
+        "ai_governance": 1.80,          # was 3.20 — no governance framework
     },
     "Thought Foundry": {
         # 8-person content platform — "data-driven" ≠ AI
-        "ai_product_features": 2.80,    # was 4.92 — "data-driven platform" is not AI
-        "revenue_ai_upside": 3.50,      # was 4.54 — content entitlements has AI potential
-        "ai_talent_density": 1.80,      # was 2.52 — 8 people, no AI roles verified
-        "ai_momentum": 2.50,            # was 4.51 — no recent AI launches
-        "leadership_ai_vision": 2.80,   # was 4.30 — no AI vision evidence
+        "ai_product_features": 2.80,    # "data-driven platform" is not AI
+        "revenue_ai_upside": 3.50,      # content entitlements has AI potential
+        "ai_talent_density": 1.80,      # 8 people, no AI roles verified
+        "ai_momentum": 2.50,            # no recent AI launches
+        "leadership_ai_vision": 2.80,   # no AI vision evidence
+        "margin_ai_upside": 2.80,       # was 4.51 — 8-person company, no disclosed revenue model
+        "cloud_architecture": 2.80,     # was 4.06 — assumed cloud but no verification
+        "tech_stack_modernity": 2.50,   # was 3.81 — no tech stack disclosed
+        "product_differentiation": 2.50, # was 3.90 — minimal market presence
     },
     "Champ": {
         # 40-year public health EHR — Omaha System taxonomy, HIPAA, AWS
-        # Nightingale Notes is a solid cloud EHR but has no AI/ML features
-        "ai_product_features": 2.60,    # was 4.72 — EHR with structured data, not AI product
-        "revenue_ai_upside": 3.80,      # was 4.27 — population health analytics is real AI opportunity
-        "margin_ai_upside": 3.50,       # was 4.65 — automation in billing/scheduling but not AI today
+        "ai_product_features": 2.60,    # EHR with structured data, not AI product
+        "revenue_ai_upside": 3.80,      # population health analytics is real AI opportunity
+        "margin_ai_upside": 3.50,       # automation potential but not AI today
+        "cloud_architecture": 3.30,     # was 4.17 — AWS-hosted but likely lift-and-shift
+        "leadership_ai_vision": 2.80,   # was 3.95 — no AI vision evidence from leadership
+        "ai_momentum": 2.50,            # was 4.00 — SES partnership is connectivity, not AI
     },
     "Primate": {
         # Control room SCADA visualization — some anomaly detection but not deep AI
@@ -155,22 +166,29 @@ PILLAR_OVERRIDES = {
     },
     "Track Star": {
         # AI video telematics, predictive maintenance, $24.4M revenue
-        "ai_product_features": 4.30,    # was 4.67 — slight adjust, but they DO have AI video
-        "ai_engineering": 2.50,         # was 1.96 — built AI video telematics with edge computing
-        "ai_talent_density": 2.20,      # was 1.80 — small but has technical team
-        "ai_momentum": 3.50,            # was 3.62 — ThingTech acquisition, Enterprise launch
+        "ai_product_features": 3.60,    # was 4.30 — AI video telematics is real but edge-device level
+        "ai_engineering": 2.50,         # built AI video telematics with edge computing
+        "ai_talent_density": 2.20,      # small but has technical team
+        "ai_momentum": 3.50,            # ThingTech acquisition, Enterprise launch
+        "cloud_architecture": 3.00,     # was 4.20 — browser-based PHP/Nginx, not cloud-native
+        "data_integration": 3.20,       # was 4.05 — open APIs but small team
+        "margin_ai_upside": 3.50,       # was 4.27 — video telematics has margin potential
+        "leadership_ai_vision": 3.00,   # was 3.71 — no AI background in leadership
     },
     "FMSI": {
-        # Analytics-driven staffing, Appli AI partnership, 140+ customers
-        "ai_momentum": 3.80,            # was 3.35 — relaunch March 2026, Appli AI partnership, rapid sales
-        "ai_product_features": 3.80,    # was 4.42 — slight down, analytics-driven not deep AI
-        "partner_ecosystem": 3.20,      # was 2.40 — Appli AI partnership, banking integrations
+        # Analytics-driven staffing, Appli AI partnership, 140+ customers, $5.3M ARR
+        "ai_momentum": 3.80,            # relaunch March 2026, Appli AI partnership, rapid new sales
+        "ai_product_features": 3.20,    # was 3.80 — analytics-driven staffing recommendations, not deep AI
+        "partner_ecosystem": 3.20,      # Appli AI partnership, banking integrations
+        "revenue_ai_upside": 3.50,      # was 4.12 — branch analytics has AI upside but moderate
     },
     "SMRTR": {
         # ML predictive maintenance, route optimization, compliance anomaly detection
-        "ai_product_features": 3.80,    # was 4.17 — slight down, ML features are real but early
-        "ai_engineering": 2.80,         # was 2.51 — built ML for backhaul, route optimization
-        "ai_momentum": 3.30,            # was 3.19 — merger + VAI partnership = momentum
+        "ai_product_features": 3.50,    # was 3.80 — ML features are real but early-stage
+        "ai_engineering": 2.80,         # built ML for backhaul, route optimization
+        "ai_momentum": 3.30,            # merger + VAI partnership = momentum
+        "margin_ai_upside": 3.60,       # was 4.47 — route optimization has margin impact but not yet scaled
+        "cloud_architecture": 3.40,     # was 4.14 — cloud SaaS but ERP integrations suggest hybrid
     },
     "ViaPeople": {
         # AI Instant Insights feature, I/O psychology foundation, SOC 2
@@ -182,6 +200,13 @@ PILLAR_OVERRIDES = {
         # IoT predictive maintenance, Salesforce AppExchange, government contracts
         "ai_product_features": 3.20,    # was 2.83 — IoT predictive maintenance is genuine AI
         "ai_momentum": 2.50,            # was 2.28 — acquired by Track Star, less independent momentum
+    },
+    "Cairn Applications": {
+        # Basic route optimization SaaS — deterministic algorithms, not ML/AI
+        "ai_product_features": 2.50,    # was 3.75 — route optimization is OR/heuristics, not AI
+        "margin_ai_upside": 3.00,       # was 3.88 — some automation potential but small team
+        "cloud_architecture": 3.00,     # was 3.73 — cloud-hosted but no evidence of cloud-native
+        "tech_stack_modernity": 2.80,   # was 3.19 — no verified modern stack
     },
 }
 
