@@ -215,8 +215,10 @@ export default function App() {
           '/competitive_benchmarks.json',
         ]
 
-    // Evidence JSON is always loaded from static path (not served by API)
-    const evidenceUrl = '/portfolio_evidence.json'
+    // Evidence: use API if available, fall back to static JSON
+    const evidenceUrl = isApi
+      ? `${API}/api/portfolio_evidence`
+      : '/portfolio_evidence.json'
 
     Promise.all([
       ...urls.map((url, i) =>

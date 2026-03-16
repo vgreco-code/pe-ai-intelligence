@@ -107,6 +107,26 @@ class ModelMetrics(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
 
 
+class PortfolioEvidence(Base):
+    """Research evidence for portfolio companies — executives, customers, AI initiatives, etc."""
+    __tablename__ = "portfolio_evidence"
+
+    id = Column(String, primary_key=True, default=lambda: f"pe_{uuid.uuid4().hex[:8]}")
+    company_id = Column(String, index=True, nullable=False)
+    executives = Column(JSON, nullable=True)       # [{name, role}]
+    customers = Column(JSON, nullable=True)         # [str]
+    ai_initiatives = Column(JSON, nullable=True)    # [{text, type}]
+    tech_stack = Column(JSON, nullable=True)        # [str]
+    github = Column(JSON, nullable=True)            # {org, public_repos, top_languages}
+    careers = Column(JSON, nullable=True)           # {ai_roles, total_roles, titles}
+    talent = Column(JSON, nullable=True)            # {leadership, team_skills, talent_summary}
+    news = Column(JSON, nullable=True)              # [{title, url, date, summary}]
+    evidence = Column(JSON, nullable=True)          # [{title, content, url, source}]
+    narrative = Column(Text, nullable=True)         # Generated summary
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+
 class TrainingSignal(Base):
     """Signal/metadata for training set companies"""
     __tablename__ = "training_signals"
