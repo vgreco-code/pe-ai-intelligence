@@ -188,6 +188,7 @@ export default function App() {
   const [waveData, setWaveData] = useState<WaveData>({})
   const [trainingSet, setTrainingSet] = useState<TrainingCompany[]>([])
   const [benchmarkData, setBenchmarkData] = useState<BenchmarkCompany[]>([])
+  const [evidenceData, setEvidenceData] = useState<Record<string, any>>({})
   const [selectedCompany, setSelectedCompany] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
 
@@ -212,17 +213,19 @@ export default function App() {
           '/wave_sequencing.json',
           '/large_training_set.json',
           '/competitive_benchmarks.json',
+          '/portfolio_evidence.json',
         ]
 
     Promise.all(
-      urls.map((url, i) => fetch(url).then(r => r.json()).catch(i === 5 ? () => ({ portfolio_benchmarks: [] }) : undefined))
-    ).then(([p, m, ts, w, t, cb]) => {
+      urls.map((url, i) => fetch(url).then(r => r.json()).catch(i >= 5 ? () => (i === 6 ? {} : { portfolio_benchmarks: [] }) : undefined))
+    ).then(([p, m, ts, w, t, cb, ev]) => {
       setPortfolio(p)
       setMetrics(m)
       setTrainingStats(ts)
       setWaveData(w)
       setTrainingSet(t)
       setBenchmarkData(cb.portfolio_benchmarks || [])
+      setEvidenceData(ev || {})
       setLoading(false)
     }).catch(err => {
       console.error('Failed to load data:', err)
@@ -358,6 +361,7 @@ export default function App() {
             <CompanyDetail
               company={selectedPortfolioCompany}
               benchmark={selectedBenchmark}
+              evidence={evidenceData[selectedPortfolioCompany.name]}
               onBack={() => setPage('portfolio')}
             />
           )}

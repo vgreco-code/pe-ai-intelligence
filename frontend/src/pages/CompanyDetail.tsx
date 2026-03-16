@@ -17,6 +17,7 @@ import ResearchEvidence from '../components/ResearchEvidence'
 interface Props {
   company: PortfolioCompany
   benchmark?: BenchmarkCompany
+  evidence?: any
   onBack: () => void
 }
 
@@ -59,7 +60,7 @@ function getWeaknesses(company: PortfolioCompany): { dim: string; score: number;
 
 // Actionable recommendations now handled by the AIUseCases component
 
-export default function CompanyDetail({ company, benchmark, onBack }: Props) {
+export default function CompanyDetail({ company, benchmark, evidence, onBack }: Props) {
   const tierInfo = TIER_DESCRIPTIONS[company.tier] || TIER_DESCRIPTIONS['AI-Limited']
   const TierIcon = tierInfo.icon
   const strengths = getStrengths(company)
@@ -384,7 +385,7 @@ export default function CompanyDetail({ company, benchmark, onBack }: Props) {
       </div>
 
       {/* Research Evidence */}
-      <ResearchEvidence company={company} />
+      <ResearchEvidence company={company} evidence={evidence} />
 
       {/* AI Use Case Recommendations */}
       <AIUseCases company={company} />
