@@ -774,21 +774,43 @@ export default function Sandbox() {
       setDemoMode(true)
     }
 
-    timers.forEach(clearTimeout)
+    if (apiSuccess) {
+      // API succeeded — clear animation timers and show result immediately
+      timers.forEach(clearTimeout)
 
-    if (data) {
-      setResult(data)
-      setCompanyName('')
+      if (data) {
+        setResult(data)
+        setCompanyName('')
+        setTimeout(() => setShowResult(true), totalPipelineDuration + 300)
+        loadHistory()
+      } else {
+        setError('Failed to score company')
+      }
 
-      // Wait for pipeline animation to complete, then reveal result
-      setTimeout(() => setShowResult(true), totalPipelineDuration + 300)
-      loadHistory()
+      setScoring(false)
+      setPipelineIdx(-1)
     } else {
-      setError('Failed to score company')
-    }
+      // Demo mode — let pipeline animation play through all steps, THEN reveal result
+      // Do NOT clear timers — let them advance the pipeline steps naturally
+      if (data) {
+        setResult(data)
+        setCompanyName('')
 
-    setScoring(false)
-    setPipelineIdx(-1)
+        // After pipeline animation finishes, stop scoring and reveal result
+        setTimeout(() => {
+          setScoring(false)
+          setPipelineIdx(-1)
+          setShowResult(true)
+        }, totalPipelineDuration + 300)
+
+        loadHistory()
+      } else {
+        timers.forEach(clearTimeout)
+        setError('Failed to score company')
+        setScoring(false)
+        setPipelineIdx(-1)
+      }
+    }
   }
 
   const deleteCompany = async (id: string) => {
