@@ -96,6 +96,11 @@
         "source": "Solen Software Group Careers",
         "text": "Solen actively hiring Chief AI Officer to identify, scale, and operationalize AI use cases across all portfolio companies \u2014 developing shared AI patterns, frameworks, and governance standards",
         "url": "https://solen-software-group.breezy.hr/p/92d537becf4b-chief-ai-officer"
+      },
+      {
+        "source": "Solen Software Group / Built In",
+        "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
+        "url": "https://builtin.com/company/solen-software-group/jobs"
       }
     ],
     "narrative_summary": "AutoTime is a 20+ year market leader in DCAA-compliant time and labor tracking for the Aerospace & Defense industry. The platform serves elite defense primes including Lockheed Martin, General Dynamics, Collins Aerospace, Rolls-Royce, and L3Harris \u2014 with complex labor distribution across government contracts, audit-ready timekeeping, and multi-rate payroll. CEO Chris Thomas brings proven PE execution, having driven 119% bookings growth at UKG's A&D division. AutoTime was acquired by Solen in February 2025. The company is actively hiring software engineering leadership, signaling a product modernization push. Core tech includes SAP integration, cloud-hosted SaaS, and REST APIs."
@@ -115,7 +120,13 @@
       "Web-based reporting modules"
     ],
     "github": {},
-    "careers": {},
+    "careers": {
+      "ai_roles": 0,
+      "total_roles": 1,
+      "titles": [
+        "ERP Developer ($68K-$116K, Spokane Valley, WA)"
+      ]
+    },
     "talent": {
       "found": true,
       "leadership": [
@@ -138,8 +149,15 @@
       "US lemon growers representing 80% of lemon production"
     ],
     "recent_news": [],
-    "hiring_signals": [],
+    "hiring_signals": [
+      "ERP Developer ($68K-$116K, Spokane Valley, WA \u2014 Glassdoor listing)"
+    ],
     "key_evidence": [
+      {
+        "source": "Glassdoor Job Listing",
+        "text": "Spokane Software Systems actively hiring full-time ERP Developer ($68K-$116K) in Spokane Valley, WA \u2014 signals investment in platform modernization despite small 9-person team size",
+        "url": "https://www.glassdoor.com/job-listing/a-full-time-erp-developer-spokane-software-systems-JV_IC1164793_KO0,25_KE26,50.htm"
+      },
       {
         "title": "Agricultural ERP Market Dominance",
         "url": "https://sssonline.com",
@@ -174,6 +192,11 @@
         "source": "Solen Software Group Careers",
         "text": "Solen actively hiring Chief AI Officer to identify, scale, and operationalize AI use cases across all portfolio companies \u2014 developing shared AI patterns, frameworks, and governance standards",
         "url": "https://solen-software-group.breezy.hr/p/92d537becf4b-chief-ai-officer"
+      },
+      {
+        "source": "Solen Software Group / Built In",
+        "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
+        "url": "https://builtin.com/company/solen-software-group/jobs"
       }
     ],
     "narrative_summary": "Spokane Software Systems is the dominant ERP platform for the U.S. citrus industry with extraordinary market penetration \u2014 64% of US orange varieties and 80% of US lemon varieties flow through the Spokane System. Founded 37+ years ago, the platform runs on IBM Power Systems (AS/400) with RPG and DB2 \u2014 legacy technology but proven. Key customer Sun Pacific ($100M revenue, 480 employees) is one of the largest citrus growers in the US. PackPoint module addresses PTI and GTIN compliance for produce traceability. Full-suite includes packing house operations, shipping/logistics, grower accounting, and payroll. The extreme market dominance (product_differentiation 4.20) represents the strongest competitive moat in the Solen portfolio, but the AS/400 architecture means significant modernization investment would be needed before AI features are feasible."
@@ -241,6 +264,11 @@
         "source": "Solen Software Group Careers",
         "text": "Solen actively hiring Chief AI Officer to identify, scale, and operationalize AI use cases across all portfolio companies \u2014 developing shared AI patterns, frameworks, and governance standards",
         "url": "https://solen-software-group.breezy.hr/p/92d537becf4b-chief-ai-officer"
+      },
+      {
+        "source": "Solen Software Group / Built In",
+        "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
+        "url": "https://builtin.com/company/solen-software-group/jobs"
       }
     ],
     "narrative_summary": "Thought Foundry builds data-driven exchange platform-as-a-service solutions for entertainment companies to manage digital content entitlements. Founded in 2012 by Timur Insepov, headquartered in Culver City, Los Angeles \u2014 embedded in the entertainment industry hub. The company joined Solen Software Group as part of its vertical SaaS portfolio. IMPORTANT CAVEAT: Thought Foundry has minimal public web presence. No customer references, case studies, product screenshots, or technology details are publicly available. All scoring is based on the company description and Solen's characterization. This is the least-verifiable company in the portfolio and scores should be treated with appropriate uncertainty."
@@ -341,6 +369,11 @@
         "source": "Solen Software Group Careers",
         "text": "Solen actively hiring Chief AI Officer to identify, scale, and operationalize AI use cases across all portfolio companies \u2014 developing shared AI patterns, frameworks, and governance standards",
         "url": "https://solen-software-group.breezy.hr/p/92d537becf4b-chief-ai-officer"
+      },
+      {
+        "source": "Solen Software Group / Built In",
+        "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
+        "url": "https://builtin.com/company/solen-software-group/jobs"
       }
     ],
     "narrative_summary": "Champ Software develops Nightingale Notes, the leading EHR system purpose-built for public health departments, serving 145+ community health agencies nationwide. Cloud-hosted on AWS with full HIPAA compliance, the platform uses the Omaha System standardized taxonomy for evidence-based outcomes documentation. Features include batch billing, scheduling, 100% time tracking, and secure health information exchange via the SES Direct messaging partnership. Founded in 1985 by David Rosebaugh in Mankato, Minnesota; CEO Scott Dunnewind acquired ownership in 2021. The 40-year domain tenure, regulatory moat (HIPAA/Omaha System), and 145+ agency install base create significant switching costs."
@@ -439,6 +472,11 @@
         "source": "Solen Software Group Careers",
         "text": "Solen actively hiring Chief AI Officer to identify, scale, and operationalize AI use cases across all portfolio companies \u2014 developing shared AI patterns, frameworks, and governance standards",
         "url": "https://solen-software-group.breezy.hr/p/92d537becf4b-chief-ai-officer"
+      },
+      {
+        "source": "Solen Software Group / Built In",
+        "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
+        "url": "https://builtin.com/company/solen-software-group/jobs"
       }
     ],
     "narrative_summary": "Primate Technologies builds GridGuardian, an intelligent data processing engine for mission-critical utility control rooms. The platform ingests real-time and historical data from SCADA, EMS, OMS, and other operational systems via SQL, MQTT, XML, and custom APIs, consolidating fragmented data streams into unified operational visibility. Key capabilities include automated anomaly detection that isolates abnormal patterns in real time, smart alerting, and automated NERC compliance event tracking. The company claims $150K+ annual labor savings per deployment and 96% faster grid updates. Product suite includes BlackBoard (multi-display visualization), TileViewer (secure remote access), and TileBuilder (custom layouts). Founded 2001 in Melbourne, FL, joined Solen in 2024."
@@ -595,6 +633,11 @@
         "url": "https://solen-software-group.breezy.hr/p/92d537becf4b-chief-ai-officer"
       },
       {
+        "source": "Solen Software Group / Built In",
+        "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
+        "url": "https://builtin.com/company/solen-software-group/jobs"
+      },
+      {
         "source": "Track Star Website",
         "text": "AI-powered video telematics with dash cameras detecting risky behaviors: phone use, fatigue, tailgating, smoking, seatbelt violations \u2014 real-time driver coaching",
         "url": "https://www.trackstar.com/fleet-video-telematics"
@@ -703,6 +746,11 @@
         "source": "Solen Software Group Careers",
         "text": "Solen actively hiring Chief AI Officer to identify, scale, and operationalize AI use cases across all portfolio companies \u2014 developing shared AI patterns, frameworks, and governance standards",
         "url": "https://solen-software-group.breezy.hr/p/92d537becf4b-chief-ai-officer"
+      },
+      {
+        "source": "Solen Software Group / Built In",
+        "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
+        "url": "https://builtin.com/company/solen-software-group/jobs"
       },
       {
         "source": "SMRTR Solutions",
@@ -823,6 +871,11 @@
         "source": "Solen Software Group Careers",
         "text": "Solen actively hiring Chief AI Officer to identify, scale, and operationalize AI use cases across all portfolio companies \u2014 developing shared AI patterns, frameworks, and governance standards",
         "url": "https://solen-software-group.breezy.hr/p/92d537becf4b-chief-ai-officer"
+      },
+      {
+        "source": "Solen Software Group / Built In",
+        "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
+        "url": "https://builtin.com/company/solen-software-group/jobs"
       }
     ],
     "narrative_summary": "FMSI provides the OneCX platform combining appointment scheduling, lobby management, staffing analytics, and workforce optimization for 140+ banks and credit unions. Founded in 1990 by W. Michael Scott, acquired by Kronos/UKG in 2017, and relaunched as an independent company in March 2026 after UKG divestiture. Major customers include Apple Federal Credit Union ($2B, 25 locations) and Fort Knox FCU. A regional credit union achieved 40% lobby wait time reduction using FMSI tools. Recent Appli partnership adds AI-powered financial calculators. Generating $5.3M annual revenue with rapid post-relaunch customer acquisition (new clients signed within 60 days)."
@@ -915,6 +968,11 @@
         "source": "Solen Software Group Careers",
         "text": "Solen actively hiring Chief AI Officer to identify, scale, and operationalize AI use cases across all portfolio companies \u2014 developing shared AI patterns, frameworks, and governance standards",
         "url": "https://solen-software-group.breezy.hr/p/92d537becf4b-chief-ai-officer"
+      },
+      {
+        "source": "Solen Software Group / Built In",
+        "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
+        "url": "https://builtin.com/company/solen-software-group/jobs"
       }
     ],
     "narrative_summary": "Cairn Applications is the leading cloud SaaS platform for independent waste hauling operations, managing 350+ customers, 65,000+ dumpsters, and ~$150M in annual commerce across the US and Canada. The product suite includes Box Tracker (dumpster management with real-time GPS tracking, route optimization, billing, and CRM), Scale House (landfill operations), and Route Tracker (commercial trash/curbside). Founded in 2008 by James Moser in Nashua, NH. The 'born in the cloud' platform is device-agnostic with deep Google Maps integration (MapIt!). Acquired by Solen in December 2025. The waste hauling vertical presents AI opportunities in route optimization, predictive demand forecasting, and automated dispatch."
@@ -1049,6 +1107,11 @@
         "source": "Solen Software Group Careers",
         "text": "Solen actively hiring Chief AI Officer to identify, scale, and operationalize AI use cases across all portfolio companies \u2014 developing shared AI patterns, frameworks, and governance standards",
         "url": "https://solen-software-group.breezy.hr/p/92d537becf4b-chief-ai-officer"
+      },
+      {
+        "source": "Solen Software Group / Built In",
+        "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
+        "url": "https://builtin.com/company/solen-software-group/jobs"
       },
       {
         "source": "ViaPeople Software Development",
@@ -1196,6 +1259,11 @@
         "url": "https://solen-software-group.breezy.hr/p/92d537becf4b-chief-ai-officer"
       },
       {
+        "source": "Solen Software Group / Built In",
+        "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
+        "url": "https://builtin.com/company/solen-software-group/jobs"
+      },
+      {
         "source": "Track Star Website",
         "text": "ThingTech officially integrated into Track Star platform \u2014 combined fleet management and IoT asset tracking under unified brand",
         "url": "https://www.trackstar.com/thingtech"
@@ -1284,6 +1352,11 @@
         "source": "Solen Software Group Careers",
         "text": "Solen actively hiring Chief AI Officer to identify, scale, and operationalize AI use cases across all portfolio companies \u2014 developing shared AI patterns, frameworks, and governance standards",
         "url": "https://solen-software-group.breezy.hr/p/92d537becf4b-chief-ai-officer"
+      },
+      {
+        "source": "Solen Software Group / Built In",
+        "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
+        "url": "https://builtin.com/company/solen-software-group/jobs"
       }
     ],
     "narrative_summary": "TrackIt Transit is a transit-specific cloud SaaS platform deployed by 100+ public transit agencies for PTASP compliance, safety management, and paperless operations. Modules span attendance, claims tracking, compliance documentation, customer service, eLearning, event logging, safety reporting, and HR management. Data entered once flows across departments with permissions-based access. Founded in 2013 by Mark Anderson, who continues as President post-Solen acquisition (February 2026). SWTA member. Mobile app (Trackit Assessment) available on Google Play. Rapid deployment capability (<1 day). The transit safety compliance niche presents AI opportunities in predictive safety analytics and automated incident reporting."
@@ -1321,7 +1394,12 @@
       "Patented communication technology"
     ],
     "github": {},
-    "careers": {},
+    "careers": {
+      "ai_roles": 0,
+      "total_roles": 0,
+      "titles": [],
+      "note": "Active careers page at nextalk.com/careers with filter categories for Engineering, Intern, Marketing, and Sales — listings load dynamically"
+    },
     "talent": {
       "found": true,
       "leadership": [
@@ -1411,6 +1489,11 @@
         "source": "Solen Software Group Careers",
         "text": "Solen actively hiring Chief AI Officer to identify, scale, and operationalize AI use cases across all portfolio companies \u2014 developing shared AI patterns, frameworks, and governance standards",
         "url": "https://solen-software-group.breezy.hr/p/92d537becf4b-chief-ai-officer"
+      },
+      {
+        "source": "Solen Software Group / Built In",
+        "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
+        "url": "https://builtin.com/company/solen-software-group/jobs"
       }
     ],
     "narrative_summary": "NexTalk provides FCC-approved accessible communication software serving 200+ companies and 50 million deaf/hard-of-hearing individuals across the US and Canada. The SpeechPath platform uses AI-powered automated speech recognition achieving industry-leading Word Error Rate and latency \u2014 replacing traditional human steno captioning with faster, more accurate, and privacy-preserving technology. Key products: Access Contact Center, SpeechPath (AI speech-to-text), Access Home (consumer IP CTS), and Access Government. Major customer Healthfirst achieved nearly $1M in government rebate increases. CEO Scott Cummings (ex-SAP VP) and EVP Sales Gary Tanner lead growth into government (via Carahsoft) and healthcare. Acquired by Solen in May 2025; FCC IP CTS certification granted June 2025."
@@ -1523,6 +1606,11 @@
         "source": "Solen Software Group Careers",
         "text": "Solen actively hiring Chief AI Officer to identify, scale, and operationalize AI use cases across all portfolio companies \u2014 developing shared AI patterns, frameworks, and governance standards",
         "url": "https://solen-software-group.breezy.hr/p/92d537becf4b-chief-ai-officer"
+      },
+      {
+        "source": "Solen Software Group / Built In",
+        "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
+        "url": "https://builtin.com/company/solen-software-group/jobs"
       }
     ],
     "narrative_summary": "Dash Development Group (dashdev.com) is a 25-year-old document management and AP automation company serving manufacturing and distribution enterprises. Core products are DDX (document management pre-integrated with SYSPRO ERP) and AP Robot (OCR-based invoice processing with rules-based 3-way matching). The company offers cloud, on-premise, and hybrid deployment. Leadership team (Jim Van Hecke, Steve Bayliss) has deep document management expertise but no AI/ML background. AP Robot's 'AI' marketing describes OCR + rules-based automation, not machine learning. Joined Solen Software Group in 2024 and merged with S4i Systems to form SMRTR in July 2025. NOTE: Previous scoring rounds incorrectly used data from Dash ComplyOps (dashsdk.com), a completely different company. All scores corrected in v4.3 audit."
