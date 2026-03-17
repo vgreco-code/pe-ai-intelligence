@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import {
   LayoutDashboard, Building2, Brain, Database, ChevronLeft, ChevronRight,
-  Zap, TrendingUp, BarChart3, GitCompareArrows, Workflow, Github, Grid3X3, BookOpen
+  Zap, TrendingUp, BarChart3, GitCompareArrows, Workflow, Github, Grid3X3, BookOpen, FileText
 } from 'lucide-react'
 import Dashboard from './pages/Dashboard'
 import Portfolio from './pages/Portfolio'
@@ -14,6 +14,7 @@ import PipelineArchitecture from './pages/PipelineArchitecture'
 import Heatmap from './pages/Heatmap'
 import Sandbox from './pages/Sandbox'
 import Methodology from './pages/Methodology'
+import ExecutiveSummary from './pages/ExecutiveSummary'
 import type { BenchmarkCompany } from './pages/CompetitiveBenchmarks'
 
 // Types
@@ -166,9 +167,10 @@ export const getScoreColor = (score: number): string => {
   return '#ef4444'
 }
 
-type Page = 'dashboard' | 'portfolio' | 'compare' | 'benchmarks' | 'heatmap' | 'pipeline' | 'model' | 'training' | 'sandbox' | 'methodology' | 'company-detail'
+type Page = 'dashboard' | 'portfolio' | 'compare' | 'benchmarks' | 'heatmap' | 'pipeline' | 'model' | 'training' | 'sandbox' | 'methodology' | 'executive-summary' | 'company-detail'
 
 const NAV_ITEMS: { id: Page; label: string; icon: typeof LayoutDashboard }[] = [
+  { id: 'executive-summary', label: 'Exec Summary', icon: FileText },
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { id: 'portfolio', label: 'Portfolio', icon: Building2 },
   { id: 'compare', label: 'Compare', icon: GitCompareArrows },
@@ -335,6 +337,12 @@ export default function App() {
 
       <main className={`flex-1 transition-all duration-300 ${collapsed ? 'ml-[68px]' : 'ml-[240px]'}`}>
         <div className="p-6 lg:p-8 max-w-[1600px] mx-auto">
+          {page === 'executive-summary' && (
+            <ExecutiveSummary
+              portfolio={portfolio}
+              onCompanyClick={navigateToCompany}
+            />
+          )}
           {page === 'dashboard' && (
             <Dashboard
               portfolio={portfolio}
