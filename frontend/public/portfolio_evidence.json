@@ -1438,13 +1438,19 @@
         "title": "Capterra Reviews - Transit SaaS Platform",
         "url": "https://www.capterra.com/p/167841/Trackit-Manager/",
         "source": "capterra",
-        "text": "TrackIt Transit listed on Capterra with positive user reviews. Transit-specific SaaS platform for PTASP compliance, incident management, analytics, and paperless operations. Users praise ease of use, efficiency gains ('tasks that used to take hours now completed in keystrokes'), and out-of-the-box functionality with customizable content."
+        "text": "TrackIt Transit rated 4.5/5 on Capterra (11 verified reviews). Category ratings: Ease of Use 4.1, Customer Service 4.5, Features 4.5, Value for Money 4.6. Transit-specific SaaS platform for PTASP compliance, incident management, analytics, and paperless operations. Users praise ease of use, efficiency gains ('tasks that used to take hours now completed in keystrokes'), and out-of-the-box functionality with customizable content."
       }
     ],
     "narrative_summary": "TrackIt Transit is a transit-specific cloud SaaS platform deployed by 100+ public transit agencies for PTASP compliance, safety management, and paperless operations. Modules span attendance, claims tracking, compliance documentation, customer service, eLearning, event logging, safety reporting, and HR management. Data entered once flows across departments with permissions-based access. Founded in 2013 by Mark Anderson, who continues as President post-Solen acquisition (February 2026). SWTA member. Mobile app (Trackit Assessment) available on Google Play. Rapid deployment capability (<1 day). The transit safety compliance niche presents AI opportunities in predictive safety analytics and automated incident reporting.",
     "marketplace_listings": [
       "Capterra"
-    ]
+    ],
+    "review_platforms": {
+      "capterra": {
+        "rating": 4.5,
+        "reviews": 11
+      }
+    }
   },
   "NexTalk": {
     "executives": [
