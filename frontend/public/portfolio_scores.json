@@ -52,14 +52,14 @@
     "description": "NexTalk provides secure, ADA-compliant communication software for deaf, hard-of-hearing, and non-English-speaking individuals. Products include Access Contact Center (call management for contact centers), remote interpreting services, SpeechPath (AI-powered speech-to-text), and TTY call management. Over 200 companies trust NexTalk. Based in Utah. Part of Solen Software Group.",
     "website": "https://nextalk.com",
     "founded_year": 2008,
-    "composite_score": 3.05,
+    "composite_score": 3.07,
     "tier": "AI-Buildable",
     "wave": 1,
     "pillar_scores": {
       "data_quality": 2.8,
       "data_integration": 2.5,
       "analytics_maturity": 1.96,
-      "cloud_architecture": 3.0,
+      "cloud_architecture": 3.2,
       "tech_stack_modernity": 2.8,
       "ai_engineering": 2.8,
       "ai_product_features": 4.2,
@@ -69,18 +69,18 @@
       "ai_talent_density": 2.2,
       "leadership_ai_vision": 3.5,
       "org_change_readiness": 1.36,
-      "partner_ecosystem": 3.2,
+      "partner_ecosystem": 3.35,
       "ai_governance": 2.22,
       "regulatory_readiness": 3.5,
       "ai_momentum": 3.8
     },
     "category_scores": {
       "Data & Analytics": 2.42,
-      "Technology & Infrastructure": 2.87,
+      "Technology & Infrastructure": 2.93,
       "AI Product & Value": 3.53,
-      "Organization & Talent": 2.57,
+      "Organization & Talent": 2.35,
       "Governance & Risk": 2.86,
-      "Velocity & Momentum": 3.8
+      "Velocity & Momentum": 3.58
     },
     "confidence_score": 92.0,
     "confidence_breakdown": {
@@ -144,7 +144,7 @@
     "description": "Champ Software develops Nightingale Notes, an electronic health records (EHR) system tailored for rural public health agencies nationwide. Founded over 40 years ago in Mankato, Minnesota, the platform serves more than 130 public health agencies with community health documentation, evidence-based outcomes tracking via the Omaha System, batch billing, scheduling, and 100% time tracking. Part of Solen Software Group.",
     "website": "https://www.champsoftware.com",
     "founded_year": 1985,
-    "composite_score": 3.02,
+    "composite_score": 3.05,
     "tier": "AI-Buildable",
     "wave": 1,
     "pillar_scores": {
@@ -157,22 +157,22 @@
       "ai_product_features": 2.6,
       "revenue_ai_upside": 3.8,
       "margin_ai_upside": 3.5,
-      "product_differentiation": 3.42,
+      "product_differentiation": 3.6,
       "ai_talent_density": 2.35,
       "leadership_ai_vision": 2.8,
       "org_change_readiness": 2.49,
       "partner_ecosystem": 2.95,
       "ai_governance": 3.07,
       "regulatory_readiness": 3.19,
-      "ai_momentum": 2.5
+      "ai_momentum": 3.0
     },
     "category_scores": {
       "Data & Analytics": 3.61,
       "Technology & Infrastructure": 2.99,
-      "AI Product & Value": 3.33,
-      "Organization & Talent": 2.65,
+      "AI Product & Value": 3.38,
+      "Organization & Talent": 2.55,
       "Governance & Risk": 3.13,
-      "Velocity & Momentum": 2.5
+      "Velocity & Momentum": 2.98
     },
     "confidence_score": 89.0,
     "confidence_breakdown": {
@@ -236,7 +236,7 @@
     "description": "FMSI provides a cloud-based banking suite for operations, scheduling, and workforce management. The Omnix/OneCX platform serves 140+ banks and credit unions with staff scheduling, performance analytics, lobby tracking, and appointment scheduling. Founded in 1990 by W. Michael Scott, headquartered in Alpharetta, GA. $5.3M annual revenue. Part of Solen Software Group.",
     "website": "https://www.fmsi.com",
     "founded_year": 1990,
-    "composite_score": 2.9,
+    "composite_score": 2.91,
     "tier": "AI-Buildable",
     "wave": 2,
     "pillar_scores": {
@@ -244,7 +244,7 @@
       "data_integration": 2.74,
       "analytics_maturity": 2.53,
       "cloud_architecture": 2.77,
-      "tech_stack_modernity": 2.6,
+      "tech_stack_modernity": 2.9,
       "ai_engineering": 2.2,
       "ai_product_features": 2.8,
       "revenue_ai_upside": 3.5,
@@ -253,18 +253,18 @@
       "ai_talent_density": 2.23,
       "leadership_ai_vision": 3.52,
       "org_change_readiness": 1.79,
-      "partner_ecosystem": 3.4,
+      "partner_ecosystem": 3.5,
       "ai_governance": 2.51,
       "regulatory_readiness": 2.7,
       "ai_momentum": 3.8
     },
     "category_scores": {
       "Data & Analytics": 2.75,
-      "Technology & Infrastructure": 2.52,
+      "Technology & Infrastructure": 2.62,
       "AI Product & Value": 3.39,
-      "Organization & Talent": 2.73,
+      "Organization & Talent": 2.51,
       "Governance & Risk": 2.6,
-      "Velocity & Momentum": 3.8
+      "Velocity & Momentum": 3.65
     },
     "confidence_score": 97.0,
     "confidence_breakdown": {
@@ -374,7 +374,7 @@
     "description": "ViaPeople provides HR performance management software purpose-built for private equity firms and investment banks. Features include performance management, AI instant insights, 360-degree feedback, deal team feedback, succession planning, and automated promotion processes. Founded in 2002 by Jim Perry. Merged with SpiraLinks (compensation planning for global teams) to deliver a full-suite HR platform connecting performance management with compensation. Part of Solen Software Group.",
     "website": "https://viapeople.com",
     "founded_year": 2002,
-    "composite_score": 2.68,
+    "composite_score": 2.71,
     "tier": "AI-Emerging",
     "wave": 2,
     "pillar_scores": {
@@ -384,25 +384,25 @@
       "cloud_architecture": 2.8,
       "tech_stack_modernity": 3.29,
       "ai_engineering": 2.0,
-      "ai_product_features": 3.0,
+      "ai_product_features": 3.1,
       "revenue_ai_upside": 3.33,
       "margin_ai_upside": 3.2,
       "product_differentiation": 3.0,
       "ai_talent_density": 1.31,
       "leadership_ai_vision": 3.05,
       "org_change_readiness": 1.87,
-      "partner_ecosystem": 2.51,
+      "partner_ecosystem": 2.7,
       "ai_governance": 3.05,
       "regulatory_readiness": 3.3,
       "ai_momentum": 3.0
     },
     "category_scores": {
       "Data & Analytics": 2.62,
-      "Technology & Infrastructure": 3.04,
-      "AI Product & Value": 2.88,
+      "Technology & Infrastructure": 2.7,
+      "AI Product & Value": 3.16,
       "Organization & Talent": 2.08,
       "Governance & Risk": 3.17,
-      "Velocity & Momentum": 3.0
+      "Velocity & Momentum": 2.85
     },
     "confidence_score": 96.0,
     "confidence_breakdown": {
@@ -420,12 +420,12 @@
     "description": "ThingTech provides enterprise asset management solutions for vehicle, equipment, and tool security. IoT platform helps companies with a mobile workforce track, manage, and maintain their assets using GPS technology. Founded in 2014 in Atlanta, Georgia by Tim Quinn and Brian Corcoran. Raised $5.45M in funding ($4M Series A). Serves construction and utility firms. Acquired by Track Star to expand IoT capabilities. Part of Solen Software Group.",
     "website": "https://thingtech.com",
     "founded_year": 2014,
-    "composite_score": 2.66,
+    "composite_score": 2.7,
     "tier": "AI-Emerging",
     "wave": 2,
     "pillar_scores": {
       "data_quality": 2.79,
-      "data_integration": 2.72,
+      "data_integration": 2.9,
       "analytics_maturity": 2.81,
       "cloud_architecture": 3.2,
       "tech_stack_modernity": 3.56,
@@ -437,16 +437,16 @@
       "ai_talent_density": 1.55,
       "leadership_ai_vision": 2.63,
       "org_change_readiness": 2.42,
-      "partner_ecosystem": 1.86,
+      "partner_ecosystem": 2.5,
       "ai_governance": 3.07,
       "regulatory_readiness": 3.19,
       "ai_momentum": 2.5
     },
     "category_scores": {
-      "Data & Analytics": 2.77,
+      "Data & Analytics": 2.83,
       "Technology & Infrastructure": 2.87,
       "AI Product & Value": 2.95,
-      "Organization & Talent": 2.11,
+      "Organization & Talent": 2.2,
       "Governance & Risk": 3.13,
       "Velocity & Momentum": 2.5
     },
@@ -604,7 +604,7 @@
     "description": "TrackIt provides transit-specific, cloud-based SaaS software for public transit agencies. Enables paperless workflows, inter-departmental collaboration, and real-time data by replacing paper-based processes with searchable digital records. Supports 100+ transit locations. Founded in 2013 by Mark Anderson. Acquired by Solen Software Group in February 2026.",
     "website": "https://trackittransit.com",
     "founded_year": 2013,
-    "composite_score": 2.22,
+    "composite_score": 2.24,
     "tier": "AI-Emerging",
     "wave": 3,
     "pillar_scores": {
@@ -617,11 +617,11 @@
       "ai_product_features": 2.2,
       "revenue_ai_upside": 2.59,
       "margin_ai_upside": 2.91,
-      "product_differentiation": 2.31,
+      "product_differentiation": 2.4,
       "ai_talent_density": 1.23,
       "leadership_ai_vision": 2.74,
       "org_change_readiness": 1.7,
-      "partner_ecosystem": 2.11,
+      "partner_ecosystem": 2.3,
       "ai_governance": 3.07,
       "regulatory_readiness": 3.19,
       "ai_momentum": 2.7
@@ -629,10 +629,10 @@
     "category_scores": {
       "Data & Analytics": 2.1,
       "Technology & Infrastructure": 2.17,
-      "AI Product & Value": 2.5,
-      "Organization & Talent": 1.94,
+      "AI Product & Value": 2.52,
+      "Organization & Talent": 1.89,
       "Governance & Risk": 3.13,
-      "Velocity & Momentum": 2.7
+      "Velocity & Momentum": 2.5
     },
     "confidence_score": 82.0,
     "confidence_breakdown": {

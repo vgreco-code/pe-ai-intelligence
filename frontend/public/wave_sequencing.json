@@ -8,7 +8,7 @@
     },
     {
       "name": "NexTalk",
-      "score": 3.05,
+      "score": 3.07,
       "tier": "AI-Buildable",
       "top_category": "Velocity & Momentum"
     },
@@ -20,7 +20,7 @@
     },
     {
       "name": "Champ",
-      "score": 3.02,
+      "score": 3.05,
       "tier": "AI-Buildable",
       "top_category": "Data & Analytics"
     }
@@ -34,7 +34,7 @@
     },
     {
       "name": "FMSI",
-      "score": 2.9,
+      "score": 2.91,
       "tier": "AI-Buildable",
       "top_category": "Velocity & Momentum"
     },
@@ -52,13 +52,13 @@
     },
     {
       "name": "ViaPeople",
-      "score": 2.68,
+      "score": 2.71,
       "tier": "AI-Emerging",
       "top_category": "Governance & Risk"
     },
     {
       "name": "ThingTech",
-      "score": 2.66,
+      "score": 2.7,
       "tier": "AI-Emerging",
       "top_category": "Governance & Risk"
     }
@@ -84,7 +84,7 @@
     },
     {
       "name": "TrackIt Transit",
-      "score": 2.22,
+      "score": 2.24,
       "tier": "AI-Emerging",
       "top_category": "Governance & Risk"
     }

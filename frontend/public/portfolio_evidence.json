@@ -101,9 +101,18 @@
         "source": "Solen Software Group / Built In",
         "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
         "url": "https://builtin.com/company/solen-software-group/jobs"
+      },
+      {
+        "title": "Capterra Product Listing - Workforce Management",
+        "url": "https://www.capterra.com/p/35071/AutoTime/",
+        "source": "capterra",
+        "text": "AutoTime listed on Capterra with verified profile. Features include Employee Scheduling, Labor Forecasting, Time & Attendance tracking, and Variable Workforce management. Market presence validated through B2B software directory listing alongside major competitors."
       }
     ],
-    "narrative_summary": "AutoTime is a 20+ year market leader in DCAA-compliant time and labor tracking for the Aerospace & Defense industry. The platform serves elite defense primes including Lockheed Martin, General Dynamics, Collins Aerospace, Rolls-Royce, and L3Harris \u2014 with complex labor distribution across government contracts, audit-ready timekeeping, and multi-rate payroll. CEO Chris Thomas brings proven PE execution, having driven 119% bookings growth at UKG's A&D division. AutoTime was acquired by Solen in February 2025. The company is actively hiring software engineering leadership, signaling a product modernization push. Core tech includes SAP integration, cloud-hosted SaaS, and REST APIs."
+    "narrative_summary": "AutoTime is a 20+ year market leader in DCAA-compliant time and labor tracking for the Aerospace & Defense industry. The platform serves elite defense primes including Lockheed Martin, General Dynamics, Collins Aerospace, Rolls-Royce, and L3Harris \u2014 with complex labor distribution across government contracts, audit-ready timekeeping, and multi-rate payroll. CEO Chris Thomas brings proven PE execution, having driven 119% bookings growth at UKG's A&D division. AutoTime was acquired by Solen in February 2025. The company is actively hiring software engineering leadership, signaling a product modernization push. Core tech includes SAP integration, cloud-hosted SaaS, and REST APIs.",
+    "marketplace_listings": [
+      "Capterra"
+    ]
   },
   "Spokane": {
     "executives": [
@@ -374,9 +383,20 @@
         "source": "Solen Software Group / Built In",
         "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
         "url": "https://builtin.com/company/solen-software-group/jobs"
+      },
+      {
+        "title": "Blockchain Patent-Pending Technology & $45M Funding",
+        "url": "https://www.champtitles.com/transforming-vehicle-titling-with-blockchain/",
+        "source": "company_website",
+        "text": "CHAMP Titles uses patent-pending blockchain technology for digital vehicle title management. Largest deployment of blockchain for U.S. government to date. Raised $45M+ total including $18M Series C led by Point72 Ventures. Revenue grew 125% in 2023. Processing reduced from 45 days to under 1 day for DMVs using the platform."
       }
     ],
-    "narrative_summary": "Champ Software develops Nightingale Notes, the leading EHR system purpose-built for public health departments, serving 145+ community health agencies nationwide. Cloud-hosted on AWS with full HIPAA compliance, the platform uses the Omaha System standardized taxonomy for evidence-based outcomes documentation. Features include batch billing, scheduling, 100% time tracking, and secure health information exchange via the SES Direct messaging partnership. Founded in 1985 by David Rosebaugh in Mankato, Minnesota; CEO Scott Dunnewind acquired ownership in 2021. The 40-year domain tenure, regulatory moat (HIPAA/Omaha System), and 145+ agency install base create significant switching costs."
+    "narrative_summary": "Champ Software develops Nightingale Notes, the leading EHR system purpose-built for public health departments, serving 145+ community health agencies nationwide. Cloud-hosted on AWS with full HIPAA compliance, the platform uses the Omaha System standardized taxonomy for evidence-based outcomes documentation. Features include batch billing, scheduling, 100% time tracking, and secure health information exchange via the SES Direct messaging partnership. Founded in 1985 by David Rosebaugh in Mankato, Minnesota; CEO Scott Dunnewind acquired ownership in 2021. The 40-year domain tenure, regulatory moat (HIPAA/Omaha System), and 145+ agency install base create significant switching costs.",
+    "funding": {
+      "total_raised": "$45M+",
+      "latest_round": "Series C ($18M, Point72 Ventures)"
+    },
+    "marketplace_listings": []
   },
   "Primate": {
     "executives": [
@@ -641,9 +661,18 @@
         "source": "Track Star Website",
         "text": "AI-powered video telematics with dash cameras detecting risky behaviors: phone use, fatigue, tailgating, smoking, seatbelt violations \u2014 real-time driver coaching",
         "url": "https://www.trackstar.com/fleet-video-telematics"
+      },
+      {
+        "title": "Capterra Product Listing - Fleet Management",
+        "url": "https://www.capterra.com/p/72389/Track-Star-AVLS/",
+        "source": "capterra",
+        "text": "Track Star AVLS listed on Capterra as fleet management solution. GPS, wireless technology, and digital mapping for complete AVL system. 25+ years in market. Platform processes millions of GPS points daily, combining GPS tracking, telematics, enterprise asset management, predictive maintenance, and AI video intelligence."
       }
     ],
-    "narrative_summary": "Track Star International provides a unified fleet management and enterprise asset management platform processing millions of GPS points daily. The Version 6 browser-based platform combines GPS tracking, telematics, EAM, predictive maintenance, AI-powered video telematics, and compliance automation. Founded in 2000 by ex-USAF navigation expert Michael Hughes; now led by CEO Gabriel Reza. The company acquired ThingTech to expand IoT capabilities and rebuilt its AVLS product on Esri ArcGIS. Serves government fleets, law enforcement, utilities, equipment rental, and education. Supports 10+ hardware partners (Sierra Wireless, CalAmp, SmartWitness). Revenue reported at $24.4M. Part of Solen since 2021."
+    "narrative_summary": "Track Star International provides a unified fleet management and enterprise asset management platform processing millions of GPS points daily. The Version 6 browser-based platform combines GPS tracking, telematics, EAM, predictive maintenance, AI-powered video telematics, and compliance automation. Founded in 2000 by ex-USAF navigation expert Michael Hughes; now led by CEO Gabriel Reza. The company acquired ThingTech to expand IoT capabilities and rebuilt its AVLS product on Esri ArcGIS. Serves government fleets, law enforcement, utilities, equipment rental, and education. Supports 10+ hardware partners (Sierra Wireless, CalAmp, SmartWitness). Revenue reported at $24.4M. Part of Solen since 2021.",
+    "marketplace_listings": [
+      "Capterra"
+    ]
   },
   "SMRTR": {
     "executives": [
@@ -756,6 +785,12 @@
         "source": "SMRTR Solutions",
         "text": "Explicitly markets 'AI-driven Accounts Payable Automation' \u2014 5,000+ G2 reviews validating market adoption of compliance and automation platform",
         "url": "https://smrtrsolutions.com"
+      },
+      {
+        "title": "20+ Year Market Tenure in Food/Bev Compliance",
+        "url": "https://smrtrsolutions.com/about-us/",
+        "source": "company_website",
+        "text": "SMRTR has served businesses since 2002 with content management and compliance solutions. Specializes in food and beverage industry \u2014 regulatory compliance, AP automation, and document management. AP Essentials features intelligent OCR data extraction, two/three-way PO matching, exception handling, approval routing, and seamless ERP integration."
       }
     ],
     "narrative_summary": "SMRTR was formed in July 2025 from the merger of Dash (AP automation) and S4i Systems (compliance/content management), creating a unified automation platform for manufacturing and food & beverage distribution. CEO Susanne Moore leads the combined entity from Cottonwood Heights, Utah. The platform spans AP Automation, Food Safety Compliance, Electronic Proof of Delivery, Supplier Onboarding, Nutrition Labeling, and Document Management \u2014 integrating with 6 major ERP systems (SYSPRO, SAP, JD Edwards, Infor, VIP Beverage, NCR). AI/ML capabilities include predictive maintenance, route optimization, and compliance anomaly detection. Strategic partnerships with VAI (S2K Food ERP) and industry distributors."
@@ -876,9 +911,19 @@
         "source": "Solen Software Group / Built In",
         "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
         "url": "https://builtin.com/company/solen-software-group/jobs"
+      },
+      {
+        "title": "UKG/Kronos Acquisition - Enterprise Technology Access",
+        "url": "https://www.businesswire.com/news/home/20170105005205/en/Kronos-Acquires-Financial-Management-Solutions-Inc.-to-Deepen-Financial-Services-Industry-Expertise",
+        "source": "press_release",
+        "text": "FMSI acquired by Kronos (now UKG) in 2017, giving access to enterprise-grade workforce management technology stack. Flagship Omnix product is integrated SaaS suite for staff scheduling, performance analytics, lobby tracking, and appointment scheduling. Now branded as UKG FMSI. Part of UKG ecosystem serving 80,000+ organizations globally."
       }
     ],
-    "narrative_summary": "FMSI provides the OneCX platform combining appointment scheduling, lobby management, staffing analytics, and workforce optimization for 140+ banks and credit unions. Founded in 1990 by W. Michael Scott, acquired by Kronos/UKG in 2017, and relaunched as an independent company in March 2026 after UKG divestiture. Major customers include Apple Federal Credit Union ($2B, 25 locations) and Fort Knox FCU. A regional credit union achieved 40% lobby wait time reduction using FMSI tools. Recent Appli partnership adds AI-powered financial calculators. Generating $5.3M annual revenue with rapid post-relaunch customer acquisition (new clients signed within 60 days)."
+    "narrative_summary": "FMSI provides the OneCX platform combining appointment scheduling, lobby management, staffing analytics, and workforce optimization for 140+ banks and credit unions. Founded in 1990 by W. Michael Scott, acquired by Kronos/UKG in 2017, and relaunched as an independent company in March 2026 after UKG divestiture. Major customers include Apple Federal Credit Union ($2B, 25 locations) and Fort Knox FCU. A regional credit union achieved 40% lobby wait time reduction using FMSI tools. Recent Appli partnership adds AI-powered financial calculators. Generating $5.3M annual revenue with rapid post-relaunch customer acquisition (new clients signed within 60 days).",
+    "parent_company": "UKG (via Kronos acquisition 2017)",
+    "marketplace_listings": [
+      "UKG Marketplace"
+    ]
   },
   "Cairn Applications": {
     "executives": [
@@ -1117,9 +1162,25 @@
         "source": "ViaPeople Software Development",
         "text": "Invests heavily in R&D including AI development \u2014 software dev team spans Junior to Principal Software Engineer; actively hiring Developers and DevOps Engineers",
         "url": "https://theorg.com/org/viapeople/teams/software-development-team"
+      },
+      {
+        "title": "G2 & Capterra Review Presence - 521+ Reviews",
+        "url": "https://www.capterra.com/p/20083/viaPeople-Performance-Evaluation/",
+        "source": "review_platforms",
+        "text": "ViaPeople has significant review platform presence: G2 rating 3.7/5 (337 reviews) and Capterra rating 3.9/5 (184 reviews). Users praise accuracy enhancer feature and performance rating comparison tools. Market-validated product with 521+ verified reviews across platforms \u2014 strong signal for product-market fit in performance management."
       }
     ],
-    "narrative_summary": "ViaPeople provides flexible, I/O psychology-founded talent management software with AI Instant Insights, 360-degree feedback (with bias-reduction), deal team feedback, succession planning (9-box), automated promotions, and compensation planning (via SpiraLinks merger). Founded in 2002 by PhD organizational psychologists and headquartered in Plainsboro, NJ. CEO Jerry Dunne leads the ~31-person team. SOC 2 certified. Serves PE firms, investment banks, and large enterprises with complex talent structures. Case studies include a large retailer increasing leadership diversity and a pharma company building internal talent pipelines. Premium pricing ($5,000+/user). Significant AI R&D investment underway."
+    "narrative_summary": "ViaPeople provides flexible, I/O psychology-founded talent management software with AI Instant Insights, 360-degree feedback (with bias-reduction), deal team feedback, succession planning (9-box), automated promotions, and compensation planning (via SpiraLinks merger). Founded in 2002 by PhD organizational psychologists and headquartered in Plainsboro, NJ. CEO Jerry Dunne leads the ~31-person team. SOC 2 certified. Serves PE firms, investment banks, and large enterprises with complex talent structures. Case studies include a large retailer increasing leadership diversity and a pharma company building internal talent pipelines. Premium pricing ($5,000+/user). Significant AI R&D investment underway.",
+    "review_platforms": {
+      "g2": {
+        "rating": 3.7,
+        "reviews": 337
+      },
+      "capterra": {
+        "rating": 3.9,
+        "reviews": 184
+      }
+    }
   },
   "ThingTech": {
     "executives": [
@@ -1267,9 +1328,24 @@
         "source": "Track Star Website",
         "text": "ThingTech officially integrated into Track Star platform \u2014 combined fleet management and IoT asset tracking under unified brand",
         "url": "https://www.trackstar.com/thingtech"
+      },
+      {
+        "title": "Salesforce AppExchange - TracIT IoT Platform",
+        "url": "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3000000DXzrYEAT",
+        "source": "salesforce_appexchange",
+        "text": "ThingTech's EAM (Enterprise Asset Management) solution listed on Salesforce AppExchange with 5/5 star rating. First out-of-the-box connected fleet management solution for Salesforce ecosystem. Features IoT-connected devices for predictive intelligence, preventive maintenance scheduling, work order management, and parts inventory. Built on Force.com platform with real-time IoT connectivity."
+      },
+      {
+        "title": "CIOReview Recognition - IoT Enterprise Platform",
+        "url": "https://www.cioreview.com/thingtech",
+        "source": "industry_press",
+        "text": "ThingTech featured by CIOReview as provider of actionable data and enterprise integration for fleet and equipment managers. Platform combines Enterprise Asset Management, Field Service, Smarter Cities, and IoT solutions into single cloud-based connected platform."
       }
     ],
-    "narrative_summary": "ThingTech provides an IoT-based enterprise asset management platform with three SaaS products: manageIT (EAM), tracIT (vehicle tracking/telematics), and routeIT (schedule/route optimization). Built on CalAmp Connect IoT with out-of-the-box connected sensors for predictive maintenance and real-time condition monitoring. Government customers include NAIPTA, Fulton County GA, State of Delaware, and Berkshire Regional Transit. Also on Salesforce AppExchange. Founded in 2014 in Atlanta by Tim Quinn and Brian Corcoran. Raised $5.45M (Series A led by BIP Capital/Panoramic Ventures). Acquired by Track Star International in 2024, creating a combined fleet + IoT asset platform under Solen."
+    "narrative_summary": "ThingTech provides an IoT-based enterprise asset management platform with three SaaS products: manageIT (EAM), tracIT (vehicle tracking/telematics), and routeIT (schedule/route optimization). Built on CalAmp Connect IoT with out-of-the-box connected sensors for predictive maintenance and real-time condition monitoring. Government customers include NAIPTA, Fulton County GA, State of Delaware, and Berkshire Regional Transit. Also on Salesforce AppExchange. Founded in 2014 in Atlanta by Tim Quinn and Brian Corcoran. Raised $5.45M (Series A led by BIP Capital/Panoramic Ventures). Acquired by Track Star International in 2024, creating a combined fleet + IoT asset platform under Solen.",
+    "marketplace_listings": [
+      "Salesforce AppExchange (TracIT)"
+    ]
   },
   "TrackIt Transit": {
     "executives": [
@@ -1357,9 +1433,18 @@
         "source": "Solen Software Group / Built In",
         "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
         "url": "https://builtin.com/company/solen-software-group/jobs"
+      },
+      {
+        "title": "Capterra Reviews - Transit SaaS Platform",
+        "url": "https://www.capterra.com/p/167841/Trackit-Manager/",
+        "source": "capterra",
+        "text": "TrackIt Transit listed on Capterra with positive user reviews. Transit-specific SaaS platform for PTASP compliance, incident management, analytics, and paperless operations. Users praise ease of use, efficiency gains ('tasks that used to take hours now completed in keystrokes'), and out-of-the-box functionality with customizable content."
       }
     ],
-    "narrative_summary": "TrackIt Transit is a transit-specific cloud SaaS platform deployed by 100+ public transit agencies for PTASP compliance, safety management, and paperless operations. Modules span attendance, claims tracking, compliance documentation, customer service, eLearning, event logging, safety reporting, and HR management. Data entered once flows across departments with permissions-based access. Founded in 2013 by Mark Anderson, who continues as President post-Solen acquisition (February 2026). SWTA member. Mobile app (Trackit Assessment) available on Google Play. Rapid deployment capability (<1 day). The transit safety compliance niche presents AI opportunities in predictive safety analytics and automated incident reporting."
+    "narrative_summary": "TrackIt Transit is a transit-specific cloud SaaS platform deployed by 100+ public transit agencies for PTASP compliance, safety management, and paperless operations. Modules span attendance, claims tracking, compliance documentation, customer service, eLearning, event logging, safety reporting, and HR management. Data entered once flows across departments with permissions-based access. Founded in 2013 by Mark Anderson, who continues as President post-Solen acquisition (February 2026). SWTA member. Mobile app (Trackit Assessment) available on Google Play. Rapid deployment capability (<1 day). The transit safety compliance niche presents AI opportunities in predictive safety analytics and automated incident reporting.",
+    "marketplace_listings": [
+      "Capterra"
+    ]
   },
   "NexTalk": {
     "executives": [
@@ -1398,7 +1483,7 @@
       "ai_roles": 0,
       "total_roles": 0,
       "titles": [],
-      "note": "Active careers page at nextalk.com/careers with filter categories for Engineering, Intern, Marketing, and Sales — listings load dynamically"
+      "note": "Active careers page at nextalk.com/careers with filter categories for Engineering, Intern, Marketing, and Sales \u2014 listings load dynamically"
     },
     "talent": {
       "found": true,
@@ -1494,9 +1579,18 @@
         "source": "Solen Software Group / Built In",
         "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
         "url": "https://builtin.com/company/solen-software-group/jobs"
+      },
+      {
+        "title": "AWS Marketplace Listing",
+        "url": "https://blog.nextalk.com/aws-marketplace",
+        "source": "aws_marketplace",
+        "text": "NexTalk Access Contact Center is available on AWS Marketplace, enabling cloud-native deployment for call centers. Provides TTY, RTT, and speech recognition for ADA compliance. Eliminates relay operators for enhanced PCI/HIPAA data compliance. Cloud-first architecture with quick, secure integrations into existing tech stacks."
       }
     ],
-    "narrative_summary": "NexTalk provides FCC-approved accessible communication software serving 200+ companies and 50 million deaf/hard-of-hearing individuals across the US and Canada. The SpeechPath platform uses AI-powered automated speech recognition achieving industry-leading Word Error Rate and latency \u2014 replacing traditional human steno captioning with faster, more accurate, and privacy-preserving technology. Key products: Access Contact Center, SpeechPath (AI speech-to-text), Access Home (consumer IP CTS), and Access Government. Major customer Healthfirst achieved nearly $1M in government rebate increases. CEO Scott Cummings (ex-SAP VP) and EVP Sales Gary Tanner lead growth into government (via Carahsoft) and healthcare. Acquired by Solen in May 2025; FCC IP CTS certification granted June 2025."
+    "narrative_summary": "NexTalk provides FCC-approved accessible communication software serving 200+ companies and 50 million deaf/hard-of-hearing individuals across the US and Canada. The SpeechPath platform uses AI-powered automated speech recognition achieving industry-leading Word Error Rate and latency \u2014 replacing traditional human steno captioning with faster, more accurate, and privacy-preserving technology. Key products: Access Contact Center, SpeechPath (AI speech-to-text), Access Home (consumer IP CTS), and Access Government. Major customer Healthfirst achieved nearly $1M in government rebate increases. CEO Scott Cummings (ex-SAP VP) and EVP Sales Gary Tanner lead growth into government (via Carahsoft) and healthcare. Acquired by Solen in May 2025; FCC IP CTS certification granted June 2025.",
+    "marketplace_listings": [
+      "AWS Marketplace"
+    ]
   },
   "Dash": {
     "executives": [
@@ -1611,8 +1705,17 @@
         "source": "Solen Software Group / Built In",
         "text": "Solen building AI Center of Excellence (COE): hiring COE AI Software Engineer and COE Technical Lead in S\u00e3o Paulo, Brazil \u2014 shared AI engineering team to serve all portfolio companies",
         "url": "https://builtin.com/company/solen-software-group/jobs"
+      },
+      {
+        "title": "Capterra Reviews & BBB Profile - Payment Platform",
+        "url": "https://www.capterra.com/p/153786/Dash/",
+        "source": "capterra",
+        "text": "Dash Solutions (formerly Prepaid Technologies/WorkStride) listed on Capterra with mixed reviews. Digital payment and engagement platform for payroll, expense, gift, reward and incentive card products. Users praise expense tracking and mobile app; concerns around customer support responsiveness. Also has BBB profile with documented complaints."
       }
     ],
-    "narrative_summary": "Dash Development Group (dashdev.com) is a 25-year-old document management and AP automation company serving manufacturing and distribution enterprises. Core products are DDX (document management pre-integrated with SYSPRO ERP) and AP Robot (OCR-based invoice processing with rules-based 3-way matching). The company offers cloud, on-premise, and hybrid deployment. Leadership team (Jim Van Hecke, Steve Bayliss) has deep document management expertise but no AI/ML background. AP Robot's 'AI' marketing describes OCR + rules-based automation, not machine learning. Joined Solen Software Group in 2024 and merged with S4i Systems to form SMRTR in July 2025. NOTE: Previous scoring rounds incorrectly used data from Dash ComplyOps (dashsdk.com), a completely different company. All scores corrected in v4.3 audit."
+    "narrative_summary": "Dash Development Group (dashdev.com) is a 25-year-old document management and AP automation company serving manufacturing and distribution enterprises. Core products are DDX (document management pre-integrated with SYSPRO ERP) and AP Robot (OCR-based invoice processing with rules-based 3-way matching). The company offers cloud, on-premise, and hybrid deployment. Leadership team (Jim Van Hecke, Steve Bayliss) has deep document management expertise but no AI/ML background. AP Robot's 'AI' marketing describes OCR + rules-based automation, not machine learning. Joined Solen Software Group in 2024 and merged with S4i Systems to form SMRTR in July 2025. NOTE: Previous scoring rounds incorrectly used data from Dash ComplyOps (dashsdk.com), a completely different company. All scores corrected in v4.3 audit.",
+    "marketplace_listings": [
+      "Capterra"
+    ]
   }
 }
