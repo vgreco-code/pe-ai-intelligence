@@ -7,6 +7,7 @@ import {
   PortfolioCompany, ModelMetrics, TrainingStats, WaveData,
   TIER_COLORS, getTierBg, DIMENSION_LABELS, CATEGORIES, CATEGORY_COLORS,
 } from '../App'
+import ROISimulator from '../components/ROISimulator'
 
 interface Props {
   portfolio: PortfolioCompany[]
@@ -349,6 +350,9 @@ export default function Dashboard({ portfolio, metrics, trainingStats, waveData,
           </div>
         </div>
       </div>
+
+      {/* AI Value Creation Simulator */}
+      <ROISimulator portfolio={portfolio} />
     </div>
   )
 }
