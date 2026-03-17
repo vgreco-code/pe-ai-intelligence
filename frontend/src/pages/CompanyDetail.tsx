@@ -1,6 +1,7 @@
 import {
   ArrowLeft, ExternalLink, Users, Calendar, MapPin, TrendingUp,
   Zap, Target, AlertTriangle, CheckCircle2, Lightbulb, BarChart3,
+  DollarSign, Cloud, Building2, Star,
 } from 'lucide-react'
 import {
   RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer,
@@ -146,6 +147,77 @@ export default function CompanyDetail({ company, benchmark, evidence, onBack }: 
                   <p className="text-sm text-[var(--text-secondary)]">{tierInfo.description}</p>
                 </div>
               </div>
+
+              {/* Marketplace, Review, Funding, and Parent Company Badges */}
+              {(evidence?.marketplace_listings?.length || evidence?.review_platforms || evidence?.funding || evidence?.parent_company) && (
+                <div className="flex flex-wrap gap-2 mt-6">
+                  {/* Marketplace badges */}
+                  {evidence?.marketplace_listings && evidence.marketplace_listings.length > 0 && (
+                    evidence.marketplace_listings.map((marketplace: string) => {
+                      let bgColor = '#6B7280'
+                      let icon = null
+
+                      if (marketplace.includes('AWS')) {
+                        bgColor = '#FF9900'
+                        icon = <Cloud className="w-3 h-3" />
+                      } else if (marketplace.includes('Salesforce')) {
+                        bgColor = '#00A1E0'
+                      } else if (marketplace.includes('Capterra')) {
+                        bgColor = '#14B8A6'
+                      } else if (marketplace.includes('UKG')) {
+                        bgColor = '#9333EA'
+                      }
+
+                      return (
+                        <span
+                          key={marketplace}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-white backdrop-blur-sm border border-white/10"
+                          style={{ backgroundColor: `${bgColor}20`, borderColor: `${bgColor}40` }}
+                        >
+                          {icon && icon}
+                          {marketplace}
+                        </span>
+                      )
+                    })
+                  )}
+
+                  {/* Review platform badges */}
+                  {evidence?.review_platforms && (
+                    <>
+                      {evidence.review_platforms.g2 && (
+                        <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium text-white backdrop-blur-sm border border-white/10" style={{ backgroundColor: '#00B67A20', borderColor: '#00B67A40' }}>
+                          <Star className="w-3 h-3" style={{ color: '#00B67A' }} />
+                          <span>G2</span>
+                          <span>★ {evidence.review_platforms.g2.rating} ({evidence.review_platforms.g2.reviews})</span>
+                        </span>
+                      )}
+                      {evidence.review_platforms.capterra && (
+                        <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium text-white backdrop-blur-sm border border-white/10" style={{ backgroundColor: '#2B65AE20', borderColor: '#2B65AE40' }}>
+                          <Star className="w-3 h-3" style={{ color: '#2B65AE' }} />
+                          <span>Capterra</span>
+                          <span>★ {evidence.review_platforms.capterra.rating} ({evidence.review_platforms.capterra.reviews})</span>
+                        </span>
+                      )}
+                    </>
+                  )}
+
+                  {/* Funding badge */}
+                  {evidence?.funding?.total_raised && (
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-white backdrop-blur-sm border border-white/10" style={{ backgroundColor: '#F59E0B20', borderColor: '#F59E0B40' }}>
+                      <DollarSign className="w-3 h-3" style={{ color: '#F59E0B' }} />
+                      {evidence.funding.total_raised}
+                    </span>
+                  )}
+
+                  {/* Parent company badge */}
+                  {evidence?.parent_company && (
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-white backdrop-blur-sm border border-white/10" style={{ backgroundColor: '#8B5CF620', borderColor: '#8B5CF640' }}>
+                      <Building2 className="w-3 h-3" style={{ color: '#8B5CF6' }} />
+                      {evidence.parent_company}
+                    </span>
+                  )}
+                </div>
+              )}
             </div>
 
             {/* Score card */}

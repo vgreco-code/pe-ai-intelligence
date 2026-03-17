@@ -58,6 +58,569 @@ interface SandboxCompany {
 
 const API = import.meta.env.VITE_API_URL || ''
 
+// ── Demo mode data ──────────────────────────────────────────────────────────
+
+const DIMENSION_WEIGHTS: Record<string, number> = {
+  data_quality: 1.10,
+  data_integration: 1.00,
+  analytics_maturity: 1.20,
+  cloud_architecture: 0.80,
+  tech_stack_modernity: 0.60,
+  ai_engineering: 1.00,
+  ai_product_features: 2.80,
+  revenue_ai_upside: 1.50,
+  margin_ai_upside: 0.80,
+  product_differentiation: 0.70,
+  ai_talent_density: 1.80,
+  leadership_ai_vision: 1.50,
+  org_change_readiness: 0.80,
+  partner_ecosystem: 0.90,
+  ai_governance: 0.50,
+  regulatory_readiness: 0.50,
+  ai_momentum: 0.80,
+}
+
+const DIMENSION_CATEGORY_MAP: Record<string, string> = {
+  data_quality: 'Data & Analytics',
+  data_integration: 'Data & Analytics',
+  analytics_maturity: 'Data & Analytics',
+  cloud_architecture: 'Technology & Infra',
+  tech_stack_modernity: 'Technology & Infra',
+  ai_engineering: 'Technology & Infra',
+  ai_product_features: 'AI Product & Value',
+  revenue_ai_upside: 'AI Product & Value',
+  margin_ai_upside: 'AI Product & Value',
+  product_differentiation: 'AI Product & Value',
+  ai_talent_density: 'Organization & Talent',
+  leadership_ai_vision: 'Organization & Talent',
+  org_change_readiness: 'Organization & Talent',
+  partner_ecosystem: 'Organization & Talent',
+  ai_governance: 'Governance & Risk',
+  regulatory_readiness: 'Governance & Risk',
+  ai_momentum: 'Velocity & Momentum',
+}
+
+const DEMO_COMPANIES: Record<string, SandboxResult> = {
+  stripe: {
+    id: 'demo-stripe',
+    name: 'Stripe',
+    vertical: 'Fintech & Payments',
+    website: 'https://stripe.com',
+    description: 'Digital payments infrastructure',
+    employee_count: 8200,
+    funding_total_usd: 1.5e9,
+    is_public: false,
+    has_ai_features: true,
+    cloud_native: true,
+    composite_score: 4.2,
+    tier: 'AI-Ready',
+    wave: 1,
+    pillar_scores: {
+      data_quality: 4.6,
+      data_integration: 4.4,
+      analytics_maturity: 4.5,
+      cloud_architecture: 4.3,
+      tech_stack_modernity: 4.2,
+      ai_engineering: 4.4,
+      ai_product_features: 4.6,
+      revenue_ai_upside: 4.3,
+      margin_ai_upside: 4.1,
+      product_differentiation: 4.4,
+      ai_talent_density: 4.5,
+      leadership_ai_vision: 4.2,
+      org_change_readiness: 4.0,
+      partner_ecosystem: 3.9,
+      ai_governance: 3.8,
+      regulatory_readiness: 3.9,
+      ai_momentum: 4.3,
+    },
+    category_scores: {
+      'Data & Analytics': 4.5,
+      'Technology & Infra': 4.3,
+      'AI Product & Value': 4.35,
+      'Organization & Talent': 4.15,
+      'Governance & Risk': 3.85,
+      'Velocity & Momentum': 4.3,
+    },
+    dimension_details: [
+      { dimension: 'ai_product_features', label: 'AI Product Features', score: 4.6, category: 'AI Product & Value', weight: 2.80 },
+      { dimension: 'ai_talent_density', label: 'AI Talent Density', score: 4.5, category: 'Organization & Talent', weight: 1.80 },
+      { dimension: 'data_quality', label: 'Data Quality', score: 4.6, category: 'Data & Analytics', weight: 1.10 },
+      { dimension: 'analytics_maturity', label: 'Analytics Maturity', score: 4.5, category: 'Data & Analytics', weight: 1.20 },
+      { dimension: 'ai_engineering', label: 'AI Engineering', score: 4.4, category: 'Technology & Infra', weight: 1.00 },
+      { dimension: 'data_integration', label: 'Data Integration', score: 4.4, category: 'Data & Analytics', weight: 1.00 },
+      { dimension: 'revenue_ai_upside', label: 'Revenue AI Upside', score: 4.3, category: 'AI Product & Value', weight: 1.50 },
+      { dimension: 'cloud_architecture', label: 'Cloud Architecture', score: 4.3, category: 'Technology & Infra', weight: 0.80 },
+      { dimension: 'ai_momentum', label: 'AI Momentum', score: 4.3, category: 'Velocity & Momentum', weight: 0.80 },
+      { dimension: 'product_differentiation', label: 'Product Differentiation', score: 4.4, category: 'AI Product & Value', weight: 0.70 },
+      { dimension: 'leadership_ai_vision', label: 'Leadership AI Vision', score: 4.2, category: 'Organization & Talent', weight: 1.50 },
+      { dimension: 'tech_stack_modernity', label: 'Tech Stack Modernity', score: 4.2, category: 'Technology & Infra', weight: 0.60 },
+      { dimension: 'org_change_readiness', label: 'Org Change Readiness', score: 4.0, category: 'Organization & Talent', weight: 0.80 },
+      { dimension: 'margin_ai_upside', label: 'Margin AI Upside', score: 4.1, category: 'AI Product & Value', weight: 0.80 },
+      { dimension: 'partner_ecosystem', label: 'Partner Ecosystem', score: 3.9, category: 'Organization & Talent', weight: 0.90 },
+      { dimension: 'regulatory_readiness', label: 'Regulatory Readiness', score: 3.9, category: 'Governance & Risk', weight: 0.50 },
+      { dimension: 'ai_governance', label: 'AI Governance', score: 3.8, category: 'Governance & Risk', weight: 0.50 },
+    ],
+    research_summary: 'Stripe is a market leader in fintech infrastructure with exceptional data maturity, world-class AI talent, and leading AI-driven product features for fraud detection and payment optimization. Strong cloud architecture and proven ability to monetize AI. Risk areas: regulatory compliance evolving and organizational change management under rapid growth.',
+    confidence_score: 92,
+    confidence_breakdown: {
+      search_coverage: 24,
+      scrape_depth: 19,
+      corpus_volume: 14,
+      structured_extraction: 24,
+      signal_richness: 15,
+    },
+  },
+  datadog: {
+    id: 'demo-datadog',
+    name: 'Datadog',
+    vertical: 'Observability & Monitoring',
+    website: 'https://datadog.com',
+    description: 'Unified monitoring platform for cloud infrastructure',
+    employee_count: 6100,
+    funding_total_usd: 1.4e9,
+    is_public: true,
+    has_ai_features: true,
+    cloud_native: true,
+    composite_score: 4.0,
+    tier: 'AI-Ready',
+    wave: 1,
+    pillar_scores: {
+      data_quality: 4.3,
+      data_integration: 4.2,
+      analytics_maturity: 4.4,
+      cloud_architecture: 4.1,
+      tech_stack_modernity: 3.9,
+      ai_engineering: 4.2,
+      ai_product_features: 4.5,
+      revenue_ai_upside: 3.9,
+      margin_ai_upside: 3.8,
+      product_differentiation: 4.1,
+      ai_talent_density: 4.3,
+      leadership_ai_vision: 4.0,
+      org_change_readiness: 3.9,
+      partner_ecosystem: 3.7,
+      ai_governance: 3.6,
+      regulatory_readiness: 3.8,
+      ai_momentum: 4.1,
+    },
+    category_scores: {
+      'Data & Analytics': 4.3,
+      'Technology & Infra': 4.07,
+      'AI Product & Value': 4.1,
+      'Organization & Talent': 4.0,
+      'Governance & Risk': 3.7,
+      'Velocity & Momentum': 4.1,
+    },
+    dimension_details: [
+      { dimension: 'ai_product_features', label: 'AI Product Features', score: 4.5, category: 'AI Product & Value', weight: 2.80 },
+      { dimension: 'analytics_maturity', label: 'Analytics Maturity', score: 4.4, category: 'Data & Analytics', weight: 1.20 },
+      { dimension: 'data_quality', label: 'Data Quality', score: 4.3, category: 'Data & Analytics', weight: 1.10 },
+      { dimension: 'ai_talent_density', label: 'AI Talent Density', score: 4.3, category: 'Organization & Talent', weight: 1.80 },
+      { dimension: 'data_integration', label: 'Data Integration', score: 4.2, category: 'Data & Analytics', weight: 1.00 },
+      { dimension: 'ai_engineering', label: 'AI Engineering', score: 4.2, category: 'Technology & Infra', weight: 1.00 },
+      { dimension: 'cloud_architecture', label: 'Cloud Architecture', score: 4.1, category: 'Technology & Infra', weight: 0.80 },
+      { dimension: 'product_differentiation', label: 'Product Differentiation', score: 4.1, category: 'AI Product & Value', weight: 0.70 },
+      { dimension: 'ai_momentum', label: 'AI Momentum', score: 4.1, category: 'Velocity & Momentum', weight: 0.80 },
+      { dimension: 'leadership_ai_vision', label: 'Leadership AI Vision', score: 4.0, category: 'Organization & Talent', weight: 1.50 },
+      { dimension: 'org_change_readiness', label: 'Org Change Readiness', score: 3.9, category: 'Organization & Talent', weight: 0.80 },
+      { dimension: 'tech_stack_modernity', label: 'Tech Stack Modernity', score: 3.9, category: 'Technology & Infra', weight: 0.60 },
+      { dimension: 'revenue_ai_upside', label: 'Revenue AI Upside', score: 3.9, category: 'AI Product & Value', weight: 1.50 },
+      { dimension: 'regulatory_readiness', label: 'Regulatory Readiness', score: 3.8, category: 'Governance & Risk', weight: 0.50 },
+      { dimension: 'margin_ai_upside', label: 'Margin AI Upside', score: 3.8, category: 'AI Product & Value', weight: 0.80 },
+      { dimension: 'partner_ecosystem', label: 'Partner Ecosystem', score: 3.7, category: 'Organization & Talent', weight: 0.90 },
+      { dimension: 'ai_governance', label: 'AI Governance', score: 3.6, category: 'Governance & Risk', weight: 0.50 },
+    ],
+    research_summary: 'Datadog is a mature observability platform with strong data infrastructure, excellent AI product features for anomaly detection and root cause analysis. Public company with proven business model. Areas for development: regulatory readiness, partner ecosystem integration, and governance frameworks.',
+    confidence_score: 88,
+    confidence_breakdown: {
+      search_coverage: 24,
+      scrape_depth: 18,
+      corpus_volume: 14,
+      structured_extraction: 23,
+      signal_richness: 14,
+    },
+  },
+  uipath: {
+    id: 'demo-uipath',
+    name: 'UiPath',
+    vertical: 'Automation & RPA',
+    website: 'https://uipath.com',
+    description: 'Enterprise automation platform',
+    employee_count: 5500,
+    funding_total_usd: 4.5e9,
+    is_public: true,
+    has_ai_features: true,
+    cloud_native: true,
+    composite_score: 3.8,
+    tier: 'AI-Ready',
+    wave: 1,
+    pillar_scores: {
+      data_quality: 3.9,
+      data_integration: 3.8,
+      analytics_maturity: 3.9,
+      cloud_architecture: 3.6,
+      tech_stack_modernity: 3.5,
+      ai_engineering: 3.9,
+      ai_product_features: 4.2,
+      revenue_ai_upside: 3.7,
+      margin_ai_upside: 3.5,
+      product_differentiation: 3.8,
+      ai_talent_density: 4.0,
+      leadership_ai_vision: 3.8,
+      org_change_readiness: 3.6,
+      partner_ecosystem: 3.5,
+      ai_governance: 3.4,
+      regulatory_readiness: 3.6,
+      ai_momentum: 3.9,
+    },
+    category_scores: {
+      'Data & Analytics': 3.87,
+      'Technology & Infra': 3.67,
+      'AI Product & Value': 3.8,
+      'Organization & Talent': 3.75,
+      'Governance & Risk': 3.5,
+      'Velocity & Momentum': 3.9,
+    },
+    dimension_details: [
+      { dimension: 'ai_product_features', label: 'AI Product Features', score: 4.2, category: 'AI Product & Value', weight: 2.80 },
+      { dimension: 'ai_talent_density', label: 'AI Talent Density', score: 4.0, category: 'Organization & Talent', weight: 1.80 },
+      { dimension: 'analytics_maturity', label: 'Analytics Maturity', score: 3.9, category: 'Data & Analytics', weight: 1.20 },
+      { dimension: 'data_quality', label: 'Data Quality', score: 3.9, category: 'Data & Analytics', weight: 1.10 },
+      { dimension: 'ai_engineering', label: 'AI Engineering', score: 3.9, category: 'Technology & Infra', weight: 1.00 },
+      { dimension: 'ai_momentum', label: 'AI Momentum', score: 3.9, category: 'Velocity & Momentum', weight: 0.80 },
+      { dimension: 'leadership_ai_vision', label: 'Leadership AI Vision', score: 3.8, category: 'Organization & Talent', weight: 1.50 },
+      { dimension: 'data_integration', label: 'Data Integration', score: 3.8, category: 'Data & Analytics', weight: 1.00 },
+      { dimension: 'product_differentiation', label: 'Product Differentiation', score: 3.8, category: 'AI Product & Value', weight: 0.70 },
+      { dimension: 'revenue_ai_upside', label: 'Revenue AI Upside', score: 3.7, category: 'AI Product & Value', weight: 1.50 },
+      { dimension: 'cloud_architecture', label: 'Cloud Architecture', score: 3.6, category: 'Technology & Infra', weight: 0.80 },
+      { dimension: 'org_change_readiness', label: 'Org Change Readiness', score: 3.6, category: 'Organization & Talent', weight: 0.80 },
+      { dimension: 'regulatory_readiness', label: 'Regulatory Readiness', score: 3.6, category: 'Governance & Risk', weight: 0.50 },
+      { dimension: 'tech_stack_modernity', label: 'Tech Stack Modernity', score: 3.5, category: 'Technology & Infra', weight: 0.60 },
+      { dimension: 'margin_ai_upside', label: 'Margin AI Upside', score: 3.5, category: 'AI Product & Value', weight: 0.80 },
+      { dimension: 'partner_ecosystem', label: 'Partner Ecosystem', score: 3.5, category: 'Organization & Talent', weight: 0.90 },
+      { dimension: 'ai_governance', label: 'AI Governance', score: 3.4, category: 'Governance & Risk', weight: 0.50 },
+    ],
+    research_summary: 'UiPath is a leading RPA platform with strong AI product capabilities and good AI talent. Public company with established enterprise presence. Opportunities: modernize tech stack, improve cloud-native architecture, strengthen governance and regulatory frameworks.',
+    confidence_score: 85,
+    confidence_breakdown: {
+      search_coverage: 23,
+      scrape_depth: 17,
+      corpus_volume: 13,
+      structured_extraction: 22,
+      signal_richness: 13,
+    },
+  },
+  toast: {
+    id: 'demo-toast',
+    name: 'Toast',
+    vertical: 'Restaurant SaaS',
+    website: 'https://toasttab.com',
+    description: 'POS and restaurant management platform',
+    employee_count: 3200,
+    funding_total_usd: 4.0e9,
+    is_public: false,
+    has_ai_features: true,
+    cloud_native: true,
+    composite_score: 3.2,
+    tier: 'AI-Buildable',
+    wave: 2,
+    pillar_scores: {
+      data_quality: 3.3,
+      data_integration: 3.2,
+      analytics_maturity: 3.1,
+      cloud_architecture: 3.0,
+      tech_stack_modernity: 2.9,
+      ai_engineering: 3.1,
+      ai_product_features: 3.5,
+      revenue_ai_upside: 3.2,
+      margin_ai_upside: 3.0,
+      product_differentiation: 3.1,
+      ai_talent_density: 3.3,
+      leadership_ai_vision: 3.2,
+      org_change_readiness: 3.0,
+      partner_ecosystem: 2.9,
+      ai_governance: 2.8,
+      regulatory_readiness: 3.1,
+      ai_momentum: 3.3,
+    },
+    category_scores: {
+      'Data & Analytics': 3.2,
+      'Technology & Infra': 3.0,
+      'AI Product & Value': 3.2,
+      'Organization & Talent': 3.13,
+      'Governance & Risk': 2.95,
+      'Velocity & Momentum': 3.3,
+    },
+    dimension_details: [
+      { dimension: 'ai_product_features', label: 'AI Product Features', score: 3.5, category: 'AI Product & Value', weight: 2.80 },
+      { dimension: 'ai_momentum', label: 'AI Momentum', score: 3.3, category: 'Velocity & Momentum', weight: 0.80 },
+      { dimension: 'data_quality', label: 'Data Quality', score: 3.3, category: 'Data & Analytics', weight: 1.10 },
+      { dimension: 'ai_talent_density', label: 'AI Talent Density', score: 3.3, category: 'Organization & Talent', weight: 1.80 },
+      { dimension: 'revenue_ai_upside', label: 'Revenue AI Upside', score: 3.2, category: 'AI Product & Value', weight: 1.50 },
+      { dimension: 'data_integration', label: 'Data Integration', score: 3.2, category: 'Data & Analytics', weight: 1.00 },
+      { dimension: 'leadership_ai_vision', label: 'Leadership AI Vision', score: 3.2, category: 'Organization & Talent', weight: 1.50 },
+      { dimension: 'analytics_maturity', label: 'Analytics Maturity', score: 3.1, category: 'Data & Analytics', weight: 1.20 },
+      { dimension: 'ai_engineering', label: 'AI Engineering', score: 3.1, category: 'Technology & Infra', weight: 1.00 },
+      { dimension: 'product_differentiation', label: 'Product Differentiation', score: 3.1, category: 'AI Product & Value', weight: 0.70 },
+      { dimension: 'regulatory_readiness', label: 'Regulatory Readiness', score: 3.1, category: 'Governance & Risk', weight: 0.50 },
+      { dimension: 'org_change_readiness', label: 'Org Change Readiness', score: 3.0, category: 'Organization & Talent', weight: 0.80 },
+      { dimension: 'cloud_architecture', label: 'Cloud Architecture', score: 3.0, category: 'Technology & Infra', weight: 0.80 },
+      { dimension: 'margin_ai_upside', label: 'Margin AI Upside', score: 3.0, category: 'AI Product & Value', weight: 0.80 },
+      { dimension: 'tech_stack_modernity', label: 'Tech Stack Modernity', score: 2.9, category: 'Technology & Infra', weight: 0.60 },
+      { dimension: 'partner_ecosystem', label: 'Partner Ecosystem', score: 2.9, category: 'Organization & Talent', weight: 0.90 },
+      { dimension: 'ai_governance', label: 'AI Governance', score: 2.8, category: 'Governance & Risk', weight: 0.50 },
+    ],
+    research_summary: 'Toast is a growth-stage SaaS company in restaurant tech with emerging AI capabilities. Good data foundation and growing AI talent. Building AI-driven features for POS and restaurant operations. Key focus areas: modern cloud architecture, governance frameworks, and tech stack modernization.',
+    confidence_score: 78,
+    confidence_breakdown: {
+      search_coverage: 20,
+      scrape_depth: 15,
+      corpus_volume: 12,
+      structured_extraction: 19,
+      signal_richness: 12,
+    },
+  },
+  procore: {
+    id: 'demo-procore',
+    name: 'Procore',
+    vertical: 'Construction SaaS',
+    website: 'https://procore.com',
+    description: 'Cloud-based construction management platform',
+    employee_count: 4500,
+    funding_total_usd: 3.8e9,
+    is_public: true,
+    has_ai_features: true,
+    cloud_native: true,
+    composite_score: 2.9,
+    tier: 'AI-Buildable',
+    wave: 2,
+    pillar_scores: {
+      data_quality: 2.8,
+      data_integration: 2.7,
+      analytics_maturity: 2.8,
+      cloud_architecture: 2.9,
+      tech_stack_modernity: 2.6,
+      ai_engineering: 2.7,
+      ai_product_features: 3.1,
+      revenue_ai_upside: 2.8,
+      margin_ai_upside: 2.6,
+      product_differentiation: 2.7,
+      ai_talent_density: 2.9,
+      leadership_ai_vision: 2.8,
+      org_change_readiness: 2.7,
+      partner_ecosystem: 2.6,
+      ai_governance: 2.5,
+      regulatory_readiness: 2.7,
+      ai_momentum: 3.0,
+    },
+    category_scores: {
+      'Data & Analytics': 2.77,
+      'Technology & Infra': 2.73,
+      'AI Product & Value': 2.8,
+      'Organization & Talent': 2.75,
+      'Governance & Risk': 2.6,
+      'Velocity & Momentum': 3.0,
+    },
+    dimension_details: [
+      { dimension: 'ai_product_features', label: 'AI Product Features', score: 3.1, category: 'AI Product & Value', weight: 2.80 },
+      { dimension: 'ai_momentum', label: 'AI Momentum', score: 3.0, category: 'Velocity & Momentum', weight: 0.80 },
+      { dimension: 'cloud_architecture', label: 'Cloud Architecture', score: 2.9, category: 'Technology & Infra', weight: 0.80 },
+      { dimension: 'ai_talent_density', label: 'AI Talent Density', score: 2.9, category: 'Organization & Talent', weight: 1.80 },
+      { dimension: 'leadership_ai_vision', label: 'Leadership AI Vision', score: 2.8, category: 'Organization & Talent', weight: 1.50 },
+      { dimension: 'data_quality', label: 'Data Quality', score: 2.8, category: 'Data & Analytics', weight: 1.10 },
+      { dimension: 'analytics_maturity', label: 'Analytics Maturity', score: 2.8, category: 'Data & Analytics', weight: 1.20 },
+      { dimension: 'revenue_ai_upside', label: 'Revenue AI Upside', score: 2.8, category: 'AI Product & Value', weight: 1.50 },
+      { dimension: 'org_change_readiness', label: 'Org Change Readiness', score: 2.7, category: 'Organization & Talent', weight: 0.80 },
+      { dimension: 'ai_engineering', label: 'AI Engineering', score: 2.7, category: 'Technology & Infra', weight: 1.00 },
+      { dimension: 'data_integration', label: 'Data Integration', score: 2.7, category: 'Data & Analytics', weight: 1.00 },
+      { dimension: 'product_differentiation', label: 'Product Differentiation', score: 2.7, category: 'AI Product & Value', weight: 0.70 },
+      { dimension: 'regulatory_readiness', label: 'Regulatory Readiness', score: 2.7, category: 'Governance & Risk', weight: 0.50 },
+      { dimension: 'margin_ai_upside', label: 'Margin AI Upside', score: 2.6, category: 'AI Product & Value', weight: 0.80 },
+      { dimension: 'tech_stack_modernity', label: 'Tech Stack Modernity', score: 2.6, category: 'Technology & Infra', weight: 0.60 },
+      { dimension: 'partner_ecosystem', label: 'Partner Ecosystem', score: 2.6, category: 'Organization & Talent', weight: 0.90 },
+      { dimension: 'ai_governance', label: 'AI Governance', score: 2.5, category: 'Governance & Risk', weight: 0.50 },
+    ],
+    research_summary: 'Procore is a mature public SaaS company for construction with increasing AI investment. Solid cloud foundation and emerging AI features. Significant opportunity to strengthen data infrastructure, AI engineering capabilities, and governance frameworks.',
+    confidence_score: 75,
+    confidence_breakdown: {
+      search_coverage: 21,
+      scrape_depth: 14,
+      corpus_volume: 11,
+      structured_extraction: 20,
+      signal_richness: 11,
+    },
+  },
+  servicetitan: {
+    id: 'demo-servicetitan',
+    name: 'ServiceTitan',
+    vertical: 'Home Services SaaS',
+    website: 'https://servicetitan.com',
+    description: 'Mobile and cloud software for home service companies',
+    employee_count: 1800,
+    funding_total_usd: 1.1e9,
+    is_public: false,
+    has_ai_features: true,
+    cloud_native: true,
+    composite_score: 3.4,
+    tier: 'AI-Buildable',
+    wave: 2,
+    pillar_scores: {
+      data_quality: 3.4,
+      data_integration: 3.3,
+      analytics_maturity: 3.3,
+      cloud_architecture: 3.2,
+      tech_stack_modernity: 3.1,
+      ai_engineering: 3.2,
+      ai_product_features: 3.7,
+      revenue_ai_upside: 3.3,
+      margin_ai_upside: 3.1,
+      product_differentiation: 3.2,
+      ai_talent_density: 3.4,
+      leadership_ai_vision: 3.3,
+      org_change_readiness: 3.2,
+      partner_ecosystem: 3.0,
+      ai_governance: 2.9,
+      regulatory_readiness: 3.2,
+      ai_momentum: 3.5,
+    },
+    category_scores: {
+      'Data & Analytics': 3.33,
+      'Technology & Infra': 3.17,
+      'AI Product & Value': 3.33,
+      'Organization & Talent': 3.23,
+      'Governance & Risk': 3.05,
+      'Velocity & Momentum': 3.5,
+    },
+    dimension_details: [
+      { dimension: 'ai_momentum', label: 'AI Momentum', score: 3.5, category: 'Velocity & Momentum', weight: 0.80 },
+      { dimension: 'ai_product_features', label: 'AI Product Features', score: 3.7, category: 'AI Product & Value', weight: 2.80 },
+      { dimension: 'data_quality', label: 'Data Quality', score: 3.4, category: 'Data & Analytics', weight: 1.10 },
+      { dimension: 'ai_talent_density', label: 'AI Talent Density', score: 3.4, category: 'Organization & Talent', weight: 1.80 },
+      { dimension: 'data_integration', label: 'Data Integration', score: 3.3, category: 'Data & Analytics', weight: 1.00 },
+      { dimension: 'analytics_maturity', label: 'Analytics Maturity', score: 3.3, category: 'Data & Analytics', weight: 1.20 },
+      { dimension: 'leadership_ai_vision', label: 'Leadership AI Vision', score: 3.3, category: 'Organization & Talent', weight: 1.50 },
+      { dimension: 'revenue_ai_upside', label: 'Revenue AI Upside', score: 3.3, category: 'AI Product & Value', weight: 1.50 },
+      { dimension: 'cloud_architecture', label: 'Cloud Architecture', score: 3.2, category: 'Technology & Infra', weight: 0.80 },
+      { dimension: 'ai_engineering', label: 'AI Engineering', score: 3.2, category: 'Technology & Infra', weight: 1.00 },
+      { dimension: 'org_change_readiness', label: 'Org Change Readiness', score: 3.2, category: 'Organization & Talent', weight: 0.80 },
+      { dimension: 'regulatory_readiness', label: 'Regulatory Readiness', score: 3.2, category: 'Governance & Risk', weight: 0.50 },
+      { dimension: 'product_differentiation', label: 'Product Differentiation', score: 3.2, category: 'AI Product & Value', weight: 0.70 },
+      { dimension: 'tech_stack_modernity', label: 'Tech Stack Modernity', score: 3.1, category: 'Technology & Infra', weight: 0.60 },
+      { dimension: 'margin_ai_upside', label: 'Margin AI Upside', score: 3.1, category: 'AI Product & Value', weight: 0.80 },
+      { dimension: 'partner_ecosystem', label: 'Partner Ecosystem', score: 3.0, category: 'Organization & Talent', weight: 0.90 },
+      { dimension: 'ai_governance', label: 'AI Governance', score: 2.9, category: 'Governance & Risk', weight: 0.50 },
+    ],
+    research_summary: 'ServiceTitan is a growth-stage SaaS company for field service businesses with strong AI momentum and emerging product features. Good data foundation and developing AI talent. Opportunity to expand AI engineering, strengthen governance, and build ecosystem partnerships.',
+    confidence_score: 80,
+    confidence_breakdown: {
+      search_coverage: 21,
+      scrape_depth: 15,
+      corpus_volume: 12,
+      structured_extraction: 20,
+      signal_richness: 12,
+    },
+  },
+}
+
+// Simple hash function for deterministic seeding
+function hashCompanyName(name: string): number {
+  let hash = 0
+  for (let i = 0; i < name.length; i++) {
+    const char = name.charCodeAt(i)
+    hash = ((hash << 5) - hash) + char
+    hash = hash & hash // Convert to 32-bit integer
+  }
+  return Math.abs(hash)
+}
+
+// Generate seeded random number between 0 and 1
+function seededRandom(seed: number): number {
+  const x = Math.sin(seed) * 10000
+  return x - Math.floor(x)
+}
+
+// Generate demo data for a company not in the pre-computed map
+function generateDemoResult(companyName: string): SandboxResult {
+  const seed = hashCompanyName(companyName)
+  const rng = (index: number) => seededRandom(seed + index)
+
+  // Generate dimension scores
+  const dimensionScores: Record<string, number> = {}
+  const dimensionKeys = Object.keys(DIMENSION_WEIGHTS)
+  dimensionKeys.forEach((dim, i) => {
+    const baseScore = 2.0 + rng(i) * 2.5 // Range 2.0-4.5
+    dimensionScores[dim] = Math.round(baseScore * 10) / 10
+  })
+
+  // Compute weighted composite score
+  let weightedSum = 0
+  let weightSum = 0
+  dimensionKeys.forEach(dim => {
+    const weight = DIMENSION_WEIGHTS[dim]
+    weightedSum += dimensionScores[dim] * weight
+    weightSum += weight
+  })
+  const compositeScore = Math.round((weightedSum / weightSum) * 10) / 10
+
+  // Determine tier and wave
+  let tier = 'Emerging'
+  let wave = 3
+  if (compositeScore >= 4.0) {
+    tier = 'AI-Ready'
+    wave = 1
+  } else if (compositeScore >= 3.2) {
+    tier = 'AI-Buildable'
+    wave = 2
+  }
+
+  // Compute category scores
+  const categoryScores: Record<string, number> = {}
+  const categories = ['Data & Analytics', 'Technology & Infra', 'AI Product & Value', 'Organization & Talent', 'Governance & Risk', 'Velocity & Momentum']
+  categories.forEach(cat => {
+    const dimsInCat = dimensionKeys.filter(d => DIMENSION_CATEGORY_MAP[d] === cat)
+    const avg = dimsInCat.reduce((sum, d) => sum + dimensionScores[d], 0) / dimsInCat.length
+    categoryScores[cat] = Math.round(avg * 10) / 10
+  })
+
+  // Dimension details
+  const dimensionDetails = dimensionKeys.map(dim => ({
+    dimension: dim,
+    label: DIMENSION_LABELS[dim] || dim,
+    score: dimensionScores[dim],
+    category: DIMENSION_CATEGORY_MAP[dim],
+    weight: DIMENSION_WEIGHTS[dim],
+  }))
+
+  return {
+    id: `demo-${companyName.toLowerCase().replace(/\s+/g, '-')}`,
+    name: companyName,
+    vertical: 'Enterprise Software',
+    website: `https://${companyName.toLowerCase().replace(/\s+/g, '')}.com`,
+    description: 'Enterprise AI-enabled software company',
+    employee_count: 500 + Math.floor(rng(dimensionKeys.length + 1) * 5000),
+    funding_total_usd: 50e6 + rng(dimensionKeys.length + 2) * 400e6,
+    is_public: rng(dimensionKeys.length + 3) > 0.6,
+    has_ai_features: rng(dimensionKeys.length + 4) > 0.3,
+    cloud_native: rng(dimensionKeys.length + 5) > 0.4,
+    composite_score: compositeScore,
+    tier,
+    wave,
+    pillar_scores: dimensionScores,
+    category_scores: categoryScores,
+    dimension_details: dimensionDetails,
+    research_summary: `${companyName} is an enterprise software company with AI-driven capabilities. Analysis across 17 dimensions shows focus areas in ${dimensionDetails.slice(-2).map(d => d.label).join(' and ')}. Growth opportunities in strengthening AI engineering, governance frameworks, and talent density.`,
+    confidence_score: 55 + Math.floor(rng(dimensionKeys.length + 6) * 35),
+    confidence_breakdown: {
+      search_coverage: 15 + Math.floor(rng(dimensionKeys.length + 7) * 10),
+      scrape_depth: 10 + Math.floor(rng(dimensionKeys.length + 8) * 10),
+      corpus_volume: 8 + Math.floor(rng(dimensionKeys.length + 9) * 7),
+      structured_extraction: 15 + Math.floor(rng(dimensionKeys.length + 10) * 10),
+      signal_richness: 8 + Math.floor(rng(dimensionKeys.length + 11) * 7),
+    },
+  }
+}
+
 // ── Animated counter hook ───────────────────────────────────────────────────
 
 function useAnimatedScore(target: number, duration = 1200) {
@@ -89,13 +652,13 @@ function useAnimatedScore(target: number, duration = 1200) {
 // ── Deep research pipeline steps ────────────────────────────────────────────
 
 const PIPELINE_STEPS = [
-  { label: 'Launching deep research across 20 dimensions...', icon: '🔍', duration: 2000 },
-  { label: 'Validating entity matches against identity markers...', icon: '🛡️', duration: 1500 },
-  { label: 'Enriching AI capabilities, hiring & tech stack signals...', icon: '🤖', duration: 2500 },
-  { label: 'Scraping company pages for richer data...', icon: '🌐', duration: 2500 },
-  { label: 'Extracting features from research corpus...', icon: '⚡', duration: 2000 },
-  { label: 'Running 17-dimension scoring model...', icon: '📊', duration: 2000 },
-  { label: 'Computing tier & wave classification...', icon: '🏆', duration: 1500 },
+  { label: 'Launching deep research across 20 dimensions...', icon: '🔍', duration: 700 },
+  { label: 'Validating entity matches against identity markers...', icon: '🛡️', duration: 600 },
+  { label: 'Enriching AI capabilities, hiring & tech stack signals...', icon: '🤖', duration: 800 },
+  { label: 'Scraping company pages for richer data...', icon: '🌐', duration: 750 },
+  { label: 'Extracting features from research corpus...', icon: '⚡', duration: 700 },
+  { label: 'Running 17-dimension scoring model...', icon: '📊', duration: 700 },
+  { label: 'Computing tier & wave classification...', icon: '🏆', duration: 550 },
 ]
 
 // ── Helper: top strengths and weaknesses ────────────────────────────────────
@@ -129,6 +692,7 @@ export default function Sandbox() {
   const [showContext, setShowContext] = useState(false)
   const [website, setWebsite] = useState('')
   const [description, setDescription] = useState('')
+  const [demoMode, setDemoMode] = useState(false)
 
   const animatedScore = useAnimatedScore(showResult && result ? result.composite_score : 0, 1400)
 
@@ -149,6 +713,7 @@ export default function Sandbox() {
     setError(null)
     setResult(null)
     setShowResult(false)
+    setDemoMode(false)
     setPipelineIdx(0)
 
     // Advance pipeline steps on timers
@@ -166,6 +731,13 @@ export default function Sandbox() {
       timers.push(setTimeout(advanceStep, cumulative))
     }
 
+    // Calculate total pipeline duration
+    const totalPipelineDuration = PIPELINE_STEPS.reduce((sum, step) => sum + step.duration, 0)
+
+    // Try API first, fall back to demo mode on error
+    let data: SandboxResult | null = null
+    let apiSuccess = false
+
     try {
       const resp = await fetch(`${API}/api/sandbox/score`, {
         method: 'POST',
@@ -177,26 +749,46 @@ export default function Sandbox() {
         }),
       })
 
-      timers.forEach(clearTimeout)
+      if (resp.ok) {
+        data = await resp.json()
+        apiSuccess = true
+      }
+    } catch (e) {
+      // Network error, will fall back to demo mode
+    }
 
-      if (!resp.ok) {
-        const err = await resp.json()
-        throw new Error(err.detail || 'Scoring failed')
+    // If API failed, use demo mode
+    if (!apiSuccess) {
+      const trimmedName = companyName.trim()
+      const normalizedName = trimmedName.toLowerCase()
+
+      // Check if in pre-computed demo companies
+      let demoData = DEMO_COMPANIES[normalizedName]
+
+      // If not found, generate from seed
+      if (!demoData) {
+        demoData = generateDemoResult(trimmedName)
       }
 
-      const data: SandboxResult = await resp.json()
+      data = demoData
+      setDemoMode(true)
+    }
+
+    timers.forEach(clearTimeout)
+
+    if (data) {
       setResult(data)
       setCompanyName('')
 
-      // Brief pause then reveal with animation
-      setTimeout(() => setShowResult(true), 300)
+      // Wait for pipeline animation to complete, then reveal result
+      setTimeout(() => setShowResult(true), totalPipelineDuration + 300)
       loadHistory()
-    } catch (e: any) {
-      setError(e.message || 'Failed to score company')
-    } finally {
-      setScoring(false)
-      setPipelineIdx(-1)
+    } else {
+      setError('Failed to score company')
     }
+
+    setScoring(false)
+    setPipelineIdx(-1)
   }
 
   const deleteCompany = async (id: string) => {
@@ -232,12 +824,19 @@ export default function Sandbox() {
     <div className="space-y-8">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-[var(--text-primary)] flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #A259FF, #1ABCFE)' }}>
-            <Zap className="w-5 h-5 text-white" />
-          </div>
-          AI Scoring Sandbox
-        </h1>
+        <div className="flex items-center gap-3">
+          <h1 className="text-2xl font-bold text-[var(--text-primary)] flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #A259FF, #1ABCFE)' }}>
+              <Zap className="w-5 h-5 text-white" />
+            </div>
+            AI Scoring Sandbox
+          </h1>
+          {demoMode && (
+            <span className="px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-purple-500/20 text-purple-300 border border-purple-500/30">
+              Demo Mode
+            </span>
+          )}
+        </div>
         <p className="text-[var(--text-secondary)] mt-1 text-sm">
           Deep research any company — 8 dimension-specific queries, page scraping, and full 17-dimension AI maturity scoring
         </p>
