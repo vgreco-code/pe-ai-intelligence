@@ -98,7 +98,7 @@
     "description": "SMRTR provides compliance and automation solutions for food & beverage supply chain workflows. Formed July 1, 2025 from the merger of Dash (AP automation) and S4i Systems (compliance solutions). The platform streamlines accounts payable, document automation, supplier onboarding, electronic proof of delivery, food safety compliance, and regulatory management. Operates fully remote from Cottonwood Heights, Utah. Part of Solen Software Group.",
     "website": "https://smrtrsolutions.com",
     "founded_year": 2025,
-    "composite_score": 3.03,
+    "composite_score": 3.06,
     "tier": "AI-Buildable",
     "wave": 1,
     "pillar_scores": {
@@ -108,7 +108,7 @@
       "cloud_architecture": 3.4,
       "tech_stack_modernity": 3.61,
       "ai_engineering": 2.3,
-      "ai_product_features": 3.0,
+      "ai_product_features": 3.2,
       "revenue_ai_upside": 3.5,
       "margin_ai_upside": 3.6,
       "product_differentiation": 2.94,
@@ -122,9 +122,9 @@
     },
     "category_scores": {
       "Data & Analytics": 3.26,
-      "Technology & Infrastructure": 3.1,
-      "AI Product & Value": 3.26,
-      "Organization & Talent": 2.6,
+      "Technology & Infrastructure": 3.5,
+      "AI Product & Value": 3.15,
+      "Organization & Talent": 2.74,
       "Governance & Risk": 3.13,
       "Velocity & Momentum": 3.3
     },
@@ -374,7 +374,7 @@
     "description": "ViaPeople provides HR performance management software purpose-built for private equity firms and investment banks. Features include performance management, AI instant insights, 360-degree feedback, deal team feedback, succession planning, and automated promotion processes. Founded in 2002 by Jim Perry. Merged with SpiraLinks (compensation planning for global teams) to deliver a full-suite HR platform connecting performance management with compensation. Part of Solen Software Group.",
     "website": "https://viapeople.com",
     "founded_year": 2002,
-    "composite_score": 2.66,
+    "composite_score": 2.68,
     "tier": "AI-Emerging",
     "wave": 2,
     "pillar_scores": {
@@ -383,7 +383,7 @@
       "analytics_maturity": 2.5,
       "cloud_architecture": 2.8,
       "tech_stack_modernity": 3.29,
-      "ai_engineering": 1.54,
+      "ai_engineering": 2.0,
       "ai_product_features": 3.0,
       "revenue_ai_upside": 3.33,
       "margin_ai_upside": 3.2,
@@ -398,9 +398,9 @@
     },
     "category_scores": {
       "Data & Analytics": 2.62,
-      "Technology & Infrastructure": 2.54,
-      "AI Product & Value": 3.13,
-      "Organization & Talent": 2.18,
+      "Technology & Infrastructure": 3.04,
+      "AI Product & Value": 2.88,
+      "Organization & Talent": 2.08,
       "Governance & Risk": 3.17,
       "Velocity & Momentum": 3.0
     },
